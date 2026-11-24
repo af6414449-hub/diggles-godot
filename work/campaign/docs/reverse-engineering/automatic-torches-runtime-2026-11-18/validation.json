@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-18",
+  "automatic_torches_enabled": true,
+  "apk_rebuilt": false,
+  "flame_particles_implemented": false,
+  "tests": [
+    {
+      "log": "tmp_automatic_torch_runtime_test.log",
+      "sha256": "e9e697d37a5bdfce32de7a4b36bacd13cbbdf63c168e3060a0171822d29adb1e",
+      "result": "AUTOMATIC_TORCH_RUNTIME_SELF_TEST checks=30 failures=0",
+      "errors_warnings": 0
+    },
+    {
+      "log": "tmp_automatic_torch_visual.log",
+      "sha256": "775f8d6d4b22134b0725878cb95a73cd2548ea258355083e587d256ee6f3cbcc",
+      "result": "AUTOMATIC_TORCH_RUNTIME_SELF_TEST checks=32 failures=0",
+      "errors_warnings": 0
+    },
+    {
+      "log": "tmp_torch_policy_test.log",
+      "sha256": "38bbf9735c1289e5adf562efb952e964f5b9ae2890ecf63040d67ed28c782e16",
+      "result": "NATIVE_TORCH_POLICY_SELF_TEST checks=17 failures=0",
+      "errors_warnings": 0
+    },
+    {
+      "log": "tmp_native_autolight_test.log",
+      "sha256": "6f7931d996d52cc3759c08693901cd90bd13763bf3f143e62f2f0945086a9cb1",
+      "result": "NATIVE_AUTOLIGHT_SELF_TEST checks=33 failures=0",
+      "errors_warnings": 0
+    },
+    {
+      "log": "tmp_torch_placement_test.log",
+      "sha256": "c309c790d9b30be703f77a09356b76acc4262f13ca8968c58bb5047bda560d41",
+      "result": "NATIVE_TORCH_PLACEMENT_SELF_TEST checks=70 failures=0",
+      "errors_warnings": 0
+    },
+    {
+      "log": "tmp_autotorch_manual_regression.log",
+      "sha256": "cdc1062c6a241452f9493cee1ee312ee1e8e9ae7db0f8aedd948d63c9858f942",
+      "result": "MANUAL_DIG_REGION_SELF_TEST_OK assertions=27",
+      "errors_warnings": 0
+    },
+    {
+      "log": "tmp_autotorch_excavated_regression.log",
+      "sha256": "85d856d11ce54cda166906c278a1ae44ea032c778732ea328e55980846abd485",
+      "result": "EXCAVATED_WALK_SELF_TEST_OK assertions=37 mutations=4 new_floor=16.5 original_floor=14.5",
+      "errors_warnings": 0
+    },
+    {
+      "log": "tmp_autotorch_terrain_render_test.log",
+      "sha256": "9599325371904b9f5730f23be60e3fea634485eb700b12ef8645f327138174e4",
+      "result": "NATIVE_TERRAIN_RENDER_SELF_TEST_OK assertions=556 vertices=15906 textures=41",
+      "errors_warnings": 0
+    },
+    {
+      "log": "tmp_autotorch_surface_dig_test.log",
+      "sha256": "65b44966cdb5c35a9bcbee390664d8b02f60283dbdb385595d69b40b1f1b0bbc",
+      "result": "NATIVE_SURFACE_DIG_SELF_TEST_OK assertions=22 assignments=1 wall_mutations=2",
+      "errors_warnings": 0
+    },
+    {
+      "log": "tmp_autotorch_parallel_work_test.log",
+      "sha256": "28cbb277ea0829c4dcb65863c09418b156b94b5f939c0f4fc0b22d8a73ec2a71",
+      "result": "DWARF_PARALLEL_WORK_SELF_TEST_OK assertions=21 workers=2 independent_walkers=3 mutations=2",
+      "errors_warnings": 0
+    }
+  ],
+  "sources": {
+    "tmp_autotorch_visual_source_check.log": "{\"status\": \"NATIVE_TORCH_VISUAL_CHECK_OK\", \"output\": \"C:\\\\Users\\\\frant\\\\OneDrive\\\\\\u0414\\u043e\\u043a\\u0443\\u043c\\u0435\\u043d\\u0442\\u044b\\\\ChatGPT\\\\Diggles\\\\godot\\\\models\\\\native_torch_visual.json\", \"sha256\": \"e271507ee112a8a1eab5f73e7452eb6031236c6d0ed76bb45edbd90f9fe3db49\", \"bytes\": 69732, \"mesh_indices\": [0, 1], \"textures\": [\"Metall_Werkzeuge_a_128.tga\"], \"playback\": \"ANIM_STILL\", \"nominal_fps\": 10, \"nominal_duration_if_played\": 0.2, \"evidence_ranges\": 9}",
+    "tmp_autotorch_facts_source_check.log": "{\"ok\": true, \"checked\": true, \"output\": \"C:\\\\Users\\\\frant\\\\OneDrive\\\\\\u0414\\u043e\\u043a\\u0443\\u043c\\u0435\\u043d\\u0442\\u044b\\\\ChatGPT\\\\Diggles\\\\godot\\\\models\\\\native_torches.json\", \"evidence_ranges\": 22, \"generated_placements\": 0}",
+    "tmp_autotorch_gates_source_check.log": "TORCH_PLACEMENT_GATES_SOURCE_CHECK_OK"
+  },
+  "code_sha256": {
+    "godot/scripts/multiplayer_test.gd": "7c83926e18d867d85ce424891121c153b4056d4f12f0d7ab062c797c3ed87d1f",
+    "godot/scripts/native_torch_runtime.gd": "2e3cc0853d9204863e1b4b6d83fb411460b9d1823200f43b671b3d1b39e06e8c",
+    "godot/scripts/native_torch_policy.gd": "82b285dd8bbb01a75e04f741c66aa8f592358d552e0a2d33a0e9228e4bd662ce",
+    "godot/scripts/native_scene_profile.gd": "1d82805891d8235ae2a0fc72d120cbb0222dcc877618068fa5f2f1fb3d2937e0",
+    "godot/models/native_torches.json": "a1d538da3b444fc33118ea028dcba117e6d54a74a6d1591eabb4bbc6afb1c576",
+    "godot/models/native_torch_visual.json": "e271507ee112a8a1eab5f73e7452eb6031236c6d0ed76bb45edbd90f9fe3db49"
+  },
+  "captures": {
+    "before.png": "51000ba077a989945bea626c67fcb4a4630179861550e1da032c2860bc8a2e7a",
+    "after.png": "c480f34315bc91f2201027fb833cb931f81fd8c17b80a2db93d554f209b73748"
+  },
+  "fixture": "AUTOMATIC_TORCH_SCENE color_buckets=77 recolored=77 vertices=961/16056 creation_ms=28.377 native_position=(93.56357, 100.2988, 11.0)",
+  "tmp_autotorch_lint.json": {
+    "total": 0,
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0
+  },
+  "tmp_autotorch_smoke.json": {
+    "scenes": 3,
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "warnings": 0,
+    "findings": 0
+  }
+}

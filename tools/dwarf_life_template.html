@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diggles: гном — анимации</title>
+<style>
+  :root { color-scheme: dark; --bg: #0d0b09; --accent: #f0c674; --icon: clamp(38px, 3.9vw, 56px); }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg);
+    font-family: "Segoe UI", system-ui, sans-serif; }
+  #view { display: block; width: 100vw; height: 100vh; cursor: grab; touch-action: none;
+    user-select: none; -webkit-user-select: none; }
+  #view:active { cursor: grabbing; }
+
+  /* ---------- лента иконок внизу ---------- */
+  #strip { position: fixed; z-index: 3; left: 0; right: 0; bottom: 0;
+    display: block;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    max-height: 44vh; overflow-y: auto; overflow-x: hidden;
+    background: linear-gradient(to top, #0a0806 62%, rgba(10, 8, 6, 0));
+    scrollbar-width: none; -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent; }
+  #strip::-webkit-scrollbar { display: none; }
+  /* Ровно 13 кнопок в ряд: два симметричных ряда на широком экране,
+     на узком — столько, сколько влезает, без выхода за края. */
+  #icons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    width: 100%; max-width: calc(13 * var(--icon) + 120px); margin: 0 auto; }
+  #strip button { flex: 0 0 auto; width: var(--icon); height: var(--icon); padding: 0;
+    display: grid; place-items: center; border-radius: 10px;
+    background: #2c2318; border: 1px solid #56462f; color: #cdbd9d; cursor: pointer;
+    transition: background .14s, color .14s, border-color .14s, transform .14s; }
+  #strip button svg { width: 62%; height: 62%; fill: none; stroke: currentColor;
+    stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+  /* сплошные значки (ботинок) — заливка, чтобы форма читалась в мелком размере */
+  #strip button svg [data-fill] { fill: currentColor; stroke: none; }
+  @media (hover: hover) { #strip button:hover { background: #43331f; color: #ffeec9; transform: translateY(-2px); } }
+  #strip button:active { transform: translateY(0); }
+  #strip button.is-playing { background: #6b4923; color: #ffe0a2; border-color: #e0b66d; }
+  #strip button.is-queued { border-color: #b89660; color: #efca8b; }
+  #strip button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+  #boot { position: fixed; inset: 0; display: grid; place-items: center; background: var(--bg); z-index: 9; }
+  #boot::after { content: ""; width: 34px; height: 34px; border-radius: 50%;
+    border: 3px solid #3a2c1e; border-top-color: var(--accent); animation: spin .9s linear infinite; }
+  body.err #boot::after { width: 30px; height: 30px; border-radius: 0; border: none; animation: none;
+    background:
+      linear-gradient(45deg, transparent 44%, #c9584a 44% 56%, transparent 56%),
+      linear-gradient(-45deg, transparent 44%, #c9584a 44% 56%, transparent 56%); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<canvas id="view"></canvas>
+<div id="boot"></div>
+<nav id="strip" aria-label="Анимации гнома" inert><div id="icons"></div></nav>
+
+<script>
+"use strict";
+
+const PAYLOAD = /*__PAYLOAD__*/;
+const CLIPS_B64 = "/*__CLIPS_B64__*/";
+/* Ошибки уходят только в консоль: на странице нет текста. */
+window.__errors = [];
+function reportError(where, error) {
+  const text = where + ": " + (error && error.stack ? error.stack : String(error));
+  window.__errors.push(text);
+  console.error(text);
+}
+window.addEventListener("error", function (event) {
+  reportError("window.onerror", event.error || event.message);
+});
+
+/* ===================== иконки ===================== */
+/* Крупные упрощённые пиктограммы в сетке 24×24: слева объект, справа направление. */
+const P = {
+  head:       '<circle cx="12" cy="4.8" r="2.3"/>',
+  torso:      '<path d="M12 7.4v6"/>',
+  armL:       '<path d="M12 9.2 8.4 11.8"/>',
+  armR:       '<path d="M12 9.2l3.6 2.6"/>',
+  legsWalk:   '<path d="M12 13.4 8 18.8M12 13.4l4 5.4"/>',
+  legsStand:  '<path d="M12 13.4v5.4"/>',
+  ladder:     '<path d="M3.5 3v18M11.5 3v18"/><path d="M3.5 8h8M3.5 13h8"/>',
+  ladderR:    '<path d="M13.5 3v18M21.5 3v18"/><path d="M13.5 8h8M13.5 13h8"/>',
+  bricks:     '<path d="M12.5 3.5h8v17h-8z"/><path d="M12.5 9h8M12.5 15h8"/>',
+  /* кирка: деревянная рукоять и изогнутый металлический наконечник */
+  pick:       '<path d="M4 20.8 10 8.2"/>' +
+               '<path data-fill="1" d="M2.6 4.6c3.8 3.6 9.2 3.6 13 0l.5 2c-4.3 4.2-10.5 4.2-14.4.4z"/>',
+  pickUp:     '<path d="M13 4.8 6.4 16.6"/><path d="M9.6 18.4c-2.6 1-5.4.2-6.6-1.8 2.2-1.8 5.4-1.8 6.6-1"/>',
+  pickFlat:   '<path d="M4.2 15.8 11.4 12.4"/><path d="M8.2 10.4c2.6-1 5.4-.2 6.6 1.8-2.2 1.8-5.4 1.8-6.6 1"/>',
+  pickFlat2:  '<path d="M19.8 15.8 12.6 12.4"/><path d="M15.8 10.4c-2.6-1-5.4-.2-6.6 1.8 2.2 1.8 5.4 1.8 6.6 1"/>',
+  arrowR:     '<path d="M16 11.4h5.4"/><path d="M19.4 9.2 21.4 11.4 19.4 13.6"/>',
+  arrowL:     '<path d="M22 11.4h-5.4"/><path d="M18.6 9.2 16.6 11.4 18.6 13.6"/>',
+  arrowU:     '<path d="M19 15.4v-5.4"/><path d="M17.2 12.2 19 10.4 20.8 12.2"/>',
+  arrowD:     '<path d="M19 8.6v5.4"/><path d="M17.2 11.8 19 13.6 20.8 11.8"/>',
+  arrowU2:    '<path d="M5 15.4v-5.4"/><path d="M3.2 12.2 5 10.4 6.8 12.2"/>',
+  arrowD2:    '<path d="M5 8.6v5.4"/><path d="M3.2 11.8 5 13.6 6.8 11.8"/>',
+  arrowL2:    '<path d="M9 11.4H3.6"/><path d="M6.2 9.2 4.2 11.4 6.2 13.6"/>',
+  arrowR2:    '<path d="M3.6 11.4H9"/><path d="M6.4 9.2 8.4 11.4 6.4 13.6"/>',
+  dblR:       '<path d="M14.6 8.4 17.2 11 14.6 13.6"/><path d="M18.4 8.4 21 11 18.4 13.6"/>',
+  dblL:       '<path d="M16.6 9.2 14.6 11.4 16.6 13.6"/><path d="M20.4 9.2 18.4 11.4 20.4 13.6"/>',
+  dblU:       '<path d="M15 13.4 17.6 10.8 20.2 13.4"/><path d="M15 9 17.6 6.4 20.2 9"/>',
+  dblD:       '<path d="M15 8.6 17.6 11.2 20.2 8.6"/><path d="M15 13 17.6 15.6 20.2 13"/>',
+  pause:      '<path d="M15.6 8.6v6.8M18.6 8.6v6.8"/>',
+  walker:     '<circle cx="17" cy="6.6" r="1.9"/><path d="M17 8.8v4.2"/><path d="M17 13 14.4 17.2M17 13l2.6 4.2"/>',
+  walkerL:    '<circle cx="7" cy="6.6" r="1.9"/><path d="M7 8.8v4.2"/><path d="M7 13 4.4 17.2M7 13l2.6 4.2"/>',
+  /* ботинок сбоку: голенище, изгиб, носок и подошва (сплошной — читается в мелком размере) */
+  boot:       '<path data-fill="1" d="M7.6 2.6h5.2v10.3c0 1 .4 2 1.2 2.7l2.6 2.4c.9.8 1.4 1.9 1.4 3.1v1.5H6.3V3.9c0-.7.6-1.3 1.3-1.3z"/>' +
+               '<rect data-fill="1" x="4.4" y="21.3" width="17.2" height="1.7" rx=".8"/>',
+  rotateCCW:  '<polyline points="2 5 2 11 8 11"/><path d="M4.5 16a8.5 8.5 0 1 0 2.5-8.8L2 11"/>',
+  rotateCW:   '<polyline points="22 5 22 11 16 11"/><path d="19.5 16a8.5 8.5 0 1 1-2.5-8.8L22 11"/>',
+  /* поворот на 90° — обычная стрелка влево/вправо; разворот на 180° —
+     круговая стрелка, замыкающаяся почти полностью (разрыв только у наконечника) */
+  turnL90:    '<path d="M20.2 12H4"/><path d="M9.6 6.6 4 12l5.6 5.4"/>',
+  turnL180:   '<polyline points="2 5 2 11 8 11"/><path d="M4.5 16a8.5 8.5 0 1 0 2.5-8.8L2 11"/>',
+  turnR90:    '<path d="M3.8 12h16.2"/><path d="M14.4 6.6 20 12l-5.6 5.4"/>',
+  turnR180:   '<polyline points="22 5 22 11 16 11"/><path d="M19.5 16a8.5 8.5 0 1 1-2.5-8.8L22 11"/>',
+  arcL:       '<path d="M18.5 12A6.5 6.5 0 0 0 5.5 12"/><path d="M5.5 12 8.1 9.4M5.5 12l2.6 2.6"/>',
+  arcR:       '<path d="M5.5 12A6.5 6.5 0 0 1 18.5 12"/><path d="M18.5 12 15.9 9.4M18.5 12l-2.6 2.6"/>',
+  runBody:    '<circle cx="13.4" cy="5.2" r="2.3"/><path d="M12.8 7.6 9.4 12.4l4.2 2.2"/><path d="M13.6 14.6 15.2 19M9.4 12.4 7 17.4"/>',
+  speed:      '<path d="M2.4 9.6h4M1.8 13.8h3.6"/>',
+  ground:     '<path d="M3 20.6h18"/>',
+  moon:       '<path d="M9.4 3.4a4.4 4.4 0 1 0 4.8 6.2A4.6 4.6 0 0 1 9.4 3.4Z"/>',
+  star:       '<path d="m18.4 7 1 2.2 2.4.3-1.8 1.7.5 2.3-2.1-1.2-2.1 1.2.5-2.3-1.8-1.7 2.4-.3z"/>',
+  bang:       '<path d="M19 5.4v6"/><path d="M19 15.4h.01"/>',
+  lieBody:    '<circle cx="18.2" cy="8.8" r="2.2"/><path d="M16 10.6 10 12.4H5.6M10 12.4l2.4 4.8"/>',
+  /* кровать сбоку: спинка, матрас, ножки, подушка */
+  bed:        '<path d="M3.2 7.4v9.8"/><path d="M20.8 12.6v4.6"/><path d="M3.2 12.6h17.6"/>' +
+               '<path d="M3.2 15.4h17.6"/><path d="M5.4 15.4v4.4M18.6 15.4v4.4"/>' +
+               '<rect x="4.6" y="10.2" width="5.4" height="2.4" rx="1.2"/>',
+  /* бой: боец с вытянутым кулаком, справа — отметка направления удара */
+  fighter:   '<circle cx="7.2" cy="5.2" r="1.9"/><path d="M7.2 7.4v5"/>' +
+             '<path d="M7.2 8.4l5.8 2.2"/><circle cx="14.8" cy="11.1" r="2.2"/>' +
+             '<path d="M7.2 12.4 5.2 18.4M7.2 12.4l2.6 5.8"/>',
+  fistHit:   '<circle cx="7.2" cy="5.2" r="1.9"/><path d="M7.2 7.4v5"/>' +
+             '<path d="M7.2 8.4l5.8 2.2"/><circle cx="14.8" cy="11.1" r="2.2"/>' +
+             '<path d="M7.2 12.4 5.2 18.4M7.2 12.4l2.6 5.8"/>' +
+             '<path d="M18.4 8.2 20.4 6.6M19.4 11.1h2.6M18.4 14 20.4 15.6"/>',
+  fistUp:    '<circle cx="7.2" cy="5.2" r="1.9"/><path d="M7.2 7.4v5"/>' +
+             '<path d="M7.2 8.4l5.8 2.2"/><circle cx="14.8" cy="11.1" r="2.2"/>' +
+             '<path d="M7.2 12.4 5.2 18.4M7.2 12.4l2.6 5.8"/>' +
+             '<path d="M20.8 9V4.4"/><path d="M19.2 6 20.8 4.4 22.4 6"/>',
+  fistDown:  '<circle cx="7.2" cy="5.2" r="1.9"/><path d="M7.2 7.4v5"/>' +
+             '<path d="M7.2 8.4l5.8 2.2"/><circle cx="14.8" cy="11.1" r="2.2"/>' +
+             '<path d="M7.2 12.4 5.2 18.4M7.2 12.4l2.6 5.8"/>' +
+             '<path d="M20.8 4.4V9"/><path d="M19.2 7.4 20.8 9 22.4 7.4"/>',
+  fistSide:  '<circle cx="7.2" cy="5.2" r="1.9"/><path d="M7.2 7.4v5"/>' +
+             '<path d="M7.2 8.4l5.8 2.2"/><circle cx="14.8" cy="11.1" r="2.2"/>' +
+             '<path d="M7.2 12.4 5.2 18.4M7.2 12.4l2.6 5.8"/>' +
+             '<path d="M18.4 7h4.2"/><path d="M20.8 5.2 22.6 7l-1.8 1.8"/>',
+  /* изобретение: лампочка (идея) слева, справа — отметка варианта */
+  bulb:      '<path d="M8.2 5.4a4.2 4.2 0 0 0-2.5 7.6c.45.4.7.85.7 1.4v.35h3.6v-.35c0-.55.25-1 .7-1.4a4.2 4.2 0 0 0-2.5-7.6Z"/>' +
+             '<path d="M6.8 17.4h2.8M7.3 19.4h1.8"/>',
+  bulbLoop:  '<path d="M8.2 5.4a4.2 4.2 0 0 0-2.5 7.6c.45.4.7.85.7 1.4v.35h3.6v-.35c0-.55.25-1 .7-1.4a4.2 4.2 0 0 0-2.5-7.6Z"/>' +
+             '<path d="M6.8 17.4h2.8M7.3 19.4h1.8"/>' +
+             '<path d="M22 17.8a3.4 3.4 0 1 1-1.4-2.8"/><path d="M20.7 15v-2.2M20.7 12.8l1.9 1.2"/>',
+  bulbUp:    '<path d="M8.2 5.4a4.2 4.2 0 0 0-2.5 7.6c.45.4.7.85.7 1.4v.35h3.6v-.35c0-.55.25-1 .7-1.4a4.2 4.2 0 0 0-2.5-7.6Z"/>' +
+             '<path d="M6.8 17.4h2.8M7.3 19.4h1.8"/><path d="M19 15.4v-5.4"/><path d="M17.2 12.2 19 10.4 20.8 12.2"/>',
+  bulbDbl:   '<path d="M8.2 5.4a4.2 4.2 0 0 0-2.5 7.6c.45.4.7.85.7 1.4v.35h3.6v-.35c0-.55.25-1 .7-1.4a4.2 4.2 0 0 0-2.5-7.6Z"/>' +
+             '<path d="M6.8 17.4h2.8M7.3 19.4h1.8"/><path d="M15 13.4 17.6 10.8 20.2 13.4"/><path d="M15 9 17.6 6.4 20.2 9"/>',
+  bulbStar:  '<path d="M8.2 5.4a4.2 4.2 0 0 0-2.5 7.6c.45.4.7.85.7 1.4v.35h3.6v-.35c0-.55.25-1 .7-1.4a4.2 4.2 0 0 0-2.5-7.6Z"/>' +
+             '<path d="M6.8 17.4h2.8M7.3 19.4h1.8"/><path d="m18.4 7 1 2.2 2.4.3-1.8 1.7.5 2.3-2.1-1.2-2.1 1.2.5-2.3-1.8-1.7 2.4-.3z"/>',
+  /* изобрёл: лампочка загорелась — та же лампочка, но с лучами */
+  bulbLit:   '<path d="M12 6.4a4.4 4.4 0 0 0-2.6 8c.5.4.8 1 .8 1.5v.3h3.6v-.3c0-.5.3-1.1.8-1.5a4.4 4.4 0 0 0-2.6-8Z"/>' +
+             '<path d="M10.4 18.4h3.2M10.9 20.6h2.2"/>' +
+             '<path d="M12 3.6V2.2M5.3 6.4 4.3 5.4M18.7 6.4l1-1M2.8 12.6h1.4M19.8 12.6h1.4"/>',
+  /* крутилка: круговая стрелка вокруг рукоятки */
+  crank:     '<path d="M19.8 12a7.8 7.8 0 1 1-2.6-5.8"/><path d="M17.2 6.2 17.2 2.8M17.2 2.8 20.6 5"/>' +
+             '<path d="M12 9.4v5.2M9.4 12h5.2"/>'
+};
+function svg(parts) {
+  /* Разворачиваем вложенные массивы: иначе join склеит их запятыми-глифами. */
+  const flat = [];
+  for (const part of parts) {
+    if (Array.isArray(part)) { for (const sub of part) flat.push(sub); }
+    else flat.push(part);
+  }
+  return '<svg viewBox="0 0 24 24" aria-hidden="true">' + flat.join("") + '</svg>';
+}
+/* ===================== анимации ===================== */
+/* Цепочки: «на стену» — начало цепочек на стене, «со стены» — конец.
+   turn: +1 — поворот налево, -1 — направо; новое направление сохраняется.
+   exit: что проиграть, если анимацию прервали повторным нажатием.
+
+   Поворот в вершинах клипов не зашит: в исходных данных он лежит в
+   extra.vec_b клипа (угол за кадровый интервал), поэтому страница
+   доворачивает модель сама. Роли поворотов взяты из оригинальной игры
+   (Diggles\data\Scripts\classes\zwerg\z_anims.tcl):
+     turnleft     -> mann.drehen_links       (поворот на 90° влево,  turn: 0.5)
+     turn180left  -> mann.drehen_ganz_links  (разворот на 180° влево, turn: 1)
+     turnright    -> mann.drehen_rechts      (поворот на 90° вправо,  turn: -0.5)
+     turn180right -> mann.drehen_ganz        (разворот на 180° вправо, turn: -1)
+   turn — доля от полуоборота (0.5 = 90°, 1 = 180°).
+   Знак heading: положительный = поворот влево (godot\scripts\native_wild_hamster.gd,
+   heading = atan2(dir.x, dir.z)). */
+const EXIT_WALL = [["kletter_runter_loop", 1], ["kletterstand_zu_stand", 1]];
+const EXIT_SLEEP = [["schlafen_zu_stand", 1]];
+const ANIMATIONS = [
+  {id:"walk",   label:"Ходьба",                 icon:P.boot,
+   seq:[["gehen_start",1],["gehen_loop",4],["gehen_end",1]]},
+  {id:"run",    label:"Бег",                    icon:[P.runBody, P.speed],
+   seq:[["laufen_schnell_start",1],["laufen_schnell_loop",4],["laufen_schnell_end",1]]},
+  {id:"turnL",  label:"Поворот влево",          icon:[P.turnL90], turn: 0.5,
+   seq:[["drehen_links",1]]},
+  {id:"turnL2", label:"Разворот влево",         icon:[P.turnL180], turn: 1,
+   seq:[["drehen_ganz_links",1]]},
+  {id:"turnR",  label:"Поворот вправо",         icon:[P.turnR90], turn: -0.5,
+   seq:[["drehen_rechts",1]]},
+  {id:"turnR2", label:"Разворот вправо",        icon:[P.turnR180], turn: -1,
+   seq:[["drehen_ganz",1]]},
+  {id:"clUp",   label:"Ползти вверх",           icon:[P.ladder, P.arrowU], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_hoch_loop",3],["kletterstand_zu_stand",1]]},
+  {id:"clDown", label:"Ползти вниз",            icon:[P.ladder, P.arrowD], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_runter_loop",3],["kletterstand_zu_stand",1]]},
+  {id:"clLeft", label:"Ползти влево",           icon:[P.ladder, P.arrowL], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_links_loop",3],["kletterstand_zu_stand",1]]},
+  {id:"clRight",label:"Ползти вправо",          icon:[P.ladder, P.arrowR], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_rechts_loop",3],["kletterstand_zu_stand",1]]},
+  {id:"clUpF",  label:"Быстро вверх",           icon:[P.ladder, P.dblU], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_hoch_schnell",5],["kletterstand_zu_stand",1]]},
+  {id:"clDownF",label:"Быстро вниз",            icon:[P.ladder, P.dblD], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_runter_schnell",5],["kletterstand_zu_stand",1]]},
+  {id:"clLftF", label:"Быстро влево",           icon:[P.ladder, P.dblL], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_links_schnell",5],["kletterstand_zu_stand",1]]},
+  {id:"clRgtF", label:"Быстро вправо",          icon:[P.ladder, P.dblR], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_rechts_schnell",5],["kletterstand_zu_stand",1]]},
+  {id:"wdUp",   label:"Копать в стену вверх",   icon:[P.bricks, P.arrowU2], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_hack_oben",2],["kletterstand_zu_stand",1]]},
+  {id:"wdDown", label:"Копать в стену вниз",    icon:[P.bricks, P.arrowD2], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_hack_unten",2],["kletterstand_zu_stand",1]]},
+  {id:"wdLeft", label:"Копать в стену влево",   icon:[P.bricks, P.arrowL2], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_hack_links",2],["kletterstand_zu_stand",1]]},
+  {id:"wdRight",label:"Копать в стену вправо",  icon:[P.bricks, P.arrowR2], exit: EXIT_WALL,
+   seq:[["stand_zu_kletterstand",1],["kletterstand",1],["kletter_hack_rechts",2],["kletterstand_zu_stand",1]]},
+  /* Работа киркой на полу: кирку достаём и убираем вокруг самого удара,
+     варианты «a»/«b» — как в игре (b у копания вперёд и застревания вниз). */
+  {id:"digUp",  label:"Копать вверх",           icon:[P.pick, P.arrowU],
+   seq:[["werkzeug_raus_a",1],["buddeln_oben_normal",4],["werkzeug_weg_a",1]]},
+  {id:"digFr",  label:"Копать вперёд",          icon:[P.pick, P.arrowR],
+   seq:[["werkzeug_raus_b",1],["buddeln_vorn",4],["werkzeug_weg_b",1]]},
+  {id:"digDn",  label:"Копать вниз",            icon:[P.pick, P.arrowD],
+   seq:[["werkzeug_raus_a",1],["buddeln_unten",4],["werkzeug_weg_a",1]]},
+  {id:"accUp",  label:"Застревание вверх",      icon:[P.pick, P.star],
+   seq:[["werkzeug_raus_a",1],["buddeln_oben_norm_unfall",1],["werkzeug_weg_a",1]]},
+  {id:"accDn",  label:"Застревание вниз",       icon:[P.pick, P.bang],
+   seq:[["werkzeug_raus_b",1],["buddeln_unten_unfall",1],["werkzeug_weg_b",1]]},
+  {id:"sleep",  label:"Сон",                    icon:[P.bed], exit: EXIT_SLEEP,
+   seq:[["stand_zu_schlafen",1],["schlafen_boden_loop",4],["schlafen_zu_stand",1]]},
+  /* Бой. Роли из оригинальной игры (z_anims.tcl, блок «Kampf-Animationen»):
+       punch -> mann.boxen, puncha -> mann.schlagen_a,
+       punchc -> mann.schlagen_c, punchside -> mann.schlagen_zur_seite. */
+  {id:"hitBox", label:"Бой: удар кулаком",        icon:P.fistHit,
+   seq:[["boxen",1]]},
+  {id:"hitA",   label:"Бой: удар снизу вверх",     icon:P.fistUp,
+   seq:[["schlagen_a",1]]},
+  {id:"hitC",   label:"Бой: удар сверху вниз",     icon:P.fistDown,
+   seq:[["schlagen_c",1]]},
+  {id:"hitSide",label:"Бой: удар в сторону",      icon:P.fistSide,
+   seq:[["schlagen_zur_seite",1]]},
+  /* Изобретение. Роли: invent_a -> mann.erfinden_a, invent_b -> mann.erfinden_b,
+     invent_c -> mann.erfinden_c, invent_brains -> mann.erfinden_brains,
+     invent_done -> mann.erfinden_geschafft.
+     erfinden_a и erfinden_brains — это и есть «гуляние по кругу»: центр тела
+     за 31 кадр обходит полный круг вокруг точки изобретения. */
+  {id:"invA",   label:"Изобретение: обход по кругу", icon:P.bulbLoop,
+   seq:[["erfinden_a",1]]},
+  {id:"invBrain",label:"Изобретение: размышление на ходу", icon:P.bulbStar,
+   seq:[["erfinden_brains",1]]},
+  {id:"invB",   label:"Изобретение: работа на месте", icon:P.bulbUp,
+   seq:[["erfinden_b",1]]},
+  {id:"invC",   label:"Изобретение: работа на месте (взмах)", icon:P.bulbDbl,
+   seq:[["erfinden_c",1]]},
+  {id:"invDone",label:"Изобрёл!",                 icon:P.bulbLit,
+   seq:[["erfinden_geschafft",1]]},
+  /* Крутилка: гном вращает механизм (windstart/windloop/windend -> mann.kurbeln_*). */
+  {id:"crank",  label:"Крутилка",                 icon:P.crank,
+   seq:[["kurbeln_start",1],["kurbeln_loop",4],["kurbeln_end",1]]}
+];
+
+/* ===================== кнопки ленты ===================== */
+/* Кнопок меньше, чем анимаций: часть кнопок циклическая — после выполнения
+   своей анимации кнопка показывает следующий вариант по своей схеме. */
+const CYCLE_GROUPS = {
+  wall:      ["clUp", "clDown", "clLeft", "clRight",
+              "clUpF", "clDownF", "clLftF", "clRgtF"],
+  wallDig:   ["wdUp", "wdDown", "wdLeft", "wdRight"],
+  dig:       ["digUp", "digFr", "digDn", "accUp", "accDn"],
+  fight:     ["hitBox", "hitA", "hitC", "hitSide"],
+  invent:    ["invA", "invBrain", "invB", "invC", "invDone"]
+};
+const BUTTONS = [
+  {id:"walk"}, {id:"run"},
+  {id:"turnL"}, {id:"turnL2"}, {id:"turnR"}, {id:"turnR2"},
+  {id:"wall", cycle:true}, {id:"wallDig", cycle:true},
+  {id:"dig", cycle:true}, {id:"fight", cycle:true}, {id:"invent", cycle:true},
+  {id:"crank"}, {id:"sleep"}
+];
+const cyclePos = {};
+for (const group in CYCLE_GROUPS) cyclePos[group] = 0;
+/* ===================== декодер ===================== */
+const NORMAL_TABLE = PAYLOAD.normalTable;
+
+function decodeClips(b64) {
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  const view = new DataView(bytes.buffer);
+  const decoder = new TextDecoder();
+  let offset = 4;
+  view.getUint32(offset, true); offset += 4;
+  const clipCount = view.getUint32(offset, true); offset += 4;
+  const clips = {};
+  for (let c = 0; c < clipCount; c++) {
+    const nameLen = view.getUint32(offset, true); offset += 4;
+    const name = decoder.decode(bytes.subarray(offset, offset + nameLen)); offset += nameLen;
+    const frameCount = view.getUint32(offset, true); offset += 4;
+    const surfaceCount = view.getUint32(offset, true); offset += 4;
+    const fps = view.getFloat32(offset, true); offset += 4;
+    const scale = view.getFloat32(offset, true); offset += 4;
+    const center = [view.getFloat32(offset, true), view.getFloat32(offset + 4, true),
+                    view.getFloat32(offset + 8, true)];
+    offset += 12;
+    const height = view.getFloat32(offset, true); offset += 4;
+    const surfaces = [];
+    for (let s = 0; s < surfaceCount; s++) {
+      const pointCount = view.getUint32(offset, true); offset += 4;
+      const indexCount = view.getUint32(offset, true); offset += 4;
+      const textureIndex = bytes[offset]; offset += 1;
+      const indices = new Uint16Array(indexCount);
+      for (let i = 0; i < indexCount; i++) { indices[i] = view.getUint16(offset, true); offset += 2; }
+      surfaces.push({pointCount: pointCount, indexCount: indexCount,
+                     textureIndex: textureIndex, indices: indices});
+    }
+    const frames = [];
+    for (let f = 0; f < frameCount; f++) {
+      const perSurface = [];
+      for (const s of surfaces) {
+        const positions = new Float32Array(s.pointCount * 3);
+        for (let i = 0; i < s.pointCount * 3; i++) { positions[i] = view.getInt16(offset, true); offset += 2; }
+        const uvs = new Float32Array(s.pointCount * 2);
+        for (let i = 0; i < s.pointCount * 2; i++) { uvs[i] = view.getInt16(offset, true) / 32767.0; offset += 2; }
+        const bright = new Uint8Array(s.pointCount);
+        for (let i = 0; i < s.pointCount; i++) { bright[i] = bytes[offset + i]; }
+        offset += s.pointCount;
+        perSurface.push({positions: positions, uvs: uvs, bright: bright});
+      }
+      frames.push(perSurface);
+    }
+    clips[name] = {name: name, fps: fps, scale: scale, center: center, height: height,
+                    frames: frames, surfaces: surfaces, frameCount: frameCount,
+                    buffers: [], ebos: []};
+  }
+  return clips;
+}
+const CLIPS = decodeClips(CLIPS_B64);
+
+/* ===================== математика ===================== */
+function vsub(a, b) { return {x: a.x - b.x, y: a.y - b.y, z: a.z - b.z}; }
+function vscale(a, s) { return {x: a.x * s, y: a.y * s, z: a.z * s}; }
+function vlen(a) { return Math.sqrt(a.x * a.x + a.y * a.y + a.z * a.z); }
+function vnorm(a) { const l = vlen(a); return l > 1e-9 ? vscale(a, 1.0 / l) : {x: 0, y: 0, z: 0}; }
+function vdot(a, b) { return a.x * b.x + a.y * b.y + a.z * b.z; }
+function vcross(a, b) { return {x: a.y * b.z - a.z * b.y, y: a.z * b.x - a.x * b.z, z: a.x * b.y - a.y * b.x}; }
+function wrapAngle(a) { while (a > Math.PI) a -= Math.PI * 2; while (a < -Math.PI) a += Math.PI * 2; return a; }
+function mat4Multiply(a, b) {
+  const o = new Float32Array(16);
+  for (let c = 0; c < 4; c++) {
+    for (let r = 0; r < 4; r++) {
+      o[c * 4 + r] = a[r] * b[c * 4] + a[4 + r] * b[c * 4 + 1] +
+                     a[8 + r] * b[c * 4 + 2] + a[12 + r] * b[c * 4 + 3];
+    }
+  }
+  return o;
+}
+function mat4Perspective(fovy, aspect, near, far) {
+  const f = 1.0 / Math.tan(fovy / 2.0);
+  const o = new Float32Array(16);
+  o[0] = f / aspect; o[5] = f; o[10] = (far + near) / (near - far); o[11] = -1.0;
+  o[14] = 2.0 * far * near / (near - far);
+  return o;
+}
+function mat4LookAt(eye, center, up) {
+  const z = vnorm(vsub(eye, center));
+  const x = vnorm(vcross(up, z));
+  const y = vcross(z, x);
+  const o = new Float32Array(16);
+  o[0] = x.x; o[4] = x.y; o[8] = x.z; o[12] = -vdot(x, eye);
+  o[1] = y.x; o[5] = y.y; o[9] = y.z; o[13] = -vdot(y, eye);
+  o[2] = z.x; o[6] = z.y; o[10] = z.z; o[14] = -vdot(z, eye);
+  o[15] = 1.0;
+  return o;
+}
+/* Модель гнома: X — вправо, Y — вверх, Z — вперёд (как в исходной сборке). */
+function dwarfMatrix(pos, heading, scale, center, height) {
+  const c = Math.cos(heading), s = Math.sin(heading);
+  const m = new Float32Array(16);
+  m[0] = c * scale; m[1] = 0; m[2] = -s * scale;
+  m[4] = 0; m[5] = scale; m[6] = 0;
+  m[8] = s * scale; m[9] = 0; m[10] = c * scale;
+  const ax = c * scale * center[0] + s * scale * center[2];
+  const ay = scale * center[1];
+  const az = -s * scale * center[0] + c * scale * center[2];
+  m[12] = pos.x - ax;
+  m[13] = pos.y - ay + scale * height * 0.5;
+  m[14] = pos.z - az; m[15] = 1;
+  return m;
+}
+
+/* ===================== WebGL ===================== */
+const canvas = document.getElementById("view");
+const gl = canvas.getContext("webgl", {antialias: true, alpha: false});
+if (!gl) {
+  document.body.classList.add("err");
+  throw new Error("no webgl");
+}
+function compile(type, source) {
+  const shader = gl.createShader(type);
+  gl.shaderSource(shader, source);
+  gl.compileShader(shader);
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    throw new Error("shader: " + gl.getShaderInfoLog(shader));
+  }
+  return shader;
+}
+function program(vs, fs) {
+  const p = gl.createProgram();
+  gl.attachShader(p, compile(gl.VERTEX_SHADER, vs));
+  gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(p);
+  if (!gl.getProgramParameter(p, gl.LINK_STATUS)) {
+    throw new Error("link: " + gl.getProgramInfoLog(p));
+  }
+  return p;
+}
+const prog = program(
+  "attribute vec3 a_pos; attribute vec2 a_uv; attribute vec3 a_normal;" +
+  "uniform mat4 u_mvp; uniform mat4 u_model;" +
+  "varying vec2 v_uv; varying vec3 v_normal;" +
+  "void main() { v_uv = a_uv; v_normal = mat3(u_model) * a_normal;" +
+  "  gl_Position = u_mvp * vec4(a_pos, 1.0); }",
+  "precision mediump float; varying vec2 v_uv; varying vec3 v_normal;" +
+  "uniform sampler2D u_tex; uniform vec3 u_tint; uniform vec3 u_light; uniform float u_ambient;" +
+  "void main() { vec4 c = texture2D(u_tex, v_uv);" +
+  "  if (c.a < 0.35) discard;" +
+  "  vec3 n = normalize(v_normal);" +
+  "  float d = max(dot(n, normalize(u_light)), 0.0);" +
+  "  float lit = u_ambient + (1.0 - u_ambient) * d;" +
+  "  gl_FragColor = vec4(c.rgb * lit * u_tint, c.a); }");
+const A = {
+  mvp: gl.getUniformLocation(prog, "u_mvp"),
+  model: gl.getUniformLocation(prog, "u_model"),
+  tint: gl.getUniformLocation(prog, "u_tint"),
+  tex: gl.getUniformLocation(prog, "u_tex"),
+  light: gl.getUniformLocation(prog, "u_light"),
+  ambient: gl.getUniformLocation(prog, "u_ambient"),
+  pos: gl.getAttribLocation(prog, "a_pos"),
+  uv: gl.getAttribLocation(prog, "a_uv"),
+  normal: gl.getAttribLocation(prog, "a_normal")
+};
+const LIGHT_DIR = {x: -0.42, y: 0.84, z: 0.34};
+
+const textures = PAYLOAD.textures.map(function (t) {
+  return {handle: gl.createTexture(), name: t.name, png: t.png, image: new Image()};
+});
+function loadTextures() {
+  return Promise.all(textures.map(function (t) {
+    return new Promise(function (resolve, reject) {
+      t.image.onload = function () {
+        gl.bindTexture(gl.TEXTURE_2D, t.handle);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, t.image);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        resolve();
+      };
+      t.image.onerror = reject;
+      t.image.src = t.png;
+    });
+  }));
+}
+
+/* ===================== буферы ===================== */
+function frameBuffer(clip, frameIndex, surfaceIndex) {
+  if (clip.buffers[frameIndex] && clip.buffers[frameIndex][surfaceIndex]) {
+    return clip.buffers[frameIndex][surfaceIndex];
+  }
+  const surface = clip.surfaces[surfaceIndex];
+  const frame = clip.frames[frameIndex][surfaceIndex];
+  const count = surface.pointCount;
+  const data = new Float32Array(count * 8);
+  for (let i = 0; i < count; i++) {
+    data[i * 8 + 0] = frame.positions[i * 3 + 0];
+    data[i * 8 + 1] = frame.positions[i * 3 + 1];
+    data[i * 8 + 2] = frame.positions[i * 3 + 2];
+    data[i * 8 + 3] = frame.uvs[i * 2 + 0];
+    data[i * 8 + 4] = frame.uvs[i * 2 + 1];
+    const normal = NORMAL_TABLE[frame.bright[i]] || [0, 1, 0];
+    data[i * 8 + 5] = normal[0];
+    data[i * 8 + 6] = -normal[1];
+    data[i * 8 + 7] = normal[2];
+  }
+  const vbo = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
+  gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+  if (!clip.buffers[frameIndex]) clip.buffers[frameIndex] = [];
+  clip.buffers[frameIndex][surfaceIndex] = vbo;
+  return vbo;
+}
+function surfaceEbo(clip, surfaceIndex) {
+  if (!clip.ebos[surfaceIndex]) {
+    const ebo = gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ebo);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, clip.surfaces[surfaceIndex].indices, gl.STATIC_DRAW);
+    clip.ebos[surfaceIndex] = ebo;
+  }
+  return clip.ebos[surfaceIndex];
+}
+
+/* ===================== сцена ===================== */
+const scene = {pos: {x: 0, y: 0, z: 0}, heading: 0.0, clipName: "stand_anim_b", frame: 0};
+const camera = {yaw: -0.55, pitch: 0.22, distance: 2.0, target: {x: 0, y: 0.6, z: 0}};
+let paused = false;
+let speed = 1.0;
+
+/* ===================== проигрыватель ===================== */
+/* Очередь анимаций (как у хомяка): клик во время проигрывания не прерывает текущую
+   анимацию, а ставит новую в очередь — она стартует, когда текущая доиграет. */
+const player = {queue: [], current: null, frame: 0, time: 0.0, repeatLeft: 1, activeId: null, finished: false,
+                turn: null, exit: false};
+const pendingQueue = [];
+const IDLE_CLIP = "stand_anim_b";
+
+/* Запуск последовательности клипов. exit: true — это «выход» из прерванной
+   анимации (прыжок со стены, подъём после сна). */
+function startSequence(seq, id, isExit) {
+  player.queue = [];
+  for (const entry of seq) {
+    const count = entry[1];
+    if (count === 0) {
+      player.queue.push({clip: entry[0], repeat: Infinity});
+    } else {
+      for (let i = 0; i < count; i++) player.queue.push({clip: entry[0], repeat: 1});
+    }
+  }
+  player.current = null;
+  player.frame = 0;
+  player.time = 0.0;
+  player.finished = false;
+  player.activeId = id;
+  player.exit = !!isExit;
+  player.turn = null;
+  if (!isExit) {
+    const found = ANIMATIONS.find(function (a) { return a.id === id; });
+    if (found && found.turn) {
+      /* Поворот: модель доворачивается на ходу клипа, а новое направление
+         сохраняется после анимации. */
+      player.turn = {angle: found.turn * Math.PI, clip: found.seq[0][0]};
+    }
+  }
+  syncButtons();
+}
+
+function playAnimation(animation) {
+  startSequence(animation.seq, animation.id, false);
+}
+
+/* Клик по иконке: если сейчас играет анимация — в очередь, иначе запустить сразу.
+   Повторный клик по той же кнопке останавливает её или снимает из очереди. */
+function requestAnimation(animation) {
+  if (player.activeId === animation.id) {
+    if (player.exit) { stopAnimation(); return; }
+    if (animation.exit && animation.exit.length) {
+      /* Прервать на стене — сначала спрыгнуть вниз, сна — сначала встать. */
+      startSequence(animation.exit, animation.id, true);
+      return;
+    }
+    stopAnimation();
+    return;
+  }
+  const queuedAt = pendingQueue.indexOf(animation.id);
+  if (queuedAt >= 0) {
+    pendingQueue.splice(queuedAt, 1);
+    syncButtons();
+    return;
+  }
+  if (player.activeId) {
+    pendingQueue.push(animation.id);
+    syncButtons();
+    return;
+  }
+  playAnimation(animation);
+}
+
+/* Остановка текущей анимации: дальше идёт следующая из очереди, иначе — простой. */
+function stopAnimation() {
+  player.finished = true;
+  nextAnimation();
+}
+
+function updatePlayer(delta) {
+  /* Анимация отыграла до конца — держим последний кадр, гном остаётся на экране. */
+  if (player.finished) return;
+  if (!player.current) {
+    if (!player.queue.length) { nextAnimation(); return; }
+    const next = player.queue.shift();
+    player.current = next.clip;
+    player.repeatLeft = next.repeat;
+    player.frame = 0;
+    player.time = 0.0;
+  }
+  const clip = CLIPS[player.current];
+  if (!clip) { player.current = null; return; }
+  player.time += delta;
+  let frame = Math.floor(player.time * clip.fps);
+  if (frame >= clip.frameCount) {
+    if (player.repeatLeft > 1) {
+      player.repeatLeft -= 1;
+      player.time -= clip.frameCount / clip.fps;
+      frame = Math.floor(player.time * clip.fps);
+    } else if (player.repeatLeft === Infinity) {
+      player.time -= clip.frameCount / clip.fps;
+      frame = Math.floor(player.time * clip.fps);
+    } else {
+      if (player.queue.length) {
+        player.current = null;          /* переходим к следующему клипу очереди */
+      } else {
+        player.finished = true;         /* очередь клипов кончилась */
+      }
+      frame = clip.frameCount - 1;
+    }
+  }
+  player.frame = Math.max(0, Math.min(clip.frameCount - 1, frame));
+  if (player.current) {
+    /* Показываем только кадр того клипа, который реально играет. Между клипами
+       держим последний показанный кадр: иначе проскакивал бы первый кадр
+       предыдущей анимации (гном на мгновение «всплывал» на стену). */
+    scene.clipName = player.current;
+    scene.frame = player.frame;
+  }
+  if (player.finished) {
+    /* Анимация доиграла до конца: поворот сохраняет новое направление,
+       дальше гном продолжает смотреть туда же, куда повернулся. */
+    if (player.turn) scene.heading += player.turn.angle;
+    player.turn = null;
+    nextAnimation();
+  }
+}
+
+/* Текущая анимация доиграла: запускаем следующую из очереди, иначе возвращаемся к простою. */
+function nextAnimation() {
+  player.finished = false;
+  player.exit = false;
+  /* Кнопка циклической группы заменяется следующим вариантом после выполнения
+     своей анимации (и после выхода из неё, если она была прервана). */
+  if (player.activeId && advanceCycle(player.activeId)) syncButtons();
+  if (pendingQueue.length) {
+    const id = pendingQueue.shift();
+    const found = ANIMATIONS.find(function (a) { return a.id === id; });
+    if (found) { playAnimation(found); return; }
+  }
+  /* Очередь пуста — гном возвращается к спокойному простою и не исчезает. */
+  player.activeId = null;
+  player.turn = null;
+  player.queue = [{clip: IDLE_CLIP, repeat: Infinity}];
+  player.current = null;
+  player.frame = 0;
+  player.time = 0.0;
+  syncButtons();
+}
+
+/* ===================== лента ===================== */
+const strip = document.getElementById("strip");
+const iconRow = document.getElementById("icons");
+const buttons = [];
+
+function animById(id) {
+  for (let i = 0; i < ANIMATIONS.length; i++) {
+    if (ANIMATIONS[i].id === id) return ANIMATIONS[i];
+  }
+  return null;
+}
+/* Текущая анимация кнопки: у циклической — вариант по позиции в схеме. */
+function buttonAnim(button) {
+  const cycle = CYCLE_GROUPS[button.dataset.anim];
+  if (!cycle) return animById(button.dataset.anim);
+  return animById(cycle[cyclePos[button.dataset.anim] % cycle.length]);
+}
+/* Кнопка циклической группы заменяется следующим вариантом, когда её
+   анимация выполнена: ползти -> быстро -> копать в стену -> снова ползти. */
+function advanceCycle(animId) {
+  for (const group in CYCLE_GROUPS) {
+    const cycle = CYCLE_GROUPS[group];
+    const pos = cyclePos[group] % cycle.length;
+    if (cycle[pos] !== animId) continue;
+    cyclePos[group] = (pos + 1) % cycle.length;
+    return true;
+  }
+  return false;
+}
+function buildStrip() {
+  for (const entry of BUTTONS) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.anim = entry.id;
+    button.addEventListener("click", function () {
+      paused = false;
+      const anim = buttonAnim(button);
+      if (anim) requestAnimation(anim);
+    });
+    iconRow.appendChild(button);
+    buttons.push(button);
+  }
+  syncButtons();
+}
+function syncButtons() {
+  for (const button of buttons) {
+    const anim = buttonAnim(button);
+    if (anim) {
+      button.title = anim.label;
+      button.setAttribute("aria-label", anim.label);
+      button.innerHTML = svg(anim.icon);
+    }
+    const id = anim ? anim.id : "";
+    button.classList.toggle("is-playing", id === player.activeId);
+    button.classList.toggle("is-queued", pendingQueue.indexOf(id) >= 0);
+  }
+}
+
+/* ===================== камера ===================== */
+const pointers = new Map();
+let yawVelocity = 0, pitchVelocity = 0, lastMoveTime = 0;
+const clampPitch = function (v) { return Math.max(0.05, Math.min(1.4, v)); };
+const clampDistance = function (v) { return Math.max(0.8, Math.min(20.0, v)); };
+const stopOrbit = function () { yawVelocity = 0; pitchVelocity = 0; };
+function pinchSpan() {
+  const values = Array.from(pointers.values());
+  return Math.max(1, Math.hypot(values[0].x - values[1].x, values[0].y - values[1].y));
+}
+canvas.addEventListener("pointerdown", function (event) {
+  if (event.pointerType === "mouse" && event.button !== 0) return;
+  if (pointers.size >= 2) return;
+  pointers.set(event.pointerId, {x: event.clientX, y: event.clientY, time: event.timeStamp});
+  canvas.setPointerCapture(event.pointerId);
+  stopOrbit();
+  lastMoveTime = 0;
+});
+canvas.addEventListener("pointermove", function (event) {
+  const prev = pointers.get(event.pointerId);
+  if (!prev) return;
+  const oldSpan = pointers.size === 2 ? pinchSpan() : 0;
+  pointers.set(event.pointerId, {x: event.clientX, y: event.clientY, time: event.timeStamp});
+  if (pointers.size === 2) {
+    camera.distance = clampDistance(camera.distance * oldSpan / pinchSpan());
+    stopOrbit();
+    return;
+  }
+  const dyaw = -(event.clientX - prev.x) * 0.006;
+  const dpitch = (event.clientY - prev.y) * 0.005;
+  const oldPitch = camera.pitch;
+  camera.yaw = wrapAngle(camera.yaw + dyaw);
+  camera.pitch = clampPitch(camera.pitch + dpitch);
+  const dt = Math.max(0.008, (event.timeStamp - prev.time) / 1000);
+  const limit = function (v) { return Math.max(-2.6, Math.min(2.6, v)); };
+  if (event.pointerType !== "mouse") {
+    yawVelocity = limit(0.45 * yawVelocity + 0.55 * dyaw / dt);
+    pitchVelocity = limit(0.45 * pitchVelocity + 0.55 * (camera.pitch - oldPitch) / dt);
+  }
+  lastMoveTime = event.timeStamp;
+});
+function endPointer(event) {
+  if (!pointers.has(event.pointerId)) return;
+  pointers.delete(event.pointerId);
+  if (event.type !== "pointerup" || pointers.size || !lastMoveTime ||
+      event.timeStamp - lastMoveTime > 80) stopOrbit();
+}
+canvas.addEventListener("pointerup", endPointer);
+canvas.addEventListener("pointercancel", endPointer);
+canvas.addEventListener("lostpointercapture", endPointer);
+window.addEventListener("blur", function () { pointers.clear(); stopOrbit(); });
+function updateOrbit(delta) {
+  if (pointers.size) return;
+  const decay = Math.exp(-delta / 0.10);
+  const step = 0.10 * (1 - decay);
+  camera.yaw = wrapAngle(camera.yaw + yawVelocity * step);
+  camera.pitch = clampPitch(camera.pitch + pitchVelocity * step);
+  yawVelocity *= decay;
+  pitchVelocity *= decay;
+}
+canvas.addEventListener("wheel", function (event) {
+  event.preventDefault();
+  camera.distance = clampDistance(camera.distance + event.deltaY * 0.008);
+}, {passive: false});
+window.addEventListener("keydown", function (event) {
+  if (event.key === " ") paused = !paused;
+  if (event.key === "f" || event.key === "F") {
+    camera.yaw = -0.55; camera.pitch = 0.22; camera.distance = 2.0; scene.heading = 0.0;
+  }
+});
+
+/* ===================== отрисовка ===================== */
+/* Поворот во время клипа поворота: модель доворачивается от 0 до угла. */
+function turnOffset() {
+  if (!player.turn || player.current !== player.turn.clip) return 0.0;
+  const clip = CLIPS[player.current];
+  if (!clip || clip.frameCount < 2) return player.turn.angle;
+  return player.turn.angle * (player.frame / (clip.frameCount - 1));
+}
+
+function drawDwarf(viewProjection) {
+  const clip = CLIPS[scene.clipName];
+  if (!clip) return;
+  const frameIndex = Math.max(0, Math.min(clip.frameCount - 1, scene.frame));
+  const matrix = dwarfMatrix(scene.pos, scene.heading + turnOffset(), clip.scale, clip.center, clip.height);
+  const mvp = mat4Multiply(viewProjection, matrix);
+  gl.useProgram(prog);
+  gl.uniformMatrix4fv(A.mvp, false, mvp);
+  gl.uniformMatrix4fv(A.model, false, matrix);
+  gl.uniform3f(A.tint, 1.0, 0.96, 0.9);
+  gl.uniform3f(A.light, LIGHT_DIR.x, LIGHT_DIR.y, LIGHT_DIR.z);
+  gl.uniform1f(A.ambient, 0.55);
+  gl.enableVertexAttribArray(A.pos);
+  gl.enableVertexAttribArray(A.uv);
+  gl.enableVertexAttribArray(A.normal);
+  for (let s = 0; s < clip.surfaces.length; s++) {
+    const surface = clip.surfaces[s];
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, textures[surface.textureIndex].handle);
+    gl.uniform1i(A.tex, 0);
+    gl.bindBuffer(gl.ARRAY_BUFFER, frameBuffer(clip, frameIndex, s));
+    gl.vertexAttribPointer(A.pos, 3, gl.FLOAT, false, 32, 0);
+    gl.vertexAttribPointer(A.uv, 2, gl.FLOAT, false, 32, 12);
+    gl.vertexAttribPointer(A.normal, 3, gl.FLOAT, false, 32, 20);
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, surfaceEbo(clip, s));
+    gl.drawElements(gl.TRIANGLES, surface.indexCount, gl.UNSIGNED_SHORT, 0);
+  }
+}
+
+/* Проецирует точку мира в NDC (x, y в диапазоне [-1, 1]). */
+function projectNdc(mvp, x, y, z) {
+  const w = mvp[3] * x + mvp[7] * y + mvp[11] * z + mvp[15];
+  if (!(w > 1e-6)) return null;
+  return {
+    x: (mvp[0] * x + mvp[4] * y + mvp[8] * z + mvp[12]) / w,
+    y: (mvp[1] * x + mvp[5] * y + mvp[9] * z + mvp[13]) / w
+  };
+}
+
+function drawScene() {
+  const width = canvas.width = Math.round(canvas.clientWidth * devicePixelRatio);
+  const height = canvas.height = Math.round(canvas.clientHeight * devicePixelRatio);
+  gl.viewport(0, 0, width, height);
+  gl.clearColor(0.055, 0.048, 0.042, 1.0);
+  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+  gl.enable(gl.DEPTH_TEST);
+  gl.depthFunc(gl.LEQUAL);
+  gl.disable(gl.CULL_FACE);
+  const target = camera.target;
+  const eye = {
+    x: target.x + Math.sin(camera.yaw) * Math.cos(camera.pitch) * camera.distance,
+    y: target.y + Math.sin(camera.pitch) * camera.distance,
+    z: target.z + Math.cos(camera.yaw) * Math.cos(camera.pitch) * camera.distance
+  };
+  const aspect = width / height;
+  const fovy = Math.max(0.75, 2 * Math.atan(Math.tan(1.02 / 2) / aspect));
+  const projection = mat4Perspective(fovy, aspect, 0.02, 100.0);
+  const view = mat4LookAt(eye, target, {x: 0, y: 1, z: 0});
+  /* Низ модели (y = 0) ставим на «пол» прямо над лентой иконок:
+     гном всегда стоит над иконками, при любом размере окна. */
+  const stripHeight = strip.offsetHeight;
+  const marginPx = Math.max(36, Math.round(height * 0.11));
+  const floorNdc = projectNdc(mat4Multiply(projection, view), scene.pos.x, 0, scene.pos.z);
+  if (floorNdc) {
+    const targetNdc = -1 + 2 * (stripHeight + marginPx) / height;
+    projection[9] = floorNdc.y - targetNdc;
+  }
+  const viewProjection = mat4Multiply(projection, view);
+  drawDwarf(viewProjection);
+}
+
+/* ===================== цикл ===================== */
+let previous = performance.now();
+function frame(now) {
+  const delta = Math.min(0.05, (now - previous) / 1000.0);
+  previous = now;
+  try {
+    if (!paused) updatePlayer(delta * speed);
+    updateOrbit(delta);
+    drawScene();
+  } catch (error) {
+    reportError("frame()", error);
+    return;
+  }
+  requestAnimationFrame(frame);
+}
+
+/* ===================== старт ===================== */
+buildStrip();
+loadTextures().then(function () {
+  document.getElementById("boot").style.display = "none";
+  strip.inert = false;
+  /* Стартуем со спокойного простоя: клик по иконке запускает анимацию сразу. */
+  player.queue = [{clip: IDLE_CLIP, repeat: Infinity}];
+  player.activeId = null;
+  syncButtons();
+  requestAnimationFrame(frame);
+}).catch(function (error) {
+  reportError("loadTextures()", error);
+  document.body.classList.add("err");
+});
+</script>
+</body>
+</html>

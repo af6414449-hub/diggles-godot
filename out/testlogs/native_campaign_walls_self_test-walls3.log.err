@@ -1,0 +1,6 @@
+FAIL: an edge on the west edge of the cell
+FAIL: one step between two cells is one face
+FAIL: the face lies on the side of the lower cell
+FAIL: the normal points into the excavation
+FAIL: the face lies in the plane of the side
+NATIVE_CAMPAIGN_WALLS_SELF_TEST_FAIL failures=5

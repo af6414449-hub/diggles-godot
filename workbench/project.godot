@@ -1,0 +1,18 @@
+; Minimal headless workbench project for the walkmap performance study.
+; It hosts unmodified copies of the native scripts plus the real map data so the
+; benchmark and the equivalence self-test run the production code path.
+
+config_version=5
+
+[application]
+
+config/name="Diggles Walkmap Workbench"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[debug]
+
+file_logging/enable_file_logging.pc=false
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

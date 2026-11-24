@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: AMD - AMD Radeon(TM) Vega 8 Graphics
+
+CAMPAIGN_FIRST_LEVEL_READY seed=0 cells=3447 templates=14 placements=14 objects=277 dwarfs=5 deleted_wuker=6 surfaces=209 triangles=56529
+CAMPAIGN_CHAPTER_SOURCE Campaign.tcl:22-191 first_level seed=0 map=512x640 view={ "x": 246.7, "y": 28.8, "zoom": 1.478, "rx": -0.29, "ry": 0.05 }

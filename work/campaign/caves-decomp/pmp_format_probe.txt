@@ -1,0 +1,1930 @@
+ПРОВЕРКА ФОРМАТА .pmp (спека из Diggles.exe)
+============================================================================
+
+всего .pmp: 90
+
+============================================================================
+FILE: caves_1.pmp
+  size=694  width=12 height=8 cells=96
+  flags: distinct=[(4, 96)]
+  flags&0x7f distinct=[(4, 96)]
+  bit7 set: 0 / 96
+  cellblk distinct=55  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=53  total RLE bytes=6144  (cells=96, delta=+6048)
+  tailbytes distinct=[(0, 14), (1, 1), (2, 3), (4, 71), (6, 5), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 53, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 27), (1, 24), (3, 2)]
+  RLE expanded histogram: [(0, 5232), (1, 792), (3, 120)]
+
+============================================================================
+FILE: caves_2.pmp
+  size=886  width=16 height=8 cells=128
+  flags: distinct=[(4, 128)]
+  flags&0x7f distinct=[(4, 128)]
+  bit7 set: 0 / 128
+  cellblk distinct=20  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=53  total RLE bytes=8192  (cells=128, delta=+8064)
+  tailbytes distinct=[(0, 19), (4, 108), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 53, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 27), (1, 24), (3, 2)]
+  RLE expanded histogram: [(0, 6448), (1, 1560), (3, 184)]
+
+============================================================================
+FILE: caves_3.pmp
+  size=1686  width=20 height=12 cells=240
+  flags: distinct=[(4, 240)]
+  flags&0x7f distinct=[(4, 240)]
+  bit7 set: 0 / 240
+  cellblk distinct=22  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=117  total RLE bytes=15360  (cells=240, delta=+15120)
+  tailbytes distinct=[(0, 27), (4, 212), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 117, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 59), (1, 56), (3, 2)]
+  RLE expanded histogram: [(0, 9528), (1, 5584), (3, 248)]
+
+============================================================================
+FILE: caves_4.pmp
+  size=1878  width=16 height=16 cells=256
+  flags: distinct=[(4, 255), (132, 1)]
+  flags&0x7f distinct=[(4, 256)]
+  bit7 set: 1 / 256
+  cellblk distinct=22  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=165  total RLE bytes=16384  (cells=256, delta=+16128)
+  tailbytes distinct=[(0, 26), (4, 229), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 165, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 83), (1, 80), (3, 2)]
+  RLE expanded histogram: [(0, 10960), (1, 5240), (3, 184)]
+
+============================================================================
+FILE: gng_001.pmp
+  size=146  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=7  sample=(76, 77, 78, 79, 80, 80, 80, 80)
+  tail_count=19  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(0, 1), (2, 4), (3, 1), (4, 10)]
+  leftover bytes after last section: 0
+  RLE runs: 19, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 10), (1, 8), (3, 1)]
+  RLE expanded histogram: [(0, 942), (1, 18), (3, 64)]
+
+============================================================================
+FILE: gng_002.pmp
+  size=230  width=8 height=4 cells=32
+  flags: distinct=[(2, 32)]
+  flags&0x7f distinct=[(2, 32)]
+  bit7 set: 0 / 32
+  cellblk distinct=11  sample=(82, 83, 84, 85, 86, 87, 78, 88)
+  tail_count=13  total RLE bytes=2048  (cells=32, delta=+2016)
+  tailbytes distinct=[(1, 4), (2, 7), (4, 21)]
+  leftover bytes after last section: 0
+  RLE runs: 13, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 7), (1, 5), (3, 1)]
+  RLE expanded histogram: [(0, 1914), (1, 6), (3, 128)]
+
+============================================================================
+FILE: gng_003.pmp
+  size=330  width=12 height=4 cells=48
+  flags: distinct=[(2, 48)]
+  flags&0x7f distinct=[(2, 48)]
+  bit7 set: 0 / 48
+  cellblk distinct=15  sample=(89, 90, 91, 92, 93, 94, 95, 96)
+  tail_count=15  total RLE bytes=3072  (cells=48, delta=+3024)
+  tailbytes distinct=[(1, 3), (2, 15), (4, 30)]
+  leftover bytes after last section: 0
+  RLE runs: 15, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 8), (1, 6), (3, 1)]
+  RLE expanded histogram: [(0, 2867), (1, 13), (3, 192)]
+
+============================================================================
+FILE: gng_004.pmp
+  size=432  width=16 height=4 cells=64
+  flags: distinct=[(2, 64)]
+  flags&0x7f distinct=[(2, 64)]
+  bit7 set: 0 / 64
+  cellblk distinct=18  sample=(101, 96, 102, 103, 104, 105, 106, 107)
+  tail_count=18  total RLE bytes=4096  (cells=64, delta=+4032)
+  tailbytes distinct=[(0, 1), (1, 6), (2, 14), (3, 1), (4, 42)]
+  leftover bytes after last section: 0
+  RLE runs: 18, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 9), (1, 8), (3, 1)]
+  RLE expanded histogram: [(0, 3830), (1, 10), (3, 256)]
+
+============================================================================
+FILE: gng_007.pmp
+  size=238  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=10  sample=(114, 80, 115, 0, 116, 80, 117, 0)
+  tail_count=65  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(0, 1), (1, 2), (2, 2), (3, 1), (4, 10)]
+  leftover bytes after last section: 0
+  RLE runs: 65, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 33), (1, 32)]
+  RLE expanded histogram: [(0, 954), (1, 70)]
+
+============================================================================
+FILE: gng_008.pmp
+  size=462  width=4 height=8 cells=32
+  flags: distinct=[(2, 32)]
+  flags&0x7f distinct=[(2, 32)]
+  bit7 set: 0 / 32
+  cellblk distinct=18  sample=(114, 80, 115, 0, 116, 80, 117, 0)
+  tail_count=129  total RLE bytes=2048  (cells=32, delta=+2016)
+  tailbytes distinct=[(0, 1), (1, 4), (2, 4), (3, 1), (4, 22)]
+  leftover bytes after last section: 0
+  RLE runs: 129, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 65), (1, 64)]
+  RLE expanded histogram: [(0, 1911), (1, 137)]
+
+============================================================================
+FILE: gng_009.pmp
+  size=686  width=4 height=12 cells=48
+  flags: distinct=[(2, 48)]
+  flags&0x7f distinct=[(2, 48)]
+  bit7 set: 0 / 48
+  cellblk distinct=26  sample=(132, 80, 133, 0, 134, 80, 135, 0)
+  tail_count=193  total RLE bytes=3072  (cells=48, delta=+3024)
+  tailbytes distinct=[(0, 1), (1, 6), (2, 8), (3, 1), (4, 32)]
+  leftover bytes after last section: 0
+  RLE runs: 193, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 97), (1, 96)]
+  RLE expanded histogram: [(0, 2853), (1, 219)]
+
+============================================================================
+FILE: gng_010.pmp
+  size=910  width=4 height=16 cells=64
+  flags: distinct=[(2, 64)]
+  flags&0x7f distinct=[(2, 64)]
+  bit7 set: 0 / 64
+  cellblk distinct=34  sample=(132, 80, 133, 0, 134, 80, 135, 0)
+  tail_count=257  total RLE bytes=4096  (cells=64, delta=+4032)
+  tailbytes distinct=[(0, 1), (1, 7), (2, 11), (3, 1), (4, 44)]
+  leftover bytes after last section: 0
+  RLE runs: 257, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 129), (1, 128)]
+  RLE expanded histogram: [(0, 3809), (1, 287)]
+
+============================================================================
+FILE: gng_012.pmp
+  size=166  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=12  sample=(147, 96, 103, 148, 149, 80, 80, 80)
+  tail_count=29  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 2), (2, 5), (4, 9)]
+  leftover bytes after last section: 0
+  RLE runs: 29, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 14), (1, 13), (3, 2)]
+  RLE expanded histogram: [(0, 942), (1, 58), (3, 24)]
+
+============================================================================
+FILE: gng_013.pmp
+  size=176  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=11  sample=(153, 154, 155, 156, 80, 80, 80, 80)
+  tail_count=34  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 1), (2, 4), (4, 11)]
+  leftover bytes after last section: 0
+  RLE runs: 34, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 15), (1, 16), (3, 3)]
+  RLE expanded histogram: [(0, 899), (1, 93), (3, 32)]
+
+============================================================================
+FILE: gng_014.pmp
+  size=170  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=10  sample=(153, 154, 160, 0, 80, 80, 161, 0)
+  tail_count=31  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 1), (2, 4), (4, 11)]
+  leftover bytes after last section: 0
+  RLE runs: 31, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 15), (1, 14), (3, 2)]
+  RLE expanded histogram: [(0, 957), (1, 59), (3, 8)]
+
+============================================================================
+FILE: gng_015.pmp
+  size=242  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=11  sample=(163, 80, 164, 79, 165, 80, 80, 80)
+  tail_count=67  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 2), (2, 4), (4, 10)]
+  leftover bytes after last section: 0
+  RLE runs: 67, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 33), (1, 32), (3, 2)]
+  RLE expanded histogram: [(0, 897), (1, 105), (3, 22)]
+
+============================================================================
+FILE: gng_016.pmp
+  size=242  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=10  sample=(167, 80, 164, 79, 80, 80, 80, 80)
+  tail_count=67  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 1), (2, 4), (4, 11)]
+  leftover bytes after last section: 0
+  RLE runs: 67, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 32), (1, 32), (3, 3)]
+  RLE expanded histogram: [(0, 846), (1, 148), (3, 30)]
+
+============================================================================
+FILE: gng_017.pmp
+  size=242  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=9  sample=(167, 80, 170, 0, 80, 80, 171, 0)
+  tail_count=67  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 1), (2, 3), (4, 12)]
+  leftover bytes after last section: 0
+  RLE runs: 67, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 33), (1, 32), (3, 2)]
+  RLE expanded histogram: [(0, 898), (1, 118), (3, 8)]
+
+============================================================================
+FILE: gng_018.pmp
+  size=206  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=8  sample=(114, 80, 173, 95, 174, 80, 80, 80)
+  tail_count=49  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 1), (2, 4), (4, 11)]
+  leftover bytes after last section: 0
+  RLE runs: 49, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 25), (1, 22), (3, 2)]
+  RLE expanded histogram: [(0, 923), (1, 57), (3, 44)]
+
+============================================================================
+FILE: gng_019.pmp
+  size=212  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=6  sample=(176, 80, 173, 95, 80, 80, 80, 80)
+  tail_count=52  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 1), (2, 4), (4, 11)]
+  leftover bytes after last section: 0
+  RLE runs: 52, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 26), (1, 25), (3, 1)]
+  RLE expanded histogram: [(0, 899), (1, 61), (3, 64)]
+
+============================================================================
+FILE: gng_020.pmp
+  size=206  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=7  sample=(176, 80, 143, 0, 80, 80, 177, 0)
+  tail_count=49  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 1), (2, 3), (4, 12)]
+  leftover bytes after last section: 0
+  RLE runs: 49, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 25), (1, 22), (3, 2)]
+  RLE expanded histogram: [(0, 952), (1, 44), (3, 28)]
+
+============================================================================
+FILE: gng_021.pmp
+  size=126  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=11  sample=(179, 180, 181, 79, 182, 183, 80, 80)
+  tail_count=9  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(0, 1), (2, 4), (4, 11)]
+  leftover bytes after last section: 0
+  RLE runs: 9, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 5), (1, 2), (3, 2)]
+  RLE expanded histogram: [(0, 1000), (1, 2), (3, 22)]
+
+============================================================================
+FILE: gng_022.pmp
+  size=118  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=9  sample=(186, 187, 0, 0, 80, 188, 189, 0)
+  tail_count=5  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 1), (2, 1), (4, 13), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 5, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (3, 2)]
+  RLE expanded histogram: [(0, 1013), (3, 11)]
+
+============================================================================
+FILE: gng_023.pmp
+  size=174  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=7  sample=(192, 80, 193, 0, 194, 195, 196, 0)
+  tail_count=33  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 1), (3, 1), (4, 14)]
+  leftover bytes after last section: 0
+  RLE runs: 33, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 17), (1, 16)]
+  RLE expanded histogram: [(0, 993), (1, 31)]
+
+============================================================================
+FILE: gng_024.pmp
+  size=130  width=4 height=4 cells=16
+  flags: distinct=[(2, 16)]
+  flags&0x7f distinct=[(2, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=11  sample=(0, 197, 0, 0, 198, 199, 200, 0)
+  tail_count=11  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(1, 1), (2, 4), (4, 11)]
+  leftover bytes after last section: 0
+  RLE runs: 11, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 6), (1, 5)]
+  RLE expanded histogram: [(0, 1015), (1, 9)]
+
+============================================================================
+FILE: gng_025.pmp
+  size=1162  width=12 height=12 cells=144
+  flags: distinct=[(2, 144)]
+  flags&0x7f distinct=[(2, 144)]
+  bit7 set: 0 / 144
+  cellblk distinct=32  sample=(76, 206, 207, 208, 209, 110, 210, 0)
+  tail_count=143  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(1, 7), (2, 18), (4, 119)]
+  leftover bytes after last section: 0
+  RLE runs: 143, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 71), (1, 68), (3, 4)]
+  RLE expanded histogram: [(0, 8861), (1, 177), (3, 178)]
+
+============================================================================
+FILE: gng_026.pmp
+  size=1154  width=12 height=12 cells=144
+  flags: distinct=[(2, 144)]
+  flags&0x7f distinct=[(2, 144)]
+  bit7 set: 0 / 144
+  cellblk distinct=31  sample=(0, 0, 0, 0, 227, 228, 229, 230)
+  tail_count=139  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(1, 9), (2, 16), (4, 119)]
+  leftover bytes after last section: 0
+  RLE runs: 139, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 69), (1, 66), (3, 4)]
+  RLE expanded histogram: [(0, 8865), (1, 173), (3, 178)]
+
+============================================================================
+FILE: gng_027.pmp
+  size=1266  width=12 height=12 cells=144
+  flags: distinct=[(2, 144)]
+  flags&0x7f distinct=[(2, 144)]
+  bit7 set: 0 / 144
+  cellblk distinct=35  sample=(249, 80, 170, 0, 0, 0, 0, 0)
+  tail_count=195  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(1, 12), (2, 8), (4, 124)]
+  leftover bytes after last section: 0
+  RLE runs: 195, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 97), (1, 96), (3, 2)]
+  RLE expanded histogram: [(0, 8867), (1, 235), (3, 114)]
+
+============================================================================
+FILE: gng_028.pmp
+  size=1266  width=12 height=12 cells=144
+  flags: distinct=[(2, 144)]
+  flags&0x7f distinct=[(2, 144)]
+  bit7 set: 0 / 144
+  cellblk distinct=36  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=195  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(0, 3), (1, 10), (2, 10), (3, 3), (4, 118)]
+  leftover bytes after last section: 0
+  RLE runs: 195, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 97), (1, 96), (3, 2)]
+  RLE expanded histogram: [(0, 8855), (1, 247), (3, 114)]
+
+============================================================================
+FILE: gng_029.pmp
+  size=1190  width=12 height=12 cells=144
+  flags: distinct=[(0, 21), (2, 123)]
+  flags&0x7f distinct=[(0, 21), (2, 123)]
+  bit7 set: 0 / 144
+  cellblk distinct=32  sample=(294, 295, 230, 296, 297, 228, 298, 299)
+  tail_count=157  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(1, 9), (2, 14), (4, 121)]
+  leftover bytes after last section: 0
+  RLE runs: 157, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 77), (1, 77), (3, 3)]
+  RLE expanded histogram: [(0, 8833), (1, 223), (3, 160)]
+
+============================================================================
+FILE: gng_030.pmp
+  size=1222  width=12 height=12 cells=144
+  flags: distinct=[(0, 24), (2, 120)]
+  flags&0x7f distinct=[(0, 24), (2, 120)]
+  bit7 set: 0 / 144
+  cellblk distinct=29  sample=(0, 0, 0, 0, 308, 80, 309, 0)
+  tail_count=173  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(1, 11), (2, 11), (4, 122)]
+  leftover bytes after last section: 0
+  RLE runs: 173, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 87), (1, 85), (3, 1)]
+  RLE expanded histogram: [(0, 8851), (1, 173), (3, 192)]
+
+============================================================================
+FILE: gng_031.pmp
+  size=1274  width=12 height=12 cells=144
+  flags: distinct=[(0, 26), (2, 118)]
+  flags&0x7f distinct=[(0, 26), (2, 118)]
+  bit7 set: 0 / 144
+  cellblk distinct=35  sample=(308, 80, 327, 0, 0, 0, 0, 0)
+  tail_count=199  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(0, 1), (1, 16), (2, 3), (3, 1), (4, 123)]
+  leftover bytes after last section: 0
+  RLE runs: 199, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 99), (1, 98), (3, 2)]
+  RLE expanded histogram: [(0, 8829), (1, 235), (3, 152)]
+
+============================================================================
+FILE: gng_032.pmp
+  size=1270  width=12 height=12 cells=144
+  flags: distinct=[(0, 13), (2, 131)]
+  flags&0x7f distinct=[(0, 13), (2, 131)]
+  bit7 set: 0 / 144
+  cellblk distinct=34  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=197  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(1, 11), (2, 12), (4, 121)]
+  leftover bytes after last section: 0
+  RLE runs: 197, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 98), (1, 97), (3, 2)]
+  RLE expanded histogram: [(0, 8843), (1, 237), (3, 136)]
+
+============================================================================
+FILE: gng_033.pmp
+  size=1266  width=12 height=12 cells=144
+  flags: distinct=[(2, 144)]
+  flags&0x7f distinct=[(2, 144)]
+  bit7 set: 0 / 144
+  cellblk distinct=34  sample=(0, 0, 0, 0, 353, 80, 263, 0)
+  tail_count=195  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(1, 13), (2, 8), (4, 123)]
+  leftover bytes after last section: 0
+  RLE runs: 195, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 96), (1, 96), (3, 3)]
+  RLE expanded histogram: [(0, 8793), (1, 263), (3, 160)]
+
+============================================================================
+FILE: gng_034.pmp
+  size=1222  width=12 height=12 cells=144
+  flags: distinct=[(2, 144)]
+  flags&0x7f distinct=[(2, 144)]
+  bit7 set: 0 / 144
+  cellblk distinct=31  sample=(0, 0, 0, 0, 141, 80, 43, 0)
+  tail_count=173  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(1, 11), (2, 10), (4, 123)]
+  leftover bytes after last section: 0
+  RLE runs: 173, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 86), (1, 83), (3, 4)]
+  RLE expanded histogram: [(0, 8834), (1, 204), (3, 178)]
+
+============================================================================
+FILE: gng_035.pmp
+  size=1202  width=12 height=12 cells=144
+  flags: distinct=[(0, 17), (2, 127)]
+  flags&0x7f distinct=[(0, 17), (2, 127)]
+  bit7 set: 0 / 144
+  cellblk distinct=31  sample=(378, 379, 94, 379, 228, 110, 380, 0)
+  tail_count=163  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(1, 12), (2, 8), (4, 124)]
+  leftover bytes after last section: 0
+  RLE runs: 163, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 80), (1, 79), (3, 4)]
+  RLE expanded histogram: [(0, 8831), (1, 225), (3, 160)]
+
+============================================================================
+FILE: gng_036.pmp
+  size=1270  width=12 height=12 cells=144
+  flags: distinct=[(0, 43), (2, 101)]
+  flags&0x7f distinct=[(0, 43), (2, 101)]
+  bit7 set: 0 / 144
+  cellblk distinct=33  sample=(141, 80, 394, 0, 0, 0, 0, 0)
+  tail_count=197  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(1, 15), (2, 5), (4, 124)]
+  leftover bytes after last section: 0
+  RLE runs: 197, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 97), (1, 96), (3, 4)]
+  RLE expanded histogram: [(0, 8806), (1, 272), (3, 138)]
+
+============================================================================
+FILE: gng_037.pmp
+  size=1154  width=12 height=12 cells=144
+  flags: distinct=[(0, 17), (2, 127)]
+  flags&0x7f distinct=[(0, 17), (2, 127)]
+  bit7 set: 0 / 144
+  cellblk distinct=35  sample=(0, 0, 0, 0, 410, 411, 256, 404)
+  tail_count=139  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(1, 11), (2, 17), (4, 116)]
+  leftover bytes after last section: 0
+  RLE runs: 139, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 68), (1, 65), (3, 6)]
+  RLE expanded histogram: [(0, 8735), (1, 215), (3, 266)]
+
+============================================================================
+FILE: gng_038.pmp
+  size=1154  width=12 height=12 cells=144
+  flags: distinct=[(0, 15), (2, 129)]
+  flags&0x7f distinct=[(0, 15), (2, 129)]
+  bit7 set: 0 / 144
+  cellblk distinct=32  sample=(424, 323, 255, 228, 257, 207, 425, 0)
+  tail_count=139  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(0, 1), (1, 13), (2, 10), (3, 1), (4, 119)]
+  leftover bytes after last section: 0
+  RLE runs: 139, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 68), (1, 65), (3, 6)]
+  RLE expanded histogram: [(0, 8760), (1, 206), (3, 250)]
+
+============================================================================
+FILE: gng_039.pmp
+  size=1274  width=12 height=12 cells=144
+  flags: distinct=[(0, 45), (2, 99)]
+  flags&0x7f distinct=[(0, 45), (2, 99)]
+  bit7 set: 0 / 144
+  cellblk distinct=34  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=199  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(0, 1), (1, 12), (2, 9), (3, 1), (4, 121)]
+  leftover bytes after last section: 0
+  RLE runs: 199, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 98), (1, 97), (3, 4)]
+  RLE expanded histogram: [(0, 8826), (1, 268), (3, 122)]
+
+============================================================================
+FILE: gng_042.pmp
+  size=806  width=12 height=8 cells=96
+  flags: distinct=[(0, 15), (2, 81)]
+  flags&0x7f distinct=[(0, 15), (2, 81)]
+  bit7 set: 0 / 96
+  cellblk distinct=23  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=109  total RLE bytes=6144  (cells=96, delta=+6048)
+  tailbytes distinct=[(1, 8), (2, 8), (4, 80)]
+  leftover bytes after last section: 0
+  RLE runs: 109, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 55), (1, 52), (3, 2)]
+  RLE expanded histogram: [(0, 5876), (1, 114), (3, 154)]
+
+============================================================================
+FILE: gng_043.pmp
+  size=802  width=12 height=8 cells=96
+  flags: distinct=[(0, 16), (2, 80)]
+  flags&0x7f distinct=[(0, 16), (2, 80)]
+  bit7 set: 0 / 96
+  cellblk distinct=23  sample=(349, 80, 252, 0, 0, 0, 0, 0)
+  tail_count=107  total RLE bytes=6144  (cells=96, delta=+6048)
+  tailbytes distinct=[(1, 9), (2, 9), (4, 78)]
+  leftover bytes after last section: 0
+  RLE runs: 107, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 54), (1, 51), (3, 2)]
+  RLE expanded histogram: [(0, 5861), (1, 113), (3, 170)]
+
+============================================================================
+FILE: gng_044.pmp
+  size=774  width=12 height=8 cells=96
+  flags: distinct=[(0, 18), (2, 78)]
+  flags&0x7f distinct=[(0, 18), (2, 78)]
+  bit7 set: 0 / 96
+  cellblk distinct=26  sample=(294, 461, 230, 228, 298, 111, 94, 406)
+  tail_count=93  total RLE bytes=6144  (cells=96, delta=+6048)
+  tailbytes distinct=[(1, 11), (2, 4), (4, 81)]
+  leftover bytes after last section: 0
+  RLE runs: 93, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 46), (1, 45), (3, 2)]
+  RLE expanded histogram: [(0, 5885), (1, 123), (3, 136)]
+
+============================================================================
+FILE: gng_045.pmp
+  size=778  width=12 height=8 cells=96
+  flags: distinct=[(0, 13), (2, 83)]
+  flags&0x7f distinct=[(0, 13), (2, 83)]
+  bit7 set: 0 / 96
+  cellblk distinct=27  sample=(468, 385, 469, 223, 281, 207, 470, 104)
+  tail_count=95  total RLE bytes=6144  (cells=96, delta=+6048)
+  tailbytes distinct=[(1, 8), (2, 11), (4, 77)]
+  leftover bytes after last section: 0
+  RLE runs: 95, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 47), (1, 46), (3, 2)]
+  RLE expanded histogram: [(0, 5859), (1, 133), (3, 152)]
+
+============================================================================
+FILE: gng_048.pmp
+  size=2246  width=28 height=12 cells=336
+  flags: distinct=[(0, 112), (4, 224)]
+  flags&0x7f distinct=[(0, 112), (4, 224)]
+  bit7 set: 0 / 336
+  cellblk distinct=51  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=109  total RLE bytes=21504  (cells=336, delta=+21168)
+  tailbytes distinct=[(0, 18), (1, 5), (2, 12), (3, 6), (4, 291), (8, 4)]
+  leftover bytes after last section: 0
+  RLE runs: 109, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 39), (1, 36), (3, 34)]
+  RLE expanded histogram: [(0, 20328), (1, 728), (3, 448)]
+
+============================================================================
+FILE: gng_049.pmp
+  size=2254  width=28 height=12 cells=336
+  flags: distinct=[(0, 118), (4, 218)]
+  flags&0x7f distinct=[(0, 118), (4, 218)]
+  bit7 set: 0 / 336
+  cellblk distinct=48  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=113  total RLE bytes=21504  (cells=336, delta=+21168)
+  tailbytes distinct=[(0, 8), (1, 5), (2, 15), (3, 3), (4, 301), (8, 4)]
+  leftover bytes after last section: 0
+  RLE runs: 113, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 41), (1, 38), (3, 34)]
+  RLE expanded histogram: [(0, 20305), (1, 751), (3, 448)]
+
+============================================================================
+FILE: gng_050.pmp
+  size=2030  width=20 height=16 cells=320
+  flags: distinct=[(0, 112), (4, 109), (132, 99)]
+  flags&0x7f distinct=[(0, 112), (4, 208)]
+  bit7 set: 99 / 320
+  cellblk distinct=102  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=49  total RLE bytes=20480  (cells=320, delta=+20160)
+  tailbytes distinct=[(0, 25), (1, 8), (2, 16), (3, 2), (4, 258), (6, 7), (7, 1), (8, 3)]
+  leftover bytes after last section: 0
+  RLE runs: 49, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 25), (1, 22), (3, 2)]
+  RLE expanded histogram: [(0, 19627), (1, 669), (3, 184)]
+
+============================================================================
+FILE: gng_051.pmp
+  size=2058  width=20 height=16 cells=320
+  flags: distinct=[(0, 102), (4, 135), (132, 83)]
+  flags&0x7f distinct=[(0, 102), (4, 218)]
+  bit7 set: 83 / 320
+  cellblk distinct=96  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=63  total RLE bytes=20480  (cells=320, delta=+20160)
+  tailbytes distinct=[(0, 25), (1, 6), (2, 20), (3, 1), (4, 258), (6, 9), (7, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 63, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 32), (1, 28), (3, 3)]
+  RLE expanded histogram: [(0, 19775), (1, 497), (3, 208)]
+
+============================================================================
+FILE: gng_052.pmp
+  size=2050  width=20 height=16 cells=320
+  flags: distinct=[(0, 124), (4, 112), (132, 84)]
+  flags&0x7f distinct=[(0, 124), (4, 196)]
+  bit7 set: 84 / 320
+  cellblk distinct=89  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=59  total RLE bytes=20480  (cells=320, delta=+20160)
+  tailbytes distinct=[(0, 26), (1, 4), (2, 16), (3, 2), (4, 261), (5, 1), (6, 8), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 59, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 30), (1, 27), (3, 2)]
+  RLE expanded histogram: [(0, 19859), (1, 429), (3, 192)]
+
+============================================================================
+FILE: gng_053.pmp
+  size=1626  width=16 height=16 cells=256
+  flags: distinct=[(0, 116), (4, 81), (132, 59)]
+  flags&0x7f distinct=[(0, 116), (4, 140)]
+  bit7 set: 59 / 256
+  cellblk distinct=65  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=39  total RLE bytes=16384  (cells=256, delta=+16128)
+  tailbytes distinct=[(0, 19), (1, 3), (2, 10), (3, 3), (4, 214), (6, 5), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 39, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 16), (1, 17), (3, 6)]
+  RLE expanded histogram: [(0, 16050), (1, 178), (3, 156)]
+
+============================================================================
+FILE: gng_054.pmp
+  size=1650  width=16 height=16 cells=256
+  flags: distinct=[(0, 116), (4, 81), (132, 59)]
+  flags&0x7f distinct=[(0, 116), (4, 140)]
+  bit7 set: 59 / 256
+  cellblk distinct=82  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=51  total RLE bytes=16384  (cells=256, delta=+16128)
+  tailbytes distinct=[(0, 18), (1, 4), (2, 13), (3, 1), (4, 208), (5, 3), (6, 7), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 51, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 24), (1, 23), (3, 4)]
+  RLE expanded histogram: [(0, 15940), (1, 290), (3, 154)]
+
+============================================================================
+FILE: gsg_001.pmp
+  size=420  width=16 height=4 cells=64
+  flags: distinct=[(2, 64)]
+  flags&0x7f distinct=[(2, 64)]
+  bit7 set: 0 / 64
+  cellblk distinct=39  sample=(934, 935, 936, 937, 873, 0, 0, 938)
+  tail_count=12  total RLE bytes=4096  (cells=64, delta=+4032)
+  tailbytes distinct=[(0, 1), (1, 3), (2, 10), (4, 44), (6, 4), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 12, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 6), (1, 3), (3, 3)]
+  RLE expanded histogram: [(0, 4064), (1, 4), (3, 28)]
+
+============================================================================
+FILE: gsg_002.pmp
+  size=510  width=20 height=4 cells=80
+  flags: distinct=[(2, 80)]
+  flags&0x7f distinct=[(2, 80)]
+  bit7 set: 0 / 80
+  cellblk distinct=39  sample=(89, 967, 968, 969, 0, 0, 0, 0)
+  tail_count=9  total RLE bytes=5120  (cells=80, delta=+5040)
+  tailbytes distinct=[(0, 3), (1, 2), (2, 9), (3, 1), (4, 60), (6, 4), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 9, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 5), (1, 1), (3, 3)]
+  RLE expanded histogram: [(0, 5082), (1, 1), (3, 37)]
+
+============================================================================
+FILE: gsg_003.pmp
+  size=474  width=4 height=16 cells=64
+  flags: distinct=[(2, 64)]
+  flags&0x7f distinct=[(2, 64)]
+  bit7 set: 0 / 64
+  cellblk distinct=37  sample=(1000, 80, 1001, 0, 1002, 1003, 1004, 0)
+  tail_count=39  total RLE bytes=4096  (cells=64, delta=+4032)
+  tailbytes distinct=[(0, 1), (1, 3), (2, 10), (4, 47), (6, 2), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 39, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 20), (1, 19)]
+  RLE expanded histogram: [(0, 4060), (1, 36)]
+
+============================================================================
+FILE: gsg_004.pmp
+  size=1202  width=12 height=16 cells=192
+  flags: distinct=[(2, 192)]
+  flags&0x7f distinct=[(2, 192)]
+  bit7 set: 0 / 192
+  cellblk distinct=40  sample=(96, 257, 207, 296, 297, 228, 103, 297)
+  tail_count=19  total RLE bytes=12288  (cells=192, delta=+12096)
+  tailbytes distinct=[(0, 3), (1, 10), (2, 12), (4, 166), (6, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 19, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 10), (1, 8), (3, 1)]
+  RLE expanded histogram: [(0, 12083), (1, 13), (3, 192)]
+
+============================================================================
+FILE: gsg_005.pmp
+  size=1246  width=12 height=16 cells=192
+  flags: distinct=[(2, 192)]
+  flags&0x7f distinct=[(2, 192)]
+  bit7 set: 0 / 192
+  cellblk distinct=39  sample=(0, 0, 0, 0, 1055, 80, 170, 0)
+  tail_count=41  total RLE bytes=12288  (cells=192, delta=+12096)
+  tailbytes distinct=[(0, 3), (1, 7), (2, 8), (3, 2), (4, 170), (6, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 41, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 21), (1, 19), (3, 1)]
+  RLE expanded histogram: [(0, 12048), (1, 48), (3, 192)]
+
+============================================================================
+FILE: gsg_006.pmp
+  size=1846  width=20 height=12 cells=240
+  flags: distinct=[(2, 240)]
+  flags&0x7f distinct=[(2, 240)]
+  bit7 set: 0 / 240
+  cellblk distinct=60  sample=(216, 80, 252, 0, 0, 0, 0, 0)
+  tail_count=197  total RLE bytes=15360  (cells=240, delta=+15120)
+  tailbytes distinct=[(0, 3), (1, 11), (2, 9), (4, 211), (5, 1), (6, 4), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 197, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 99), (1, 96), (3, 2)]
+  RLE expanded histogram: [(0, 15109), (1, 224), (3, 27)]
+
+============================================================================
+FILE: gsg_007.pmp
+  size=1846  width=20 height=12 cells=240
+  flags: distinct=[(2, 239), (130, 1)]
+  flags&0x7f distinct=[(2, 240)]
+  bit7 set: 1 / 240
+  cellblk distinct=59  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=197  total RLE bytes=15360  (cells=240, delta=+15120)
+  tailbytes distinct=[(0, 3), (1, 6), (2, 13), (3, 1), (4, 215), (6, 1), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 197, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 99), (1, 96), (3, 2)]
+  RLE expanded histogram: [(0, 15126), (1, 231), (3, 3)]
+
+============================================================================
+FILE: hol_001.pmp
+  size=1058  width=20 height=8 cells=160
+  flags: distinct=[(2, 22), (4, 51), (132, 87)]
+  flags&0x7f distinct=[(2, 22), (4, 138)]
+  bit7 set: 87 / 160
+  cellblk distinct=99  sample=(0, 0, 0, 0, 0, 1157, 1158, 1159)
+  tail_count=43  total RLE bytes=10240  (cells=160, delta=+10080)
+  tailbytes distinct=[(0, 36), (1, 4), (2, 12), (3, 1), (4, 100), (6, 5), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 43, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 22), (1, 19), (3, 2)]
+  RLE expanded histogram: [(0, 9861), (1, 187), (3, 192)]
+
+============================================================================
+FILE: hol_005.pmp
+  size=882  width=16 height=8 cells=128
+  flags: distinct=[(2, 48), (4, 32), (132, 48)]
+  flags&0x7f distinct=[(2, 48), (4, 80)]
+  bit7 set: 48 / 128
+  cellblk distinct=77  sample=(0, 0, 0, 0, 0, 1250, 1251, 1252)
+  tail_count=51  total RLE bytes=8192  (cells=128, delta=+8064)
+  tailbytes distinct=[(0, 18), (1, 5), (2, 9), (3, 3), (4, 84), (6, 8), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 51, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 26), (1, 23), (3, 2)]
+  RLE expanded histogram: [(0, 7931), (1, 69), (3, 192)]
+
+============================================================================
+FILE: hol_020.pmp
+  size=2792  width=24 height=16 cells=384
+  flags: distinct=[(0, 36), (2, 160), (4, 82), (132, 106)]
+  flags&0x7f distinct=[(0, 36), (2, 160), (4, 188)]
+  bit7 set: 106 / 384
+  cellblk distinct=117  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=238  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 32), (1, 4), (2, 35), (3, 8), (4, 298), (5, 1), (6, 2), (7, 3), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 238, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 118), (1, 116), (3, 4)]
+  RLE expanded histogram: [(0, 23775), (1, 417), (3, 384)]
+
+============================================================================
+FILE: hol_021.pmp
+  size=4936  width=48 height=16 cells=768
+  flags: distinct=[(0, 18), (2, 318), (3, 160), (4, 184), (132, 88)]
+  flags&0x7f distinct=[(0, 18), (2, 318), (3, 160), (4, 272)]
+  bit7 set: 88 / 768
+  cellblk distinct=124  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=158  total RLE bytes=49152  (cells=768, delta=+48384)
+  tailbytes distinct=[(0, 41), (1, 6), (2, 21), (3, 6), (4, 674), (6, 13), (8, 7)]
+  leftover bytes after last section: 0
+  RLE runs: 158, zero-run(0x4000) present: True
+  RLE value histogram: [(0, 63), (1, 59), (3, 36)]
+  RLE expanded histogram: [(0, 48510), (1, 230), (3, 412)]
+
+============================================================================
+FILE: hol_022.pmp
+  size=1814  width=24 height=12 cells=288
+  flags: distinct=[(0, 33), (2, 107), (4, 68), (132, 80)]
+  flags&0x7f distinct=[(0, 33), (2, 107), (4, 148)]
+  bit7 set: 80 / 288
+  cellblk distinct=90  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=37  total RLE bytes=18432  (cells=288, delta=+18144)
+  tailbytes distinct=[(0, 42), (1, 1), (2, 8), (3, 3), (4, 230), (6, 4)]
+  leftover bytes after last section: 0
+  RLE runs: 37, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 19), (1, 15), (3, 3)]
+  RLE expanded histogram: [(0, 18119), (1, 92), (3, 221)]
+
+============================================================================
+FILE: hol_023.pmp
+  size=2326  width=24 height=16 cells=384
+  flags: distinct=[(0, 24), (2, 184), (4, 68), (132, 108)]
+  flags&0x7f distinct=[(0, 24), (2, 184), (4, 176)]
+  bit7 set: 108 / 384
+  cellblk distinct=107  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=5  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 46), (1, 8), (2, 8), (4, 315), (5, 1), (6, 3), (8, 3)]
+  leftover bytes after last section: 0
+  RLE runs: 5, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (3, 2)]
+  RLE expanded histogram: [(0, 24320), (3, 256)]
+
+============================================================================
+FILE: hol_023_cut.pmp
+  size=2326  width=24 height=16 cells=384
+  flags: distinct=[(2, 184), (4, 67), (132, 79), (133, 54)]
+  flags&0x7f distinct=[(2, 184), (4, 146), (5, 54)]
+  bit7 set: 133 / 384
+  cellblk distinct=85  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=5  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 43), (1, 4), (2, 8), (3, 1), (4, 320), (5, 1), (6, 3), (7, 2), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 5, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (3, 2)]
+  RLE expanded histogram: [(0, 24344), (3, 232)]
+
+============================================================================
+FILE: hol_024.pmp
+  size=2334  width=24 height=16 cells=384
+  flags: distinct=[(2, 164), (4, 78), (132, 142)]
+  flags&0x7f distinct=[(2, 164), (4, 220)]
+  bit7 set: 142 / 384
+  cellblk distinct=115  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=9  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 47), (1, 4), (2, 9), (3, 3), (4, 314), (6, 6), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 9, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 5), (1, 2), (3, 2)]
+  RLE expanded histogram: [(0, 24322), (1, 58), (3, 196)]
+
+============================================================================
+FILE: hol_025.pmp
+  size=1750  width=24 height=12 cells=288
+  flags: distinct=[(2, 116), (4, 76), (132, 96)]
+  flags&0x7f distinct=[(2, 116), (4, 172)]
+  bit7 set: 96 / 288
+  cellblk distinct=96  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=5  total RLE bytes=18432  (cells=288, delta=+18144)
+  tailbytes distinct=[(0, 41), (2, 6), (3, 3), (4, 234), (6, 4)]
+  leftover bytes after last section: 0
+  RLE runs: 5, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (3, 2)]
+  RLE expanded histogram: [(0, 18276), (3, 156)]
+
+============================================================================
+FILE: hol_026.pmp
+  size=2394  width=24 height=16 cells=384
+  flags: distinct=[(2, 120), (3, 144), (4, 120)]
+  flags&0x7f distinct=[(2, 120), (3, 144), (4, 120)]
+  bit7 set: 0 / 384
+  cellblk distinct=40  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=39  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 8), (1, 5), (2, 23), (4, 347), (6, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 39, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 20), (1, 18), (3, 1)]
+  RLE expanded histogram: [(0, 24065), (1, 127), (3, 384)]
+
+============================================================================
+FILE: hol_027.pmp
+  size=1174  width=16 height=12 cells=192
+  flags: distinct=[(0, 32), (2, 80), (4, 30), (132, 50)]
+  flags&0x7f distinct=[(0, 32), (2, 80), (4, 80)]
+  bit7 set: 50 / 192
+  cellblk distinct=56  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=5  total RLE bytes=12288  (cells=192, delta=+12096)
+  tailbytes distinct=[(0, 19), (1, 5), (2, 7), (3, 2), (4, 157), (5, 1), (6, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 5, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (3, 2)]
+  RLE expanded histogram: [(0, 12112), (3, 176)]
+
+============================================================================
+FILE: hol_039.pmp
+  size=2734  width=28 height=16 cells=448
+  flags: distinct=[(0, 82), (2, 142), (4, 81), (130, 16), (132, 127)]
+  flags&0x7f distinct=[(0, 82), (2, 158), (4, 208)]
+  bit7 set: 143 / 448
+  cellblk distinct=81  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=17  total RLE bytes=28672  (cells=448, delta=+28224)
+  tailbytes distinct=[(0, 22), (1, 6), (2, 14), (3, 3), (4, 397), (5, 1), (6, 4), (7, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 17, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 9), (1, 6), (3, 2)]
+  RLE expanded histogram: [(0, 28518), (1, 6), (3, 148)]
+
+============================================================================
+FILE: hol_041.pmp
+  size=3402  width=32 height=16 cells=512
+  flags: distinct=[(2, 170), (4, 217), (132, 125)]
+  flags&0x7f distinct=[(2, 170), (4, 342)]
+  bit7 set: 125 / 512
+  cellblk distinct=140  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=159  total RLE bytes=32768  (cells=512, delta=+32256)
+  tailbytes distinct=[(0, 45), (1, 12), (2, 19), (3, 3), (4, 424), (6, 7), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 159, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 79), (1, 73), (3, 7)]
+  RLE expanded histogram: [(0, 32113), (1, 428), (3, 227)]
+
+============================================================================
+FILE: hol_042.pmp
+  size=3314  width=32 height=16 cells=512
+  flags: distinct=[(2, 208), (4, 229), (132, 75)]
+  flags&0x7f distinct=[(2, 208), (4, 304)]
+  bit7 set: 75 / 512
+  cellblk distinct=141  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=115  total RLE bytes=32768  (cells=512, delta=+32256)
+  tailbytes distinct=[(0, 26), (1, 17), (2, 26), (3, 5), (4, 421), (6, 16), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 115, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 56), (1, 53), (3, 6)]
+  RLE expanded histogram: [(0, 32170), (1, 301), (3, 297)]
+
+============================================================================
+FILE: hol_060.pmp
+  size=2836  width=24 height=16 cells=384
+  flags: distinct=[(2, 98), (4, 222), (132, 64)]
+  flags&0x7f distinct=[(2, 98), (4, 286)]
+  bit7 set: 64 / 384
+  cellblk distinct=121  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=260  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 36), (1, 16), (2, 10), (4, 307), (5, 2), (6, 8), (7, 1), (8, 4)]
+  leftover bytes after last section: 0
+  RLE runs: 260, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 117), (1, 125), (3, 18)]
+  RLE expanded histogram: [(0, 22946), (1, 1216), (3, 414)]
+
+============================================================================
+FILE: hol_061.pmp
+  size=2566  width=28 height=12 cells=336
+  flags: distinct=[(2, 35), (4, 273), (132, 28)]
+  flags&0x7f distinct=[(2, 35), (4, 301)]
+  bit7 set: 28 / 336
+  cellblk distinct=107  sample=(33, 80, 43, 0, 0, 0, 0, 0)
+  tail_count=269  total RLE bytes=21504  (cells=336, delta=+21168)
+  tailbytes distinct=[(0, 28), (1, 13), (2, 25), (3, 2), (4, 266), (5, 1), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 269, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 133), (1, 129), (3, 7)]
+  RLE expanded histogram: [(0, 20653), (1, 448), (3, 403)]
+
+============================================================================
+FILE: leer1x1.pmp
+  size=110  width=4 height=4 cells=16
+  flags: distinct=[(0, 16)]
+  flags&0x7f distinct=[(0, 16)]
+  bit7 set: 0 / 16
+  cellblk distinct=1  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=1  total RLE bytes=1024  (cells=16, delta=+1008)
+  tailbytes distinct=[(4, 16)]
+  leftover bytes after last section: 0
+  RLE runs: 1, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 1)]
+  RLE expanded histogram: [(0, 1024)]
+
+============================================================================
+FILE: leer2x2.pmp
+  size=398  width=8 height=8 cells=64
+  flags: distinct=[(0, 64)]
+  flags&0x7f distinct=[(0, 64)]
+  bit7 set: 0 / 64
+  cellblk distinct=1  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=1  total RLE bytes=4096  (cells=64, delta=+4032)
+  tailbytes distinct=[(4, 64)]
+  leftover bytes after last section: 0
+  RLE runs: 1, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 1)]
+  RLE expanded histogram: [(0, 4096)]
+
+============================================================================
+FILE: leer3x3.pmp
+  size=878  width=12 height=12 cells=144
+  flags: distinct=[(0, 144)]
+  flags&0x7f distinct=[(0, 144)]
+  bit7 set: 0 / 144
+  cellblk distinct=1  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=1  total RLE bytes=9216  (cells=144, delta=+9072)
+  tailbytes distinct=[(4, 144)]
+  leftover bytes after last section: 0
+  RLE runs: 1, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 1)]
+  RLE expanded histogram: [(0, 9216)]
+
+============================================================================
+FILE: unq_einsiedler.pmp
+  size=5410  width=56 height=16 cells=896
+  flags: distinct=[(0, 210), (2, 70), (4, 176), (132, 400), (133, 40)]
+  flags&0x7f distinct=[(0, 210), (2, 70), (4, 576), (5, 40)]
+  bit7 set: 440 / 896
+  cellblk distinct=272  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=11  total RLE bytes=57344  (cells=896, delta=+56448)
+  tailbytes distinct=[(0, 97), (1, 13), (2, 38), (3, 8), (4, 722), (6, 11), (8, 7)]
+  leftover bytes after last section: 0
+  RLE runs: 11, zero-run(0x4000) present: True
+  RLE value histogram: [(0, 7), (1, 2), (3, 2)]
+  RLE expanded histogram: [(0, 56899), (1, 8), (3, 437)]
+
+============================================================================
+FILE: unq_kris_brains_002.pmp
+  size=2668  width=24 height=16 cells=384
+  flags: distinct=[(4, 167), (5, 17), (132, 187), (133, 13)]
+  flags&0x7f distinct=[(4, 354), (5, 30)]
+  bit7 set: 200 / 384
+  cellblk distinct=30  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=176  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 33), (1, 17), (2, 1), (4, 333)]
+  leftover bytes after last section: 0
+  RLE runs: 176, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 86), (1, 84), (3, 6)]
+  RLE expanded histogram: [(0, 23323), (1, 916), (3, 337)]
+
+============================================================================
+FILE: unq_kris_brains_003.pmp
+  size=2070  width=16 height=16 cells=256
+  flags: distinct=[(4, 149), (5, 23), (132, 84)]
+  flags&0x7f distinct=[(4, 233), (5, 23)]
+  bit7 set: 84 / 256
+  cellblk distinct=36  sample=(0, 0, 0, 0, 33, 80, 43, 0)
+  tail_count=261  total RLE bytes=16384  (cells=256, delta=+16128)
+  tailbytes distinct=[(0, 17), (1, 17), (4, 222)]
+  leftover bytes after last section: 0
+  RLE runs: 261, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 129), (1, 126), (3, 6)]
+  RLE expanded histogram: [(0, 15822), (1, 330), (3, 232)]
+
+============================================================================
+FILE: unq_kris_brains_008.pmp
+  size=3096  width=28 height=16 cells=448
+  flags: distinct=[(4, 234), (5, 10), (132, 198), (133, 6)]
+  flags&0x7f distinct=[(4, 432), (5, 16)]
+  bit7 set: 204 / 448
+  cellblk distinct=137  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=198  total RLE bytes=28672  (cells=448, delta=+28224)
+  tailbytes distinct=[(0, 51), (1, 12), (2, 16), (3, 4), (4, 348), (5, 1), (6, 12), (8, 4)]
+  leftover bytes after last section: 0
+  RLE runs: 198, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 97), (1, 94), (3, 7)]
+  RLE expanded histogram: [(0, 26123), (1, 2226), (3, 323)]
+
+============================================================================
+FILE: unq_kris_brains_010.pmp
+  size=1462  width=20 height=12 cells=240
+  flags: distinct=[(4, 69), (132, 171)]
+  flags&0x7f distinct=[(4, 240)]
+  bit7 set: 171 / 240
+  cellblk distinct=117  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=5  total RLE bytes=15360  (cells=240, delta=+15120)
+  tailbytes distinct=[(0, 22), (1, 7), (2, 26), (3, 2), (4, 171), (5, 1), (6, 6), (8, 5)]
+  leftover bytes after last section: 0
+  RLE runs: 5, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (3, 2)]
+  RLE expanded histogram: [(0, 15203), (3, 157)]
+
+============================================================================
+FILE: unq_kris_brains_011_cut.pmp
+  size=3490  width=32 height=16 cells=512
+  flags: distinct=[(4, 162), (5, 42), (132, 91), (133, 217)]
+  flags&0x7f distinct=[(4, 253), (5, 259)]
+  bit7 set: 308 / 512
+  cellblk distinct=28  sample=(0, 0, 0, 0, 33, 80, 43, 0)
+  tail_count=203  total RLE bytes=32768  (cells=512, delta=+32256)
+  tailbytes distinct=[(0, 61), (1, 5), (4, 446)]
+  leftover bytes after last section: 0
+  RLE runs: 203, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 102), (1, 97), (3, 4)]
+  RLE expanded histogram: [(0, 30261), (1, 2095), (3, 412)]
+
+============================================================================
+FILE: unq_kris_brains_012.pmp
+  size=602  width=24 height=4 cells=96
+  flags: distinct=[(2, 16), (4, 44), (132, 36)]
+  flags&0x7f distinct=[(2, 16), (4, 80)]
+  bit7 set: 36 / 96
+  cellblk distinct=11  sample=(469, 207, 207, 207, 207, 207, 207, 207)
+  tail_count=7  total RLE bytes=6144  (cells=96, delta=+6048)
+  tailbytes distinct=[(1, 21), (2, 1), (4, 73), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 7, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 4), (3, 3)]
+  RLE expanded histogram: [(0, 5951), (3, 193)]
+
+============================================================================
+FILE: unq_troll_001.pmp
+  size=3282  width=32 height=16 cells=512
+  flags: distinct=[(0, 124), (2, 20), (4, 128), (132, 240)]
+  flags&0x7f distinct=[(0, 124), (2, 20), (4, 368)]
+  bit7 set: 240 / 512
+  cellblk distinct=129  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=99  total RLE bytes=32768  (cells=512, delta=+32256)
+  tailbytes distinct=[(0, 34), (1, 14), (2, 15), (3, 4), (4, 436), (5, 1), (6, 7), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 99, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 49), (1, 45), (3, 5)]
+  RLE expanded histogram: [(0, 31916), (1, 539), (3, 313)]
+
+============================================================================
+FILE: unq_troll_012.pmp
+  size=2630  width=24 height=16 cells=384
+  flags: distinct=[(0, 117), (4, 109), (132, 158)]
+  flags&0x7f distinct=[(0, 117), (4, 267)]
+  bit7 set: 158 / 384
+  cellblk distinct=77  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=157  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 6), (1, 9), (2, 14), (3, 1), (4, 351), (6, 1), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 157, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 63), (1, 60), (3, 34)]
+  RLE expanded histogram: [(0, 22890), (1, 1318), (3, 368)]
+
+============================================================================
+FILE: unq_troll_013.pmp
+  size=2328  width=24 height=16 cells=384
+  flags: distinct=[(0, 131), (3, 30), (4, 73), (132, 150)]
+  flags&0x7f distinct=[(0, 131), (3, 30), (4, 223)]
+  bit7 set: 150 / 384
+  cellblk distinct=81  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=6  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 21), (1, 11), (2, 17), (3, 3), (4, 328), (6, 3), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 6, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (1, 1), (3, 2)]
+  RLE expanded histogram: [(0, 24343), (1, 1), (3, 232)]
+
+============================================================================
+FILE: unq_troll_014.pmp
+  size=2328  width=24 height=16 cells=384
+  flags: distinct=[(0, 92), (4, 121), (132, 171)]
+  flags&0x7f distinct=[(0, 92), (4, 292)]
+  bit7 set: 171 / 384
+  cellblk distinct=97  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=6  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 30), (1, 10), (2, 19), (3, 3), (4, 318), (6, 3), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 6, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (1, 1), (3, 2)]
+  RLE expanded histogram: [(0, 24359), (1, 1), (3, 216)]
+
+============================================================================
+FILE: unq_vodo_001.pmp
+  size=3118  width=32 height=16 cells=512
+  flags: distinct=[(2, 112), (4, 116), (132, 284)]
+  flags&0x7f distinct=[(2, 112), (4, 400)]
+  bit7 set: 284 / 512
+  cellblk distinct=123  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=17  total RLE bytes=32768  (cells=512, delta=+32256)
+  tailbytes distinct=[(0, 47), (1, 9), (2, 14), (3, 3), (4, 432), (6, 6), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 17, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 9), (1, 6), (3, 2)]
+  RLE expanded histogram: [(0, 32419), (1, 105), (3, 244)]
+
+============================================================================
+FILE: unq_vodo_003.pmp
+  size=406  width=8 height=8 cells=64
+  flags: distinct=[(4, 34), (132, 30)]
+  flags&0x7f distinct=[(4, 64)]
+  bit7 set: 30 / 64
+  cellblk distinct=35  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=5  total RLE bytes=4096  (cells=64, delta=+4032)
+  tailbytes distinct=[(0, 12), (1, 1), (2, 2), (3, 1), (4, 43), (5, 1), (6, 4)]
+  leftover bytes after last section: 0
+  RLE runs: 5, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (3, 2)]
+  RLE expanded histogram: [(0, 4016), (3, 80)]
+
+============================================================================
+СВОДКА
+файлов, где сумма RLE-прогонов == width*height: 0 из 90
+несовпадения (первые 20):
+   caves_1.pmp                  rle=6144 cells=96 delta=+6048
+   caves_2.pmp                  rle=8192 cells=128 delta=+8064
+   caves_3.pmp                  rle=15360 cells=240 delta=+15120
+   caves_4.pmp                  rle=16384 cells=256 delta=+16128
+   gng_001.pmp                  rle=1024 cells=16 delta=+1008
+   gng_002.pmp                  rle=2048 cells=32 delta=+2016
+   gng_003.pmp                  rle=3072 cells=48 delta=+3024
+   gng_004.pmp                  rle=4096 cells=64 delta=+4032
+   gng_007.pmp                  rle=1024 cells=16 delta=+1008
+   gng_008.pmp                  rle=2048 cells=32 delta=+2016
+   gng_009.pmp                  rle=3072 cells=48 delta=+3024
+   gng_010.pmp                  rle=4096 cells=64 delta=+4032
+   gng_012.pmp                  rle=1024 cells=16 delta=+1008
+   gng_013.pmp                  rle=1024 cells=16 delta=+1008
+   gng_014.pmp                  rle=1024 cells=16 delta=+1008
+   gng_015.pmp                  rle=1024 cells=16 delta=+1008
+   gng_016.pmp                  rle=1024 cells=16 delta=+1008
+   gng_017.pmp                  rle=1024 cells=16 delta=+1008
+   gng_018.pmp                  rle=1024 cells=16 delta=+1008
+   gng_019.pmp                  rle=1024 cells=16 delta=+1008
+
+============================================================================
+FILE: caves_1.pmp
+  size=694  width=12 height=8 cells=96
+  flags: distinct=[(4, 96)]
+  flags&0x7f distinct=[(4, 96)]
+  bit7 set: 0 / 96
+  cellblk distinct=55  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=53  total RLE bytes=6144  (cells=96, delta=+6048)
+  tailbytes distinct=[(0, 14), (1, 1), (2, 3), (4, 71), (6, 5), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 53, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 27), (1, 24), (3, 2)]
+  RLE expanded histogram: [(0, 5232), (1, 792), (3, 120)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+
+============================================================================
+FILE: caves_2.pmp
+  size=886  width=16 height=8 cells=128
+  flags: distinct=[(4, 128)]
+  flags&0x7f distinct=[(4, 128)]
+  bit7 set: 0 / 128
+  cellblk distinct=20  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=53  total RLE bytes=8192  (cells=128, delta=+8064)
+  tailbytes distinct=[(0, 19), (4, 108), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 53, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 27), (1, 24), (3, 2)]
+  RLE expanded histogram: [(0, 6448), (1, 1560), (3, 184)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+
+============================================================================
+FILE: caves_3.pmp
+  size=1686  width=20 height=12 cells=240
+  flags: distinct=[(4, 240)]
+  flags&0x7f distinct=[(4, 240)]
+  bit7 set: 0 / 240
+  cellblk distinct=22  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=117  total RLE bytes=15360  (cells=240, delta=+15120)
+  tailbytes distinct=[(0, 27), (4, 212), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 117, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 59), (1, 56), (3, 2)]
+  RLE expanded histogram: [(0, 9528), (1, 5584), (3, 248)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+
+============================================================================
+FILE: caves_4.pmp
+  size=1878  width=16 height=16 cells=256
+  flags: distinct=[(4, 255), (132, 1)]
+  flags&0x7f distinct=[(4, 256)]
+  bit7 set: 1 / 256
+  cellblk distinct=22  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=165  total RLE bytes=16384  (cells=256, delta=+16128)
+  tailbytes distinct=[(0, 26), (4, 229), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 165, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 83), (1, 80), (3, 2)]
+  RLE expanded histogram: [(0, 10960), (1, 5240), (3, 184)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+
+============================================================================
+FILE: hol_001.pmp
+  size=1058  width=20 height=8 cells=160
+  flags: distinct=[(2, 22), (4, 51), (132, 87)]
+  flags&0x7f distinct=[(2, 22), (4, 138)]
+  bit7 set: 87 / 160
+  cellblk distinct=99  sample=(0, 0, 0, 0, 0, 1157, 1158, 1159)
+  tail_count=43  total RLE bytes=10240  (cells=160, delta=+10080)
+  tailbytes distinct=[(0, 36), (1, 4), (2, 12), (3, 1), (4, 100), (6, 5), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 43, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 22), (1, 19), (3, 2)]
+  RLE expanded histogram: [(0, 9861), (1, 187), (3, 192)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    2 2 2 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 2 2 2 2 4
+    132 132 132 132 132 132 132 132
+    132 132 132 132 132 132 4 2
+    2 2 2 4 132 132 132 132
+    132 132 132 132 132 132 132 132
+    132 132 4 2 2 4 4 4
+
+============================================================================
+FILE: hol_005.pmp
+  size=882  width=16 height=8 cells=128
+  flags: distinct=[(2, 48), (4, 32), (132, 48)]
+  flags&0x7f distinct=[(2, 48), (4, 80)]
+  bit7 set: 48 / 128
+  cellblk distinct=77  sample=(0, 0, 0, 0, 0, 1250, 1251, 1252)
+  tail_count=51  total RLE bytes=8192  (cells=128, delta=+8064)
+  tailbytes distinct=[(0, 18), (1, 5), (2, 9), (3, 3), (4, 84), (6, 8), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 51, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 26), (1, 23), (3, 2)]
+  RLE expanded histogram: [(0, 7931), (1, 69), (3, 192)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    2 2 2 4 4 4 4 4
+    4 4 4 4 4 2 2 2
+    2 2 2 4 132 132 132 132
+    132 132 132 132 4 2 2 2
+    2 2 2 4 132 132 132 132
+    132 132 132 132 4 2 2 2
+    2 2 2 4 132 132 132 132
+    132 132 132 132 4 2 2 2
+
+============================================================================
+FILE: hol_020.pmp
+  size=2792  width=24 height=16 cells=384
+  flags: distinct=[(0, 36), (2, 160), (4, 82), (132, 106)]
+  flags&0x7f distinct=[(0, 36), (2, 160), (4, 188)]
+  bit7 set: 106 / 384
+  cellblk distinct=117  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=238  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 32), (1, 4), (2, 35), (3, 8), (4, 298), (5, 1), (6, 2), (7, 3), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 238, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 118), (1, 116), (3, 4)]
+  RLE expanded histogram: [(0, 23775), (1, 417), (3, 384)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    0 0 0 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 0 0 0 0 0
+    0 0 0 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 0 0 0 0 0
+    0 0 0 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+
+============================================================================
+FILE: hol_021.pmp
+  size=4936  width=48 height=16 cells=768
+  flags: distinct=[(0, 18), (2, 318), (3, 160), (4, 184), (132, 88)]
+  flags&0x7f distinct=[(0, 18), (2, 318), (3, 160), (4, 272)]
+  bit7 set: 88 / 768
+  cellblk distinct=124  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=158  total RLE bytes=49152  (cells=768, delta=+48384)
+  tailbytes distinct=[(0, 41), (1, 6), (2, 21), (3, 6), (4, 674), (6, 13), (8, 7)]
+  leftover bytes after last section: 0
+  RLE runs: 158, zero-run(0x4000) present: True
+  RLE value histogram: [(0, 63), (1, 59), (3, 36)]
+  RLE expanded histogram: [(0, 48510), (1, 230), (3, 412)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+
+============================================================================
+FILE: hol_022.pmp
+  size=1814  width=24 height=12 cells=288
+  flags: distinct=[(0, 33), (2, 107), (4, 68), (132, 80)]
+  flags&0x7f distinct=[(0, 33), (2, 107), (4, 148)]
+  bit7 set: 80 / 288
+  cellblk distinct=90  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=37  total RLE bytes=18432  (cells=288, delta=+18144)
+  tailbytes distinct=[(0, 42), (1, 1), (2, 8), (3, 3), (4, 230), (6, 4)]
+  leftover bytes after last section: 0
+  RLE runs: 37, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 19), (1, 15), (3, 3)]
+  RLE expanded histogram: [(0, 18119), (1, 92), (3, 221)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 0 0 0
+    2 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 2 2 2 2 0
+    2 4 132 132 132 132 132 132
+    132 132 132 132 132 132 132 132
+
+============================================================================
+FILE: hol_023.pmp
+  size=2326  width=24 height=16 cells=384
+  flags: distinct=[(0, 24), (2, 184), (4, 68), (132, 108)]
+  flags&0x7f distinct=[(0, 24), (2, 184), (4, 176)]
+  bit7 set: 108 / 384
+  cellblk distinct=107  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=5  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 46), (1, 8), (2, 8), (4, 315), (5, 1), (6, 3), (8, 3)]
+  leftover bytes after last section: 0
+  RLE runs: 5, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (3, 2)]
+  RLE expanded histogram: [(0, 24320), (3, 256)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    0 0 0 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 0 0 0
+    0 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 0 0 0
+    0 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+
+============================================================================
+FILE: hol_023_cut.pmp
+  size=2326  width=24 height=16 cells=384
+  flags: distinct=[(2, 184), (4, 67), (132, 79), (133, 54)]
+  flags&0x7f distinct=[(2, 184), (4, 146), (5, 54)]
+  bit7 set: 133 / 384
+  cellblk distinct=85  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=5  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 43), (1, 4), (2, 8), (3, 1), (4, 320), (5, 1), (6, 3), (7, 2), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 5, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (3, 2)]
+  RLE expanded histogram: [(0, 24344), (3, 232)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+
+============================================================================
+FILE: hol_024.pmp
+  size=2334  width=24 height=16 cells=384
+  flags: distinct=[(2, 164), (4, 78), (132, 142)]
+  flags&0x7f distinct=[(2, 164), (4, 220)]
+  bit7 set: 142 / 384
+  cellblk distinct=115  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=9  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 47), (1, 4), (2, 9), (3, 3), (4, 314), (6, 6), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 9, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 5), (1, 2), (3, 2)]
+  RLE expanded histogram: [(0, 24322), (1, 58), (3, 196)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 4 4 4 4 4 4 4
+    4 4 4 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 4 132 132 132 132 132 132
+
+============================================================================
+FILE: hol_025.pmp
+  size=1750  width=24 height=12 cells=288
+  flags: distinct=[(2, 116), (4, 76), (132, 96)]
+  flags&0x7f distinct=[(2, 116), (4, 172)]
+  bit7 set: 96 / 288
+  cellblk distinct=96  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=5  total RLE bytes=18432  (cells=288, delta=+18144)
+  tailbytes distinct=[(0, 41), (2, 6), (3, 3), (4, 234), (6, 4)]
+  leftover bytes after last section: 0
+  RLE runs: 5, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (3, 2)]
+  RLE expanded histogram: [(0, 18276), (3, 156)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 2 2 2
+    2 4 132 132 132 132 132 132
+    132 132 132 132 132 132 132 132
+
+============================================================================
+FILE: hol_026.pmp
+  size=2394  width=24 height=16 cells=384
+  flags: distinct=[(2, 120), (3, 144), (4, 120)]
+  flags&0x7f distinct=[(2, 120), (3, 144), (4, 120)]
+  bit7 set: 0 / 384
+  cellblk distinct=40  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=39  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 8), (1, 5), (2, 23), (4, 347), (6, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 39, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 20), (1, 18), (3, 1)]
+  RLE expanded histogram: [(0, 24065), (1, 127), (3, 384)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 2 2 2 2 2
+    2 2 2 2 2 4 4 4
+    4 4 4 4 4 4 4 4
+
+============================================================================
+FILE: hol_027.pmp
+  size=1174  width=16 height=12 cells=192
+  flags: distinct=[(0, 32), (2, 80), (4, 30), (132, 50)]
+  flags&0x7f distinct=[(0, 32), (2, 80), (4, 80)]
+  bit7 set: 50 / 192
+  cellblk distinct=56  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=5  total RLE bytes=12288  (cells=192, delta=+12096)
+  tailbytes distinct=[(0, 19), (1, 5), (2, 7), (3, 2), (4, 157), (5, 1), (6, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 5, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 3), (3, 2)]
+  RLE expanded histogram: [(0, 12112), (3, 176)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 2 2 4 4 4 4 4
+    4 4 4 4 4 2 2 0
+    0 2 2 132 132 132 132 132
+    132 132 132 132 132 2 2 0
+    2 2 2 132 132 132 132 132
+    132 132 132 132 132 2 2 2
+
+============================================================================
+FILE: hol_039.pmp
+  size=2734  width=28 height=16 cells=448
+  flags: distinct=[(0, 82), (2, 142), (4, 81), (130, 16), (132, 127)]
+  flags&0x7f distinct=[(0, 82), (2, 158), (4, 208)]
+  bit7 set: 143 / 448
+  cellblk distinct=81  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=17  total RLE bytes=28672  (cells=448, delta=+28224)
+  tailbytes distinct=[(0, 22), (1, 6), (2, 14), (3, 3), (4, 397), (5, 1), (6, 4), (7, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 17, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 9), (1, 6), (3, 2)]
+  RLE expanded histogram: [(0, 28518), (1, 6), (3, 148)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 0 0 0 0 0
+    0 0 0 0 0 2 2 2
+
+============================================================================
+FILE: hol_041.pmp
+  size=3402  width=32 height=16 cells=512
+  flags: distinct=[(2, 170), (4, 217), (132, 125)]
+  flags&0x7f distinct=[(2, 170), (4, 342)]
+  bit7 set: 125 / 512
+  cellblk distinct=140  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=159  total RLE bytes=32768  (cells=512, delta=+32256)
+  tailbytes distinct=[(0, 45), (1, 12), (2, 19), (3, 3), (4, 424), (6, 7), (8, 2)]
+  leftover bytes after last section: 0
+  RLE runs: 159, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 79), (1, 73), (3, 7)]
+  RLE expanded histogram: [(0, 32113), (1, 428), (3, 227)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 2 2 2
+
+============================================================================
+FILE: hol_042.pmp
+  size=3314  width=32 height=16 cells=512
+  flags: distinct=[(2, 208), (4, 229), (132, 75)]
+  flags&0x7f distinct=[(2, 208), (4, 304)]
+  bit7 set: 75 / 512
+  cellblk distinct=141  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=115  total RLE bytes=32768  (cells=512, delta=+32256)
+  tailbytes distinct=[(0, 26), (1, 17), (2, 26), (3, 5), (4, 421), (6, 16), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 115, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 56), (1, 53), (3, 6)]
+  RLE expanded histogram: [(0, 32170), (1, 301), (3, 297)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+
+============================================================================
+FILE: hol_060.pmp
+  size=2836  width=24 height=16 cells=384
+  flags: distinct=[(2, 98), (4, 222), (132, 64)]
+  flags&0x7f distinct=[(2, 98), (4, 286)]
+  bit7 set: 64 / 384
+  cellblk distinct=121  sample=(0, 0, 0, 0, 0, 0, 0, 0)
+  tail_count=260  total RLE bytes=24576  (cells=384, delta=+24192)
+  tailbytes distinct=[(0, 36), (1, 16), (2, 10), (4, 307), (5, 2), (6, 8), (7, 1), (8, 4)]
+  leftover bytes after last section: 0
+  RLE runs: 260, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 117), (1, 125), (3, 18)]
+  RLE expanded histogram: [(0, 22946), (1, 1216), (3, 414)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2
+
+============================================================================
+FILE: hol_061.pmp
+  size=2566  width=28 height=12 cells=336
+  flags: distinct=[(2, 35), (4, 273), (132, 28)]
+  flags&0x7f distinct=[(2, 35), (4, 301)]
+  bit7 set: 28 / 336
+  cellblk distinct=107  sample=(33, 80, 43, 0, 0, 0, 0, 0)
+  tail_count=269  total RLE bytes=21504  (cells=336, delta=+21168)
+  tailbytes distinct=[(0, 28), (1, 13), (2, 25), (3, 2), (4, 266), (5, 1), (8, 1)]
+  leftover bytes after last section: 0
+  RLE runs: 269, zero-run(0x4000) present: False
+  RLE value histogram: [(0, 133), (1, 129), (3, 7)]
+  RLE expanded histogram: [(0, 20653), (1, 448), (3, 403)]
+  first 64 expanded bytes (block 0, sub-cell map):
+    0 0 0 0 0 0 0 0
+    0 0 0 1 1 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  first 64 flags (block 0):
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 2 2 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4
+    4 4 4 4 4 2 2 4
+    4 4 4 4 4 4 4 4
+

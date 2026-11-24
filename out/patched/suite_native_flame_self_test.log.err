@@ -1,0 +1,9 @@
+WARNING: Loaded resource as image file, this will not work on export: 'res://textures/native_flame/particle_a_128d.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] configure (res://scripts/native_flame_emitter.gd:60)
+       [1] _run (res://tools/native_flame_self_test.gd:25)
+WARNING: Loaded resource as image file, this will not work on export: 'res://textures/native_flame/particle_a_128d.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tools/native_flame_self_test.gd:34)

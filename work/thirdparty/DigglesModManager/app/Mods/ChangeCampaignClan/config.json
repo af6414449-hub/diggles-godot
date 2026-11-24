@@ -1,0 +1,94 @@
+﻿{
+	"version" : "0.2",
+	"author" : "cech12",
+	
+	"name" :  {
+		"en" : "Change Campain Clan",
+		"de" : "Kampagnen-Clan ändern",
+		"pl" : "Zagraj w kampanię innym klanem"
+	},
+	"description" : {
+		"en" : "Change the played diggles clan in the campaign.",
+		"de" : "Ändert den spielbaren Wiggles-Clan in der Kampagne.",
+		"pl" : "Pozwala zmienić klan karłów, którym rozgrywana jest kampania."
+	},
+	
+	"links" : {
+		"download" : "https://github.com/DigglesMods/ChangeCampaignClan/releases",
+		"wiki" : "https://github.com/DigglesMods/ChangeCampaignClan/wiki"
+	},
+	
+	"settings" : [
+		{
+			"id" : "CLAN",
+			"type" : "select",
+			"default" : 0,
+			"name" :  {
+				"en" : "Clan",
+				"de" : "Clan",
+				"pl" : "Klan",
+			},
+			"description" : {
+				"en" : "Clan that you want to play in campaign.",
+				"de" : "Clan, den du in der Kampagne spielen möchtest."
+			},
+			"possibleValues" : [
+				{
+					"value" : 0,
+					"name" : {
+						"en" : "Diggles",
+						"de" : "Wiggles",
+						"pl" : "Wigglesy"
+					}
+				},
+				{
+					"value" : 1,
+					"name" : {
+						"en" : "Peacer",
+						"de" : "Peacer",
+						"pl" : "Hipisi"
+					}
+				},
+				{
+					"value" : 2,
+					"name" : {
+						"en" : "Knockers",
+						"de" : "Knockers",
+						"pl" : "Puknięci"
+					}
+				},
+				{
+					"value" : 3,
+					"name" : {
+						"en" : "Brains",
+						"de" : "Brains",
+						"pl" : "Jajogłowi"
+					}
+				},
+				{
+					"value" : 4,
+					"name" : {
+						"en" : "Vampyres",
+						"de" : "Vampyres",
+						"pl" : "Wampiry"
+					}
+				}
+			]
+		},
+		{
+			"id" : "SWAP_CLAN",
+			"type" : "bool",
+			"default" : false,
+			"name" :  {
+				"en" : "Swap clan",
+				"de" : "Tausche Clan",
+				"pl" : "Podmień klan"
+			},
+			"description" : {
+				"en" : "The chosen clan becomes the Diggles clan.",
+				"de" : "Der ausgewählte Clan wird zum Wiggles-Clan.",
+				"pl" : "Wybrany klan zostaje zamieniony miejscami z klanem Wigglesów."
+			}
+		}
+	]
+}

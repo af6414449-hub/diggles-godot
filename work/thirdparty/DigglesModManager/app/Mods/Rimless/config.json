@@ -1,0 +1,18 @@
+{
+	"version" : "1.0",
+	"author" : "cech12",
+	
+	"name" :  {
+		"en" : "Rimless",
+		"de" : "Randlos"
+	},
+	"description" : {
+		"en" : "Removes the black frame from the Game.",
+		"de" : "Diese Mod entfernt den abgerundeten Spielrahmen."
+	},
+	
+	"links" : {
+		"download" : "https://github.com/DigglesMods/Rimless/releases",
+		"wiki" : "https://github.com/DigglesMods/Rimless/wiki"
+	}
+}

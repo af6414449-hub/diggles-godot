@@ -1,0 +1,943 @@
+{
+  "adapter": "AMD Radeon(TM) Vega 8 Graphics",
+  "display": "Windows",
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "inventory": {
+    "lights": [
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_c_015",
+        "position": "(8.14568, -12.0983, 13.28)",
+        "range": 4.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_c_016",
+        "position": "(26.8568, -8.27136, 13.28)",
+        "range": 4.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_d_017",
+        "position": "(32.8151, -15.184, 14.5)",
+        "range": 5.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_056",
+        "position": "(32.4054, -15.4933, 8.51)",
+        "range": 8.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_057",
+        "position": "(30.0602, -7.9365, 8.51)",
+        "range": 8.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_058",
+        "position": "(14.5916, -11.4247, 14.0)",
+        "range": 8.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_065",
+        "position": "(11.5, -13.0, 8.855)",
+        "range": 2.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_066",
+        "position": "(17.5, -13.0, 8.855)",
+        "range": 2.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_067",
+        "position": "(22.5, -17.0, 12.855)",
+        "range": 2.0,
+        "shadow": false
+      }
+    ],
+    "mesh_instances": 365,
+    "nodes": 838,
+    "scripted_processors": [
+      "/root/MultiplayerTest"
+    ],
+    "top_level": [
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/NativeCorridorPreview"
+      },
+      {
+        "children": 5,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uh_001_001"
+      },
+      {
+        "children": 5,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uh_007_002"
+      },
+      {
+        "children": 4,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Holzstuetze_a_003"
+      },
+      {
+        "children": 4,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Holzstuetze_b_004"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Holzstuetze_c_005"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_b_006"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_c_007"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Pilz_008"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Pilz_009"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Pilz_010"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Stein_011"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Stein_012"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Stein_013"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Stein_014"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Feuerstelle_018"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Hamster_023"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Hamster_024"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Hamster_038"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Hamster_039"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Schatztonne_040"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Schatztonne_041"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Schatztonne_042"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillhamster_043"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillhamster_044"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillhamster_045"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillpilz_046"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillpilz_047"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillpilz_048"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Raupe_052"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Raupe_053"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Moos_uv_b_054"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Swf_bergwand_059"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Swf_bergwand_060"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Urw_sumpf_062"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Feuerkelch_b_065"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Feuerkelch_b_066"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Feuerkelch_b_067"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Urw_bas_aa_070"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Urw_baumstumpf_b_071"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Urw_baumstumpf_a_072"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Obw_berg_a_073"
+      },
+      {
+        "children": 5,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uh_002_074"
+      },
+      {
+        "children": 4,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uh_3_075"
+      },
+      {
+        "children": 4,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uv_002_076"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_a_077"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wurzel_04_b_078"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_079"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_080"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_l_081"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_l_082"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_l_083"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_a_084"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_h_085"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_g_086"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_g_087"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_j_088"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_k_089"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_k_090"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_l_091"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_a_092"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_j_093"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_a_094"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_l_095"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_l_096"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Moos_uv_a_097"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Moos_um_a_098"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Tomblume_b_099"
+      },
+      {
+        "children": 5,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uh_009_100"
+      },
+      {
+        "children": 5,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uv_10_101"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Holzwand_b_102"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Holzwand_d_103"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Holzwand_g_104"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Holzwand_l_105"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wurzel_04_a_106"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_b_107"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_108"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_109"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_110"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_111"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_112"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_113"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_l_114"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_l_115"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_h_116"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_h_117"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_g_118"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_g_119"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Boden_kaserne_c_120"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Boden_kaserne_d_121"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Boden_kaserne_d_122"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Boden_kaserne_e_123"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Boden_kaserne_c_124"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Abschluss_kaserne_a_125"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Abschluss_kaserne_a_126"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Abschluss_kaserne_a_127"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Abschluss_kaserne_a_128"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Abschluss_kaserne_a_129"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_130"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_131"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_132"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_133"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_134"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_135"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Pilze_01_a_136"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Tomblume_137"
+      },
+      {
+        "children": 6,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Zwerg_1106"
+      },
+      {
+        "children": 6,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Zwerg_1107"
+      },
+      {
+        "children": 6,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Zwerg_1108"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_c_015"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_c_016"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_d_017"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_056"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_057"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_058"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_065"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_066"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_067"
+      }
+    ],
+    "unique_materials": 166,
+    "unique_meshes": 293,
+    "unique_visible_materials": 161,
+    "visible_material_modes": {
+      "ShaderMaterial": 168,
+      "StandardMaterial3D:alpha=0:cull=2": 57,
+      "StandardMaterial3D:alpha=2:cull=2": 124
+    },
+    "visible_meshes": 349
+  },
+  "load_ready_ms": 1771.393,
+  "note": "Desktop idle fixed camera; no input/network stress. Frame wall time includes wait/present; TIME_PROCESS is engine monitor, not script-exclusive CPU. Zero GPU/viewport timings mean unavailable, not free.",
+  "phases": [
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "msaa_off_0",
+      "physics_monitor_ms": {
+        "max": 3.729,
+        "mean": 3.35233333333334,
+        "min": 0.904,
+        "p50": 3.729,
+        "p95": 3.729
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 11.813,
+        "mean": 11.2220666666667,
+        "min": 7.381,
+        "p50": 11.813,
+        "p95": 11.813
+      },
+      "render_memory_bytes": 35350925.0,
+      "static_memory_bytes": 130607636.0,
+      "viewport_cpu_ms": {
+        "max": 6.17799997329712,
+        "mean": 4.290072230498,
+        "min": 3.54299998283386,
+        "p50": 4.17999982833862,
+        "p95": 5.33799982070923
+      },
+      "viewport_gpu_ms": {
+        "max": 4.04300022125244,
+        "mean": 2.90825556781557,
+        "min": 2.1470000743866,
+        "p50": 2.84899997711182,
+        "p95": 3.6029999256134
+      },
+      "wall_ms": {
+        "max": 10.041,
+        "mean": 5.48582777777778,
+        "min": 4.46,
+        "p50": 5.243,
+        "p95": 7.239
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "msaa_4x_0",
+      "physics_monitor_ms": {
+        "max": 0.904,
+        "mean": 0.65931111111111,
+        "min": 0.596,
+        "p50": 0.596,
+        "p95": 0.904
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 27.997,
+        "mean": 23.7592666666666,
+        "min": 7.381,
+        "p50": 27.997,
+        "p95": 27.997
+      },
+      "render_memory_bytes": 64842125.0,
+      "static_memory_bytes": 130614912.0,
+      "viewport_cpu_ms": {
+        "max": 7.53800010681152,
+        "mean": 5.62531113094754,
+        "min": 4.8730001449585,
+        "p50": 5.52199983596802,
+        "p95": 6.72700023651123
+      },
+      "viewport_gpu_ms": {
+        "max": 7.55299997329712,
+        "mean": 5.76053333017561,
+        "min": 5.1230001449585,
+        "p50": 5.68499994277954,
+        "p95": 6.61899995803833
+      },
+      "wall_ms": {
+        "max": 8.608,
+        "mean": 6.72771666666667,
+        "min": 5.805,
+        "p50": 6.647,
+        "p95": 7.919
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "msaa_off_1",
+      "physics_monitor_ms": {
+        "max": 0.481,
+        "mean": 0.460599999999999,
+        "min": 0.445,
+        "p50": 0.445,
+        "p95": 0.481
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 9.97,
+        "mean": 9.08556666666668,
+        "min": 7.929,
+        "p50": 9.97,
+        "p95": 9.97
+      },
+      "render_memory_bytes": 35350925.0,
+      "static_memory_bytes": 130621908.0,
+      "viewport_cpu_ms": {
+        "max": 5.89699983596802,
+        "mean": 4.3500944296519,
+        "min": 3.59899997711182,
+        "p50": 4.26300001144409,
+        "p95": 5.10599994659424
+      },
+      "viewport_gpu_ms": {
+        "max": 3.96900010108948,
+        "mean": 2.94746111366484,
+        "min": 2.52099990844727,
+        "p50": 2.87800002098084,
+        "p95": 3.55399990081787
+      },
+      "wall_ms": {
+        "max": 7.183,
+        "mean": 5.35497777777778,
+        "min": 4.617,
+        "p50": 5.249,
+        "p95": 6.279
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "msaa_4x_1",
+      "physics_monitor_ms": {
+        "max": 0.722,
+        "mean": 0.666033333333331,
+        "min": 0.503,
+        "p50": 0.722,
+        "p95": 0.722
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 18.554,
+        "mean": 16.3439555555556,
+        "min": 9.906,
+        "p50": 18.554,
+        "p95": 18.554
+      },
+      "render_memory_bytes": 64842125.0,
+      "static_memory_bytes": 130629024.0,
+      "viewport_cpu_ms": {
+        "max": 11.3319997787476,
+        "mean": 6.30688887702094,
+        "min": 4.9850001335144,
+        "p50": 6.09499979019165,
+        "p95": 8.16499996185303
+      },
+      "viewport_gpu_ms": {
+        "max": 10.7650003433228,
+        "mean": 6.39675555759006,
+        "min": 5.14900016784668,
+        "p50": 6.27500009536743,
+        "p95": 7.91900014877319
+      },
+      "wall_ms": {
+        "max": 13.003,
+        "mean": 7.61532777777778,
+        "min": 5.852,
+        "p50": 7.406,
+        "p95": 9.788
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "msaa_off_2",
+      "physics_monitor_ms": {
+        "max": 0.567,
+        "mean": 0.405933333333333,
+        "min": 0.375,
+        "p50": 0.375,
+        "p95": 0.567
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 12.866,
+        "mean": 12.3328888888889,
+        "min": 9.738,
+        "p50": 12.866,
+        "p95": 12.866
+      },
+      "render_memory_bytes": 35350925.0,
+      "static_memory_bytes": 130636068.0,
+      "viewport_cpu_ms": {
+        "max": 8.3120002746582,
+        "mean": 5.00721113814248,
+        "min": 3.64400005340576,
+        "p50": 4.93100023269653,
+        "p95": 6.69099998474121
+      },
+      "viewport_gpu_ms": {
+        "max": 5.73600006103516,
+        "mean": 3.36817777554194,
+        "min": 2.16799998283386,
+        "p50": 3.22900009155273,
+        "p95": 4.62799978256226
+      },
+      "wall_ms": {
+        "max": 11.595,
+        "mean": 6.46948888888889,
+        "min": 4.688,
+        "p50": 6.294,
+        "p95": 8.59
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "msaa_4x_2",
+      "physics_monitor_ms": {
+        "max": 0.567,
+        "mean": 0.345,
+        "min": 0.161,
+        "p50": 0.369,
+        "p95": 0.567
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 17.741,
+        "mean": 15.8048222222222,
+        "min": 9.738,
+        "p50": 17.741,
+        "p95": 17.741
+      },
+      "render_memory_bytes": 64842125.0,
+      "static_memory_bytes": 130643160.0,
+      "viewport_cpu_ms": {
+        "max": 11.5229997634888,
+        "mean": 6.64947223133511,
+        "min": 4.97700023651123,
+        "p50": 6.38800001144409,
+        "p95": 9.35099983215332
+      },
+      "viewport_gpu_ms": {
+        "max": 12.5520000457764,
+        "mean": 6.69876667393578,
+        "min": 5.28399991989136,
+        "p50": 6.47399997711182,
+        "p95": 9.21700000762939
+      },
+      "wall_ms": {
+        "max": 13.855,
+        "mean": 7.91948333333333,
+        "min": 6.01,
+        "p50": 7.494,
+        "p95": 11.68
+      }
+    }
+  ],
+  "renderer": "gl_compatibility",
+  "sample_frames": 180,
+  "scene_script_sha256_at_end": "8d6782d290857f8bf81cf85d2fcf4b6066243f57d650ea391fe7d81e5360f0e9",
+  "scene_script_sha256_at_load": "8d6782d290857f8bf81cf85d2fcf4b6066243f57d650ea391fe7d81e5360f0e9",
+  "viewport": "(1280, 720)",
+  "vsync": 0
+}

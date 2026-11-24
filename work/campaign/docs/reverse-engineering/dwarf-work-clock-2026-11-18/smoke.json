@@ -1,0 +1,128 @@
+{
+  "ok": true,
+  "project": "C:\\Users\\frant\\OneDrive\\\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b\\ChatGPT\\Diggles\\godot",
+  "godot_version": "4.7.2.stable.official.ed1daf0bf",
+  "wall_seconds": 7.24,
+  "seconds_per_scene": 3.0,
+  "counts": {
+    "scenes": 3,
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "warnings": 0,
+    "findings": 0
+  },
+  "scenes": [
+    {
+      "scene": "res://scenes/main.tscn",
+      "ok": true,
+      "returncode": 0,
+      "duration_s": 0.52,
+      "timed_out": false,
+      "counts": {
+        "total": 0,
+        "errors": 0,
+        "parse_errors": 0,
+        "warnings": 0,
+        "info": 0,
+        "findings": 0
+      },
+      "findings": [],
+      "diagnostics": [],
+      "frames": 180,
+      "seconds_simulated": 3.0,
+      "ended": "completed",
+      "perf": {
+        "frame_ms": {
+          "avg": 0.02,
+          "end": 0.02,
+          "max": 0.04,
+          "min": 0.02,
+          "p95": 0.02,
+          "samples": 180,
+          "start": 0.02
+        },
+        "node_count_end": 11,
+        "node_count_start": 11,
+        "orphan_nodes": 0,
+        "samples": 32,
+        "static_memory_mb": 26.34,
+        "mode": "fixed_fps"
+      }
+    },
+    {
+      "scene": "res://scenes/multiplayer_test.tscn",
+      "ok": true,
+      "returncode": 0,
+      "duration_s": 5.38,
+      "timed_out": false,
+      "counts": {
+        "total": 0,
+        "errors": 0,
+        "parse_errors": 0,
+        "warnings": 0,
+        "info": 0,
+        "findings": 0
+      },
+      "findings": [],
+      "diagnostics": [],
+      "frames": 180,
+      "seconds_simulated": 3.0,
+      "ended": "completed",
+      "perf": {
+        "frame_ms": {
+          "avg": 4.54,
+          "end": 4.19,
+          "max": 13.05,
+          "min": 0.76,
+          "p95": 6.59,
+          "samples": 180,
+          "start": 0.86
+        },
+        "node_count_end": 847,
+        "node_count_start": 847,
+        "orphan_nodes": 0,
+        "samples": 32,
+        "static_memory_mb": 142.08,
+        "mode": "fixed_fps"
+      }
+    },
+    {
+      "scene": "res://scenes/terrain_reference.tscn",
+      "ok": true,
+      "returncode": 0,
+      "duration_s": 1.34,
+      "timed_out": false,
+      "counts": {
+        "total": 0,
+        "errors": 0,
+        "parse_errors": 0,
+        "warnings": 0,
+        "info": 0,
+        "findings": 0
+      },
+      "findings": [],
+      "diagnostics": [],
+      "frames": 180,
+      "seconds_simulated": 3.0,
+      "ended": "completed",
+      "perf": {
+        "frame_ms": {
+          "avg": 0.03,
+          "end": 0.05,
+          "max": 0.1,
+          "min": 0.02,
+          "p95": 0.06,
+          "samples": 180,
+          "start": 0.04
+        },
+        "node_count_end": 1558,
+        "node_count_start": 1558,
+        "orphan_nodes": 0,
+        "samples": 32,
+        "static_memory_mb": 46.84,
+        "mode": "fixed_fps"
+      }
+    }
+  ]
+}

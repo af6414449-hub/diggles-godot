@@ -1,0 +1,18 @@
+SCRIPT ERROR: Parse Error: Preload file "res://scripts/native_farm_raupe.gd" does not exist.
+   at: GDScript::reload (res://tools/native_farm_raupe_self_test.gd:8)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "request" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_farm_raupe_self_test.gd:27)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "farm" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_farm_raupe_self_test.gd:34)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "plan" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_farm_raupe_self_test.gd:55)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "cooldown" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_farm_raupe_self_test.gd:76)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "create_request" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_farm_raupe_self_test.gd:80)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "applied" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_farm_raupe_self_test.gd:90)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "removal" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_farm_raupe_self_test.gd:98)
+ERROR: Failed to load script "res://tools/native_farm_raupe_self_test.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

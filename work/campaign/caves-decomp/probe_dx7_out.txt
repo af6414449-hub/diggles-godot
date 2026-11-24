@@ -1,0 +1,20 @@
+=== PE C:\diggles-ghidra\DigglesPort.dll image_base 0x10000000
+  section .text    va=0x10001000 vsize=0x41F78 raw=0x42000
+  section .rdata   va=0x10043000 vsize=0xC588 raw=0xC600
+  section .data    va=0x10050000 vsize=0x411F07C raw=0xA00
+  section .msvcjmc va=0x14170000 vsize=0xD02 raw=0xE00
+  section .rsrc    va=0x14171000 vsize=0x1E0 raw=0x200
+  section .reloc   va=0x14172000 vsize=0x2DDC raw=0x2E00
+
+=== candidate vtables (rdata/data runs of .text pointers) ===
+total candidates: 0
+
+=== vtable dumps for candidates referenced by known ctors ===
+
+=== imports of d3d11/dxgi/d3dcompiler and their users ===
+[dxgi.dll] 1 imports
+  CreateDXGIFactory1                 IAT 0x10043254  users: 
+[d3d11.dll] 1 imports
+  D3D11CreateDevice                  IAT 0x1004324C  users: 
+[D3DCOMPILER_47.dll] 1 imports
+  D3DCompileFromFile                 IAT 0x10043000  users: 

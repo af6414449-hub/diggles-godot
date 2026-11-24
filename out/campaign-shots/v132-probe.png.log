@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.13596 Core Profile Forward-Compatible Context 20.10.44 27.20.11044.7 - Compatibility - Using Device: ATI Technologies Inc. - AMD Radeon(TM) Vega 8 Graphics
+
+CAMPAIGN_BUILD_STAGE geometry ms=33404
+CAMPAIGN_BUILD_STAGE objects ms=26613
+BACKDROP_FRAME fov=38.00 frame=2938.3x1652.8 viewport=(1280.0, 720.0) horizon=-0.1556 edge=-3777.0
+CAMPAIGN_BUILD_STAGE camera ms=124
+CAMPAIGN_FIRST_LEVEL_READY seed=0 cells=15709 templates=38 placements=14 story=25 objects=1732 dwarfs=16 lights=122 deleted_wuker=7 overworld=22 surfaces=146 walls=1556 ground=311969 rock=311971 backdrop_omitted=3064 triangles=924440
+CAMPAIGN_CHAPTER_SOURCE Campaign.tcl:22-191 first_level seed=0 map=512x640 view={ "x": 246.7, "y": 28.8, "zoom": 1.478, "rx": -0.29, "ry": 0.05 }
+CAMPAIGN_PROBE pixel=(600.0, 435.0) collider=CampaignTerrain_0_Gnd_A04/CampaignGroundCollision point=(118.3428, -83.26339, 14.5) normal=(0.0, 0.0, 1.0)
+CAMPAIGN_PROBE pixel=(600.0, 455.0) collider=CampaignTerrain_0_Gnd_A04/CampaignGroundCollision point=(118.1505, -84.9542, 12.5) normal=(0.0, 0.0, 1.0)
+CAMPAIGN_PROBE pixel=(600.0, 465.0) collider=CampaignTerrain_0_Gnd_A06/CampaignGroundCollision point=(118.1453, -85.42424, 12.5) normal=(0.0, 0.0, 1.0)
+CAMPAIGN_PROBE pixel=(600.0, 490.0) collider=CampaignTerrain_1_Gnd_A01/CampaignGroundCollision point=(118.1555, -86.5, 12.75322) normal=(0.0, 1.0, 0.0)
+CAMPAIGN_PROBE pixel=(600.0, 510.0) collider=CampaignTerrain_0_Gnd_A01/CampaignGroundCollision point=(118.3056, -86.64777, 14.5) normal=(0.0, 0.0, 1.0)
+CAMPAIGN_CAPTURE_READY path=C:\Users\frant\OneDrive\Документы\MiniMax\Diggles\out\campaign-shots\v132-probe.png error=0 size=(1280, 720)

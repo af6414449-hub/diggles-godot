@@ -1,0 +1,66 @@
+FILE: C:\diggles-ghidra\DigglesPort.dll
+SIZE: 340480 bytes
+PE offset: 0x128
+Machine: 0x014C (i386)
+Sections: 6
+TimeDateStamp: 0x5FE4FAA7 (1608841895)
+  -> UTC: 2020-12-24T20:31:35Z
+Characteristics: 0x2102
+OptionalHeader magic: 0x010B (PE32)
+Linker version: 14.28
+EntryPoint RVA: 0x000407F1
+ImageBase: 0x10000000
+Subsystem: 3 (CUI)
+DllCharacteristics: 0x0140
+NumberOfRvaAndSizes: 16
+SECTIONS:
+  .text      RVA=0x00001000 VSize=0x00041F78 Raw=0x00000400 RawSz=0x00042000 Chars=0x60000020
+  .rdata     RVA=0x00043000 VSize=0x0000C588 Raw=0x00042400 RawSz=0x0000C600 Chars=0x40000040
+  .data      RVA=0x00050000 VSize=0x0411F07C Raw=0x0004EA00 RawSz=0x00000A00 Chars=0xC0000040
+  .msvcjmc   RVA=0x04170000 VSize=0x00000D02 Raw=0x0004F400 RawSz=0x00000E00 Chars=0xC0000040
+  .rsrc      RVA=0x04171000 VSize=0x000001E0 Raw=0x00050200 RawSz=0x00000200 Chars=0x40000040
+  .reloc     RVA=0x04172000 VSize=0x00002DDC Raw=0x00050400 RawSz=0x00002E00 Chars=0x42000040
+
+RICH HEADER:
+  XOR key: 0x5135BEAA
+  prodid=0x0093 build=30729   count=12     Utc1400_C (VS2015)
+  prodid=0x0101 build=29118   count=4      tool 0x101
+  prodid=0x0104 build=26715   count=3      tool 0x104
+  prodid=0x0105 build=26715   count=2      tool 0x105
+  prodid=0x0101 build=26715   count=22     tool 0x101
+  prodid=0x0105 build=29118   count=24     tool 0x105
+  prodid=0x0104 build=29118   count=11     tool 0x104
+  prodid=0x0103 build=29118   count=10     tool 0x103
+  prodid=0x0101 build=26428   count=2      tool 0x101
+  prodid=0x009C build=40219   count=3      tool 0x9C
+  prodid=0x0001 build=0       count=148    Import0 (VS6 imp lib)
+  prodid=0x0109 build=29334   count=60     tool 0x109
+  prodid=0x0100 build=29334   count=1      tool 0x100
+  prodid=0x00FF build=29334   count=1      Unknown
+  prodid=0x0102 build=29334   count=1      tool 0x102
+
+VERSION RESOURCE:
+  (not found)
+
+IMPORTED DLLs:
+  SDL2.dll
+  steam_api.dll
+  dxgi.dll
+  d3d11.dll
+  D3DCOMPILER_47.dll
+  KERNEL32.dll
+  USER32.dll
+  GDI32.dll
+  ole32.dll
+  MSVCP140.dll
+  SHLWAPI.dll
+  MF.dll
+  MFPlat.DLL
+  VCRUNTIME140.dll
+  api-ms-win-crt-stdio-l1-1-0.dll
+  api-ms-win-crt-runtime-l1-1-0.dll
+  api-ms-win-crt-time-l1-1-0.dll
+  api-ms-win-crt-heap-l1-1-0.dll
+  api-ms-win-crt-utility-l1-1-0.dll
+  api-ms-win-crt-math-l1-1-0.dll
+  WINMM.dll

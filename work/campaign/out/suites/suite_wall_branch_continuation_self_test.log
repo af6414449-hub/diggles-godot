@@ -1,0 +1,191 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+NATIVE_CAVE_BRUSHES_READY count=4 anchor=[16.0, 32.0]
+NATIVE_CAVE_BRUSH brush=1 cells=38 bounds=[P: (11, 27), S: (9, 4)]
+NATIVE_CAVE_BRUSH brush=2 cells=58 bounds=[P: (9, 27), S: (13, 4)]
+NATIVE_CAVE_BRUSH brush=3 cells=136 bounds=[P: (7, 23), S: (17, 8)]
+NATIVE_CAVE_BRUSH brush=4 cells=128 bounds=[P: (9, 20), S: (13, 11)]
+NATIVE_CAVE_SKIN_READY size=1 meshes=2
+NATIVE_CAVE_SKIN_READY size=2 meshes=2
+NATIVE_CAVE_SKIN_READY size=3 meshes=2
+NATIVE_CAVE_SKIN_READY size=4 meshes=2
+NATIVE_TERRAIN_GRID_READY size=44x24 cells=943
+TERRAIN_BACKDROP_OPENING source_triangles=5619 omitted_back_faces=317 retained_triangles=5302
+NATIVE_L2M_READY cells=943 detail_textures=34 surfaces=793
+DWARF_DIG_CLIPS_READY clips=7 frames=55
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=456
+NATIVE_SCENE_LIGHTS_READY lights=9 horizons=1 terrain_materials=source native_diffuse_preview=true models=world_subset_and_godot
+NATIVE_AUTOLIGHT_READY actors=3 source_model=fackel.standard mode=STILL host_rng_seed=1
+WORLD_MODEL_LIGHT_READY surfaces=32 skipped=0 enabled=true host_owner=255 shared_source_gain=0.100000
+NATIVE_TERRAIN_READY cells=943 triangles=5619 packed_depth=8.0..14.5
+MULTIPLAYER_START_MODELS_READY placements=109 unique_models=54 original_textures=45
+TERRAIN_BACKDROP_OPENING source_triangles=5661 omitted_back_faces=317 retained_triangles=5344
+NATIVE_L2M_READY cells=943 detail_textures=8 surfaces=25
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=463
+NATIVE_NAVIGATION_REFRESH batches=1
+TERRAIN_BACKDROP_OPENING source_triangles=5661 omitted_back_faces=317 retained_triangles=5344
+NATIVE_L2M_READY cells=943 detail_textures=8 surfaces=18
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=2
+TERRAIN_BACKDROP_OPENING source_triangles=5686 omitted_back_faces=317 retained_triangles=5369
+NATIVE_L2M_READY cells=943 detail_textures=14 surfaces=36
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=3
+TERRAIN_BACKDROP_OPENING source_triangles=5669 omitted_back_faces=317 retained_triangles=5352
+NATIVE_L2M_READY cells=943 detail_textures=12 surfaces=37
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=4
+TERRAIN_BACKDROP_OPENING source_triangles=5694 omitted_back_faces=317 retained_triangles=5377
+NATIVE_L2M_READY cells=943 detail_textures=3 surfaces=13
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=5
+TERRAIN_BACKDROP_OPENING source_triangles=5677 omitted_back_faces=317 retained_triangles=5360
+NATIVE_L2M_READY cells=943 detail_textures=1 surfaces=11
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=6
+TERRAIN_BACKDROP_OPENING source_triangles=5702 omitted_back_faces=317 retained_triangles=5385
+NATIVE_L2M_READY cells=943 detail_textures=2 surfaces=16
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=7
+TERRAIN_BACKDROP_OPENING source_triangles=5685 omitted_back_faces=317 retained_triangles=5368
+NATIVE_L2M_READY cells=943 detail_textures=1 surfaces=14
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=8
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=5 target=(1.5, -17.75, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(3, 17) stance=(1.5, -17.75, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=kletter_hack_rechts point=(3, 17)
+TERRAIN_BACKDROP_OPENING source_triangles=5726 omitted_back_faces=317 retained_triangles=5409
+NATIVE_L2M_READY cells=943 detail_textures=1 surfaces=19
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=9
+DWARF_DIG_CALLBACK Zwerg_1106 point=(3, 17) accepted=true
+DWARF_DIG_ENDED Zwerg_1106
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=2 target=(1.5, -17.875, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(3, 18) stance=(1.5, -17.875, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_DIG_QUEUE_NEXT Zwerg_1106 point=(3.0, 18.0, 13.0) rank=0 cost=2.345208
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=kletter_hack_rechts point=(3, 18)
+TERRAIN_BACKDROP_OPENING source_triangles=5709 omitted_back_faces=317 retained_triangles=5392
+NATIVE_L2M_READY cells=943 detail_textures=2 surfaces=14
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=10
+DWARF_DIG_CALLBACK Zwerg_1106 point=(3, 18) accepted=true
+DWARF_DIG_ENDED Zwerg_1106
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=19 target=(2.25, -18.375, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(4, 17) stance=(2.25, -18.375, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_DIG_QUEUE_NEXT Zwerg_1106 point=(4.0, 17.0, 13.0) rank=0 cost=2.918154
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_vorn point=(4, 17)
+TERRAIN_BACKDROP_OPENING source_triangles=5736 omitted_back_faces=317 retained_triangles=5419
+NATIVE_L2M_READY cells=943 detail_textures=3 surfaces=18
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=11
+DWARF_DIG_CALLBACK Zwerg_1106 point=(4, 17) accepted=true
+DWARF_DIG_ENDED Zwerg_1106
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=3 target=(2.5, -18.375, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(4, 18) stance=(2.5, -18.375, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_DIG_QUEUE_NEXT Zwerg_1106 point=(4.0, 18.0, 13.0) rank=0 cost=2.335193
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten_unfall point=(4, 18)
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten point=(4, 18)
+TERRAIN_BACKDROP_OPENING source_triangles=5719 omitted_back_faces=317 retained_triangles=5402
+NATIVE_L2M_READY cells=943 detail_textures=4 surfaces=14
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=12
+DWARF_DIG_CALLBACK Zwerg_1106 point=(4, 18) accepted=true
+DWARF_DIG_ENDED Zwerg_1106
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=9 target=(3.25, -18.375, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(5, 18) stance=(3.25, -18.375, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_DIG_QUEUE_NEXT Zwerg_1106 point=(5.0, 18.0, 13.0) rank=0 cost=2.939494
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten_unfall point=(5, 18)
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten point=(5, 18)
+TERRAIN_BACKDROP_OPENING source_triangles=5743 omitted_back_faces=317 retained_triangles=5426
+NATIVE_L2M_READY cells=943 detail_textures=5 surfaces=15
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=13
+DWARF_DIG_CALLBACK Zwerg_1106 point=(5, 18) accepted=true
+DWARF_DIG_ENDED Zwerg_1106
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=1 target=(3.25, -18.375, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(5, 17) stance=(3.25, -18.375, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_DIG_QUEUE_NEXT Zwerg_1106 point=(5.0, 17.0, 13.0) rank=0 cost=2.388122
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_vorn point=(5, 17)
+TERRAIN_BACKDROP_OPENING source_triangles=5729 omitted_back_faces=317 retained_triangles=5412
+NATIVE_L2M_READY cells=943 detail_textures=5 surfaces=14
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=14
+DWARF_DIG_CALLBACK Zwerg_1106 point=(5, 17) accepted=true
+DWARF_DIG_ENDED Zwerg_1106
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=11 target=(4.25, -18.375, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(6, 18) stance=(4.25, -18.375, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_DIG_QUEUE_NEXT Zwerg_1106 point=(6.0, 18.0, 13.0) rank=0 cost=3.154857
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten_unfall point=(6, 18)
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten point=(6, 18)
+TERRAIN_BACKDROP_OPENING source_triangles=5753 omitted_back_faces=317 retained_triangles=5436
+NATIVE_L2M_READY cells=943 detail_textures=5 surfaces=15
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=15
+DWARF_DIG_CALLBACK Zwerg_1106 point=(6, 18) accepted=true
+DWARF_DIG_ENDED Zwerg_1106
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=1 target=(4.25, -18.375, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(6, 17) stance=(4.25, -18.375, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_DIG_QUEUE_NEXT Zwerg_1106 point=(6.0, 17.0, 13.0) rank=0 cost=2.388122
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_vorn point=(6, 17)
+TERRAIN_BACKDROP_OPENING source_triangles=5739 omitted_back_faces=317 retained_triangles=5422
+NATIVE_L2M_READY cells=943 detail_textures=7 surfaces=14
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=16
+DWARF_DIG_CALLBACK Zwerg_1106 point=(6, 17) accepted=true
+DWARF_DIG_ENDED Zwerg_1106
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=11 target=(5.25, -18.375, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(7, 18) stance=(5.25, -18.375, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_DIG_QUEUE_NEXT Zwerg_1106 point=(7.0, 18.0, 13.0) rank=0 cost=3.154857
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten_unfall point=(7, 18)
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten point=(7, 18)
+TERRAIN_BACKDROP_OPENING source_triangles=5763 omitted_back_faces=317 retained_triangles=5446
+NATIVE_L2M_READY cells=943 detail_textures=6 surfaces=14
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=17
+DWARF_DIG_CALLBACK Zwerg_1106 point=(7, 18) accepted=true
+DWARF_DIG_ENDED Zwerg_1106
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=1 target=(5.25, -18.375, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(7, 17) stance=(5.25, -18.375, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_DIG_QUEUE_NEXT Zwerg_1106 point=(7.0, 17.0, 13.0) rank=0 cost=2.388122
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_vorn point=(7, 17)
+TERRAIN_BACKDROP_OPENING source_triangles=5749 omitted_back_faces=317 retained_triangles=5432
+NATIVE_L2M_READY cells=943 detail_textures=7 surfaces=14
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=18
+DWARF_DIG_CALLBACK Zwerg_1106 point=(7, 17) accepted=true
+DWARF_DIG_ENDED Zwerg_1106
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=11 target=(6.25, -18.375, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(8, 18) stance=(6.25, -18.375, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_DIG_QUEUE_NEXT Zwerg_1106 point=(8.0, 18.0, 13.0) rank=0 cost=3.154857
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten_unfall point=(8, 18)
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten point=(8, 18)
+TERRAIN_BACKDROP_OPENING source_triangles=5773 omitted_back_faces=317 retained_triangles=5456
+NATIVE_L2M_READY cells=943 detail_textures=13 surfaces=29
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=19
+DWARF_DIG_CALLBACK Zwerg_1106 point=(8, 18) accepted=true
+DWARF_DIG_ENDED Zwerg_1106
+SURFACE_WALK_ASSIGNED Zwerg_1106 samples=1 target=(6.25, -18.375, 12.0)
+SURFACE_DIG_ASSIGNED Zwerg_1106 point=(8, 17) stance=(6.25, -18.375, 12.0) planner=source_fixdig_vectorfix_surface_route
+DWARF_DIG_QUEUE_NEXT Zwerg_1106 point=(8.0, 17.0, 13.0) rank=0 cost=2.388122
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_vorn point=(8, 17)
+TERRAIN_BACKDROP_OPENING source_triangles=5759 omitted_back_faces=317 retained_triangles=5442
+NATIVE_L2M_READY cells=943 detail_textures=16 surfaces=29
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=477
+NATIVE_NAVIGATION_REFRESH batches=20
+DWARF_DIG_CALLBACK Zwerg_1106 point=(8, 17) accepted=true
+DWARF_DIG_QUEUE_STOP Zwerg_1106 reason=no_candidate retry=0
+DWARF_DIG_ENDED Zwerg_1106
+WALL_BRANCH_CONTINUATION_SELF_TEST checks=16 failures=0 mutations=12 max_step=0.085717

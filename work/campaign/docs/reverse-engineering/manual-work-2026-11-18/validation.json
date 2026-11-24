@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-18",
+  "logs": [
+    {
+      "file": "tmp_manual_region_test.log",
+      "sha256": "ef89ec87a1c828d58bca56612952f25ccfd82566410ce85d8610f3a375a7edf5",
+      "issues": [],
+      "result": "MANUAL_DIG_REGION_SELF_TEST_OK assertions=27"
+    },
+    {
+      "file": "tmp_manual_work_visual.log",
+      "sha256": "137dcdf9b77696175c39618b0df43ac52be83455e9f92eaf18804d656a798eca",
+      "issues": [],
+      "result": "MANUAL_DIG_REGION_SELF_TEST_OK assertions=30"
+    },
+    {
+      "file": "tmp_final_excavated_walk.log",
+      "sha256": "a17d9e1c0fd9f228ccdb075b1ab1fb27044542441876bda5640b0c2dca70c1c5",
+      "issues": [],
+      "result": "EXCAVATED_WALK_SELF_TEST_OK assertions=37 mutations=4 new_floor=16.5 original_floor=14.5"
+    },
+    {
+      "file": "tmp_native_autolight_test.log",
+      "sha256": "6f7931d996d52cc3759c08693901cd90bd13763bf3f143e62f2f0945086a9cb1",
+      "issues": [],
+      "result": "NATIVE_AUTOLIGHT_SELF_TEST checks=33 failures=0"
+    },
+    {
+      "file": "tmp_torch_placement_test.log",
+      "sha256": "c309c790d9b30be703f77a09356b76acc4262f13ca8968c58bb5047bda560d41",
+      "issues": [],
+      "result": "NATIVE_TORCH_PLACEMENT_SELF_TEST checks=70 failures=0"
+    },
+    {
+      "file": "tmp_runtime_perf_msaa_final.log",
+      "sha256": "91b8d703f9d002b8ae4068cc336f20dfda797316a89ad0fbf026ba96c4d763cd",
+      "issues": [],
+      "result": "6 renderer phases completed"
+    },
+    {
+      "file": "tmp_manual_reg_dwarf_parallel_work_self_test.log",
+      "sha256": "062e2210fc374358377af81eba82d1e74614b94ba4d9732b85e33103b9409a53",
+      "issues": [],
+      "result": "DWARF_PARALLEL_WORK_SELF_TEST_OK assertions=21 workers=2 independent_walkers=3 mutations=2"
+    },
+    {
+      "file": "tmp_manual_reg_gesture_self_test.log",
+      "sha256": "a3ea6c465d73e839897eefc903676ed30459a1076239498895f248d01ee18aa1",
+      "issues": [],
+      "result": "INTERACTION_SELF_TEST_OK assertions=55"
+    },
+    {
+      "file": "tmp_manual_reg_native_corridor_contour_self_test.log",
+      "sha256": "de9d8d1a3fecfa8bf581d00cb5d3beddb2662064d25fe871d1883a4bf420f38d",
+      "issues": [],
+      "result": "NATIVE_CORRIDOR_CONTOUR_SELF_TEST_OK assertions=55 masks=16 stamp_triangles=66"
+    },
+    {
+      "file": "tmp_manual_reg_native_corridor_input_self_test.log",
+      "sha256": "d21786adc65a451654155732802712a1683e35822dc11e6615a25d9fcaa11831",
+      "issues": [],
+      "result": "NATIVE_CORRIDOR_INPUT_SELF_TEST_OK assertions=85"
+    },
+    {
+      "file": "tmp_manual_reg_native_dig_queue_self_test.log",
+      "sha256": "9cfcec426ebfb4580234d1f7df78580eb3a795af32319f13c0c0518546e6ef32",
+      "issues": [],
+      "result": "NATIVE_DIG_QUEUE_SELF_TEST_OK assertions=31 assignments=1 callbacks=3 mutations=3"
+    },
+    {
+      "file": "tmp_manual_reg_native_dwarf_dig_self_test.log",
+      "sha256": "bfaf804e4eb78f3767661c0485a44661a12dd72f29ba5f1851dd3644cced72ff",
+      "issues": [],
+      "result": "NATIVE_DWARF_DIG_SELF_TEST_OK assertions=218 callbacks=1 worker_strikes=1 fixture_strikes=1"
+    },
+    {
+      "file": "tmp_manual_reg_native_surface_dig_self_test.log",
+      "sha256": "405f42cff1dd5ef1c114135c73350677acfd25a2a55c907989b4684ece690c38",
+      "issues": [],
+      "result": "NATIVE_SURFACE_DIG_SELF_TEST_OK assertions=22 assignments=1 wall_mutations=2"
+    },
+    {
+      "file": "tmp_manual_reg_native_surface_walk_self_test.log",
+      "sha256": "95f2284989c96e79b500c135ce4089f0db377a73a5ac52f3805865dd1d7cc745",
+      "issues": [],
+      "result": "NATIVE_SURFACE_WALK_SELF_TEST_OK assertions=44 trips=2 floors=2 wall_idle=ok"
+    }
+  ],
+  "apk_rebuilt": false,
+  "automatic_torches_enabled_in_main": false,
+  "tmp_manual_work_lint_final.json": {
+    "total": 0,
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0
+  },
+  "tmp_manual_work_smoke.json": {
+    "scenes": 3,
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "warnings": 0,
+    "findings": 0
+  },
+  "script_sha256": "8d6782d290857f8bf81cf85d2fcf4b6066243f57d650ea391fe7d81e5360f0e9",
+  "gpu_snapshots": {
+    "runtime_perf_after.json": {
+      "script_unchanged_during_run": true,
+      "matches_current_script": false,
+      "sha256": "d153a2f1e481858f2c6981c007f9e12f304ad001467d67ce60dc50270bfd1bbe"
+    },
+    "runtime_perf_msaa_final.json": {
+      "script_unchanged_during_run": true,
+      "matches_current_script": true,
+      "sha256": "8d6782d290857f8bf81cf85d2fcf4b6066243f57d650ea391fe7d81e5360f0e9"
+    }
+  }
+}

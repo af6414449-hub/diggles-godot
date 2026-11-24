@@ -1,0 +1,206 @@
+extends RefCounted
+## Literal source rules exported from Tcl and the native L2M selector.
+## The lighting and material adapters are deliberately separate from extraction.
+
+var data: Dictionary = {}
+var material_cache: Dictionary = {}
+const ILLUMINATION: Script = preload("res://scripts/native_terrain_illumination.gd")
+var terrain_render: Dictionary = {}
+var shader_pipeline: Dictionary = {}
+var terrain_lights: Array = []
+var use_native_diffuse: bool = false
+var world_model_lighting: Dictionary = {}
+var model_programs: Dictionary = {}
+const MAX_DYNAMIC_TORCHES: int = 32
+var dynamic_torch_lights: Array = []
+
+
+func load_profile(path: String, terrain: Dictionary) -> bool:
+	var decoded: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
+	if not decoded is Dictionary:
+		push_error("Missing native scene profile: " + path)
+		return false
+	data = decoded
+	var width: int = int(terrain["width"])
+	var height: int = int(terrain["height"])
+	var layer: Dictionary = data.get("layer2", {})
+	if str(data.get("terrain", {}).get("sha256", "")) != str(terrain["source_pmp_sha256"]):
+		push_error("Native scene profile belongs to a different PMP source")
+		return false
+	if int(layer.get("width", 0)) != width or int(layer.get("height", 0)) != height:
+		push_error("Native scene profile dimensions do not match the terrain")
+		return false
+	if layer.get("words", []).size() != width * height:
+		push_error("Native scene profile has an incomplete L2M layer")
+		return false
+	terrain_render = JSON.parse_string(FileAccess.get_file_as_string("res://models/native_terrain_render.json"))
+	shader_pipeline = JSON.parse_string(FileAccess.get_file_as_string("res://models/native_shader_pipeline.json"))
+	world_model_lighting = JSON.parse_string(FileAccess.get_file_as_string("res://models/native_world_model_lighting.json"))
+	model_programs = JSON.parse_string(FileAccess.get_file_as_string("res://models/native_model_programs.json"))
+	if model_programs.get("schema","")!="diggles.static_model_programs.v1" \
+			or not bool(world_model_lighting.get("gain",{}).get("shared_with_terrain",false)) \
+			or float(world_model_lighting["gain"]["default"])!=float(terrain_render["constants"]["gain"]):
+		push_error("Native model programs or shared source gain are inconsistent")
+		return false
+	if terrain_render.get("source_pmp_sha256") != terrain.get("source_pmp_sha256"):
+		push_error("Terrain render profile belongs to another PMP")
+		return false
+	for spec: Dictionary in data.get("lights", []):
+		var position: Vector3 = _source_light_point(spec)
+		position.z = position.z * float(terrain_render["constants"]["depth_half"]) + float(terrain_render["constants"]["depth_offset"])
+		var color: Array = spec["color"]
+		terrain_lights.append({"position": position, "range": spec["range"],
+			"color": ILLUMINATION.class_light_color(color,shader_pipeline["light_conversion"])})
+	return true
+
+
+func _source_light_point(spec: Dictionary) -> Vector3:
+	var pos: Array = spec["position"]
+	var offset: Array = spec["offset"]
+	var rotation: Array = spec["rotation"]
+	var basis: Basis = Basis(Vector3.UP, -float(rotation[1])) \
+		* Basis(Vector3.RIGHT, -float(rotation[0])) * Basis(Vector3.BACK, -float(rotation[2]))
+	return Vector3(float(pos[0]),float(pos[1]),float(pos[2])) \
+		+ basis * Vector3(float(offset[0]),float(offset[1]),float(offset[2]))
+
+
+func _corner_index(point: Vector2i) -> int:
+	return clampi(point.y,0,int(terrain_render["height"])-1) * int(terrain_render["width"]) \
+		+ clampi(point.x,0,int(terrain_render["width"])-1)
+
+
+func ground_file(cell: Vector2i, variant: int) -> String:
+	var signature: String = ""
+	for offset: Vector2i in [Vector2i.ZERO, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.ONE]:
+		var value: Variant = terrain_render["materials"][_corner_index(cell+offset)]
+		signature += str(0 if value == null or int(value) == 3 else int(value))
+	var pattern: Dictionary = terrain_render["patterns"][signature]
+	if bool(pattern["mixed"]):
+		return str(pattern["file"])
+	return "Gnd_%s%02d.tga" % [pattern["family"], variant+1]
+
+
+func terrain_base_byte(cell: Vector2i, local_point: Vector2) -> int:
+	var attributes: Array = []
+	for offset: Vector2i in [Vector2i.ZERO,Vector2i.RIGHT,Vector2i.DOWN,Vector2i.ONE]:
+		attributes.append(terrain_render["attributes"][_corner_index(cell+offset)])
+	return ILLUMINATION.base_byte(attributes,local_point)
+
+
+func terrain_channels(cell: Vector2i, local_point: Vector3, source_normal: Array) -> Dictionary:
+	var normal: Vector3 = Vector3(float(source_normal[0]),float(source_normal[1]),float(source_normal[2]))
+	var point: Vector3 = local_point + Vector3(cell.x,cell.y,0)
+	return ILLUMINATION.channels(point, normal,
+		terrain_base_byte(cell,Vector2(local_point.x,local_point.y)),terrain_lights,terrain_render["constants"])
+
+
+func terrain_color(cell: Vector2i, local_point: Vector3, source_normal: Array) -> Color:
+	return terrain_channels(cell,local_point,source_normal)["diffuse"]
+
+
+func detail_texture(cell: Vector2i, part: int) -> String:
+	var layer: Dictionary = data["layer2"]
+	var index: int = cell.y * int(layer["width"]) + cell.x
+	var word: String = str(int(layer["words"][index]))
+	return str(layer["decoded"][word][part]["texture"])
+
+
+func detail_slot(detail: String) -> Vector2:
+	var slot: Array = data["layer2"]["atlas"]["slots"][detail]
+	return Vector2(float(slot[0]), float(slot[1]))
+
+
+func terrain_material(variant: int, double_sided: bool, cull_front: bool, file: String = "") -> ShaderMaterial:
+	if file.is_empty():
+		file = "Gnd_C%02d.tga" % (variant+1)
+	var key: String = "%s:%s:%s:%s" % [file, double_sided, cull_front,use_native_diffuse]
+	if material_cache.has(key):
+		return material_cache[key] as ShaderMaterial
+	var material: ShaderMaterial = ShaderMaterial.new()
+	var shader: Shader = load("res://shaders/native_terrain_pipeline.gdshader" if use_native_diffuse else "res://shaders/native_terrain_detail.gdshader") as Shader
+	if double_sided or cull_front:
+		shader = shader.duplicate() as Shader
+	if double_sided or cull_front:
+		shader.code = shader.code.replace("cull_back", "cull_disabled" if double_sided else "cull_front")
+	material.shader = shader
+	if use_native_diffuse:
+		material.set_shader_parameter("native_gamma",float(shader_pipeline["defaults"]["gamma"]))
+		material.set_shader_parameter("native_brightness",float(shader_pipeline["defaults"]["brightness"]))
+	material.set_shader_parameter("ground_texture", load("res://textures/ground/" + file))
+	var atlas: Dictionary = data["layer2"]["atlas"]
+	material.set_shader_parameter("detail_texture", load("res://assets/terrain_detail/" + str(atlas["file"])))
+	material.set_shader_parameter("atlas_size", Vector2(float(atlas["size"][0]), float(atlas["size"][1])))
+	material.set_shader_parameter("tile_size", float(atlas["tile_size"]))
+	material.set_shader_parameter("tile_padding", float(atlas["padding"]))
+	material.set_shader_parameter("tile_stride", float(atlas["stride"]))
+	material_cache[key] = material
+	_apply_dynamic_torch_uniforms(material,dynamic_torch_lights)
+	return material
+
+
+func set_dynamic_torch_lights(lights: Array) -> void:
+	dynamic_torch_lights = lights.duplicate()
+	for resource: Variant in material_cache.values():
+		var material: ShaderMaterial = resource as ShaderMaterial
+		if material != null:
+			_apply_dynamic_torch_uniforms(material,dynamic_torch_lights)
+
+
+func _apply_dynamic_torch_uniforms(material: ShaderMaterial, lights: Array) -> void:
+	var positions: PackedVector4Array = PackedVector4Array()
+	var colors: PackedVector4Array = PackedVector4Array()
+	# The CPU path applies the light as color*factor*visibility*gain and then
+	# divides the 0..255 result by 255, so the contribution that reaches the
+	# 0..1 albedo is color*factor*gain. The uniform must carry color*gain.
+	# Dividing by 255 here as well made every torch 255 times too dim.
+	var gain: float = float(terrain_render["constants"]["gain"])
+	for index: int in range(MAX_DYNAMIC_TORCHES):
+		if index < lights.size():
+			var light: Dictionary = lights[index]
+			var position: Vector3 = light["position"]
+			var color: Vector3 = light["color"]
+			positions.append(Vector4(position.x,position.y,position.z,float(light["range"])))
+			colors.append(Vector4(color.x*gain,color.y*gain,color.z*gain,1.0))
+		else:
+			positions.append(Vector4.ZERO)
+			colors.append(Vector4.ZERO)
+	material.set_shader_parameter("dynamic_torch_count",mini(lights.size(),MAX_DYNAMIC_TORCHES))
+	material.set_shader_parameter("dynamic_torch_position_range",positions)
+	material.set_shader_parameter("dynamic_torch_color",colors)
+
+
+func add_lights(parent: Node3D) -> int:
+	for spec: Dictionary in data.get("lights", []):
+		var light: OmniLight3D = OmniLight3D.new()
+		light.name = "SourceLight_%s_%03d" % [str(spec["class"]), int(spec["ordinal"])]
+		var pos: Array = spec["position"]
+		var offset: Array = spec["offset"]
+		var rotation: Array = spec["rotation"]
+		var source_basis: Basis = Basis(Vector3.UP, -float(rotation[1])) \
+			* Basis(Vector3.RIGHT, -float(rotation[0])) * Basis(Vector3.BACK, -float(rotation[2]))
+		var point: Vector3 = Vector3(float(pos[0]), float(pos[1]), float(pos[2])) \
+			+ source_basis * Vector3(float(offset[0]), float(offset[1]), float(offset[2]))
+		light.position = Vector3(point.x, -point.y, point.z)
+		var color: Array = spec["color"]
+		light.light_color = Color(float(color[0]), float(color[1]), float(color[2]))
+		light.omni_range = float(spec["range"])
+		# Unit gain: color and radius come from class_light. Godot's attenuation
+		# still differs from native exp(-2*d*d/r*r) vertex lighting.
+		light.light_energy = 1.0
+		light.shadow_enabled = false
+		light.set_meta("native_class_source", spec["class_source"])
+		light.set_meta("native_placement_source", spec["placement_source"])
+		parent.add_child(light)
+	return data.get("lights", []).size()
+
+
+func horizon_at(point: Vector2) -> Dictionary:
+	var result: Dictionary = {}
+	var nearest: float = INF
+	for spec: Dictionary in data.get("horizons", []):
+		var position: Array = spec["position"]
+		var distance: float = point.distance_to(Vector2(float(position[0]), float(position[1])))
+		if distance < float(spec["selection_radius"]) and distance < nearest:
+			nearest = distance
+			result = spec
+	return result

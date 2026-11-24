@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+cells=3447 profiles=3447
+segments=13900 empty_sides=744
+(240, 41): s0=1 s1=1 s2=1 s3=1
+(232, 40): s0=1 s1=0 s2=0 s3=0
+(255, 4): s0=1 s1=1 s2=1 s3=1
+(208, 0): s0=2 s1=1 s2=2 s3=2
+faces=64

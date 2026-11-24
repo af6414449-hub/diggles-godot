@@ -1,0 +1,776 @@
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan graphics pipelines (VkResult error -1).
+   at: render_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6237)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: render_pipeline_create (servers/rendering/rendering_device.cpp:4960)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Parameter "pipeline" is null.
+   at: compute_list_bind_compute_pipeline (servers/rendering/rendering_device.cpp:6674)
+ERROR: No compute pipeline was set before attempting to draw.
+   at: compute_list_dispatch_threads (servers/rendering/rendering_device.cpp:6938)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Parameter "pipeline" is null.
+   at: compute_list_bind_compute_pipeline (servers/rendering/rendering_device.cpp:6674)
+ERROR: No compute pipeline was set before attempting to draw.
+   at: compute_list_dispatch_threads (servers/rendering/rendering_device.cpp:6938)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Couldn't create Vulkan compute pipelines (VkResult error -1).
+   at: compute_pipeline_create (drivers/vulkan/rendering_device_driver_vulkan.cpp:6742)
+ERROR: Condition "!pipeline.driver_id" is true. Returning: RID()
+   at: compute_pipeline_create (servers/rendering/rendering_device.cpp:5048)
+ERROR: Attempted to free invalid ID: 0
+   at: _free_internal (servers/rendering/rendering_device.cpp:7744)
+ERROR: Attempted to free invalid ID: 0
+   at: _free_internal (servers/rendering/rendering_device.cpp:7744)

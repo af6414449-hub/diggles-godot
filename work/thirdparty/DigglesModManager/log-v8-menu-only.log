@@ -1,0 +1,47 @@
+== nofog userinit loaded ==
+patchlevel=8.3.2
+hook map: ok
+hook sm_create_map: ok
+hook show_loading: ok
+hook reset_map: ok
+hook sm_map_set: ok
+hook sm_map_get: ok
+hook sm_set_temp: ok
+hook sm_get_level_info: ok
+hook sm_set_digcount: ok
+hook sm_scan: ok
+hook sm_log: ok
+hook sm_get_event: ok
+hook sm_set_event: ok
+hook sm_add_event: ok
+hook sm_add_temp: ok
+hook sm_reset: ok
+hook obj_query: ok
+hook timer_event: ok
+hook gametime: ok
+hook get_local_player: ok
+hook gettime: ok
+hook playerinfo: ok
+hook send_trigger: ok
+hook newsticker: ok
+hook obj_list: ok
+hook load_info: ok
+hook load_done: ok
+hook gameisloading: ok
+hook set_ingame_loading: ok
+hook template_set: ok
+hook autoloadlevel: ok
+hook gui_new_game: ok
+hook show_maped: ok
+== end ==
+HOOK load_info: {{Типы готовы}}
+load_info: SKIP, no map (w=-1 h=-1)
+load_info: heartbeat, obj_query calls=0
+load_info: SKIP, no map (w=-1 h=-1)
+load_info: heartbeat, obj_query calls=0
+map create: remove_black_fog ok  map=512x512  n=1
+HOOK gui_new_game: {}
+gui_new_game: remove_black_fog ok  map=512x512  n=2
+gui_new_game: heartbeat, obj_query calls=0
+HOOK gametime: start
+HOOK load_done: {}

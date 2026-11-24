@@ -1,0 +1,10 @@
+
+void Unwind_10041a40(void)
+
+{
+  int unaff_EBP;
+  
+  FUN_100402ac(*(undefined4 *)(unaff_EBP + -0x14),0x2c);
+  return;
+}
+

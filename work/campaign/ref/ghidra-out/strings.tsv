@@ -1,0 +1,5018 @@
+address	length	text
+00400220	40	.text
+00400248	40	.rdata
+00400270	40	.data
+00400298	40	.rsrc
+004002c0	40	.reloc
+00715710	66	api-ms-win-core-synch-l1-2-0.dll
+00715754	26	kernel32.dll
+00715770	25	SleepConditionVariableCS
+0071578c	25	WakeAllConditionVariable
+007157c8	18	Unknown exception
+007157e8	14	bad exception
+00715b78	12	__based(
+00715b84	8	__cdecl
+00715b8c	12	__pascal
+00715b98	12	__stdcall
+00715ba4	12	__thiscall
+00715bb0	12	__fastcall
+00715bbc	16	__vectorcall
+00715bcc	12	__clrcall
+00715be0	12	__swift_1
+00715bec	12	__swift_2
+00715c00	12	__restrict
+00715c0c	12	__unaligned
+00715c18	12	restrict(
+00715c2c	8	 delete
+00715c50	12	operator
+00715cb4	12	`vftable'
+00715cc0	12	`vbtable'
+00715ce0	24	`local static guard'
+00715cf8	12	`string'
+00715d04	20	`vbase destructor'
+00715d18	32	`vector deleting destructor'
+00715d38	32	`default constructor closure'
+00715d58	32	`scalar deleting destructor'
+00715d78	32	`vector constructor iterator'
+00715d98	32	`vector destructor iterator'
+00715db8	36	`vector vbase constructor iterator'
+00715ddc	28	`virtual displacement map'
+00715df8	36	`eh vector constructor iterator'
+00715e1c	32	`eh vector destructor iterator'
+00715e3c	40	`eh vector vbase constructor iterator'
+00715e64	28	`copy constructor closure'
+00715e80	16	`udt returning'
+00715e9c	16	`local vftable'
+00715eac	36	`local vftable constructor closure'
+00715ed8	12	 delete[]
+00715ee4	16	`omni callsig'
+00715ef4	28	`placement delete closure'
+00715f10	32	`placement delete[] closure'
+00715f30	40	`managed vector constructor iterator'
+00715f58	40	`managed vector destructor iterator'
+00715f80	40	`eh vector copy constructor iterator'
+00715fa8	44	`eh vector vbase copy constructor iterator'
+00715fd4	28	`dynamic initializer for '
+00715ff0	36	`dynamic atexit destructor for '
+00716014	36	`vector copy constructor iterator'
+00716038	44	`vector vbase copy constructor iterator'
+00716064	44	`managed vector copy constructor iterator'
+00716090	28	`local static thread guard'
+007160ac	16	operator "" 
+007160bc	20	operator co_await
+007160d0	12	operator<=>
+007160dc	20	 Type Descriptor'
+007160f0	28	 Base Class Descriptor at (
+0071610c	20	 Base Class Array'
+00716120	32	 Class Hierarchy Descriptor'
+00716140	28	 Complete Object Locator'
+0071615c	24	`anonymous namespace'
+0071617e	62	qapi-ms-win-core-fibers-l1-1-1
+007161bc	58	api-ms-win-core-synch-l1-2-0
+007161f8	18	kernel32
+0071620c	16	api-ms-
+00716224	9	FlsAlloc
+00716238	8	FlsFree
+00716248	12	FlsGetValue
+0071625c	12	FlsSetValue
+00716270	28	InitializeCriticalSectionEx
+007162ec	14	(null)
+007162fc	7	(null)
+00716cd0	100	minkernel\crts\ucrt\inc\corecrt_internal_strtox.h
+00716d38	92	__crt_strtox::floating_point_value::as_double
+00716d94	22	_is_double
+00716db0	90	__crt_strtox::floating_point_value::as_float
+00716e0c	24	!_is_double
+00716ea8	8	INITY
+00716eb0	8	inity
+00716edc	24	mscoree.dll
+00716ef4	15	CorExitProcess
+00716f0c	8	INITY
+00716f14	8	inity
+007170a8	64	Visual C++ CRT: Not enough memory to complete call to strerror.
+007172ce	18	nLC_ALL
+007172e0	24	LC_COLLATE
+007172f8	18	LC_CTYPE
+0071730c	24	LC_MONETARY
+00717324	22	LC_NUMERIC
+0071733c	16	LC_TIME
+00717380	6	UTF-8
+00717388	16	UTF-16LEUNICODE
+007173a0	12	UTF-8
+007173ac	32	UTF-16LEUNICODE
+00717420	10	NAN(SNAN)
+0071742c	10	nan(snan)
+00717438	9	NAN(IND)
+00717444	9	nan(ind)
+00717450	6	e+000
+007175bc	7	Sunday
+007175c4	7	Monday
+007175cc	8	Tuesday
+007175d4	10	Wednesday
+007175e0	9	Thursday
+007175ec	7	Friday
+007175f4	9	Saturday
+00717630	8	January
+00717638	9	February
+00717644	6	March
+0071764c	6	April
+00717664	7	August
+0071766c	10	September
+00717678	8	October
+00717680	9	November
+0071768c	9	December
+007176a0	9	MM/dd/yy
+007176ac	20	dddd, MMMM dd, yyyy
+007176c0	9	HH:mm:ss
+00717704	14	Sunday
+00717714	14	Monday
+00717724	16	Tuesday
+00717734	20	Wednesday
+00717748	18	Thursday
+0071775c	14	Friday
+0071776c	18	Saturday
+007177e0	16	January
+007177f0	18	February
+00717804	12	March
+00717810	12	April
+0071781c	10	June
+00717828	10	July
+00717834	14	August
+00717844	20	September
+00717858	16	October
+00717868	18	November
+0071787c	18	December
+007178a0	18	MM/dd/yy
+007178b4	40	dddd, MMMM dd, yyyy
+007178dc	18	HH:mm:ss
+007178f0	12	en-US
+007179f0	6	log10
+00717a4c	8	floor
+00717aa0	12	_nextafter
+00717b30	64	api-ms-win-core-datetime-l1-1-1
+00717b70	56	api-ms-win-core-file-l1-2-2
+00717ba8	72	api-ms-win-core-localization-l1-2-1
+00717bf0	90	api-ms-win-core-localization-obsolete-l1-2-0
+00717c50	76	api-ms-win-core-processthreads-l1-1-2
+00717c9c	60	api-ms-win-core-string-l1-1-0
+00717cd8	62	api-ms-win-core-sysinfo-l1-2-1
+00717d18	58	api-ms-win-core-winrt-l1-1-0
+00717d54	60	api-ms-win-core-xstate-l2-1-0
+00717d90	78	api-ms-win-rtcore-ntuser-window-l1-1-0
+00717de0	86	api-ms-win-security-systemfunctions-l1-1-0
+00717e38	70	ext-ms-win-ntuser-dialogbox-l1-1-0
+00717e80	78	ext-ms-win-ntuser-windowstation-l1-1-0
+00717ed0	18	advapi32
+00717ee4	12	ntdll
+00717ef0	70	api-ms-win-appmodel-runtime-l1-1-2
+00717f38	14	user32
+00717f48	16	ext-ms-
+00717f5c	16	AreFileApisANSI
+00717f74	16	CompareStringEx
+00717f8c	20	EnumSystemLocalesEx
+00717fc8	16	GetDateFormatEx
+00717fe0	16	GetLocaleInfoEx
+00717ff4	31	GetSystemTimePreciseAsFileTime
+0071801c	16	GetTimeFormatEx
+00718034	25	GetUserDefaultLocaleName
+00718060	18	IsValidLocaleName
+0071807c	14	LCMapStringEx
+00718094	17	LCIDToLocaleName
+007180b0	17	LocaleNameToLCID
+007180c8	13	RoInitialize
+007180dc	15	RoUninitialize
+007180f0	37	AppPolicyGetProcessTerminationMethod
+0071811c	37	AppPolicyGetThreadInitializationType
+007189e4	12	am/pm
+00718ac0	9	No error
+00718acc	24	Operation not permitted
+00718ae4	26	No such file or directory
+00718b00	16	No such process
+00718b10	26	Interrupted function call
+00718b2c	19	Input/output error
+00718b40	26	No such device or address
+00718b5c	18	Arg list too long
+00718b70	18	Exec format error
+00718b84	20	Bad file descriptor
+00718b98	19	No child processes
+00718bac	33	Resource temporarily unavailable
+00718bd0	17	Not enough space
+00718be4	18	Permission denied
+00718bf8	12	Bad address
+00718c04	14	Unknown error
+00718c14	16	Resource device
+00718c24	12	File exists
+00718c30	14	Improper link
+00718c40	15	No such device
+00718c50	16	Not a directory
+00718c60	15	Is a directory
+00718c70	17	Invalid argument
+00718c84	30	Too many open files in system
+00718ca4	20	Too many open files
+00718cb8	36	Inappropriate I/O control operation
+00718cdc	15	File too large
+00718cec	24	No space left on device
+00718d04	13	Invalid seek
+00718d14	22	Read-only file system
+00718d2c	15	Too many links
+00718d3c	12	Broken pipe
+00718d48	13	Domain error
+00718d58	17	Result too large
+00718d6c	26	Resource deadlock avoided
+00718d88	18	Filename too long
+00718d9c	19	No locks available
+00718db0	25	Function not implemented
+00718dcc	20	Directory not empty
+00718de0	22	Illegal byte sequence
+00718e0c	12	ja-JP
+00718e18	12	zh-CN
+00718e24	12	ko-KR
+00718e30	12	zh-TW
+00719268	18	american
+0071927c	36	american english
+007192a0	36	american-english
+007192c4	24	australian
+007192dc	16	belgian
+007192ec	20	canadian
+00719310	16	chinese
+00719320	36	chinese-hongkong
+00719344	40	chinese-simplified
+0071936c	36	chinese-singapore
+00719390	40	chinese-traditional
+007193b8	28	dutch-belgian
+007193d4	36	english-american
+007193f8	24	english-aus
+00719410	32	english-belize
+00719430	24	english-can
+00719448	36	english-caribbean
+0071946c	24	english-ire
+00719484	32	english-jamaica
+007194a4	24	english-nz
+007194bc	44	english-south africa
+007194e8	52	english-trinidad y tobago
+0071951c	24	english-uk
+00719534	24	english-us
+0071954c	24	english-usa
+00719564	32	french-belgian
+00719584	32	french-canadian
+007195a4	36	french-luxembourg
+007195c8	28	french-swiss
+007195e4	32	german-austrian
+00719604	40	german-lichtenstein
+0071962c	36	german-luxembourg
+00719650	28	german-swiss
+0071966c	28	irish-english
+00719688	28	italian-swiss
+007196a4	20	norwegian
+007196b8	36	norwegian-bokmal
+007196dc	36	norwegian-nynorsk
+00719700	44	portuguese-brazilian
+0071972c	36	spanish-argentina
+00719750	32	spanish-bolivia
+00719770	28	spanish-chile
+0071978c	36	spanish-colombia
+007197b0	40	spanish-costa rica
+007197d8	56	spanish-dominican republic
+00719810	32	spanish-ecuador
+00719830	40	spanish-el salvador
+00719858	36	spanish-guatemala
+0071987c	36	spanish-honduras
+007198a0	32	spanish-mexican
+007198c0	32	spanish-modern
+007198e0	36	spanish-nicaragua
+00719904	32	spanish-panama
+00719924	36	spanish-paraguay
+00719948	28	spanish-peru
+00719964	40	spanish-puerto rico
+0071998c	32	spanish-uruguay
+007199ac	36	spanish-venezuela
+007199d0	32	swedish-finland
+007199f0	12	swiss
+00719a14	16	america
+00719a24	16	britain
+00719a34	12	china
+00719a4c	16	england
+00719a5c	28	great britain
+00719a78	16	holland
+00719a88	20	hong-kong
+00719a9c	24	new-zealand
+00719abc	20	pr china
+00719ad0	20	pr-china
+00719ae4	24	puerto-rico
+00719b0c	28	south africa
+00719b28	24	south korea
+00719b40	28	south-africa
+00719b5c	24	south-korea
+00719b74	36	trinidad & tobago
+00719b98	32	united-kingdom
+00719bb8	28	united-states
+00719bd4	10	utf8
+00719be8	12	utf-8
+00719ca8	6	1#INF
+00719cb0	7	1#QNAN
+00719cb8	7	1#SNAN
+0071a638	12	de-DE
+0071a758	12	sl-SI
+0071a824	12	hi-IN
+0071a89c	12	bn-IN
+0071a8a8	12	pa-IN
+0071a8c0	12	ta-IN
+0071a8cc	12	te-IN
+0071a8d8	12	kn-IN
+0071a8fc	12	sa-IN
+0071a990	12	de-CH
+0071a9f0	24	sr-SP-Latn
+0071aa2c	12	se-SE
+0071aa84	12	de-AT
+0071aab4	24	sr-SP-Cyrl
+0071ab24	12	fr-CH
+0071ab64	12	de-LI
+0071ab94	24	bs-BA-Latn
+0071abec	24	sr-BA-Latn
+0071b61c	12	bn-in
+0071b628	24	bs-ba-latn
+0071b670	12	de-at
+0071b67c	12	de-ch
+0071b688	12	de-de
+0071b694	12	de-li
+0071b734	12	en-tt
+0071b89c	12	fr-ch
+0071b8f0	12	hi-in
+0071b92c	12	id-id
+0071b980	12	kn-in
+0071ba68	12	pa-in
+0071bae0	12	sa-in
+0071bb04	12	se-se
+0071bb1c	12	sl-si
+0071bbac	24	sr-ba-latn
+0071bbc4	24	sr-sp-cyrl
+0071bbdc	24	sr-sp-latn
+0071bc28	12	ta-in
+0071bc34	12	te-in
+0071bd38	16	CONOUT$
+0071bd50	6	log10
+0071c7cc	39	C:\dev\wiggles\Wiggles\Shared\3DDB.cpp
+0071c7f4	29	C3DDB::Persist(CUniArc& arc)
+0071c814	37	C3DDB::Persist(CUniArc& arc) Mapping
+0071c83c	23	MemMapped File failed!
+0071c854	36	C3DDB::Persist(CUniArc& arc) Header
+0071c878	8	DB Load
+0071c888	10	data/Log/
+0071c898	11	Header %d
+
+0071c8a4	39	C3DDB::Persist(CUniArc& arc) Materials
+0071c8cc	16	DB %d Materials
+0071c8dc	14	Materials %d
+
+0071c8ec	36	C3DDB::Persist(CUniArc& arc) Meshes
+0071c910	13	DB %d Meshes
+0071c920	11	Meshes %d
+
+0071c92c	37	C3DDB::Persist(CUniArc& arc) Objects
+0071c954	14	DB %d Objects
+0071c964	12	Objects %d
+
+0071c970	35	C3DDB::Persist(CUniArc& arc) Anims
+0071c994	12	DB %d Anims
+0071c9a0	10	Anims %d
+
+0071c9ac	37	C3DDB::Persist(CUniArc& arc) Shadows
+0071c9d4	14	DB %d Shadows
+0071c9e4	12	Shadows %d
+
+0071c9f0	35	C3DDB::Persist(CUniArc& arc) CMaps
+0071ca14	12	DB %d CMaps
+0071ca20	10	CMaps %d
+
+0071ca2c	44	C3DDB::Persist(CUniArc& arc) Lst Count&Init
+0071ca58	40	C3DDB::Persist(CUniArc& arc) IdxLst map
+0071ca80	39	C3DDB::Persist(CUniArc& arc) UVLst map
+0071caa8	38	C3DDB::Persist(CUniArc& arc) VLst map
+0071cad0	38	C3DDB::Persist(CUniArc& arc) NLst map
+0071caf8	40	C3DDB::Persist(CUniArc& arc) FollowMesh
+0071cb20	14	DB FollowMesh
+0071cb30	8	convex
+0071cb38	58	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Include\DSArray.h
+0071cb74	16	WT_WALKFLOOR
+0071cb84	12	WT_CLIMB
+0071cb90	12	WT_OBJECT
+0071cb9c	12	CAct_Wait
+0071cba8	12	CAct_Slide
+0071cbb4	12	CAct_Anim
+0071cbc0	12	CAct_Crawl
+0071cbcc	12	CAct_Rotate
+0071cbd8	12	CAct_Fly
+0071cbe4	12	CAct_Attack
+0071cbf0	24	CAct_AttackBallistic
+0071cc08	12	CAct_Lore
+0071cc14	12	CAct_Move
+0071cc20	12	CAct_Walk
+0071cc34	47	C:\dev\wiggles\Wiggles\Wiggles\Actions\Act.cpp
+0071cc64	8	slide
+0071cc74	4	craw
+0071cc7c	8	rotate
+0071cc84	8	attack
+0071cc8c	16	attackballistic
+0071ccf0	51	C:\dev\wiggles\Wiggles\Wiggles\Actions\ActWalk.cpp
+0071cd24	9	WS_ERROR
+0071cd30	15	WS_WALKABORTED
+0071cd40	15	WS_NOTFINISHED
+0071cd50	13	WS_NOPASSAGE
+0071cd60	17	WS_TARGETREACHED
+0071cd74	13	WS_WALKEVENT
+0071cd84	20	UNKNOWN RESULT (%d)
+0071cdb8	19	CActWalk_AutoRetry
+0071cdcc	61	C:\dev\wiggles\Wiggles\Wiggles\Actions\ActWalk_AutoRetry.cpp
+0071ce54	16	atr_Hitpoints
+0071ce8c	16	Plattmachfalle
+0071ce9c	62	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Include\DSFastArray.h
+0071cefc	11	CAct_Climb
+0071cf08	53	C:\dev\wiggles\Wiggles\Wiggles\Actions\Act_Climb.cpp
+0071cf60	12	standstill
+0071cf8c	52	C:\dev\wiggles\Wiggles\Wiggles\Actions\Act_Door.cpp
+0071cfdc	14	CAct_Elevator
+0071cfec	56	C:\dev\wiggles\Wiggles\Wiggles\Actions\Act_Elevator.cpp
+0071d044	10	CAct_Fall
+0071d050	9	falldown
+0071d05c	12	falldownhit
+0071d068	13	falldowndead
+0071d098	8	-target
+0071d0a0	8	-around
+0071d0a8	8	-range
+0071d0d8	54	C:\dev\wiggles\Wiggles\Wiggles\Actions\Act_Ladder.cpp
+0071d134	12	-trailers
+0071d140	12	-waypoints
+0071d14c	12	-gravity
+0071d158	12	-friction
+0071d164	10	LORE-INIT
+0071d170	28	CAct_Lore::GetPosRotSpeed()
+0071d18c	24	CAct_Lore::SetLorePos()
+0071d1a4	10	LORE-TICK
+0071d1b0	10	LORE-SHUT
+0071d1dc	14	CAct_MetaWalk
+0071d1ec	56	C:\dev\wiggles\Wiggles\Wiggles\Actions\Act_MetaWalk.cpp
+0071d2c4	14	CAct_WalkAnim
+0071d2d4	53	set_event %s evt_zwerg_greet -target %s -subject1 %s
+0071d30c	23	call_method this %s %d
+0071d344	15	CAct_WalkFloor
+0071d354	57	C:\dev\wiggles\Wiggles\Wiggles\Actions\Act_WalkFloor.cpp
+0071d3b0	16	CAct_WalkObject
+0071d3c0	58	C:\dev\wiggles\Wiggles\Wiggles\Actions\Act_WalkObject.cpp
+0071d41c	56	C:\dev\wiggles\Wiggles\Wiggles\Actions\FloorPathMap.cpp
+0071d454	60	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Include\SafeArray.h
+0071d4c4	12	standard
+0071d4d0	16	climb_standard
+0071d4e0	16	turn_left_90
+0071d4f0	16	turn_right_90
+0071d500	16	turn_left_180
+0071d510	16	turn_right_180
+0071d520	12	walk_start
+0071d52c	12	walk_loop
+0071d538	12	walk_stop
+0071d544	12	climb_up
+0071d550	12	climb_down
+0071d55c	12	climb_right
+0071d568	12	climb_left
+0071d574	16	walk_loop_wave
+0071d584	16	ladder_climb_up
+0071d594	20	ladder_climb_down
+0071d5a8	16	ground_to_wall
+0071d5b8	16	wall_to_ground
+0071d5c8	20	ground_to_ladder
+0071d5dc	20	ladder_to_ground
+0071d5f0	12	walk_begin
+0071d5fc	12	walk_end
+0071d608	20	ladder_climb_right
+0071d61c	20	ladder_climb_left
+0071d630	24	walk_collision_callback
+0071d648	17	obj_use_callback
+0071d664	8	-object
+0071d674	12	-dontstop
+0071d680	12	-canclimb
+0071d68c	8	-stopat
+0071d694	12	-useobjects
+0071d6a0	12	-speedtype
+0071d6ac	12	-randompath
+0071d6b8	8	-waving
+0071d6c0	12	-randomz
+0071d6d4	16	-forcetarget
+0071d6e4	12	-targetdist
+0071d6f0	20	-randompathwalldist
+0071d704	20	-walktimercallback
+0071d718	20	-walktimercounter
+0071d72c	24	-walkcollisioncallback
+0071d744	12	-objbreak
+0071d750	12	-animsets
+0071d75c	12	-climbrot
+00720c8c	55	TCL:void CTclGlobalMethods::Register(CTclCmdList &lst)
+00720cc8	48	C:\dev\wiggles\Wiggles\Wiggles\AI\AiCentral.cpp
+00720cf8	15	dumptransports
+00720d10	18	invalid player id
+00720d24	7	enable
+00720d2c	8	disable
+00720d3c	22	error initializing ai
+00720d54	19	invalid ai command
+00720d68	4	elfe
+00720d70	12	standanim
+00720d7c	24	fliegen_hoch_norm_end
+00720d94	24	fliegen_hoch_norm_loop
+00720dac	24	fliegen_hoch_norm_start
+00720dc4	4	move
+00720dcc	4	move
+00720dd4	24	fliegen_links_norm_end
+00720dec	24	fliegen_links_norm_loop
+00720e04	28	fliegen_links_norm_start
+00720e20	4	move
+00720e28	24	fliegen_rechts_norm_end
+00720e40	28	fliegen_rechts_norm_loop
+00720e5c	28	fliegen_rechts_norm_start
+00720e78	8	move_r
+00720e80	28	fliegen_hoch_schnell_end
+00720e9c	28	fliegen_hoch_schnell_loop
+00720eb8	28	fliegen_hoch_schnell_start
+00720ed4	16	rumhaengen_end
+00720ee4	16	rumhaengen_loop
+00720ef4	20	rumhaengen_start
+00720f08	4	idle
+00720f10	16	schlafen_end
+00720f20	16	schlafen_loop
+00720f30	16	schlafen_start
+00720f40	4	slee
+00720f48	12	ablehnen
+00720f54	12	anfeuern
+00720f60	12	auffordern
+00720f6c	12	beleidigen
+00720f78	20	drehen_links_90grad
+00720f8c	24	drehen_rechts_90grad
+00720fa4	16	gucken_links
+00720fb4	16	gucken_rechts
+00720fc4	11	koketieren
+00720fd0	10	pirouette
+00720fdc	12	radschlagen
+00720fe8	6	salto
+00720ff0	10	schmollen
+00720ffc	12	verzweifeln
+00721008	7	warnen
+00721010	10	zustimmen
+0072101c	16	abstuerzen_fall
+0072102c	20	abstuerzen_aufprall
+00721040	14	zeigen_rechts
+00721050	13	zeigen_links
+00721060	8	reden_a
+00721068	8	reden_b
+00721070	16	kopf_schuetteln
+00721080	9	kusshand
+0072108c	8	meckern
+00721094	52	C:\dev\wiggles\Wiggles\Wiggles\AI\AiGameControl.cpp
+007210c8	4	this
+007210d0	4	ai_l
+007210d8	16	ai_getownerid
+007210e8	12	ai_nprint
+007210f4	16	ai_tickhandler
+00721104	20	ai_gnomepopscount
+00721118	24	ai_gnomepop_getcount
+00721130	20	ai_gnomepop_getpos
+00721144	20	ai_gnomepop_getlist
+00721158	20	ai_gnomepop_getobj
+0072116c	16	ai_nextgnomepop
+0072117c	20	ai_prodpopscount
+00721190	20	ai_prodpop_getcount
+007211a4	20	ai_prodpop_getpos
+007211b8	20	ai_prodpop_getlist
+007211cc	20	ai_prodpop_getobj
+007211e0	16	ai_nextprodpop
+007211f0	28	ai_getpossibleinventions
+0072120c	20	ai_validlocation
+00721220	20	ai_getprodlocations
+00721234	20	ai_getintruderprods
+00721248	24	ai_getintrudergnomes
+00721260	16	ai_setbuildup
+00721270	12	ai_setpack
+00721280	14	invalid index
+00721290	25	invalid population index
+007212ac	21	invalid object index
+007212c4	13	no prod-site
+007212d4	14	unknown class
+007212e4	20	no default anim set
+007212f8	17	invalid database
+0072130c	13	invalid anim
+0072131c	17	[%.4g %.4g %.4g]
+00721340	14	invalid owner
+00721350	10	numgnomes
+0072135c	10	numbabies
+00721368	12	numpregnant
+00721374	12	avgchildren
+00721380	9	numprods
+0072138c	8	nummale
+00721394	10	numfemale
+007213a0	9	numitems
+007213ac	20	numbuiltprodclasses
+007213c0	7	attrib
+007213c8	7	expsum
+007213d0	18	unknown attribute
+007213e4	10	attribmax
+007213f0	10	attribmin
+007213fc	10	attribsum
+00721408	10	attribset
+00721414	10	attribavg
+00721420	16	invalid command
+00721438	52	C:\dev\wiggles\Wiggles\Wiggles\AI\ProdAllocator.cpp
+0072146c	4	None
+00721474	4	Pilz
+00721484	12	Pilzstamm
+00721490	13	Steinbrocken
+007214a0	8	Stein
+007214a8	16	Eisenerzbrocken
+007214b8	12	Eisenerz
+007214c4	19	Kristallerzbrocken
+007214d8	12	Kristallerz
+007214e4	15	Golderzbrocken
+007214f4	8	Golderz
+007214fc	13	Kohlebrocken
+00721514	24	CProdPlannerMgr::Tick()
+0072152c	25	CProdPlannerMgr::Reset()
+0072154c	7	 %5.3f
+00721558	4	Raup
+00721560	16	Steinschleuder
+00721570	16	exp_Transport
+00721580	12	exp_Stein
+0072158c	32	CProdPlanner::MaintenanceTick()
+007215ac	34	CProdPlanner::GnomeIdle(CObj* pO)
+007215d0	50	C:\dev\wiggles\Wiggles\Wiggles\AI\ProdPlanner.cpp
+00721608	64	set_event %d evt_prodplace_transferprod -target %d -subject1 %d
+0072164c	8	harvest
+0072165c	8	unpack
+00721668	11	Tclevent:
+
+00721674	40	set_event %s evt_zwerg_break -target %s
+0072169c	59	set_event %s evt_autoprod_walk -target %s -pos1 {%f %f %f}
+007216d8	52	set_event %s evt_change_muetze -target %s -text1 %s
+00721710	73	set_event %s evt_autoprod_pickup_store -target %s -subject1 %s -text1 %s
+00721760	67	set_event %s evt_autoprod_pickup -target %s -subject1 %s -text1 %s
+007217a8	86	set_event %s evt_autoprod_transferprod -target %s -subject1 %s -subject2 %s -text1 %s
+00721800	68	set_event %s evt_autoprod_harvest -target %s -subject1 %s -text1 %s
+00721848	67	set_event %s evt_autoprod_workat -target %s -text1 %s -subject1 %s
+00721890	69	set_event %s evt_autoprod_workat -target %s -text1 Bp%s -subject1 %s
+007218d8	58	set_event %s evt_autoprod_dig -target %s -pos1 {%f %f %f}
+00721918	65	set_event %s evt_autoprod_pack -target %s -subject1 %s -text1 %s
+00721960	93	set_event %s evt_autoprod_unpack -target %s -subject1 %s -text1 %s -pos1 {%f %f %f} -num1 %d
+007219c8	64	set_event %s evt_task_putdown -target %s -subject1 %s -text1 %s
+00721a0c	12	transport
+00721a18	47	C:\dev\wiggles\Wiggles\Wiggles\AI\TechTree.cpp
+00721a48	51	C:\dev\wiggles\Wiggles\Wiggles\Basics\CallStat.cpp
+00721a7c	7	%s^%d 
+00721aa0	22	ARRAY_BOUNDS_EXCEEDED
+00721ab8	11	BREAKPOINT
+00721ad0	22	DATATYPE_MISALIGNMENT
+00721af0	21	FLT_DENORMAL_OPERAND
+00721b10	19	FLT_DIVIDE_BY_ZERO
+00721b30	19	FLT_INEXACT_RESULT
+00721b44	13	FLT_OVERFLOW
+00721b60	16	FLT_STACK_CHECK
+00721b70	14	FLT_UNDERFLOW
+00721b80	20	ILLEGAL_INSTRUCTION
+00721b94	14	IN_PAGE_ERROR
+00721bb0	19	INT_DIVIDE_BY_ZERO
+00721bc4	13	INT_OVERFLOW
+00721be0	20	INVALID_DISPOSITION
+00721c00	25	NONCONTINUABLE_EXCEPTION
+00721c20	17	PRIV_INSTRUCTION
+00721c34	12	SINGLE_STEP
+00721c40	15	STACK_OVERFLOW
+00721c94	8	Data/%s
+00721c9c	12	Data/3db/%s
+00721ca8	16	Data/Scripts/%s
+00721cb8	12	Data/Gui/%s
+00721cc4	18	Data/templates/%s
+00721cd8	22	Data/templates/ent/%s
+00721cf0	22	Data/templates/l2m/%s
+00721d08	23	Data/templates/maps/%s
+00721d20	22	Data/templates/pmp/%s
+00721d38	22	Data/templates/tcl/%s
+00721d50	57	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Include\KUtfIO.h
+00721d8c	53	C:\dev\wiggles\Wiggles\Wiggles\Basics\FPSCounter.cpp
+00721dc4	12	KeyLocation
+00721dd4	55	C:\dev\wiggles\Wiggles\Wiggles\Basics\KeyValidator.cpp
+00721e0c	14	tmp_pbkey.txt
+00721e20	6	User(
+00721e28	6	Info(
+00721e30	9	Expires(
+00721e3c	8	Issued(
+00721e50	9	%d-%d-%d
+00721e5c	49	C:\dev\wiggles\Wiggles\Wiggles\Basics\MsgCat.cpp
+00721e94	19	data/msgmisses.txt
+00721ea8	9	## "%s"
+
+00721ebc	18	data/messages.txt
+00721ee0	12	INVALID_MSG
+00721eec	51	C:\dev\wiggles\Wiggles\Wiggles\Basics\MsgQueue.cpp
+00721f28	10	RAM Total
+00721f34	14	RAM Available
+00721f44	13	VM Reads/sec
+00721f54	14	VM Writes/sec
+00721f64	10	RAM Usage
+00721f70	7	MapMem
+00721f78	10	ViSurface
+00721f84	9	Textures
+00721f90	19	%9.3f  %-9.3f  %s
+
+00721fa4	51	C:\dev\wiggles\Wiggles\Wiggles\Basics\PolyFill.cpp
+00721fe0	28	Unhandled Excheption!
+%s
+00721ffc	8	Diggles
+00722004	7	ShowUI
+00722050	54	C:\dev\wiggles\Wiggles\Wiggles\Basics\UTF8Decoder.cpp
+00722090	32	$AUTOVERSION_MAJOR 0        
+007220b0	32	$AUTOVERSION_MINOR 0        
+007220d0	32	$AUTOVERSION_BUILD 0        
+007220f0	32	$AUTOVERSION_ALBLD 0        
+00722110	48	$AUTOVERSION_BTIME x                           
+00722140	6	%s %d
+00722148	9	2.1.1.10
+00722154	19	Data/Texture/Gray/
+00722168	27	data/texture/misc/null.tga
+00722184	27	data/texture/texlevels.txt
+007221ec	21	data/texturelist.txt
+00722204	14	data/texture/
+00722214	19	data/texture/misc/
+00722228	20	data/texture/m016/
+0072223c	20	data/texture/m032/
+00722250	20	data/texture/m064/
+00722264	20	data/texture/m128/
+00722278	20	data/texture/m256/
+0072228c	25	data/texture/texmaps.bin
+007222a8	21	%d:%02d m:s loading
+
+007222c0	54	C:\dev\wiggles\Wiggles\Wiggles\DxBase\AutoTexture.cpp
+007222f8	49	C:\dev\wiggles\Wiggles\Wiggles\DxBase\D3DMgr.cpp
+0072232c	10	ijl10.dll
+00722338	8	ijlInit
+00722340	8	ijlFree
+00722348	9	ijlWrite
+00722354	9	Diggles 
+00722360	22	Graphics init failed!
+00722378	33	GPU doesn't support DirectX 11.0
+0072239c	21	DirectX Init failed.
+007223b4	26	/scrshot/scrshot_%06d.bin
+007223d0	47	C:\dev\wiggles\Wiggles\Wiggles\DxBase\Dx3d.cpp
+00722400	4	.tga
+00722408	8	display
+00722410	49	C:\dev\wiggles\Wiggles\Wiggles\DxBase\DXDraw.cpp
+00722444	52	C:\dev\wiggles\Wiggles\Wiggles\DxBase\DXExecBuf.cpp
+00722478	20	Invalid Texture
+
+0072248c	25	Invalid (empty) Texture
+
+007224a8	12	No VBuffer
+
+007224b4	16	Zero vertices
+
+007224c4	31	Indexcount not divisible by 3
+
+007224e4	20	Invalid VBuffer
+
+007224f8	13	crashlog.txt
+00722508	36	RenderJob::Validate() failed:%s
+%s
+
+0072252c	18	Invalid Renderjob
+00722554	52	# Produced by Wiggles VRML97 exporter, Version 1.0
+
+00722588	28	DEF Camera02 Viewpoint {
+
+007225a4	21	  position %f %f %f
+
+007225bc	27	  orientation %f %f %f %f
+
+007225d8	18	  fieldOfView %f
+
+007225ec	24	  description "View"
+
+00722608	6	%s_%d
+00722614	20	DEF %s Transform {
+
+00722628	24	  translation 0 0 0
+
+00722640	16	  children [
+
+00722650	16	    Shape {
+
+00722660	32	      appearance Appearance {
+
+00722680	32	        material Material {
+
+007226a0	24	        transparency 0
+
+007226c4	32	      texture ImageTexture {
+
+007226ec	37	file://d:/Wiggles/Data/Texture/JPGs/
+00722714	18	        url "%s"
+
+00722728	4	    
+00722730	44	    geometry DEF %s-FACES IndexedFaceSet {
+
+0072275c	20	      ccw FALSE
+
+00722770	16	      ccw TRUE
+
+00722780	20	      solid TRUE
+
+00722794	47	      coord DEF %s-COORD Coordinate { point [
+
+007227c4	19	        %d %d %d,
+
+007227d8	19	        %d %d %d]
+
+007227ec	32	      normalPerVertex FALSE
+
+0072280c	60	      texCoord DEF %s-TEXCOORD TextureCoordinate { point [
+
+00722848	16	        %f %f,
+
+00722858	16	        %f %f]
+
+00722868	20	      coordIndex [
+
+0072287c	22	        %d %d %d -1,
+
+00722894	22	        %d %d %d -1]
+
+007228ac	24	       texCoordIndex [
+
+007228cc	21	CDXExecBuf::Render()
+007228e4	29	CDXExecBuf::Render() Per-Job
+00722904	33	CDXExecBuf::Render() Stateswitch
+00722928	42	CDXExecBuf::Render() DrawIndexedPrimitive
+00722954	35	CDXExecBuf::Render() DrawIndexedVB
+00722978	35	CDXExecBuf::Render() DrawPrimitive
+0072299c	28	CDXExecBuf::Render() DrawVB
+007229c8	50	C:\dev\wiggles\Wiggles\Wiggles\DxBase\DXSound.cpp
+007229fc	32	CDXSound::CSimpleBuffer::Init()
+00722a1c	26	CDXSound::GetFileFormat()
+00722a38	61	CDXSound::CreateSimpleBufferFromFile(const char* pcFilename)
+00722a78	8	default
+00722a80	11	selectarg1
+00722a8c	11	selectarg2
+00722a98	9	modulate
+00722aa4	11	modulate2x
+00722ab0	11	modulate4x
+00722ac0	10	addsigned
+00722acc	9	subtract
+00722ad8	10	addsmooth
+00722ae4	18	blenddiffusealpha
+00722af8	18	blendtexturealpha
+00722b0c	17	blendfactoralpha
+00722b20	20	blendtexturealphapm
+00722b34	18	blendcurrentalpha
+00722b48	12	premodulate
+00722b54	22	modulatealphaaddcolor
+00722b6c	22	modulatecoloraddalpha
+00722b84	25	modulateinvalphaaddcolor
+00722ba0	25	modulateinvcoloraddalpha
+00722bbc	11	bumpenvmap
+00722bc8	20	bumpenvmapluminance
+00722bdc	12	dotproduct3
+00722be8	8	current
+00722bf0	8	diffuse
+00722bf8	11	selectmask
+00722c04	8	texture
+00722c0c	8	tfactor
+00722c14	9	specular
+00722c20	11	invcurrent
+00722c2c	11	invdiffuse
+00722c38	14	invselectmask
+00722c48	11	invtexture
+00722c54	11	invtfactor
+00722c60	12	invspecular
+00722c6c	6	point
+00722c74	7	linear
+00722c7c	10	flatcubic
+00722c88	14	gaussiancubic
+00722c98	12	anisotropic
+00722cb4	7	mirror
+00722cbc	6	clamp
+00722cc4	7	border
+00722ccc	8	never
+00722cdc	6	equal
+00722ce4	10	lessequal
+00722cf0	8	greater
+00722cf8	9	notequal
+00722d04	13	greaterequal
+00722d28	9	srccolor
+00722d34	12	invsrccolor
+00722d40	9	srcalpha
+00722d4c	12	invsrcalpha
+00722d58	10	destalpha
+00722d64	13	invdestalpha
+00722d74	10	destcolor
+00722d80	13	invdestcolor
+00722d90	12	srcalphasat
+00722d9c	13	bothsrcalpha
+00722dac	16	bothinvsrcalpha
+00722dc4	8	model
+00722dcc	12	scape_st
+00722dd8	16	scape_urw_mt0
+00722de8	16	scape_urw_mt1
+00722df8	16	scape_lav_mt0
+00722e08	16	scape_lav_mt1
+00722e18	12	fogofwar
+00722e24	12	interface0
+00722e30	12	interface1
+00722e3c	12	interface2
+00722e48	20	interface1filter
+00722e5c	16	alpha_light0
+00722e6c	16	alpha_light1
+00722e7c	12	water_mt0
+00722e88	12	water_mt1
+00722e94	8	sulfur_m
+00722ea0	12	sulfur_mt1
+00722eac	8	lava_mt0
+00722eb8	12	lava_mt1
+00722ec4	16	nolight_noalpha
+00722ed4	16	interface_blend
+00722ee4	20	interface_additive
+00722ef8	20	interface_blendq
+00722f0c	20	interface_additiveq
+00722f20	28	interface_additive_filtered
+00722f3c	12	model_blend
+00722f48	12	model_solid
+00722f54	24	model_solid_nozwrite
+00722f6c	16	model_additive
+00722f7c	20	model_additive_glow
+00722f90	20	model_blend_glow
+00722fa4	24	model_blend_nozwrite
+00722fbc	20	model_blend_envmap
+00722fd0	24	model_additive_envmap
+00722fe8	16	particle_blend
+00722ff8	20	particle_additive
+0072300c	12	scape_fow
+00723018	12	scape_solid
+00723024	12	scape_blend
+00723030	16	scape_multi_urw
+00723040	16	scape_multi_lav
+00723050	20	scape_multi_lav_fow
+00723064	12	sky_blend
+00723070	16	sky_blend_multi
+00723080	16	ground_blend
+00723090	16	shadow_blend
+007230a0	12	mouse_blend
+007230ac	12	water_blend
+007230b8	16	sulfur_blend
+007230c8	12	lava_blend
+007230d4	16	interface_glow
+007230e4	12	obj_glow
+007230f0	12	alpha_light
+007230fc	24	model_solid_invalpha
+00723114	24	interface_blend_filter
+0072312c	16	additiveonly
+0072313c	16	modelnozwrite
+0072314c	49	C:\dev\wiggles\Wiggles\Wiggles\DxBase\Shader.cpp
+00723180	8	invalid
+00723188	8	illegal
+00723190	13	    inherit 
+007231a0	25	    colorop          %s
+
+007231bc	25	    colorarg1        %s
+
+007231d8	25	    colorarg2        %s
+
+007231f4	25	    alphaop          %s
+
+00723210	25	    alphaarg1        %s
+
+0072322c	25	    alphaarg2        %s
+
+00723248	25	    colorarg1tfactor %d
+
+00723264	25	    colorarg2tfactor %d
+
+00723280	25	    alphaarg1tfactor %d
+
+0072329c	25	    alphaarg2tfactor %d
+
+007232b8	25	    magfilter        %s
+
+007232d4	25	    minfilter        %s
+
+007232f0	25	    mipfilter        %s
+
+0072330c	25	    maxanisotropy    %d
+
+00723328	25	    maxmiplevel      %d
+
+00723344	25	    address          %s
+
+00723360	25	    addressu         %s
+
+0072337c	25	    addressv         %s
+
+007233a0	6	false
+007233a8	25	    zenable          %s
+
+007233c4	25	    zwriteenable     %s
+
+007233e0	25	    zfuncmode        %s
+
+007233fc	25	    alphaenable      %s
+
+00723418	25	    alphatestenable  %s
+
+00723434	25	    alphafuncmode    %s
+
+00723450	25	    alpharefvalue    %d
+
+0072346c	25	    srcblendmode     %s
+
+00723488	25	    destblendmode    %s
+
+007234a4	25	    specularenable   %s
+
+007234c0	25	    cullmode         %s
+
+007234dc	25	    lighting         %s
+
+007234f8	25	    glowenable       %s
+
+00723514	25	    glowsize         %d
+
+00723530	29	    glowcolor         %08lx
+
+00723550	25	    envmapenable     %s
+
+0072356c	31	    textstage%d       disable
+
+0072358c	26	    textstage%d       %s
+
+007235a8	22	    shader%d disable
+
+007235c0	17	    shader%d %s
+
+007235dc	17	unknown Material
+007235f0	8	define
+007235f8	7	<null>
+00723600	7	shader
+00723608	18	invalid shader id
+0072361c	15	unknown shader
+0072362c	13	invalid item
+0072363c	12	dumpfile
+00723648	8	inherit
+00723650	15	invalid shader
+00723660	8	zenable
+00723668	13	zwriteenable
+00723678	10	zfuncmode
+00723684	17	invalid argument
+00723698	12	alphaenable
+007236a4	16	alphatestenable
+007236b4	14	alphafuncmode
+007236c4	14	alpharefvalue
+007236d4	13	srcblendmode
+007236e4	14	destblendmode
+007236f4	15	specularenable
+00723704	9	cullmode
+00723710	9	lighting
+0072371c	11	glowenable
+00723728	10	glowcolor
+00723734	6	%08lx
+0072373c	9	glowsize
+00723748	13	envmapenable
+00723758	10	textstage
+00723764	18	invalid textstage
+00723778	18	unknown textstage
+0072378c	8	colorop
+00723794	10	colorarg1
+007237a0	17	colorarg1tfactor
+007237b4	10	colorarg2
+007237c0	17	colorarg2tfactor
+007237d4	8	alphaop
+007237dc	10	alphaarg1
+007237e8	17	alphaarg1tfactor
+007237fc	10	alphaarg2
+00723808	17	alphaarg2tfactor
+0072381c	10	magfilter
+00723828	10	minfilter
+00723834	10	mipfilter
+00723840	8	address
+00723848	9	addressu
+00723854	9	addressv
+00723860	14	maxanisotropy
+00723870	12	maxmiplevel
+0072387c	37	# generated shader definition file
+
+
+007238a4	26	# textstage definitions
+
+
+007238c0	23	textstage define %s {
+
+007238dc	24	
+# shader definitions
+
+
+007238f4	20	shader define %s {
+
+00723908	26	
+# material definitions
+
+
+00723924	22	material define %s {
+
+0072393c	23	UpdateD3DRenderState()
+00723954	55	C:\dev\wiggles\Wiggles\Wiggles\DxBase\VectorBuffer.cpp
+0072398c	24	Too many index values
+
+007239a4	20	Too many vertices
+
+007239b8	16	No vertex data
+
+007239c8	24	Illegal vertex format
+
+007239e0	23	Vertex memory invalid
+
+007239f8	24	Zero indizes in buffer
+
+00723a10	22	Index memory invalid
+
+00723a28	24	Invalid index entries
+
+00723a50	16	Database begin 
+00723a60	10	Database:
+00723a74	10	data/3db/
+00723a80	50	C:\dev\wiggles\Wiggles\Wiggles\Engine\3DDBMgr.cpp
+00723ab4	6	kiste
+00723abc	18	Database shadows 
+00723ad0	15	Database done 
+00723ae4	51	C:\dev\wiggles\Wiggles\Wiggles\Engine\AnimCtrl.cpp
+00723b4c	6	!?., 
+00723b94	8	select
+00723b9c	8	click
+00723ba8	7	nowalk
+00723bb0	7	pickup
+00723bb8	8	putdown
+00723bc0	7	assign
+00723bd4	59	Set floating gamma/brightness after calc : (%.3f), (%.3f)
+
+00723c10	59	Get floating gamma/brightness after calc : (%.3f), (%.3f)
+
+00723c4c	36	Change resolution : (%d x %d), %d 
+
+00723c70	30	data/start.mov
+00723c90	16	EnergyClass.tga
+00723ca0	50	C:\dev\wiggles\Wiggles\Wiggles\Engine\Display.cpp
+00723cd4	16	bordermask.tga
+00723ce4	16	dissolve.tga
+00723cf4	8	logo01.t
+00723d00	8	logo02.t
+00723d0c	8	logo03.t
+00723d18	24	data/GUI/arrow_left.tga
+00723d30	28	data/GUI/arrow_right.tga
+00723d4c	16	fx_licht_b.tga
+00723d5c	16	interface01.tga
+00723d6c	8	AufzugSe
+00723d74	4	il.t
+00723d7c	20	particle_b_128d.tga
+00723d90	12	interface
+00723d9c	25	Loaded 'interface.3db' 
+
+00723db8	20	Loaded 'elfe.3db' 
+
+00723dcc	12	mauszeiger
+00723dd8	16	heiligenschein
+00723de8	20	mapeditmouseptr.tga
+00723dfc	9	LogoQuad
+00723e08	9	Arrow_%d
+00723e14	9	FadeRect
+00723e20	11	Movie Bars
+00723e2c	12	Border Mask
+00723e38	9	Drag Box
+00723e44	15	Elevator Range
+00723e5c	7	Flares
+00723e64	40	CDisplay::DrawObjects() DummyRenderjobs
+00723e8c	50	CDisplay::DrawObjects() DummyRenderjobs Rendering
+00723ec0	34	CDisplay::DrawObjects() AlphaObjs
+00723ee4	37	CDisplay::DrawObjects() SelHoverGlow
+00723f0c	34	CDisplay::DrawObjects() Particles
+00723f30	20	ApplyPostProcessing
+00723f44	33	CDisplay::DrawObjects() Specials
+00723f68	30	CDisplay::DrawObjects() Mouse
+00723f88	8	2DMouse
+00723f90	19	CDisplay::Draw() 1
+00723fa4	19	CDisplay::Draw() 3
+00723fb8	19	CDisplay::Draw() 4
+00723fcc	19	CDisplay::Draw() 2
+00723fe0	19	CDisplay::Draw() 5
+00723ff4	19	CDisplay::Draw() 6
+00724008	19	CDisplay::Draw() 7
+0072401c	19	CDisplay::Draw() 8
+00724030	19	CDisplay::Draw() 9
+00724044	20	CDisplay::Draw() 10
+00724058	20	CDisplay::Draw() 11
+0072406c	20	CDisplay::Draw() 12
+00724080	20	CDisplay::Draw() 13
+00724094	9	mann.odb
+007240a8	7	drehen
+007240b0	11	gehenstart
+007240bc	10	gehenloop
+007240c8	14	gehenanhalten
+007240d8	13	kletternhoch
+007240e8	15	kletternrunter
+007240f8	14	kletternlinks
+00724108	15	kletternrechts
+00724118	30	data/texture/misc/loading.tga
+0072413c	12	EnergyField
+00724148	17	EnergyFieldFlash
+0072415c	13	ElevatorRope
+0072416c	25	Target point : (%d, %d)
+
+00724188	24	Panorama_layer_0.tga
+007241a0	24	Panorama_layer_1.tga
+007241b8	24	Panorama_layer_2.tga
+007241d0	24	Panorama_layer_3.tga
+007241e8	24	Panorama_layer_4.tga
+00724200	24	Panorama_layer_5.tga
+00724218	24	Panorama_layer_6.tga
+00724230	15	GroundRenderer
+00724240	57	C:\dev\wiggles\Wiggles\Wiggles\Engine\GroundRenderer.cpp
+0072427c	8	RenderM
+00724284	16	GroundRenderer2
+00724294	57	C:\dev\wiggles\Wiggles\Wiggles\Engine\MeshDestructor.cpp
+007242d0	15	DestrucionMesh
+007242e0	56	C:\dev\wiggles\Wiggles\Wiggles\Engine\ModelRenderer.cpp
+00724318	17	MR DB %s Mesh %d
+0072432c	24	MR DB %s Mesh %d Shadow
+00724344	31	MR Shadow DB %s Mesh %d Shadow
+00724364	24	MR Shadow DB %s Mesh %d
+0072437c	32	CModelRenderer Vertexprocessing
+0072439c	36	CModelRenderer::RenderShadowMeshPro
+007243c0	8	ObjGlow
+007243d0	16	data\sphere.dat
+007243e0	51	C:\dev\wiggles\Wiggles\Wiggles\Engine\Particle.cpp
+00724414	20	particle_a_128d.tga
+00724428	20	particle_c_256d.tga
+0072443c	19	particle_e_256.tga
+00724450	20	particle_d_256d.tga
+00724464	20	particle_a_256d.tga
+00724478	9	Particle
+007244d4	22	CScapeIconMgr::Draw()
+007244ec	38	ScapeIcon Type %d Obj %s ClassText %s
+00724514	38	ScapeIcon Type %d Obj %s ClassText %d
+0072453c	52	C:\dev\wiggles\Wiggles\Wiggles\Engine\ScapeIcon.cpp
+00724570	12	hearts.tga
+0072457c	12	events.tga
+00724588	16	eventsprod.tga
+00724598	12	energy.tga
+007245a4	7	dummy_
+007245ac	7	_u.tga
+007245b4	25	data/texture/classicons/
+007245d0	40	data/texture/classicons/arrow_up.tga
+007245f8	12	arrow_up
+00724604	40	data/texture/classicons/arrow_down.tga
+0072462c	12	arrow_down
+00724638	40	data/texture/classicons/arrow_left.tga
+00724660	12	arrow_left
+0072466c	40	data/texture/classicons/arrow_right.tga
+00724694	12	arrow_right
+007246a0	40	data/texture/classicons/question.tga
+007246c8	12	question
+007246d4	36	data/texture/classicons/cross.tga
+007246f8	8	cross
+00724700	4	fahn
+00724708	8	start
+00724714	12	fahne_blau
+00724720	16	fahne_blau.tga
+00724730	16	fahne_gruen.tga
+00724740	16	fahne_rot.tga
+00724750	16	fahne_weiss.tga
+00724760	20	fahne_schwarz.tga
+00724774	20	fahne_mp_red.tga
+00724788	20	fahne_mp_blue.tga
+0072479c	20	fahne_mp_green.tga
+007247b0	20	fahne_mp_orange.tga
+007247c4	20	fahne_mp_cyan.tga
+007247d8	20	fahne_mp_pink.tga
+007247ec	20	fahne_mp_brown.tga
+00724800	20	fahne_mp_black.tga
+00724814	56	C:\dev\wiggles\Wiggles\Wiggles\Engine\ScapeRenderer.cpp
+0072484c	28	CScapeRenderer::RenderScape
+0072486c	14	RenderBlackRJ
+0072487c	13	GetBlockHole
+0072488c	9	GetBlock
+00724898	26	ground/Msk_%c%c%c%c01.tga
+007248b4	22	ground/Gnd_%c%c%c.tga
+007248cc	22	ground/Gnd_%c%02d.tga
+007248e4	32	data/ground/detail/50PGray.tga
+00724904	20	data/ground/detail/
+00724918	23	data/gui/smallfont.tga
+00724930	23	data/gui/smallfont.txt
+00724948	13	ShellPainter
+00724958	55	C:\dev\wiggles\Wiggles\Wiggles\Engine\ShellPainter.cpp
+00724990	55	C:\dev\wiggles\Wiggles\Wiggles\Engine\SoundAnimMgr.cpp
+007249c8	59	C:\dev\wiggles\Wiggles\Wiggles\Engine\SoundMultiplexer.cpp
+00724a04	9	loadgame
+00724a10	20	data/music/m075.mp3
+00724a24	20	data/music/m077.mp3
+00724a38	20	data/music/m078.mp3
+00724a4c	20	data/music/m079.mp3
+00724a60	20	data/music/m076.mp3
+00724a74	13	log_asnd.txt
+00724a88	6	fight
+00724a90	32	%10.0g ChangeTheme %d,%d %d,%d
+
+00724ab0	43	%10.0g AStart Theme %d %d/%d ,%s Start %s
+
+00724adc	25	%10.0g OpenFile failed.
+
+00724af8	54	C:\dev\wiggles\Wiggles\Wiggles\Engine\SoundSrcMgr.cpp
+00724b30	20	%10.0g NewTheme %s
+
+00724b44	53	C:\dev\wiggles\Wiggles\Wiggles\Engine\SpeechIcon.cpp
+00724b7c	8	clear
+00724b8c	8	unlock
+00724b94	20	unknown sub-command
+00724ba8	35	data/texture/misc/sprechblasen.tga
+00724bcc	7	Speech
+00724bd4	53	C:\dev\wiggles\Wiggles\Wiggles\Engine\TileScroll.cpp
+00724c0c	19	Scroller Started 
+
+00724c20	24	data/gui/scroller5.bin
+00724c38	24	data/gui/scroller6.bin
+00724c50	24	data/gui/scroller7.bin
+00724c68	11	TileScroll
+00724c74	56	C:\dev\wiggles\Wiggles\Wiggles\Engine\TileScrollMgr.cpp
+00724cac	9	UI Runes
+00724cb8	54	C:\dev\wiggles\Wiggles\Wiggles\Engine\TxtAnimCtrl.cpp
+00724cf0	12	uirunes.tga
+00724cfc	50	C:\dev\wiggles\Wiggles\Wiggles\Engine\UIRunes.cpp
+00724d30	53	C:\dev\wiggles\Wiggles\Wiggles\Engine\VarTexture.cpp
+00724d70	55	C:\dev\wiggles\Wiggles\Wiggles\Engine\WallRenderer.cpp
+00724da8	53	C:\dev\wiggles\Wiggles\Wiggles\Engine\WinSurface.cpp
+00724de0	13	TiledSurface
+00724e5c	4	Tilt
+00724e64	4	Zoom
+00724e70	50	C:\dev\wiggles\Wiggles\Wiggles\GameUI\Desktop.cpp
+00724ea4	22	void CDesktop::Tick()
+00724ebc	8	Desktop
+00724ec4	10	WindowMgr
+00724ee0	33	data/gui/icons/xoverlay_Book.tga
+00724f08	37	data/gui/icons/xoverlay_switchon.tga
+00724f34	38	data/gui/icons/xoverlay_switchoff.tga
+00724f5c	6	/Blue
+00724f64	8	/Yellow
+00724f74	7	/Scale
+00724f7c	7	/Green
+00724f84	11	/Question_
+00724f90	37	data/gui/icons/xoverlay_question.tga
+00724fb8	10	/Crossout
+00724fc4	37	data/gui/icons/xoverlay_crossout.tga
+00724fec	10	/Question
+00724ff8	7	system
+00725000	54	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViBitmapMgr.cpp
+00725038	4	_un.
+00725040	4	_hn.
+00725048	4	_dn.
+00725050	4	_xn.
+00725058	21	data/gui/iconmod.tcl
+00725104	8	Input
+0072510c	16	ViewModifier
+0072511c	12	AltModifier
+00725128	12	PanModifier
+00725134	16	ZoomModifier
+00725144	16	TiltModifier
+00725154	55	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViControlMgr.cpp
+0072518c	6	ViWin
+00725194	48	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViEvt.cpp
+007251cc	49	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViFont.cpp
+00725200	58	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViFontCharacter.cpp
+0072523c	63	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViFontCharacterCache.cpp
+0072527c	52	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViFontMgr.cpp
+007252b0	22	data/gui/fonts/%s.kft
+007252c8	52	C:\dev\wiggles\Wiggles\Wiggles\GameUI\VIMapEdit.cpp
+00725300	17	<multiselection>
+00725314	4	<non
+0072531c	8	Physics
+00725324	11	set_physic
+00725330	10	Autolight
+0072533c	14	set_autolight
+0072534c	6	Boxed
+00725354	10	set_boxed
+00725360	12	ObjProps
+0072536c	4	High
+00725374	16	Editor_Set_Info
+00725384	8	Player
+0072538c	4	Enem
+00725394	4	Enem
+0072539c	4	Enem
+007253a4	4	Enem
+007253ac	4	Enem
+007253b4	4	Enem
+007253bc	4	Enem
+007253d4	22	data/me_classinfo.txt
+007253ec	17	mapedit/classes/
+00725400	10	/category
+0072540c	7	/lastz
+00725420	20	data/me_scripts.tcl
+00725434	12	Map Editor
+00725440	8	unnamed
+00725448	12	Delete All
+00725454	12	Duplicate
+00725464	6	 Snap
+00725470	4	Grid
+00725478	12	Load Map
+00725484	12	Load Set
+00725490	12	Save Set
+007254a4	4	View
+007254ac	4	Info
+007254b4	4	Join
+007254c0	4	PhEn
+007254c8	4	ScHo
+007254d0	8	export
+007254d8	4	.pmp
+007254e8	26	save_map {%d %d %d %d} %s
+00725508	12	instanciate
+00725514	12	Dummy_Wand
+00725520	12	autosave
+0072552c	16	data/templates/
+0072553c	15	log "map done"
+0072554c	16	mapedit/lastmap
+0072555c	4	.tcl
+00725564	13	map_template
+0072557c	21	MapTemplateSet %d %d
+00725594	20	mapedit/lastobjfile
+007255a8	10	sel /obj
+
+007255b8	89	set objhandle [new %s "" "[expr {%g + $xoffset}] [expr {%g + $yoffset}] %g" "%g %g %g"]
+
+00725614	24	set_boxed $objhandle 1
+
+0072562c	25	set_owner $objhandle %d
+
+00725648	18	%s $objhandle %s
+
+0072565c	12	info_string
+00725668	47	call_method  $objhandle Editor_Set_Info {%s} 
+
+00725698	12	Saving as 
+007256a4	12	 failed.
+007256b0	41	proc MapTemplateSet {xoffset yoffset} {
+
+007256dc	26	  loading_objdetail high
+
+007256f8	36	 map_template %s $xoffset $yoffset
+
+00725724	37	 map_setlayer2 $xoffset $yoffset %s
+
+00725750	28	  loading_objdetail medium
+
+0072576c	25	  loading_objdetail low
+
+00725788	25	  loading_objdetail off
+
+00725820	8	_pshbtn.
+0072582c	16	_frame_l.tga
+0072584c	11	MouseEnter
+00725858	11	MouseLeave
+0072586c	6	KeyUp
+00725874	8	KeyDown
+0072587c	10	KeyRepeat
+00725888	10	MouseMove
+00725894	8	SelDown
+0072589c	6	SelUp
+007258a4	7	SelDbl
+007258ac	11	ComandDown
+007258b8	10	CommandUp
+007258c4	11	MouseWheel
+007258d0	8	Command
+007258d8	6	Timer
+007258e0	13	SliderChange
+007258f0	17	SliderTrackStart
+00725904	15	SliderTrackEnd
+00725914	15	ScrollerChange
+00725924	19	ScrollerTrackStart
+00725938	17	ScrollerTrackEnd
+0072594c	11	SelChanged
+00725958	11	ButtonDown
+00725964	9	ButtonUp
+00725970	17	ButtonUpCanceled
+00725984	16	ButtonDownRight
+00725994	14	ButtonUpRight
+007259a4	22	ButtonUpRightCanceled
+007259bc	9	MsgBoxOk
+007259c8	11	Verdana_11
+007259d4	11	Verdana_15
+007259e0	7	stdbig
+007259e8	21	Percolator_Expert_21
+00725a04	21	Percolator_Expert_24
+00725a1c	7	bigbig
+00725a24	21	Percolator_Expert_35
+00725a44	20	data/gui/stdvis/std
+00725a58	48	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWin.cpp
+00725ac4	57	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinAutoPopup.cpp
+00725b00	8	gnomes
+00725b08	9	techtree
+00725b14	8	prods
+00725b1c	12	pedigree
+00725b28	12	questlog
+00725b3c	4	Text
+00725b44	10	Main Menu
+00725b50	16	Go to main menu
+00725b60	8	Options
+00725b68	13	Game options
+00725b78	10	Load game
+00725b84	16	Load saved game
+00725b94	10	Save game
+00725ba0	18	Save current game
+00725bb4	10	Quicksave
+00725bc0	23	Quicksave current game
+00725bd8	7	Gnomes
+00725be0	17	Show gnome stats
+00725bf4	12	Techtree
+00725c00	18	Show technologies
+00725c14	11	Production
+00725c20	22	Show production sites
+00725c38	9	Pedigree
+00725c44	20	Show gnome pedigree
+00725c58	9	Questlog
+00725c64	14	Show questlog
+00725c7c	17	Show online help
+00725c90	4	Quit
+00725c98	10	Quit game
+00725ce0	51	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinBar.cpp
+00725d14	14	%3.0f / %3.0f
+00725d60	20	ViWinScrollField
+00725d74	55	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinBigInfo.cpp
+00725dac	33	data/gui/icons/xoverlay_Crossout
+00725dd0	16	info_gnomes.tcl
+00725de0	15	info_prods.tcl
+00725df0	19	info_stammbaum.tcl
+00725e04	13	diary_15.tcl
+00725e14	12	diary_1.tcl
+00725e5c	14	ViWinBMButton
+00725e6c	56	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinBMButton.cpp
+00725ee0	66	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinBMPieCountedButton.cpp
+00725f9c	52	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinChat.cpp
+00725fd0	11	mp_chat_%i
+00726040	59	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinClickMsgBox.cpp
+007260b8	59	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinClickPicBox.cpp
+00726130	53	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinClock.cpp
+00726168	32	data/gui/buttons/Uhr_Normal.tga
+00726188	31	data/gui/buttons/Uhr_Gehov.tga
+007261a8	30	data/gui/buttons/UhrButtonTag
+007261c8	11	Work start
+007261d4	32	data/gui/buttons/UhrButtonNacht
+007261f4	9	Work end
+00726200	27	data/gui/icons/AutoProd_On
+0072621c	19	Automatic schedule
+00726230	6	Cycle
+00726238	12	%2d.%2d.%2d
+00726244	28	data/gui/icons/AutoProd_Off
+007262d8	37	data/gui/deco/deco_line_r_kachel.tga
+00726300	35	data/gui/deco/deco_line_r_ausl.tga
+00726324	56	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinDecoLine.cpp
+00726398	24	data/gui/icons/BuddelnG
+007263b0	7	Tunnel
+007263b8	25	data/gui/icons/BuddelnH0
+007263dc	25	data/gui/icons/BuddelnH1
+007263f8	6	Small
+00726400	25	data/gui/icons/BuddelnH2
+0072641c	7	Medium
+00726424	25	data/gui/icons/BuddelnH3
+00726448	27	data/gui/icons/BuddelnUndo
+007264ac	55	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinDragBar.cpp
+00726520	54	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinFinder.cpp
+00726558	8	Finder
+007265d8	53	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinFrame.cpp
+00726698	19	data/GUI/frame.tga
+007266ac	56	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinInfoOpts.cpp
+007266ec	12	InfoOpts
+007266f8	4	Copy
+00726700	8	Paste
+0072674c	60	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinInventory.cpp
+00726788	16	data/gui/icons/
+00726798	4	Blue
+007267a4	27	data/gui/InventorySlot.tga
+007267c0	18	data/gui/Hand.tga
+007267d4	10	data/gui/
+007267e0	12	exp_Kampf
+00726828	12	ViWinLayout
+00726834	12	Healthbar
+00726840	12	Attribbar
+0072684c	16	Attribrangebar
+0072685c	12	WorkClock
+00726868	12	EditName
+00726878	37	data/gui/deco/deco_line_d_kachel.tga
+007268a0	35	data/gui/deco/deco_line_d_ausl.tga
+007268c4	23	data/scripts/text/doc/
+007268e0	8	present
+007268ec	8	print
+007268f4	8	addlink
+007268fc	9	autolink
+00726908	9	addxlink
+00726914	10	autoxlink
+00726920	7	reload
+00726928	12	sub-command
+00726934	15	no window open
+00726944	16	/(su%d)%s/(su0)
+00726994	56	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinLayoutCC.cpp
+007269cc	12	atr_ExpMax
+007269d8	8	%3d/%3d
+00726b20	56	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinListCtrl.cpp
+00726b94	63	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinNakedTextButton.cpp
+00726c10	7	Cancel
+00726c18	12	Load Game
+00726c24	20	data/GameScripts/
+00726c38	16	ViWinNewsTicker
+00726c50	8	change
+00726c58	8	delete
+00726c68	9	progress
+00726c74	14	gnomecritical
+00726c84	10	gnomeinfo
+00726c90	12	material
+00726ca4	17	invalid category
+00726cb8	14	missing value
+00726cd0	8	-color
+00726cd8	24	expected 3-element list
+00726cf0	12	-priority
+00726cfc	12	-category
+00726d08	8	-time
+00726d10	8	-click
+00726d18	12	-history
+00726d24	18	unknown parameter
+00726d78	55	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinObjJoin.cpp
+00726db0	16	Object Joiner
+00726dc0	8	Clear
+00726dc8	4	Load
+00726dd0	4	Save
+00726dd8	8	Apply
+00726de0	7	Multi_
+00726de8	19	data/templatejoin/
+00726dfc	11	Cant open 
+00726e08	12	%f %f %f %s
+00726e14	26	! Object indentification
+
+00726e34	13	%f %f %f %s
+
+00726e44	23	
+! 3db script snippet
+
+00726e5c	11	 standard
+
+00726e68	6	Anim 
+00726e70	9	 Source 
+00726e7c	7	%s %s
+
+00726e84	12	 ClearBase
+
+00726e90	40	 MergePosRot { %f %f %f } { %f %f %f } 
+00726eb8	25	
+! Tcl class definition
+
+00726ed4	12	{ %s %s }
+
+
+00726f1c	58	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinOverlayMsg.cpp
+00726f94	59	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinPerformance.cpp
+00726fd0	12	performance
+00726fe8	13	objcnt: 1234
+00727000	31	polycnt: S:4321 O:5678 A: 9999
+00727020	12	fps: 75.000
+0072702c	12	rjcnt: 75.0
+00727038	11	objfactor:
+0072704c	6	psrc:
+00727054	14	perfstats.xls
+00727068	61	Nr  RealTime  GameTime  FPS  Objcnt Vis  Objcnt All  RjCnt 
+
+007270a8	25	%i %f %f %8.4f %i %i %i
+
+007270c4	19	objfct:%.0f (%.0f)
+007270d8	14	objcnt: %d/%d
+007270e8	12	polycnt: %d
+007270f4	18	fps: %6.3f  %6.3f
+00727108	10	rjcnt: %d
+00727114	7	 %d=%d
+0072711c	9	psrc: %d
+00727164	6	Green
+00727174	9	Crossout
+00727180	10	Question_
+0072718c	7	Yellow
+00727194	24	data/gui/icons/energyon
+007271ac	12	Einschalten
+007271b8	25	data/gui/icons/energyoff
+007271d4	12	Ausschalten
+007271e0	24	data/gui/icons/S1repair
+007271f8	11	Reparieren
+00727204	22	data/gui/icons/repair
+0072721c	7	repair
+00727224	24	data/gui/icons/S1aufbau
+0072723c	8	buildup
+00727244	22	data/gui/icons/aufbau
+0072725c	33	data/gui/icons/Crossoutpacktobox
+00727280	27	data/gui/icons/S1packtobox
+0072729c	22	data/gui/icons/unpack
+007272b4	6	Umzug
+007272bc	25	data/gui/icons/packtobox
+007272d8	10	packtobox
+007272e4	28	data/gui/TXT_Production.tga
+00727300	30	data/gui/icons/arrow_left.tga
+00727320	31	data/gui/icons/arrow_right.tga
+00727340	63	set_event %i evt_btn_on -target %i -num1 0 -text1 %s -text2 %s
+00727380	7	Unpack
+00727394	10	Invention
+007273a0	9	%s:%3.0f
+007273b8	10	Material:
+007273cc	14	prodincrement
+007273e0	7	switch
+007273e8	14	proddecrement
+00727434	58	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinProperties.cpp
+00727478	12	Properties
+00727484	20	data/GUI/Bar.tga
+00727498	20	data/GUI/BarBG.tga
+007274ac	20	data/GUI/Bar2.tga
+007274fc	58	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinPushButton.cpp
+00727574	57	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinQuickHelp.cpp
+007275ec	18	data/alphabet.bin
+00727600	52	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinRoot.cpp
+00727634	25	data/gui/buttons/LO_Main
+00727650	10	Main menu
+0072765c	33	data/gui/buttons/LO_Halter_links
+00727680	34	data/gui/buttons/LO_Halter_rechts
+007276a4	31	data/gui/buttons/LO_Pfeil_down
+007276c4	18	Toggle newsticker
+007276d8	29	data/gui/buttons/LO_Finder_Z
+007276f8	12	Finder mode
+00727704	29	data/gui/buttons/LO_Pfeil_up
+00727724	14	Toggle finder
+00727734	11	Newsticker
+00727740	30	data/gui/buttons/LO_Finder_PS
+00727760	6	Pause
+00727768	6	Turbo
+00727770	8	 x %.0f
+00727778	30	void ViWinRoot::Tick() MsgBox
+00727798	34	void ViWinRoot::Tick() SeqControl
+007277bc	31	void ViWinRoot::Tick() Hovered
+007277dc	33	void ViWinRoot::Tick() ObjAction
+00727800	37	void ViWinRoot::Tick() Pause Tooltip
+00727828	12	Game Paused
+00727834	31	void ViWinRoot::Tick() ToolTip
+00727854	42	void ViWinRoot::Tick() Tooltip Gnome/Baby
+00727880	6	 (M) 
+00727888	6	 (F) 
+00727890	6	 (N) 
+00727898	41	void ViWinRoot::Tick() Tooltip ProdGnome
+007278c4	17	 %d seconds idle
+007278d8	12	atr_Mood
+007278e4	14	atr_Nutrition
+007278f4	14	atr_Alertness
+00727904	24	HP:%d AL:%d NU:%d MO:%d
+0072791c	36	void ViWinRoot::Tick() Tooltip Prod
+00727940	43	void ViWinRoot::Tick() Tooltip Prod Energy
+00727970	12	Energyclass
+0072797c	6	 %.1f
+00727984	11	Energyload
+00727990	13	Energystore:
+007279a0	46	void ViWinRoot::Tick() Tooltip Prod Nonenergy
+007279d0	8	%s x%d 
+007279d8	7	invent
+007279e0	8	build
+007279e8	11	no Energy!
+007279f4	11	 (%s - %i)
+00727a04	41	set_event %d evt_task_dropall -target %d
+00727a30	50	set_event %i evt_wiggolympics -target %i -num1 %f
+00727a64	14	 -multiselect
+00727a74	12	 -alternate
+00727a80	12	 -placement
+00727a8c	10	 -command
+00727a98	12	placement
+00727aa4	8	Abfluss
+00727ab0	71	-command -placement -asbox -pos {%f %f %f} -rot {%f %f %f} -snapobj %d
+00727af8	11	 -invclick
+00727b08	72	-command -placement -asprod -pos {%f %f %f} -rot {%f %f %f} -snapobj %d
+00727bac	60	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinScapeTexture.cpp
+00727be8	24	Scape texturizer (TM)
+00727c78	14	ViWinViewPort
+00727c88	59	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinScrollField.cpp
+00727d3c	60	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinSimpleFinder.cpp
+00727d7c	31	data/gui/stateicons/energy.tga
+00727d9c	31	data/gui/stateicons/events.tga
+00727dbc	11	Grenzstein
+00727dc8	10	Grabstein
+00727dd4	17	SteinfalleMedusa
+00727dec	4	...)
+00727df4	6	 (%d)
+00727dfc	12	GnomeAge
+00727e08	12	Assigned to
+00727e14	6	%3.0f
+00727e1c	12	%3.0f/%3.0f
+00727e28	6	Summe
+00727e34	9	build up
+00727ebc	23	data/gui/mnubg_map.tga
+00727ed4	29	data/gui/buttons/map_zoomout
+00727ef4	9	Zoom out
+00727f00	28	data/gui/buttons/map_zoomin
+00727f1c	8	Zoom in
+00727f60	58	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinSpeechText.cpp
+00727fd8	57	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinStartMenu.cpp
+00728014	19	data/autostart.txt
+00728028	23	data/gui/menu_logo.tga
+00728040	19	data/gui/gamma.tga
+00728058	12	tutorial
+00728064	8	single
+0072806c	8	multi
+00728074	8	sandbox
+0072807c	25	%02d-%02d-%02d %02d:%02d
+00728098	16	data/gamesave/
+007280ac	8	quick
+007280bc	10	(old %d) 
+007280d0	24	data/gui/credits1.tga
+007280e8	9	SaveGame
+007280f4	7	Delete
+007280fc	13	Really quit?
+00728110	12	New Game
+0072811c	12	Resume Game
+00728128	12	Save Game
+00728134	16	Introduction
+00728144	12	Campaign
+00728150	12	Skirmish
+0072815c	4	Back
+00728164	8	Loading
+00728170	37	data/GameScripts/single_Starttut.tcl
+00728198	40	data/GameScripts/single_Startcamp.tcl
+007281c0	25	data/custom_campaign.txt
+007281dc	20	data/gamesave/save_
+007281f0	7	Saving
+007281f8	16	Video Options
+00728208	16	Audio Options
+00728218	16	Input Options
+00728228	10	MMB/CTRL:
+00728248	34	Clicked APPLY in Video Settings 
+
+0072826c	12	Brightness
+00728278	38	Gamma/Brightness slider : (%i), (%i)
+
+007282a0	8	Gamma
+007282a8	16	Display Mode : 
+007282b8	6	%dx%d
+007282c0	14	Resolution : 
+007282d0	11	Display : 
+007282dc	13	Sound Volume
+007282ec	13	Music Volume
+007282fc	15	Reverse stereo
+0072830c	14	Normal stereo
+0072831c	15	Show subtitles
+0072832c	15	Hide subtitles
+0072833c	23	data/gui/scroller4.bin
+00728354	8	normal
+00728364	22	data/gui/credits2.tga
+0072837c	16	No games found.
+0072838c	6	Join 
+00728394	12	Host game
+007283a0	14	Multiplayer: 
+007283b4	8	Spieler
+007283c8	8	Wiggle
+007283d0	4	Vood
+007283d8	8	Knocker
+007283e0	8	Brain
+007283e8	4	Vamp
+007283f8	12	Counters
+00728404	7	bereit
+0072840c	13	nicht bereit
+0072841c	6	Modus
+00728424	12	Death Match
+00728430	17	Capture The Flag
+00728444	16	Counter Wiggles
+00728454	7	Zwerge
+0072845c	6	Karte
+0072846c	10	generiert
+00728478	11	Landschaft
+00728484	7	Urwald
+0072848c	9	Schwefel
+00728498	9	Kristall
+007284ac	10	Rohstoffe
+007284b8	6	wenig
+007284c8	7	Dichte
+007284d0	8	niedrig
+007284e0	8	Groesse
+007284e8	6	klein
+007284f0	7	mittel
+007284f8	6	gross
+00728500	7	riesig
+00728508	6	Start
+00728510	10	Abbrechen
+0072851c	7	multi_
+00728524	10	 skirmish
+00728530	20	loadtemplategame 
+00728544	36	data/GameScripts/multiplayer.tcl
+00728568	17	data/gui/docpix/
+0072857c	9	agressiv
+00728588	9	defensiv
+00728594	12	Sandkasten
+007285a0	12	Disconnect
+00728604	56	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinTechTree.cpp
+0072863c	12	Feuerstelle
+00728648	12	Tech tree
+00728708	56	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinTextEdit.cpp
+00728780	15	ViWinTextLabel
+00728790	57	C:\dev\wiggles\Wiggles\Wiggles\GameUI\ViWinTextLabel.cpp
+00728844	17	data/tclhelp.txt
+00728858	35	License:%s  Expires %02d-%02d-%04d
+00728880	87	                                                                                      
+007288d8	8	waitmap
+007288e0	11	Map ready.
+007288ec	12	waitplayer
+007288f8	15	Players ready.
+00728908	9	Timeout.
+00728920	8	toggle
+007289d0	32	</font></code></body></html>
+007289f0	15	</body></html>
+00728a00	15	</font></code>
+00728a10	4	&nbs
+00728a18	4	<br>
+00728a20	4	&lt;
+00728a28	4	&gt;
+00728a30	28	&nbsp;&nbsp;&nbsp;&nbsp;
+00728a58	11	<a href="/
+00728a64	4	<hr>
+00728a6c	11	<img src="
+00728a7c	8	/index
+00728a84	12	/objlist
+00728a90	12	/classlist
+00728a9c	9	/objinfo
+00728aa8	11	/classinfo
+00728ab4	17	/classinfomethod
+00728ac8	16	/classinfostate
+00728ad8	12	/screenshot
+00728ae4	16	/autoscreenshot
+00728af4	12	/tclcommand
+00728b00	10	/tclshell
+00728b0c	10	/jumpview
+00728b18	89	<html><body>You requested:'%s'<br>p1:'%s'<br>p2:'%s'<br>p3:'%s'<br>p4:'%s'</body></html>
+00728b74	15	^Index^index^ 
+00728b84	23	^Object list^objlist^ 
+00728b9c	24	^Class list^classlist^ 
+00728bb4	22	^Tcl Shell^tclshell^ 
+00728bcc	27	^Tcl Commands^tclcommand^ 
+00728be8	26	^Screen shot^screenshot^ 
+00728c04	28	^Auto shots^autoscreenshot^
+00728c20	11	
+Selected:
+00728c2c	16	^%s^objinfo:%s^
+00728c40	6	Index
+00728c64	33	%2d.%2d.%d (%s) %2d:%02d (%5.3f)
+00728c88	13	System info
+
+00728c98	23	 Windows Version : %s
+
+00728cb0	34	       Processor : %s ca. %d MHz
+
+00728cd4	29	   RAM installed : %6.2f MB
+
+00728cf4	29	   RAM available : %6.2f MB
+
+00728d14	28	       RAM Usage : %4d %%
+
+
+00728d30	6	VMem
+
+00728d38	29	      Total size : %6.2f MB
+
+00728d58	29	      Page cache : %6.2f MB
+
+00728d78	29	       Heap size : %6.2f MB
+
+00728d98	29	       Available : %6.2f MB
+
+00728db8	30	    Largest Free : %6.2f MB
+
+
+00728dd8	24	Game date        : %s
+
+
+00728df0	13	Frame stats
+
+00728e00	23	           Logic : %d
+
+00728e18	23	         Display : %d
+
+00728e30	27	         Avg FPS : %5.2f
+
+
+00728e4c	12	%4.2f %4.2f
+00728e58	15	Location info:
+00728e68	15	Near objects:
+
+00728ea4	12	Object list
+00728ec4	24	35^%s^classinfo:%s^
+
+00728edc	11	Class list
+00728efa	18	30%d instances
+
+00728f0c	13	Tcl commands
+00728f1c	16	Tcl commands : 
+00728f2c	10	Tcl shell
+00728f38	20	Script:
+%s
+Result:
+
+00728f4c	10	Error:
+%s
+00728f58	7	Ok.
+%s
+00728f64	28	<form action="tclshell">
+00728f80	57	</textarea><br><input type=submit value="Submit"></form>
+00728fbc	41	<textarea name="script" rows=10 cols=70>
+00728fe8	14	Class info : 
+00728ff8	15	No such class!
+00729008	11	Class '%s'
+00729014	17	  class id: %d
+
+
+00729028	13	Methods: %d
+
+00729038	29	  ^%s^classinfomethod:%s:%s^
+00729058	12	States: %d
+
+00729064	28	  ^%s^classinfostate:%s:%s^
+00729080	15	Instances: %d
+
+00729090	20	^%5d:%s^objinfo:%s^
+007290a8	21	Class method info : 
+007290c0	16	No such method!
+007290d0	16	Signature:
+%s {
+007290e0	10	Body:
+%s
+
+007290ec	20	Class state info : 
+00729100	15	No such state!
+00729110	10	Init:
+%s
+
+0072911c	10	Loop:
+%s
+
+00729128	10	Fini:
+%s
+
+00729134	15	Object info : 
+00729144	16	No such object!
+00729154	33	Object class: ^%s^classinfo:%s^
+
+00729178	6	%f:%f
+00729180	42	Position: ^%s^jumpview:%s^  Rotation: %s 
+007291ac	33	State:^%s^classinfostate:%s:%s^
+
+007291d0	11	No state.
+
+007291dc	10	Owner:%d
+
+007291e8	7	Flags:
+007291f0	9	 Visible
+007291fc	11	 Contained
+00729208	8	 Locked
+00729210	10	 Storable
+0072921c	8	 Physic
+00729224	11	 AutoLight
+00729230	12	 LogActions
+0072923c	11	 ViewInFog
+00729248	10	 CanClimb
+00729254	12	 Selectable
+00729260	12	 Renderlast
+0072926c	17	 AlternateAnimDB
+00729280	12	Inventory:
+
+0072928c	12	
+Tasklist:
+
+007292a0	12	Screen shot
+007292ac	15	screenshot.jpg
+007292bd	23	#file/screenshot.jpg#
+00729314	14	tclerrors.txt
+00729324	14	Error(%d):%s
+
+00729334	17	TCL:CObj TclEval
+00729348	24	TCL:CObj TclEvalHandler
+00729360	10	info vars
+0072936c	32	Quicksave_%04d%02d%02d_%02d%02d
+0072938c	21	data/gamesave/quick_
+007293a4	4	/(fn
+007293ac	13	Quick saved:
+007293c0	6	World
+007293c8	8	Objects
+007293d0	8	Control
+007293d8	9	Graphics
+007293e4	6	Logic
+007293ec	9	Validate
+007293f8	30	data/GameScripts/timeline.txt
+00729418	16	data/quotes.txt
+0072942c	8	Nobody
+00729438	7	gender
+00729440	10	hitpoints
+0072944c	10	nutrition
+00729458	13	needforsleep
+00729468	7	weight
+00729470	11	digenable0
+0072947c	11	digenable1
+00729488	11	digenable2
+00729494	11	digenable3
+007294a0	11	digenable4
+007294ac	8	Init...
+007294b4	16	Erfindungen als
+007294c4	11	Inventions
+007294d0	10	Blueprint
+007294dc	10	Attribute
+007294e8	16	Itemauswahl mit
+007294f8	11	Place_Menu
+0072950c	12	Ablegen mit
+00729518	12	Place_Scape
+00729524	19	Interface anzeigen
+00729540	20	Textgeschwindigkeit
+00729554	10	TextSpeed
+00729560	12	SehrLangsam
+0072956c	8	Langsam
+00729574	7	Normal
+0072957c	8	Schnell
+00729584	12	SehrSchnell
+00729590	4	Misc
+00729598	12	LoadInfoMax
+007295a4	9	Info: %s
+007295b8	16	/wigswap.bin
+007295c8	37	data/scripts/classes/zwerg/names.txt
+007295fc	8	friend
+00729604	8	neutral
+00729614	12	Performance
+00729620	12	RatingDsk
+0072962c	12	RatingGfx
+00729638	12	RatingCPU
+00729644	12	RatingMem
+00729650	16	PersistOptions
+00729660	16	ButtonMapping
+00729670	16	PanMouseFactor
+00729680	12	ShowSubText
+0072968c	16	ReverseStereo
+0072969c	12	ShowQuotes
+007296a8	16	ThreadPriority
+007296b8	16	MinThreadSleep
+007296c8	20	DIPYieldThreshold
+007296dc	24	RedundantStateChanges
+007296f4	20	PauseOnDeactivate
+00729708	16	MultiTexture
+00729718	20	AnimInterpolation
+0072972c	12	LightGlow
+00729738	12	BorderMask
+00729744	12	Particles
+00729750	16	EvtFrameSkip
+00729760	20	TexVideoMemLimit
+00729774	20	MaxShadowLightDist
+00729788	16	OldProdControl
+00729798	20	ValidateRenderJobs
+007297ac	12	WebServer
+007297b8	12	NotBremse
+007297c4	12	ScapeJitter
+007297d0	12	UseIdiObjs
+007297dc	16	PlayerAIDefault
+007297ec	16	WorldIsInvalid
+007297fc	16	SimpleControl
+0072980c	12	ScapeLight
+00729818	16	LazyTextureLoad
+00729828	16	UseEnvMapping
+00729838	16	AutoDigRange
+00729848	20	AutoHarvestRange
+0072985c	16	NoGamespeedLock
+0072986c	20	UseTclClassCache
+00729880	20	GameSaveCompression
+00729894	12	AnimStats
+007298a0	20	MaxGametimeFactor
+007298b4	10	PerfStats
+007298c0	16	MaxFramerate
+007298d0	16	TextureQuality
+007298e0	16	ObjectQuality
+007298f0	20	LandscapeQuality
+00729904	14	Options are:
+
+00729914	33	AnimIpol [true|false] (true)=%s
+
+00729938	35	AnimStats [true|false] (false)=%s
+
+0072995c	33	AutoDigRange [value] (120.0)=%f
+
+00729980	37	AutoHarvestRange [value] (120.0)=%f
+
+007299a8	35	BorderMask [true|false] (true)=%s
+
+007299cc	38	ColorMipMaps [true|false] (false)=%s
+
+007299f4	41	DipYieldThreshold [1-100000] (10000)=%d
+
+00729a20	27	EvtFrameSkip [0-4] (0)=%d
+
+00729a3c	36	GameSaveCompression [value] (7)=%d
+
+00729a60	33	LandScapeQuality [value] (2)=%d
+
+00729a84	40	LazyTextureLoad [true|false] (true)=%s
+
+00729aac	34	LightGlow [true|false] (true)=%s
+
+00729ad0	32	MaxFrameRate [value] (25.0)=%f
+
+00729af0	36	MaxGameTimeFactor [value] (4.0)=%f
+
+00729b14	37	MaxShadowLightDist [value] (8.0)=%f
+
+00729b3c	31	MinThreadSleep [2-500] (2)=%d
+
+00729b5c	37	MultiTexture [true|false] (true)=%s
+
+00729b84	41	NoGameSpeedLock [true|false] (false)=%s
+
+00729bb0	30	ObjectQuality [value] (2)=%d
+
+00729bd0	33	PanMouseFactor [value] (1.0)=%f
+
+00729bf4	34	Particles [true|false] (true)=%s
+
+00729c18	42	PauseOnDeactivate [true|false] (true)=%s
+
+00729c44	35	PerfStats [true|false] (false)=%s
+
+00729c68	32	PlayerAIDefault [value] (0)=%d
+
+00729c88	47	RedundantStateChanges [true|false] (false)=%s
+
+00729cb8	39	ReverseStereo [true|false] (false)=%s
+
+00729ce0	35	ScapeLight [true|false] (true)=%s
+
+00729d04	32	ShowFMV [true|false] (true)=%s
+
+00729d24	36	ShowQuotes [true|false] (false)=%s
+
+00729d48	37	ShowSubText [true|false] (false)=%s
+
+00729d70	39	SimpleControl [true|false] (false)=%s
+
+00729d98	41	TexVideoMemLimit [1024-32768] (4096)=%d
+
+00729dc4	31	TextureQuality [value] (2)=%d
+
+00729de4	29	ThreadPriority [0-2] (1)=%d
+
+00729e04	38	UseEnvMapping [true|false] (true)=%s
+
+00729e2c	36	UseIdiObjs [true|false] (false)=%s
+
+00729e50	42	UseTclClassCache [true|false] (false)=%s
+
+00729e7c	44	ValidateRenderjobs [true|false] (false)=%s
+
+00729ea8	35	Webserver [true|false] (false)=%s
+
+00729ecc	40	WorldIsInvalid [true|false] (false)=%s
+
+00729ef4	13	multitexture
+00729f04	18	pauseondeactivate
+00729f18	22	redundantstatechanges
+00729f30	10	notbremse
+00729f3c	14	reversestereo
+00729f4c	12	showsubtext
+00729f58	15	persistoptions
+00729f68	13	colormipmaps
+00729f78	19	maxshadowlightdist
+00729f8c	15	panmousefactor
+00729f9c	13	maxframerate
+00729fac	13	autodigrange
+00729fbc	18	maxgametimefactor
+00729fd0	17	autoharvestrange
+00729fe4	10	webserver
+00729ff0	13	evtframeskip
+0072a000	15	threadpriority
+0072a010	15	minthreadsleep
+0072a020	18	dipyieldthreshold
+0072a034	15	texturequality
+0072a044	17	texvideomemlimit
+0072a058	14	objectquality
+0072a068	17	landscapequality
+0072a07c	20	gamesavecompression
+0072a090	16	playeraidefault
+0072a0a0	9	animipol
+0072a0ac	16	nogamespeedlock
+0072a0bc	17	usetclclasscache
+0072a0d0	15	oldprodcontrol
+0072a0e0	19	validaterenderjobs
+0072a0f4	11	bordermask
+0072a100	10	particles
+0072a10c	10	lightglow
+0072a118	12	scapejitter
+0072a124	11	useidiobjs
+0072a130	16	lazytextureload
+0072a140	14	useenvmapping
+0072a150	14	simplecontrol
+0072a160	11	scapelight
+0072a16c	8	showfmv
+0072a174	11	showquotes
+0072a180	15	worldisinvalid
+0072a190	10	animstats
+0072a19c	10	perfstats
+0072a1a8	15	unknown option
+0072a1b8	10	Referer: 
+0072a1c4	7	/file/
+0072a1cc	28	%a, %d %b %Y %H:%M:%S GMT
+0072a1e8	98	HTTP/1.0 200 OK
+Server: SEK WebTraq
+Date: %s
+Content-Type: text/html
+Accept-Ranges: bytes
+
+
+0072a250	124	<html><head><meta http-equiv="refresh" content="1; URL=http://www.innonics.com"></head><body><h1>Nix da!</h1></body></html>
+0072a2cc	45	void CBlockDB::LoadDB(const KStr& sFileName)
+0072a2fc	15	BlockDB create
+0072a30c	22	BlockDB mesh alloc %d
+0072a324	47	C:\dev\wiggles\Wiggles\Wiggles\Map\BlockDB.cpp
+0072a354	28	BlockDB mesh load %d Blocks
+0072a370	17	BlockDB ILT load
+0072a384	20	data\BlockDB2.BDB
+0072a398	18	data\BlockDB0.BDB
+0072a3ac	18	data\BlockDB1.BDB
+0072a3c0	47	C:\dev\wiggles\Wiggles\Wiggles\Map\DigMark.cpp
+0072a3f0	25	data/templates/cave0.tga
+0072a40c	25	data/templates/cave1.tga
+0072a428	25	data/templates/cave2.tga
+0072a444	25	data/templates/cave3.tga
+0072a460	10	DigMark 2
+0072a46c	10	DigMark 3
+0072a478	10	DigMark 4
+0072a484	14	WaterDBGBlock
+0072a494	45	C:\dev\wiggles\Wiggles\Wiggles\Map\Fluid.cpp
+0072a4c4	11	WaterBlock
+0072a4d0	12	SulfurBlock
+0072a4dc	10	LavaBlock
+0072a4e8	13	CFluid::Draw
+0072a4f8	10	alpha.tga
+0072a504	15	wasser_env.tga
+0072a514	19	schwef_nahtlos.tga
+0072a528	17	lava_nahtlos.tga
+0072a53c	15	CFluid::Tick()
+0072a54c	48	void CFogOfWar::NewVisibleBlock(int iX,int iY))
+0072a580	99	void CFogOfWar::RemoveFog(const int iX2, const int iY2, int iRangeX, int iRangeY,const int iOwner)
+0072a5e4	40	void CFogOfWar::FadeBlocks(int iPlayer)
+0072a610	83	CFogOfWar::RemoveFogLine(int iX0,int iY0,int iY1,int iXSize,int iYSize,int iOwner)
+0072a668	85	CFogOfWar::RemoveFogBoxNoCollision(int iX0,int iY0,int iXSize,int iYSize,int iOwner)
+0072a6c0	28	void CFogOfWar::UpdateFoW()
+0072a6dc	39	void CFogOfWar::UpdateFoW() FadeBlocks
+0072a704	39	void CFogOfWar::UpdateFoW() ShowBlocks
+0072a72c	63	bool CFogOfWar::Visible(const CVec3D vPos1,const CVec3D vPos2)
+0072a770	88	CObjPtr CFogOfWar::FindNextVisible(CVec3D vPos,const KStr sClassName,const float fDist)
+0072a7c8	4	Spli
+0072a7d0	48	C:\dev\wiggles\Wiggles\Wiggles\Map\LevelGen.cpp
+0072a800	6	 { %s
+0072a808	16	split_template 
+0072a818	12	%s %s %i %i
+0072a824	14	map_template 
+0072a834	18	loading_objdetail
+0072a850	8	[expr {
+0072a858	7	[expr 
+0072a868	8	brocken
+0072a870	4	.ent
+0072a878	10	map_entry
+0072a884	10	 %d %d %d
+0072a890	6	_hol_
+0072a8a8	6	kris_
+0072a8b0	6	lava_
+0072a8b8	12	-gamecount
+0072a8c4	12	-levelcount
+0072a8d0	8	-tunnel
+0072a8ec	28	CMapBeautifier::ScanAtPos()
+0072a908	15	{%f %f %f} 0.8
+0072a918	24	set_processactions %i 0
+0072a930	40	set_physic %i 1;set_processactions %i 0
+0072a958	48	C:\dev\wiggles\Wiggles\Wiggles\Map\LightSrc.cpp
+0072a988	11	World shut
+0072a994	11	World init
+0072a9a0	13	World blocks
+0072a9b0	12	World FoW I
+0072a9bc	15	World validate
+0072a9cc	12	World fluid
+0072a9d8	13	World FoW II
+0072a9e8	43	C:\dev\wiggles\Wiggles\Wiggles\Map\Map.cpp
+0072aa14	12	CMap::Clear
+0072aa20	11	CMap::Init
+0072aa2c	8	BlockDB
+0072aa34	13	BlockDB done
+0072aa44	12	Map PosHash
+0072aa50	9	Map VMem
+0072aa5c	11	CMap::Shut
+0072aa68	46	C:\dev\wiggles\Wiggles\Wiggles\Map\MapGen.cpp
+0072aa98	53	C:\dev\wiggles\Wiggles\Wiggles\Map\MapPathfinder.cpp
+0072aad0	91	CPathPtr CMapPathfinder::Calc1(CVec3D v1,CVec3D v2,int iOwner, bool bLines,bool bCanClimb)
+0072ab30	97	CPathPtr CMapPathfinder::Calc1(CKPoint pnt1,CKPoint pnt2,int iOwner, bool bLines,bool bCanClimb)
+0072ab94	60	C:\dev\wiggles\Wiggles\Wiggles\Map\MapPathFinder_Random.cpp
+0072abd0	52	C:\dev\wiggles\Wiggles\Wiggles\Map\MapValidator.cpp
+0072ac04	25	MapValidator:EFFPASSWALK
+0072ac20	22	MapValidator:EFFOBJPF
+0072ac38	22	MapValidator:EFFBLOCK
+0072ac50	23	MapValidator:BASELIGHT
+0072ac68	24	MapValidator:RENDERJOBS
+0072ac80	23	MapValidator:FlUIDOBJS
+0072ac98	21	MapValidator:MINIMAP
+0072acb0	20	MapValidator:IDIOBJ
+0072acc4	23	MapValidator:OBJPHYSIC
+0072acdc	22	MapValidator:DUMMYDES
+0072acf4	24	MapValidator:FLUIDALIST
+0072ad0c	46	C:\dev\wiggles\Wiggles\Wiggles\Map\MinMap.cpp
+0072ad3c	26	CPlaceFinder::FindPlace()
+0072ad58	51	C:\dev\wiggles\Wiggles\Wiggles\Map\PlaceFinder.cpp
+0072ad8c	35	CPlaceFinder::FindPlaceLongRange()
+0072adb0	58	C:\dev\wiggles\Wiggles\Wiggles\Network\KNetConnection.cpp
+0072adec	51	C:\dev\wiggles\Wiggles\Wiggles\Network\KNetMsg.cpp
+0072ae20	16	Connection init
+0072ae38	62	C:\dev\wiggles\Wiggles\Wiggles\Network\KNetMsgHandlerSyst.cpp
+0072ae88	12	CURPLAYERS
+0072ae94	12	MAXPLAYERS
+0072aea0	55	C:\dev\wiggles\Wiggles\Wiggles\Network\KNetSession.cpp
+0072aed8	17	Unconnecting %d
+
+0072aeec	21	request clientjoin%c
+0072af04	52	{NAME=%s} {OPEN=%d} {CURPLAYERS=%d} {MAXPLAYERS=%d}
+0072af38	16	Session closed.
+0072af48	17	Session created.
+0072af5c	13	request join
+0072af6c	16	Session joined.
+0072af94	12	clientjoin
+0072afa0	7	Hangup
+0072afcc	23	.%d.%d.%d.in-addr.arpa
+0072afe4	12	localhost
+0072aff0	56	C:\dev\wiggles\Wiggles\Wiggles\Network\NetMapUpdate.cpp
+0072b028	8	version
+0072b040	12	gamedata
+0072b04c	12	playerdata
+0072b058	12	initplayers
+0072b064	8	localid
+0072b06c	12	maptransfer
+0072b078	16	popstatusmsg
+0072b088	16	pushstatusmsg
+0072b098	15	statusmessage 
+0072b0a8	16	objloadingdone
+0072b0b8	16	unknown command
+0072b0c8	14	TestApp V 1.0
+0072b0d8	50	C:\dev\wiggles\Wiggles\Wiggles\Network\NetMgr.cpp
+0072b10c	16	playersettings
+0072b11c	16	 %i %i %i %i %i
+0072b12c	16	gamesettings
+0072b13c	25	 %i %i %i %i %i %i %s %i
+0072b158	15	chatmessage %s
+0072b168	23	digmessage %i %i %i %i
+0072b180	20	loadtemplategame
+0072b194	12	digmessage
+0072b1a0	12	chatmessage
+0072b1ac	14	statusmessage
+0072b1bc	25	NetStatusMessageCallback
+0072b1d8	11	%s {%s} %d
+0072b1f4	56	C:\dev\wiggles\Wiggles\Wiggles\Network\NetObjUpdate.cpp
+0072b234	23	NetLoadingDoneCallback
+0072b25c	12	CTclRootObj
+0072b268	12	CObj_World
+0072b274	16	CObj_DigTask
+0072b284	4	echo
+0072b28c	12	gamestats
+0072b298	52	C:\dev\wiggles\Wiggles\Wiggles\Objects\DummyObj.cpp
+0072b2cc	30	CDummyObjMgr::FlushRenderJobs
+0072b2ec	53	C:\dev\wiggles\Wiggles\Wiggles\Objects\EnergyMgr.cpp
+0072b324	49	C:\dev\wiggles\Wiggles\Wiggles\Objects\Event.cpp
+0072b360	4	Zwer
+0072b368	7	kungfu
+0072b370	6	sword
+0072b378	8	twohand
+0072b380	7	shield
+0072b388	10	ballistic
+0072b394	4	Wuke
+0072b39c	8	Troll
+0072b3b0	6	dodge
+0072b3c4	6	throw
+0072b3e8	13	unknown type
+0072b3f8	17	illegal database
+0072b40c	15	illegal object
+0072b41c	14	illegal value
+0072b42c	8	ballist
+0072b43c	13	invalid pose
+0072b44c	6	kampf
+0072b454	11	bogenpfeil
+0072b460	18	illegal Attribute
+0072b474	16	exp_F_Defense
+0072b484	36	TCL:CFightActionMgr::DoObjActions()
+0072b4a8	17	defender_is_dead
+0072b4bc	12	production
+0072b4c8	14	fight_Counter
+0072b4e0	14	reapproach %f
+0072b4f0	13	out_of_range
+0072b500	9	rerotate
+0072b50c	9	ratio %f
+0072b518	16	fight_dispatch
+0072b528	13	ElfenFluegel
+0072b538	8	trapped
+0072b540	75	set_event %i evt_fight_get_hurt -target %i -delay %f -num1 %f -subject1 %i
+0072b58c	6	puppe
+0072b594	18	Zwergeangegriffen
+0072b5a8	51	newsticker delete %d; set_view %.2f %.2f 0 -0.35 0
+0072b5dc	10	attack %i
+0072b5e8	7	defend
+0072b5f0	17	no_free_defender
+0072b604	16	state_enable %i
+0072b614	10	atr_Kampf
+0072b620	16	ElfenFluegelA
+0072b630	16	ElfenFluegelB
+0072b640	16	ElfenFluegelC
+0072b650	16	ElfenFluegelD
+0072b66c	40	TCL:CFightActionMgr::Tcl_GetAttackPos()
+0072b694	44	TCL:CFightActionMgr::Tcl_FightWeaponKombi()
+0072b6c0	38	TCL:CFightActionMgr::Tcl_DefHPRatio()
+0072b6ec	37	TCL:CFightActionMgr::Tcl_GetEscVal()
+0072b714	41	TCL:CFightActionMgr::Tcl_GetBestWeapon()
+0072b740	13	exp_F_Kungfu
+0072b750	12	exp_F_Sword
+0072b75c	16	exp_F_Twohanded
+0072b76c	16	exp_F_Ballistic
+0072b77c	44	TCL:CFightActionMgr::Tcl_FightMapClass2DB()
+0072b7a8	14	Invalid Class
+0072b7b8	47	C:\dev\wiggles\Wiggles\Wiggles\Objects\Obj.cpp
+0072b7e8	10	no object
+0072b7f4	15	invalid object
+0072b804	60	CObjPtr Obj::GetObj(Tcl_Interp* pI,const CTclObj& toRefArg)
+0072b840	97	CObjPtr Obj::GetObjSafe(Tcl_Interp* pI,int iObjc,Tcl_Obj* const vObj[],int iMinArgs,int iArgNum)
+0072b8a4	20	evt_worktime_start
+0072b8b8	20	evt_worktime_end
+0072b8d4	6	/obj/
+0072b8dc	45	void CObj::HandleSingleEvent(CEventPtr pEvt)
+0072b90c	28	void CObj::HandleStates() 1
+0072b928	28	void CObj::HandleStates() 2
+0072b944	28	void CObj::HandleStates() 3
+0072b960	14	CreationParam
+0072b970	18	void CObj::Tick()
+0072b984	23	void CObj::Tick() Link
+0072b99c	24	void CObj::Tick() Icons
+0072b9b4	23	void CObj::Tick() Prod
+0072b9cc	28	void CObj::Tick() ProdGnome
+0072b9e8	28	void CObj::Tick() Transplog
+0072ba04	25	void CObj::Tick() Action
+0072ba28	31	void CObjMgr::ShutDynObjects()
+0072ba64	25	Error at %d after del %d
+0072ba88	62	CGameThread::SrvDoThink() GetObjMgr().HandleEvents() All Tick
+0072bac8	60	CGameThread::SrvDoThink() GetObjMgr().HandleEvents() Events
+0072bb08	65	CGameThread::SrvDoThink() GetObjMgr().HandleEvents() Active Objs
+0072bb50	69	CGameThread::SrvDoThink() GetObjMgr().HandleEvents() Active Objs Evt
+0072bb98	72	CGameThread::SrvDoThink() GetObjMgr().HandleEvents() Active Objs States
+0072bbe0	64	CGameThread::SrvDoThink() GetObjMgr().HandleEvents() RenderTick
+0072bc20	11	Misc_Light
+0072bc2c	12	StoryMgr
+0072bc38	24	evt_system_gamestart
+0072bc50	45	set_event %d evt_system_gamestart -target %d
+0072bc80	16	Trigger_Swf_119
+0072bc90	28	void CObj::Tick() Particles
+0072bcbc	53	C:\dev\wiggles\Wiggles\Wiggles\Objects\ObjAttrib.cpp
+0072bcf4	59	C:\dev\wiggles\Wiggles\Wiggles\Objects\ObjChangeNotify.cpp
+0072bd30	10	Partner: 
+0072bd3c	6	dead!
+0072bd44	9	Mother: 
+0072bd50	9	Father: 
+0072bd5c	8	Child: 
+0072bd64	6	preg.
+0072bd78	8	FEMALE
+0072bd80	29	TCL:CObjQuery::TclObjQurey()
+0072bda0	8	-type
+0072bda8	8	gnome
+0072bdb0	8	monster
+0072bdc0	8	energy
+0072bdc8	12	protection
+0072bdd4	8	store
+0072bddc	12	elevator
+0072bdf4	8	-owner
+0072bdfc	12	-visibility
+0072be08	16	playervisible
+0072be18	16	playerinvisible
+0072be28	16	enemyvisible
+0072be38	16	enemyinvisible
+0072be48	12	-flagpos
+0072be54	8	boxed
+0072be5c	8	visible
+0072be64	12	contained
+0072be70	8	locked
+0072be78	12	selectable
+0072be84	12	hoverable
+0072be90	12	storable
+0072bea4	8	female
+0072beac	8	instore
+0072beb4	12	-flagneg
+0072bec0	12	-sorting
+0072bed8	8	-alloc
+0072bee0	8	-class
+0072bef0	16	-boundingbox
+0072bf00	8	-limit
+0072bf08	12	-cloaked
+0072bf14	8	-water
+0072bf1c	8	world
+0072bf24	8	player
+0072bf2c	11	allplayers
+0072bf38	6	other
+0072bf40	46	C:\dev\wiggles\Wiggles\Wiggles\Basics\USSet.h
+0072bf74	7	bottom
+0072bf7c	6	right
+0072bf8c	6	front
+0072bf9c	11	DrawMarker
+0072bfa8	24	mapeditsnapmarker.tga
+0072bfc0	52	C:\dev\wiggles\Wiggles\Wiggles\Objects\ObjUtils.cpp
+0072c004	50	C:\dev\wiggles\Wiggles\Wiggles\Objects\Physic.cpp
+0072c038	8	unknown
+0072c040	10	sparetime
+0072c04c	6	guard
+0072c058	9	 %s @ %s
+0072c064	8	explore
+0072c06c	58	set_event %s evt_autoprod_buildup -target %s -subject1 %s
+0072c0a8	55	set_event %s evt_autoprod_pack -target %s -subject1 %s
+0072c0e0	83	set_event %s evt_autoprod_unpack -target %s -subject1 %s -pos1 {%f %f %f} -num1 %d
+0072c138	72	set_event %s evt_autoprod_bringprod -target %s -text1 {%s} -subject1 %s
+0072c180	55	set_event %s evt_autoprod_harvest -target %s -text1 %s
+0072c1b8	52	set_event %s evt_autoprod_mine -target %s -text1 %s
+0072c1ec	23	data/scripts/cache.bin
+0072c204	37	data/scripts/flush_tclclasscache.tcl
+0072c22c	53	C:\dev\wiggles\Wiggles\Wiggles\Objects\Sparetime.cpp
+0072c284	59	C:\dev\wiggles\Wiggles\Wiggles\Objects\SrvObjUpdateMgr.cpp
+0072c2c0	21	Free Dummies:%d / %d
+0072c2d8	23	CSrvObjUpdateMgr Pass1
+0072c2f0	23	CSrvObjUpdateMgr Pass2
+0072c308	23	CSrvObjUpdateMgr Pass3
+0072c320	52	C:\dev\wiggles\Wiggles\Wiggles\Objects\StoryMgr.cpp
+0072c354	23	Voodoo_Hoehle_entdeckt
+0072c36c	20	Einsiedler_entdeckt
+0072c380	26	Einsiedler_Karte_erhalten
+0072c39c	19	Trollburg_entdeckt
+0072c3b0	22	Torwaechterin_befreit
+0072c3c8	22	Torwaechterin_zurueck
+0072c3e0	24	Drache_Auftrag_erhalten
+0072c3f8	16	Drachenbaby_tot
+0072c408	18	Lorenbahn_geloest
+0072c41c	11	Drache_tot
+0072c428	23	Drache_Auftrag_efuellt
+0072c440	24	Titanic_Pumpe_aktiviert
+0072c458	20	MetallTor_geoeffnet
+0072c46c	23	Brains_Disko_aufgebaut
+0072c484	22	Brains_Ring_gestohlen
+0072c49c	29	Brains_Maschine_abgeschaltet
+0072c4bc	18	Lorelei_zerstoert
+0072c4d0	15	Fenris_besiegt
+0072c4e0	23	QL_Find_Six_Rings_done
+0072c4f8	24	QL_Free_Gatekeeper_done
+0072c510	23	QL_Bring_Hamsters_done
+0072c528	24	QL_Save_the_Fairys_done
+0072c540	26	QL_Find_Ring_of_Life_done
+0072c55c	20	QL_Dragon_Cave_done
+0072c570	19	QL_Dragon_Egg_done
+0072c584	19	QL_Free_males_done
+0072c598	23	QL_Forge_Gleipnir_done
+0072c5b0	21	QL_Catch_Fenris_done
+0072c5c8	25	Ring_Des_Lebens_Gefunden
+0072c5e4	20	Event [%d] %s DONE
+
+0072c5f8	19	Events: %d of %d 
+
+0072c60c	12	activate
+0072c618	12	%s %s %s %i
+0072c624	8	marker
+0072c62c	8	instant
+0072c637	7	_kif_4
+0072c640	15	%s dig shut -1
+0072c650	31	TCL:CStoryMgr::TclIsStoryMgr()
+0072c670	6	dummy
+0072c680	6	stone
+0072c688	6	metal
+0072c690	8	service
+0072c6a4	12	reproduces 
+0072c6b0	8	moves 
+0072c6b8	8	lives 
+0072c6c0	13	 reproduces 
+0072c6d0	8	 moves 
+0072c6d8	8	 lives 
+0072c6e0	10	Holzkiepe
+0072c6ec	17	Grosse_Holzkiepe
+0072c700	12	Schubkarren
+0072c70c	13	Hamsterkaren
+0072c724	55	C:\dev\wiggles\Wiggles\Wiggles\Objects\TclClassMgr.cpp
+0072c75c	13	Illegel Anim
+0072c76c	12	obj_init
+0072c778	12	obj_exit
+0072c78c	11	;set_event
+0072c7a0	12	 -target %s
+0072c7ac	15	 -subject%d %s
+0072c7bc	19	 -pos%d {%g %g %g}
+0072c7d0	11	 -num%d %g
+0072c7dc	14	 -text%d "%s"
+0072c7ec	11	 -delay %g
+0072c7f8	54	C:\dev\wiggles\Wiggles\Wiggles\Objects\TclRootObj.cpp
+0072c834	15	can't resolve 
+0072c84c	55	C:\dev\wiggles\Wiggles\Wiggles\Objects\TimerEvtMgr.cpp
+0072c884	58	C:\dev\wiggles\Wiggles\Wiggles\Objects\TransportLogic.cpp
+0072c8c0	12	lift_still
+0072c8cc	10	lift_down
+0072c8d8	8	lift_up
+0072c8e0	8	leiter_
+0072c8e8	10	opening_r
+0072c8f4	10	opening_l
+0072c900	10	closing_r
+0072c90c	10	closing_l
+0072c918	7	open_r
+0072c920	7	open_l
+0072c928	8	closed
+0072c930	51	C:\dev\wiggles\Wiggles\Wiggles\Objects\Trigger.cpp
+0072c964	8	create
+0072c96c	13	single_timer
+0072c97c	13	repeat_timer
+0072c98c	11	any_object
+0072c998	14	unique_object
+0072c9a8	9	callback
+0072c9b4	21	invalid trigger type
+0072c9cc	14	set_execution
+0072c9dc	22	object has no trigger
+0072c9f4	12	on_activate
+0072ca00	16	on_inactivate
+0072ca10	12	when_active
+0072ca1c	16	when_inavtive
+0072ca2c	26	invalid trigger execution
+0072ca48	10	set_timer
+0072ca54	15	set_checktimer
+0072ca64	17	set_target_range
+0072ca78	15	set_target_ref
+0072ca88	16	set_target_type
+0072ca98	13	invalid type
+0072caa8	17	set_target_class
+0072cabc	14	invalid class
+0072cacc	17	set_target_count
+0072cae0	17	set_target_owner
+0072caf4	13	set_callback
+0072cb04	11	set_active
+0072cb10	13	set_inactive
+0072cb20	14	get_actuators
+0072cb30	16	class_fightdist
+0072cb40	20	set_class_animset
+0072cb54	20	class_objsnapclass
+0072cb68	20	add_cave_skin_class
+0072cb7c	36	TCL:CTclClassDefMethods::Obj_Init()
+0072cba0	18	no class defined.
+0072cbb4	36	TCL:CTclClassDefMethods::Obj_Exit()
+0072cbd8	40	TCL:CTclClassDefMethods::Handle_Event()
+0072cc00	14	unknown event
+0072cc10	34	TCL:CTclClassDefMethods::Method()
+0072cc34	40	TCL:CTclClassDefMethods::MethodStatic()
+0072cc5c	39	TCL:CTclClassDefMethods::MethodConst()
+0072cc84	33	TCL:CTclClassDefMethods::State()
+0072cca8	38	TCL:CTclClassDefMethods::StateLeave()
+0072ccd0	38	TCL:CTclClassDefMethods::StateEnter()
+0072ccf8	40	TCL:CTclClassDefMethods::GetClassName()
+0072cd20	35	TCL:CTclClassDefMethods::Inherit()
+0072cd44	34	TCL:CTclClassDefMethods::Member()
+0072cd68	44	TCL:CTclClassDefMethods::ClassDefaultAnim()
+0072cd94	13	unknown anim
+0072cda4	48	TCL:CTclClassDefMethods::ClassDefaultMaterial()
+0072cdd4	42	TCL:CTclClassDefMethods::ClassViewInFog()
+0072ce00	42	TCL:CTclClassDefMethods::ClassCollision()
+0072ce2c	43	TCL:CTclClassDefMethods::ClassFlagOffset()
+0072ce58	39	TCL:CTclClassDefMethods::ClassPhysic()
+0072ce80	43	TCL:CTclClassDefMethods::ClassSnapToWall()
+0072ceac	34	TCL:CTclObjMethods::ChangeLight()
+0072ced0	37	TCL:CTclObjMethods::ChangeParticle()
+0072cef8	40	TCL:CTclClassDefMethods::SetClassAnim()
+0072cf20	45	TCL:CTclClassDefMethods::ClassPhysCategory()
+0072cf50	43	TCL:CTclClassDefMethods::SetClassAnimSet()
+0072cf7c	44	TCL:CTclClassDefMethods::AddCaveSkinClass()
+0072cfa8	90	TCL:void CTclClassDefMethods::Register(CTclObjInterp &ip,CTclClassMgr::CTclClass* pClass)
+0072d004	16	handle_event
+0072d014	8	member
+0072d01c	8	method
+0072d024	16	method_static
+0072d034	16	method_const
+0072d044	8	state
+0072d04c	12	state_enter
+0072d058	12	state_leave
+0072d064	16	set_class_anim
+0072d074	16	get_class_name
+0072d084	24	class_disablescripting
+0072d09c	20	class_defaultanim
+0072d0b0	24	class_defaultmaterial
+0072d0c8	16	class_viewinfog
+0072d0d8	16	class_physic
+0072d0e8	16	class_collision
+0072d0f8	12	class_light
+0072d104	20	class_snaptowall
+0072d118	16	class_particle
+0072d128	24	class_defaulttxtanim
+0072d140	20	class_physcategory
+0072d154	20	class_flagoffset
+0072d168	56	C:\dev\wiggles\Wiggles\Wiggles\Tcl\TclGlobalMethods.cpp
+0072d1a0	34	# obj outputfile for template %s
+
+0072d1c8	13	v  %f %f %f
+
+0072d1d8	15	# %d vertices
+
+0072d1e8	6	g %s
+
+0072d1f0	13	f  %d %d %d
+
+0072d200	12	# %d faces
+
+0072d20c	7	%d,%d
+
+0072d214	12	perfoptions
+0072d220	4	lmsg
+0072d228	8	locale
+0072d230	12	log_mask
+0072d23c	16	set_run_info
+0072d24c	12	load_info
+0072d258	12	load_done
+0072d264	16	render_enable
+0072d274	16	gui_new_game
+0072d284	12	newsticker
+0072d290	12	selection
+0072d29c	12	scrollrange
+0072d2a8	16	exec_deferred
+0072d2b8	20	prodslot_override
+0072d2cc	12	gamesave
+0072d2d8	12	gameload
+0072d2e4	16	gameisloading
+0072d2f4	20	gamedelayannounce
+0072d308	8	layout
+0072d310	4	peek
+0072d318	4	poke
+0072d320	12	proddump
+0072d32c	12	minimalrun
+0072d338	4	msgb
+0072d340	16	camctrlmapping
+0072d350	12	notifyflare
+0072d35c	12	picture_box
+0072d368	12	autolight
+0072d374	12	dump_var
+0072d380	16	autoloadlevel
+0072d390	12	gametime
+0072d39c	12	render_gray
+0072d3a8	20	reset_owner_attribs
+0072d3bc	8	option
+0072d3c4	16	get_system_name
+0072d3d4	12	viewlock
+0072d3e0	12	scroller
+0072d3ec	4	vtun
+0072d408	9	obj_list
+0072d414	10	obj_clear
+0072d420	10	obj_valid
+0072d42c	8	get_ref
+0072d434	9	ref2path
+0072d440	10	ClassList
+0072d44c	10	ClassInfo
+0072d458	8	ClassID
+0072d460	10	ClassName
+0072d46c	6	xtest
+0072d474	18	load_all_textures
+0072d488	19	flush_all_textures
+0072d49c	24	prod_get_task_total_cnt
+0072d4b4	28	prod_get_task_active_places
+0072d4d0	25	prod_get_task_all_places
+0072d4ec	12	screen_mode
+0072d4f8	8	tclhelp
+0072d500	9	logdebug
+0072d50c	7	logmod
+0072d514	14	time_line_log
+0072d52c	7	callnc
+0072d54c	6	testd
+0072d554	6	sound
+0072d55c	15	adaptive_sound
+0072d578	12	horizon_set
+0072d584	12	horizon_rem
+0072d590	14	horizon_clear
+0072d5a0	11	start_fade
+0072d5ac	12	cancel_fade
+0072d5b8	13	fight_action
+0072d5c8	13	fight_weapon
+0072d5d8	17	fight_map_obj2db
+0072d5ec	19	fight_weapon_kombi
+0072d600	13	def_hp_ratio
+0072d610	17	get_escape_value
+0072d624	8	ref_set
+0072d62c	8	ref_get
+0072d634	13	ref_checkvar
+0072d644	8	db_load
+0072d64c	10	db_search
+0072d658	12	db_findanim
+0072d664	14	db_animlength
+0072d674	8	gettime
+0072d67c	9	gethours
+0072d688	16	find_free_place
+0072d698	10	def_event
+0072d6a4	16	event_generator
+0072d6b4	14	evtgen_attrib
+0072d6c4	10	def_class
+0072d6d0	16	def_idiobjclass
+0072d6e0	11	def_attrib
+0072d6ec	24	get_attrib_display_name
+0072d704	17	set_owner_attrib
+0072d718	17	get_owner_attrib
+0072d72c	17	add_owner_attrib
+0072d740	17	get_attrib_names
+0072d754	22	get_owner_attrib_list
+0072d76c	17	set_eventenabled
+0072d780	17	get_eventenabled
+0072d794	15	set_maxprodera
+0072d7a4	15	get_maxprodera
+0072d7b4	11	playerinfo
+0072d7c0	17	get_local_player
+0072d7d4	13	in_class_def
+0072d7e4	13	check_method
+0072d7f4	12	call_method
+0072d800	19	call_method_static
+0072d814	12	vector_pack
+0072d820	15	vector_unpackx
+0072d830	15	vector_unpacky
+0072d840	15	vector_unpackz
+0072d850	14	vector_fixdig
+0072d860	11	vector_fix
+0072d86c	12	vector_setx
+0072d878	12	vector_sety
+0072d884	12	vector_setz
+0072d890	12	vector_rotx
+0072d89c	12	vector_roty
+0072d8a8	12	vector_rotz
+0072d8b4	13	vector_inbox
+0072d8c4	11	vector_abs
+0072d8d0	11	vector_add
+0072d8dc	11	vector_mul
+0072d8e8	11	vector_sub
+0072d8f4	12	vector_dist
+0072d900	14	vector_dist3d
+0072d910	17	vector_normalize
+0072d924	13	vector_angle
+0072d934	14	vector_random
+0072d944	13	vector_equal
+0072d954	9	dig_mark
+0072d960	20	inc_playerdigmarkid
+0072d974	9	dig_next
+0072d980	10	dig_apply
+0072d98c	12	get_digedge
+0072d998	11	ground_pos
+0072d9a4	13	show_loading
+0072d9b4	11	show_maped
+0072d9c0	14	show_fogofwar
+0072d9d0	7	random
+0072d9d8	8	irandom
+0072d9e0	7	hfloor
+0072d9e8	6	hceil
+0072da10	6	fincr
+0072da18	10	web_shell
+0072da24	8	set_fov
+0072da2c	9	set_view
+0072da38	17	get_cameramoving
+0072da4c	11	camera_set
+0072da58	9	get_view
+0072da64	12	set_viewpos
+0072da70	16	set_time_factor
+0072da80	14	time_schedule
+0072da90	16	reset_perf_data
+0072daa0	9	get_hmap
+0072daac	13	get_lmap_red
+0072dabc	15	get_lmap_green
+0072dacc	14	get_lmap_blue
+0072dadc	15	get_map_height
+0072daec	14	get_map_width
+0072dafc	13	get_material
+0072db0c	15	get_brightness
+0072db1c	15	set_brightness
+0072db2c	13	get_contrast
+0072db3c	13	set_contrast
+0072db4c	10	set_gamma
+0072db58	14	init_techtree
+0072db68	9	obj_eval
+0072db74	11	startcache
+0072db80	19	get_class_category
+0072db94	14	get_class_era
+0072dba4	15	get_class_type
+0072dbb4	16	get_class_flags
+0072dbc4	12	def_texture
+0072dbd0	10	set_level
+0072dbdc	13	template_set
+0072dbec	15	uncapturemouse
+0072dbfc	10	toggle_wf
+0072dc08	14	get_expattrib
+0072dc18	19	get_selectedobject
+0072dc2c	19	set_selectedobject
+0072dc48	15	get_angle_num4
+0072dc58	13	set_sequence
+0072dc68	21	get_camerafollowdist
+0072dc80	20	get_sequencebreaked
+0072dc94	14	set_speechout
+0072dca4	16	get_weapon_pose
+0072dcb4	14	set_fow_begin
+0072dcc4	16	set_light_begin
+0072dcd4	17	set_ground_begin
+0072dce8	15	set_view_begin
+0072dcf8	19	load_scape_texture
+0072dd0c	15	get_place_info
+0072dd1c	13	screen2world
+0072dd2c	13	screen3world
+0072dd3c	25	generate_color_variation
+0072dd58	14	map_setlayer2
+0072dd68	21	lg_set_templategroup
+0072dd80	21	lg_set_templateprops
+0072dd98	26	lg_set_templategroupprops
+0072ddb4	18	lg_addfilterclass
+0072ddc8	12	lg_tp_clear
+0072ddd4	22	lg_tp_addtemplatesets
+0072ddec	19	lg_tp_addtemplates
+0072de00	10	lg_tp_log
+0072de0c	16	lg_tp_objfilter
+0072de1c	16	lg_tp_setfilter
+0072de2c	16	lg_tp_mapfilter
+0072de3c	12	lg_set_area
+0072de48	21	lg_set_starttemplate
+0072de60	24	lg_set_starttemplatepro
+0072de78	16	lg_set_objcount
+0072de88	17	lg_set_leveltype
+0072de9c	21	lg_set_templateratio
+0072deb4	9	lg_start
+0072dec0	21	lg_dec_templatecount
+0072ded8	13	lg_get_level
+0072dee8	14	lg_sort_level
+0072def8	16	lg_get_objcount
+0072df08	16	lg_set_callback
+0072df18	13	lg_mark_area
+0072df28	17	lg_get_temp_size
+0072df3c	26	lg_set_templategroupvalue
+0072df58	21	lg_set_templatevalue
+0072df70	14	lg_add_preset
+0072df80	15	get_mpstartpos
+0072df90	10	inputmode
+0072df9c	8	perfwin
+0072dfa4	10	get_place
+0072dfb0	14	placelock_set
+0072dfc0	16	placelock_check
+0072dfd0	14	placelock_rem
+0072dfe0	14	placelock_log
+0072dff0	15	get_place_long
+0072e000	19	set_ingame_loading
+0072e014	19	get_ingame_loading
+0072e028	9	has_cmap
+0072e034	7	lcount
+0072e048	6	lnand
+0072e050	7	sm_log
+0072e058	9	sm_reset
+0072e064	13	sm_add_event
+0072e074	13	sm_set_event
+0072e084	13	sm_get_event
+0072e094	12	sm_add_temp
+0072e0a0	14	sm_create_map
+0072e0b0	11	sm_map_set
+0072e0bc	11	sm_map_get
+0072e0c8	12	sm_map_move
+0072e0d4	12	sm_set_temp
+0072e0e0	18	sm_get_level_info
+0072e0f4	18	sm_def_temp_group
+0072e108	15	sm_music_theme
+0072e118	14	sm_draw_stone
+0072e128	18	sm_get_resolution
+0072e13c	12	sm_add_zone
+0072e148	12	sm_get_zone
+0072e154	14	sm_force_zone
+0072e164	8	sm_scan
+0072e16c	16	sm_set_digcount
+0072e17c	12	sm_set_zone
+0072e188	15	sm_dig_message
+0072e198	10	smalltalk
+0072e1a4	11	screenvibe
+0072e1b0	17	sm_mark_temparea
+0072e1c4	13	isunderwater
+0072e1d4	10	set_water
+0072e1e0	9	waterdbg
+0072e1ec	16	get_waterheight
+0072e1fc	18	get_classaniminfo
+0072e210	12	get_mapedit
+0072e21c	14	is_dig_marked
+0072e22c	22	create_particlesource
+0072e244	9	get_fill
+0072e250	10	get_ftype
+0072e25c	10	get_digid
+0072e268	14	set_fpmoutput
+0072e278	11	ground_fix
+0072e284	17	update_objdetail
+0072e2a8	6	laser
+0072e2b0	10	laserbeam
+0072e2bc	10	lightning
+0072e2c8	18	delete_laserbeams
+0072e2dc	17	delete_lightning
+0072e2f0	17	output_3ddbstats
+0072e304	10	reconnect
+0072e310	15	calc_text_time
+0072e320	16	seq_audiostream
+0072e330	12	get_anglexz
+0072e33c	13	get_vectorxz
+0072e34c	18	get_next_relocobj
+0072e360	15	sm_get_temppos
+0072e370	9	save_map
+0072e37c	11	save_scene
+0072e388	15	set_split_load
+0072e398	20	restore_obj_actions
+0072e3ac	17	park_obj_actions
+0072e3c0	14	set_diplomacy
+0072e3d0	14	get_diplomacy
+0072e3e0	8	set_blv
+0072e3e8	10	load_file
+0072e3f4	13	rjreusecheck
+0072e404	23	get_point_in_direction
+0072e41c	20	particle_processing
+0072e438	10	reset_map
+0072e444	10	cave_skin
+0072e450	17	remove_black_fog
+0072e464	15	global_inv_rem
+0072e474	17	get_player_color
+0072e488	13	send_trigger
+0072e498	30	TCL:CTclGlobalMethods::lmsg()
+0072e4b8	32	TCL:CTclGlobalMethods::locale()
+0072e4d8	39	TCL:CTclGlobalMethods::ResetPerfData()
+0072e500	18	invalid reference
+0072e514	6	check
+0072e51c	11	caninclude
+0072e528	8	include
+0072e530	8	exclude
+0072e538	6	reset
+0072e540	6	query
+0072e548	34	TCL:CTclGlobalMethods::GameTime()
+0072e574	7	factor
+0072e57c	24	not enough elements (4)
+0072e594	30	TCL:CTclGlobalMethods::Poke()
+0072e5b4	20	access violation at
+0072e5c8	30	TCL:CTclGlobalMethods::Peek()
+0072e5e8	6	 RMB:
+0072e5f0	6	 LMB:
+0072e5f8	9	Default:
+0072e604	32	TCL:CTclGlobalMethods::Option()
+0072e628	8	getname
+0072e634	8	setname
+0072e63c	8	getinfo
+0072e644	8	getdesc
+0072e654	33	TCL:CTclGlobalMethods::ObjEval()
+0072e678	36	TCL:CTclGlobalMethods::MinimalRun()
+0072e69c	33	TCL:CTclGlobalMethods::Comment()
+0072e6c0	36	TCL:CTclGlobalMethods::GuiNewGame()
+0072e6e4	8	running
+0072e6ec	39	TCL:CTclGlobalMethods::AutoLoadLevel()
+0072e714	32	TCL:CTclGlobalMethods::MsgBox()
+0072e734	36	TCL:CTclGlobalMethods::PictureBox()
+0072e760	33	TCL:CTclGlobalMethods::LogMask()
+0072e784	34	TCL:CTclGlobalMethods::ObjClear()
+0072e7a8	33	TCL:CTclGlobalMethods::MemInfo()
+0072e7cc	34	TCL:CTclGlobalMethods::LoadDone()
+0072e7f0	34	TCL:CTclGlobalMethods::LoadInfo()
+0072e814	29	TCL:CTclGlobalMethods::Sel()
+0072e834	22	couldn't resolve Path
+0072e84c	29	TCL:CTclGlobalMethods::Del()
+0072e86c	23	object already deleted
+0072e884	36	illegal del (object is undeletable)
+0072e8a8	12	illegal del
+0072e8b4	14	no user class
+0072e8c4	19	no deletable class
+0072e8d8	15	unknown object
+0072e8e8	33	TCL:CTclGlobalMethods::ObjList()
+0072e90c	29	TCL:CTclGlobalMethods::New()
+0072e92c	13	can't create
+0072e93c	30	TCL:CTclGlobalMethods::QNew()
+0072e964	29	TCL:CTclGlobalMethods::Cwd()
+0072e984	29	TCL:CTclGlobalMethods::Ref()
+0072e9a4	34	TCL:CTclGlobalMethods::Ref2Path()
+0072e9c8	34	TCL:CTclGlobalMethods::ObjValid()
+0072e9ec	32	TCL:CTclGlobalMethods::RefSet()
+0072ea0c	32	TCL:CTclGlobalMethods::RefGet()
+0072ea2c	12	unknown var
+0072ea38	36	TCL:CTclGlobalMethods::CallMethod()
+0072ea5c	15	unknown method
+0072ea6c	37	TCL:CTclGlobalMethods::CheckMethod()
+0072ea94	42	TCL:CTclGlobalMethods::CallMethodStatic()
+0072eac0	32	TCL:CTclGlobalMethods::SetFOV()
+0072eae0	33	TCL:CTclGlobalMethods::SetView()
+0072eb04	18	Invalid cameraset
+0072eb18	45	TCL:CTclGlobalMethods::GetCameraFollowDist()
+0072eb48	36	TCL:CTclGlobalMethods::CameraSets()
+0072eb6c	39	TCL:CTclGlobalMethods::GetMaxProdEra()
+0072eb94	15	invalid player
+0072eba4	39	TCL:CTclGlobalMethods::SetMaxProdEra()
+0072ebcc	33	TCL:CTclGlobalMethods::GetView()
+0072ebf0	36	TCL:CTclGlobalMethods::SetViewPos()
+0072ec14	32	TCL:CTclGlobalMethods::LogMod()
+0072ec34	34	TCL:CTclGlobalMethods::LogDebug()
+0072ec58	38	TCL:CTclGlobalMethods::ShowFogOfWar()
+0072ec80	37	TCL:CTclGlobalMethods::ShowLoading()
+0072eca8	35	TCL:CTclGlobalMethods::ShowMapEd()
+0072eccc	39	TCL:CTclGlobalMethods::SetTimeFactor()
+0072ecf4	33	TCL:CTclGlobalMethods::TclHelp()
+0072ed18	13	invalid mode
+0072ed28	13	vtuneapi.dll
+0072ed38	17	VtResumeSampling
+0072ed4c	16	VtPauseSampling
+0072ed5c	39	TCL:CTclGlobalMethods::GetSystemName()
+0072ed84	9	computer
+0072ed98	15	invalid option
+0072eda8	35	TCL:CTclGlobalMethods::DefAttrib()
+0072edcc	40	TCL:CTclGlobalMethods::SetOwnerAttrib()
+0072edf4	17	invalid owner id
+0072ee08	40	TCL:CTclGlobalMethods::GetOwnerAttrib()
+0072ee30	40	TCL:CTclGlobalMethods::GetAttribNames()
+0072ee58	44	TCL:CTclGlobalMethods::GetOwnerAttribList()
+0072ee84	40	TCL:CTclGlobalMethods::AddOwnerAttrib()
+0072eeac	35	TCL:CTclGlobalMethods::Def_Event()
+0072eed0	18	cant define event
+0072eee4	42	TCL:CTclGlobalMethods::Get_EventEnabled()
+0072ef10	42	TCL:CTclGlobalMethods::Set_EventEnabled()
+0072ef3c	38	TCL:CTclGlobalMethods::In_Class_Def()
+0072ef64	35	TCL:CTclGlobalMethods::Def_Class()
+0072ef88	40	defclass only in top-level init script!
+0072efb0	28	dont nest class definitions
+0072efcc	19	class redefinition
+0072efe0	29	Fatal Error: no ClientData !
+0072f000	35	TCL:CTclGlobalMethods::ClassList()
+0072f024	32	TCL:CTclGlobalMethods::Random()
+0072f044	33	TCL:CTclGlobalMethods::IRandom()
+0072f068	33	TCL:CTclGlobalMethods::GetHMap()
+0072f08c	36	TCL:CTclGlobalMethods::GetLMapRed()
+0072f0b0	38	TCL:CTclGlobalMethods::GetLMapGreen()
+0072f0d8	37	TCL:CTclGlobalMethods::GetLMapBlue()
+0072f100	37	TCL:CTclGlobalMethods::GetMapWidth()
+0072f128	38	TCL:CTclGlobalMethods::GetMapHeight()
+0072f150	35	TCL:CTclGlobalMethods::GroundPos()
+0072f174	34	TCL:CTclGlobalMethods::GameSave()
+0072f198	34	TCL:CTclGlobalMethods::GameLoad()
+0072f1bc	30	TCL:CTclGlobalMethods::Call()
+0072f1dc	26	call filename was empty !
+0072f1f8	9	scripts/
+0072f204	6	data/
+0072f20c	11	templates/
+0072f218	15	data/templates
+0072f228	16	file not found.
+0072f238	35	TCL:CTclGlobalMethods::ClassInfo()
+0072f25c	12	not a class
+0072f268	25	%s: base:%s instances:%d
+0072f284	26	%s: no base  instances:%d
+0072f2a0	27	TCL:CTclGlobalMethods::Map
+0072f2bc	12	getoffset
+0072f2c8	15	d:/mappack.bin
+0072f2e0	20	unknown map command
+0072f2f4	30	TCL:CTclGlobalMethods::Quit()
+0072f314	4	Game
+0072f31c	43	TCL:CTclGlobalMethods::ResetOwnerAttribs()
+0072f348	32	TCL:CTclGlobalMethods::DBLoad()
+0072f368	12	invalid 3DB
+0072f374	34	TCL:CTclGlobalMethods::DBSearch()
+0072f398	36	TCL:CTclGlobalMethods::DBFindAnim()
+0072f3bc	14	invalid DB id
+0072f3cc	18	invalid DB object
+0072f3e0	16	invalid DB anim
+0072f3f0	33	TCL:CTclGlobalMethods::GetTime()
+0072f414	8	enabled
+0072f41c	6	write
+0072f424	19	invalid subcommand
+0072f438	31	TCL:CTclGlobalMethods::Sleep()
+0072f458	34	TCL:CTclGlobalMethods::DigApply()
+0072f47c	33	TCL:CTclGlobalMethods::DigNext()
+0072f4a0	33	TCL:CTclGlobalMethods::DumpVar()
+0072f4c4	35	TCL:CTclGlobalMethods::AutoLight()
+0072f4e8	36	TCL:CTclGlobalMethods::GetDigEdge()
+0072f50c	38	TCL:CTclGlobalMethods::VectorFixDig()
+0072f534	35	TCL:CTclGlobalMethods::VectorFix()
+0072f558	36	TCL:CTclGlobalMethods::VectorSetX()
+0072f57c	36	TCL:CTclGlobalMethods::VectorSetY()
+0072f5a0	36	TCL:CTclGlobalMethods::VectorSetZ()
+0072f5c4	35	TCL:CTclGlobalMethods::VectorAdd()
+0072f5e8	35	TCL:CTclGlobalMethods::VectorMul()
+0072f60c	36	TCL:CTclGlobalMethods::VectorDist()
+0072f630	38	TCL:CTclGlobalMethods::VectorDist3D()
+0072f658	35	TCL:CTclGlobalMethods::VectorSub()
+0072f67c	36	TCL:CTclGlobalMethods::VectorPack()
+0072f6a0	39	TCL:CTclGlobalMethods::VectorUnpackX()
+0072f6c8	39	TCL:CTclGlobalMethods::VectorUnpackY()
+0072f6f0	39	TCL:CTclGlobalMethods::VectorUnpackZ()
+0072f718	41	TCL:CTclGlobalMethods::VectorNormalize()
+0072f744	37	TCL:CTclGlobalMethods::VectorAngle()
+0072f76c	38	TCL:CTclGlobalMethods::VectorRandom()
+0072f794	32	TCL:CTclGlobalMethods::HFloor()
+0072f7b4	31	TCL:CTclGlobalMethods::HCeil()
+0072f7d4	30	TCL:CTclGlobalMethods::HI2F()
+0072f7f4	30	TCL:CTclGlobalMethods::HF2I()
+0072f814	30	TCL:CTclGlobalMethods::HMax()
+0072f834	31	TCL:CTclGlobalMethods::fincr()
+0072f854	17	unknown variable
+0072f868	37	TCL:CTclGlobalMethods::MapTemplate()
+0072f890	32	data/templates/obw_tutorial.pmp
+0072f8b0	17	Trigger_Tutorial
+0072f8c4	32	data/templates/unq_ende_seq.pmp
+0072f8e4	19	Riesenelfe_der_tot
+0072f8f8	34	TCL:CTclGlobalMethods::SetGamma()
+0072f91c	39	TCL:CTclGlobalMethods::SetBrightness()
+0072f944	39	TCL:CTclGlobalMethods::GetBrightness()
+0072f96c	37	TCL:CTclGlobalMethods::SetContrast()
+0072f994	37	TCL:CTclGlobalMethods::GetContrast()
+0072f9bc	38	TCL:CTclGlobalMethods::InitTechTree()
+0072f9e4	39	TCL:CTclGlobalMethods::FindFreePlace()
+0072fa0c	8	No map!
+0072fa14	40	TCL:CTclGlobalMethods::EventGenerator()
+0072fa3c	25	param list needs 4 names
+0072fa58	38	TCL:CTclGlobalMethods::EvtGenAttrib()
+0072fa88	12	-subject1
+0072fa94	12	-subject2
+0072faa0	12	-subject3
+0072fadc	8	-delay
+0072fafc	8	-cursor
+0072fb04	42	TCL:CTclGlobalMethods::GetClassCategory()
+0072fb30	38	TCL:CTclGlobalMethods::GetClassType()
+0072fb58	39	TCL:CTclGlobalMethods::GetClassFlags()
+0072fb80	37	TCL:CTclGlobalMethods::GetClassEra()
+0072fba8	37	TCL:CTclGlobalMethods::DefTextures()
+0072fbd0	33	TCL:CTclGlobalMethods::KeyBind()
+0072fbf4	12	keynames
+0072fc00	7	 shift
+0072fc10	6	 ctrl
+0072fc18	6	 down
+0072fc20	17	invalid key code
+0072fc34	8	shift
+0072fc54	36	TCL:CTclGlobalMethods::HorizonSet()
+0072fc78	36	TCL:CTclGlobalMethods::HorizonRem()
+0072fc9c	38	TCL:CTclGlobalMethods::HorizonClear()
+0072fcc4	39	TCL:CTclGlobalMethods::AdaptiveSound()
+0072fcec	8	basevol
+0072fcf4	8	volfact
+0072fcfc	13	markerenable
+0072fd0c	14	markerdisable
+0072fd1c	9	addtheme
+0072fd28	15	setfightstream
+0072fd38	15	setintrostream
+0072fd48	18	addstandardstream
+0072fd5c	11	changemode
+0072fd68	12	changetheme
+0072fd74	15	changethemenow
+0072fd84	8	primary
+0072fd8c	10	markerobj
+0072fd98	10	delmarker
+0072fda4	13	delmarkerobj
+0072fdb4	11	markerfind
+0072fdc0	10	autofight
+0072fdcc	13	autofightpos
+0072fddc	31	TCL:CTclGlobalMethods::Sound()
+0072fdfc	10	animsound
+0072fe08	7	volume
+0072fe18	14	unknown sound
+0072fe28	11	playglobal
+0072fe3c	24	can't find sample file.
+0072fe54	10	animnoseq
+0072fe60	17	can't find anim.
+0072fe84	8	water
+0072fe94	17	invalid material
+0072fea8	7	tunnel
+0072feb0	6	small
+0072feb8	7	medium
+0072fec0	13	invalid room
+0072fed0	21	unknown sound option
+0072fee8	36	TCL:CTclGlobalMethods::ScreenMode()
+0072ff0c	34	TCL:CTclGlobalMethods::SetLevel()
+0072ff30	37	TCL:CTclGlobalMethods::TemplateSet()
+0072ff58	40	TCL:CTclGlobalMethods::UncaptureMouse()
+0072ff80	34	TCL:CTclGlobalMethods::ToggleWF()
+0072ffa4	38	TCL:CTclGlobalMethods::GetExpAttrib()
+0072ffcc	38	TCL:CTclGlobalMethods::TimeSchedule()
+00730008	18	invalid parameter
+0073001c	24	end and start specified
+00730034	30	TCL:CTclGlobalMethods::Path()
+0073005c	38	TCL:CTclGlobalMethods::GetAngleNum4()
+00730084	43	TCL:CTclGlobalMethods::SetSelectedObject()
+007300b0	43	TCL:CTclGlobalMethods::GetSelectedObject()
+007300dc	30	TCL:CTclGlobalMethods::Test()
+007300fc	12	mscat32.dll
+00730108	10	Loaded %s
+00730114	10	Failed %s
+00730120	10	mmdrv.dll
+0073012c	13	nv4_disp.dll
+0073013c	8	hmap.raw
+00730150	22	saved heightmap as %s
+00730168	12	  width= %d
+00730174	12	  height=%d
+00730180	13	  channels=1
+00730190	31	TCL:CTclGlobalMethods::TestD()
+007301b0	9	emap.raw
+007301bc	39	TCL:CTclGlobalMethods::GetMPStartPos()
+007301e4	37	TCL:CTclGlobalMethods::SetSequence()
+0073020c	29	TCL:CTclGlobalMethods::Get()
+0073022c	29	TCL:CTclGlobalMethods::Elf()
+0073024c	8	action
+0073025c	12	finishcode
+00730268	8	lookat
+00730270	12	drawoverui
+0073027c	8	crash
+00730284	12	movescreen
+00730290	12	lockview
+0073029c	12	unlockview
+007302a8	12	followview
+007302b4	16	unfollowview
+007302c8	8	set_pos
+007302d0	8	get_pos
+007302d8	38	TCL:CTclGlobalMethods::SetSpeechOut()
+00730300	37	TCL:CTclGlobalMethods::GetWeaponID()
+00730328	37	TCL:CTclGlobalMethods::SetFoWBegin()
+00730350	39	TCL:CTclGlobalMethods::SetLightBegin()
+00730378	42	TCL:CTclGlobalMethods::LoadScapeTexture()
+007303a4	38	TCL:CTclGlobalMethods::GetPlaceInfo()
+007303cc	38	TCL:CTclGlobalMethods::Screen2World()
+007303f4	38	TCL:CTclGlobalMethods::Screen3World()
+0073041c	48	TCL:CTclGlobalMethods::GenerateColorVariation()
+0073044c	38	TCL:CTclGlobalMethods::MapSetLayer2()
+00730474	6	splt_
+0073047c	7	split/
+00730484	44	TCL:CTclGlobalMethods::LGSetTemplateGroup()
+007304b0	44	TCL:CTclGlobalMethods::LGSetTemplateProps()
+007304dc	20	invalid paramstring
+007304f0	14	invalid param
+00730500	49	TCL:CTclGlobalMethods::LGSetTemplateGroupProps()
+00730534	23	invalid template group
+0073054c	42	TCL:CTclGlobalMethods::LGAddFilterClass()
+00730578	35	TCL:CTclGlobalMethods::LGTPClear()
+0073059c	45	TCL:CTclGlobalMethods::LGTPAddTemplateSets()
+007305cc	20	invalid TemplateSet
+007305e0	49	TCL:CTclGlobalMethods::LGSetTemplateGroupValue()
+00730614	44	TCL:CTclGlobalMethods::LGSetTemplateValue()
+00730640	17	invalid Template
+00730654	42	TCL:CTclGlobalMethods::LGTPAddTemplates()
+00730680	39	TCL:CTclGlobalMethods::LGTPObjFilter()
+007306a8	18	invalid objfilter
+007306bc	39	TCL:CTclGlobalMethods::LGTPSetFilter()
+007306e4	39	TCL:CTclGlobalMethods::LGTPMapFilter()
+0073070c	33	TCL:CTclGlobalMethods::LGTPLog()
+00730730	35	TCL:CTclGlobalMethods::LGSetArea()
+00730754	34	TCL:CTclGlobalMethods::WebShell()
+00730778	44	TCL:CTclGlobalMethods::LGSetStateTemplate()
+007307a4	37	TCL:CTclGlobalMethods::IsDigMarked()
+007307cc	47	TCL:CTclGlobalMethods::LGSetStartTemplatePro()
+007307fc	10	nodigmark
+00730808	15	%i %i %i %i %s
+00730818	37	TCL:CTclGlobalMethods::LGAddPreset()
+00730840	39	TCL:CTclGlobalMethods::LGSetObjCount()
+00730868	40	TCL:CTclGlobalMethods::LGSetLevelType()
+00730890	18	invalid leveltype
+007308a4	44	TCL:CTclGlobalMethods::LGSetTemplateRatio()
+007308d0	33	TCL:CTclGlobalMethods::LGStart()
+007308f4	36	TCL:CTclGlobalMethods::LGGetLevel()
+00730918	40	TCL:CTclGlobalMethods::SMMarkTempArea()
+00730940	37	TCL:CTclGlobalMethods::LGSortLevel()
+00730968	44	TCL:CTclGlobalMethods::LGDecTemplateCount()
+00730994	39	TCL:CTclGlobalMethods::LGGetObjCount()
+007309bc	39	TCL:CTclGlobalMethods::LGSetCallBack()
+007309e4	36	TCL:CTclGlobalMethods::LGMarkArea()
+00730a08	39	TCL:CTclGlobalMethods::LGGetTempSize()
+00730a30	35	TCL:CTclGlobalMethods::InputMode()
+00730a58	8	console
+00730a60	33	TCL:CTclGlobalMethods::PerfWin()
+00730a84	34	TCL:CTclGlobalMethods::GetPlace()
+00730aa8	8	-center
+00730ab0	15	invalid params
+00730ac0	8	-rect
+00730ad0	8	-circle
+00730ad8	8	-random
+00730ae0	12	-placelock
+00730aec	12	-mindist
+00730af8	8	-except
+00730b00	12	-nearpos
+00730b0c	12	-walldist
+00730b18	12	-rimdist
+00730b24	12	-materials
+00730b30	20	-placelockidexcept
+00730b44	24	-enableplacelockcheck
+00730b5c	12	-checkfree
+00730b68	38	TCL:CTclGlobalMethods::PlaceLockSet()
+00730b90	38	TCL:CTclGlobalMethods::PlaceLockRem()
+00730bb8	40	TCL:CTclGlobalMethods::PlaceLockCheck()
+00730be0	38	TCL:CTclGlobalMethods::GetPlaceLong()
+00730c08	33	TCL:CTclGlobalMethods::DigMark()
+00730c2c	44	TCL:CTclGlobalMethods::IncPlayerDigMarkID()
+00730c58	42	TCL:CTclGlobalMethods::SetIngameLoading()
+00730c84	42	TCL:CTclGlobalMethods::GetIngameLoading()
+00730cb0	33	TCL:CTclGlobalMethods::HasCMap()
+00730cd4	32	TCL:CTclGlobalMethods::LCount()
+00730cf4	30	TCL:CTclGlobalMethods::LAnd()
+00730d14	29	TCL:CTclGlobalMethods::LOr()
+00730d34	31	TCL:CTclGlobalMethods::LNAnd()
+00730d54	36	TCL:CTclGlobalMethods::SMAddEvent()
+00730d78	25	Story Event redefinition
+00730d94	38	TCL:CTclGlobalMethods::SMMusicTheme()
+00730dbc	4	both
+00730dc4	25	Music Theme redefinition
+00730de0	40	TCL:CTclGlobalMethods::SMDefTempGroup()
+00730e08	28	Template Group redefinition
+00730e28	36	TCL:CTclGlobalMethods::SMSetEvent()
+00730e4c	22	Story Event not found
+00730e64	36	TCL:CTclGlobalMethods::SMGetEvent()
+00730e88	35	TCL:CTclGlobalMethods::SMSetZone()
+00730eac	16	invalid zone id
+00730ebc	38	TCL:CTclGlobalMethods::SMDigMessage()
+00730ee4	39	TCL:CTclGlobalMethods::SMSetDigCount()
+00730f0c	31	TCL:CTclGlobalMethods::SMLog()
+00730f2c	33	TCL:CTclGlobalMethods::SMReset()
+00730f50	35	TCL:CTclGlobalMethods::SMAddTemp()
+00730f74	29	Unique Template redefinition
+00730f94	8	-events
+00730f9c	28	Unique Template not defined
+00730fb8	12	-digconnect
+00730fc4	12	-connect
+00730fd0	12	-exclusive
+00730fdc	16	-nonrelevant
+00730fec	12	-middist
+00730ff8	12	-zoneborder
+00731004	12	-checkalign
+00731010	12	-stoneidx
+0073101c	27	Invalid connection link in
+00731038	37	TCL:CTclGlobalMethods::SMDrawStone()
+00731060	8	-border
+00731068	8	-funnel
+00731070	24	invalid nr of arguments
+00731088	12	-exlimit
+0073109c	12	-matlist
+007310a8	16	invalid matlist
+007310b8	37	TCL:CTclGlobalMethods::SMCreateMap()
+007310e0	35	TCL:CTclGlobalMethods::SMAddZone()
+00731104	37	TCL:CTclGlobalMethods::SMForceZone()
+0073112c	13	Invalid Zone
+0073113c	35	TCL:CTclGlobalMethods::SMGetZone()
+00731160	41	TCL:CTclGlobalMethods::SMGetResolution()
+0073118c	34	TCL:CTclGlobalMethods::SMMapSet()
+007311b0	34	TCL:CTclGlobalMethods::SMMapGet()
+007311d4	35	TCL:CTclGlobalMethods::SMSetTEmp()
+007311f8	38	TCL:CTclGlobalMethods::SMGetTempPos()
+00731220	40	TCL:CTclGlobalMethods::SMGetLevelInfo()
+00731248	32	TCL:CTclGlobalMethods::SMScan()
+00731268	35	TCL:CTclGlobalMethods::Smalltalk()
+0073128c	38	TCL:CTclGlobalMethods::IsUnderWater()
+007312b4	40	TCL:CTclGlobalMethods::GetWaterHeight()
+007312dc	34	TCL:CTclGlobalMethods::SetWater()
+00731300	34	TCL:CTclGlobalMethods::WaterDBG()
+00731324	46	TCL:CTclGlobalMethods::CreateParticleSource()
+00731354	36	TCL:CTclGlobalMethods::GetMapEdit()
+00731378	33	TCL:CTclGlobalMethods::GetFill()
+0073139c	34	TCL:CTclGlobalMethods::GetFType()
+007313c0	34	TCL:CTclGlobalMethods::GetDigID()
+007313e4	38	TCL:CTclGlobalMethods::SetFPMOutput()
+00731424	42	TCL:CTclGlobalMethods::GetClassAnimInfo()
+00731450	35	TCL:CTclGlobalMethods::GroundFix()
+00731474	38	TCL:CTclGlobalMethods::SetObjDetail()
+0073149c	4	high
+007314a8	41	TCL:CTclGlobalMethods::UpdateObjDetail()
+007314d4	30	TCL:CTclGlobalMethods::LRep()
+007314f4	14	index to high
+00731504	30	TCL:CTclGlobalMethods::LRem()
+00731524	18	index is negative
+00731548	48	unknown param: %s  (params are: log, stat,news)
+00731578	22	Data\Sound\Sequenzen\
+00731590	8	close
+00731598	12	default.obj
+007315a4	12	default.wrl
+007315b8	16	class not found
+007315c8	35	can't change world diplomacy state
+007315ec	35	can't change own diplomacy state !
+00731610	26	invalid diplomacy state !
+0073162c	34	TCL:CTclGlobalMethods::LoadFile()
+00731650	15	File not found
+00731660	45	TCL:CTclGlobalMethods::GetPointInDirection()
+00731694	32	GlobalInvRem() invalid userdata
+007316b4	40	TCL:CTclGlobalMethods::GetPlayerColor()
+007316dc	22	illegal player number
+007316f4	37	TCL:CTclGlobalMethods::SendTrigger()
+0073171c	16	mapedit_script
+0073172c	36	TCL:CTclMapEditMethods::def_class()
+00731750	101	TCL:int CTclMapEditMethods::def_event(ClientData cd,Tcl_Interp* pI,int iObjc,Tcl_Obj* const vObj_[])
+007317b8	12	set_anim
+007317c4	12	reset_anim
+007317d0	20	set_rendermaterial
+007317e4	20	get_rendermaterial
+007317f8	20	set_obj_logicskip
+0073180c	20	get_obj_logicskip
+00731820	24	set_obj_logicfogskip
+00731838	24	get_obj_logicfogskip
+00731850	12	set_objicon
+0073185c	16	get_user_groups
+0073186c	16	set_user_groups
+0073187c	20	set_objiconoffset
+00731890	20	set_objworkicons
+007318a4	12	set_objinfo
+007318b0	12	get_objinfo
+007318bc	16	set_objgender
+007318cc	16	get_objgender
+007318dc	20	auto_choose_gender
+007318f0	24	auto_choose_workingtime
+00731908	24	get_prod_total_task_cnt
+00731920	20	get_prod_task_list
+00731934	20	get_prod_slot_list
+00731948	20	set_prod_slot_cnt
+0073195c	20	get_prod_slot_cnt
+00731970	24	get_prod_slot_buildable
+00731988	28	get_prod_slot_inventable
+007319a4	24	get_prod_slot_invented
+007319bc	16	set_prod_unpack
+007319cc	16	get_prod_unpack
+007319dc	16	set_prod_pack
+007319ec	16	get_prod_pack
+007319fc	20	set_prod_buildup
+00731a10	20	get_prod_buildup
+00731a24	24	set_prod_ownerstrength
+00731a3c	24	get_prod_ownerstrength
+00731a54	12	set_icon
+00731a60	12	set_posx
+00731a6c	12	set_posy
+00731a78	12	set_posz
+00731a84	12	set_rotx
+00731a90	12	set_roty
+00731a9c	12	set_rotz
+00731aa8	12	get_rel_pos
+00731ab4	12	get_posx
+00731ac0	12	get_posy
+00731acc	9	get_posz
+00731ad8	8	get_rot
+00731ae0	9	get_rotx
+00731aec	9	get_roty
+00731af8	9	get_rotz
+00731b04	8	set_vel
+00731b0c	8	get_vel
+00731b14	12	get_velcomp
+00731b20	14	set_posbottom
+00731b30	14	get_posbottom
+00731b40	15	set_visibility
+00731b50	15	get_visibility
+00731b60	9	set_lock
+00731b6c	9	get_lock
+00731b78	10	get_boxed
+00731b84	15	set_snaptowall
+00731b94	15	get_snaptowall
+00731ba4	18	set_placesnapmode
+00731bb8	18	get_placesnapmode
+00731bcc	13	set_storable
+00731bdc	13	get_storable
+00731bec	12	set_instore
+00731bf8	12	get_instore
+00731c04	12	set_cloaked
+00731c10	12	get_cloaked
+00731c1c	16	set_undeletable
+00731c2c	16	get_undeletable
+00731c3c	17	set_invulnerable
+00731c50	17	get_invulnerable
+00731c64	11	get_physic
+00731c70	14	set_viewinfog
+00731c80	14	get_viewinfog
+00731c90	15	set_selectable
+00731ca0	15	get_selectable
+00731cb0	21	set_prodautoschedule
+00731cc8	21	get_prodautoschedule
+00731ce0	18	set_prodalloclock
+00731cf4	18	get_prodalloclock
+00731d08	14	set_hoverable
+00731d18	14	get_hoverable
+00731d28	15	set_renderlast
+00731d38	15	set_logactions
+00731d48	15	get_logactions
+00731d58	13	get_worktime
+00731d68	13	set_worktime
+00731d78	24	get_remaining_sparetime
+00731d90	12	get_objtype
+00731d9c	20	set_alternateanimdb
+00731db0	20	get_alternateanimdb
+00731dc4	11	set_attrib
+00731dd0	11	get_attrib
+00731ddc	11	add_attrib
+00731de8	12	get_bestexp
+00731df4	14	add_expattrib
+00731e04	9	obj_find
+00731e10	17	obj_find_nearest
+00731e24	22	obj_find_nearest_type
+00731e3c	18	obj_find_own_list
+00731e50	13	obj_find_own
+00731e60	13	obj_find_var
+00731e70	14	obj_find_list
+00731e80	26	obj_find_nearest_storable
+00731e9c	29	obj_find_nearest_storable_cb
+00731ebc	9	link_obj
+00731ec8	12	get_linkpos
+00731ed4	12	get_linkrot
+00731ee0	14	get_linked_to
+00731ef0	10	set_event
+00731efc	12	clone_event
+00731f08	12	timer_event
+00731f14	12	timer_unset
+00731f20	10	event_get
+00731f2c	11	speechicon
+00731f38	11	gnome_idle
+00731f44	19	gnome_stopped_work
+00731f58	18	gnome_failed_work
+00731f6c	19	gnome_announce_dig
+00731f80	16	info_start_prod
+00731f90	19	info_progress_prod
+00731fa4	14	info_end_prod
+00731fb4	18	prod_assignworker
+00731fc8	15	prod_gnomeidle
+00731fd8	26	prod_gnome_last_workplace
+00731ff4	31	prod_gnome_preferred_workplace
+00732014	30	prod_gnome_get_last_workplace
+00732034	35	prod_gnome_get_preferred_workplace
+00732058	11	prod_guest
+00732064	17	prod_gnome_state
+00732078	17	fight_setactions
+0073208c	28	fight_setactions_strikeback
+007320a8	27	fight_setactions_ballistic
+007320c4	12	inv_getsize
+007320d0	8	inv_get
+007320d8	8	inv_add
+007320e0	8	inv_rem
+007320e8	8	inv_cnt
+007320f0	9	inv_list
+007320fc	9	inv_find
+00732108	13	inv_find_obj
+00732118	10	inv_check
+00732124	13	is_contained
+00732134	12	inv_get_raw
+00732140	12	inv_cnt_raw
+0073214c	13	inv_find_raw
+0073215c	13	tasklist_get
+0073216c	13	tasklist_add
+0073217c	18	tasklist_addfront
+00732190	15	tasklist_clear
+007321a0	13	tasklist_rem
+007321b0	13	tasklist_cnt
+007321c0	14	tasklist_list
+007321d0	14	tasklist_find
+007321e0	12	set_objname
+007321ec	12	get_objname
+007321f8	13	get_objclass
+00732208	18	get_pathrandflags
+0073221c	14	state_trigger
+0073222c	19	state_triggerfresh
+00732240	10	state_get
+0073224c	13	state_enable
+0073225c	14	state_disable
+0073226c	12	state_reset
+00732278	19	state_getenablecnt
+0073228c	18	find_next_visible
+007322a0	13	dist_between
+007322b0	13	change_light
+007322c0	10	get_light
+007322cc	10	set_light
+007322d8	15	hide_obj_ghost
+007322e8	13	set_fogofwar
+007322f8	10	get_owner
+00732304	10	set_owner
+00732310	12	get_objrace
+0073231c	14	set_ownerrace
+0073232c	14	get_ownerrace
+0073233c	17	get_objownertype
+00732350	14	get_autolight
+00732360	17	set_climbability
+00732374	17	get_climbability
+00732388	14	set_collision
+00732398	14	get_collision
+007323a8	20	set_objectcollision
+007323bc	20	get_objectcollision
+007323d0	15	get_pathlength
+007323e0	18	get_gnomeposition
+007323f4	13	get_framevel
+00732404	22	change_particlesource
+0073241c	20	free_particlesource
+00732430	19	set_particlesource
+00732444	20	blow_particlesource
+00732458	17	set_pf_influence
+0073246c	15	get_walkresult
+0073247c	20	get_ballisticresult
+00732498	21	set_texturevariation
+007324b0	21	set_textureanimation
+007324c8	16	set_energyclass
+007324d8	16	set_energyrange
+007324e8	11	get_energy
+007324f4	13	check_energy
+00732504	15	release_energy
+00732514	22	set_energyconsumption
+0073252c	21	get_energysourceload
+00732544	16	set_energystore
+00732554	16	get_energystore
+00732564	19	set_energymaxstore
+00732578	21	set_inventoryslotuse
+00732590	17	get_prod_enabled
+007325a4	17	set_prod_enabled
+007325b8	17	set_weapon_class
+007325cc	17	get_weapon_class
+007325e0	17	set_shield_class
+007325f4	17	get_shield_class
+00732608	14	get_weapon_id
+00732618	17	get_weapon_range
+0073262c	17	check_weapon_exp
+00732640	16	get_best_weapon
+00732650	26	fight_setactions_training
+0073266c	21	find_free_place_self
+00732684	21	create_elevatorlogic
+0073269c	23	set_elevatorproperties
+007326b4	19	create_ladderlogic
+007326c8	16	set_ladderrange
+007326d8	17	create_doorlogic
+007326ec	19	set_doorproperties
+00732700	22	delete_transportlogic
+00732718	23	set_prod_exclusivemode
+00732730	22	set_prod_materialneed
+00732748	18	set_prod_toolneed
+0073275c	20	set_prod_switchmode
+00732770	18	set_prod_schedule
+00732784	23	get_prod_exclusivemode
+0073279c	22	get_prod_materialneed
+007327b4	18	get_prod_toolneed
+007327c8	20	get_prod_switchmode
+007327dc	18	get_prod_schedule
+007327f0	22	get_prod_directevents
+00732808	22	set_prod_directevents
+00732820	12	is_selected
+0073282c	10	obj_query
+00732838	13	partner_info
+00732848	15	get_escape_pos
+00732858	19	set_sequenceactive
+0073286c	19	get_sequenceactive
+00732880	17	set_camerafollow
+00732894	8	trigger
+0073289c	17	set_buildupstate
+007328b0	17	get_buildupstate
+007328c4	21	get_attackinprogress
+007328dc	21	set_attackinprogress
+007328f4	15	get_attack_pos
+00732904	16	get_diedinfight
+00732914	17	check_ghost_coll
+00732928	12	set_fsource
+00732934	12	rem_fsource
+00732940	12	get_fsource
+0073294c	11	fairy_move
+00732958	13	set_fstopper
+00732968	13	rem_fstopper
+00732978	16	sm_send_message
+00732988	12	sm_register
+00732994	16	obj_to_particle
+007329a4	12	dig_resetid
+007329b0	17	set_objvariation
+007329c4	17	get_objvariation
+007329d8	14	set_forceipol
+007329e8	14	get_forceipol
+007329f8	19	set_activegameplay
+00732a0c	19	get_activegameplay
+00732a20	9	destruct
+00732a2c	19	is_wearing_pannier
+00732a40	10	talkissue
+00732a4c	11	prod_valid
+00732a58	19	set_processactions
+00732a6c	19	get_processactions
+00732a80	18	remove_parked_obj
+00732a94	12	is_storymgr
+00732aa0	13	get_flag_pos
+00732ab0	17	transfer_attribs
+00732ac4	12	get_max_fow
+00732ad0	11	ntid_reset
+00732adc	12	get_negbbox
+00732ae8	31	TCL:CTclObjMethods::Base2Obj()
+00732b08	15	null reference
+00732b18	29	TCL:CTclObjMethods::Action()
+00732b38	23	object has actionlock 
+00732b50	15	unknown action
+00732b68	10	anonymous
+00732b74	6	 new:
+00732b84	16	
+  StateCnt:%d 
+00732b94	10	
+  Param:
+00732ba0	9	
+  Fini:
+00732bac	10	
+  Break:
+00732bb8	10	newaction
+00732bc4	33	TCL:CTclObjMethods::CloneEvent()
+00732be8	19	unregistered event
+00732bfc	8	target
+00732c04	31	TCL:CTclObjMethods::EventGet()
+00732c24	9	no event
+00732c30	10	timestamp
+00732c3c	8	-origin
+00732c44	38	TCL:CTclObjMethods::FindNextVisible()
+00732c6c	34	TCL:CTclObjMethods::DistBetween()
+00732c90	32	TCL:CTclObjMethods::AddAttrib()
+00732cb0	43	TCL:CTclObjMethods::ChangeParticleSource()
+00732cdc	20	invalid link ID: %s
+00732cf0	41	TCL:CTclObjMethods::FreeParticleSource()
+00732d1c	40	TCL:CTclObjMethods::SetParticleSource()
+00732d44	32	TCL:CTclObjMethods::GnomeIdle()
+00732d64	16	no prod control
+00732d74	37	TCL:CTclObjMethods::GnomeStoppedWork
+00732d9c	39	TCL:CTclObjMethods::AutoChooseGender()
+00732dc4	44	TCL:CTclObjMethods::AutoChooseWorkingTime()
+00732df0	20	not a gnome or baby
+00732e04	34	TCL:CTclObjMethods::CheckEnergy()
+00732e28	38	TCL:CTclObjMethods::FightSetActions()
+00732e50	48	TCL:CTclObjMethods::FightSetActionsStrikeBack()
+00732e80	46	TCL:CTclObjMethods::FightSetActionsTraining()
+00732eb0	47	TCL:CTclObjMethods::FightSetActionsBallistic()
+00732ee0	43	TCL:CTclGlobalMethods::FindFreePlaceSelf()
+00732f0c	56	C:\dev\wiggles\Wiggles\Wiggles\Tcl\TclObjMethods_AG.cpp
+00732f44	42	TCL:CTclObjMethods::CreateElevatorLogic()
+00732f70	43	TCL:CTclObjMethods::DeleteTransportLogic()
+00732f9c	40	TCL:CTclObjMethods::CreateLadderLogic()
+00732fc4	37	TCL:CTclObjMethods::SetLadderRange()
+00732fec	38	TCL:CTclObjMethods::CreateDoorLogic()
+00733014	40	TCL:CTclObjMethods::SetDoorProperties()
+0073303c	16	openforplayer
+0073304c	16	openforfriends
+0073305c	16	openforclasses
+0073306c	12	openforall
+00733078	39	TCL:CTclObjMethods::GnomeAnnounceDig()
+007330a0	32	TCL:CTclObjMethods::FairyMove()
+007330c0	37	TCL:CTclObjMethods::CheckGhostColl()
+007330e8	8	objects
+007330f8	15	invalid param:
+00733108	33	TCL:CTclObjMethods::DigResetID()
+0073312c	29	TCL:CTclObjMethods::Destruct
+0073314c	30	TCL:CTclObjMethods::NTIDReset
+0073316c	21	newsticker delete %d
+00733184	31	TCL:CTclObjMethods::GetNegBBox
+007331a4	30	TCL:CTclObjMethods::SetIcon()
+007331c4	36	TCL:CTclObjMethods::SetVisibility()
+007331e8	36	TCL:CTclObjMethods::GetVisibility()
+0073320c	30	TCL:CTclObjMethods::SetLock()
+0073322c	30	TCL:CTclObjMethods::GetLock()
+0073324c	36	TCL:CTclObjMethods::SetSnapToWall()
+00733270	36	TCL:CTclObjMethods::GetSnapToWall()
+00733294	39	TCL:CTclObjMethods::SetPlaceSnapMode()
+007332bc	39	TCL:CTclObjMethods::GetPlaceSnapMode()
+007332e4	38	TCL:CTclObjMethods::SetBuildUpState()
+0073330c	38	TCL:CTclObjMethods::GetBuildUpState()
+00733334	34	TCL:CTclObjMethods::SetStorable()
+00733358	34	TCL:CTclObjMethods::GetStorable()
+0073337c	33	TCL:CTclObjMethods::SetInStore()
+007333a0	33	TCL:CTclObjMethods::GetInStore()
+007333c4	33	TCL:CTclObjMethods::SetCloaked()
+007333e8	33	TCL:CTclObjMethods::GetCloaked()
+0073340c	37	TCL:CTclObjMethods::SetUndeletable()
+00733434	37	TCL:CTclObjMethods::GetUndeletable()
+0073345c	38	TCL:CTclObjMethods::SetInvulnerable()
+00733484	38	TCL:CTclObjMethods::GetInvulnerable()
+007334ac	32	TCL:CTclObjMethods::SetPhysic()
+007334cc	32	TCL:CTclObjMethods::GetPhysic()
+007334ec	36	TCL:CTclObjMethods::SetLogActions()
+00733510	36	TCL:CTclObjMethods::GetLogActions()
+00733534	35	TCL:CTclObjMethods::SetViewInFog()
+00733558	35	TCL:CTclObjMethods::GetViewInFog()
+0073357c	36	TCL:CTclObjMethods::SetSelectable()
+007335a0	36	TCL:CTclObjMethods::GetSelectable()
+007335c4	40	TCL:CTclObjMethods::SetSequenceActive()
+007335ec	40	TCL:CTclObjMethods::GetSequenceActive()
+00733614	35	TCL:CTclObjMethods::SetHoverable()
+00733638	41	TCL:CTclObjMethods::SetAlternateAnimDB()
+00733664	41	TCL:CTclObjMethods::GetAlternateAnimDB()
+00733690	36	TCL:CTclObjMethods::SetRenderLast()
+007336b4	33	TCL:CTclObjMethods::GetObjType()
+007336d8	30	TCL:CTclObjMethods::SetAnim()
+007336f8	29	TCL:CTclObjMethods::SetPos()
+00733718	35	TCL:CTclObjMethods::SetPosBottom()
+0073373c	30	TCL:CTclObjMethods::SetPosX()
+0073375c	30	TCL:CTclObjMethods::SetPosY()
+0073377c	30	TCL:CTclObjMethods::SetPosZ()
+0073379c	30	TCL:CTclObjMethods::GetPosX()
+007337bc	30	TCL:CTclObjMethods::GetPosY()
+007337dc	30	TCL:CTclObjMethods::GetPosZ()
+007337fc	29	TCL:CTclObjMethods::GetPos()
+0073381c	32	TCL:CTclObjMethods::GetRelPos()
+0073383c	29	TCL:CTclObjMethods::SetRot()
+0073385c	16	gnome xz-rot!=0
+0073386c	30	TCL:CTclObjMethods::SetRotX()
+0073388c	15	gnome x-rot!=0
+0073389c	30	TCL:CTclObjMethods::SetRotY()
+007338bc	30	TCL:CTclObjMethods::SetRotZ()
+007338dc	15	gnome z-rot!=0
+007338ec	30	TCL:CTclObjMethods::GetRotX()
+0073390c	30	TCL:CTclObjMethods::GetRotY()
+0073392c	30	TCL:CTclObjMethods::GetRotZ()
+0073394c	29	TCL:CTclObjMethods::GetRot()
+0073396c	29	TCL:CTclObjMethods::SetVel()
+0073398c	29	TCL:CTclObjMethods::GetVel()
+007339b4	33	TCL:CTclObjMethods::GetObjName()
+007339d8	34	TCL:CTclObjMethods::GetObjClass()
+007339fc	33	TCL:CTclObjMethods::GetLinkPos()
+00733a20	22	Invalid link-id :  %i
+00733a38	33	TCL:CTclObjMethods::GetLinkRot()
+00733a5c	31	TCL:CTclObjMethods::SetEvent()
+00733a7c	60	C:\dev\wiggles\Wiggles\Wiggles\Tcl\TclObjMethods_GetSet.cpp
+00733ab8	15	target invalid
+00733ac8	17	subject1 invalid
+00733adc	17	subject2 invalid
+00733af0	17	subject3 invalid
+00733b04	39	TCL:CTclObjMethods::GetPathRandFlags()
+00733b2c	31	TCL:CTclObjMethods::SetLight()
+00733b4c	31	TCL:CTclObjMethods::GetLight()
+00733b6c	31	TCL:CTclObjMethods::SetOwner()
+00733b8c	31	TCL:CTclObjMethods::GetOwner()
+00733bac	13	invalid race
+00733bbc	37	TCL:CTclObjMethods::SetWeaponClass()
+00733be4	37	TCL:CTclObjMethods::GetWeaponClass()
+00733c0c	34	TCL:CTclObjMethods::GetWeaponID()
+00733c30	37	TCL:CTclObjMethods::GetWeaponRange()
+00733c58	37	TCL:CTclObjMethods::SetShieldClass()
+00733c80	37	TCL:CTclObjMethods::GetShieldClass()
+00733ca8	34	TCL:CTclObjMethods::SetFogOfWar()
+00733ccc	35	TCL:CTclObjMethods::SetAutoLight()
+00733cf0	35	TCL:CTclObjMethods::GetAutoLight()
+00733d14	34	TCL:CTclObjMethods::SetWorkTime()
+00733d38	9	duration
+00733d44	34	TCL:CTclObjMethods::GetWorkTime()
+00733d68	10	nextstart
+00733d74	10	laststart
+00733d80	8	nextend
+00733d88	8	lastend
+00733d90	33	use either 'start' or 'duration'
+00733db4	32	TCL:CTclObjMethods::SetAttrib()
+00733dd4	32	TCL:CTclObjMethods::GetAttrib()
+00733df4	38	TCL:CTclObjMethods::SetClimbAbility()
+00733e1c	38	TCL:CTclObjMethods::GetClimbAbility()
+00733e44	35	TCL:CTclObjMethods::SetCollision()
+00733e68	35	TCL:CTclObjMethods::GetCollision()
+00733e8c	40	TCL:CTclObjMethods::SetProcessactions()
+00733eb4	40	TCL:CTclObjMethods::GetProcessactions()
+00733edc	41	TCL:CTclObjMethods::SetObjectCollision()
+00733f08	41	TCL:CTclObjMethods::GetObjectCollision()
+00733f34	36	TCL:CTclObjMethods::GetPathLength()
+00733f58	32	function GetPathLength disabled
+00733f78	39	TCL:CTclObjMethods::GetGnomePosition()
+00733fa0	34	TCL:CTclObjMethods::GetFrameVel()
+00733fc4	36	TCL:CTclObjMethods::GetGroundType()
+00733fe8	35	TCL:CTclObjMethods::GetObjGender()
+0073400c	41	TCL:CTclObjMethods::SetPFInfluenceRect()
+00734038	8	INT_MAX
+00734040	8	INT_MIN
+00734048	36	TCL:CTclObjMethods::GetWalkResult()
+0073406c	41	TCL:CTclObjMethods::GetBallisticResult()
+00734098	40	TCL:CTclObjMethods::SetRenderMaterial()
+007340c0	40	TCL:CTclObjMethods::GetRenderMaterial()
+007340e8	42	TCL:CTclObjMethods::SettextureVariation()
+00734114	42	TCL:CTclObjMethods::SetTextureAnimation()
+00734140	37	TCL:CTclObjMethods::SetProdSlotCnt()
+00734168	37	TCL:CTclObjMethods::GetProdSlotCnt()
+00734190	13	invalid slot
+007341a0	36	TCL:CTclObjMethods::GetProdUnpack()
+007341c4	36	TCL:CTclObjMethods::SetProdUnpack()
+007341e8	34	TCL:CTclObjMethods::GetProdPack()
+0073420c	34	TCL:CTclObjMethods::SetProdPack()
+00734230	37	TCL:CTclObjMethods::GetProdBuildUp()
+00734258	37	TCL:CTclObjMethods::SetProdBuildUp()
+00734280	43	TCL:CTclObjMethods::GetProdOwnerStrength()
+007342ac	43	TCL:CTclObjMethods::SetProdOwnerStrength()
+007342d8	37	TCL:CTclObjMethods::SetEnergyRange()
+00734300	26	object type is not energy
+0073431c	37	TCL:CTclObjMethods::SetEnergyClass()
+00734344	43	TCL:CTclObjMethods::SetEnergyConsumption()
+00734370	40	object type is not production or energy
+00734398	42	TCL:CTclObjMethods::GetEnergySourceLoad()
+007343c4	37	TCL:CTclObjMethods::SetEnergyStore()
+007343ec	37	TCL:CTclObjMethods::GetEnergyStore()
+00734414	37	TCL:CTclObjMethods::GetProdEnabled()
+0073443c	54	object type is not production or energy or protection
+00734474	37	TCL:CTclObjMethods::SetProdEnabled()
+0073449c	40	TCL:CTclObjMethods::SetEnergyMaxStore()
+007344c4	44	TCL:CTclObjMethods::GetRemainingSpareTime()
+007344f0	42	TCL:CTclObjMethods::SetInventorySlotUse()
+0073451c	44	TCL:CTclObjMethods::SetElevatorProperties()
+00734548	19	no transport logic
+0073455c	18	no elevator logic
+00734570	43	TCL:CTclObjMethods::SetProdExclusiveMode()
+0073459c	23	object has no m_pProd 
+007345b4	40	TCL:CTclObjMethods::SetProdSwitchMode()
+007345dc	42	TCL:CTclObjMethods::SetProdDirectEvents()
+00734608	38	TCL:CTclObjMethods::SetProdSchedule()
+00734630	42	TCL:CTclObjMethods::SetProdMaterialNeed()
+0073465c	38	TCL:CTclObjMethods::SetProdToolNeed()
+00734684	43	TCL:CTclObjMethods::GetProdExclusiveMode()
+007346b0	30	object has no ProdPlaceState 
+007346d0	40	TCL:CTclObjMethods::GetProdSwitchMode()
+007346f8	42	TCL:CTclObjMethods::GetProdDirectEvents()
+00734724	38	TCL:CTclObjMethods::GetProdSchedule()
+0073474c	42	TCL:CTclObjMethods::GetProdMaterialNeed()
+00734778	38	TCL:CTclObjMethods::GetProdToolNeed()
+007347a0	35	TCL:CTclObjMethods::GetEscapePos()
+007347c4	38	TCL:CTclObjMethods::SetCameraFollow()
+007347ec	42	TCL:CTclObjMethods::GetAttackInProgress()
+00734818	37	TCL:CTclObjMethods::GetDiedInFight()
+00734840	33	TCL:CTclObjMethods::SetFSource()
+0073486c	12	lavawater
+00734878	8	-volume
+00734880	8	-height
+00734890	8	-ventil
+00734898	33	TCL:CTclObjMethods::RemFSource()
+007348bc	33	TCL:CTclObjMethods::GetFSource()
+007348e0	34	TCL:CTclObjMethods::SetFStopper()
+00734904	34	TCL:CTclObjMethods::RemFStopper()
+00734928	38	TCL:CTclObjMethods::SetObjVariation()
+00734950	35	TCL:CTclObjMethods::Getforceipol()
+00734974	40	TCL:CTclObjMethods::GetActiveGamePlay()
+0073499c	34	TCL:CTclObjMethods::GetLinkedTo()
+007349c0	33	TCL:CTclObjMethods::GetFlagPos()
+007349e4	35	TCL:CTclObjMethods::HideObjGhost()
+00734a08	34	TCL:CTclObjMethods::IsContained()
+00734a2c	30	TCL:CTclObjMethods::LinkObj()
+00734a4c	12	invalid obj
+00734a58	38	Illegal link CObj_World/CObj_DigTask 
+00734a80	33	TCL:CTclObjMethods::InvGetSize()
+00734aa4	29	TCL:CTclObjMethods::InvAdd()
+00734ac4	29	TCL:CTclObjMethods::InvRem()
+00734ae4	29	TCL:CTclObjMethods::InvCnt()
+00734b04	29	TCL:CTclObjMethods::InvGet()
+00734b24	22	inv_get:invalid index
+00734b3c	30	TCL:CTclObjMethods::InvFind()
+00734b5c	33	TCL:CTclObjMethods::InvFindObj()
+00734b80	29	TCL:CTclObjMethods::InvLst()
+00734ba0	31	TCL:CTclObjMethods::InvCheck()
+00734bc0	33	TCL:CTclObjMethods::InvFindRaw()
+00734be4	36	TCL:CTclObjMethods::InfoStartProd()
+00734c08	38	TCL:CTclObjMethods::InfoProgresProd()
+00734c30	34	TCL:CTclObjMethods::InfoEndProd()
+00734c54	33	TCL:CTclObjMethods::LockEnergy()
+00734c78	33	TCL:CTclObjMethods::IsSelected()
+00734c9c	29	TCL:CTclObjMethods::Result()
+00734cbc	35	TCL:CTclObjMethods::StateTrigger()
+00734ce0	14	unknown state
+00734cf0	40	TCL:CTclObjMethods::StateTriggerFresh()
+00734d18	31	TCL:CTclObjMethods::StateGet()
+00734d38	34	TCL:CTclObjMethods::StateEnable()
+00734d5c	35	TCL:CTclObjMethods::StateDisable()
+00734d80	33	TCL:CTclObjMethods::StateReset()
+00734da4	40	TCL:CTclObjMethods::StateGetEnableCnt()
+00734dcc	33	TCL:CTclObjMethods::TimerUnset()
+00734df0	33	TCL:CTclObjMethods::TimerEvent()
+00734e14	56	C:\dev\wiggles\Wiggles\Wiggles\Tcl\TclObjMethods_OU.cpp
+00734e4c	8	-attime
+00734e54	12	-interval
+00734e60	8	-repeat
+00734e68	8	-userid
+00734e70	34	TCL:CTclObjMethods::TaskListAdd()
+00734e94	39	TCL:CTclObjMethods::TaskListAddFront()
+00734ebc	36	TCL:CTclObjMethods::TaskListClear()
+00734ee0	34	TCL:CTclObjMethods::TaskListRem()
+00734f04	34	TCL:CTclObjMethods::TaskListCnt()
+00734f28	34	TCL:CTclObjMethods::TaskListGet()
+00734f4c	34	TCL:CTclObjMethods::TaskListLst()
+00734f70	34	TCL:CTclObjMethods::ObjFindNext()
+00734f94	41	TCL:CTclObjMethods::ObjFindNextNearest()
+00734fc0	45	TCL:CTclObjMethods::ObjFindNextNearestType()
+00734ff0	37	TCL:CTclObjMethods::ObjFindNextVar()
+00735018	45	TCL:CTclObjMethods::ObjFindNearestStorable()
+00735048	47	TCL:CTclObjMethods::ObjFindNearestStorableCB()
+00735078	34	TCL:CTclObjMethods::ObjFindList()
+0073509c	27	TCL:CTclObjMethods::Snap()
+007350b8	39	TCL:CTclObjMethods::ProdAssignWorker()
+007350e0	14	no production
+007350f0	37	TCL:CTclObjMethods::ProdGnomeState()
+00735118	12	not a gnome
+00735124	45	TCL:CTclObjMethods::ProdGnomeLastWorkplace()
+00735154	9	no gnome
+00735160	48	TCL:CTclObjMethods::ProdGnomeGetLastWorkplace()
+00735190	50	TCL:CTclObjMethods::ProdGnomePreferredWorkplace()
+007351c4	53	TCL:CTclObjMethods::ProdGnomeGetPreferredWorkplace()
+007351fc	36	TCL:CTclObjMethods::ProdGnomeIdle()
+00735220	32	TCL:CTclObjMethods::ProdGuest()
+00735240	22	not a production type
+00735258	8	setlink
+00735260	8	getlink
+00735268	9	guestset
+00735274	12	guestremove
+00735280	9	guestget
+0073528c	10	guestfree
+00735298	9	addorder
+007352a4	9	getorder
+007352b0	9	remorder
+007352bc	11	resetorder
+007352c8	10	nextorder
+007352d4	34	TCL:CTclObjMethods::PartnerInfo()
+007352f8	27	not a gnome or a baby type
+00735314	12	setpartner
+00735320	12	addchild
+0073532c	10	setmother
+00735338	10	setfather
+00735344	13	setpregnancy
+00735354	13	getpregnancy
+00735364	11	getpartner
+00735370	10	getmother
+0073537c	10	getfather
+00735388	12	getchildren
+00735394	9	transfer
+007353a0	17	no family (baby)
+007353b4	10	no family
+007353c0	36	TCL:CTclObjMethods::SMSendMessage()
+007353e4	33	TCL:CTclObjMethods::SMRegister()
+00735408	36	TCL:CTclObjMethods::ObjToParticle()
+0073542c	35	TCL:CTclGlobalMethods::Talkissue()
+00735450	22	object is not a gnome
+00735468	8	reduce
+00735474	26	invalid talkissue command
+00735490	35	TCL:CTclGlobalMethods::Sparetime()
+007354b4	12	announce
+007354c0	12	disannounce
+007354cc	27	sparetime place not found 
+007354e8	12	queryrange
+007354f4	12	queryrect
+00735500	26	invalid sparetime command
+0073551c	32	TCL:CTclObjMethods::ProdValid()
+0073553c	36	TCL:CTclObjMethods::ReleaseEnergy()
+00735560	38	TCL:CTclObjMethods::TransferAttribs()
+00735588	46	C:\dev\wiggles\Wiggles\Wiggles\Tcl\TclRPC.cpp
+007355b8	22	error: invalid method
+007355d0	40	error: invalid number of params (%i/%i)
+00735608	18	CGameRenderThread
+00735620	71	CGameThread::Draw() EndBuildFrame -> RenderThread RenderEB RenderBegin
+00735668	64	CGameThread::Draw() EndBuildFrame -> RenderThread RenderEB Fill
+007356a8	70	CGameThread::Draw() EndBuildFrame -> RenderThread RenderEB BeginFrame
+007356f0	68	CGameThread::Draw() EndBuildFrame -> RenderThread RenderEB EndFrame
+00735738	69	CGameThread::Draw() EndBuildFrame -> RenderThread RenderEB RenderEnd
+00735780	64	CGameThread::Draw() EndBuildFrame -> RenderThread RenderEB Flip
+00735800	12	CGameThread
+0073580c	54	C:\dev\wiggles\Wiggles\Wiggles\Threads\GameThread.cpp
+00735844	9	-network
+00735850	8	-server
+00735858	9	-mapedit
+00735864	20	data/templates/tcl/
+00735878	20	data/templates/pmp/
+0073588c	20	data/templates/l2m/
+007358a0	20	data/templates/ent/
+007358b4	9	-nosound
+007358c0	9	-nomusic
+007358cc	10	-soundlog
+007358d8	9	-console
+007358e4	13	-oldskirmish
+007358f4	7	-nofow
+007358fc	9	-minimal
+00735908	20	command line option
+00735924	20	data/ldat
+00735940	20	CGameThread::Init()
+00735954	28	data/Gamesave
+00735970	29	HKCU:Software/SekOst/Diggles
+00735990	12	WorkingDir
+0073599c	28	CGameThread::Init() TclInit
+007359b8	12	TclDefines
+007359cc	24	CGameThread::Init() Map
+007359e4	28	CGameThread::Init() Options
+00735a00	12	Language
+00735a0c	14	-resetoptions
+00735a1c	8	Sound
+00735a24	6	Music
+00735a2c	8	Screen
+00735a34	8	Width
+00735a3c	8	Height
+00735a44	12	Fullscreen
+00735a50	11	MouseSpeed
+00735a5c	13	BorderScroll
+00735a6c	12	MouseScroll
+00735a78	10	KeyScroll
+00735a84	16	ZoomSpeedFactor
+00735a94	12	VolumeMusic
+00735aa0	12	VolumeSound
+00735aac	13	Direct3DGUID
+00735ac0	66	%08lx %04lx %04lx %02lx %02lx %02lx %02lx %02lx %02lx %02lx %02lx
+00735b04	15	DirectDrawGUID
+00735b14	8	SYSQUIT
+00735b1c	6	WIN32
+00735b24	11	MODECHANGE
+00735b30	29	CGameThread::Init() Init SDL
+00735b50	30	CGameThread::Init() Rendering
+00735b70	16	DisplayIndex
+00735b80	12	DisplayX
+00735b8c	12	DisplayY
+00735b98	12	DisplayW
+00735ba4	12	DisplayH
+00735bb0	23	Loading display # %d 
+
+00735bc8	27	Validating. Display : %d 
+
+00735be4	29	Display center : (%d, %d)  
+
+00735c04	30	SetDisplayIndex was called  
+
+00735c24	33	Desired resolution was %d x %d 
+
+00735c48	37	Current desired resolution %d x %d 
+
+00735c70	16	AntiAliasing
+00735c80	12	PostEffect
+00735c8c	10	ICQ_Found
+00735c98	13	WinAmp_Found
+00735ca8	17	ICQ_WinAmp_Found
+00735cbc	32	CGameThread::Init() TclScript 1
+00735ce0	33	data/scripts/misc/genattribs.tcl
+00735d04	33	CGameThread::Init() Init Display
+00735d28	8	Display
+00735d30	29	CGameThread::Init() TclInit2
+00735d50	18	data/userinit.tcl
+00735d64	34	CGameThread::Init() TclInit2 user
+00735d90	20	data/systeminit.tcl
+00735da4	36	CGameThread::Init() TclInit2 system
+00735dc8	41	CGameThread::Init() TclInit2 system eval
+00735df4	28	CGameThread::Init() AI Init
+00735e10	49	Fatal init error.
+See tclerrors.txt for details.
+00735e44	9	-safetcl
+00735e50	11	-logerrors
+00735e5c	14	animstats.txt
+00735e6c	18	%i(%s) %i(%s) %i
+
+00735e80	21	CGameThread::Cycle()
+00735e98	34	Heap check %d.%03d secs: %9d %8d
+
+00735ebc	23	CNetMgr::Get().Tick();
+00735ed4	32	CGameThread::Cycle() SrvDoThink
+00735ef4	34	CGameThread::Cycle() DoRenderTick
+00735f18	26	CGameThread::Cycle() Draw
+00735f34	27	CGameThread::Cycle() Sleep
+00735f50	9	Shutdown
+00735f5c	23	CGameThread::CreateMap
+00735f74	11	Map create
+00735f80	10	Map clear
+00735f8c	11	Map Mapgen
+00735f98	13	Map lighting
+00735fa8	13	Map validate
+00735fb8	11	Map lights
+00735fc4	9	Map done
+00735fd0	26	CGameThread::SrvDoThink()
+00735fec	30	CGameThread::SrvDoThink() 1st
+0073600c	41	CGameThread::SrvDoThink() UpdateLightMap
+00736038	59	CGameThread::SrvDoThink() GetObjMgr().DoMaintenanceTick();
+00736074	37	CGameThread::SrvDoThink() CAiCentral
+0073609c	41	CGameThread::SrvDoThink() ProdControlMgr
+007360c8	49	CGameThread::SrvDoThink() World::g_pMap->Tick();
+007360fc	34	CGameThread::SrvDoThink() Physics
+00736120	37	CGameThread::SrvDoThink() TriggerMgr
+00736148	30	CGameThread::SrvDoThink() FOW
+00736168	61	CGameThread::SrvDoThink() World::GetMapValidator().Service()
+007361a8	54	CGameThread::SrvDoThink() GetObjMgr().HandleEvents();
+007361e0	49	CGameThread::SrvDoThink() GetObjMgr().DoTrans();
+00736214	42	CGameThread::SrvDoThink() DoObjUpdates();
+00736240	48	CGameThread::Draw() if(m_fViewMoveToX>-1000.0f)
+00736270	32	CGameThread::Draw() Pre-Loading
+00736290	34	CGameThread::Draw() DoLinkUpdates
+007362b4	36	CGameThread::Draw() BeginBuildFrame
+007362d8	37	CGameThread::Draw() Sel/Hover Change
+00736300	26	CGameThread::Draw() Sound
+0073631c	28	CGameThread::Draw() MsgPump
+00736338	37	CGameThread::Draw() CDisplay::Draw()
+00736360	34	CGameThread::Draw() Render Sync 1
+00736384	34	CGameThread::Draw() EndBuildFrame
+007363a8	34	CGameThread::Draw() Render Sync 2
+007363cc	33	CGameThread::Draw() StatusUpdate
+00736434	8	English
+0073643c	9	-version
+00736448	10	-infofile
+00736454	44	C:\dev\wiggles\Wiggles\Wiggles\Wiggles.cpp
+00736480	12	version.txt
+0073648c	8	-novmem
+00736494	6	-vmem
+0073649c	19	CWigglesApp::Run()
+007364b0	63	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Src\KStr_NonInline.cpp
+007364f0	55	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Src\UniArc.cpp
+00736528	28	Allocating %d bytes failed.
+00736544	14	Memory Error!
+00736554	44	Reallocating %d bytes at 0x%08lx failed.
+00736580	14	already freed
+00736590	10	corrupted
+0073659c	16	corrupted freed
+007365ac	23	Mem error at %08lx:%s
+
+007365c4	6	%s %s
+007365cc	8	ENDIF
+007365e4	8	DEFINE
+007365ec	8	UNDEF
+007365f4	12	UNDEFINE
+00736600	8	STOPIF
+00736608	12	STOPIFNOT
+00736630	56	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Src\TclWrap.cpp
+00736668	12	bytecode
+00736674	17	<CHECKSUM ERROR>
+00736688	9	##CRC32 
+00736694	8	##PACK 
+0073669c	25	missing tcl interpreter!
+007366b8	11	no script.
+007366c4	10	errorInfo
+007366d0	10	errorCode
+007366e0	32	invalid arg count (%d expected)
+00736700	16	AuthenticAMD
+00736710	11	RPCRT4.DLL
+0073671c	21	UuidCreateSequential
+00736734	33	%s %d Family %d Model %d Step %d
+00736758	16	GenuineIntel
+00736768	8	Intel
+00736772	11	C UMC UMC 
+00736780	16	CyrixInstead
+00736790	4	Cyri
+00736798	16	NexGenDriven
+007367a8	4	NexG
+007367b0	4	 i48
+007367b8	4	 i48
+007367bc	4	6DX2
+007367c4	4	 i48
+007367c8	4	6DX4
+007367d0	12	 Pentium
+007367dc	16	 Pentium MMX
+007367ec	12	 Pentum 4
+007367f8	16	 Pentium III
+00736808	12	 Celeron
+00736814	12	 Pentium II
+00736820	16	 Pentium Pro
+00736830	12	 Processor
+0073683c	14	Windows %d.%d
+0073684c	12	Windows 95
+00736858	16	Windows 95 SP1
+00736868	16	Windows 95 OSR2
+00736878	12	Windows 98
+00736884	16	Windows 98 SP1
+00736894	16	Windows 98 SE
+007368a4	12	Windows ME
+007368b0	16	Windows NT 3.1
+007368c0	16	Windows NT 3.5
+007368d0	16	Windows NT 3.51
+007368e0	16	Windows NT 4
+007368f0	16	Windows 2000
+00736900	12	Windows XP
+0073690c	12	Windows NT
+00736918	42	SOFTWARE\Microsoft\Windows\CurrentVersion
+00736944	10	ProductId
+00736950	21	Volatile Environment
+00736968	14	USERDNSDOMAIN
+00736978	12	LOGONSERVER
+00736984	55	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Src\PropDB.cpp
+007369c4	6	HKLM:
+007369cc	6	HKCU:
+007369d4	8	FLT_MIN
+007369dc	8	FLT_MAX
+007369e4	13	%s%s = '%s'
+
+007369f4	9	%s%s = 
+
+00736a00	13	%s%s { '%s'
+
+00736a10	9	%s%s { 
+
+00736a24	9	Compress
+00736a30	12	Z_MEM_ERROR
+00736a3c	15	Z_STREAM_ERROR
+00736a4c	52	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Src\Pic.cpp
+00736a80	56	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Src\DirScan.cpp
+00736abc	56	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Src\TclHash.cpp
+00736af4	14	Mem overrun!
+
+00736b04	15	Illegal free()
+00736b14	24	unmatched address %d/%d
+00736b2c	12	double free
+00736b38	56	C:\dev\wiggles\CodeLib\StdTools\KStdLib\Src\KVM_Int.cpp
+00736b70	31	ProtectReadOnly(%d,%d) failed
+
+00736b90	32	ProtectReadWrite(%d,%d) failed
+
+00736bb0	18	Fatal page error!
+00736bd0	17	ACCESS_VIOLATION
+00736be4	8	GENERIC
+00736bf4	13	VM Re-Entry!
+00736c04	28	EXCEPTION_ACCESS_VIOLATION
+00736c20	7	%s%s%s
+00736c28	23	unexpected end of file
+00736c40	40	internal error: inflate stream corrupt
+00736c68	22	compressed data error
+00736c80	31	request does not fit in an int
+00736ca0	39	internal error: deflate stream corrupt
+00736cc8	37	requested length does not fit in int
+00736cf0	13	KERNEL32.DLL
+00736d00	14	GetVersionExA
+00736d10	23	incorrect header check
+00736d28	27	unknown compression method
+00736d44	20	invalid window size
+00736d58	25	unknown header flags set
+00736d74	20	header crc mismatch
+00736d88	19	invalid block type
+00736d9c	29	invalid stored block lengths
+00736dbc	36	too many length or distance symbols
+00736de0	25	invalid code lengths set
+00736dfc	26	invalid bit length repeat
+00736e18	37	invalid code -- missing end-of-block
+00736e40	28	invalid literal/lengths set
+00736e5c	24	invalid distances set
+00736e74	28	invalid literal/length code
+00736e90	22	invalid distance code
+00736ea8	30	invalid distance too far back
+00736ec8	21	incorrect data check
+00736ee0	23	incorrect length check
+00736ef8	16	need dictionary
+00736f08	11	stream end
+00736f14	11	file error
+00736f20	13	stream error
+00736f30	11	data error
+00736f3c	20	insufficient memory
+00736f50	13	buffer error
+00736f60	24	incompatible version
+007370b0	4	333?
+00737108	4	fff?
+00737114	4	33s?
+00737560	4	fffA
+00741ea8	8	.rdata
+00741fe0	8	.data
+00764012	14	SDL_PollEvent
+00764022	21	SDL_GetDisplayBounds
+00764038	9	SDL2.dll
+00764044	11	WSASocketA
+00764052	15	WSACreateEvent
+00764064	15	WSAEventSelect
+00764076	14	WSACloseEvent
+00764086	25	WSAWaitForMultipleEvents
+007640a2	14	WSAResetEvent
+007640b0	11	WS2_32.dll
+007640bc	11	DSOUND.dll
+007640ca	12	timeGetTime
+007640d8	10	mmioOpenA
+007640e4	12	mmioDescend
+007640f2	9	mmioRead
+007640fe	11	mmioAscend
+0076410c	9	mmioSeek
+00764118	10	mmioClose
+00764124	10	joyGetPos
+0076412e	10	WINMM.dll
+0076413a	12	CloseHandle
+00764148	12	CreateFileA
+00764156	12	GetFileSize
+00764164	25	GetProcessWorkingSetSize
+00764180	18	GetCurrentProcess
+00764194	25	SetProcessWorkingSetSize
+007641b0	19	CreateFileMappingA
+007641c6	14	MapViewOfFile
+007641d6	13	GetLastError
+007641e6	15	RaiseException
+007641f8	9	TlsAlloc
+00764204	12	TlsGetValue
+00764212	12	TlsSetValue
+00764220	17	GetModuleHandleA
+00764234	13	LoadLibraryA
+00764244	15	GetProcAddress
+00764256	21	GetWindowsDirectoryA
+0076426e	12	FreeLibrary
+0076427c	20	MultiByteToWideChar
+00764292	14	GetSystemTime
+007642a2	16	UnmapViewOfFile
+007642b4	13	CreateEventA
+007642c4	26	InitializeCriticalSection
+007642e0	22	DeleteCriticalSection
+007642f8	21	EnterCriticalSection
+00764310	21	LeaveCriticalSection
+00764328	9	SetEvent
+00764334	13	GetTickCount
+00764344	14	GetVersionExA
+00764354	14	GetSystemInfo
+00764364	19	GlobalMemoryStatus
+0076437a	18	SetThreadPriority
+0076438e	6	Sleep
+00764396	12	ExitProcess
+007643a4	13	IsBadReadPtr
+007643b4	19	OutputDebugStringA
+007643ca	24	GetSystemTimeAsFileTime
+007643e4	12	VirtualFree
+007643f2	14	VirtualUnlock
+00764402	13	VirtualAlloc
+00764412	12	VirtualLock
+00764420	14	IsBadWritePtr
+00764430	17	GetComputerNameA
+00764444	19	GetFileAttributesW
+0076445a	17	CreateDirectoryW
+0076446e	19	GetModuleFileNameW
+00764484	17	SetPriorityClass
+00764498	14	GetDriveTypeW
+007644a8	14	GetDriveTypeA
+007644b8	22	GetVolumeInformationA
+007644d0	15	GetLocaleInfoA
+007644e2	26	QueryPerformanceFrequency
+007644fe	24	QueryPerformanceCounter
+00764518	9	ReadFile
+00764524	10	WriteFile
+00764530	15	SetFilePointer
+00764542	13	SetEndOfFile
+00764552	12	CreateFileW
+00764560	17	FlushFileBuffers
+00764574	20	WideCharToMultiByte
+0076458a	15	VirtualProtect
+0076459c	11	GetVersion
+007645a8	13	KERNEL32.dll
+007645b8	12	MessageBoxA
+007645c6	15	SetWindowTextA
+007645d8	15	ScreenToClient
+007645ea	17	GetAsyncKeyState
+007645fe	15	CallNextHookEx
+00764610	22	SystemParametersInfoA
+00764628	18	SetWindowsHookExA
+0076463c	20	UnhookWindowsHookEx
+00764652	12	LoadStringA
+00764660	11	ShowCursor
+0076466e	15	ClientToScreen
+00764680	6	GetDC
+00764688	10	ReleaseDC
+00764694	20	GetForegroundWindow
+007646aa	17	GetDesktopWindow
+007646be	13	PostMessageA
+007646ce	13	SendMessageA
+007646de	12	GetMessageA
+007646ec	13	SetCursorPos
+007646fc	13	GetCursorPos
+0076470c	9	FillRect
+00764718	16	GetKeyNameTextA
+0076472a	12	GetKeyState
+00764738	15	MapVirtualKeyA
+0076474a	12	EnumWindows
+00764758	15	ReleaseCapture
+00764768	11	USER32.dll
+00764776	19	CreateCompatibleDC
+0076478c	17	CreateDIBSection
+007647a0	13	DeleteObject
+007647b0	13	SelectObject
+007647c0	9	DeleteDC
+007647cc	14	GetDeviceCaps
+007647dc	20	CreateFontIndirectA
+007647f2	23	GetOutlineTextMetricsA
+0076480c	13	SetTextAlign
+0076481c	22	GetTextExtentPoint32W
+00764834	9	TextOutW
+00764840	9	GetPixel
+0076484a	10	GDI32.dll
+00764856	13	GetUserNameA
+00764866	14	RegOpenKeyExA
+00764876	17	RegQueryValueExA
+0076488a	12	RegCloseKey
+00764898	14	RegEnumKeyExA
+007648a8	14	RegEnumValueA
+007648b8	15	RegSetValueExA
+007648ca	16	RegCreateKeyExA
+007648dc	14	RegDeleteKeyA
+007648ea	13	ADVAPI32.dll
+007648fa	13	CoInitialize
+0076490a	15	CoUninitialize
+0076491a	10	ole32.dll
+00764926	44	?GetHWnd@CSdlWindowHandle@@QBEPAUHWND__@@XZ
+00764954	44	?GetInstance@DisplayIndexManager@@SAPAV1@XZ
+00764982	45	?GetDisplayIndex@DisplayIndexManager@@QAEHXZ
+007649b2	42	?GetDisplayIndex@CSdlWindowHandle@@QAEHXZ
+007649de	48	?SetDisplayIndex@DisplayIndexManager@@QAEXHHH@Z
+00764a10	29	??1SoloudAudioPlayer@@QAE@XZ
+00764a30	30	??0SoloudAudioPlayer@@QAE@H@Z
+00764a50	40	?OpenFile@SoloudAudioPlayer@@QAE_NPBD@Z
+00764a7a	33	?Close@SoloudAudioPlayer@@QAEXXZ
+00764a9e	32	?Run@SoloudAudioPlayer@@QAE_NXZ
+00764ac0	33	?Stop@SoloudAudioPlayer@@QAE_NXZ
+00764ae4	38	?IsPlaying@SoloudAudioPlayer@@QAE_NXZ
+00764b0c	40	?SetPosition@SoloudAudioPlayer@@QAEXN@Z
+00764b36	44	?SetStopPosition@SoloudAudioPlayer@@QAEXN@Z
+00764b64	38	?SetVolume@SoloudAudioPlayer@@QAEXH@Z
+00764b8c	37	?SetLoop@SoloudAudioPlayer@@QAEX_N@Z
+00764bb4	22	??0CSdlWindow@@QAE@XZ
+00764bcc	22	??1CSdlWindow@@QAE@XZ
+00764be4	67	?GetCurrentDisplayPoint@CSdlInformWindowHandle@@SA?AUtagPOINT@@H@Z
+00764c2a	68	?GetCurrentDisplayCenter@CSdlInformWindowHandle@@SA?AUtagPOINT@@H@Z
+00764c70	36	?Open@CSdlWindow@@QAE_NPBDJJJJK_N@Z
+00764c96	31	?LockSystem@CSdlWindow@@QAEXXZ
+00764cb8	26	?Close@CSdlWindow@@QAEXXZ
+00764cd4	33	?UnlockSystem@CSdlWindow@@QAEXXZ
+00764cf8	62	?GetDisplayIndex@CSdlInformWindowHandle@@SAHPAUSDL_Window@@@Z
+00764d38	69	?GetModeSet@PostProcessOptionManager@@QAEHW4PostEffectOption@PEO@@@Z
+00764d80	49	?GetInstance@PostProcessOptionManager@@SAPAV1@XZ
+00764db4	37	?GetInstance@GammaManager@@SAPAV1@XZ
+00764ddc	44	?SetGammaBrightness@GammaManager@@QAE_NMM@Z
+00764e0a	64	?DirectDrawCreateExPort@@YGJPAU_GUID@@PAPAXABU1@PAUIUnknown@@@Z
+00764e4c	46	?ResizeWindowToFit@CSdlWindowHandle@@QBEXHH@Z
+00764e7c	33	?g_frame_index@DX7DebugHelp@@3IA
+00764ea0	30	?g_BltIndex@DX7DebugHelp@@3HA
+00764ec0	40	?WriteLogLineToFileA@GaLogger@@YAXPBD@Z
+00764eea	43	?GetInstance@DisplayModeManager@@SAPAV1@XZ
+00764f18	49	?IsFullscreenCurrent@DisplayModeManager@@QAE_NXZ
+00764f4c	27	?g_pPlayer@@3PAVCPlayer@@A
+00764f6a	29	?OpenURL@CPlayer@@QAEJPB_W@Z
+00764f8a	30	?HandleEvent@CPlayer@@QAEJI@Z
+00764faa	25	?Repaint@CPlayer@@QAEJXZ
+00764fc6	22	?Stop@CPlayer@@QAEJXZ
+00764fde	26	?Shutdown@CPlayer@@QAEJXZ
+00764ffa	50	?CreateInstance@CPlayer@@SAJPAUHWND__@@0PAPAV1@@Z
+0076502e	48	?GetInstance@ScreenResolutionManager@@SAPAV1@XZ
+00765060	35	?Update@DisplayModeManager@@QAEXXZ
+00765086	36	?Update@DisplayIndexManager@@QAEXXZ
+007650ac	65	?Update@PostProcessOptionManager@@QAEXW4PostEffectOption@PEO@@@Z
+007650f0	42	?GetCurrentSet@DisplayModeManager@@QAEHXZ
+0076511c	38	?Changed@DisplayIndexManager@@QAE_NXZ
+00765144	51	?GetCurrentInCycle@ScreenResolutionManager@@QAEHXZ
+0076517a	59	?GetIndexedResolution@ScreenResolutionManager@@QAEXHAAI0@Z
+007651b8	65	?ValidateDesiredResolution@ScreenResolutionManager@@QAEXHAAI0H@Z
+007651fc	32	?DxResourcesRecreate@@YAXHHHH@Z
+0076521e	64	?ReconstructAfterEnumeration@ScreenResolutionManager@@QAEXIIH@Z
+00765260	37	?Resolve@DisplayIndexManager@@QAEXXZ
+00765288	40	?Update@ScreenResolutionManager@@QAEXXZ
+007652b2	42	?Changed@ScreenResolutionManager@@QAE_NXZ
+007652de	37	?Changed@DisplayModeManager@@QAE_NXZ
+00765306	67	?Changed@PostProcessOptionManager@@QAE_NW4PostEffectOption@PEO@@@Z
+0076534c	54	?EnableAntiAliasing@ScreenResolutionManager@@QAEX_N@Z
+00765384	44	?GetCurrent@ScreenResolutionManager@@QAEHXZ
+007653b2	52	?FindAndSetIndex@ScreenResolutionManager@@QAEHHHH@Z
+007653e8	41	?Resolve@ScreenResolutionManager@@QAEXXZ
+00765414	36	?Resolve@DisplayModeManager@@QAEXXZ
+0076543a	66	?Resolve@PostProcessOptionManager@@QAEXW4PostEffectOption@PEO@@@Z
+0076547e	31	?Init@SoloudAudioPlayer@@SAXXZ
+007654a0	33	?Deinit@SoloudAudioPlayer@@SAXXZ
+007654c4	43	?GetInstance@AchievementManager@@SAPAV1@XZ
+007654f2	57	?Store@AchievementManager@@QAEXW4AchID@Achievements@@H@Z
+0076552e	23	?GetVKScanCode@@YAGG@Z
+00765548	35	?Revert@DisplayModeManager@@QAEXXZ
+0076556e	40	?Revert@ScreenResolutionManager@@QAEXXZ
+00765598	65	?Revert@PostProcessOptionManager@@QAEXW4PostEffectOption@PEO@@@Z
+007655dc	70	?SetNextMode@PostProcessOptionManager@@QAEXW4PostEffectOption@PEO@@@Z
+00765624	40	?SetNextMode@DisplayModeManager@@QAEXXZ
+0076564e	48	?GetNextInCycle@ScreenResolutionManager@@QAEHXZ
+00765680	48	?GetPrevInCycle@ScreenResolutionManager@@QAEHXZ
+007656b2	44	?GetNextInCycle@DisplayIndexManager@@QAEHXZ
+007656e0	72	?GetModeLine@PostProcessOptionManager@@QAEPADW4PostEffectOption@PEO@@@Z
+0076572a	38	?GetLine@DisplayModeManager@@QAEPBDXZ
+00765752	37	?Differ@DisplayIndexManager@@QAE_NXZ
+0076577a	36	?Differ@DisplayModeManager@@QAE_NXZ
+007657a0	42	?IsBorderless@DisplayModeManager@@QAE_NXZ
+007657cc	34	?ClearPtrWatcher@PStdUtils@@YAXXZ
+007657f0	38	?AddPtrToWatcher@PStdUtils@@YA_NPAX@Z
+00765818	48	?CheckTriggerName@AchievementManager@@QAEXPBD@Z
+0076584a	44	?g_pServiceManager@@3PAVIServicesManager@@A
+00765878	44	?g_SteamManager@@3VCSteamServicesManager@@A
+007658a6	25	?Init@CSdlManager@@SAXXZ
+007658c2	37	?SetMode@DisplayModeManager@@QAEXH@Z
+007658ea	63	?ValidateDisplayIndex@CSdlInformWindowHandle@@SAHHUtagRECT@@@Z
+0076592c	66	?GetDisplayDefaultResolution@ScreenResolutionManager@@QAEXHAAI0@Z
+00765970	56	?SetDesiredResolution@ScreenResolutionManager@@QAEXII@Z
+007659aa	72	?SetModeValue@PostProcessOptionManager@@QAEXW4PostEffectOption@PEO@@H@Z
+007659f4	63	?GetDisplayBounds@ScreenResolutionManager@@QAE?AUSDL_Rect@@H@Z
+00765a36	36	?GetInstance@TimeManager@@SAPAV1@XZ
+00765a5c	39	?GetFreeTimerIndex@TimeManager@@QAEHXZ
+00765a86	33	?SetTimer@TimeManager@@QAEXH_K@Z
+00765aaa	37	?IsAllowed@TimeManager@@QAE_NHPA_J@Z
+00765ad2	31	?GetActive@CSdlWindow@@QBE_NXZ
+00765af2	16	DigglesPort.dll
+00765b04	13	Tcl_MakeSafe
+00765b14	20	Tcl_GetIndexFromObj
+00765b2a	20	Tcl_CommandComplete
+00765b40	15	Tcl_NewListObj
+00765b52	17	Tcl_ListObjIndex
+00765b66	21	Tcl_GetStringFromObj
+00765b7e	11	TclFreeObj
+00765b8c	17	Tcl_SetAssocData
+00765ba0	19	Tcl_ListObjReplace
+00765bb6	21	Tcl_GetDoubleFromObj
+00765bce	14	Tcl_EvalObjEx
+00765bde	17	Tcl_CreateInterp
+00765bf2	16	Tcl_ResetResult
+00765c04	13	Tcl_Finalize
+00765c14	17	Tcl_NewStringObj
+00765c28	14	Tcl_NewIntObj
+00765c38	20	Tcl_GetStringResult
+00765c4e	21	Tcl_CreateObjCommand
+00765c66	18	Tcl_GetIntFromObj
+00765c7a	17	Tcl_GetAssocData
+00765c8e	18	Tcl_NewBooleanObj
+00765ca2	17	Tcl_GetObjResult
+00765cb6	17	Tcl_DeleteInterp
+00765cca	17	Tcl_NewDoubleObj
+00765cde	17	Tcl_SetObjResult
+00765cf2	15	Tcl_ObjSetVar2
+00765d04	22	Tcl_GetBooleanFromObj
+00765d1c	18	Tcl_ListObjLength
+00765d30	17	Tcl_DuplicateObj
+00765d44	15	Tcl_ObjGetVar2
+00765d56	25	Tcl_ListObjAppendElement
+00765d72	14	Tcl_UnsetVar2
+00765d82	18	Tcl_InitHashTable
+00765d96	19	Tcl_FirstHashEntry
+00765dac	18	Tcl_NextHashEntry
+00765dc0	20	Tcl_DeleteHashTable
+00765dd6	20	Tcl_DeleteHashEntry
+00765dea	10	tcl83.dll
+00765df6	15	RpcStringFreeA
+00765e08	14	UuidToStringA
+00765e18	11	UuidCreate
+00765e24	11	RPCRT4.dll
+00765e32	38	InitializeCriticalSectionAndSpinCount
+00765e5a	11	ResetEvent
+00765e68	22	WaitForSingleObjectEx
+00765e80	13	CreateEventW
+00765e90	17	GetModuleHandleW
+00765ea4	25	UnhandledExceptionFilter
+00765ec0	28	SetUnhandledExceptionFilter
+00765ede	17	TerminateProcess
+00765ef2	26	IsProcessorFeaturePresent
+00765f0e	18	IsDebuggerPresent
+00765f22	16	GetStartupInfoW
+00765f34	20	GetCurrentProcessId
+00765f4a	19	GetCurrentThreadId
+00765f60	20	InitializeSListHead
+00765f76	10	RtlUnwind
+00765f82	13	SetLastError
+00765f92	14	EncodePointer
+00765fa2	8	TlsFree
+00765fac	15	LoadLibraryExW
+00765fbe	19	GetModuleHandleExW
+00765fd4	12	DeleteFileW
+00765fe2	10	FindClose
+00765fee	17	FindFirstFileExW
+00766002	14	FindNextFileW
+00766012	32	SystemTimeToTzSpecificLocalTime
+00766034	21	FileTimeToSystemTime
+0076604c	23	GetTimeZoneInformation
+00766066	13	CreateThread
+00766076	11	ExitThread
+00766084	13	ResumeThread
+00766094	25	FreeLibraryAndExitThread
+007660b0	17	GetFullPathNameW
+007660c4	24	SetEnvironmentVariableW
+007660de	21	SetCurrentDirectoryW
+007660f6	21	GetCurrentDirectoryW
+0076610e	17	SetFilePointerEx
+00766122	12	GetFileType
+00766130	13	GetStdHandle
+00766140	15	GetConsoleMode
+00766152	13	ReadConsoleW
+00766162	13	GetConsoleCP
+00766172	9	HeapFree
+0076617e	10	HeapAlloc
+0076618a	15	GetDateFormatW
+0076619c	15	GetTimeFormatW
+007661ae	15	CompareStringW
+007661c0	13	LCMapStringW
+007661d0	15	GetLocaleInfoW
+007661e2	14	IsValidLocale
+007661f2	19	GetUserDefaultLCID
+00766208	19	EnumSystemLocalesW
+0076621e	14	GetFileSizeEx
+0076622e	10	GetCPInfo
+0076623a	12	HeapReAlloc
+00766248	13	SetStdHandle
+00766258	15	GetStringTypeW
+0076626a	16	IsValidCodePage
+0076627c	7	GetACP
+00766286	9	GetOEMCP
+00766292	16	GetCommandLineA
+007662a4	16	GetCommandLineW
+007662b6	23	GetEnvironmentStringsW
+007662d0	24	FreeEnvironmentStringsW
+007662ea	15	GetProcessHeap
+007662fc	21	GetFileAttributesExW
+00766314	19	SetFileAttributesW
+0076632a	9	HeapSize
+00766336	14	WriteConsoleW
+00766346	14	DecodePointer
+00767512	30	abcdefghijklmnopqrstuvwxyz
+00767532	30	ABCDEFGHIJKLMNOPQRSTUVWXYZ
+00767721	27	abcdefghijklmnopqrstuvwxyz
+00767741	27	ABCDEFGHIJKLMNOPQRSTUVWXYZ
+00768978	16	.?AVtype_info@@
+00768990	24	.?AVbad_exception@std@@
+007689b0	20	.?AVexception@std@@
+007689cc	12	.?AVCAct@@
+007689e0	24	.?AVKRefCountedObj@@
+00768a00	16	.?AVCActWalk@@
+00768a18	16	.?AVCSubWalk@@
+00768a30	20	.?AVCSubAction@@
+00768a4c	28	.?AVCActWalk_AutoRetry@@
+00768a70	16	.?AVCAct_Anim@@
+00768a88	20	.?AVCAct_Attack@@
+00768aa4	28	.?AVCAct_AttackBallistic@@
+00768ac8	20	.?AVCAct_Climb@@
+00768ae4	20	.?AVCAct_Crawl@@
+00768b00	16	.?AVCObserver@@
+00768b18	16	.?AVCAct_Door@@
+00768b30	20	.?AVCAct_Elevator@@
+00768b4c	16	.?AVCAct_Fall@@
+00768b64	16	.?AVCAct_Fly@@
+00768b7c	20	.?AVCAct_Ladder@@
+00768b98	12	.?AVCPath@@
+00768bac	16	.?AVCAct_Lore@@
+00768bc4	20	.?AVCAct_MetaWalk@@
+00768be0	16	.?AVCAct_Move@@
+00768bf8	20	.?AVCAct_Rotate@@
+00768c14	20	.?AVCAct_Slide@@
+00768c30	16	.?AVCAct_Wait@@
+00768c48	20	.?AVCAct_WalkAnim@@
+00768c64	24	.?AVCAct_WalkFloor@@
+00768c84	24	.?AVCAct_WalkObject@@
+00768ca4	16	.?AVCWalkInfo@@
+00768cbc	24	.?AVCThread@Threads@@
+00768cdc	28	.?AVCCycleThread@Threads@@
+00768d00	16	.?AVCPolyFill@@
+00768d18	16	.?AVCTimeInc@@
+00768d30	20	.?AVUTF8Decoder@@
+00768d4c	28	.?AVCDXExecBuf@DirectX@@
+00768d70	40	.?AVCDXRenderJob@CDXExecBuf@DirectX@@
+00768da0	20	.?AVCVectorBuffer@@
+00768dbc	16	.?AVCAnimCtrl@@
+00768dd4	24	.?AVCModelRenderer@@
+00768df4	12	.?AVViWin@@
+00768e08	12	.?AVViEvt@@
+00768e1c	24	.?AVViWinMapEdit@GUI@@
+00768e3c	24	.?AVViWinObjProps@GUI@@
+00768e5c	24	.?AVViWinAutoPopup@@
+00768e7c	16	.?AVViWinBar@@
+00768e94	24	.?AVViWinScrollField@@
+00768eb4	20	.?AVViWinBigInfo@@
+00768ed0	20	.?AVViWinBMButton@@
+00768eec	28	.?AVViWinBMCountedButton@@
+00768f10	32	.?AVViWinBMPieCountedButton@@
+00768f38	24	.?AVViWinBoxLayout@@
+00768f58	16	.?AVViWinChat@@
+00768f70	28	.?AVViWinClickLayoutBox@@
+00768f94	24	.?AVViWinClickPicBox@@
+00768fb4	20	.?AVViWinClock@@
+00768fd0	24	.?AVViWinPushButton@@
+00768ff0	24	.?AVViWinTextButton@@
+00769010	24	.?AVViWinDecoLineH@@
+00769030	24	.?AVViWinDigButtons@@
+00769050	20	.?AVViWinDragBar@@
+0076906c	36	.?AVViWinFinderEntry@ViWinFinder@@
+00769098	20	.?AVViWinFinder@@
+007690b4	28	.?AVViWinFrameEmbossed@@
+007690d8	20	.?AVViWinFrame@@
+007690f4	20	.?AVViWinInfoOpts@@
+00769110	24	.?AVViWinInventory@@
+00769130	20	.?AVViWinLayout@@
+0076914c	32	.?AVViWinLayoutCC_EditName@@
+00769174	32	.?AVViWinLayoutCC_WorkClock@@
+0076919c	36	.?AVViWinLayoutCC_Attribrangebar@@
+007691c8	32	.?AVViWinLayoutCC_Attribbar@@
+007691f0	32	.?AVViWinLayoutCC_Healthbar@@
+00769218	32	.?AVViWinLayoutCustomControl@@
+00769240	20	.?AVViWinListCtrl@@
+0076925c	32	.?AVViWinNakedTextButton@GUI@@
+00769284	24	.?AVViWinNewsTicker@@
+007692a4	20	.?AVViWinObjJoin@@
+007692c0	24	.?AVViWinOverlayMsg@@
+007692e0	24	.?AVViWinPerformance@@
+00769300	24	.?AVViWinProduction@@
+00769320	24	.?AVViWinProperties@@
+00769340	24	.?AVViWinQuickHelp@@
+00769360	16	.?AVViWinRoot@@
+00769378	28	.?AVViWinScapeTexture@GUI@@
+0076939c	24	.?AVViWinScrollBar@@
+007693bc	40	.?AVViWinViewPort@ViWinScrollField@@
+007693ec	24	.?AVViWinSimpleFinder@@
+0076940c	20	.?AVViWinSlider@@
+00769428	20	.?AVViWinSmallMap@@
+00769444	24	.?AVViWinSpeechText@@
+00769464	28	.?AVViWinStartMenu@GUI@@
+00769488	40	.?AVVIWinTTBackground@ViWinTechTree@@
+007694b8	40	.?AVViWinTechTreeItem@ViWinTechTree@@
+007694e8	20	.?AVViWinTechTree@@
+00769504	20	.?AVViWinTextEdit@@
+00769520	24	.?AVViWinTextLabel@@
+00769540	20	.?AVViWinTextWin@@
+0076955c	16	.?AVKNetMsg@@
+00769574	24	.?AVKNetSessionMgr@@
+00769594	24	.?AVKNetMsgHandler@@
+007695b4	24	.?AVCNetGameHandler@@
+007695d4	24	.?AVCNetObjMsgHandler@@
+007695f4	16	.?AVCEvent@@
+0076960c	16	.?AVCObjMgr@@
+00769624	24	.?AVCTarget@CObserver@@
+00769644	12	.?AVCObj@@
+00769658	20	.?AVCObj_DigTask@@
+00769674	20	.?AVCObj_World@@
+00769690	20	.?AVCTclRootObj@@
+007696ac	24	.?AVCNetRpcMsgHandler@@
+007696cc	32	.?AVCGameRenderThread@Threads@@
+007696f4	28	.?AVCGameThread@Threads@@
+00cbf7e8	20	GroupIcon
+00cbf862	30	StringFileInfo
+00cbf886	18	040904b0
+00cbf89e	18	Comments
+00cbf8b6	24	CompanyName
+00cbf8d0	16	SEK-Ost
+00cbf8e6	32	FileDescription
+00cbf908	16	Diggles
+00cbf91e	24	FileVersion
+00cbf938	18	2.1.1.10
+00cbf952	26	InternalName
+00cbf96c	16	Diggles
+00cbf982	30	LegalCopyright
+00cbf9a0	34	Copyright © 2020
+00cbf9ca	32	LegalTrademarks
+00cbf9f2	34	OriginalFilename
+00cbfa14	24	Diggles.exe
+00cbfa32	26	PrivateBuild
+00cbfa52	24	ProductName
+00cbfa6c	32	SEK-Ost Diggles
+00cbfa92	30	ProductVersion
+00cbfab0	18	2.1.1.10
+00cbfaca	26	SpecialBuild
+00cbfaea	24	VarFileInfo
+00cbfb0a	24	Translation
+00cbfb28	382	<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<assembly xmlns='urn:schemas-microsoft-com:asm.v1' manifestVersion='1.0'>
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges>
+        <requestedExecutionLevel level='asInvoker' uiAccess='false' />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+</assembly>
+
+ffdfff50	16	00000000-0000-0000-0000-000000000000

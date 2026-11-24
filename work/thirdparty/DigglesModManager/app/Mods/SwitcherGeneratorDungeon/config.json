@@ -1,0 +1,18 @@
+{
+	"version" : "1.2",
+	"author" : "Abys, cech12",
+	
+	"name" :  {
+		"en" : "Switcher Generation Caves",
+		"de" : "Höhlengenerierung Umschalten"
+	},
+	"description" : {
+		"en" : "F1 - Switch cave generation on/off, change generated caves.",
+		"de" : "F1 - schalte die Höhlengenerierung ein/aus, verändere generierte Höhlen."
+	},
+	
+	"links" : {
+		"download" : "https://github.com/DigglesMods/SwitcherGeneratorDungeon/releases",
+		"wiki" : "https://github.com/DigglesMods/SwitcherGeneratorDungeon/wiki"
+	}
+}

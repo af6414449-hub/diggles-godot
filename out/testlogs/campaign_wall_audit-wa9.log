@@ -1,0 +1,32 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WALL_AUDIT region_rect=[P: (236, 34), S: (272, 50)] region_cells=859
+WALL_AUDIT region_free_cells=12741 region_free_rock_cells=5468
+WALL_AUDIT region_module_faces=193 ground_level=14.50
+WALL_AUDIT region_module_faces_sides=106 region_total_width=99.25
+WALL_AUDIT region_module_by_side x+=31 x-=52 y+=110 y-=0 in_x_const=83 in_y_const=110
+WALL_AUDIT region_module_face_width min=0.250 avg=0.514 max=1.000
+WALL_AUDIT region_module_face_height 0.5 count=5
+WALL_AUDIT region_module_face_height 1.0 count=20
+WALL_AUDIT region_module_face_height 1.5 count=50
+WALL_AUDIT region_module_face_height 2.0 count=118
+WALL_AUDIT region_island_edge_faces=0 region_island_edge_width=0.00
+WALL_AUDIT region_tall_faces=0 region_tall_faces_at_row_zero=0
+WALL_AUDIT region_module_uncovered_side_parts=8
+WALL_AUDIT chapter_export_border_faces=880
+WALL_AUDIT region_border_intervals_needed=0 region_closed_by_module=0 region_closed_by_export=0 region_closed_by_both=0 region_holes=0
+WALL_AUDIT region_void_border_needed=0 region_void_closed_by_module=0 region_void_closed_by_export=0 region_void_holes=0 region_void_max_height=0.00
+WALL_AUDIT region_export_horizontal=2363 region_export_vertical=551 region_export_ramps=2340 region_ramp_height_sum=2529.5
+WALL_AUDIT chapter_ramp_height 0.5 count=23568
+WALL_AUDIT chapter_ramp_height 1.0 count=13602
+WALL_AUDIT chapter_ramp_height 1.5 count=5341
+WALL_AUDIT chapter_ramp_height 2.0 count=4405
+WALL_AUDIT chapter_ramp_height 2.5 count=511
+WALL_AUDIT chapter_ramp_height 3.0 count=312
+WALL_AUDIT chapter_ramp_height 3.5 count=89
+WALL_AUDIT chapter_ramp_height 4.0 count=118
+WALL_AUDIT chapter_ramp_height 4.5 count=21
+WALL_AUDIT chapter_ramp_height 5.0 count=8
+WALL_AUDIT chapter_ramp_height 5.5 count=7
+WALL_AUDIT chapter_ramp_height 7.5 count=8
+WALL_AUDIT chapter_ramps_ge_1=24422 chapter_ramps_ge_2=5479 chapter_cells_with_ramps_ge_2=1708

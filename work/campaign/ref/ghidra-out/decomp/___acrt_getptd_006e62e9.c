@@ -1,0 +1,48 @@
+
+/* Library Function - Single Match
+    ___acrt_getptd
+   
+   Library: Visual Studio 2019 Release */
+
+uint ___acrt_getptd(void)
+
+{
+  DWORD dwErrCode;
+  __acrt_ptd *_Memory;
+  int iVar1;
+  uint uVar2;
+  
+  dwErrCode = GetLastError();
+  if ((DAT_00767214 == -1) ||
+     (_Memory = (__acrt_ptd *)___acrt_FlsGetValue_4(DAT_00767214), _Memory == (__acrt_ptd *)0x0)) {
+    iVar1 = ___acrt_FlsSetValue_8(DAT_00767214,0xffffffff);
+    if (iVar1 != 0) {
+      _Memory = (__acrt_ptd *)__calloc_base(1,0x364);
+      if (_Memory == (__acrt_ptd *)0x0) {
+        ___acrt_FlsSetValue_8(DAT_00767214,0);
+        _Memory = (__acrt_ptd *)0x0;
+      }
+      else {
+        iVar1 = ___acrt_FlsSetValue_8(DAT_00767214,_Memory);
+        if (iVar1 != 0) {
+          construct_ptd(_Memory,(__crt_locale_data **)&DAT_00769d78);
+          FID_conflict__free((void *)0x0);
+          goto LAB_006e638b;
+        }
+        ___acrt_FlsSetValue_8(DAT_00767214,0);
+      }
+      FID_conflict__free(_Memory);
+    }
+  }
+  else if (_Memory != (__acrt_ptd *)0xffffffff) goto LAB_006e638b;
+  _Memory = (__acrt_ptd *)0x0;
+LAB_006e638b:
+  SetLastError(dwErrCode);
+  uVar2 = -(uint)(_Memory != (__acrt_ptd *)0x0) & (uint)_Memory;
+  if (uVar2 == 0) {
+                    /* WARNING: Subroutine does not return */
+    _abort();
+  }
+  return uVar2;
+}
+

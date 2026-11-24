@@ -1,0 +1,16 @@
+ERROR: Can't create buffer of size: 3686400, error 0x887a0005.
+   at: buffer_create (drivers/d3d12/rendering_device_driver_d3d12.cpp:941)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/native_campaign_first_level.gd:308)
+ERROR: Condition "!tmp_buffer" is true. Returning: Vector<uint8_t>()
+   at: texture_get_data (servers/rendering/rendering_device.cpp:2727)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/native_campaign_first_level.gd:308)
+ERROR: Condition "data.is_empty()" is true. Returning: Ref<Image>()
+   at: texture_2d_get (servers/rendering/renderer_rd/storage_rd/texture_storage.cpp:1892)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/native_campaign_first_level.gd:308)
+SCRIPT ERROR: Cannot call method 'save_png' on a null value.
+   at: _process (res://scripts/native_campaign_first_level.gd:309)
+   GDScript backtrace (most recent call first):
+       [0] _process (res://scripts/native_campaign_first_level.gd:309)

@@ -1,0 +1,29 @@
+{
+  "schema": "native-fix-dig-fixtures-v1",
+  "evidence": "Independent instruction-level arithmetic for EXE 0x594E00; not a live game capture. Synthetic unlisted flags are explicitly known zero; height is a uniform source byte unless using source_cases.",
+  "exe_sha256": "58a01d3d80670a6042c66a82684397c98e39c503e00a6e2c2c511f338a30ed74",
+  "fixtures": [
+    {"id":"initial_bit3","flags":[[80,88,3]],"expected":[10,10.375,12],"seed":[80,88],"found":true,"floor":true},
+    {"id":"no_navigation_native_fallback","flags":[],"expected":[10,10.375,12],"seed":[80,88],"found":false,"floor":false},
+    {"id":"spiral_equal_cost_keeps_positive_x","flags":[[81,88,1],[80,89,1],[79,88,1],[80,87,1]],"expected":[10.125,10.375,12],"seed":[80,88],"found":true,"floor":false},
+    {"id":"strictly_closer_replaces_diagonal","flags":[[81,89,1],[79,88,1]],"expected":[9.875,10.375,12],"seed":[80,88],"found":true,"floor":false},
+    {"id":"down_probe_includes_offset7","worker":[10,10,4],"height":7,"flags":[[80,88,1],[80,95,2]],"expected":[10,11.25,8],"seed":[80,88],"found":true,"floor":true},
+    {"id":"down_probe_excludes_offset8","worker":[10,10,4],"height":7,"flags":[[80,88,1],[80,96,2]],"expected":[10,10.375,8],"seed":[80,88],"found":true,"floor":false},
+    {"id":"height_plus1_capped14_5","worker":[10,10,2],"height":15,"flags":[[80,88,3]],"expected":[10,10.375,14.5],"seed":[80,88],"found":true,"floor":true},
+    {"id":"preserve_larger_worker_depth","worker":[10,10,13],"height":2,"flags":[[80,88,3]],"expected":[10,10.375,13],"seed":[80,88],"found":true,"floor":true},
+    {"id":"worker_depth_also_capped","worker":[10,10,20],"height":1,"flags":[[80,88,3]],"expected":[10,10.375,14.5],"seed":[80,88],"found":true,"floor":true},
+    {"id":"distance_less_than1_uses_worker","target":[10.75,10,99],"flags":[[80,88,3]],"expected":[10,10.375,12],"seed":[80,88],"found":true,"floor":true},
+    {"id":"distance2_uses_unit_from_target","target":[12,10,99],"flags":[[88,88,3]],"expected":[11,10.375,12],"seed":[88,88],"found":true,"floor":true},
+    {"id":"diagonal_float32_seed","target":[12,12,99],"flags":[[90,98,3]],"expected":[11.25,11.625,12],"seed":[90,98],"found":true,"floor":true},
+    {"id":"half_nearest_even","worker":[10.0625,10.0625,12],"target":[10.0625,10.0625,99],"flags":[[80,88,3]],"expected":[10,10.375,12],"seed":[80,88],"found":true,"floor":true},
+    {"id":"half_ceil_explicit","rounding":"ceil","worker":[10.0625,10.0625,12],"target":[10.0625,10.0625,99],"flags":[[81,89,3]],"expected":[10.125,10.5,12],"seed":[81,89],"found":true,"floor":true},
+    {"id":"negative_half_nearest_even","bounds":[0,0,4,4],"worker":[-0.0625,-0.0625,0],"target":[-0.0625,-0.0625,99],"flags":[[0,8,3]],"expected":[0,0.375,5],"seed":[0,8],"found":true,"floor":true},
+    {"id":"negative_half_floor_and_cell_clamp","rounding":"floor","bounds":[0,0,4,4],"worker":[-0.0625,-0.0625,0],"target":[-0.0625,-0.0625,99],"flags":[[7,7,3]],"expected":[-0.125,0.25,5],"seed":[-1,7],"found":true,"floor":true},
+    {"id":"negative_half_truncate","rounding":"truncate","bounds":[0,0,4,4],"worker":[-0.0625,-0.0625,0],"target":[-0.0625,-0.0625,99],"flags":[[0,8,3]],"expected":[0,0.375,5],"seed":[0,8],"found":true,"floor":true},
+    {"id":"nonzero_world_origin","bounds":[100,200,44,24],"worker":[100,200,4],"target":[100,200,99],"flags":[[800,1608,3]],"expected":[100,200.375,5],"seed":[800,1608],"found":true,"floor":true}
+  ],
+  "source_cases": [
+    {"id":"PMP_initial_flag3_at_24_116","target":[3,13.5,99],"worker":[3,13.5,10],"seed":[24,116],"expected":[3,13.875,12],"height_sample":[24,111],"block":80,"height":11},
+    {"id":"PMP_initial_dig2_15","target":[2,15,13],"worker":[3,14.5,12],"seed":[23,124],"expected":[2.875,13.875,12],"height_sample":[23,111],"block":80,"height":11}
+  ]
+}

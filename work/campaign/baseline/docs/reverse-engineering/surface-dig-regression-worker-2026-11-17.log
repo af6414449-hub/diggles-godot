@@ -1,0 +1,43 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+NATIVE_CAVE_BRUSHES_READY count=4 anchor=[16.0, 32.0]
+NATIVE_CAVE_BRUSH brush=1 cells=38 bounds=[P: (11, 27), S: (9, 4)]
+NATIVE_CAVE_BRUSH brush=2 cells=58 bounds=[P: (9, 27), S: (13, 4)]
+NATIVE_CAVE_BRUSH brush=3 cells=136 bounds=[P: (7, 23), S: (17, 8)]
+NATIVE_CAVE_BRUSH brush=4 cells=128 bounds=[P: (9, 20), S: (13, 11)]
+NATIVE_CAVE_SKIN_READY size=1 meshes=2
+NATIVE_CAVE_SKIN_READY size=2 meshes=2
+NATIVE_CAVE_SKIN_READY size=3 meshes=2
+NATIVE_CAVE_SKIN_READY size=4 meshes=2
+NATIVE_TERRAIN_GRID_READY size=44x24 cells=943
+TERRAIN_BACKDROP_OPENING source_triangles=5619 omitted_back_faces=317 retained_triangles=5302
+NATIVE_L2M_READY cells=943 detail_textures=34 surfaces=45
+DWARF_DIG_CLIPS_READY clips=6 frames=42
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=456
+NATIVE_SCENE_LIGHTS_READY lights=9 horizons=1 attenuation=godot_adapter
+NATIVE_TERRAIN_READY cells=943 triangles=5619 packed_depth=8.0..14.5
+MULTIPLAYER_START_MODELS_READY placements=109 unique_models=54 original_textures=45
+SURFACE_DIG_REJECT point=(9, 3) reason=fixdig request={ "status": "ok", "point": (8.875, 4.375, 14.5), "seed_sample": (807, 712), "result_sample": (807, 707), "found_navigation": false, "found_floor": false, "rounding_mode": &"nearest_even", "world_point": (100.875, 88.375, 14.5), "cache_stage": "initial_pmp_cache", "object_overlays_applied": false }
+DWARF_SELECTED Zwerg_1106
+DWARF_DIG_ASSIGNED Zwerg_1106 point=(2, 15) stance=(3.0, -14.5, 12.0)
+DWARF_WALK_START Zwerg_1106 target=(3.0, -14.5, 12.0) nodes=13 speed=0.980
+DWARF_WALK_RESULT Zwerg_1106 result=4
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten point=(2, 15)
+DWARF_DIG_ENDED Zwerg_1106
+DWARF_DIG_ASSIGNED Zwerg_1106 point=(2, 15) stance=(3.0, -14.5, 12.0)
+DWARF_DIG_ANIMATION Zwerg_1106 clip=buddeln_unten point=(2, 15)
+NATIVE_WALKMAP_REBUILT samples=1074 changed=28 unknown=14
+TERRAIN_BACKDROP_OPENING source_triangles=5661 omitted_back_faces=317 retained_triangles=5344
+NATIVE_L2M_READY cells=943 detail_textures=29 surfaces=12
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=470
+NATIVE_TERRAIN_STRIKE point=(2, 15) revision=1 height=11 variants=4
+DWARF_DIG_CALLBACK Zwerg_1106 point=(2, 15) accepted=true
+DWARF_DIG_QUEUE_STOP Zwerg_1106 reason=no_candidate retry=1
+DWARF_DIG_ENDED Zwerg_1106
+NATIVE_WALKMAP_REBUILT samples=992 changed=0 unknown=110
+TERRAIN_BACKDROP_OPENING source_triangles=5727 omitted_back_faces=317 retained_triangles=5410
+NATIVE_L2M_READY cells=943 detail_textures=30 surfaces=12
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=470
+NATIVE_TERRAIN_STRIKE point=(9, 3) revision=2 height=11 variants=4
+NATIVE_TERRAIN_PHYSICS before=(9.01, -3.01, 15.0) after=(9.01, -3.01, 11.0)
+NATIVE_DWARF_DIG_SELF_TEST_OK assertions=195 callbacks=1 worker_strikes=1 fixture_strikes=1

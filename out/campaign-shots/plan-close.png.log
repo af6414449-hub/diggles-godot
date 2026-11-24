@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.13596 Core Profile Forward-Compatible Context 20.10.44 27.20.11044.7 - Compatibility - Using Device: ATI Technologies Inc. - AMD Radeon(TM) Vega 8 Graphics
+
+CAMPAIGN_FIRST_LEVEL_READY seed=0 cells=3447 templates=14 placements=14 objects=277 dwarfs=5 deleted_wuker=6 surfaces=209 walls=64 ground=183 triangles=57023
+CAMPAIGN_CHAPTER_SOURCE Campaign.tcl:22-191 first_level seed=0 map=512x640 view={ "x": 246.7, "y": 28.8, "zoom": 1.478, "rx": -0.29, "ry": 0.05 }
+CAMPAIGN_CAPTURE_READY path=C:\Users\frant\OneDrive\Документы\MiniMax\Diggles\out\campaign-shots\plan-close.png error=0 size=(1280, 720)

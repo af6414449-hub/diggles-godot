@@ -1,0 +1,126 @@
+ERROR: Condition "array.size() != p_vertex_array_len" is true. Returning: ERR_INVALID_PARAMETER
+   at: _surface_set_data (servers/rendering/rendering_server.cpp:617)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Invalid array format for surface.
+   at: mesh_create_surface_data_from_arrays (servers/rendering/rendering_server.cpp:1315)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Condition "err != OK" is true.
+   at: add_surface_from_arrays (scene/resources/mesh.cpp:1827)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Condition "array.size() != p_vertex_array_len" is true. Returning: ERR_INVALID_PARAMETER
+   at: _surface_set_data (servers/rendering/rendering_server.cpp:617)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Invalid array format for surface.
+   at: mesh_create_surface_data_from_arrays (servers/rendering/rendering_server.cpp:1315)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Condition "err != OK" is true.
+   at: add_surface_from_arrays (scene/resources/mesh.cpp:1827)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Condition "array.size() != p_vertex_array_len" is true. Returning: ERR_INVALID_PARAMETER
+   at: _surface_set_data (servers/rendering/rendering_server.cpp:617)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Invalid array format for surface.
+   at: mesh_create_surface_data_from_arrays (servers/rendering/rendering_server.cpp:1315)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Condition "err != OK" is true.
+   at: add_surface_from_arrays (scene/resources/mesh.cpp:1827)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Condition "array.size() != p_vertex_array_len" is true. Returning: ERR_INVALID_PARAMETER
+   at: _surface_set_data (servers/rendering/rendering_server.cpp:617)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Invalid array format for surface.
+   at: mesh_create_surface_data_from_arrays (servers/rendering/rendering_server.cpp:1315)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Condition "err != OK" is true.
+   at: add_surface_from_arrays (scene/resources/mesh.cpp:1827)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Condition "array.size() != p_vertex_array_len" is true. Returning: ERR_INVALID_PARAMETER
+   at: _surface_set_data (servers/rendering/rendering_server.cpp:617)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Invalid array format for surface.
+   at: mesh_create_surface_data_from_arrays (servers/rendering/rendering_server.cpp:1315)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Condition "err != OK" is true.
+   at: add_surface_from_arrays (scene/resources/mesh.cpp:1827)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Condition "array.size() != p_vertex_array_len" is true. Returning: ERR_INVALID_PARAMETER
+   at: _surface_set_data (servers/rendering/rendering_server.cpp:617)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Invalid array format for surface.
+   at: mesh_create_surface_data_from_arrays (servers/rendering/rendering_server.cpp:1315)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)
+ERROR: Condition "err != OK" is true.
+   at: add_surface_from_arrays (scene/resources/mesh.cpp:1827)
+   GDScript backtrace (most recent call first):
+       [0] _make_ring (res://scripts/native_campaign_backdrop.gd:227)
+       [1] build (res://scripts/native_campaign_backdrop.gd:175)
+       [2] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:1368)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:269)

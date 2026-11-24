@@ -1,0 +1,23 @@
+{
+  "scene_path": "scenes/terrain_reference.tscn",
+  "viewport_size": {"width": 1280, "height": 720},
+  "settle_frames": 4,
+  "steps": [
+    {
+      "type": "ui_report",
+      "label": "interaction_hud",
+      "fail_on": ["zero_size", "offscreen"]
+    }
+  ],
+  "assertions": [
+    {
+      "assertion": "node_exists",
+      "node_path": "HUDLayer/Status"
+    },
+    {
+      "assertion": "visible",
+      "node_path": "HUDLayer/Status",
+      "expected": true
+    }
+  ]
+}

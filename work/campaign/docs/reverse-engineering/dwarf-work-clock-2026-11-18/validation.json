@@ -1,0 +1,190 @@
+{
+  "scenarios": 19,
+  "counted_assertions": 933,
+  "count_note": "Native scene profile is an additional pass without a numeric assertion counter.",
+  "tests": [
+    {
+      "test": "native_dwarf_life",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_DWARF_LIFE_SELF_TEST checks=194 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_native_dwarf_life.log"
+    },
+    {
+      "test": "dwarf_life_runtime",
+      "exit_code": 0,
+      "markers": [
+        "DWARF_LIFE_RUNTIME_SELF_TEST checks=27 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_dwarf_life_runtime.log"
+    },
+    {
+      "test": "native_actor_tasks",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_ACTOR_TASKS_SELF_TEST checks=76 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_native_actor_tasks.log"
+    },
+    {
+      "test": "dwarf_task_runtime",
+      "exit_code": 0,
+      "markers": [
+        "DWARF_TASK_RUNTIME_SELF_TEST checks=39 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_dwarf_task_runtime.log"
+    },
+    {
+      "test": "dwarf_parallel_work",
+      "exit_code": 0,
+      "markers": [
+        "DWARF_PARALLEL_WORK_SELF_TEST_OK assertions=21 workers=2 independent_walkers=3 mutations=2"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_dwarf_parallel_work.log"
+    },
+    {
+      "test": "native_dwarf_dig",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_DWARF_DIG_SELF_TEST_OK assertions=219 callbacks=1 worker_strikes=1 fixture_strikes=1"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_native_dwarf_dig.log"
+    },
+    {
+      "test": "manual_dig_region",
+      "exit_code": 0,
+      "markers": [
+        "MANUAL_DIG_REGION_SELF_TEST_OK assertions=27"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_manual_dig_region.log"
+    },
+    {
+      "test": "movement_feedback",
+      "exit_code": 0,
+      "markers": [
+        "MOVEMENT_FEEDBACK_SELF_TEST_OK assertions=20"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_movement_feedback.log"
+    },
+    {
+      "test": "native_surface_walk",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_SURFACE_WALK_SELF_TEST_OK assertions=45 trips=2 floors=2 wall_idle=ok"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_native_surface_walk.log"
+    },
+    {
+      "test": "native_surface_dig",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_SURFACE_DIG_SELF_TEST_OK assertions=22 assignments=1 wall_mutations=2"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_native_surface_dig.log"
+    },
+    {
+      "test": "wall_branch_continuation",
+      "exit_code": 0,
+      "markers": [
+        "WALL_BRANCH_CONTINUATION_SELF_TEST checks=16 failures=0 mutations=12 max_step=0.085717"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_wall_branch_continuation.log"
+    },
+    {
+      "test": "native_dig_queue",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_DIG_QUEUE_SELF_TEST_OK assertions=31 assignments=1 callbacks=3 mutations=3"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_native_dig_queue.log"
+    },
+    {
+      "test": "excavated_walk",
+      "exit_code": 0,
+      "markers": [
+        "EXCAVATED_WALK_SELF_TEST_OK assertions=39 mutations=4 new_floor=16.5 original_floor=14.5"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_excavated_walk.log"
+    },
+    {
+      "test": "feedback_visual",
+      "exit_code": 0,
+      "markers": [
+        "FEEDBACK_VISUAL_SELF_TEST checks=13 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_feedback_visual.log"
+    },
+    {
+      "test": "gesture",
+      "exit_code": 0,
+      "markers": [
+        "INTERACTION_SELF_TEST_OK assertions=55"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_gesture.log"
+    },
+    {
+      "test": "gesture_multiplayer",
+      "exit_code": 0,
+      "markers": [
+        "INTERACTION_SELF_TEST_OK assertions=37"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_gesture_multiplayer.log"
+    },
+    {
+      "test": "native_scene_profile",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_PROFILE_SELF_TEST_OK lights=9 editor_markers=0 retained_triangles=5302 source_triangles=5619 terrain_surfaces=168"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_native_scene_profile.log"
+    },
+    {
+      "test": "native_stance_integration",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_STANCE_INTEGRATION_SELF_TEST_OK assertions=19 total_mutations=4"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_native_stance_integration.log"
+    },
+    {
+      "test": "automatic_torch_runtime",
+      "exit_code": 0,
+      "markers": [
+        "AUTOMATIC_TORCH_RUNTIME_SELF_TEST checks=33 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_work_clock_automatic_torch_runtime.log"
+    }
+  ],
+  "source_check": "python tools/export_dwarf_life_contract.py --check",
+  "profile_sha256": "dae16bbe81bae0e77e3c62e515353fb742a0899b03d8815cf7f45a518c62e9b7",
+  "needs_oracle_cases": 15,
+  "shift_oracle_cases": 20,
+  "exe_spans": 9,
+  "minimax": {
+    "path": "C:\\Users\\frant\\.minimax\\sessions\\mvs_e213cb8b6788404489ad3b0b5c39827f\\workspace\\Diggles-mcode\\work\\godot\\scripts\\native_dwarf_utility.gd",
+    "sha256": "e7517b06f93b5a4f7196736d91e7782316097b5d9b5fed98c8bfe1ff3c8caed7",
+    "read_only": true
+  },
+  "apk_rebuilt": false,
+  "new_gpu_acceptance": false
+}

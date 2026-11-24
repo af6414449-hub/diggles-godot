@@ -1,0 +1,62 @@
+[
+ {
+  "file": "cave0.tga",
+  "bytes": 4140,
+  "sha256": "efb7499a0772ca8373655c04085bd2182e9bca5eba8eb5da9f13d1e42e756ce6",
+  "size": [
+   32,
+   32
+  ],
+  "quantised_levels": [
+   1,
+   3,
+   4
+  ],
+  "formula": "p[i] = (p[i] + 0x20) >> 6"
+ },
+ {
+  "file": "cave1.tga",
+  "bytes": 4140,
+  "sha256": "f9fc40d1e6453bc5521de6d7eecd629dc0247371683a5e197d4f4ece6b43ca71",
+  "size": [
+   32,
+   32
+  ],
+  "quantised_levels": [
+   0,
+   3,
+   4
+  ],
+  "formula": "p[i] = (p[i] + 0x20) >> 6"
+ },
+ {
+  "file": "cave2.tga",
+  "bytes": 4140,
+  "sha256": "f51edfedc7c036ed227c33d9a2b4be4f3cc341ea43f569cb078a430398f64928",
+  "size": [
+   32,
+   32
+  ],
+  "quantised_levels": [
+   0,
+   3,
+   4
+  ],
+  "formula": "p[i] = (p[i] + 0x20) >> 6"
+ },
+ {
+  "file": "cave3.tga",
+  "bytes": 4140,
+  "sha256": "c2d8d9b745ce227aa1699e10db1e0654be984b35db39451be5501245e58eff65",
+  "size": [
+   32,
+   32
+  ],
+  "quantised_levels": [
+   0,
+   3,
+   4
+  ],
+  "formula": "p[i] = (p[i] + 0x20) >> 6"
+ }
+]

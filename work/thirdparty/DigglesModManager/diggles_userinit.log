@@ -1,0 +1,5 @@
+userinit.tcl loaded
+perfoptions simplecontrol 0 -> ok
+minimalrun = 0
+keybind current = {W dig_cam_north} {A dig_cam_west} {S dig_cam_south} {D dig_cam_east} {{I down} dig_cam_north} {{J down} dig_cam_west} {{K down} dig_cam_south} {{L down} dig_cam_east} {P dig_speed_8} {O dig_speed_1}
+done

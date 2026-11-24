@@ -1,0 +1,5 @@
+SCRIPT ERROR: Invalid type in function 'terrain_channels (via call)' in base 'RefCounted (NativeCampaignProfile)'. Cannot convert argument 4 from Vector3 to Array.
+   at: _build_geometry (res://scripts/native_campaign_first_level.gd:405)
+   GDScript backtrace (most recent call first):
+       [0] _build_geometry (res://scripts/native_campaign_first_level.gd:405)
+       [1] _ready (res://scripts/native_campaign_first_level.gd:249)

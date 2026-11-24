@@ -1,0 +1,47 @@
+== nofog userinit loaded ==
+patchlevel=8.6.12
+hook map: ok
+hook sm_create_map: ok
+hook show_loading: ok
+hook load_done: ok
+hook reset_map: ok
+hook sm_map_set: ok
+hook sm_map_get: ok
+hook sm_set_temp: ok
+hook sm_set_digcount: ok
+hook sm_scan: ok
+hook sm_log: ok
+hook sm_get_event: ok
+hook sm_set_event: ok
+hook sm_add_event: ok
+hook sm_reset: ok
+hook obj_query: ok
+hook timer_event: ok
+hook gametime: ok
+hook get_local_player: ok
+hook gettime: ok
+hook playerinfo: ok
+hook send_trigger: ok
+hook newsticker: ok
+hook obj_list: ok
+hook load_info: ok
+hook gameisloading: ok
+hook set_ingame_loading: ok
+hook template_set: ok
+hook autoloadlevel: ok
+hook gui_new_game: ok
+hook show_maped: ok
+backup heartbeat: after 3000 started
+view logger: after 250 started
+== end ==
+map create: set_fow_begin ok  n=1  map=512x512
+HOOK obj_query: {0 {-class Zwerg -owner 1} -limit 1}
+map create after: probe: min fow(owner 0)=1
+sm_create_map: set_fow_begin ok  n=2  map=512x512
+sm_create_map after: probe: min fow(owner 0)=1
+reset_map: set_fow_begin ok  n=3  map=512x512
+reset_map after: probe: min fow(owner 0)=1
+map create: set_fow_begin ok  n=4  map=512x512
+map create after: probe: min fow(owner 0)=1
+HOOK load_info: {{Classes done}}
+HOOK sm_map_set: 1

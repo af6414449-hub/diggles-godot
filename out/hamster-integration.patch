@@ -1,0 +1,4710 @@
+diff --git a/scripts/native_tasklist.gd b/scripts/native_tasklist.gd
+--- a/scripts/native_tasklist.gd
++++ b/scripts/native_tasklist.gd
+@@ -38,3 +38,40 @@
+ 
+ func find(command: String) -> int:
+ 	return _commands.find(command)
++
++
++## Compatibility names for the hamster actor (hamster.tcl tasklist).
++##
++## The original Tcl queue used the names tasklist_cnt, tasklist_rem,
++## tasklist_list, tasklist_get and the original states drained it with
++## cnt > 0 -> get 0 -> rem 0. The live project spells the same operations
++## count(), remove(index), commands() and get_command(index).
++##
++## Both spellings now live side by side. Nothing existing changes: the queue
++## of the dwarves keeps using count() and remove(0), the hamster actor calls
++## these names dynamically with _queue.call("cnt") and friends.
++func cnt() -> int:
++	return _commands.size()
++
++
++## Remove the command at an index (tasklist_rem) and return it.
++##
++## Out of range returns "" and removes nothing, same as remove(index).
++func rem(index: int) -> String:
++	return remove(index)
++
++
++## All commands in order (tasklist_list).
++func list() -> Array[String]:
++	return _commands.duplicate()
++
++
++## Pop the first command, or "" when the queue is empty (tasklist_get 0 +
++## tasklist_rem 0).
++func pop_front() -> String:
++	return remove(0)
++
++
++## True when the actor has queued commands.
++func has_pending() -> bool:
++	return not _commands.is_empty()
+
+diff --git a/scripts/multiplayer_test.gd b/scripts/multiplayer_test.gd
+--- a/scripts/multiplayer_test.gd
++++ b/scripts/multiplayer_test.gd
+@@ -60,6 +60,14 @@
+ var native_flame_data: Dictionary = {}
+ var flame_emitters: Dictionary = {}
+ const WORLD_MODEL_LIGHT: Script = preload("res://scripts/native_world_model_light.gd")
++const WILD_HAMSTER: Script = preload("res://scripts/native_wild_hamster.gd")
++const LEVEL_GROUND := preload("res://scripts/native_level_ground.gd")
++var wild_hamsters: Array[Node3D] = []
++var wild_hamster_food: Array[Dictionary] = []
++# The ground of the level per height level. The navigation grid of the scene
++# covers the main floor only, the hamsters of the upper terrace need their own.
++var wild_hamster_ground: RefCounted = null
++var wild_hamster_grids: Dictionary = {}
+ @export var native_world_model_lighting: bool = true
+ var model_light_records: Array[Dictionary] = []
+ var model_light_horizon: Dictionary = {}
+@@ -314,6 +322,8 @@
+ 	yaw = camera_yaw_base
+ 	source_profile.use_native_diffuse = (native_terrain_lighting_preview or args.has("--native-terrain-lighting")) and not args.has("--legacy-terrain-lighting")
+ 	_build_geometry(data)
++	wild_hamster_ground = LEVEL_GROUND.new() as RefCounted
++	(wild_hamster_ground as RefCounted).call("load_terrain", data)
+ 	if args.has("--show-native-walkmap"):
+ 		_build_native_walkmap_overlay()
+ 	if show_cave_brush_preview:
+@@ -888,6 +898,12 @@
+ 		position_data = [float(position_data[0])+template_shift.x,
+ 			float(position_data[1])+template_shift.y,position_data[2]]
+ 		var rotation_data: Array = placement["rotation"]
++		if placement_class == "Hamster":
++			# The original level places the wild hamsters as living objects of
++			# the class hamster.tcl, not as scenery. They get the actor of that
++			# class and the original clips of the hamster.3db package.
++			_spawn_wild_hamster(placement, position_data, rotation_data)
++			continue
+ 		var instance_root: Node3D = Node3D.new()
+ 		instance_root.name = "%s_%03d" % [str(placement["class"]), int(placement["ordinal"])]
+ 		var game_to_godot: Basis = Basis(Vector3.RIGHT, Vector3.DOWN, Vector3.BACK)
+@@ -919,6 +935,10 @@
+ 				instance_root.add_child(mesh_instance)
+ 				default_visuals.append(mesh_instance)
+ 		scene_root.add_child(instance_root)
++		if placement_class == "Grillpilz":
++			# The second food of the hamster in hamster.tcl:319-344.
++			wild_hamster_food.append({"ref": instance_root.name,
++				"position": instance_root.position, "node": instance_root})
+ 		if native_world_model_lighting and ("kaserne" in placement_class or placement_class.begins_with("Dummy_Urw_")) \
+ 				and placement_class!="Dummy_Urw_sumpf":
+ 			_register_model_lighting(instance_root,default_visuals)
+@@ -941,6 +961,280 @@
+ 			dwarf_locomotion_visuals[instance_root] = {"default":default_visuals,
+ 				"sequences":sequence_visuals.duplicate(),"current":null,"animated":animated,"body_instances":[]}
+ 
++
++
++## Spawn one wild hamster of the original level.
++##
++## The placement comes from the multiplayer Tcl (the class list of the scene
++## manifest). The object itself is the class hamster.tcl: the actor of that
++## class plus the original clips of the hamster.3db package.
++func _spawn_wild_hamster(placement: Dictionary, position_data: Array, rotation_data: Array) -> void:
++	var hamster: Node3D = WILD_HAMSTER.new()
++	hamster.name = "%s_%03d" % [str(placement["class"]), int(placement["ordinal"])]
++	var game_to_godot: Basis = Basis(Vector3.RIGHT, Vector3.DOWN, Vector3.BACK)
++	var source_rotation: Basis = Basis(Vector3.UP, -float(rotation_data[1])) \
++		* Basis(Vector3.RIGHT, -float(rotation_data[0])) \
++		* Basis(Vector3.BACK, -float(rotation_data[2]))
++	var mapped_rotation: Basis = game_to_godot * source_rotation * game_to_godot.inverse()
++	var render_to_logical: Basis = Basis(Vector3.RIGHT, Vector3.UP, Vector3(0.0, 0.0, 1.0 / render_depth_scale))
++	hamster.transform = Transform3D(render_to_logical * mapped_rotation,
++		Vector3(float(position_data[0]), -float(position_data[1]), float(position_data[2])))
++	hamster.set_meta("native_class", str(placement["class"]))
++	hamster.set_meta("native_ordinal", int(placement["ordinal"]))
++	# The height of the placement is the level the hamster stands on: the main
++	# floor of the cave or the upper terrace.
++	var level := LEVEL_GROUND.level_of(-float(position_data[1]))
++	hamster.set_meta("native_ground_level", level)
++	scene_root.add_child(hamster)
++	wild_hamsters.append(hamster)
++	hamster.call("setup", _wild_hamster_host(level, _wild_hamster_initial_heading(hamster)))
++
++
++## The direction the model of the placement looks to.
++##
++## The model of the hamster walks along its local Z axis, so the heading is the
++## angle of that axis in the logical space of the scene.
++func _wild_hamster_initial_heading(hamster: Node3D) -> float:
++	var forward := Vector3(hamster.transform.basis.z.x, 0.0, hamster.transform.basis.z.z)
++	if forward.length_squared() < 0.000001:
++		return 0.0
++	return atan2(forward.x, forward.z)
++
++
++## The world of the wild hamsters.
++##
++## The hamster works in the logical space of the scene: the positions of the
++## dwarves, the food, the navigation path and the heading convention are the
++## ones of the project, so the ranges of the original (scan range four, escape
++## range two, search range six) are game units. The level is the height the
++## hamster stands on, the terrace has its own ground.
++func _wild_hamster_host(level: float, initial_heading: float = 0.0) -> Dictionary:
++	return {
++		"initial_heading": initial_heading,
++		"dwarf_positions": func() -> Array: return _wild_hamster_dwarves(),
++		"food_entries": func() -> Array: return wild_hamster_food,
++		"walk_path": func(from: Vector3, to: Vector3) -> Array: return _wild_hamster_path(from, to, level),
++		"free_spot": func(center: Vector3, radius: float, mindist: float, clip: Array) -> Variant:
++			return _wild_hamster_free_spot(center, radius, mindist, clip, level),
++		"apply_heading": func(node: Node3D, heading: float) -> void: _set_wild_hamster_heading(node, heading),
++		"depth_scale": func() -> float: return render_depth_scale,
++		"is_walkable": func(point: Vector3) -> bool: return _wild_hamster_is_walkable(point, level),
++		"delete_item": func(reference: String) -> void: _delete_wild_hamster_food(reference),
++		"object_position": func(reference: String) -> Variant:
++			return _wild_hamster_food_position(reference),
++	}
++
++
++## The dwarves of the scene in the logical space of the scene root.
++func _wild_hamster_dwarves() -> Array:
++	var positions: Array = []
++	for dwarf: Node3D in dwarf_nodes:
++		positions.append(dwarf.position)
++	return positions
++
++
++## The path of a wild hamster.
++##
++## The navigation grid of the scene covers the main floor only, so every level
++## gets its own grid: the floor of the level comes from the terrain, the
++## obstacles of the placements block the cells.
++func _wild_hamster_path(from: Vector3, to: Vector3, level: float) -> Array[Vector3]:
++	var entry: Dictionary = _wild_hamster_grid(level)
++	if entry.is_empty():
++		return []
++	var grid: AStarGrid2D = entry["grid"]
++	var origin: Vector2 = entry["origin"]
++	var start: Variant = _wild_hamster_nearest_id(grid, origin, from)
++	var target: Variant = _wild_hamster_nearest_id(grid, origin, to)
++	if not start is Vector2i or not target is Vector2i:
++		return []
++	var ids: Array[Vector2i] = grid.get_id_path(start, target, false)
++	var result: Array[Vector3] = []
++	for grid_id: Vector2i in ids:
++		result.append(Vector3(origin.x + float(grid_id.x) * NAVIGATION_CELL_SIZE,
++			from.y, origin.y + float(grid_id.y) * NAVIGATION_CELL_SIZE))
++	return result
++
++
++## The navigation grid of a level of the cave.
++##
++## The main floor uses the grid of the scene, the other levels get a grid of
++## their own: the floor of the level comes from the terrain, the obstacles of
++## the placements block the cells.
++func _wild_hamster_grid(level: float) -> Dictionary:
++	if absf(level + WALKABLE_FLOOR_Y) < 0.25:
++		if navigation_grid == null:
++			return {}
++		return {"grid": navigation_grid, "origin": Vector2(WALKABLE_FLOOR_MIN_X, WALKABLE_FLOOR_MIN_Z)}
++	if wild_hamster_grids.has(level):
++		return wild_hamster_grids[level]
++	if wild_hamster_ground == null:
++		return {}
++	var bounds: Rect2 = (wild_hamster_ground as RefCounted).call("level_bounds", level)
++	if bounds.size == Vector2.ZERO:
++		return {}
++	var origin := Vector2(floorf(bounds.position.x / NAVIGATION_CELL_SIZE) * NAVIGATION_CELL_SIZE,
++		floorf(bounds.position.y / NAVIGATION_CELL_SIZE) * NAVIGATION_CELL_SIZE)
++	var width: int = int(ceil((bounds.end.x - origin.x) / NAVIGATION_CELL_SIZE)) + 1
++	var depth: int = int(ceil((bounds.end.y - origin.y) / NAVIGATION_CELL_SIZE)) + 1
++	var grid := AStarGrid2D.new()
++	grid.region = Rect2i(Vector2i.ZERO, Vector2i(width, depth))
++	grid.cell_size = Vector2(NAVIGATION_CELL_SIZE, NAVIGATION_CELL_SIZE)
++	grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
++	grid.update()
++	var blocked_count: int = 0
++	for grid_z: int in range(depth):
++		for grid_x: int in range(width):
++			var point := Vector2(origin.x + float(grid_x) * NAVIGATION_CELL_SIZE,
++				origin.y + float(grid_z) * NAVIGATION_CELL_SIZE)
++			if not _wild_hamster_has_floor(point, level) or not _wild_hamster_body_clear(point, level):
++				grid.set_point_solid(Vector2i(grid_x, grid_z), true)
++				blocked_count += 1
++	var entry := {"grid": grid, "origin": origin}
++	wild_hamster_grids[level] = entry
++	print("WILD_HAMSTER_NAV_READY level=%.2f size=%dx%d blocked=%d" % [level, width, depth, blocked_count])
++	return entry
++
++
++## Is there floor of the level under the point?
++func _wild_hamster_has_floor(point: Vector2, level: float) -> bool:
++	if absf(level + WALKABLE_FLOOR_Y) < 0.25:
++		return _has_source_floor(point)
++	if wild_hamster_ground == null:
++		return false
++	return bool((wild_hamster_ground as RefCounted).call("floor_at", level, point))
++
++
++## Is the point free of the obstacles of the placements?
++##
++## The obstacles of the scene are the objects of the main floor, so they only
++## block the main level.
++func _wild_hamster_body_clear(point: Vector2, level: float) -> bool:
++	if absf(level + WALKABLE_FLOOR_Y) >= 0.25:
++		return true
++	for obstacle: Vector3 in navigation_obstacles:
++		if point.distance_to(Vector2(obstacle.x, obstacle.y)) <= obstacle.z + 0.28:
++			return false
++	return true
++
++
++## The cell of the grid that is the closest one that can be walked on.
++func _wild_hamster_nearest_id(grid: AStarGrid2D, origin: Vector2, point: Vector3) -> Variant:
++	var grid_id := Vector2i(
++		int(round((point.x - origin.x) / NAVIGATION_CELL_SIZE)),
++		int(round((point.z - origin.y) / NAVIGATION_CELL_SIZE)))
++	grid_id.x = clampi(grid_id.x, 0, grid.region.size.x - 1)
++	grid_id.y = clampi(grid_id.y, 0, grid.region.size.y - 1)
++	if not grid.is_point_solid(grid_id):
++		return grid_id
++	for radius: int in range(1, 7):
++		var best := Vector2i(-1, -1)
++		var best_distance: float = INF
++		for z_offset: int in range(-radius, radius + 1):
++			for x_offset: int in range(-radius, radius + 1):
++				if absi(x_offset) != radius and absi(z_offset) != radius:
++					continue
++				var candidate: Vector2i = grid_id + Vector2i(x_offset, z_offset)
++				if not grid.region.has_point(candidate) or grid.is_point_solid(candidate):
++					continue
++				var candidate_distance: float = Vector2(candidate).distance_to(Vector2(grid_id))
++				if candidate_distance < best_distance:
++					best = candidate
++					best_distance = candidate_distance
++		if best.x >= 0:
++			return best
++	return null
++
++
++## Is there ground of the level under the point?
++func _wild_hamster_is_walkable(point: Vector3, level: float) -> bool:
++	var entry: Dictionary = _wild_hamster_grid(level)
++	if entry.is_empty():
++		return false
++	var grid: AStarGrid2D = entry["grid"]
++	var origin: Vector2 = entry["origin"]
++	var grid_id := Vector2i(
++		int(round((point.x - origin.x) / NAVIGATION_CELL_SIZE)),
++		int(round((point.z - origin.y) / NAVIGATION_CELL_SIZE)))
++	if not grid.region.has_point(grid_id):
++		return false
++	return not grid.is_point_solid(grid_id)
++
++
++## get_place of the original (hamster.tcl:216).
++##
++## The hamster wants a free spot on the floor: the nearest walkable cell of
++## the navigation grid that is inside the circle, outside the clip boxes of
++## the dwarves and not closer than the minimum distance.
++func _wild_hamster_free_spot(center: Vector3, radius: float, mindist: float, clip: Array, level: float) -> Variant:
++	var entry: Dictionary = _wild_hamster_grid(level)
++	if entry.is_empty():
++		return null
++	var grid: AStarGrid2D = entry["grid"]
++	var origin: Vector2 = entry["origin"]
++	var center_id := Vector2i(
++		int(round((center.x - origin.x) / NAVIGATION_CELL_SIZE)),
++		int(round((center.z - origin.y) / NAVIGATION_CELL_SIZE)))
++	var span := maxi(1, int(ceil(radius / NAVIGATION_CELL_SIZE)))
++	var best: Variant = null
++	var best_distance := INF
++	for z_offset: int in range(-span, span + 1):
++		for x_offset: int in range(-span, span + 1):
++			var grid_id := center_id + Vector2i(x_offset, z_offset)
++			if not grid.region.has_point(grid_id) or grid.is_point_solid(grid_id):
++				continue
++			var point := Vector3(origin.x + float(grid_id.x) * NAVIGATION_CELL_SIZE,
++				center.y, origin.y + float(grid_id.y) * NAVIGATION_CELL_SIZE)
++			var distance := Vector2(point.x - center.x, point.z - center.z).length()
++			if distance > radius or distance < mindist:
++				continue
++			if _wild_hamster_inside_clip(point, clip):
++				continue
++			if distance < best_distance:
++				best = point
++				best_distance = distance
++	return best
++
++
++## The clip boxes of the original around the dwarves (hamster.tcl:204).
++func _wild_hamster_inside_clip(point: Vector3, clip: Array) -> bool:
++	for box: Dictionary in clip:
++		if point.x < float(box.get("min_x", 0.0)) or point.x > float(box.get("max_x", 0.0)):
++			continue
++		if point.z < float(box.get("min_z", 0.0)) or point.z > float(box.get("max_z", 0.0)):
++			continue
++		return true
++	return false
++
++
++## The heading of a wild hamster.
++##
++## The hamster is a child of the scene root, so it needs the same depth
++## packing compensation as the dwarves. Only the hamster that walks is turned,
++## the other ones keep their own direction.
++func _set_wild_hamster_heading(hamster: Node3D, heading: float) -> void:
++	if hamster == null:
++		return
++	var render_to_logical: Basis = Basis(Vector3.RIGHT, Vector3.UP,
++		Vector3(0.0, 0.0, 1.0 / render_depth_scale))
++	hamster.transform.basis = render_to_logical * Basis(Vector3.UP, heading)
++
++
++func _wild_hamster_food_position(reference: String) -> Variant:
++	for entry: Dictionary in wild_hamster_food:
++		if String(entry.get("ref", "")) == reference:
++			return entry.get("position", null)
++	return null
++
++
++func _delete_wild_hamster_food(reference: String) -> void:
++	for entry: Dictionary in wild_hamster_food:
++		if String(entry.get("ref", "")) != reference:
++			continue
++		var node: Variant = entry.get("node", null)
++		if node is Node:
++			(node as Node).queue_free()
++		wild_hamster_food.erase(entry)
+ 
+ 
+ func _navigation_obstacle_radius(placement_class: String) -> float:
+
+diff --git a/scripts/native_wild_hamster.gd b/scripts/native_wild_hamster.gd
+new file mode 100644
+--- /dev/null
++++ b/scripts/native_wild_hamster.gd
+--- /dev/null
++++ b/scripts/native_wild_hamster.gd
+@@ -0,0 +1,609 @@
++extends Node3D
++## Wild hamster in the game world.
++##
++## The original multiplayer level places four wild hamsters as ordinary objects
++## (the placement list in res://models/multi_start_010_models.json carries them
++## with the line numbers of the original Tcl: 141, 147, 231, 237). In the
++## original game those objects are not scenery: they are instances of the
++## class in hamster.tcl, they decide what to do and they walk around.
++##
++## This node is that object:
++##   - the control flow comes from native_hamster_actor.gd, the port of
++##     hamster.tcl (idle and task states, the wild activity table, the escape
++##     test, the feeding, the gnome sensor);
++##   - the pictures come from native_hamster_clips.gd, the 28 original clips
++##     of the hamster.3db package;
++##   - the world comes from the host scene: the dwarves, the food, the
++##     navigation grid and the heading convention of the project.
++##
++## Host adapters (the multiplayer scene supplies them):
++##   dwarf_positions  Callable() -> Array[Vector3]      local positions
++##   food_entries     Callable() -> Array[Dictionary]  {ref, position}
++##   walk_path        Callable(Vector3, Vector3) -> Array[Vector3]
++##   free_spot        Callable(Vector3, float, float, Array) -> Variant
++##   apply_heading    Callable(Node3D, float) -> void    the node and the heading
++##   depth_scale      Callable() -> float
++##   is_walkable      Callable(Vector3) -> bool          ground under the point
++##
++## The host may also pass "initial_heading", the direction the model looks to
++## when the hamster is placed.
++##
++## All positions are local to the host space, which is the logical game space:
++## the scan range of four and the escape range of two are game units.
++
++const Actor = preload("res://scripts/native_hamster_actor.gd")
++const Clips = preload("res://scripts/native_hamster_clips.gd")
++const Animations = preload("res://scripts/native_hamster_animations.gd")
++
++const CLASS_ID := "Hamster"
++const ANIMSET_WALK := "0"
++const ANIMSET_HOPPEL := "1"
++
++# Adapter values: the native walk action owns the speed and the frame rate in
++# the original game, the Tcl only names the animset.
++const WALK_SPEED := 1.6
++const HOPPEL_SPEED := 1.2
++const WALK_FRAME_FPS := 12.0
++
++# The turn of the original.
++#
++# The native walk action turns the object towards the direction of the path
++# before it walks and plays the turn clip of the animset while it turns
++# (hamster.tcl:48-51). The clip only shows the step of the turn, the rotation
++# of the body belongs to the engine, so the heading is rotated here while the
++# original clip plays. The class uses the same clip for the ninety degree and
++# for the hundred eighty degree turn.
++#
++# A turn of at least TURN_CLIP_MIN_ANGLE plays the clip, a smaller one is
++# only rotated. TURN_SPEED is the rate of the rotation without a clip: the
++# engine keeps that rate in its binary, it is not in the data of the game.
++const TURN_CLIP_MIN_ANGLE := 1.4
++const TURN_SPEED := 90.0
++const TURN_EPSILON := 0.05
++
++# How many directions the random path finder tries before it gives up, so the
++# hamster never walks into the void when the place is blocked.
++const FALLBACK_TRIES := 8
++
++# The original: a dwarf that wants to pick the hamster up calls
++# activate_gnomesensor on it (z_procs.tcl:473) and walks near the item with
++# walk_near_item $item 0.6 0.2 2 - the last number is the radius.
++const SENSOR_TRIGGER_DISTANCE := 2.0
++
++var actor: RefCounted = null
++
++var _host: Dictionary = {}
++var _body_root: Node3D = null
++var _body_instances: Array[MeshInstance3D] = []
++var _last_clip: String = ""
++var _last_frame: int = -1
++var _path: Array[Vector3] = []
++var _path_index: int = 0
++var _walk_state: String = ""
++var _walk_animset: String = ANIMSET_WALK
++var _walk_clip: String = ""
++var _walk_frame: int = 0
++var _walk_time: float = 0.0
++var _walk_speed: float = WALK_SPEED
++var _idle_time: float = 0.0
++var _last_delta: float = 0.0
++var _heading: float = 0.0
++var _turn_active: bool = false
++var _turn_delta: float = 0.0
++var _turn_to: float = 0.0
++var _turn_sign: float = 1.0
++var _turn_speed: float = 0.0
++var _turn_time: float = 0.0
++var _turn_frame: int = 0
++var _turn_clip: String = ""
++var _turn_blocks: bool = false
++
++
++## Start the hamster with the world adapters of the host scene.
++func setup(host: Dictionary = {}) -> void:
++	_host = host.duplicate()
++	_heading = float(_host.get("initial_heading", 0.0))
++	actor = Actor.new()
++	actor.call("setup", _build_adapters())
++	_body_root = Node3D.new()
++	_body_root.name = "HamsterBody"
++	add_child(_body_root)
++	set_process(true)
++
++
++## The world the hamster acts in.
++func _build_adapters() -> Dictionary:
++	return {
++		"actor_pos": func() -> Vector3: return position,
++		"query_dwarves": func(_range: float) -> Array: return _dwarf_positions(),
++		"query_food": func(search_range: float) -> Array: return _food_entries(search_range),
++		"is_contained": func() -> bool: return false,
++		"is_underwater": func() -> bool: return false,
++		"pick_place": func(request: Dictionary) -> Variant: return _pick_place(request),
++		"walk_action": func(params: Dictionary) -> bool: return _start_walk(params),
++		"walk_complete": func() -> bool: return _walk_complete(),
++		"play_clip": func(request: Dictionary) -> bool: return _play_clip(request),
++		"delete_item": func(reference: String) -> void: _delete_item(reference),
++		"object_position": func(reference: String) -> Variant: return _object_position(reference),
++		"random_int": func(low: int, high: int) -> int: return _random_int(low, high),
++		"random_float": func(low: float, high: float) -> float: return _random_float(low, high),
++		"now": func() -> float: return Time.get_ticks_msec() / 1000.0,
++	}
++
++
++func _process(delta: float) -> void:
++	_last_delta = maxf(0.0, delta)
++	if actor == null:
++		return
++	_check_gnome_sensor()
++	actor.call("tick", delta)
++	_sync_visual()
++
++
++## The gnome sensor of the original.
++##
++## A dwarf that comes close to the hamster and wants to take it activates the
++## sensor (z_procs.tcl:473). The sensor makes the hamster check for dwarves
++## every second for ten seconds, and that is what makes it run away.
++func _check_gnome_sensor() -> void:
++	if actor == null:
++		return
++	var distance := nearest_dwarf_distance(_dwarf_positions(), position)
++	if distance <= SENSOR_TRIGGER_DISTANCE:
++		actor.call("activate_gnomesensor")
++
++
++## The dwarves of the host scene.
++func _dwarf_positions() -> Array:
++	var provider: Variant = _host.get("dwarf_positions", null)
++	if not (provider is Callable):
++		return []
++	var result: Variant = (provider as Callable).call()
++	if not (result is Array):
++		return []
++	return result as Array
++
++
++## The edible objects of the host scene within the search range.
++func _food_entries(search_range: float) -> Array:
++	var provider: Variant = _host.get("food_entries", null)
++	if not (provider is Callable):
++		return []
++	var result: Variant = (provider as Callable).call()
++	if not (result is Array):
++		return []
++	var entries: Array = []
++	for entry: Dictionary in result as Array:
++		var item_position: Variant = entry.get("position", null)
++		if not (item_position is Vector3):
++			continue
++		if (item_position as Vector3).distance_to(position) > search_range:
++			continue
++		entries.append(entry)
++	return entries
++
++
++## get_place of the original (hamster.tcl:216 and :139-143).
++##
++## The escape asks for a free spot around the preferred escape point, the
++## random walk asks for a free spot around the hamster itself.
++func _pick_place(request: Dictionary) -> Variant:
++	var center: Variant = request.get("center", null)
++	if not (center is Vector3):
++		return null
++	var provider: Variant = _host.get("free_spot", null)
++	if not (provider is Callable):
++		return center
++	var radius := float(request.get("circle", 4.0))
++	var mindist := float(request.get("mindist", 0.0))
++	var clip: Array = request.get("clip", [])
++	return (provider as Callable).call(center as Vector3, radius, mindist, clip)
++
++
++## The walk action of the original (hamster.tcl:139-163).
++##
++## The native walk action picks the path and plays the animset of the walk.
++## Here the host scene provides the path and the animset gives the clips.
++func _start_walk(params: Dictionary) -> bool:
++	var target: Variant = params.get("target", null)
++	if not (target is Vector3):
++		var length := float(params.get("random_path", 4.0))
++		target = _pick_place({
++			"center": position,
++			"circle": length,
++			"mindist": 0.7,
++			"random": length,
++			"walldist": 1,
++		})
++		if not (target is Vector3):
++			# No free spot: the original falls back to the random path finder.
++			target = _fallback_target(length)
++		if not (target is Vector3):
++			# No ground to walk to: the walk does not start.
++			_walk_state = ""
++			_path.clear()
++			return false
++	_path = _walk_path(position, target as Vector3)
++	if _path.is_empty():
++		_path = [(target as Vector3)]
++	_path_index = 0
++	_walk_animset = String(params.get("animsets", ANIMSET_WALK))
++	_walk_speed = WALK_SPEED if _walk_animset == ANIMSET_WALK else HOPPEL_SPEED
++	_walk_state = "start"
++	_walk_time = 0.0
++	_walk_frame = 0
++	_walk_clip = walk_clip_for(_walk_animset, "start")
++	return true
++
++
++## The path of the host scene.
++func _walk_path(from: Vector3, to: Vector3) -> Array[Vector3]:
++	var provider: Variant = _host.get("walk_path", null)
++	if not (provider is Callable):
++		return []
++	var result: Variant = (provider as Callable).call(from, to)
++	if not (result is Array):
++		return []
++	var path: Array[Vector3] = []
++	for point: Vector3 in result as Array:
++		path.append(point)
++	return path
++
++
++## The random path finder of the original.
++##
++## The native walk action walks a random path of the given length when
++## get_place finds nothing. The direction is only taken when there is ground
++## under the end of the path, so the hamster never walks into the void.
++func _fallback_target(length: float) -> Variant:
++	for attempt: int in range(FALLBACK_TRIES):
++		var angle := randf() * TAU
++		var candidate := position + Vector3(cos(angle) * length, 0.0, sin(angle) * length)
++		if _is_walkable(candidate):
++			return candidate
++	return null
++
++
++## Is there ground under the point?
++##
++## The host knows the level the hamster stands on, the floor of the main level
++## and the floor of the upper terrace.
++func _is_walkable(point: Vector3) -> bool:
++	var provider: Variant = _host.get("is_walkable", null)
++	if not (provider is Callable):
++		return true
++	return bool((provider as Callable).call(point))
++
++
++## Advance the walk and report whether it is over.
++##
++## The original walk action plays start, loop and end of the animset while it
++## moves, so the hamster keeps its feet in the right animation.
++func _walk_complete() -> bool:
++	if _walk_state == "":
++		return true
++	if _turn_active:
++		# The original turns before it walks: the rotate action blocks the walk
++		# while the turn clip of the class plays.
++		_advance_turn(_last_delta)
++		if _turn_blocks:
++			return false
++	if _advance_walk_clip():
++		_walk_state = ""
++		_path.clear()
++		return true
++	if _walk_state == "start" or _walk_state == "loop":
++		_move_along_path()
++	return false
++
++
++## Move the hamster along the path and turn it into the direction of the walk.
++func _move_along_path() -> void:
++	if _path.is_empty() or _path_index >= _path.size():
++		return
++	var waypoint: Vector3 = _path[_path_index]
++	var current := Vector2(position.x, position.z)
++	var target := Vector2(waypoint.x, waypoint.z)
++	var direction := current.direction_to(target)
++	if direction.length_squared() > 0.0:
++		var wanted := heading_for_direction(direction, _depth_scale())
++		var delta := wrapf(wanted - _heading, -PI, PI)
++		if absf(delta) > TURN_EPSILON:
++			# The original turns first. A turn of ninety degrees or more plays
++			# the turn clip and blocks the walk, a smaller one is only rotated
++			# while the hamster goes on.
++			_start_turn(delta)
++			if _turn_blocks:
++				return
++	var next := current.move_toward(target, _walk_speed * _last_delta)
++	var step := Vector3(next.x, position.y, next.y)
++	if not _is_walkable(step) and _is_walkable(position):
++		# The ground ends here, the walk stops on the last ground.
++		_finish_walk()
++		return
++	position = step
++	if next.is_equal_approx(target):
++		_path_index += 1
++		if _path_index >= _path.size():
++			_finish_walk()
++
++
++## The walk is over, the end clip of the animset is played.
++func _finish_walk() -> void:
++	_walk_state = "end"
++	_walk_time = 0.0
++	_walk_frame = 0
++	_walk_clip = walk_clip_for(_walk_animset, "end")
++
++
++## Start the turn of the original (hamster.tcl:48-51).
++##
++## The walk action turns the object towards the direction of the path and plays
++## the turn clip of the animset while it turns. The hamster class uses the same
++## clip for the ninety degree and the hundred eighty degree turn.
++func _start_turn(delta: float) -> void:
++	_turn_active = true
++	_turn_delta = delta
++	_turn_to = wrapf(_heading + delta, -PI, PI)
++	_turn_sign = signf(delta)
++	_turn_time = 0.0
++	_turn_frame = 0
++	_turn_blocks = absf(delta) >= TURN_CLIP_MIN_ANGLE
++	_turn_clip = _turn_clip_for(delta) if _turn_blocks else ""
++	_turn_speed = absf(delta) / maxf(0.0001, _turn_duration(delta))
++
++
++## The turn clip of the class for the angle of the turn.
++##
++## The walk animset names the turn roles, the hop and the gallop animset have
++## none, so the class aliases are the fallback (hamster.tcl:6-9).
++func _turn_clip_for(delta: float) -> String:
++	var role := "turn_left_90"
++	if delta < 0.0:
++		role = "turn_right_90"
++	if absf(delta) >= PI:
++		role = "turn_left_180"
++		if delta < 0.0:
++			role = "turn_right_180"
++	var clip := Animations.get_animset_clip(CLASS_ID, _walk_animset, role)
++	if clip != "":
++		return clip
++	var alias := "turnleft"
++	if delta < 0.0:
++		alias = "turnright"
++	if absf(delta) >= PI:
++		alias = "turn180left"
++		if delta < 0.0:
++			alias = "turn180right"
++	return Animations.get_clip(CLASS_ID, alias)
++
++
++## How long the turn takes.
++##
++## With a turn clip the rotation lasts as long as the clip, without one it
++## lasts the time the angle needs at the turn rate of the adapter.
++func _turn_duration(delta: float) -> float:
++	if _turn_clip != "":
++		var frames := Clips.frame_count(_turn_clip)
++		if frames > 0:
++			return float(frames) / WALK_FRAME_FPS
++	return absf(delta) / deg_to_rad(TURN_SPEED)
++
++
++## Rotate the hamster while the turn clip plays.
++func _advance_turn(delta: float) -> void:
++	_turn_time += delta
++	if _turn_clip != "":
++		var frames := Clips.frame_count(_turn_clip)
++		if frames > 0:
++			_turn_frame = mini(int(floor(_turn_time * WALK_FRAME_FPS)), frames - 1)
++	var step := _turn_speed * delta
++	var remaining := absf(_turn_delta) - step
++	if remaining <= 0.0:
++		_heading = _turn_to
++		_turn_delta = 0.0
++		_turn_active = false
++	else:
++		_turn_delta = _turn_sign * remaining
++		_heading = wrapf(_heading + _turn_sign * step, -PI, PI)
++	_apply_heading(_heading)
++
++
++## Advance the clip of the walk animset.
++##
++## Returns true when the walk is over, which is the case when the end clip of
++## the animset has been played.
++func _advance_walk_clip() -> bool:
++	if _walk_state == "":
++		return true
++	var frames := Clips.frame_count(_walk_clip)
++	if frames <= 0:
++		return true
++	_walk_time += _last_delta
++	var requested := int(floor(_walk_time * WALK_FRAME_FPS))
++	if requested < frames:
++		_walk_frame = requested
++		return false
++	match _walk_state:
++		"start":
++			_walk_state = "loop"
++			_walk_clip = walk_clip_for(_walk_animset, "loop")
++			_walk_time = 0.0
++			_walk_frame = 0
++			return false
++		"loop":
++			_walk_frame = requested % frames
++			return false
++		_:
++			return true
++
++
++## Show the frame of the clip that is played.
++##
++## While the hamster walks, the walk animset decides the picture. Otherwise
++## the actor decides, and the idle picture of the original is the standby
++## animation (hamster.tcl:93).
++func _sync_visual() -> void:
++	if actor == null or _body_root == null:
++		return
++	var clip := ""
++	var frame := -1
++	if _turn_active and _turn_clip != "":
++		# While the hamster turns, the turn clip of the original is shown.
++		clip = _turn_clip
++		frame = _turn_frame
++	elif _walk_state != "":
++		clip = _walk_clip
++		frame = _walk_frame
++	else:
++		clip = String(actor.call("get_current_clip"))
++		frame = int(actor.call("get_current_frame"))
++		if clip == "":
++			clip = Animations.get_clip(CLASS_ID, "standstill")
++			_idle_time += _last_delta
++			var idle_frames := Clips.frame_count(clip)
++			if idle_frames > 0:
++				frame = int(floor(_idle_time * WALK_FRAME_FPS)) % idle_frames
++			else:
++				frame = -1
++	if clip == "" or frame < 0:
++		return
++	if clip == _last_clip and frame == _last_frame:
++		return
++	if clip != _last_clip:
++		print("WILD_HAMSTER %s clip=%s pos=%s" % [String(name), clip, str(position)])
++	_last_clip = clip
++	_last_frame = frame
++	var meshes := Clips.frame_meshes(clip, frame)
++	while _body_instances.size() < meshes.size():
++		var instance := MeshInstance3D.new()
++		_body_root.add_child(instance)
++		_body_instances.append(instance)
++	for index: int in range(_body_instances.size()):
++		var instance := _body_instances[index]
++		instance.visible = index < meshes.size()
++		if instance.visible:
++			instance.mesh = meshes[index]
++
++
++## The clip that is shown right now.
++##
++## While the hamster turns, the turn clip of the original decides the picture,
++## while it walks the walk animset does, otherwise the actor of the class does.
++##
++## A turn that is too small for the turn clip has no picture of its own: the
++## turn clip is only played from ninety degrees on, so the walk animset keeps
++## the picture during a small turn.
++func get_current_clip() -> String:
++	if _turn_active and _turn_clip != "":
++		return _turn_clip
++	if _walk_state != "":
++		return _walk_clip
++	if actor == null:
++		return ""
++	return String(actor.call("get_current_clip"))
++
++
++## The frame that is shown right now.
++func get_current_frame() -> int:
++	if _turn_active and _turn_clip != "":
++		return _turn_frame
++	if _walk_state != "":
++		return _walk_frame
++	if actor == null:
++		return -1
++	return int(actor.call("get_current_frame"))
++
++
++## The heading the hamster looks to.
++func get_heading() -> float:
++	return _heading
++
++
++## The host applies the heading of the hamster with the packing convention of
++## the scene.
++##
++## The node is passed on, so the host turns the hamster that walks and not all
++## of them at once.
++func _apply_heading(heading: float) -> void:
++	var provider: Variant = _host.get("apply_heading", null)
++	if provider is Callable:
++		(provider as Callable).call(self, heading)
++
++
++func _depth_scale() -> float:
++	var provider: Variant = _host.get("depth_scale", null)
++	if provider is Callable:
++		return float((provider as Callable).call())
++	return 1.0
++
++
++## The clip of the walk animset.
++##
++## animset 0 is the walk (laufen_*), animset 1 is the hop (hoppeln_*), the
++## third one is the gallop. This is the class scoped table of hamster.tcl.
++static func walk_clip_for(animset: String, part: String) -> String:
++	var role := "walk_loop"
++	match part:
++		"start":
++			role = "walk_start"
++		"end":
++			role = "walk_stop"
++	return Animations.get_animset_clip(CLASS_ID, animset, role)
++
++
++## The heading of the project for a direction on the ground.
++##
++## The multiplayer scene packs the depth by 0.5, so the heading of the scene
++## is the same one the dwarves use: atan2 of the direction with the depth
++## correction.
++static func heading_for_direction(direction: Vector2, depth_scale: float) -> float:
++	return atan2(direction.x, direction.y * depth_scale)
++
++
++## Distance to the closest dwarf.
++static func nearest_dwarf_distance(dwarves: Array, origin: Vector3) -> float:
++	var best := INF
++	for entry: Variant in dwarves:
++		var dwarf_position: Variant = entry
++		if not (dwarf_position is Vector3):
++			continue
++		var distance := Vector2(origin.x - (dwarf_position as Vector3).x,
++			origin.z - (dwarf_position as Vector3).z).length()
++		if distance < best:
++			best = distance
++	return best
++
++
++## Is the dwarf close enough to make the hamster run away?
++static func sensor_should_trigger(dwarf_distance: float) -> bool:
++	return dwarf_distance <= SENSOR_TRIGGER_DISTANCE
++
++
++func _play_clip(request: Dictionary) -> bool:
++	return String(request.get("clip", "")) != ""
++
++
++func _delete_item(reference: String) -> void:
++	var provider: Variant = _host.get("delete_item", null)
++	if provider is Callable:
++		(provider as Callable).call(reference)
++
++
++func _object_position(reference: String) -> Variant:
++	var provider: Variant = _host.get("object_position", null)
++	if provider is Callable:
++		return (provider as Callable).call(reference)
++	return null
++
++
++func _random_int(low: int, high: int) -> int:
++	if high < low:
++		return low
++	return randi_range(low, high)
++
++
++func _random_float(low: float, high: float) -> float:
++	if high < low:
++		return low
++	return randf_range(low, high)
+
+diff --git a/scripts/native_hamster_actor.gd b/scripts/native_hamster_actor.gd
+new file mode 100644
+--- /dev/null
++++ b/scripts/native_hamster_actor.gd
+--- /dev/null
++++ b/scripts/native_hamster_actor.gd
+@@ -0,0 +1,679 @@
++## Autonomous hamster actor: the original hamster.tcl control flow as a runtime.
++##
++## The hamster is a farm animal with its own state machine, its own queue and
++## its own animation set. This module is the executable form of that class:
++## it decides, queues, executes and plays, so a hamster in the game can act on
++## its own instead of being scripted.
++##
++## Sources (original install, data/Scripts/classes/characters/hamster.tcl):
++##   :2         def_class Hamster food material 0 {reproduces lives moves}
++##   :89-137    obj_init: tuning values, timers, scan speed
++##   :139-179   walk_random, hoppel_random, hoppel_pos, walk_pos, play_anim,
++##              loop_anim
++##   :181-237   test_escape, do_escape
++##   :239-262   wait_time, take_item
++##   :267-317   farm flags, paralysis flags
++##   :319-344   eat_check
++##   :346-369   evt_timer0_proc
++##   :371-428   state_idle_proc with both activity tables
++##   :430-438   state_task_proc
++##   :449-461   evt_timer_wakeup
++##   :465-472   the idle and task states
++##
++## Adapter contract (all optional unless stated):
++##   actor_pos        Callable() -> Vector3
++##   query_dwarves    Callable(float range) -> Array        (Vector3 positions)
++##   query_food       Callable(float range) -> Array        ({ref, position})
++##   query_farm       Callable(float range) -> Dictionary   ({ref, position})
++##   is_contained     Callable() -> bool
++##   is_underwater    Callable() -> bool
++##   pick_place       Callable(Dictionary) -> Variant       (get_place)
++##   walk_action      Callable(Dictionary) -> bool          (required to walk)
++##   walk_complete    Callable() -> bool                   (walk action finished)
++##   play_clip        Callable(Dictionary) -> bool          (host visual binding)
++##   delete_item      Callable(String) -> void
++##   object_position  Callable(String) -> Variant
++##   fix_position     Callable(Vector3) -> Variant
++##   random_int       Callable(int low, int high) -> int
++##   random_float     Callable(float low, float high) -> float
++##   now              Callable() -> float
++##   walk_result      Callable() -> int                    (get_walkresult)
++##   farm_actualize   Callable(Dictionary) -> void
++extends RefCounted
++
++const HamsterAi = preload("res://scripts/native_hamster_ai.gd")
++const HamsterAnimations = preload("res://scripts/native_hamster_animations.gd")
++const TaskList = preload("res://scripts/native_tasklist.gd")
++const Dispatcher = preload("res://scripts/native_command_dispatcher.gd")
++const Handlers = preload("res://scripts/native_command_handlers.gd")
++const SourceAction = preload("res://scripts/source_animation_action.gd")
++
++const CLASS_ID := "Hamster"
++const STATE_IDLE := "idle"
++const STATE_TASK := "task"
++const WALK_RESULT_CORNERED := 2
++const TAKE_ITEM_DISTANCE := 0.8
++
++var _adapters: Dictionary = {}
++var _queue: RefCounted = null
++var _dispatcher: RefCounted = null
++
++# --- original instance state (hamster.tcl:112-124) ---------------------------
++var _state: String = STATE_IDLE
++var _state_enabled: bool = true
++var _nutrition: int = 0
++var _last_activity: int = 0
++var _escape_pos: Variant = null
++var _escape_failed: bool = false
++var _rescan: bool = true
++var _gnomesensor: int = 0
++var _is_paralyzed: bool = false
++var _is_farmed: bool = false
++var _farm_pos: Vector3 = Vector3.ZERO
++var _farm_ref: String = ""
++var _scan_speed: String = "fast"
++var _wakeup_at: float = -1.0
++var _hitpoints: float = 0.02
++
++# --- runtime -----------------------------------------------------------------
++var _time: float = 0.0
++var _timer_accumulator: float = 0.0
++var _action_kind: String = ""
++var _action: RefCounted = null
++var _wait_remaining: float = 0.0
++var _current_alias: String = ""
++var _current_clip: String = ""
++var _current_frame: int = -1
++
++var _history: Array[String] = []
++var _events: Array[Dictionary] = []
++
++
++## Create the actor and register the hamster command handlers.
++func setup(adapters: Dictionary = {}) -> void:
++	_adapters = adapters.duplicate()
++	_queue = TaskList.new()
++	_dispatcher = Dispatcher.new()
++	_dispatcher.register("play_anim", func(args: Array) -> bool: return _command_play_anim(args))
++	_dispatcher.register("walk_pos", func(args: Array) -> bool: return _command_walk_pos(args))
++	_dispatcher.register("walk_random", func(args: Array) -> bool: return _command_walk_random(args))
++	_dispatcher.register("take_item", func(args: Array) -> bool: return _command_take_item(args))
++	_dispatcher.register("wait_time", func(args: Array) -> bool: return _command_wait_time(args))
++
++
++## Advance the actor: run the timer event and the state machine.
++##
++## The original state machine only runs while the actor is enabled, and the
++## timer event is independent of it, so both are kept apart here.
++func tick(delta: float) -> void:
++	_time += maxf(0.0, delta)
++	_advance_action(delta)
++	_check_wakeup()
++	# The timer event is independent of the state machine: a busy actor still
++	# notices that it was contained or that it went under water.
++	_timer_accumulator += maxf(0.0, delta)
++	var interval := float(HamsterAi.scan_interval(_scan_speed))
++	if _timer_accumulator >= interval:
++		_timer_accumulator = 0.0
++		_timer_event()
++	if not _state_enabled:
++		return
++	_state_step()
++
++
++## Timer event evt_timer0 (hamster.tcl:346-369).
++func _timer_event() -> void:
++	if _is_paralyzed:
++		return
++	if _adapters.has("is_contained") and bool((_adapters["is_contained"] as Callable).call()):
++		_do_paralyzed()
++		return
++	if _adapters.has("is_underwater") and bool((_adapters["is_underwater"] as Callable).call()):
++		_do_paralyzed()
++		return
++	if not _is_farmed and _gnomesensor > 0:
++		_gnomesensor -= 1
++		if _test_escape():
++			_queue.call("clear")
++			_trigger_fresh(STATE_IDLE)
++
++
++## One state machine step.
++func _state_step() -> void:
++	if _state == STATE_IDLE:
++		_idle_proc()
++	else:
++		_task_proc()
++
++
++## The idle state (hamster.tcl:371-428).
++func _idle_proc() -> void:
++	if _is_paralyzed:
++		_state_enabled = false
++		return
++	if int(_queue.call("cnt")) > 0:
++		_trigger(STATE_TASK)
++		return
++	if not _is_farmed and _test_escape():
++		_do_escape()
++		return
++	if _is_farmed:
++		_farm_activity()
++	else:
++		if _eat_check():
++			return
++		_wild_activity()
++	_trigger(STATE_TASK)
++
++
++## The task state (hamster.tcl:430-438): one queued command per step.
++func _task_proc() -> void:
++	if int(_queue.call("cnt")) == 0:
++		_trigger(STATE_IDLE)
++		return
++	var command := String(_queue.call("pop_front"))
++	_history.append(command)
++	var result: Dictionary = _dispatcher.call("dispatch", command)
++	_events.append({"event": "command", "command": command, "ok": bool(result.get("ok", false))})
++
++
++## The farm activity table (hamster.tcl:390-408).
++func _farm_activity() -> void:
++	var plan := HamsterAi.choose_activity(_last_activity, true, _random_int(0, 4))
++	_apply_activity(plan)
++
++
++## The wild activity table (hamster.tcl:409-426).
++func _wild_activity() -> void:
++	var plan := HamsterAi.choose_activity(_last_activity, false, _random_int(0, 5))
++	_apply_activity(plan)
++
++
++## Run one chosen activity.
++##
++## clean and sleep queue a loop_anim sequence, the others are direct actions
++## in the original, not queued commands.
++func _apply_activity(plan: Dictionary) -> void:
++	var kind := String(plan.get("kind", ""))
++	_last_activity = int(plan.get("activity", _last_activity))
++	_events.append({"event": "activity", "kind": kind, "activity": _last_activity})
++	match kind:
++		"clean":
++			_loop_anim("clean", int(plan.get("min", 2)), int(plan.get("max", 6)))
++		"sleep":
++			_loop_anim("sleep", int(plan.get("min", 6)), int(plan.get("max", 10)))
++		"beg":
++			_start_animation("beg")
++		"wait":
++			_start_wait(_random_float(float(plan.get("seconds_min", 1.5)), float(plan.get("seconds_max", 4.0))))
++		"hoppel_farm":
++			var cells := int(plan.get("cells", 35))
++			_start_hoppel_pos(HamsterAi.farm_cell_position(_farm_pos, _random_int(0, cells - 1)))
++		"hoppel_random":
++			_start_hoppel_random(_random_int(int(plan.get("min", 2)), int(plan.get("max", 4))))
++
++
++## loop_anim queues start, loop*reps and stop (hamster.tcl:171-179).
++func _loop_anim(anim: String, minimum: int, maximum: int) -> void:
++	var span := maximum - minimum
++	var draw := 0
++	if span > 0:
++		draw = _random_int(0, span - 1)
++	var repetitions := HamsterAi.loop_anim_repetitions(minimum, maximum, draw)
++	for command: String in HamsterAi.loop_anim_commands(anim, repetitions):
++		_queue.call("add", command)
++
++
++## test_escape (hamster.tcl:181-224).
++func _test_escape() -> bool:
++	if _walk_result() == WALK_RESULT_CORNERED and not _rescan:
++		return false
++	if _escape_pos != null:
++		return true
++	var dwarves := _query_dwarves(float(HamsterAi.SCAN_RANGE))
++	if dwarves.is_empty():
++		_set_scan_speed("slow")
++		return false
++	_set_scan_speed("fast")
++	var escape := HamsterAi.escape_target(_own_position(), dwarves)
++	if not bool(escape.get("found", false)):
++		return false
++	var place: Variant = null
++	if _adapters.has("pick_place"):
++		place = (_adapters["pick_place"] as Callable).call({
++			"center": escape["target"],
++			"circle": float(HamsterAi.ESCAPE_CIRCLE),
++			"mindist": 0.0,
++			"clip": escape["clipping"],
++		})
++	if place == null or not (place is Vector3):
++		_escape_failed = true
++		_escape_pos = null
++	else:
++		var target := place as Vector3
++		if target.x < 0.0:
++			_escape_failed = true
++			_escape_pos = null
++		else:
++			_escape_failed = false
++			_escape_pos = target
++	return true
++
++
++## do_escape (hamster.tcl:226-237).
++func _do_escape() -> void:
++	var random_path := _escape_failed
++	if random_path:
++		_rescan = false
++		_queue.call("add", "walk_random 5")
++	else:
++		_rescan = true
++		_queue.call("add", "walk_pos {%s}" % HamsterAi.format_position(_escape_pos as Vector3))
++	_escape_pos = null
++	_escape_failed = false
++	_events.append({"event": "escape", "random_path": random_path})
++	_trigger_fresh(STATE_TASK)
++
++
++## eat_check (hamster.tcl:319-344).
++func _eat_check() -> bool:
++	if _nutrition < int(HamsterAi.NUTRITION_LIMIT):
++		_nutrition += 1
++		return false
++	_nutrition = 0
++	var food := _query_food(float(HamsterAi.SEARCH_RANGE))
++	if food.is_empty():
++		return false
++	var entry: Dictionary = food[0]
++	var position: Variant = entry.get("position", null)
++	if not (position is Vector3):
++		return false
++	var reference := String(entry.get("ref", ""))
++	for command: String in HamsterAi.eat_commands(position as Vector3, reference):
++		_queue.call("add", command)
++	_events.append({"event": "food", "ref": reference})
++	return true
++
++
++## do_paralyzed (hamster.tcl:288-299).
++func _do_paralyzed() -> void:
++	if _is_paralyzed:
++		return
++	_queue.call("clear")
++	_state_enabled = false
++	_is_paralyzed = true
++	_start_animation("gothit")
++	_wakeup_at = _now() + float(HamsterAi.WAKEUP_SECONDS)
++	_events.append({"event": "paralyzed", "wakeup_at": _wakeup_at})
++
++
++## evt_timer_wakeup (hamster.tcl:450-461).
++func _check_wakeup() -> void:
++	if _wakeup_at < 0.0 or _time < _wakeup_at:
++		return
++	_wakeup_at = -1.0
++	if _adapters.has("is_contained") and bool((_adapters["is_contained"] as Callable).call()):
++		_wakeup_at = _now() + float(HamsterAi.WAKEUP_SECONDS)
++		return
++	_state_enabled = true
++	_trigger_fresh(STATE_IDLE)
++	_hitpoints = 0.02
++	_is_paralyzed = false
++	_events.append({"event": "wakeup"})
++
++
++## --- commands ----------------------------------------------------------------
++
++## play_anim (hamster.tcl:165-169) with the class scoped alias table.
++func _command_play_anim(args: Array) -> bool:
++	if args.is_empty():
++		return false
++	return _start_animation(String(args[0]))
++
++
++## walk_pos (hamster.tcl:158-163).
++func _command_walk_pos(args: Array) -> bool:
++	if args.is_empty():
++		return false
++	var raw: Variant = Handlers.parse_position(String(args[0]))
++	if raw == null:
++		return false
++	var position: Variant = raw
++	if _adapters.has("fix_position"):
++		position = (_adapters["fix_position"] as Callable).call(position)
++		if position == null:
++			return false
++	return _start_walk(HamsterAi.walk_action_params("walk_pos", 0.0, position))
++
++
++## walk_random (hamster.tcl:139-143).
++##
++## The original hands a random path length to the native walk action. The
++## target selection itself is a pathfinder decision, so it stays an adapter.
++func _command_walk_random(args: Array) -> bool:
++	if args.is_empty():
++		return false
++	var length := float(args[0])
++	var params := HamsterAi.walk_action_params("walk_random", length)
++	if _adapters.has("pick_place"):
++		var place: Variant = (_adapters["pick_place"] as Callable).call({
++			"center": _own_position(),
++			"circle": length,
++			"mindist": 0.7,
++			"random": length,
++			"walldist": 1,
++		})
++		if place != null and (place is Vector3):
++			params["target"] = place
++	return _start_walk(params)
++
++
++## take_item (hamster.tcl:250-262): the food is only removed up close.
++func _command_take_item(args: Array) -> bool:
++	if args.is_empty():
++		return false
++	var reference := String(args[0])
++	if not _adapters.has("object_position"):
++		return true
++	var item_position: Variant = (_adapters["object_position"] as Callable).call(reference)
++	if not (item_position is Vector3):
++		return true
++	if _own_position().distance_to(item_position as Vector3) < TAKE_ITEM_DISTANCE:
++		if _adapters.has("delete_item"):
++			(_adapters["delete_item"] as Callable).call(reference)
++		_events.append({"event": "taken", "ref": reference})
++	return true
++
++
++## wait_time (hamster.tcl:239-248).
++func _command_wait_time(args: Array) -> bool:
++	if args.is_empty():
++		return false
++	_start_wait(float(args[0]))
++	return true
++
++
++## --- actions -----------------------------------------------------------------
++
++## Play one hamster animation and block the state machine until it ends.
++func _start_animation(alias_name: String) -> bool:
++	var clip := HamsterAnimations.get_clip(CLASS_ID, alias_name)
++	if clip == "":
++		return false
++	var frames := HamsterAnimations.get_frame_count(CLASS_ID, alias_name)
++	_current_alias = alias_name
++	_current_clip = clip
++	_current_frame = 0
++	_state_enabled = false
++	_action_kind = "anim"
++	_action = SourceAction.new()
++	(_action as RefCounted).call("begin", maxi(frames, 1), 12.0)
++	if _adapters.has("play_clip"):
++		(_adapters["play_clip"] as Callable).call({
++			"alias": alias_name,
++			"clip": clip,
++			"frames": frames,
++		})
++	_events.append({"event": "animation", "alias": alias_name, "clip": clip, "frames": frames})
++	return true
++
++
++## Start a walk action (hamster.tcl:139-163).
++func _start_walk(params: Dictionary) -> bool:
++	if not _adapters.has("walk_action"):
++		return false
++	_state_enabled = false
++	_action_kind = "walk"
++	_action = null
++	(_adapters["walk_action"] as Callable).call(params)
++	_events.append({"event": "walk", "params": params})
++	return true
++
++
++## hoppel_pos (hamster.tcl:151-156).
++func _start_hoppel_pos(position: Vector3) -> void:
++	_start_walk(HamsterAi.walk_action_params("hoppel_pos", 0.0, position))
++
++
++## hoppel_random (hamster.tcl:145-149).
++func _start_hoppel_random(length: int) -> void:
++	_start_walk(HamsterAi.walk_action_params("hoppel_random", float(length)))
++
++
++## wait_time: the actor stands still for a while.
++func _start_wait(seconds: float) -> void:
++	_state_enabled = false
++	_action_kind = "wait"
++	_wait_remaining = maxf(0.0, seconds)
++	_action = null
++	_current_clip = "stand_anim"
++	_current_alias = "standstill"
++	_current_frame = 0
++	_events.append({"event": "wait", "seconds": seconds})
++
++
++## Advance the running action and release the state machine when it ends.
++func _advance_action(delta: float) -> void:
++	match _action_kind:
++		"anim":
++			if _action == null:
++				_finish_action()
++				return
++			var result: Dictionary = (_action as RefCounted).call("advance", delta)
++			_current_frame = int(result.get("frame", _current_frame))
++			if bool(result.get("complete", false)):
++				_finish_action()
++		"wait":
++			_wait_remaining -= maxf(0.0, delta)
++			if _wait_remaining <= 0.0:
++				_finish_action()
++		"walk":
++			if _adapters.has("walk_complete"):
++				if bool((_adapters["walk_complete"] as Callable).call()):
++					_finish_action()
++			else:
++				_finish_action()
++
++
++func _finish_action() -> void:
++	_action_kind = ""
++	_action = null
++	_state_enabled = true
++
++
++## --- public class methods -----------------------------------------------------
++
++## method set_farmhamster (hamster.tcl:478-488).
++func set_farmhamster(farm: Variant) -> void:
++	if farm is Dictionary and not (farm as Dictionary).is_empty():
++		_is_farmed = true
++		_is_paralyzed = false
++		var position: Variant = (farm as Dictionary).get("position", null)
++		if position is Vector3:
++			_farm_pos = position as Vector3
++		_farm_ref = String((farm as Dictionary).get("ref", ""))
++	else:
++		_is_farmed = false
++		_farm_ref = ""
++	_trigger_fresh(STATE_IDLE)
++
++
++## method activate_gnomesensor (hamster.tcl:490-492).
++func activate_gnomesensor() -> void:
++	_gnomesensor = 10
++
++
++## method catch_farmhamster (hamster.tcl:494-500).
++func catch_farmhamster() -> void:
++	if not _is_farmed or _farm_ref == "":
++		return
++	if _adapters.has("farm_actualize"):
++		(_adapters["farm_actualize"] as Callable).call({"ref": _farm_ref})
++
++
++## method paralyze (hamster.tcl:521-523).
++func paralyze() -> void:
++	_do_paralyzed()
++
++
++## method get_scanrange (hamster.tcl:525-527).
++func get_scanrange() -> int:
++	return int(HamsterAi.SCAN_RANGE)
++
++
++## --- helpers ------------------------------------------------------------------
++
++## A state trigger only selects the state; the state machine runs the current
++## state on every step, like the original scheduler. Running it inline would
++## recurse between the idle and the task state.
++func _trigger(state_name: String) -> void:
++	_state = state_name
++
++
++func _trigger_fresh(state_name: String) -> void:
++	_state = state_name
++
++
++func _set_scan_speed(speed: String) -> void:
++	if speed == _scan_speed:
++		return
++	_scan_speed = speed
++	_timer_accumulator = 0.0
++
++
++func _own_position() -> Vector3:
++	if not _adapters.has("actor_pos"):
++		return Vector3.ZERO
++	var position: Variant = (_adapters["actor_pos"] as Callable).call()
++	if position is Vector3:
++		return position as Vector3
++	return Vector3.ZERO
++
++
++func _query_dwarves(scan_range: float) -> Array:
++	if not _adapters.has("query_dwarves"):
++		return []
++	var result: Variant = (_adapters["query_dwarves"] as Callable).call(scan_range)
++	if result is Array:
++		return result as Array
++	return []
++
++
++func _query_food(search_range: float) -> Array:
++	if not _adapters.has("query_food"):
++		return []
++	var result: Variant = (_adapters["query_food"] as Callable).call(search_range)
++	if result is Array:
++		return result as Array
++	return []
++
++
++func _walk_result() -> int:
++	if not _adapters.has("walk_result"):
++		return 0
++	return int((_adapters["walk_result"] as Callable).call())
++
++
++func _now() -> float:
++	if not _adapters.has("now"):
++		return _time
++	return float((_adapters["now"] as Callable).call())
++
++
++func _random_int(low: int, high: int) -> int:
++	if high < low:
++		return low
++	if _adapters.has("random_int"):
++		return int((_adapters["random_int"] as Callable).call(low, high))
++	return low
++
++
++func _random_float(low: float, high: float) -> float:
++	if _adapters.has("random_float"):
++		return float((_adapters["random_float"] as Callable).call(low, high))
++	return low
++
++
++## --- state readers -------------------------------------------------------------
++
++func get_state_name() -> String:
++	return _state
++
++
++## True while the state machine may run (the original state_enable/disable).
++func is_state_enabled() -> bool:
++	return _state_enabled
++
++
++func is_paralyzed() -> bool:
++	return _is_paralyzed
++
++
++func is_farmed() -> bool:
++	return _is_farmed
++
++
++func get_nutrition() -> int:
++	return _nutrition
++
++
++## Set the nutrition counter (the original keeps it as an instance variable,
++## hamster.tcl:107). Used by editors and demos that want the hamster to look
++## for food right away.
++func set_nutrition(value: int) -> void:
++	_nutrition = maxi(0, value)
++
++
++## Game time of the actor in seconds.
++func get_time() -> float:
++	return _time
++
++
++func get_queue_size() -> int:
++	if _queue == null:
++		return 0
++	return int(_queue.call("cnt"))
++
++
++## The queued commands, in execution order.
++func get_queue_commands() -> Array[String]:
++	if _queue == null:
++		return []
++	var result: Array[String] = []
++	for command: String in _queue.call("list"):
++		result.append(command)
++	return result
++
++
++func get_current_alias() -> String:
++	return _current_alias
++
++
++func get_current_clip() -> String:
++	return _current_clip
++
++
++func get_current_frame() -> int:
++	return _current_frame
++
++
++func is_playing_animation() -> bool:
++	return _action_kind == "anim"
++
++
++## The kind of the running action: "", "anim", "wait" or "walk".
++func get_action_kind() -> String:
++	return _action_kind
++
++
++## Seconds left of a waiting action.
++func get_wait_remaining() -> float:
++	return _wait_remaining
++
++
++func get_history() -> Array[String]:
++	return _history.duplicate()
++
++
++func get_events() -> Array[Dictionary]:
++	return _events.duplicate()
+
+diff --git a/scripts/native_hamster_ai.gd b/scripts/native_hamster_ai.gd
+new file mode 100644
+--- /dev/null
++++ b/scripts/native_hamster_ai.gd
+--- /dev/null
++++ b/scripts/native_hamster_ai.gd
+@@ -0,0 +1,251 @@
++## Behaviour of the hamster class, ported from the original Tcl.
++##
++## The hamster is a farm animal and a food resource. It has its own state
++## machine (idle/task), its own animation set and a small set of rules:
++## flee from dwarves, look for food, sleep, groom, mate, and - inside a farm -
++## wander around the farm pen.
++##
++## Sources (original install, data/Scripts/classes/characters/hamster.tcl):
++##   :2       def_class Hamster food material 0 {reproduces lives moves}
++##   :104-107 scan_range 4, search_range 6, escape_range 2, nutrition 0
++##   :128-137 scan_timer: fast = 1 s, slow = 5 s
++##   :139-169 walk_random, hoppel_random, hoppel_pos, walk_pos, play_anim
++##   :171-179 loop_anim
++##   :181-237 test_escape, do_escape
++##   :239-248 wait_time
++##   :250-262 take_item
++##   :267-317 farm and paralysis flags
++##   :319-344 eat_check
++##   :346-369 evt_timer0_proc
++##   :371-428 state_idle_proc (activity tables)
++##   :430-438 state_task_proc
++##   :449-461 evt_timer_wakeup
++##
++## Scene dependent parts are left to the host: object queries (dwarves, food,
++## farms), get_place, vector_fix and the walk action itself.
++extends RefCounted
++
++# --- tuning values (hamster.tcl:104-107) ------------------------------------
++const SCAN_RANGE := 4.0          # how far the hamster sees dwarves
++const SEARCH_RANGE := 6.0        # how far it looks for food
++const ESCAPE_RANGE := 2.0        # distance of the flee target
++const NUTRITION_LIMIT := 50      # ticks before the hamster looks for food
++const WAKEUP_SECONDS := 1800     # 30 minutes of being paralysed
++const TAKE_ITEM_DISTANCE := 0.8  # how close the food has to be
++const ESCAPE_CIRCLE := 8.0       # get_place radius of the flee search
++const CLIP_BOX := 1.5            # half size of the clip box around a dwarf
++const SCAN_TIMER_FAST := 1
++const SCAN_TIMER_SLOW := 5
++
++# --- farm pen grid (hamster.tcl:402-405) ------------------------------------
++const FARM_GRID_X := 7
++const FARM_CELL := 0.5
++const FARM_OFFSET_X := -1.5
++const FARM_OFFSET_Z := -2.0
++
++# --- animsets (hamster.tcl:42-81) --------------------------------------------
++const ANIMSET_WALK := "0"
++const ANIMSET_HOPPEL := "1"
++const ANIMSET_GALOPP := "2"
++
++
++## Flee decision of test_escape (hamster.tcl:181-224).
++##
++## The original queries dwarves in scan_range, averages their positions and
++## runs away from that average by escape_range. The clip boxes around every
++## dwarf are handed to get_place so the hamster does not path through them.
++##
++## Returns {found, count, average, target, clipping}.
++static func escape_target(own: Vector3, dwarf_positions: Array) -> Dictionary:
++	var count := 0
++	var sum := Vector3.ZERO
++	var clipping: Array = []
++	for entry: Variant in dwarf_positions:
++		var position: Variant = entry
++		if not (position is Vector3):
++			continue
++		var dwarf := position as Vector3
++		var distance := own.distance_to(dwarf)
++		if distance > SCAN_RANGE:
++			continue
++		count += 1
++		sum += dwarf
++		clipping.append({
++			"min_x": dwarf.x - CLIP_BOX,
++			"max_x": dwarf.x + CLIP_BOX,
++			"min_z": dwarf.z - CLIP_BOX,
++			"max_z": dwarf.z + CLIP_BOX,
++		})
++	if count == 0:
++		return {"found": false, "count": 0, "average": own, "target": own, "clipping": clipping}
++	var average := sum / float(count)
++	var direction := own - average
++	if direction.length() > 0.000001:
++		direction = direction.normalized() * ESCAPE_RANGE
++	else:
++		direction = Vector3.ZERO
++	return {
++		"found": true,
++		"count": count,
++		"average": average,
++		"target": own + direction,
++		"clipping": clipping,
++	}
++
++
++## What do_escape does with the flee target (hamster.tcl:226-237).
++##
++## escape_pos == -1 means get_place found nothing, so the hamster falls back
++## to the random path finder and stops rescanning.
++static func escape_decision(place_found: bool) -> Dictionary:
++	if place_found:
++		return {"mode": "escape", "rescan": true, "command": "walk_pos"}
++	return {"mode": "random", "rescan": false, "command": "walk_random"}
++
++
++## Idle activity of the hamster (hamster.tcl:371-428).
++##
++## farmed: five activities, wild: six. The original never repeats the previous
++## activity: a repeat is shifted by one.
++##
++## roll is the random draw in [0, count).
++static func choose_activity(last_activity: int, farmed: bool, roll: int) -> Dictionary:
++	var count := 5 if farmed else 6
++	var activity := roll % count
++	if activity == last_activity:
++		activity = (activity + 1) % count
++	var kinds := ["clean", "beg", "wait", "sleep"]
++	if not farmed:
++		kinds.append("hoppel_random")
++		kinds.append("hoppel_random")
++	else:
++		kinds.append("hoppel_farm")
++	var kind := String(kinds[activity])
++	var plan := {"activity": activity, "kind": kind}
++	match kind:
++		"clean":
++			plan["commands"] = ["loop_anim clean"]
++			plan["min"] = 2
++			plan["max"] = 6
++		"beg":
++			plan["commands"] = ["play_anim beg"]
++		"wait":
++			plan["commands"] = ["wait_time"]
++			plan["seconds_min"] = 1.5
++			plan["seconds_max"] = 4.0
++		"sleep":
++			plan["commands"] = ["loop_anim sleep"]
++			plan["min"] = 6
++			plan["max"] = 10
++		"hoppel_farm":
++			plan["commands"] = ["hoppel_pos"]
++			plan["cells"] = FARM_GRID_X * 5
++		_:
++			plan["commands"] = ["hoppel_random"]
++			plan["min"] = 2
++			plan["max"] = 4
++	return plan
++
++
++## Position of one cell of the farm pen (hamster.tcl:402-406).
++##
++## The pen is a 7 wide grid of 0.5 sized steps, centred on the farm object.
++static func farm_cell_position(farm_pos: Vector3, cell: int) -> Vector3:
++	var new_x := float(cell % FARM_GRID_X) * FARM_CELL + FARM_OFFSET_X
++	var new_z := float(cell / FARM_GRID_X) + FARM_OFFSET_Z
++	return farm_pos + Vector3(new_x, 0.0, new_z)
++
++
++## Nutrition counter of eat_check (hamster.tcl:319-344).
++##
++## The hamster counts down to zero, then looks for a mushroom hat.
++static func nutrition_step(nutrition: int) -> Dictionary:
++	if nutrition < NUTRITION_LIMIT:
++		return {"nutrition": nutrition + 1, "seek_food": false}
++	return {"nutrition": 0, "seek_food": true}
++
++
++## Command chain of a feeding round (hamster.tcl:332-340).
++static func eat_commands(food_position: Vector3, food_reference: String) -> Array:
++	var commands: Array = ["walk_pos {%s}" % format_position(food_position)]
++	for _index: int in range(5):
++		commands.append("play_anim goteaten")
++	commands.append("take_item %s" % food_reference)
++	return commands
++
++
++## loop_anim builds start, loop*reps and stop (hamster.tcl:171-179).
++static func loop_anim_commands(anim: String, repetitions: int) -> Array:
++	var commands: Array = ["play_anim %sstart" % anim]
++	for _index: int in range(repetitions):
++		commands.append("play_anim %sloop" % anim)
++	commands.append("play_anim %sstop" % anim)
++	return commands
++
++
++## Repetition count of loop_anim: irandom(max - min) + min.
++static func loop_anim_repetitions(minimum: int, maximum: int, draw: int) -> int:
++	if maximum <= minimum:
++		return minimum
++	return minimum + (draw % (maximum - minimum))
++
++
++## When the hamster is paralysed (hamster.tcl:346-358).
++##
++## Being contained in something or being underwater paralyses it.
++static func should_paralyze(contained: bool, underwater: bool) -> bool:
++	return contained or underwater
++
++
++## What do_paralyzed does (hamster.tcl:288-299).
++##
++## The queue is cleared, the hit animation plays and a wake up timer is set.
++static func paralysis_plan() -> Dictionary:
++	return {
++		"clear_queue": true,
++		"commands": ["play_anim gothit"],
++		"wakeup_seconds": WAKEUP_SECONDS,
++		"hitpoints": 0.02,
++	}
++
++
++## Timer interval of the scan timer (hamster.tcl:128-137).
++static func scan_interval(scan_speed: String) -> int:
++	if scan_speed == "slow":
++		return SCAN_TIMER_SLOW
++	return SCAN_TIMER_FAST
++
++
++## Native walk action parameters of the hamster (hamster.tcl:139-163).
++##
++## kind is "walk_random", "hoppel_random", "walk_pos" or "hoppel_pos".
++static func walk_action_params(kind: String, length: float = 0.0, target: Variant = null) -> Dictionary:
++	match kind:
++		"walk_random":
++			return {"animsets": ANIMSET_WALK, "random_z": 4.0, "random_path": length,
++					"can_climb": 0, "use_objects": 0}
++		"hoppel_random":
++			return {"animsets": ANIMSET_HOPPEL, "random_z": 2.0, "random_path": length,
++					"can_climb": 0, "use_objects": 0}
++		"walk_pos":
++			return {"animsets": ANIMSET_WALK, "target": target, "can_climb": 0, "use_objects": 0}
++		"hoppel_pos":
++			return {"animsets": ANIMSET_HOPPEL, "target": target, "can_climb": 0, "use_objects": 0}
++	return {}
++
++
++## The scan query of test_escape: dwarves in scan range.
++static func scan_query() -> Dictionary:
++	return {"class": "Zwerg", "range": SCAN_RANGE}
++
++
++## The food query of eat_check: mushroom hat first, grilled mushroom second.
++static func food_query() -> Array:
++	return [
++		{"class": "Pilzhut", "range": SEARCH_RANGE, "limit": 1, "flagneg": "contained"},
++		{"class": "Grillpilz", "range": SEARCH_RANGE, "limit": 1, "flagneg": "contained"},
++	]
++
++
++static func format_position(value: Vector3) -> String:
++	return "%s %s %s" % [str(value.x), str(value.y), str(value.z)]
+
+diff --git a/scripts/native_hamster_animations.gd b/scripts/native_hamster_animations.gd
+new file mode 100644
+--- /dev/null
++++ b/scripts/native_hamster_animations.gd
+--- /dev/null
++++ b/scripts/native_hamster_animations.gd
+@@ -0,0 +1,135 @@
++## Hamster animation table (class scoped).
++##
++## The hamster is a separate class with its own alias table, its own animsets
++## and its own 3DB package. Alias names are class scoped in the original game:
++## `standstill` means `mann.standard` for a dwarf and `hamster.stand_anim` for
++## a hamster, so a global alias table is not enough.
++##
++## Source: data/Scripts/classes/characters/hamster.tcl (27 aliases, 3 animsets)
++## Package: data/3db/hamster.3db (28 clips)
++##
++## Data: res://models/native_hamster_animations.json
++extends RefCounted
++
++const DATA_PATH := "res://models/native_hamster_animations.json"
++
++static var _cache: Dictionary = {}
++
++
++static func _load_table() -> Dictionary:
++	if not _cache.is_empty():
++		return _cache
++	if not FileAccess.file_exists(DATA_PATH):
++		push_error("[native_hamster_animations] missing %s" % DATA_PATH)
++		_cache = {}
++		return _cache
++	var file := FileAccess.open(DATA_PATH, FileAccess.READ)
++	if file == null:
++		push_error("[native_hamster_animations] cannot open %s" % DATA_PATH)
++		_cache = {}
++		return _cache
++	var parsed: Variant = JSON.parse_string(file.get_as_text())
++	file.close()
++	if typeof(parsed) != TYPE_DICTIONARY:
++		push_error("[native_hamster_animations] malformed table")
++		_cache = {}
++		return _cache
++	_cache = parsed
++	return _cache
++
++
++static func _class_data(class_id: String) -> Dictionary:
++	var table := _load_table()
++	var classes: Dictionary = table.get("classes", {})
++	if not classes.has(class_id):
++		return {}
++	return classes[class_id]
++
++
++## Alias -> clip name without the package prefix, or "" when unknown.
++static func get_clip(class_id: String, alias_name: String) -> String:
++	var data := _class_data(class_id)
++	var aliases: Dictionary = data.get("aliases", {})
++	if not aliases.has(alias_name):
++		return ""
++	var entry: Dictionary = aliases[alias_name]
++	var target: String = entry.get("target", "")
++	var dot := target.rfind(".")
++	if dot < 0:
++		return target
++	return target.substr(dot + 1)
++
++
++## Full target as written in the original ("hamster.laufen_loop").
++static func get_target(class_id: String, alias_name: String) -> String:
++	var data := _class_data(class_id)
++	var aliases: Dictionary = data.get("aliases", {})
++	if not aliases.has(alias_name):
++		return ""
++	var entry: Dictionary = aliases[alias_name]
++	return entry.get("target", "")
++
++
++## Frame count of the clip behind the alias, or -1 when unknown.
++static func get_frame_count(class_id: String, alias_name: String) -> int:
++	var data := _class_data(class_id)
++	var aliases: Dictionary = data.get("aliases", {})
++	if not aliases.has(alias_name):
++		return -1
++	var entry: Dictionary = aliases[alias_name]
++	return int(entry.get("frames", -1))
++
++
++static func has_alias(class_id: String, alias_name: String) -> bool:
++	var data := _class_data(class_id)
++	return (data.get("aliases", {}) as Dictionary).has(alias_name)
++
++
++static func alias_count(class_id: String) -> int:
++	var data := _class_data(class_id)
++	return (data.get("aliases", {}) as Dictionary).size()
++
++
++## Role -> clip for one animset of the class.
++static func get_animset_role(class_id: String, set_id: String, role: String) -> String:
++	var data := _class_data(class_id)
++	var animsets: Dictionary = data.get("animsets", {})
++	if not animsets.has(set_id):
++		return ""
++	var entries: Dictionary = animsets[set_id].get("entries", {})
++	return entries.get(role, "")
++
++
++static func animset_ids(class_id: String) -> Array:
++	var data := _class_data(class_id)
++	return (data.get("animsets", {}) as Dictionary).keys()
++
++
++## The clip behind a role of an animset, without the package prefix.
++##
++## The walk animset of the hamster uses the walk clips, the hop animset the
++## hop clips. The native walk action of the original plays the animset of the
++## walk, so the host needs the clip of the role.
++static func get_animset_clip(class_id: String, set_id: String, role: String) -> String:
++	var target := get_animset_role(class_id, set_id, role)
++	if target == "":
++		return ""
++	var dot := target.rfind(".")
++	if dot < 0:
++		return target
++	return target.substr(dot + 1)
++
++
++## Frame count of a clip in the class package, or -1.
++static func get_clip_frames(class_id: String, clip_name: String) -> int:
++	var table := _load_table()
++	if class_id != "Hamster":
++		return -1
++	var clips: Dictionary = table.get("clips", {})
++	return int(clips.get(clip_name, -1))
++
++
++## All clip names of the class package with their frame counts.
++static func get_clips() -> Dictionary:
++	var table := _load_table()
++	return table.get("clips", {})
+
+diff --git a/scripts/native_hamster_clips.gd b/scripts/native_hamster_clips.gd
+new file mode 100644
+--- /dev/null
++++ b/scripts/native_hamster_clips.gd
+--- /dev/null
++++ b/scripts/native_hamster_clips.gd
+@@ -0,0 +1,182 @@
++## Hamster clip geometry: the 28 original clips of the hamster.3db package.
++##
++## The hamster is a separate 3DB package, so its frames are exported on their
++## own (res://models/native_hamster_clips.json) instead of being mixed into the
++## dwarf locomotion export.
++##
++## Sources (original install):
++##   data/3db/hamster.3db                           - the package
++##   data/Scripts/classes/characters/hamster.tcl   - the aliases and animsets
++##
++## The mesh contract is the project's one: normalized source points scaled by
++## NATIVE_POINT_SCALE and packed by OBJECT_WORLD_SCALE, normals resolved through
++## native_model_material (the legacy 'brightness' field holds the sphere.dat
++## normal index).
++extends RefCounted
++
++const DATA_PATH := "res://models/native_hamster_clips.json"
++const NATIVE_POINT_SCALE := 16384.0
++const OBJECT_WORLD_SCALE := 0.005
++const TEXTURE_DIRECTORY := "res://textures/models"
++
++const MODEL_NORMALS = preload("res://scripts/native_model_material.gd")
++
++static var _table: Dictionary = {}
++static var _mesh_cache: Dictionary = {}
++static var _texture_cache: Dictionary = {}
++static var _normals: RefCounted = null
++
++
++static func _load_table() -> Dictionary:
++	if not _table.is_empty():
++		return _table
++	if not FileAccess.file_exists(DATA_PATH):
++		push_error("[native_hamster_clips] missing %s" % DATA_PATH)
++		return _table
++	var file := FileAccess.open(DATA_PATH, FileAccess.READ)
++	if file == null:
++		push_error("[native_hamster_clips] cannot open %s" % DATA_PATH)
++		return _table
++	var parsed: Variant = JSON.parse_string(file.get_as_text())
++	file.close()
++	if typeof(parsed) != TYPE_DICTIONARY:
++		push_error("[native_hamster_clips] malformed table")
++		return _table
++	_table = parsed
++	return _table
++
++
++static func _normalizer() -> RefCounted:
++	if _normals == null:
++		_normals = MODEL_NORMALS.new()
++		(_normals as RefCounted).call("load_fixture")
++	return _normals
++
++
++## All clip names of the package.
++static func clip_names() -> Array:
++	var table := _load_table()
++	var clips: Dictionary = table.get("clips", {})
++	return clips.keys()
++
++
++static func has_clip(clip_name: String) -> bool:
++	var table := _load_table()
++	var clips: Dictionary = table.get("clips", {})
++	return clips.has(clip_name)
++
++
++## Number of frames of a clip, or -1 when the clip is unknown.
++static func frame_count(clip_name: String) -> int:
++	var table := _load_table()
++	var clips: Dictionary = table.get("clips", {})
++	if not clips.has(clip_name):
++		return -1
++	return int((clips[clip_name] as Dictionary).get("frame_count", -1))
++
++
++## Frame rate the export was written with (adapter value, not a native constant).
++static func adapter_fps(clip_name: String) -> float:
++	var table := _load_table()
++	var clips: Dictionary = table.get("clips", {})
++	if not clips.has(clip_name):
++		return 12.0
++	return float((clips[clip_name] as Dictionary).get("adapter_fps", 12.0))
++
++
++## The raw frame record of a clip.
++static func frame(clip_name: String, frame_index: int) -> Dictionary:
++	var table := _load_table()
++	var clips: Dictionary = table.get("clips", {})
++	if not clips.has(clip_name):
++		return {}
++	var clip: Dictionary = clips[clip_name]
++	var frames: Array = clip.get("frames", [])
++	if frame_index < 0 or frame_index >= frames.size():
++		return {}
++	return frames[frame_index]
++
++
++## Meshes of one frame, built once and cached.
++##
++## Returns an Array of ArrayMesh, one per surface of the frame.
++static func frame_meshes(clip_name: String, frame_index: int) -> Array:
++	var key := "%s:%d" % [clip_name, frame_index]
++	if _mesh_cache.has(key):
++		return _mesh_cache[key]
++	var record := frame(clip_name, frame_index)
++	if record.is_empty():
++		_mesh_cache[key] = []
++		return _mesh_cache[key]
++	var meshes := build_frame_meshes(record)
++	_mesh_cache[key] = meshes
++	return meshes
++
++
++## Build the meshes of a frame record (the project's model mesh contract).
++static func build_frame_meshes(record: Dictionary) -> Array:
++	var meshes: Array = []
++	var surfaces: Array = record.get("surfaces", [])
++	for source_surface: Dictionary in surfaces:
++		var vertices: Array = source_surface.get("points", [])
++		var uvs: Array = source_surface.get("uvs", [])
++		var indices: Array = source_surface.get("triangles", [])
++		if vertices.is_empty() or uvs.is_empty() or indices.is_empty():
++			continue
++		var source_normals: PackedVector3Array = PackedVector3Array()
++		var normalizer := _normalizer()
++		if normalizer != null:
++			source_normals = (normalizer as RefCounted).call("godot_local_normals", source_surface)
++		var surface_tool := SurfaceTool.new()
++		surface_tool.begin(Mesh.PRIMITIVE_TRIANGLES)
++		for index_value: Variant in indices:
++			var index: int = int(index_value)
++			if index >= vertices.size() or index >= uvs.size():
++				continue
++			var raw_point: Array = vertices[index]
++			var uv: Array = uvs[index]
++			surface_tool.set_uv(Vector2(float(uv[0]), float(uv[1])))
++			if not source_normals.is_empty() and index < source_normals.size():
++				surface_tool.set_normal(source_normals[index])
++			var native_point := Vector3(float(raw_point[0]) - 0.5,
++				-(float(raw_point[1]) - 0.5), float(raw_point[2]) - 0.5) * NATIVE_POINT_SCALE
++			surface_tool.add_vertex(native_point * OBJECT_WORLD_SCALE)
++		if source_normals.is_empty():
++			surface_tool.generate_normals()
++		var mesh := surface_tool.commit()
++		var material := StandardMaterial3D.new()
++		material.cull_mode = BaseMaterial3D.CULL_DISABLED
++		material.roughness = 0.95
++		material.vertex_color_use_as_albedo = false
++		var texture_path := _texture_path(source_surface)
++		var texture := _texture(texture_path)
++		if texture != null:
++			material.albedo_texture = texture
++			var alpha_range: Array = source_surface.get("alpha_range", [255, 255])
++			if alpha_range.size() >= 2 and int(alpha_range[0]) < 128:
++				material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
++				material.alpha_scissor_threshold = 0.35
++		mesh.surface_set_material(0, material)
++		meshes.append(mesh)
++	return meshes
++
++
++static func _texture_path(source_surface: Dictionary) -> String:
++	var explicit_path := String(source_surface.get("texture_res_path", ""))
++	if explicit_path != "":
++		return explicit_path
++	return TEXTURE_DIRECTORY + "/" + String(source_surface.get("texture", ""))
++
++
++static func _texture(path: String) -> Texture2D:
++	if path == "":
++		return null
++	if _texture_cache.has(path):
++		return _texture_cache[path]
++	var texture: Texture2D = null
++	if ResourceLoader.exists(path):
++		texture = load(path) as Texture2D
++	elif FileAccess.file_exists(path):
++		texture = ImageTexture.create_from_image(Image.load_from_file(path))
++	_texture_cache[path] = texture
++	return texture
+
+diff --git a/scripts/native_level_ground.gd b/scripts/native_level_ground.gd
+new file mode 100644
+--- /dev/null
++++ b/scripts/native_level_ground.gd
+--- /dev/null
++++ b/scripts/native_level_ground.gd
+@@ -0,0 +1,130 @@
++extends RefCounted
++## Walkable ground of the level, one area per height level.
++##
++## The scene builds its navigation grid from the floor triangles of the main
++## level only (game height 14.5, scene Y -14.5). The wild hamsters of the
++## upper terrace of the multiplayer level stand at game height 18.5, so
++## without this helper they have no ground under them and walk off the ledge
++## into the void.
++##
++## Source: res://models/multi_start_010_terrain.json, the same terrain the
++## scene builds its meshes from. The corner math is the one of the scene: the
++## BDB depth packing for Z, the PMP row as the height of the cell for Y.
++##
++## The scene space is used: X to the right, Y the height (up is negative),
++## Z the depth of the level. The level key is the game height (14.5, 18.5).
++const BDB_DEPTH_SCALE := 2.0
++const BDB_DEPTH_OFFSET := -14.0
++
++var _floors: Dictionary = {}
++var _columns: Dictionary = {}
++var _bounds: Dictionary = {}
++
++
++## Collect the horizontal surfaces of every height level of the terrain.
++func load_terrain(data: Dictionary) -> void:
++	_floors.clear()
++	_columns.clear()
++	_bounds.clear()
++	var meshes: Dictionary = data.get("meshes", {})
++	for entry: Dictionary in data.get("cells", []):
++		var parts: Array = meshes.get(str(int(entry["block"])), [])
++		var cell := Vector2i(int(entry["x"]), int(entry["y"]))
++		for part: Dictionary in parts:
++			var values: Array = part["vertices"]
++			var indices: Array = part["indices"]
++			for start: int in range(0, indices.size(), 3):
++				var corners: Array[Vector3] = []
++				for corner: int in range(3):
++					var offset: int = int(indices[start + corner]) * 5
++					corners.append(Vector3(
++						float(values[offset]) + float(cell.x),
++						-(float(values[offset + 1]) + float(cell.y)),
++						BDB_DEPTH_SCALE * float(values[offset + 2]) + BDB_DEPTH_OFFSET))
++				if absf(corners[1].y - corners[0].y) > 0.0001:
++					continue
++				if absf(corners[2].y - corners[0].y) > 0.0001:
++					continue
++				var triangle := PackedVector2Array()
++				for corner: Vector3 in corners:
++					triangle.append(Vector2(corner.x, corner.z))
++				if absf((triangle[1] - triangle[0]).cross(triangle[2] - triangle[0])) <= 0.00001:
++					continue
++				_add_floor(-corners[0].y, cell, triangle)
++
++
++func _add_floor(level: float, cell: Vector2i, triangle: PackedVector2Array) -> void:
++	var key := _level_key(level)
++	if not _floors.has(key):
++		_floors[key] = {}
++		_columns[key] = {}
++		_bounds[key] = Rect2()
++	var floors: Dictionary = _floors[key]
++	if not floors.has(cell):
++		floors[cell] = []
++	(floors[cell] as Array).append(triangle)
++	var columns: Dictionary = _columns[key]
++	var minimum := minf(triangle[0].x, minf(triangle[1].x, triangle[2].x))
++	var maximum := maxf(triangle[0].x, maxf(triangle[1].x, triangle[2].x))
++	for column: int in range(floori(minimum - 0.00001), floori(maximum + 0.00001) + 1):
++		if not columns.has(column):
++			columns[column] = {}
++		(columns[column] as Dictionary)[cell] = true
++	var bounds: Rect2 = _bounds[key]
++	var minimum_z := minf(triangle[0].y, minf(triangle[1].y, triangle[2].y))
++	var maximum_z := maxf(triangle[0].y, maxf(triangle[1].y, triangle[2].y))
++	if bounds.size == Vector2.ZERO:
++		_bounds[key] = Rect2(minimum, minimum_z, maximum - minimum, maximum_z - minimum_z)
++	else:
++		var merged := bounds
++		merged = merged.expand(Vector2(minimum, minimum_z))
++		merged = merged.expand(Vector2(maximum, maximum_z))
++		_bounds[key] = merged
++
++
++func _level_key(level: float) -> float:
++	return snappedf(level, 0.01)
++
++
++## The game heights of the levels the terrain has.
++func levels() -> Array:
++	var result: Array = []
++	for key: float in _floors.keys():
++		result.append(key)
++	result.sort()
++	return result
++
++
++func has_level(level: float) -> bool:
++	return _floors.has(_level_key(level))
++
++
++## The area of the level on the ground plane.
++func level_bounds(level: float) -> Rect2:
++	return _bounds.get(_level_key(level), Rect2())
++
++
++## Is there ground of this level under the point?
++##
++## The test is the one of the scene for the main floor: the point is inside one
++## of the floor triangles of the level.
++func floor_at(level: float, point: Vector2) -> bool:
++	var key := _level_key(level)
++	var floors: Dictionary = _floors.get(key, {})
++	if floors.is_empty():
++		return false
++	var columns: Dictionary = _columns.get(key, {})
++	var candidates: Dictionary = columns.get(floori(point.x), {})
++	for cell: Vector2i in candidates:
++		for triangle: PackedVector2Array in floors.get(cell, []):
++			var a: float = (triangle[1] - triangle[0]).cross(point - triangle[0])
++			var b: float = (triangle[2] - triangle[1]).cross(point - triangle[1])
++			var c: float = (triangle[0] - triangle[2]).cross(point - triangle[2])
++			if not (minf(a, minf(b, c)) < -0.00001 and maxf(a, maxf(b, c)) > 0.00001):
++				return true
++	return false
++
++
++## The game height of a scene position (the scene counts the height down).
++static func level_of(scene_y: float) -> float:
++	return snappedf(-scene_y, 0.01)
+
+diff --git a/scripts/native_command_dispatcher.gd b/scripts/native_command_dispatcher.gd
+new file mode 100644
+--- /dev/null
++++ b/scripts/native_command_dispatcher.gd
+--- /dev/null
++++ b/scripts/native_command_dispatcher.gd
+@@ -0,0 +1,193 @@
++## Command dispatcher for actor tasklists.
++##
++## The original game executes queued commands with Tcl `eval`
++## (z_work_states.tcl:13-22). This module is the Godot side of that: it parses
++## a command string into a head command plus arguments and calls a registered
++## handler.
++##
++## Sources (original install, data/Scripts):
++##   classes/zwerg/z_work_prod.tcl:229-232   - compound commands separated by ';'
++##   classes/zwerg/z_work_common.tcl:91-94   - brace grouped arguments
++##   classes/zwerg/z_work_states.tcl:98-149  - the command shapes that are queued
++##
++## Command vocabulary recovered from the original: 200 distinct heads over 1573
++## tasklist calls (res://models/native_tasklist_commands.json).
++##
++## Handlers are Callables with the signature func(args: Array) -> bool.
++## Returning false aborts the rest of a compound command, which is how a failed
++## step stops the chain in the original.
++extends RefCounted
++
++const VOCABULARY_PATH := "res://models/native_tasklist_commands.json"
++
++var _handlers: Dictionary = {}
++var _vocabulary: Dictionary = {}
++var _vocabulary_loaded := false
++
++
++## Register a handler for a head command.
++func register(command: String, handler: Callable) -> void:
++	_handlers[command] = handler
++
++
++func unregister(command: String) -> void:
++	_handlers.erase(command)
++
++
++func has_handler(command: String) -> bool:
++	return _handlers.has(command)
++
++
++## Registered head commands.
++func registered_commands() -> Array:
++	return _handlers.keys()
++
++
++## Split a command string into statements and parse each one.
++##
++## "beam_from_inv_to_pos $item {$itempos};play_anim bendb" becomes two
++## statements: {head: "beam_from_inv_to_pos", args: ["$item", "$itempos"]} and
++## {head: "play_anim", args: ["bendb"]}.
++static func parse(command_string: String) -> Array:
++	var statements: Array = []
++	for statement in split_statements(command_string):
++		var tokens := tokenize(statement)
++		if tokens.is_empty():
++			continue
++		statements.append({"head": tokens[0], "args": tokens.slice(1)})
++	return statements
++
++
++## Split on top level ';' - braces and quotes group, like Tcl.
++static func split_statements(command_string: String) -> Array:
++	var parts: Array = []
++	var current := ""
++	var depth := 0
++	var in_quote := false
++	var index := 0
++	while index < command_string.length():
++		var char := command_string[index]
++		if char == "\\" and index + 1 < command_string.length():
++			current += command_string.substr(index, 2)
++			index += 2
++			continue
++		if char == '"':
++			in_quote = not in_quote
++		elif not in_quote:
++			if char == "{":
++				depth += 1
++			elif char == "}":
++				depth -= 1
++			elif char == ";" and depth == 0:
++				parts.append(current.strip_edges())
++				current = ""
++				index += 1
++				continue
++		current += char
++		index += 1
++	parts.append(current.strip_edges())
++	return parts.filter(func(part: String) -> bool: return part != "")
++
++
++## Tokenize one statement: head plus arguments.
++##
++## "{...}" and "..." group into a single argument, braces are stripped.
++static func tokenize(statement: String) -> Array:
++	var tokens: Array = []
++	var index := 0
++	var length := statement.length()
++	while index < length:
++		while index < length and statement[index] in [" ", "\t"]:
++			index += 1
++		if index >= length:
++			break
++		var char := statement[index]
++		if char == "{":
++			var depth := 1
++			var start := index + 1
++			index += 1
++			while index < length and depth > 0:
++				if statement[index] == "{":
++					depth += 1
++				elif statement[index] == "}":
++					depth -= 1
++					if depth == 0:
++						break
++				index += 1
++			tokens.append(statement.substr(start, index - start))
++			index += 1
++		elif char == "\"":
++			var start := index + 1
++			index += 1
++			while index < length and statement[index] != "\"":
++				index += 1
++			tokens.append(statement.substr(start, index - start))
++			index += 1
++		else:
++			var start := index
++			while index < length and statement[index] not in [" ", "\t", ";"]:
++				index += 1
++			tokens.append(statement.substr(start, index - start))
++	return tokens
++
++
++## Execute a command string.
++##
++## Returns {ok, executed, results, error}. `results` holds one entry per
++## statement: {head, ok, error}. A handler returning false stops the chain and
++## makes ok false.
++func dispatch(command_string: String) -> Dictionary:
++	var results: Array = []
++	var executed := 0
++	for statement in parse(command_string):
++		var head := String(statement["head"])
++		var args: Array = statement["args"]
++		if not _handlers.has(head):
++			results.append({"head": head, "ok": false, "error": "unknown command: %s" % head})
++			return {
++				"ok": false,
++				"executed": executed,
++				"results": results,
++				"error": "unknown command: %s" % head,
++			}
++		var handler: Callable = _handlers[head]
++		var ok := false
++		var error := ""
++		var returned = handler.call(args)
++		if typeof(returned) == TYPE_BOOL:
++			ok = returned
++		elif typeof(returned) == TYPE_DICTIONARY:
++			ok = bool(returned.get("ok", true))
++			error = String(returned.get("error", ""))
++		else:
++			ok = true
++		executed += 1
++		results.append({"head": head, "ok": ok, "error": error})
++		if not ok:
++			return {
++				"ok": false,
++				"executed": executed,
++				"results": results,
++				"error": error if error != "" else "command failed: %s" % head,
++			}
++	return {"ok": true, "executed": executed, "results": results, "error": ""}
++
++
++## Head commands that the original game queues (recovered vocabulary).
++func known_commands() -> Dictionary:
++	if not _vocabulary_loaded:
++		_vocabulary_loaded = true
++		if FileAccess.file_exists(VOCABULARY_PATH):
++			var file := FileAccess.open(VOCABULARY_PATH, FileAccess.READ)
++			if file != null:
++				var parsed: Variant = JSON.parse_string(file.get_as_text())
++				file.close()
++				if typeof(parsed) == TYPE_DICTIONARY:
++					for entry: Dictionary in (parsed.get("commands", []) as Array):
++						_vocabulary[String(entry.get("command", ""))] = int(entry.get("occurrences", 0))
++	return _vocabulary
++
++
++## True when the head command exists in the recovered original vocabulary.
++func is_known_command(command: String) -> bool:
++	return known_commands().has(command)
+
+diff --git a/scripts/native_command_handlers.gd b/scripts/native_command_handlers.gd
+new file mode 100644
+--- /dev/null
++++ b/scripts/native_command_handlers.gd
+--- /dev/null
++++ b/scripts/native_command_handlers.gd
+@@ -0,0 +1,449 @@
++## Handlers for the original animation and walking commands.
++##
++## The original game executes queued commands with Tcl `eval`. These handlers
++## replace the original procedures for the two most common command families and
++## reproduce their control flow, including the early exits and the fallback
++## chains.
++##
++## Sources (original install, data/Scripts):
++##   classes/zwerg/z_procs.tcl:186-249        - play_anim, play_anim_time,
++##                                              play_anim_loop, play_dig_anim_loop
++##   classes/zwerg/z_dignwalk.tcl:590-619     - walk_pos, walk_pos_with_box
++##   classes/zwerg/z_dignwalk.tcl:724-729     - walk_random
++##   classes/zwerg/z_dignwalk.tcl:735-811     - walk_near_item
++##   classes/zwerg/z_dignwalk.tcl:814-827     - walk_dummy
++##
++## Scene dependent primitives are injected as callables, because the original
++## ones are native: vector_fix, get_place, get_pos, get_posbottom,
++## get_linkpos, obj_valid, walk_action, action/set_anim.
++##
++## Adapter contract (all optional unless stated):
++##   play_clip            Callable(Dictionary) -> bool   (required for play_anim)
++##   queue                NativeTaskList                   (required for play_anim_loop)
++##   actor_pos            Callable() -> Vector3
++##   fix_position         Callable(Vector3) -> Variant     Vector3 or null
++##   object_valid         Callable(String) -> bool
++##   object_position      Callable(String) -> Variant
++##   object_link_position Callable(String, String) -> Variant
++##   pick_place           Callable(Dictionary) -> Variant
++##   walk_action          Callable(Dictionary) -> bool
++##   note_path_length     Callable(Vector3) -> void
++##   random_value         Callable() -> float
++extends RefCounted
++
++const Aliases = preload("res://scripts/native_animation_aliases.gd")
++
++const WALK_POS_ARGS := 1
++const WALK_NEAR_ITEM_ARGS := 2
++const WALK_DUMMY_ARGS := 2
++
++
++## Register play_anim, play_anim_time, play_anim_loop and play_dig_anim_loop.
++static func register_animation_handlers(dispatcher: RefCounted, adapters: Dictionary = {}) -> void:
++	dispatcher.register("play_anim", func(args: Array) -> bool:
++		return _play_anim(args, adapters)
++	)
++	dispatcher.register("play_anim_time", func(args: Array) -> bool:
++		return _play_anim_time(args, adapters)
++	)
++	dispatcher.register("play_anim_loop", func(args: Array) -> bool:
++		return _play_anim_loop(args, adapters)
++	)
++	dispatcher.register("play_dig_anim_loop", func(args: Array) -> bool:
++		return _play_dig_anim_loop(args, adapters)
++	)
++
++
++## Register walk_pos, walk_pos_with_box, walk_random, walk_near_item,
++## walk_dummy and walk_outoftransit.
++static func register_walk_handlers(dispatcher: RefCounted, adapters: Dictionary = {}) -> void:
++	dispatcher.register("walk_pos", func(args: Array) -> bool:
++		return _walk_pos(args, adapters, false)
++	)
++	dispatcher.register("walk_pos_with_box", func(args: Array) -> bool:
++		return _walk_pos(args, adapters, true)
++	)
++	dispatcher.register("walk_random", func(args: Array) -> bool:
++		return _walk_random(args, adapters)
++	)
++	dispatcher.register("walk_near_item", func(args: Array) -> bool:
++		return _walk_near_item(args, adapters)
++	)
++	dispatcher.register("walk_dummy", func(args: Array) -> bool:
++		return _walk_dummy(args, adapters)
++	)
++	dispatcher.register("walk_outoftransit", func(args: Array) -> bool:
++		return _walk_outoftransit(args, adapters)
++	)
++
++
++# --- animation --------------------------------------------------------------
++
++## play_anim {anim args} (z_procs.tcl:186)
++##
++## The original disables the actor state, starts the animation action and - when
++## the alias carries a face animation - starts the face sequence as well.
++static func _play_anim(args: Array, adapters: Dictionary) -> bool:
++	if args.is_empty():
++		return false
++	var alias_name := String(args[0])
++	var clip := Aliases.get_clip(alias_name)
++	if clip == "":
++		return false
++	var request := {
++		"alias": alias_name,
++		"clip": clip,
++		"frames": Aliases.get_frame_count(alias_name),
++		"face_anim": Aliases.get_face_anim(alias_name),
++		"accident": alias_name.contains("accident"),
++		"wait": 0.0,
++	}
++	if not adapters.has("play_clip"):
++		return false
++	return bool((adapters["play_clip"] as Callable).call(request))
++
++
++## play_anim_time {anim time args} (z_procs.tcl:208)
++static func _play_anim_time(args: Array, adapters: Dictionary) -> bool:
++	if args.size() < 2:
++		return false
++	var alias_name := String(args[0])
++	var clip := Aliases.get_clip(alias_name)
++	if clip == "":
++		return false
++	var request := {
++		"alias": alias_name,
++		"clip": clip,
++		"frames": Aliases.get_frame_count(alias_name),
++		"face_anim": Aliases.get_face_anim(alias_name),
++		"accident": alias_name.contains("accident"),
++		"wait": _to_float(String(args[1])),
++	}
++	if not adapters.has("play_clip"):
++		return false
++	return bool((adapters["play_clip"] as Callable).call(request))
++
++
++## play_anim_loop {animroot cnt} (z_procs.tcl:219)
++##
++## The original pushes start, loop*cnt and end onto the actor queue with
++## tasklist_addfront, so the execution order is start -> loop -> end.
++static func _play_anim_loop(args: Array, adapters: Dictionary) -> bool:
++	if args.size() < 2:
++		return false
++	if not adapters.has("queue"):
++		return false
++	var root := String(args[0])
++	var count := int(_to_float(String(args[1])))
++	var queue: RefCounted = adapters["queue"]
++	# pushed in reverse, exactly like the original addfront chain
++	queue.add_front("play_anim %send" % root)
++	for _index: int in range(count):
++		queue.add_front("play_anim %sloop" % root)
++	queue.add_front("play_anim %sstart" % root)
++	return true
++
++
++## play_dig_anim_loop {animroot cnt digpoint acc} (z_procs.tcl:228)
++##
++## The accident branch depends on the native rand(); the original compares
++## acc*0.3 against it. A random_value adapter supplies the draw.
++static func _play_dig_anim_loop(args: Array, adapters: Dictionary) -> bool:
++	if args.size() < 3:
++		return false
++	if not adapters.has("queue"):
++		return false
++	var root := String(args[0])
++	var count := int(_to_float(String(args[1])))
++	var digpoint := String(args[2])
++	var accident_chance: Variant = _to_float(String(args[3])) if args.size() > 3 else 0.0
++	var queue: RefCounted = adapters["queue"]
++	var draw := 0.0
++	if adapters.has("random_value"):
++		draw = float((adapters["random_value"] as Callable).call())
++	for index: int in range(1, count + 1):
++		var command := "play_anim %sloop {%s}" % [root, digpoint]
++		if index > 1 and accident_chance != null and float(accident_chance) * 0.3 > draw:
++			command = "play_anim %saccident" % root
++		if index == count:
++			if not adapters.has("play_clip"):
++				return false
++			var alias_name := "%sloop" % root
++			if command.contains("accident"):
++				alias_name = "%saccident" % root
++			var clip := Aliases.get_clip(alias_name)
++			if clip == "":
++				return false
++			(adapters["play_clip"] as Callable).call({
++				"alias": alias_name,
++				"clip": clip,
++				"frames": Aliases.get_frame_count(alias_name),
++				"face_anim": Aliases.get_face_anim(alias_name),
++				"accident": command.contains("accident"),
++				"wait": 0.0,
++			})
++		else:
++			queue.add_front(command)
++	return true
++
++
++# --- walking ----------------------------------------------------------------
++
++## walk_pos {pos force} and walk_pos_with_box {pos} (z_dignwalk.tcl:590, 607)
++##
++## The original notes the path length with the raw position, then fixes the
++## position with vector_fix and starts the walk action.
++static func _walk_pos(args: Array, adapters: Dictionary, with_box: bool) -> bool:
++	if args.is_empty():
++		return false
++	var raw: Variant = parse_position(String(args[0]))
++	if raw == null:
++		return false
++	if adapters.has("note_path_length"):
++		(adapters["note_path_length"] as Callable).call(raw)
++	var fixed: Variant = raw
++	if adapters.has("fix_position"):
++		fixed = (adapters["fix_position"] as Callable).call(raw)
++	if fixed == null:
++		return false
++	var params := {
++		"target": fixed,
++		"waving": 1,
++		"forcetarget": 0,
++	}
++	if not with_box and args.size() > 1:
++		params["forcetarget"] = int(_to_float(String(args[1])))
++	if with_box:
++		params["canclimb"] = 0
++		params["withbox"] = true
++	if not adapters.has("walk_action"):
++		return false
++	return bool((adapters["walk_action"] as Callable).call(params))
++
++
++## walk_random {plength} (z_dignwalk.tcl:724)
++static func _walk_random(args: Array, adapters: Dictionary) -> bool:
++	if args.is_empty():
++		return false
++	var length: Variant = _to_float(String(args[0]))
++	if length == null:
++		return false
++	if not adapters.has("pick_place"):
++		return false
++	var center: Variant = _actor_pos(adapters)
++	if center == null:
++		return false
++	var place: Variant = (adapters["pick_place"] as Callable).call({
++		"center": center,
++		"circle": length,
++		"mindist": 0.7,
++		"random": length,
++		"walldist": 1,
++	})
++	if place == null:
++		return false
++	return _walk_pos([_position_text(place)], adapters, false)
++
++
++## walk_near_item {item radius tolerance speedtype} (z_dignwalk.tcl:735)
++##
++## The original has three early exits (already close enough, unreachable target
++## in the air) and a three step fallback chain for the walk position.
++static func _walk_near_item(args: Array, adapters: Dictionary) -> bool:
++	if args.size() < WALK_NEAR_ITEM_ARGS:
++		return false
++	var item := String(args[0])
++	var radius: Variant = _to_float(String(args[1]))
++	if radius == null:
++		return false
++	var tolerance := 0.1
++	if args.size() > 2:
++		tolerance = _to_float(String(args[2]))
++	var speedtype := "auto"
++	if args.size() > 3:
++		speedtype = String(args[3])
++
++	var itempos: Variant = null
++	if _looks_like_position(item):
++		itempos = parse_position(item)
++	else:
++		if not adapters.has("object_valid"):
++			return false
++		if not bool((adapters["object_valid"] as Callable).call(item)):
++			return false
++		if not adapters.has("object_position"):
++			return false
++		itempos = (adapters["object_position"] as Callable).call(item)
++	if itempos == null:
++		return false
++
++	var thispos: Variant = _actor_pos(adapters)
++	if thispos == null:
++		return false
++
++	# exit 1: already close enough
++	if _distance3d(thispos, itempos) - radius <= tolerance:
++		return true
++
++	var walkpos: Variant = null
++	if adapters.has("pick_place"):
++		walkpos = (adapters["pick_place"] as Callable).call({
++			"center": itempos,
++			"nearpos": thispos,
++			"mindist": radius,
++			"circle": radius + 2.0,
++			"except": "this",
++		})
++		if walkpos != null and adapters.has("fix_position"):
++			walkpos = (adapters["fix_position"] as Callable).call(walkpos)
++		elif walkpos != null:
++			walkpos = null
++		# second attempt without materials
++		if walkpos == null:
++			walkpos = (adapters["pick_place"] as Callable).call({
++				"center": itempos,
++				"nearpos": thispos,
++				"mindist": radius,
++				"circle": radius + 2.0,
++				"except": "this",
++				"materials": false,
++			})
++			if walkpos != null and adapters.has("fix_position"):
++				walkpos = (adapters["fix_position"] as Callable).call(walkpos)
++			elif walkpos != null:
++				walkpos = null
++	# last fallback: the fixed item position itself
++	if walkpos == null and adapters.has("fix_position"):
++		walkpos = (adapters["fix_position"] as Callable).call(itempos)
++
++	if walkpos == null:
++		return false
++
++	if adapters.has("note_path_length"):
++		(adapters["note_path_length"] as Callable).call(walkpos)
++
++	# exit 2: the fixed position is already close
++	if _distance3d(thispos, walkpos) < tolerance:
++		return true
++	# exit 3: the target floats above the actor and is out of reach
++	if float((thispos as Vector3).z) < float((walkpos as Vector3).z) + 2.0 \
++			and _distance2d(thispos, walkpos) <= 2.0:
++		return true
++
++	var params := {
++		"target": walkpos,
++		"forcetarget": 0,
++	}
++	if speedtype != "auto":
++		params["speedtype"] = speedtype
++	if not adapters.has("walk_action"):
++		return false
++	return bool((adapters["walk_action"] as Callable).call(params))
++
++
++## walk_dummy {item dummy speed} (z_dignwalk.tcl:814)
++static func _walk_dummy(args: Array, adapters: Dictionary) -> bool:
++	if args.size() < WALK_DUMMY_ARGS:
++		return false
++	var item := String(args[0])
++	var dummy := String(args[1])
++	var speed := 0
++	if args.size() > 2:
++		speed = int(_to_float(String(args[2])))
++	if not adapters.has("object_valid"):
++		return false
++	if not bool((adapters["object_valid"] as Callable).call(item)):
++		return false
++	if not adapters.has("object_position") or not adapters.has("object_link_position"):
++		return false
++	var base: Variant = (adapters["object_position"] as Callable).call(item)
++	var offset: Variant = (adapters["object_link_position"] as Callable).call(item, dummy)
++	if base == null or offset == null:
++		return false
++	var target: Vector3 = (base as Vector3) + (offset as Vector3)
++	if adapters.has("note_path_length"):
++		(adapters["note_path_length"] as Callable).call(target)
++	var params := {
++		"object": item,
++		"dummy": dummy,
++		"speedtype": speed,
++	}
++	if not adapters.has("walk_action"):
++		return false
++	return bool((adapters["walk_action"] as Callable).call(params))
++
++
++## walk_outoftransit {} (z_dignwalk.tcl:846)
++##
++## Walks out of a transit tube: the z coordinate is clamped to 13 and a small
++## offset is added before walking there.
++static func _walk_outoftransit(args: Array, adapters: Dictionary) -> bool:
++	var thispos: Variant = _actor_pos(adapters)
++	if thispos == null:
++		return false
++	var pos := thispos as Vector3
++	if pos.z <= 13.0:
++		return true
++	var target := Vector3(pos.x + 0.2, pos.y, 13.0)
++	return _walk_pos([_format_position(target)], adapters, false)
++
++
++# --- helpers ----------------------------------------------------------------
++
++## Parse an original position string "x y z" into a Vector3.
++static func parse_position(text: String) -> Variant:
++	var parts := text.strip_edges().split(" ", false)
++	if parts.size() != 3:
++		return null
++	var values: Array[float] = []
++	for part: String in parts:
++		var value: Variant = _to_float(part)
++		if value == null:
++			return null
++		values.append(value)
++	return Vector3(values[0], values[1], values[2])
++
++
++static func _format_position(value: Vector3) -> String:
++	return "%s %s %s" % [str(value.x), str(value.y), str(value.z)]
++
++
++## Turn a place value into the original position text.
++static func _position_text(place: Variant) -> String:
++	if place is Vector3:
++		return _format_position(place)
++	return String(place)
++
++
++## A single element list is an object reference, a three element list a position.
++static func _looks_like_position(text: String) -> bool:
++	return parse_position(text) != null
++
++
++static func _to_float(text: String) -> Variant:
++	var value := text.strip_edges()
++	if value == "":
++		return null
++	if not value.is_valid_float():
++		return null
++	return value.to_float()
++
++
++static func _actor_pos(adapters: Dictionary) -> Variant:
++	if not adapters.has("actor_pos"):
++		return null
++	return (adapters["actor_pos"] as Callable).call()
++
++
++static func _distance3d(a: Variant, b: Variant) -> float:
++	if not (a is Vector3) or not (b is Vector3):
++		return INF
++	return (a as Vector3).distance_to(b as Vector3)
++
++
++static func _distance2d(a: Variant, b: Variant) -> float:
++	if not (a is Vector3) or not (b is Vector3):
++		return INF
++	var first := a as Vector3
++	var second := b as Vector3
++	return Vector2(first.x, first.y).distance_to(Vector2(second.x, second.y))
+
+diff --git a/scripts/native_hamster_actor_3d.gd b/scripts/native_hamster_actor_3d.gd
+new file mode 100644
+--- /dev/null
++++ b/scripts/native_hamster_actor_3d.gd
+--- /dev/null
++++ b/scripts/native_hamster_actor_3d.gd
+@@ -0,0 +1,396 @@
++## Scene binding for the autonomous hamster actor.
++##
++## The behaviour lives in native_hamster_actor.gd. This node feeds the actor
++## with the world, runs the clock and shows the original clips of the
++## hamster.3db package.
++##
++## World adapters (all optional, the scene fallback is used without them):
++##   query_dwarves Callable(float range) -> Array
++##   query_food    Callable(float range) -> Array
++##   query_farm    Callable(float range) -> Dictionary
++##   pick_place    Callable(Dictionary) -> Variant
++##   walk_action   Callable(Dictionary) -> bool
++##   walk_complete Callable() -> bool
++##
++## Scene fallback conventions:
++##   group "dwarf"   - the dwarves the hamster fears
++##   group "food"    - edible objects (mushroom hats)
++##   group "farm"    - the pen the hamster lives in
++##   group "container" - objects that hold an actor (paralysis)
++extends Node3D
++
++const Actor = preload("res://scripts/native_hamster_actor.gd")
++const Clips = preload("res://scripts/native_hamster_clips.gd")
++const Animations = preload("res://scripts/native_hamster_animations.gd")
++
++const GROUP_DWARF := "dwarf"
++const GROUP_FOOD := "food"
++const GROUP_FARM := "farm"
++const GROUP_CONTAINER := "container"
++const WALK_SPEED := 1.6
++const WALK_REACHED := 0.12
++const WALK_FRAME_FPS := 12.0
++
++# The turn of the original (hamster.tcl:48-51): the walk action turns the
++# object before it walks and plays the turn clip of the animset while it
++# turns. The clip only shows the step of the turn, the rotation of the body
++# belongs to the engine, so the heading is rotated here while the clip plays.
++const TURN_CLIP_MIN_ANGLE := 1.4
++const TURN_SPEED := 90.0
++const TURN_EPSILON := 0.05
++
++var actor: RefCounted = null
++
++var _adapters: Dictionary = {}
++var _body_root: Node3D = null
++var _body_instances: Array[MeshInstance3D] = []
++var _last_clip: String = ""
++var _last_frame: int = -1
++var _walk_target: Variant = null
++var _walk_speed: float = WALK_SPEED
++var _walk_clip: String = ""
++var _walk_frame: int = -1
++var _walk_time: float = 0.0
++var _last_delta: float = 0.0
++var _idle_time: float = 0.0
++var _heading: float = 0.0
++var _turn_active: bool = false
++var _turn_delta: float = 0.0
++var _turn_to: float = 0.0
++var _turn_sign: float = 1.0
++var _turn_speed: float = 0.0
++var _turn_time: float = 0.0
++var _turn_frame: int = 0
++var _turn_clip: String = ""
++var _turn_blocks: bool = false
++
++
++## Start the hamster with the given world adapters.
++func setup(adapters: Dictionary = {}) -> void:
++	_adapters = adapters.duplicate()
++	actor = Actor.new()
++	actor.call("setup", _build_adapters())
++	_body_root = Node3D.new()
++	_body_root.name = "HamsterBody"
++	add_child(_body_root)
++	set_process(true)
++
++
++## The world the hamster acts in.
++func _build_adapters() -> Dictionary:
++	var world: Dictionary = {
++		"actor_pos": func() -> Vector3: return global_position,
++		"query_dwarves": func(_range: float) -> Array: return _dwarf_positions(),
++		"query_food": func(_range: float) -> Array: return _food_entries(),
++		"query_farm": func(_range: float) -> Dictionary: return _farm_entry(),
++		"is_contained": func() -> bool: return _is_contained(),
++		"is_underwater": func() -> bool: return false,
++		"pick_place": func(request: Dictionary) -> Variant: return _pick_place(request),
++		"walk_action": func(params: Dictionary) -> bool: return _start_walk(params),
++		"walk_complete": func() -> bool: return _walk_complete(),
++		"play_clip": func(_request: Dictionary) -> bool: return true,
++		"delete_item": func(reference: String) -> void: _delete_item(reference),
++		"object_position": func(reference: String) -> Variant: return _object_position(reference),
++		"random_int": func(low: int, high: int) -> int: return _random_int(low, high),
++		"random_float": func(low: float, high: float) -> float: return _random_float(low, high),
++		"now": func() -> float: return Time.get_ticks_msec() / 1000.0,
++	}
++	for key: String in _adapters.keys():
++		world[key] = _adapters[key]
++	return world
++
++
++func _process(delta: float) -> void:
++	_last_delta = maxf(0.0, delta)
++	if actor == null:
++		return
++	actor.call("tick", delta)
++	_sync_visual()
++
++
++## Show the frame of the clip the actor is playing.
++func _sync_visual() -> void:
++	if actor == null or _body_root == null:
++		return
++	var clip := get_current_clip()
++	var frame := get_current_frame()
++	if clip == "" or frame < 0:
++		return
++	if clip == _last_clip and frame == _last_frame:
++		return
++	_last_clip = clip
++	_last_frame = frame
++	var meshes := Clips.frame_meshes(clip, frame)
++	while _body_instances.size() < meshes.size():
++		var instance := MeshInstance3D.new()
++		_body_root.add_child(instance)
++		_body_instances.append(instance)
++	for index: int in range(_body_instances.size()):
++		var instance := _body_instances[index]
++		instance.visible = index < meshes.size()
++		if instance.visible:
++			instance.mesh = meshes[index]
++
++
++# --- world fallback -----------------------------------------------------------
++
++func _dwarf_positions() -> Array:
++	var positions: Array = []
++	for node: Node in get_tree().get_nodes_in_group(GROUP_DWARF):
++		if node is Node3D:
++			positions.append((node as Node3D).global_position)
++	return positions
++
++
++func _food_entries() -> Array:
++	var entries: Array = []
++	for node: Node in get_tree().get_nodes_in_group(GROUP_FOOD):
++		if node is Node3D:
++			entries.append({"ref": String(node.name), "position": (node as Node3D).global_position})
++	return entries
++
++
++func _farm_entry() -> Dictionary:
++	for node: Node in get_tree().get_nodes_in_group(GROUP_FARM):
++		if node is Node3D:
++			return {"ref": String(node.name), "position": (node as Node3D).global_position}
++	return {}
++
++
++func _is_contained() -> bool:
++	for node: Node in get_tree().get_nodes_in_group(GROUP_CONTAINER):
++		if node is Node3D and (node as Node3D).is_ancestor_of(self):
++			return true
++	return false
++
++
++## Position of an edible object by its node name.
++func _object_position(reference: String) -> Variant:
++	for node: Node in get_tree().get_nodes_in_group(GROUP_FOOD):
++		if node is Node3D and String(node.name) == reference:
++			return (node as Node3D).global_position
++	return null
++
++
++## Remove an eaten object.
++func _delete_item(reference: String) -> void:
++	for node: Node in get_tree().get_nodes_in_group(GROUP_FOOD):
++		if node is Node3D and String(node.name) == reference:
++			node.queue_free()
++			return
++
++
++# --- walking fallback ---------------------------------------------------------
++#
++# The original hands the target to the native walk action. Without the project
++# pathfinder the hamster walks straight to the target; a host with a pathfinder
++# replaces walk_action and walk_complete.
++
++## Fallback for the original get_place.
++##
++## A request with "random" asks for a random spot around the center (the
++## random walk of the hamster), a request without it asks for the preferred
++## center of a flight. The original reports "nothing found" with a negative
++## coordinate, so the fallback keeps the world coordinates positive.
++func _pick_place(request: Dictionary) -> Variant:
++	var center: Variant = request.get("center", null)
++	if not (center is Vector3):
++		return null
++	if request.has("random"):
++		var radius := float(request.get("random", 4.0))
++		var minimum := float(request.get("mindist", 0.0))
++		var offset := Vector3(randf_range(-radius, radius), 0.0, randf_range(-radius, radius))
++		if offset.length() < minimum:
++			offset = offset.normalized() * minimum if offset.length() > 0.0 else Vector3(minimum, 0.0, 0.0)
++		return (center as Vector3) + offset
++	return center
++
++
++func _start_walk(params: Dictionary) -> bool:
++	# The native walk action plays the animset of the walk, so the host has to
++	# show the walk clip while the hamster moves.
++	var animset := String(params.get("animsets", "0"))
++	_walk_clip = Animations.get_animset_clip("Hamster", animset, "walk_loop")
++	_walk_time = 0.0
++	_walk_frame = -1
++	# A new walk turns again, the turn of the old walk is over.
++	_turn_active = false
++	_turn_clip = ""
++	if params.has("target"):
++		_walk_target = params["target"]
++		return true
++	# a random walk without a target: pick a reachable point around the actor
++	var length := float(params.get("random_path", 4.0))
++	_walk_target = global_position + Vector3(randf_range(-length, length), 0.0, randf_range(-length, length))
++	return true
++
++
++func _walk_complete() -> bool:
++	if not (_walk_target is Vector3):
++		_walk_target = null
++		_walk_clip = ""
++		return true
++	if _turn_active:
++		# The original turns before it walks: the rotate action blocks the walk
++		# while the turn clip of the class plays.
++		_advance_turn(_last_delta)
++		if _turn_blocks:
++			return false
++	var target := _walk_target as Vector3
++	var delta := target - global_position
++	delta.y = 0.0
++	if delta.length() <= WALK_REACHED:
++		global_position = Vector3(target.x, global_position.y, target.z)
++		_walk_target = null
++		_walk_clip = ""
++		return true
++	# The model turns into the direction of the walk, like the native walk
++	# action does. Without it the hamster walks sideways.
++	var direction := delta.normalized()
++	var wanted := atan2(direction.x, direction.z)
++	var turn := wrapf(wanted - _heading, -PI, PI)
++	if absf(turn) > TURN_EPSILON:
++		# The original turns first. A turn of ninety degrees or more plays the
++		# turn clip and blocks the walk, a smaller one is only rotated while
++		# the hamster goes on.
++		_start_turn(turn)
++		if _turn_blocks:
++			return false
++	global_position += direction * _walk_speed * _last_delta
++	_advance_walk_clip()
++	return false
++
++
++## Start the turn of the original (hamster.tcl:48-51).
++##
++## The walk action turns the object towards the direction of the path and plays
++## the turn clip of the animset while it turns.
++func _start_turn(delta: float) -> void:
++	_turn_active = true
++	_turn_delta = delta
++	_turn_to = wrapf(_heading + delta, -PI, PI)
++	_turn_sign = signf(delta)
++	_turn_time = 0.0
++	_turn_frame = 0
++	_turn_blocks = absf(delta) >= TURN_CLIP_MIN_ANGLE
++	_turn_clip = _turn_clip_for(delta) if _turn_blocks else ""
++	_turn_speed = absf(delta) / maxf(0.0001, _turn_duration(delta))
++
++
++## The turn clip of the class for the angle of the turn.
++##
++## The walk animset names the turn roles, the hop and the gallop animset have
++## none, so the class aliases are the fallback (hamster.tcl:6-9).
++func _turn_clip_for(delta: float) -> String:
++	var role := "turn_left_90"
++	if delta < 0.0:
++		role = "turn_right_90"
++	if absf(delta) >= PI:
++		role = "turn_left_180"
++		if delta < 0.0:
++			role = "turn_right_180"
++	var clip := Animations.get_animset_clip("Hamster", "0", role)
++	if clip != "":
++		return clip
++	var alias := "turnleft"
++	if delta < 0.0:
++		alias = "turnright"
++	if absf(delta) >= PI:
++		alias = "turn180left"
++		if delta < 0.0:
++			alias = "turn180right"
++	return Animations.get_clip("Hamster", alias)
++
++
++## How long the turn takes.
++func _turn_duration(delta: float) -> float:
++	if _turn_clip != "":
++		var frames := Clips.frame_count(_turn_clip)
++		if frames > 0:
++			return float(frames) / WALK_FRAME_FPS
++	return absf(delta) / deg_to_rad(TURN_SPEED)
++
++
++## Rotate the hamster while the turn clip plays.
++func _advance_turn(delta: float) -> void:
++	_turn_time += delta
++	if _turn_clip != "":
++		var frames := Clips.frame_count(_turn_clip)
++		if frames > 0:
++			_turn_frame = mini(int(floor(_turn_time * WALK_FRAME_FPS)), frames - 1)
++	var step := _turn_speed * delta
++	var remaining := absf(_turn_delta) - step
++	if remaining <= 0.0:
++		_heading = _turn_to
++		_turn_delta = 0.0
++		_turn_active = false
++	else:
++		_turn_delta = _turn_sign * remaining
++		_heading = wrapf(_heading + _turn_sign * step, -PI, PI)
++	rotation.y = _heading
++
++
++## The clip that is shown right now.
++##
++## While the hamster turns, the turn clip of the original decides the picture,
++## while it walks the walk animset does, otherwise the actor of the class does.
++##
++## A turn that is too small for the turn clip has no picture of its own: the
++## turn clip is only played from ninety degrees on, so the walk animset keeps
++## the picture during a small turn.
++func get_current_clip() -> String:
++	if _turn_active and _turn_clip != "":
++		return _turn_clip
++	if _walk_clip != "":
++		return _walk_clip
++	if actor == null:
++		return ""
++	var clip := String(actor.call("get_current_clip"))
++	if clip != "":
++		return clip
++	# Nothing is played: the standby picture of the original is shown
++	# (hamster.tcl:93), so the hamster is never a picture without a clip.
++	return Animations.get_clip("Hamster", "standstill")
++
++
++## The frame that is shown right now.
++func get_current_frame() -> int:
++	if _turn_active and _turn_clip != "":
++		return _turn_frame
++	if _walk_clip != "":
++		return _walk_frame
++	if actor == null:
++		return -1
++	if String(actor.call("get_current_clip")) == "":
++		# The standby picture of the original loops while nothing is played.
++		_idle_time += _last_delta
++		var frames := Clips.frame_count(Animations.get_clip("Hamster", "standstill"))
++		if frames > 0:
++			return int(floor(_idle_time * WALK_FRAME_FPS)) % frames
++		return -1
++	return int(actor.call("get_current_frame"))
++
++
++## Play the walk clip of the animset while the hamster moves.
++func _advance_walk_clip() -> void:
++	if _walk_clip == "":
++		return
++	var frames := Clips.frame_count(_walk_clip)
++	if frames <= 0:
++		return
++	_walk_time += _last_delta
++	_walk_frame = int(floor(_walk_time * WALK_FRAME_FPS)) % frames
++
++
++# --- randomness ----------------------------------------------------------------
++
++func _random_int(low: int, high: int) -> int:
++	if high < low:
++		return low
++	return randi_range(low, high)
++
++
++func _random_float(low: float, high: float) -> float:
++	if high < low:
++		return low
++	return randf_range(low, high)
+
+diff --git a/scripts/native_hamster_demo.gd b/scripts/native_hamster_demo.gd
+new file mode 100644
+--- /dev/null
++++ b/scripts/native_hamster_demo.gd
+--- /dev/null
++++ b/scripts/native_hamster_demo.gd
+@@ -0,0 +1,174 @@
++## Demo of the autonomous hamster.
++##
++## Two hamsters with the original behaviour: a wild one that fears the dwarf
++## and eats the mushroom hat, and a farmed one that stays in the pen and
++## ignores the dwarf. The dwarf walks past on its own, so everything on
++## screen is driven by the hamster logic.
++extends Node3D
++
++const HamsterActor3D = preload("res://scripts/native_hamster_actor_3d.gd")
++
++const WILD_START := Vector3(7.0, 0.0, 8.0)
++const FARM_POSITION := Vector3(12.5, 0.0, 8.0)
++const FOOD_POSITION := Vector3(7.0, 0.0, 10.2)
++const DWARF_START := Vector3(3.5, 0.0, 9.0)
++const DWARF_END := Vector3(9.5, 0.0, 9.6)
++
++var _wild: Node3D = null
++var _farmed: Node3D = null
++var _dwarf: Node3D = null
++var _food: Node3D = null
++var _farm: Node3D = null
++var _status: Label = null
++var _dwarf_direction: float = 1.0
++var _reported: Dictionary = {}
++
++
++func _ready() -> void:
++	_build_world()
++	_build_hud()
++
++
++func _process(delta: float) -> void:
++	_move_dwarf(delta)
++	_report_changes()
++	_update_hud()
++
++
++func _build_world() -> void:
++	var light := DirectionalLight3D.new()
++	light.rotation_degrees = Vector3(-55.0, -35.0, 0.0)
++	light.light_energy = 1.1
++	add_child(light)
++
++	var floor_mesh := MeshInstance3D.new()
++	var plane := PlaneMesh.new()
++	plane.size = Vector2(18.0, 12.0)
++	floor_mesh.mesh = plane
++	var floor_material := StandardMaterial3D.new()
++	floor_material.albedo_color = Color(0.32, 0.29, 0.25)
++	floor_mesh.mesh.material = floor_material
++	floor_mesh.position = Vector3(10.0, 0.0, 9.0)
++	add_child(floor_mesh)
++
++	_farm = MeshInstance3D.new()
++	var pen := BoxMesh.new()
++	pen.size = Vector3(3.5, 0.2, 5.0)
++	_farm.mesh = pen
++	var pen_material := StandardMaterial3D.new()
++	pen_material.albedo_color = Color(0.45, 0.35, 0.2)
++	_farm.mesh.material = pen_material
++	_farm.position = FARM_POSITION + Vector3(0.0, 0.05, 0.0)
++	_farm.add_to_group("farm")
++	add_child(_farm)
++
++	_wild = _make_hamster("WildHamster", WILD_START)
++	# the original counts the nutrition up to fifty before it looks for food;
++	# the demo starts at the limit so the feeding happens right away
++	(_wild.get("actor") as RefCounted).call("set_nutrition", 49)
++	_farmed = _make_hamster("FarmHamster", FARM_POSITION)
++	(_farmed.get("actor") as RefCounted).call("set_farmhamster",
++		{"ref": "Farm", "position": FARM_POSITION})
++
++	_food = MeshInstance3D.new()
++	_food.name = "Pilzhut"
++	var cap := SphereMesh.new()
++	cap.radius = 0.22
++	cap.height = 0.44
++	_food.mesh = cap
++	var food_material := StandardMaterial3D.new()
++	food_material.albedo_color = Color(0.85, 0.35, 0.3)
++	_food.mesh.material = food_material
++	_food.position = FOOD_POSITION + Vector3(0.0, 0.22, 0.0)
++	_food.add_to_group("food")
++	add_child(_food)
++
++	_dwarf = MeshInstance3D.new()
++	_dwarf.name = "Dwarf"
++	var body := CapsuleMesh.new()
++	body.radius = 0.3
++	body.height = 1.2
++	_dwarf.mesh = body
++	var dwarf_material := StandardMaterial3D.new()
++	dwarf_material.albedo_color = Color(0.8, 0.7, 0.4)
++	_dwarf.mesh.material = dwarf_material
++	_dwarf.position = DWARF_START + Vector3(0.0, 0.6, 0.0)
++	_dwarf.add_to_group("dwarf")
++	add_child(_dwarf)
++
++	var camera := Camera3D.new()
++	camera.position = Vector3(10.0, 2.6, 15.2)
++	add_child(camera)
++	camera.look_at_from_position(camera.position, Vector3(9.5, 0.25, 9.0), Vector3.UP)
++	camera.make_current()
++
++
++func _make_hamster(node_name: String, position: Vector3) -> Node3D:
++	var hamster: Node3D = HamsterActor3D.new()
++	hamster.name = node_name
++	hamster.position = position
++	add_child(hamster)
++	hamster.call("setup", {})
++	return hamster
++
++
++func _move_dwarf(delta: float) -> void:
++	if _dwarf == null:
++		return
++	var target := DWARF_END if _dwarf_direction > 0.0 else DWARF_START
++	_dwarf.position.x += _dwarf_direction * 1.2 * delta
++	if _dwarf_direction > 0.0 and _dwarf.position.x > target.x:
++		_dwarf_direction = -1.0
++	elif _dwarf_direction < 0.0 and _dwarf.position.x < target.x:
++		_dwarf_direction = 1.0
++
++
++## Print what changed, so the output panel shows the hamster acting.
++func _report_changes() -> void:
++	for hamster: Node3D in [_wild, _farmed]:
++		if hamster == null:
++			continue
++		var actor: RefCounted = hamster.get("actor")
++		if actor == null:
++			continue
++		var key := String(hamster.name)
++		var signature := "%s|%s|%d" % [
++			String(actor.call("get_current_alias")),
++			String(actor.call("get_current_clip")),
++			int(actor.call("get_queue_size"))]
++		if String(_reported.get(key, "")) == signature:
++			continue
++		_reported[key] = signature
++		print("HAMSTER_DEMO %s t=%.1f alias=%s clip=%s pos=%s" % [
++			key,
++			float(actor.call("get_time")),
++			String(actor.call("get_current_alias")),
++			String(actor.call("get_current_clip")),
++			str((hamster as Node3D).position)])
++
++
++func _build_hud() -> void:
++	var layer := CanvasLayer.new()
++	add_child(layer)
++	_status = Label.new()
++	_status.position = Vector2(16.0, 12.0)
++	_status.add_theme_font_size_override("font_size", 15)
++	layer.add_child(_status)
++
++
++func _update_hud() -> void:
++	if _status == null:
++		return
++	_status.text = "%s\n%s\ndwarf x=%.1f" % [
++		_describe(_wild), _describe(_farmed), _dwarf.position.x]
++
++
++func _describe(hamster: Node3D) -> String:
++	var actor: RefCounted = hamster.get("actor")
++	if actor == null:
++		return "no actor"
++	return "%s: %s / %s / queue %d" % [
++		String(hamster.name),
++		String(actor.call("get_current_alias")),
++		String(actor.call("get_current_clip")),
++		int(actor.call("get_queue_size"))]
+
+diff --git a/scripts/native_wild_hamster_probe.gd b/scripts/native_wild_hamster_probe.gd
+new file mode 100644
+--- /dev/null
++++ b/scripts/native_wild_hamster_probe.gd
+--- /dev/null
++++ b/scripts/native_wild_hamster_probe.gd
+@@ -0,0 +1,76 @@
++extends Node3D
++## Probe scene for the wild hamster.
++##
++## One hamster walks to the right (+X). The camera looks from the front, so a
++## hamster that faces its direction of travel looks to the right of the screen
++## and a hamster that walks sideways looks into the camera.
++##
++## Run: res://scenes/native_wild_hamster_probe.tscn
++
++const Hamster = preload("res://scripts/native_wild_hamster.gd")
++
++var _hamster: Node3D = null
++var headings: Array[float] = []
++var _last_heading: float = -99.0
++var _last_clip: String = ""
++
++
++func _ready() -> void:
++	var light := DirectionalLight3D.new()
++	light.rotation_degrees = Vector3(-55.0, -35.0, 0.0)
++	light.light_energy = 1.1
++	add_child(light)
++
++	var floor_mesh := MeshInstance3D.new()
++	var plane := PlaneMesh.new()
++	plane.size = Vector2(12.0, 8.0)
++	floor_mesh.mesh = plane
++	var floor_material := StandardMaterial3D.new()
++	floor_material.albedo_color = Color(0.32, 0.29, 0.25)
++	floor_mesh.mesh.material = floor_material
++	floor_mesh.position = Vector3(1.5, 0.0, 0.0)
++	add_child(floor_mesh)
++
++	var camera := Camera3D.new()
++	camera.position = Vector3(1.5, 2.2, 6.5)
++	add_child(camera)
++	camera.look_at_from_position(camera.position, Vector3(1.5, 0.25, 0.0), Vector3.UP)
++	camera.make_current()
++
++	_hamster = Hamster.new()
++	_hamster.name = "ProbeHamster"
++	_hamster.position = Vector3.ZERO
++	add_child(_hamster)
++	_hamster.call("setup", _probe_host())
++	# A fixed walk to the right, so the picture shows where the hamster looks.
++	var actor: RefCounted = _hamster.get("actor")
++	actor.call("_start_walk", {"target": Vector3(3.0, 0.0, 0.0), "animsets": "1"})
++
++
++func _probe_host() -> Dictionary:
++	return {
++		"dwarf_positions": func() -> Array: return [],
++		"food_entries": func() -> Array: return [],
++		"walk_path": func(_from: Vector3, to: Vector3) -> Array: return [to],
++		"free_spot": func(center: Vector3, _radius: float, _mindist: float, _clip: Array) -> Variant:
++			return center,
++		"apply_heading": func(_node: Node3D, heading: float) -> void:
++			headings.append(heading)
++			_hamster.transform.basis = Basis(Vector3.UP, heading),
++		"depth_scale": func() -> float: return 1.0,
++	}
++
++
++func _process(_delta: float) -> void:
++	if _hamster == null:
++		return
++	if (headings as Array).is_empty():
++		return
++	var heading := float((headings as Array)[(headings as Array).size() - 1])
++	var clip := String(_hamster.call("get_current_clip"))
++	if absf(heading - _last_heading) < 0.0001 and clip == _last_clip:
++		return
++	_last_heading = heading
++	_last_clip = clip
++	print("PROBE_HAMSTER heading=%.3f pos=%s clip=%s" % [heading,
++		str(_hamster.position), clip])
+
+diff --git a/tools/native_wild_hamster_self_test.gd b/tools/native_wild_hamster_self_test.gd
+new file mode 100644
+--- /dev/null
++++ b/tools/native_wild_hamster_self_test.gd
+--- /dev/null
++++ b/tools/native_wild_hamster_self_test.gd
+@@ -0,0 +1,260 @@
++extends SceneTree
++## --headless --path godot --script res://tools/native_wild_hamster_self_test.gd
++## Checks the wild hamster of the multiplayer scene: the walk animsets, the
++## heading convention of the project, the gnome sensor, the walk itself, the
++## turn of the original and the ground the hamster walks on.
++const Hamster = preload("res://scripts/native_wild_hamster.gd")
++const Clips = preload("res://scripts/native_hamster_clips.gd")
++const Animations = preload("res://scripts/native_hamster_animations.gd")
++const Ground = preload("res://scripts/native_level_ground.gd")
++var _checks: int = 0
++var _failures: Array[String] = []
++
++func _initialize() -> void:
++	call_deferred("_run")
++
++func _check(condition: bool, message: String) -> void:
++	_checks += 1
++	if not condition:
++		_failures.append(message)
++		printerr("FAIL: " + message)
++
++## A host that stands in for the multiplayer scene.
++func _make_host(dwarves: Array, headings: Array, free_spot: Variant) -> Dictionary:
++	return {
++		"dwarf_positions": func() -> Array: return dwarves,
++		"food_entries": func() -> Array: return [],
++		"walk_path": func(_from: Vector3, to: Vector3) -> Array: return [to],
++		"free_spot": func(center: Vector3, _radius: float, _mindist: float, _clip: Array) -> Variant:
++			return free_spot if free_spot != null else center,
++		"apply_heading": func(_node: Node3D, heading: float) -> void: headings.append(heading),
++		"depth_scale": func() -> float: return 1.0,
++	}
++
++## One tick of the walk.
++##
++## The actor of the class calls the walk adapter of the node while the walk
++## action runs, so the test does the same.
++func _tick(hamster: Node3D, steps: int = 1) -> void:
++	for index: int in range(steps):
++		hamster.call("_process", 0.1)
++		hamster.call("_walk_complete")
++
++
++## Stop the actor from choosing its own activities.
++##
++## The wild activity table of the class starts a random walk, which would take
++## the walk away from the tests that drive it themselves.
++func _quiet(hamster: Node3D) -> void:
++	var actor: RefCounted = hamster.get("actor")
++	if actor != null:
++		actor.call("paralyze")
++
++func _run() -> void:
++	# --- the walk animsets of the class (hamster.tcl:42-81) -----------------
++	_check(Hamster.walk_clip_for("0", "start") == "laufen_start", "the walk set starts with laufen_start")
++	_check(Hamster.walk_clip_for("0", "loop") == "laufen_loop", "the walk set loops with laufen_loop")
++	_check(Hamster.walk_clip_for("0", "end") == "laufen_end", "the walk set ends with laufen_end")
++	_check(Hamster.walk_clip_for("1", "start") == "hoppeln_start", "the hop set starts with hoppeln_start")
++	_check(Hamster.walk_clip_for("1", "loop") == "hoppeln_loop", "the hop set loops with hoppeln_loop")
++	_check(Hamster.walk_clip_for("1", "end") == "hoppeln_end", "the hop set ends with hoppeln_end")
++	_check(Hamster.walk_clip_for("2", "loop") == "galopp_loop", "the gallop set loops with galopp_loop")
++	_check(Clips.frame_count("laufen_loop") == 7, "laufen_loop has 7 frames")
++	_check(Clips.frame_count("hoppeln_loop") == 7, "hoppeln_loop has 7 frames")
++	_check(Clips.frame_count("laufen_start") == 4, "laufen_start has 4 frames")
++	_check(Animations.get_clip("Hamster", "standstill") == "stand_anim", "the standby animation is stand_anim")
++
++	# --- the turn clips of the class (hamster.tcl:6-9 and :48-51) ----------
++	_check(Animations.get_animset_clip("Hamster", "0", "turn_left_90") == "drehen_links_90",
++		"the walk set turns left with drehen_links_90")
++	_check(Animations.get_animset_clip("Hamster", "0", "turn_right_90") == "drehen_rechts_90",
++		"the walk set turns right with drehen_rechts_90")
++	_check(Animations.get_animset_clip("Hamster", "0", "turn_left_180") == "drehen_links_90",
++		"the hundred eighty degree turn uses the same clip")
++	_check(Animations.get_animset_clip("Hamster", "0", "turn_right_180") == "drehen_rechts_90",
++		"the hundred eighty degree turn uses the same clip")
++	_check(Animations.get_clip("Hamster", "turnleft") == "drehen_links_90", "the class turns left")
++	_check(Animations.get_clip("Hamster", "turnright") == "drehen_rechts_90", "the class turns right")
++	_check(Clips.frame_count("drehen_links_90") == 17, "drehen_links_90 has 17 frames")
++	_check(Clips.frame_count("drehen_rechts_90") == 17, "drehen_rechts_90 has 17 frames")
++
++	# --- the heading convention of the project ------------------------------
++	_check(absf(Hamster.heading_for_direction(Vector2(0.0, 1.0), 1.0)) < 0.0001, "walking to +Z keeps the heading")
++	_check(absf(Hamster.heading_for_direction(Vector2(1.0, 0.0), 1.0) - PI * 0.5) < 0.0001, "walking to +X is a quarter turn")
++	_check(absf(Hamster.heading_for_direction(Vector2(-1.0, 0.0), 1.0) + PI * 0.5) < 0.0001, "walking to -X is the other quarter")
++	# The scene packs the depth by 0.5, so the heading of the scene is the one
++	# of the dwarves: atan2(dx, dz * depth_scale).
++	_check(absf(Hamster.heading_for_direction(Vector2(0.0, 1.0), 0.5)) < 0.0001, "the depth packing does not change the +Z heading")
++	_check(absf(Hamster.heading_for_direction(Vector2(1.0, 1.0), 0.5) - atan2(1.0, 0.5)) < 0.0001, "the depth packing enters the heading")
++
++	# --- the gnome sensor (z_procs.tcl:467-475) ----------------------------
++	_check(absf(Hamster.nearest_dwarf_distance([Vector3(3.0, 0.0, 0.0)], Vector3.ZERO) - 3.0) < 0.0001, "the dwarf is three units away")
++	_check(Hamster.nearest_dwarf_distance([], Vector3.ZERO) == INF, "without dwarves there is no distance")
++	_check(Hamster.sensor_should_trigger(1.9), "a dwarf at 1.9 makes the hamster run")
++	_check(Hamster.sensor_should_trigger(2.0), "the take radius of the original is two")
++	_check(not Hamster.sensor_should_trigger(2.1), "a dwarf at 2.1 is too far")
++
++	# --- the walk over the path of the host --------------------------------
++	var headings: Array = []
++	var hamster: Node3D = Hamster.new()
++	root.add_child(hamster)
++	hamster.position = Vector3.ZERO
++	hamster.call("setup", _make_host([], headings, null))
++	_quiet(hamster)
++	hamster.call("_process", 0.1)
++	_check(bool(hamster.call("_start_walk", {"target": Vector3(2.0, 0.0, 0.0), "animsets": "1"})), "the walk starts")
++	var guard: int = 0
++	while not bool(hamster.call("_walk_complete")) and guard < 200:
++		guard += 1
++		hamster.call("_process", 0.1)
++	_check((hamster.position - Vector3(2.0, 0.0, 0.0)).length() < 0.2, "the hamster reaches the end of the path")
++	_check((headings as Array).size() > 0, "the hamster turns while it walks")
++	_check(absf(float((headings as Array)[(headings as Array).size() - 1]) - PI * 0.5) < 0.0001,
++		"the hamster looks into the direction of the walk")
++	_check(guard < 200, "the walk ends")
++
++	# --- the turn of the original is a turn, not a jump ---------------------
++	# The walk action turns the object before it walks and plays the turn clip
++	# of the animset while it turns (hamster.tcl:48-51).
++	var turn_headings: Array = []
++	var turning: Node3D = Hamster.new()
++	root.add_child(turning)
++	turning.position = Vector3.ZERO
++	turning.call("setup", _make_host([], turn_headings, null))
++	_quiet(turning)
++	turning.call("_process", 0.1)
++	turning.call("_start_walk", {"target": Vector3(2.0, 0.0, 0.0), "animsets": "0"})
++	turning.call("_walk_complete")
++	turning.call("_process", 0.1)
++	_check(String(turning.call("get_current_clip")) == "drehen_links_90",
++		"a quarter turn shows the turn clip of the original")
++	_check(absf(float(turning.call("get_heading"))) < 0.2, "the turn does not jump to the direction")
++	_check((turning.position - Vector3.ZERO).length() < 0.0001, "the hamster waits for the turn")
++	var turn_steps: int = 0
++	while turn_steps < 60 and absf(float(turning.call("get_heading")) - PI * 0.5) > 0.0001:
++		_tick(turning)
++		turn_steps += 1
++	_check(absf(float(turning.call("get_heading")) - PI * 0.5) < 0.0001, "the turn ends in the direction of the walk")
++	_check(turn_steps > 4, "the turn takes more than one frame")
++
++	# --- the turn is played by the hamster that turns -----------------------
++	var turned_nodes: Array = []
++	var first: Node3D = Hamster.new()
++	var second: Node3D = Hamster.new()
++	root.add_child(first)
++	root.add_child(second)
++	first.position = Vector3.ZERO
++	second.position = Vector3(5.0, 0.0, 0.0)
++	var shared_headings: Array = []
++	var shared_host := {
++		"dwarf_positions": func() -> Array: return [],
++		"food_entries": func() -> Array: return [],
++		"walk_path": func(_from: Vector3, to: Vector3) -> Array: return [to],
++		"free_spot": func(center: Vector3, _radius: float, _mindist: float, _clip: Array) -> Variant: return center,
++		"apply_heading": func(node: Node3D, heading: float) -> void:
++			turned_nodes.append(node)
++			shared_headings.append(heading),
++		"depth_scale": func() -> float: return 1.0,
++	}
++	first.call("setup", shared_host)
++	second.call("setup", shared_host)
++	_quiet(first)
++	_quiet(second)
++	first.call("_process", 0.1)
++	first.call("_start_walk", {"target": Vector3(2.0, 0.0, 0.0), "animsets": "0"})
++	first.call("_walk_complete")
++	_tick(first)
++	_check((turned_nodes as Array).size() > 0, "the walking hamster turns")
++	_check((turned_nodes as Array).all(func(node: Variant) -> bool: return node == first),
++		"only the hamster that walks is turned")
++
++	# --- the hamster stays on the ground ------------------------------------
++	var ground_host := _make_host([], [], null)
++	ground_host["is_walkable"] = func(point: Vector3) -> bool: return point.z >= -1.0
++	var walker: Node3D = Hamster.new()
++	root.add_child(walker)
++	walker.position = Vector3.ZERO
++	walker.call("setup", ground_host)
++	_quiet(walker)
++	walker.call("_process", 0.1)
++	walker.call("_start_walk", {"target": Vector3(0.0, 0.0, -3.0), "animsets": "0"})
++	_tick(walker, 60)
++	_check(walker.position.z >= -1.0001, "the hamster does not walk into the void")
++	_check(walker.position.z < 0.0, "the hamster walks while there is ground")
++
++	# --- the random path finder needs ground -------------------------------
++	var void_host := _make_host([], [], null)
++	void_host["free_spot"] = func(_center: Vector3, _radius: float, _mindist: float, _clip: Array) -> Variant: return null
++	void_host["is_walkable"] = func(_point: Vector3) -> bool: return false
++	var lost: Node3D = Hamster.new()
++	root.add_child(lost)
++	lost.position = Vector3.ZERO
++	lost.call("setup", void_host)
++	_quiet(lost)
++	lost.call("_process", 0.1)
++	_check(not bool(lost.call("_start_walk", {"random_path": 4.0, "animsets": "0"})),
++		"the walk does not start without ground")
++	_check((lost.position - Vector3.ZERO).length() < 0.0001, "the hamster stays where it is")
++
++	# --- the ground of the level per height level --------------------------
++	var ground: RefCounted = Ground.new()
++	var terrain: Dictionary = _load_terrain()
++	_check(not terrain.is_empty(), "the terrain of the level is available")
++	if not terrain.is_empty():
++		(ground as RefCounted).call("load_terrain", terrain)
++		var levels: Array = (ground as RefCounted).call("levels")
++		_check(levels.has(14.5), "the level has the floor of the cave")
++		_check(levels.has(18.5), "the level has the upper terrace")
++		_check(bool((ground as RefCounted).call("floor_at", 14.5, Vector2(9.75, 5.96))),
++			"the floor of the cave is under the hamster of the floor")
++		_check(bool((ground as RefCounted).call("floor_at", 18.5, Vector2(37.0, 5.96))),
++			"the terrace is under the hamster of the terrace")
++		_check(not bool((ground as RefCounted).call("floor_at", 14.5, Vector2(37.0, 5.96))),
++			"the terrace is not on the floor of the cave")
++		_check(not bool((ground as RefCounted).call("floor_at", 18.5, Vector2(9.75, 5.96))),
++			"the floor of the cave is not on the terrace")
++		var bounds: Rect2 = (ground as RefCounted).call("level_bounds", 18.5)
++		_check(bounds.size.x > 20.0 and bounds.size.y > 10.0, "the terrace has an area to walk on")
++
++	# --- the wild hamster runs away from a dwarf ----------------------------
++	var flee_headings: Array = []
++	var flee: Node3D = Hamster.new()
++	root.add_child(flee)
++	flee.position = Vector3(4.0, 0.0, 4.0)
++	flee.call("setup", _make_host([Vector3(5.5, 0.0, 4.0)], flee_headings, null))
++	var start_distance := (flee.position - Vector3(5.5, 0.0, 4.0)).length()
++	var steps: int = 0
++	while steps < 120:
++		flee.call("_process", 0.1)
++		steps += 1
++		if (flee.position - Vector3(5.5, 0.0, 4.0)).length() > start_distance + 0.5:
++			break
++	var end_distance := (flee.position - Vector3(5.5, 0.0, 4.0)).length()
++	_check(end_distance > start_distance + 0.5, "the wild hamster runs away from the dwarf")
++	_check((flee_headings as Array).size() > 0, "the fleeing hamster turns")
++	_check(String(flee.call("get_current_clip")) != "", "the fleeing hamster shows an animation")
++
++	# --- the wild activity table (hamster.tcl:409-426) ----------------------
++	var actor: RefCounted = flee.get("actor")
++	_check(int(actor.call("get_scanrange")) == 4, "the scan range of the hamster is four")
++
++	if _failures.is_empty():
++		print("NATIVE_WILD_HAMSTER_SELF_TEST_OK assertions=%d" % _checks)
++	else:
++		printerr("NATIVE_WILD_HAMSTER_SELF_TEST_FAIL failures=%d" % _failures.size())
++	quit(0 if _failures.is_empty() else 1)
++
++
++## The terrain source of the scene.
++func _load_terrain() -> Dictionary:
++	var path := "res://models/multi_start_010_terrain.json"
++	if not FileAccess.file_exists(path):
++		return {}
++	var file := FileAccess.open(path, FileAccess.READ)
++	if file == null:
++		return {}
++	var parsed: Variant = JSON.parse_string(file.get_as_text())
++	file.close()
++	if not (parsed is Dictionary):
++		return {}
++	return parsed
+
+diff --git a/tools/native_hamster_actor_self_test.gd b/tools/native_hamster_actor_self_test.gd
+new file mode 100644
+--- /dev/null
++++ b/tools/native_hamster_actor_self_test.gd
+--- /dev/null
++++ b/tools/native_hamster_actor_self_test.gd
+@@ -0,0 +1,391 @@
++extends SceneTree
++## --headless --path godot --script res://tools/native_hamster_actor_self_test.gd
++## Checks the exported hamster clips and the autonomous hamster actor:
++## decisions, queue, command dispatch, animation playback, escape, feeding,
++## the farm pen and the paralysis timer.
++const Actor = preload("res://scripts/native_hamster_actor.gd")
++const Actor3D = preload("res://scripts/native_hamster_actor_3d.gd")
++const Clips = preload("res://scripts/native_hamster_clips.gd")
++const HamsterAnimations = preload("res://scripts/native_hamster_animations.gd")
++
++var _checks: int = 0
++var _failures: Array[String] = []
++
++
++## Mutable world used by the actor adapters.
++class FakeWorld extends RefCounted:
++	var position: Vector3 = Vector3.ZERO
++	var dwarves: Array[Vector3] = []
++	var food: Array[Dictionary] = []
++	var farm: Dictionary = {}
++	var contained: bool = false
++	var underwater: bool = false
++	var place_available: bool = true
++	var walk_result: int = 0
++	var time: float = 0.0
++	var random_value: int = 0
++	var walks: Array[Dictionary] = []
++	var clips: Array[Dictionary] = []
++	var deleted: Array[String] = []
++
++
++func _initialize() -> void:
++	call_deferred("_run")
++
++
++func _check(condition: bool, message: String) -> void:
++	_checks += 1
++	if not condition:
++		_failures.append(message)
++		printerr("FAIL: " + message)
++
++
++func _adapters(world: FakeWorld) -> Dictionary:
++	return {
++		"actor_pos": func() -> Vector3: return world.position,
++		"query_dwarves": func(_range: float) -> Array: return world.dwarves,
++		"query_food": func(_range: float) -> Array: return world.food,
++		"is_contained": func() -> bool: return world.contained,
++		"is_underwater": func() -> bool: return world.underwater,
++		"pick_place": func(request: Dictionary) -> Variant:
++			if not world.place_available:
++				return null
++			return request.get("center", null),
++		"walk_action": func(params: Dictionary) -> bool:
++			world.walks.append(params)
++			return true,
++		"play_clip": func(request: Dictionary) -> bool:
++			world.clips.append(request)
++			return true,
++		"delete_item": func(reference: String) -> void: world.deleted.append(reference),
++		"object_position": func(reference: String) -> Variant:
++			for entry: Dictionary in world.food:
++				if String(entry.get("ref", "")) == reference:
++					return entry.get("position", null)
++			return null,
++		"random_int": func(_low: int, _high: int) -> int: return world.random_value,
++		"random_float": func(low: float, _high: float) -> float: return low,
++		"now": func() -> float: return world.time,
++		"walk_result": func() -> int: return world.walk_result,
++	}
++
++
++func _make_actor(world: FakeWorld) -> RefCounted:
++	var actor: RefCounted = Actor.new()
++	actor.call("setup", _adapters(world))
++	return actor
++
++
++func _tick(actor: RefCounted, world: FakeWorld, seconds: float, step: float = 0.1) -> void:
++	var remaining := seconds
++	while remaining > 0.0:
++		world.time += step
++		actor.call("tick", step)
++		remaining -= step
++
++
++func _history(actor: RefCounted) -> Array[String]:
++	return actor.call("get_history")
++
++
++func _events(actor: RefCounted) -> Array[Dictionary]:
++	return actor.call("get_events")
++
++
++func _has_event(actor: RefCounted, name: String) -> bool:
++	for event: Dictionary in _events(actor):
++		if String(event.get("event", "")) == name:
++			return true
++	return false
++
++
++func _event_count(actor: RefCounted, name: String) -> int:
++	var count := 0
++	for event: Dictionary in _events(actor):
++		if String(event.get("event", "")) == name:
++			count += 1
++	return count
++
++
++func _run() -> void:
++	_test_clip_data()
++	_test_wild_hamster()
++	_test_loop_animation()
++	_test_escape()
++	_test_cornered()
++	_test_feeding()
++	_test_farm()
++	_test_paralysis()
++	_test_scene_binding()
++
++	if _failures.is_empty():
++		print("NATIVE_HAMSTER_ACTOR_SELF_TEST_OK assertions=%d" % _checks)
++	else:
++		printerr("NATIVE_HAMSTER_ACTOR_SELF_TEST_FAIL failures=%d" % _failures.size())
++	quit(0 if _failures.is_empty() else 1)
++
++
++# --- exported clips -----------------------------------------------------------
++
++func _test_clip_data() -> void:
++	_check(Clips.clip_names().size() == 28, "the package exports 28 clips")
++	_check(Clips.has_clip("stand_anim"), "stand_anim is exported")
++	_check(Clips.frame_count("stand_anim") == 12, "stand_anim has 12 frames")
++	_check(Clips.frame_count("maennchen") == 17, "maennchen has 17 frames")
++	_check(Clips.frame_count("sterben") == 21, "sterben has 21 frames")
++	_check(Clips.frame_count("getroffen") == 15, "getroffen has 15 frames")
++	_check(Clips.frame_count("not_a_clip") == -1, "an unknown clip has no frames")
++
++	# every alias of the class must point at an exported clip with the same count
++	var decoded: Variant = JSON.parse_string(FileAccess.get_file_as_string(
++		"res://models/native_hamster_animations.json"))
++	_check(decoded is Dictionary, "the alias table is readable")
++	var aliases: Dictionary = (decoded as Dictionary)["classes"]["Hamster"]["aliases"]
++	_check(aliases.size() == 27, "the class has 27 aliases")
++	var unresolved := 0
++	var mismatched := 0
++	for alias_name: String in aliases.keys():
++		var clip := String((aliases[alias_name] as Dictionary).get("target", ""))
++		if clip.begins_with("hamster."):
++			clip = clip.substr("hamster.".length())
++		if not Clips.has_clip(clip):
++			unresolved += 1
++			continue
++		if Clips.frame_count(clip) != int((aliases[alias_name] as Dictionary).get("frames", -1)):
++			mismatched += 1
++	_check(unresolved == 0, "every alias points at an exported clip")
++	_check(mismatched == 0, "the alias table and the clip export agree on the frame counts")
++
++	# the frames carry real geometry
++	var meshes := Clips.frame_meshes("stand_anim", 0)
++	_check(meshes.size() >= 1, "a frame builds at least one mesh")
++	if meshes.size() >= 1:
++		var mesh := meshes[0] as ArrayMesh
++		_check(mesh.get_surface_count() == 1, "the mesh has one surface")
++		_check(mesh.surface_get_array_len(0) > 0, "the surface has vertices")
++	_check(FileAccess.file_exists("res://textures/models/Character_Hamster_a_128.tga"),
++		"the hamster texture is imported")
++
++
++# --- autonomous behaviour ------------------------------------------------------
++
++func _test_wild_hamster() -> void:
++	var world := FakeWorld.new()
++	var actor := _make_actor(world)
++	_tick(actor, world, 0.2)
++	_check(actor.call("get_nutrition") == 1, "the first idle step counts the nutrition up")
++	_check(String(actor.call("get_current_alias")) == "beg",
++		"the hamster starts a mating animation")
++	_check(String(actor.call("get_current_clip")) == "maennchen",
++		"the mating animation is the original clip")
++	_check(world.clips.size() >= 1, "the host is told which clip to show")
++	if world.clips.size() >= 1:
++		_check(String((world.clips[0] as Dictionary).get("clip", "")) == "maennchen",
++			"the host receives the hamster clip name")
++		_check(int((world.clips[0] as Dictionary).get("frames", 0)) == 17,
++			"the host receives the original frame count")
++	_check(actor.call("is_playing_animation"), "the actor is busy while the clip plays")
++	var last_frame := -1
++	for _step: int in range(30):
++		_tick(actor, world, 0.1)
++		if String(actor.call("get_current_clip")) == "maennchen":
++			last_frame = maxi(last_frame, int(actor.call("get_current_frame")))
++	_check(last_frame == 16, "the mating clip runs through its last frame")
++	_check(last_frame >= 0, "the original frame count drives the playback")
++
++
++func _test_loop_animation() -> void:
++	var world := FakeWorld.new()
++	world.position = Vector3(20, 0, 20)
++	var actor := _make_actor(world)
++	# the first activity is beg (activity 0 is shifted to 1), the second is clean
++	_tick(actor, world, 8.0)
++	_tick(actor, world, 8.0)
++	var history := _history(actor)
++	var start_count := 0
++	var loop_count := 0
++	var stop_count := 0
++	for command: String in history:
++		if command == "play_anim cleanstart":
++			start_count += 1
++		elif command == "play_anim cleanloop":
++			loop_count += 1
++		elif command == "play_anim cleanstop":
++			stop_count += 1
++	_check(start_count >= 1, "the grooming loop queues its start clip")
++	_check(loop_count >= 2, "the grooming loop repeats at least twice")
++	_check(stop_count >= 1, "the grooming loop queues its stop clip")
++	var clean_clips := 0
++	for entry: Dictionary in world.clips:
++		if String(entry.get("alias", "")).begins_with("clean"):
++			clean_clips += 1
++	_check(clean_clips >= 3, "every grooming clip is played")
++	var played := ""
++	for entry: Dictionary in world.clips:
++		if String(entry.get("alias", "")) == "cleanstart":
++			played = String(entry.get("clip", ""))
++	_check(played == "putzen_start", "the grooming start clip is the original one")
++
++
++func _test_escape() -> void:
++	var world := FakeWorld.new()
++	world.position = Vector3(20, 0, 20)
++	world.dwarves = [Vector3(23, 0, 20)]
++	var actor := _make_actor(world)
++	_tick(actor, world, 0.5)
++	var history := _history(actor)
++	_check(history.has("walk_pos {18.0 0.0 20.0}"),
++		"the hamster runs away from the dwarf")
++	_check(world.walks.size() >= 1, "the walk action is started")
++	if world.walks.size() >= 1:
++		var params: Dictionary = world.walks[0]
++		_check(String(params.get("animsets", "")) == "0", "the escape uses the walk animset")
++		_check(int(params.get("can_climb", -1)) == 0, "the hamster cannot climb")
++		_check(int(params.get("use_objects", -1)) == 0, "the hamster ignores objects")
++		_check((params.get("target", null) as Vector3) == Vector3(18, 0, 20),
++			"the escape target is the flee point")
++
++
++func _test_cornered() -> void:
++	var world := FakeWorld.new()
++	world.position = Vector3(20, 0, 20)
++	world.dwarves = [Vector3(23, 0, 20)]
++	world.place_available = false
++	var actor := _make_actor(world)
++	_tick(actor, world, 0.5)
++	var history := _history(actor)
++	_check(history.has("walk_random 5"), "a cornered hamster takes the random path")
++	_check(world.walks.size() >= 1, "the random walk action is started")
++	if world.walks.size() >= 1:
++		var params: Dictionary = world.walks[0]
++		_check(int(params.get("random_path", 0)) == 5, "the random path is five units long")
++		_check(int(params.get("random_z", 0)) == 4, "the random walk wanders up to four")
++
++
++func _test_feeding() -> void:
++	var world := FakeWorld.new()
++	world.position = Vector3(20, 0, 20)
++	world.food = [{"ref": "item7", "position": Vector3(20.5, 0, 20)}]
++	var actor := _make_actor(world)
++	var guard := 0
++	while _event_count(actor, "taken") == 0 and guard < 4000:
++		world.time += 0.1
++		actor.call("tick", 0.1)
++		guard += 1
++	_check(_event_count(actor, "taken") == 1, "the hamster picks up the food")
++	_check(world.deleted.has("item7"), "the food object is removed")
++	var history := _history(actor)
++	var eating := 0
++	for command: String in history:
++		if command == "play_anim goteaten":
++			eating += 1
++	_check(eating == 5, "the eating animation plays five times")
++	_check(history.has("take_item item7"), "the food is taken at the end of the round")
++
++
++func _test_farm() -> void:
++	var world := FakeWorld.new()
++	world.random_value = 4
++	world.farm = {"ref": "farm1", "position": Vector3(10, 0, 20)}
++	var actor := _make_actor(world)
++	actor.call("set_farmhamster", world.farm)
++	_check(bool(actor.call("is_farmed")), "the hamster belongs to the farm")
++	world.dwarves = [Vector3(0, 0, 0)]
++	_tick(actor, world, 0.5)
++	_check(not _has_event(actor, "escape"), "a farmed hamster does not flee")
++	_check(world.walks.size() >= 1, "the farmed hamster hops inside the pen")
++	if world.walks.size() >= 1:
++		var params: Dictionary = world.walks[0]
++		_check(String(params.get("animsets", "")) == "1", "the farm hop uses the hop animset")
++		var target: Vector3 = params.get("target", Vector3.ZERO)
++		_check(target.x >= 8.5 and target.x <= 11.5, "the hop stays inside the pen width")
++		_check(target.z >= 18.0 and target.z <= 22.0, "the hop stays inside the pen depth")
++		_check(int(params.get("can_climb", -1)) == 0, "the hamster cannot climb")
++
++
++func _test_paralysis() -> void:
++	var world := FakeWorld.new()
++	world.position = Vector3(20, 0, 20)
++	world.contained = true
++	var actor := _make_actor(world)
++	# the scan timer drops to five seconds when no dwarf is in sight
++	_tick(actor, world, 6.0)
++	_check(bool(actor.call("is_paralyzed")), "a contained hamster is paralysed")
++	_check(String(actor.call("get_current_clip")) == "getroffen",
++		"the hit animation is the original clip")
++	_check(int(actor.call("get_queue_size")) == 0, "the queue is cleared on paralysis")
++	_check(not _has_event(actor, "wakeup"), "the hamster does not wake up early")
++	world.contained = false
++	_tick(actor, world, 1800.0, 1.0)
++	_check(_has_event(actor, "wakeup"), "the hamster wakes up after thirty minutes")
++	_check(not bool(actor.call("is_paralyzed")), "the paralysis ends")
++	_check(String(actor.call("get_state_name")) != "", "the actor has a state after the wake up")
++
++
++# --- scene binding -------------------------------------------------------------
++
++func _test_scene_binding() -> void:
++	# a hamster node that finds the dwarf in the scene and reacts to it
++	var dwarf := Node3D.new()
++	dwarf.name = "TestDwarf"
++	dwarf.position = Vector3(23, 0, 20)
++	dwarf.add_to_group("dwarf")
++	root.add_child(dwarf)
++
++	var hamster: Node3D = Actor3D.new()
++	hamster.name = "TestHamster"
++	hamster.position = Vector3(20, 0, 20)
++	root.add_child(hamster)
++	hamster.call("setup", {})
++
++	var scene_actor: RefCounted = hamster.get("actor")
++	_check(scene_actor != null, "the scene node owns an actor")
++	# The hamster turns with the turn clip of the original before it walks, so
++	# the walk needs more than the turn of a single second.
++	for _step: int in range(40):
++		hamster.call("_process", 0.1)
++	var history: Array[String] = scene_actor.call("get_history")
++	_check(history.has("walk_pos {18.0 0.0 20.0}"),
++		"the scene hamster flees the dwarf it finds in the scene")
++	# the walk must actually move the node: a fallback that returns the own
++	# position as the walk target would freeze the hamster in place
++	_check((hamster as Node3D).position.distance_to(Vector3(20, 0, 20)) > 0.5,
++		"the scene hamster leaves its place while it walks")
++	_check(String(scene_actor.call("get_action_kind")) != "walk" or
++		(hamster as Node3D).position.distance_to(Vector3(20, 0, 20)) > 0.5,
++		"the walk action makes progress")
++
++	# a hamster alone in the scene plays the original clips and shows the mesh
++	var lonely: Node3D = Actor3D.new()
++	lonely.name = "TestLonelyHamster"
++	lonely.position = Vector3(-8, 0, 20)
++	root.add_child(lonely)
++	lonely.call("setup", {})
++	# The activity of a hamster is drawn at random, so the clips are collected
++	# over the ticks instead of reading the one of the last tick. The standby
++	# picture of the original is the fallback while nothing is played, so the
++	# activity clip is the one that proves the hamster acts.
++	var activity_clip := ""
++	for _step: int in range(60):
++		lonely.call("_process", 0.1)
++		var shown := String(lonely.call("get_current_clip"))
++		if activity_clip == "" and shown != "" and shown != "stand_anim":
++			activity_clip = shown
++		var bound: Array = lonely.get("_body_instances")
++		if activity_clip != "" and bound.size() >= 1:
++			break
++	# The clip the node shows, not the one of the actor: while the hamster walks
++	# the walk clip of the animset is shown, the actor itself has no clip then.
++	_check(activity_clip != "", "the scene hamster plays an original clip")
++	_check(Clips.frame_count(activity_clip) > 0,
++		"the clip of the scene hamster comes from the original package")
++	var instances: Array = lonely.get("_body_instances")
++	_check(instances.size() >= 1, "the scene hamster binds a mesh for the frame")
++	if instances.size() >= 1:
++		var instance := instances[0] as MeshInstance3D
++		_check(instance.visible, "the bound mesh is visible")
++		_check(instance.mesh != null, "the bound mesh has geometry")
++
++	root.remove_child(dwarf)
++	root.remove_child(hamster)
++	root.remove_child(lonely)
+
+diff --git a/tools/native_hamster_ai_self_test.gd b/tools/native_hamster_ai_self_test.gd
+new file mode 100644
+--- /dev/null
++++ b/tools/native_hamster_ai_self_test.gd
+--- /dev/null
++++ b/tools/native_hamster_ai_self_test.gd
+@@ -0,0 +1,143 @@
++extends SceneTree
++## --headless --path godot --script res://tools/native_hamster_ai_self_test.gd
++## Checks the hamster animation table and the ported hamster behaviour.
++const Animations = preload("res://scripts/native_hamster_animations.gd")
++const Hamster = preload("res://scripts/native_hamster_ai.gd")
++var _checks: int = 0
++var _failures: Array[String] = []
++
++func _initialize() -> void:
++	call_deferred("_run")
++
++func _check(condition: bool, message: String) -> void:
++	_checks += 1
++	if not condition:
++		_failures.append(message)
++		printerr("FAIL: " + message)
++
++func _run() -> void:
++	# --- animation table ---------------------------------------------------
++	_check(Animations.alias_count("Hamster") == 27, "the hamster has 27 aliases")
++	_check(Animations.get_clip("Hamster", "standstill") == "stand_anim", "standstill maps to stand_anim")
++	_check(Animations.get_clip("Hamster", "walkloop") == "laufen_loop", "walkloop maps to laufen_loop")
++	_check(Animations.get_clip("Hamster", "hoppelloop") == "hoppeln_loop", "hoppelloop maps to hoppeln_loop")
++	_check(Animations.get_clip("Hamster", "galoploop") == "galopp_loop", "galoploop maps to galopp_loop")
++	_check(Animations.get_clip("Hamster", "ridestill") == "reiten_stand", "ridestill maps to reiten_stand")
++	_check(Animations.get_clip("Hamster", "goteaten") == "gefressen_werden", "goteaten maps to gefressen_werden")
++	_check(Animations.get_clip("Hamster", "gothit") == "getroffen", "gothit maps to getroffen")
++	_check(Animations.get_clip("Hamster", "beg") == "maennchen", "beg maps to maennchen")
++	_check(Animations.get_clip("Hamster", "no_such_alias") == "", "an unknown alias returns empty")
++	_check(Animations.get_target("Hamster", "walkloop") == "hamster.laufen_loop", "the target keeps the package prefix")
++	_check(Animations.get_frame_count("Hamster", "walkloop") == 7, "laufen_loop has 7 frames")
++	_check(Animations.get_frame_count("Hamster", "sleeploop") == 8, "schlafen_loop has 8 frames")
++	_check(Animations.get_frame_count("Hamster", "sterben") == -1, "sterben has no alias in the table")
++	_check(Animations.get_clip_frames("Hamster", "sterben") == 21, "the package catalog knows sterben with 21 frames")
++
++	# --- animsets ----------------------------------------------------------
++	_check(Animations.animset_ids("Hamster").size() == 3, "the hamster has three animsets")
++	_check(Animations.get_animset_role("Hamster", "0", "walk_loop") == "hamster.laufen_loop", "walk animset uses the walk clips")
++	_check(Animations.get_animset_role("Hamster", "1", "walk_loop") == "hamster.hoppeln_loop", "hoppel animset uses the hop clips")
++	_check(Animations.get_animset_role("Hamster", "2", "walk_loop") == "hamster.galopp_loop", "galopp animset uses the gallop clips")
++
++	# --- fleeing -----------------------------------------------------------
++	var escape := Hamster.escape_target(Vector3(0, 0, 0), [Vector3(3, 0, 0)])
++	_check(bool(escape["found"]), "a dwarf in range is detected")
++	_check(int(escape["count"]) == 1, "one dwarf is counted")
++	_check((escape["target"] as Vector3) == Vector3(-2, 0, 0), "the hamster runs away from the dwarf")
++	_check((escape["clipping"] as Array).size() == 1, "a clip box is built around the dwarf")
++
++	escape = Hamster.escape_target(Vector3(0, 0, 0), [Vector3(10, 0, 0)])
++	_check(not bool(escape["found"]), "a dwarf out of range is ignored")
++
++	escape = Hamster.escape_target(Vector3(0, 0, 0), [Vector3(2, 0, 0), Vector3(-2, 0, 0)])
++	_check(int(escape["count"]) == 2, "two dwarves are counted")
++	_check((escape["average"] as Vector3) == Vector3.ZERO, "the average of symmetric dwarves is the own position")
++	_check((escape["target"] as Vector3) == Vector3.ZERO, "without a direction there is nothing to run to")
++
++	var decision := Hamster.escape_decision(true)
++	_check(String(decision["mode"]) == "escape" and bool(decision["rescan"]), "a found place means a direct escape")
++	decision = Hamster.escape_decision(false)
++	_check(String(decision["mode"]) == "random" and not bool(decision["rescan"]), "no place means the random path finder")
++
++	# --- idle activities ---------------------------------------------------
++	var plan := Hamster.choose_activity(-1, false, 0)
++	_check(int(plan["activity"]) == 0 and String(plan["kind"]) == "clean", "activity 0 is grooming")
++	plan = Hamster.choose_activity(-1, false, 1)
++	_check(String(plan["kind"]) == "beg", "activity 1 is mating")
++	plan = Hamster.choose_activity(-1, false, 2)
++	_check(String(plan["kind"]) == "wait", "activity 2 is waiting")
++	plan = Hamster.choose_activity(-1, false, 3)
++	_check(String(plan["kind"]) == "sleep", "activity 3 is sleeping")
++	plan = Hamster.choose_activity(-1, false, 4)
++	_check(String(plan["kind"]) == "hoppel_random", "activity 4 is hopping")
++
++	plan = Hamster.choose_activity(0, false, 0)
++	_check(int(plan["activity"]) == 1, "a repeated activity is shifted by one")
++
++	plan = Hamster.choose_activity(-1, true, 4)
++	_check(String(plan["kind"]) == "hoppel_farm", "a farmed hamster hops inside the pen")
++	plan = Hamster.choose_activity(-1, true, 5)
++	_check(int(plan["activity"]) == 0, "a farm has five activities only")
++
++	# --- farm pen ----------------------------------------------------------
++	var cell := Hamster.farm_cell_position(Vector3(10, 0, 20), 0)
++	_check(cell == Vector3(8.5, 0, 18), "the first cell of the pen is bottom left")
++	cell = Hamster.farm_cell_position(Vector3(10, 0, 20), 6)
++	_check(cell == Vector3(11.5, 0, 18), "the seventh cell is on the same row")
++	cell = Hamster.farm_cell_position(Vector3(10, 0, 20), 7)
++	_check(cell == Vector3(8.5, 0, 19), "the eighth cell starts the next row")
++
++	# --- food --------------------------------------------------------------
++	var step := Hamster.nutrition_step(0)
++	_check(int(step["nutrition"]) == 1 and not bool(step["seek_food"]), "the hamster counts up while fed")
++	step = Hamster.nutrition_step(49)
++	_check(int(step["nutrition"]) == 50 and not bool(step["seek_food"]), "the counter reaches the limit")
++	step = Hamster.nutrition_step(50)
++	_check(int(step["nutrition"]) == 0 and bool(step["seek_food"]), "the counter resets and the hamster looks for food")
++
++	var commands := Hamster.eat_commands(Vector3(4, 0, 6), "item7")
++	_check((commands as Array).size() == 7, "a feeding round is seven commands")
++	_check(String((commands as Array)[0]) == "walk_pos {4.0 0.0 6.0}", "the hamster walks to the food")
++	_check(String((commands as Array)[5]) == "play_anim goteaten", "the eating animation repeats five times")
++	_check(String((commands as Array)[6]) == "take_item item7", "the food is taken at the end")
++
++	# --- loop animations ---------------------------------------------------
++	var loop := Hamster.loop_anim_commands("sleep", 3)
++	_check((loop as Array).size() == 5, "the loop is start, three loops and stop")
++	_check(String((loop as Array)[0]) == "play_anim sleepstart", "the loop starts with the start clip")
++	_check(String((loop as Array)[4]) == "play_anim sleepstop", "the loop ends with the stop clip")
++	_check(Hamster.loop_anim_repetitions(6, 10, 0) == 6, "the minimum repetition count")
++	_check(Hamster.loop_anim_repetitions(6, 10, 3) == 9, "the repetition count grows with the draw")
++	_check(Hamster.loop_anim_repetitions(2, 6, 0) == 2, "grooming starts at two repetitions")
++
++	# --- paralysis ---------------------------------------------------------
++	_check(Hamster.should_paralyze(true, false), "a contained hamster is paralysed")
++	_check(Hamster.should_paralyze(false, true), "an underwater hamster is paralysed")
++	_check(not Hamster.should_paralyze(false, false), "a free hamster is not paralysed")
++	var paralysis := Hamster.paralysis_plan()
++	_check(bool(paralysis["clear_queue"]), "the queue is cleared on paralysis")
++	_check(int(paralysis["wakeup_seconds"]) == 1800, "the hamster wakes up after 30 minutes")
++
++	# --- walk actions ------------------------------------------------------
++	var params := Hamster.walk_action_params("walk_random", 5.0)
++	_check(String(params["animsets"]) == "0" and int(params["can_climb"]) == 0, "walk_random uses the walk set and no climbing")
++	_check(int(params["random_z"]) == 4, "walk_random wanders up to four in height")
++	params = Hamster.walk_action_params("hoppel_random", 3.0)
++	_check(String(params["animsets"]) == "1" and int(params["random_z"]) == 2, "hoppel_random uses the hop set")
++	params = Hamster.walk_action_params("walk_pos", 0.0, Vector3(1, 2, 3))
++	_check((params["target"] as Vector3) == Vector3(1, 2, 3), "walk_pos carries the target")
++	_check(int(params["use_objects"]) == 0, "the hamster ignores objects while walking")
++
++	# --- timers and queries ------------------------------------------------
++	_check(Hamster.scan_interval("fast") == 1, "the fast scan runs every second")
++	_check(Hamster.scan_interval("slow") == 5, "the slow scan runs every five seconds")
++	_check(int(Hamster.scan_query()["range"]) == 4, "the scan range is four")
++	_check(int(Hamster.food_query()[0]["range"]) == 6, "the food search range is six")
++	_check(String(Hamster.food_query()[0]["class"]) == "Pilzhut", "the mushroom hat is the first choice")
++	_check(String(Hamster.food_query()[1]["class"]) == "Grillpilz", "the grilled mushroom is the second choice")
++
++	if _failures.is_empty():
++		print("NATIVE_HAMSTER_AI_SELF_TEST_OK assertions=%d" % _checks)
++	else:
++		printerr("NATIVE_HAMSTER_AI_SELF_TEST_FAIL failures=%d" % _failures.size())
++	quit(0 if _failures.is_empty() else 1)
+
+diff --git a/tools/hamster_texture_orientation_probe.gd b/tools/hamster_texture_orientation_probe.gd
+new file mode 100644
+--- /dev/null
++++ b/tools/hamster_texture_orientation_probe.gd
+--- /dev/null
++++ b/tools/hamster_texture_orientation_probe.gd
+@@ -0,0 +1,56 @@
++extends SceneTree
++## Diagnostic: is the vertical orientation of the hamster texture in Godot the
++## same as the orientation PIL (and the browser PNG) uses?
++##
++## The hamster face is only correct when the UV v coordinate points at the same
++## image row in both engines. The HTML stand proved that the correct mapping is
++## "v = 0 is the visual top row of the texture". This probe prints the pixels of
++## a few rows of the TGA as Godot reads them, so the same rows can be compared
++## with the PIL reading of the same file.
++##
++## Run: --headless --path godot --script res://tools/hamster_texture_orientation_probe.gd
++
++const TGA := "res://textures/models/Character_Hamster_a_128.tga"
++const COLUMNS: Array[int] = [4, 64, 120]
++const ROWS: Array[int] = [0, 1, 2, 63, 64, 125, 126, 127]
++
++
++func _initialize() -> void:
++	var image: Image = Image.load_from_file(TGA)
++	if image == null:
++		print("PROBE_FAIL cannot read ", TGA)
++		quit(1)
++		return
++	print("PROBE size=%s format=%s" % [str(image.get_size()), str(image.get_format())])
++	for row: int in ROWS:
++		var parts: Array[String] = []
++		for column: int in COLUMNS:
++			var color: Color = image.get_pixel(column, row)
++			parts.append("x%d=%d,%d,%d" % [column, int(color.r * 255.0), int(color.g * 255.0), int(color.b * 255.0)])
++		print("PROBE row=%d %s" % [row, " ".join(parts)])
++	_report_imported()
++	print("PROBE_DONE")
++	quit(0)
++
++
++## The hamster code loads the imported texture when the project has one. The
++## importer must not flip the rows relative to the raw reader.
++func _report_imported() -> void:
++	if not ResourceLoader.exists(TGA):
++		print("PROBE imported=missing")
++		return
++	var texture: Texture2D = load(TGA) as Texture2D
++	if texture == null:
++		print("PROBE imported=null")
++		return
++	var image: Image = texture.get_image()
++	if image == null or image.is_empty():
++		print("PROBE imported=image_unavailable")
++		return
++	print("PROBE imported size=%s format=%s" % [str(image.get_size()), str(image.get_format())])
++	for row: int in ROWS:
++		var parts: Array[String] = []
++		for column: int in COLUMNS:
++			var color: Color = image.get_pixel(column, row)
++			parts.append("x%d=%d,%d,%d" % [column, int(color.r * 255.0), int(color.g * 255.0), int(color.b * 255.0)])
++		print("PROBE imported_row=%d %s" % [row, " ".join(parts)])
+
+diff --git a/tools/native_hamster_probe.gd b/tools/native_hamster_probe.gd
+new file mode 100644
+--- /dev/null
++++ b/tools/native_hamster_probe.gd
+--- /dev/null
++++ b/tools/native_hamster_probe.gd
+@@ -0,0 +1,53 @@
++extends SceneTree
++## --headless --path godot --script res://tools/native_hamster_probe.gd
++## Diagnostic: runs the hamster demo scene and prints what the hamsters do.
++##
++## The headless main loop runs unthrottled, so the frame counter is not game
++## time. The probe waits on the wall clock and reports the actor time.
++const DEMO := "res://scenes/native_hamster_demo.tscn"
++
++var _scene: Node = null
++var _frames: int = 0
++var _delta_sum: float = 0.0
++
++
++func _initialize() -> void:
++	call_deferred("_run")
++
++
++func _process(delta: float) -> bool:
++	_frames += 1
++	_delta_sum += delta
++	return false
++
++
++func _run() -> void:
++	var wall_start := Time.get_ticks_msec()
++	_scene = load(DEMO).instantiate()
++	root.add_child(_scene)
++	for _round: int in range(12):
++		await create_timer(1.0).timeout
++		_report()
++	_report()
++	print("PROBE wall_ms=%d frames=%d delta_sum=%.3f" % [
++		Time.get_ticks_msec() - wall_start, _frames, _delta_sum])
++	quit(0)
++
++
++func _report() -> void:
++	for child: Node in _scene.get_children():
++		if not (child is Node3D):
++			continue
++		var actor: Variant = child.get("actor")
++		if actor == null:
++			continue
++		print("%s t=%.1f pos=%s alias=%s clip=%s state=%s action=%s enabled=%s queue=%s" % [
++			String(child.name),
++			float(actor.call("get_time")),
++			str((child as Node3D).position),
++			String(actor.call("get_current_alias")),
++			String(actor.call("get_current_clip")),
++			String(actor.call("get_state_name")),
++			String(actor.call("get_action_kind")),
++			str(actor.call("is_state_enabled")),
++			str(actor.call("get_queue_commands"))])
+
+diff --git a/scenes/native_hamster_demo.tscn b/scenes/native_hamster_demo.tscn
+new file mode 100644
+--- /dev/null
++++ b/scenes/native_hamster_demo.tscn
+--- /dev/null
++++ b/scenes/native_hamster_demo.tscn
+@@ -0,0 +1,6 @@
++[gd_scene load_steps=2 format=3]
++
++[ext_resource type="Script" path="res://scripts/native_hamster_demo.gd" id="1_hamster_demo"]
++
++[node name="NativeHamsterDemo" type="Node3D"]
++script = ExtResource("1_hamster_demo")
+
+diff --git a/scenes/native_wild_hamster_probe.tscn b/scenes/native_wild_hamster_probe.tscn
+new file mode 100644
+--- /dev/null
++++ b/scenes/native_wild_hamster_probe.tscn
+--- /dev/null
++++ b/scenes/native_wild_hamster_probe.tscn
+@@ -0,0 +1,6 @@
++[gd_scene format=3]
++
++[ext_resource type="Script" path="res://scripts/native_wild_hamster_probe.gd" id="1_probe"]
++
++[node name="NativeWildHamsterProbe" type="Node3D"]
++script = ExtResource("1_probe")

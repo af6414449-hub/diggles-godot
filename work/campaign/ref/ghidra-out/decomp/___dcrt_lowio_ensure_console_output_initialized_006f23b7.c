@@ -1,0 +1,15 @@
+
+/* Library Function - Single Match
+    ___dcrt_lowio_ensure_console_output_initialized
+   
+   Libraries: Visual Studio 2019 Debug, Visual Studio 2019 Release */
+
+bool ___dcrt_lowio_ensure_console_output_initialized(void)
+
+{
+  if (DAT_00767940 == -2) {
+    __dcrt_lowio_initialize_console_output();
+  }
+  return DAT_00767940 != -1;
+}
+

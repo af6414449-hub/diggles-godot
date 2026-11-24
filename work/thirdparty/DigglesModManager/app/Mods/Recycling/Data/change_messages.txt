@@ -1,0 +1,19 @@
+$start
+$before
+
+## "use"
+$put
+
+## "recycle"
+en "recycle"
+cz "recycle"
+de "recyceln"
+fr "recycler"
+it "riciclare"
+nl "recyclen"
+es "reciclar"
+pl "recykling"
+ru "recycle"
+
+
+$end

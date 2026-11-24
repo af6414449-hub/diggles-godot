@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-18",
+  "engine": "Godot4.7.2 Compatibility AMD Vega8",
+  "tests": [
+    {
+      "test": "native_terrain_render",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_TERRAIN_RENDER_SELF_TEST_OK assertions=556 vertices=15906 textures=41"
+      ],
+      "errors": [],
+      "log": "logs/native_terrain_render.log"
+    },
+    {
+      "test": "automatic_torch_runtime",
+      "exit_code": 0,
+      "markers": [
+        "AUTOMATIC_TORCH_RUNTIME_SELF_TEST checks=33 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/automatic_torch_runtime.log"
+    },
+    {
+      "test": "feedback_visual",
+      "exit_code": 0,
+      "markers": [
+        "FEEDBACK_VISUAL_SELF_TEST checks=13 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/feedback_visual.log"
+    },
+    {
+      "test": "wall_branch_continuation",
+      "exit_code": 0,
+      "markers": [
+        "WALL_BRANCH_CONTINUATION_SELF_TEST checks=16 failures=0 mutations=12 max_step=0.085717"
+      ],
+      "errors": [],
+      "log": "logs/wall_branch_continuation.log"
+    },
+    {
+      "test": "surface_depth_route",
+      "exit_code": 0,
+      "markers": [
+        "SURFACE_DEPTH_ROUTE_SELF_TEST checks=19 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/surface_depth_route.log"
+    },
+    {
+      "test": "manual_dig_region",
+      "exit_code": 0,
+      "markers": [
+        "MANUAL_DIG_REGION_SELF_TEST_OK assertions=27"
+      ],
+      "errors": [],
+      "log": "logs/manual_dig_region.log"
+    },
+    {
+      "test": "native_model_material",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_MODEL_MATERIAL_SELF_TEST_OK assertions=208"
+      ],
+      "errors": [],
+      "log": "logs/native_model_material.log"
+    },
+    {
+      "test": "world_model_light",
+      "exit_code": 0,
+      "markers": [
+        "WORLD_MODEL_LIGHT_SELF_TEST checks=31 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/world_model_light.log"
+    },
+    {
+      "test": "world_model_light_opengl",
+      "exit_code": 0,
+      "markers": [
+        "WORLD_MODEL_LIGHT_SELF_TEST checks=37 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/world_model_light_opengl.log"
+    }
+  ],
+  "source_check": {
+    "ok": true,
+    "check": true,
+    "spans": 10,
+    "constants": 10
+  },
+  "lint": {
+    "counts": {
+      "total": 0,
+      "errors": 0,
+      "warnings": 0,
+      "parse_errors": 0
+    },
+    "log": "logs/lint.json"
+  },
+  "smoke": {
+    "counts": {
+      "scenes": 3,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "warnings": 0,
+      "findings": 0
+    },
+    "log": "logs/smoke.json"
+  },
+  "images": [
+    {
+      "file": "legacy_front.png",
+      "sha256": "7a9c114049c66d4fd4193ea1fc3e4f45d90d02840d94bca014960104b758c0c4"
+    },
+    {
+      "file": "native_close.png",
+      "sha256": "8045bdc45f8a520f3cc1a198a19b2484548610206cd53794b9eb3a5029a246a6"
+    },
+    {
+      "file": "native_front.png",
+      "sha256": "9a5eab3f68a2f006b635475be8fe68db7b4b22df58eddfc78a2e67c6d831e977"
+    },
+    {
+      "file": "native_oblique.png",
+      "sha256": "8bb52117ea2525ca95353a2927f57b8223f90770216f1641c8c2998d44333155"
+    }
+  ],
+  "implementation_sha256": {
+    "godot/scripts/native_world_model_light.gd": "7aaf29f5790783c7619f0e6112f725f679b29ef7790e60bd701147924d0a25d4",
+    "godot/scripts/multiplayer_test.gd": "7f31f4b57498bb958bbf3f305f2cfb100dd5fa1643b3e7ed16c2970de5b443ca",
+    "godot/shaders/native_world_model.gdshader": "64428cccff77c36d0b24c8cf0d6dc448766374a060614b3fb3b8ed8bb507992f",
+    "godot/models/native_world_model_lighting.json": "b1c5ea5b9a6fcd890e42f10afd9cfbbbdb828b7fe7e8808984d4afbffbed4180",
+    "tools/export_world_model_lighting.py": "d1676876ce5ca1e5595c5dd8869008fa504c16b51efbbada033696f9f59788d2"
+  },
+  "scope": {
+    "surfaces": 32,
+    "vertices": 1869,
+    "background_surfaces": 7,
+    "negative_depth_vertices": 969,
+    "max_normal_reencoding_delta": 0.000125
+  },
+  "native_frame_trace": false,
+  "apk_built": false,
+  "phone_benchmark": false,
+  "adapters": [
+    "Host gain0.1; live manager gain unknown.",
+    "Host owner255; no live FOW.",
+    "Host floor cell selection, unknown original x87 rounding mode.",
+    "Single MODULATE stage, native stage dispatch incomplete.",
+    "Only selected static classes, other models remain Godot lit."
+  ]
+}

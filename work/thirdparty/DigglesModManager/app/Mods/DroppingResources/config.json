@@ -1,0 +1,49 @@
+{
+	"version" : "1.1",
+	"author" : "cech12 (idea: iGilga)",
+	
+	"name" :  {
+		"en" : "Dropping Resources",
+		"de" : "Ressourcen-Dropping"
+	},
+	"description" : {
+		"en" : "Change dropping chance and drop better resources in dependence to your civilization level while digging.",
+		"de" : "Verändere die Wahrscheinlichkeit vom Erzabbau und lass bessere Erze in Abhängikeit des Zivilisationslevels erscheinen."
+	},
+	
+	"links" : {
+		"download" : "https://github.com/DigglesMods/DroppingResources/releases",
+		"wiki" : "https://github.com/DigglesMods/DroppingResources/wiki"
+	},
+	
+	"settings" : [
+		{
+			"id" : "CIV_DROPS",
+			"type" : "bool",
+			"default" : true,
+			"name" :  {
+				"en" : "Civilisation drops",
+				"de" : "Zivilisations-Drop"
+			},
+			"description" : {
+				"en" : "Drop better items with a better civilization level while digging.",
+				"de" : "Finde beim Graben bessere Erze in Abhängikeit zum Zivilisationslevel."
+			}
+		},
+		{
+			"id" : "DROP_CHANCE",
+			"type" : "int",
+			"default" : 4,
+			"min" : 1,
+			"max" : 100,
+			"name" :  {
+				"en" : "Drop chance",
+				"de" : "Wahrscheinlichkeit"
+			},
+			"description" : {
+				"en" : "Drop chance while digging (%-percent).",
+				"de" : "Wahrscheinlichkeit, dass beim Graben ein Item erscheint (in %)"
+			}
+		}
+	]
+}

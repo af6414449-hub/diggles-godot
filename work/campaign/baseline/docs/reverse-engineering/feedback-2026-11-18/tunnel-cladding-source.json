@@ -1,0 +1,320 @@
+{
+  "schema": "diggles.tunnel_cladding_candidates.v1",
+  "source_sha256": {
+    "3db/auskleidung.3db": "10f5745060d7bb0501e40ab18e354d6270c237052a887ed7833b8d58eb7d19fe",
+    "Scripts/classes/deco/dummy_auskleidung.tcl": "2734f4af68f7671fe96aab5b86d6f8442b016d93b5999ff4fe6eb214ab4e1c52",
+    "Scripts/init/animinit.tcl": "6851e03b0c7f2e69c6eeec6c8ba3a8c2cf46ffad0cc42ffe4957c3598c8f2f9d"
+  },
+  "package_objects": 135,
+  "candidates": [
+    {
+      "object": "urw_caves_1_a_a",
+      "animation": "standard",
+      "frames": [
+        {
+          "mesh_index": 0,
+          "raw_bounds": [
+            -1004.8460693359375,
+            -830.4677124023438,
+            -57.64051055908203,
+            809.2112426757812,
+            665.9550170898438,
+            90.00003051757812
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 68,
+              "points": 106
+            },
+            {
+              "material": "trollh_4_wand_d",
+              "texture": "trollh_4_wand_d.tga",
+              "triangles": 10,
+              "points": 26
+            }
+          ]
+        },
+        {
+          "mesh_index": 1,
+          "raw_bounds": [
+            -1004.8460693359375,
+            -830.4677124023438,
+            -57.64051055908203,
+            809.2112426757812,
+            665.9550170898438,
+            90.00003051757812
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 68,
+              "points": 106
+            },
+            {
+              "material": "trollh_4_wand_d",
+              "texture": "trollh_4_wand_d.tga",
+              "triangles": 10,
+              "points": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "object": "urw_caves_1_a_b",
+      "animation": "standard",
+      "frames": [
+        {
+          "mesh_index": 2,
+          "raw_bounds": [
+            -908.3302001953125,
+            -641.7088012695312,
+            -1258.9139404296875,
+            598.2296752929688,
+            640.6258544921875,
+            -1000.0
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 52,
+              "points": 84
+            }
+          ]
+        },
+        {
+          "mesh_index": 3,
+          "raw_bounds": [
+            -908.3302001953125,
+            -641.7088012695312,
+            -1258.9139404296875,
+            598.2296752929688,
+            640.6258544921875,
+            -1000.0
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 52,
+              "points": 84
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "object": "urw_caves_1_b_a",
+      "animation": "standard",
+      "frames": [
+        {
+          "mesh_index": 4,
+          "raw_bounds": [
+            -1004.8460693359375,
+            -830.4676513671875,
+            -53.59632110595703,
+            809.2112426757812,
+            665.9549560546875,
+            96.56439971923828
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 68,
+              "points": 106
+            },
+            {
+              "material": "trollh_4_wand_d",
+              "texture": "trollh_4_wand_d.tga",
+              "triangles": 10,
+              "points": 26
+            }
+          ]
+        },
+        {
+          "mesh_index": 5,
+          "raw_bounds": [
+            -1004.8460693359375,
+            -830.4676513671875,
+            -53.59632110595703,
+            809.2112426757812,
+            665.9549560546875,
+            96.56439971923828
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 68,
+              "points": 106
+            },
+            {
+              "material": "trollh_4_wand_d",
+              "texture": "trollh_4_wand_d.tga",
+              "triangles": 10,
+              "points": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "object": "urw_caves_1_b_b",
+      "animation": "standard",
+      "frames": [
+        {
+          "mesh_index": 6,
+          "raw_bounds": [
+            -910.9583740234375,
+            -670.5283203125,
+            -1258.9139404296875,
+            596.5165405273438,
+            566.05419921875,
+            -1000.0
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 52,
+              "points": 84
+            }
+          ]
+        },
+        {
+          "mesh_index": 7,
+          "raw_bounds": [
+            -910.9583740234375,
+            -670.5283203125,
+            -1258.9139404296875,
+            596.5165405273438,
+            566.05419921875,
+            -1000.0
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 52,
+              "points": 84
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "object": "urw_caves_1_c_a",
+      "animation": "standard",
+      "frames": [
+        {
+          "mesh_index": 8,
+          "raw_bounds": [
+            -1004.8460693359375,
+            -830.4676513671875,
+            -53.59632110595703,
+            809.2112426757812,
+            665.9549560546875,
+            96.56439971923828
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 68,
+              "points": 106
+            },
+            {
+              "material": "trollh_4_wand_d",
+              "texture": "trollh_4_wand_d.tga",
+              "triangles": 10,
+              "points": 26
+            }
+          ]
+        },
+        {
+          "mesh_index": 9,
+          "raw_bounds": [
+            -1004.8460693359375,
+            -830.4676513671875,
+            -53.59632110595703,
+            809.2112426757812,
+            665.9549560546875,
+            96.56439971923828
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 68,
+              "points": 106
+            },
+            {
+              "material": "trollh_4_wand_d",
+              "texture": "trollh_4_wand_d.tga",
+              "triangles": 10,
+              "points": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "object": "urw_caves_1_c_b",
+      "animation": "standard",
+      "frames": [
+        {
+          "mesh_index": 10,
+          "raw_bounds": [
+            -910.9583740234375,
+            -670.5283203125,
+            -1258.9139404296875,
+            596.5165405273438,
+            503.5456848144531,
+            -1000.0
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 48,
+              "points": 76
+            }
+          ]
+        },
+        {
+          "mesh_index": 11,
+          "raw_bounds": [
+            -910.9583740234375,
+            -670.5283203125,
+            -1258.9139404296875,
+            596.5165405273438,
+            503.5456848144531,
+            -1000.0
+          ],
+          "surfaces": [
+            {
+              "material": "Holz_Standard_a_256",
+              "texture": "Holz_Standard_a_256.tga",
+              "triangles": 48,
+              "points": 76
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "confirmed": "Wood is integral geometry in these cave lining meshes, including the back variants.",
+  "automatic_corridor_identity": "unknown",
+  "placement_rule": null,
+  "frequency": null,
+  "limits": [
+    "Registration and model contents do not establish identity with the screenshot boards.",
+    "The existing completed-cave consumer does not prove automatic corridor support placement.",
+    "Raw 3DB bounds require the original class/world transform; they are not world placement."
+  ]
+}

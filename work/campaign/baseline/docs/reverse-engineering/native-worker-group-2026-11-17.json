@@ -1,0 +1,43 @@
+{
+  "schema": "native-worker-group-evidence-v1",
+  "verification": "Static EXE bytes plus independently calculated u32 fixtures; no original-process execution or controller integration test.",
+  "exe_sha256": "58a01d3d80670a6042c66a82684397c98e39c503e00a6e2c2c511f338a30ed74",
+  "worker_offset": "0x250",
+  "cell_groups_offset": "0x0C",
+  "worker_slot_offset": "0x36C",
+  "mark_manager_counters": "0xB4 + 4*slot",
+  "instruction_bytes": [
+    {"va": "0x5C8D80", "hex": "c78750020000ffffffff", "meaning": "constructor stamp=-1"},
+    {"va": "0x67BC56", "hex": "c78050020000ffffffff", "meaning": "dig_resetid stamp=-1"},
+    {"va": "0x597314", "hex": "8b400cd3e88b4d0c898150020000", "meaning": "accepted core: groups SHR CL, store raw result, no nibble mask"},
+    {"va": "0x597D69", "hex": "8b780cd3ef83e70f", "meaning": "selector candidate: groups SHR CL AND 15"},
+    {"va": "0x5673F1", "hex": "8b83b400000083e00fd3e00bc789460c", "meaning": "place selected counter low nibble, preserve other slots"},
+    {"va": "0x5667AA", "hex": "ff00", "meaning": "one counter increment after corridor commit loop"},
+    {"va": "0x566342", "hex": "c70000000000", "meaning": "manager constructor zeroes selected counter, loop over 8"},
+    {"va": "0x594077", "hex": "6a7483c0086a0050e8dcc41300", "meaning": "cell reset memset(C+8,0,0x74), including groups"}
+  ],
+  "placement_fixtures": [
+    {"id": "first_commit", "slot": 0, "counter_before": 0, "groups_before": "00000000", "accepted_point": true, "groups_after": "00000000", "counter_after": 1},
+    {"id": "second_commit", "slot": 0, "counter_before": 1, "groups_before": "00000000", "accepted_point": true, "groups_after": "00000001", "counter_after": 2},
+    {"id": "low_nibble15", "slot": 0, "counter_before": 15, "groups_before": "00000000", "accepted_point": true, "groups_after": "0000000f", "counter_after": 16},
+    {"id": "low_nibble_wrap16", "slot": 0, "counter_before": 16, "groups_before": "0000000f", "accepted_point": true, "groups_after": "00000000", "counter_after": 17},
+    {"id": "preserve_other_slots", "slot": 0, "counter_before": 3, "groups_before": "a0b0c0d0", "accepted_point": true, "groups_after": "a0b0c0d3", "counter_after": 4},
+    {"id": "slot7", "slot": 7, "counter_before": 25, "groups_before": "01234567", "accepted_point": true, "groups_after": "91234567", "counter_after": 26},
+    {"id": "rejected_point_commit_still_advances", "slot": 0, "counter_before": 3, "groups_before": "00000002", "accepted_point": false, "groups_after": "00000002", "counter_after": 4}
+  ],
+  "stamp_fixtures": [
+    {"id": "fresh_or_explicit_reset", "event": "reset", "worker_bits_before": "00000005", "groups": "00000003", "slot": 0, "worker_bits_after": "ffffffff"},
+    {"id": "announce_retains_stamp", "event": "announce", "worker_bits_before": "00000005", "groups": "00000003", "slot": 0, "worker_bits_after": "00000005"},
+    {"id": "rejected_core_retains_stamp", "event": "rejected", "worker_bits_before": "00000005", "groups": "00000003", "slot": 0, "worker_bits_after": "00000005"},
+    {"id": "accepted_isolated_slot0", "event": "accepted", "worker_bits_before": "ffffffff", "groups": "00000003", "slot": 0, "worker_bits_after": "00000003", "candidate_nibble": 3, "same_group": true},
+    {"id": "accepted_no_mask_slot0", "event": "accepted", "worker_bits_before": "ffffffff", "groups": "000000a3", "slot": 0, "worker_bits_after": "000000a3", "candidate_nibble": 3, "same_group": false},
+    {"id": "accepted_no_mask_slot1", "event": "accepted", "worker_bits_before": "ffffffff", "groups": "00000123", "slot": 1, "worker_bits_after": "00000012", "candidate_nibble": 2, "same_group": false},
+    {"id": "accepted_slot7", "event": "accepted", "worker_bits_before": "ffffffff", "groups": "f1234567", "slot": 7, "worker_bits_after": "0000000f", "candidate_nibble": 15, "same_group": true},
+    {"id": "accepted_u32_not_signed64_shift", "event": "accepted", "worker_bits_before": "ffffffff", "groups": "80000001", "slot": 1, "worker_bits_after": "08000000", "candidate_nibble": 0, "same_group": false}
+  ],
+  "unknowns": [
+    "Loaded worker/counter values require the actual saved snapshot; new-task first strike does not imply reset.",
+    "Full reservation AI protocol and names of its global mode flags are outside this bounded trace.",
+    "Intent of the unmasked accepted stamp assignment is unknown; its instructions are confirmed."
+  ]
+}

@@ -1,0 +1,4 @@
+SCRIPT ERROR: Parse Error: Expected new line after "\".
+   at: GDScript::reload (res://scripts/native_campaign_first_level.gd:739)
+ERROR: Failed to load script "res://scripts/native_campaign_first_level.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

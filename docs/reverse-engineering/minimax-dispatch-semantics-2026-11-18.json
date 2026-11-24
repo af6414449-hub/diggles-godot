@@ -1,0 +1,13 @@
+{
+  "tcl_patchlevel": "8.6.12",
+  "original_source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Diggles The Myth of Fenris\\data\\Scripts\\classes\\zwerg\\z_spare_fun.tcl",
+  "sha256": "5260d026d66b2c7a861eb25a8e64aae06f3662b80f2257324528e5e5dc609cf7",
+  "line": 299,
+  "original_command": "tasklist_add this {play_anim standloop[string index abcd [irandom 4]]}",
+  "queued_script": "play_anim standloop[string index abcd [irandom 4]]",
+  "irandom_calls_before_eval": 0,
+  "irandom_calls_after_eval": 1,
+  "played": "standloopb",
+  "plain_false_return_continues": true,
+  "limits": "This disproves two generic dispatcher assumptions; native commands may explicitly return errors/control codes."
+}

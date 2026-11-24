@@ -1,0 +1,114 @@
+{
+  "tests": [
+    {
+      "test": "native_animation_aliases",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_ANIMATION_ALIASES_SELF_TEST checks=23 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_model_programs_native_animation_aliases.log"
+    },
+    {
+      "test": "native_model_programs",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_MODEL_PROGRAM_SELF_TEST checks=9 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_model_programs_native_model_programs.log"
+    },
+    {
+      "test": "world_model_light",
+      "exit_code": 0,
+      "markers": [
+        "WORLD_MODEL_LIGHT_SELF_TEST checks=31 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_model_programs_world_model_light.log"
+    },
+    {
+      "test": "native_terrain_render",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_TERRAIN_RENDER_SELF_TEST_OK assertions=556 vertices=15906 textures=41"
+      ],
+      "errors": [],
+      "log": "logs/tmp_model_programs_native_terrain_render.log"
+    },
+    {
+      "test": "automatic_torch_runtime",
+      "exit_code": 0,
+      "markers": [
+        "AUTOMATIC_TORCH_RUNTIME_SELF_TEST checks=33 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_model_programs_automatic_torch_runtime.log"
+    },
+    {
+      "test": "feedback_visual",
+      "exit_code": 0,
+      "markers": [
+        "FEEDBACK_VISUAL_SELF_TEST checks=13 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_model_programs_feedback_visual.log"
+    },
+    {
+      "test": "wall_branch_continuation",
+      "exit_code": 0,
+      "markers": [
+        "WALL_BRANCH_CONTINUATION_SELF_TEST checks=16 failures=0 mutations=12 max_step=0.085717"
+      ],
+      "errors": [],
+      "log": "logs/tmp_model_programs_wall_branch_continuation.log"
+    },
+    {
+      "test": "surface_depth_route",
+      "exit_code": 0,
+      "markers": [
+        "SURFACE_DEPTH_ROUTE_SELF_TEST checks=19 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_model_programs_surface_depth_route.log"
+    },
+    {
+      "test": "manual_dig_region",
+      "exit_code": 0,
+      "markers": [
+        "MANUAL_DIG_REGION_SELF_TEST_OK assertions=27"
+      ],
+      "errors": [],
+      "log": "logs/tmp_model_programs_manual_dig_region.log"
+    },
+    {
+      "test": "native_model_material",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_MODEL_MATERIAL_SELF_TEST_OK assertions=208"
+      ],
+      "errors": [],
+      "log": "logs/tmp_model_programs_native_model_material.log"
+    },
+    {
+      "test": "native_dig_feedback",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_DIG_FEEDBACK_SELF_TEST PASS checks=629 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_model_programs_native_dig_feedback.log"
+    }
+  ],
+  "headless_assertions": 1564,
+  "source_checks": [
+    "export_native_model_programs.py --check",
+    "export_world_model_lighting.py --check",
+    "export_native_animation_aliases.py --check"
+  ],
+  "gpu": {
+    "status": "not_executed",
+    "reason": "Automatic approval review failed due usage limit; no new GPU result is claimed"
+  },
+  "apk_rebuilt": false
+}

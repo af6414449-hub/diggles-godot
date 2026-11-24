@@ -1,0 +1,24 @@
+# native Tcl commands: name <TAB> handler_va <TAB> call_site_va
+ai_getintrudergnomes	0x0042E340	0x0042A507
+ai_getintruderprods	0x0042E4B0	0x0042A4B6
+ai_getownerid	0x0042BE90	0x00429F04
+ai_getpossibleinventions	0x0042D7A0	0x0042A3C3
+ai_getprodlocations	0x0042E620	0x0042A465
+ai_gnomepop_getcount	0x0042C110	0x0042A048
+ai_gnomepop_getlist	0x0042C4E0	0x0042A0EA
+ai_gnomepop_getobj	0x0042C760	0x0042A13B
+ai_gnomepop_getpos	0x0042C2F0	0x0042A099
+ai_gnomepopscount	0x0042C040	0x00429FF7
+ai_log	0x0042BE80	0x00429EB3
+ai_nextgnomepop	0x0042C9C0	0x0042A18C
+ai_nextprodpop	0x0042D570	0x0042A372
+ai_nprint	0x0042BE80	0x00429F55
+ai_prodpop_getcount	0x0042CCC0	0x0042A22E
+ai_prodpop_getlist	0x0042D090	0x0042A2D0
+ai_prodpop_getobj	0x0042D310	0x0042A321
+ai_prodpop_getpos	0x0042CEA0	0x0042A27F
+ai_prodpopscount	0x0042CBF0	0x0042A1DD
+ai_setbuildup	0x0042D9B0	0x0042A558
+ai_setpack	0x0042DB80	0x0042A5A9
+ai_tickhandler	0x0042BF00	0x00429FA6
+ai_validlocation	0x0042DCC0	0x0042A414

@@ -1,0 +1,14 @@
+
+void Unwind_00702fe0(void)
+
+{
+  int unaff_EBP;
+  
+  if ((*(uint *)(unaff_EBP + -0x3c) & 1) != 0) {
+    *(uint *)(unaff_EBP + -0x3c) = *(uint *)(unaff_EBP + -0x3c) & 0xfffffffe;
+    FUN_006b8ed0();
+    return;
+  }
+  return;
+}
+

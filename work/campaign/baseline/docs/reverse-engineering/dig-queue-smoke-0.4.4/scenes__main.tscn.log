@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[SMOKE] scene=res://scenes/main.tscn frames=60 fps=60 viewport=1280x720
+[SMOKE_RESULT] {"ended":"completed","findings":[],"frames":60,"mode":"fixed_fps","notes":[],"perf":{"frame_ms":{"avg":0.02,"end":0.02,"max":0.05,"min":0.02,"p95":0.04,"samples":60,"start":0.05},"node_count_end":11,"node_count_start":11,"orphan_nodes":0,"samples":12,"static_memory_mb":26.3},"scene":"res://scenes/main.tscn","seconds_simulated":1.0,"target_frames":60}

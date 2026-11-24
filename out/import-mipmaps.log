@@ -1,0 +1,944 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Инициализация проекта (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Сканирование структуры файлов…[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Загрузка глобальных имен классов…[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Проверка GDExtensions…[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Создание скриптов автозагрузки…[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Инициализация плагинов…[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Начало сканирование файлов…[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Регистрация глобальных классов… (24 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   8% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  24% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  28% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | NativeCampaignProfile[39m[0m
+[  36% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  48% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  68% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  72% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Сканирование действий… (295 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | 50PGray.tga[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | kris_0001.tga[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | kris_0100.tga[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | kris_0101.tga[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | kris_1000.tga[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | kris_1100.tga[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | lava_0001.tga[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | lava_0010.tga[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | lava_0011.tga[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | lava_0100.tga[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | lava_0101.tga[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | lava_0110.tga[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | lava_0111.tga[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | lava_1000.tga[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | lava_1001.tga[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | lava_1010.tga[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | lava_1011.tga[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | lava_1100.tga[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | lava_1101.tga[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | lava_1110.tga[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | lava_1111.tga[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | native_campaign_detail_atlas.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | swf_0001.tga[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | swf_0010.tga[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | swf_0011.tga[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | swf_0100.tga[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | swf_0101.tga[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | swf_0110.tga[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | swf_0111.tga[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | swf_1000.tga[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | swf_1001.tga[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | swf_1010.tga[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | swf_1011.tga[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | swf_1100.tga[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | swf_1101.tga[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | swf_1110.tga[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | swf_1111.tga[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | swf_1111_a.tga[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | swf_1111_b.tga[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | swf_1111_c.tga[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | swf_1111_d.tga[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | swf_1111_e.tga[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | swf_1111_f.tga[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | urw2_0001.tga[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | urw2_0010.tga[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | urw2_0011.tga[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | urw2_0100.tga[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | urw2_0101.tga[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | urw2_0110.tga[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | urw2_0111.tga[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | urw2_1000.tga[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | urw2_1001.tga[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | urw2_1010.tga[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | urw2_1011.tga[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | urw2_1100.tga[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | urw2_1101.tga[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | urw2_1110.tga[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | urw2_1111.tga[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | urw2_1111_b.tga[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | urw2_1111_c.tga[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | urw2_1111_d.tga[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | urw2_1111_f.tga[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | urw_0001.tga[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | urw_0010.tga[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | urw_0011.tga[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | urw_0100.tga[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | urw_0101.tga[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | urw_0110.tga[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | urw_0111.tga[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | urw_1000.tga[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | urw_1001.tga[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | urw_1010.tga[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | urw_1011.tga[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | urw_1100.tga[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | urw_1101.tga[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | urw_1110.tga[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | urw_1111.tga[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | urw_1111_a.tga[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | urw_1111_b.tga[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | urw_1111_c.tga[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | urw_1111_d.tga[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | urw_1111_e.tga[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | urw_1111_f.tga[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | Character_Troll_Kopf_f.tga[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | enviro_chrome.tga[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | FX_Licht_b.tga[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | gelbneb_4_metall.tga[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | gelbneb_schw_boden2.tga[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | gelbneb_schw_boden.tga[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | Holz_Standard_a_256.tga[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | Holz_Standard_c_256.tga[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | kristall_details_b.tga[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | kr_enviroment_b.tga[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | Metall_Moebel_a_256.tga[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | Metall_Standard_a_256.tga[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | Metall_Standard_b_256.tga[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | Oberwelt_Baum_b.tga[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | Oberwelt_Baum_d.tga[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | obw_4_boden_a.tga[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | obw_4_boden_b.tga[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | schwef_nahtlos.tga[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | spielkarten_128.tga[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | Stein_Standard_d.tga[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | Struktur_Bettzeug_a_256.tga[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | Struktur_Leder_a_256.tga[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | sumpfwasser.tga[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | Troll001.tga[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | trollh_4_wand_a.tga[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | trollh_4_wand_d.tga[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | Trollh_Boden_b_End_256.tga[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | Trollh_Folterkammer_b_256.tga[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | Trollh_Wandschmuck_a_256.tga[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | Trollh_Wandschmuck_e_256.tga[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | Troll_Kopf001.tga[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | Urwald_Riesenpilzbaum_a.tga[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | Urwald_Riesenpilzbaum_c.tga[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | Urwald_Wurzeln_c_256.tga[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | wuker01.tga[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | Gnd_A01.tga[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | Gnd_A02.tga[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | Gnd_A03.tga[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | Gnd_A04.tga[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | Gnd_A05.tga[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | Gnd_A06.tga[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | Gnd_A07.tga[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | Gnd_A08.tga[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | Gnd_A09.tga[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | Gnd_A10.tga[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | Gnd_A11.tga[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | Gnd_A12.tga[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | Gnd_A13.tga[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | Gnd_A14.tga[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | Gnd_A15.tga[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | Gnd_B01.tga[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | Gnd_B02.tga[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | Gnd_B03.tga[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | Gnd_B04.tga[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | Gnd_B05.tga[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | Gnd_B06.tga[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | Gnd_B07.tga[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | Gnd_B08.tga[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | Gnd_B09.tga[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | Gnd_B10.tga[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | Gnd_B11.tga[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | Gnd_B12.tga[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | Gnd_B13.tga[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | Gnd_B14.tga[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | Gnd_B15.tga[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | Gnd_C01.tga[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | Gnd_C02.tga[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | Gnd_C03.tga[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | Gnd_C04.tga[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | Gnd_C05.tga[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | Gnd_C06.tga[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | Gnd_C07.tga[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | Gnd_C08.tga[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | Gnd_C09.tga[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | Gnd_C10.tga[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | Gnd_C11.tga[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | Gnd_C12.tga[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | Gnd_C13.tga[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | Gnd_C14.tga[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | Gnd_C15.tga[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | Native_0001.tga[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | Native_0002.tga[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | Native_0010.tga[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | Native_0011.tga[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | Native_0012.tga[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | Native_0020.tga[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | Native_0021.tga[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | Native_0022.tga[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | Native_0100.tga[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | Native_0101.tga[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | Native_0102.tga[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | Native_0110.tga[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | Native_0111.tga[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | Native_0112.tga[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | Native_0120.tga[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | Native_0121.tga[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | Native_0122.tga[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | Native_0200.tga[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | Native_0201.tga[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | Native_0202.tga[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | Native_0210.tga[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | Native_0211.tga[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | Native_0212.tga[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | Native_0220.tga[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | Native_0221.tga[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | Native_0222.tga[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | Native_1000.tga[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | Native_1001.tga[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | Native_1002.tga[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | Native_1010.tga[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | Native_1011.tga[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | Native_1012.tga[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | Native_1020.tga[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | Native_1021.tga[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | Native_1022.tga[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | Native_1100.tga[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | Native_1101.tga[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | Native_1102.tga[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | Native_1110.tga[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | Native_1112.tga[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | Native_1120.tga[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | Native_1121.tga[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | Native_1122.tga[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | Native_1200.tga[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | Native_1201.tga[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | Native_1202.tga[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | Native_1210.tga[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | Native_1211.tga[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | Native_1212.tga[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | Native_1220.tga[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | Native_1221.tga[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | Native_1222.tga[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | Native_2000.tga[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | Native_2001.tga[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | Native_2002.tga[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | Native_2010.tga[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | Native_2011.tga[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | Native_2012.tga[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | Native_2020.tga[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | Native_2021.tga[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | Native_2022.tga[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | Native_2100.tga[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | Native_2101.tga[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | Native_2102.tga[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | Native_2110.tga[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | Native_2111.tga[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | Native_2112.tga[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | Native_2120.tga[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | Native_2121.tga[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | Native_2122.tga[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | Native_2200.tga[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | Native_2201.tga[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | Native_2202.tga[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | Native_2210.tga[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | Native_2211.tga[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | Native_2212.tga[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | Native_2220.tga[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | Native_2221.tga[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | Character_Drache_b_256.tga[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | Character_Hamster_a_128.tga[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | Character_Raupe_a_128.tga[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | Elfen_Koerper.tga[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | FX_Licht.tga[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | Holz_Standard_a_256.tga[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | Holz_Standard_b_256.tga[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | Holz_Standard_d_256.tga[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | Holz_Standard_e_256.tga[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | Metall_Werkzeuge_a_128.tga[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | Oberwelt_Baum_b.tga[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | Oberwelt_Baum_d.tga[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | obw_4_boden_a.tga[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | obw_4_boden_b.tga[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | obw_4_boden_c.tga[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | obw_berg_a.tga[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | Spinnweben_a.tga[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | Spinnweben_b.tga[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | Stein_Standard_a_256.tga[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | Struktur_Rohstoffe_a_256.tga[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | Struktur_Rohstoffe_c_256.tga[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | sumpfwasser.tga[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | Troll001.tga[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | trollh_4_boden_a.tga[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | trollh_4_wand_b.tga[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | trollh_4_wand_c.tga[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | Trollh_Bodenkram_a_256.tga[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | Trollh_Boden_b_256.tga[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | Trollh_Boden_b_End_b_256.tga[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | Trollh_Folterkammer_a_256.tga[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | Trollh_Licht_a_256.tga[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | Trollh_Tueren_a_256.tga[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | Troll_Kopf001.tga[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | Urwald_Lianen_a.tga[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | Urwald_Moos_a_256.tga[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | Urwald_Moos_b_256.tga[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | Urwald_Pflanzen_a.tga[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | Urwald_Pflanzen_b.tga[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | Urwald_Pflanzen_c.tga[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | Urwald_Pflanzen_e.tga[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | Urwald_Pilz_a_256.tga[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | Urwald_Rankelwand_a_256.tga[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | Urwald_stein_256.tga[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | Urwald_Wurzeln_a_256.tga[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | Urwald_Wurzeln_b_256.tga[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | Urwald_Wurzeln_d_256.tga[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | wuker01.tga[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | ZMann_Augen_normal.tga[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | ZMann_Gesicht_normal.tga[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | ZMann_Haare.tga[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | ZMann_Koerper_oben.tga[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | ZMann_Koerper_unten.tga[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | Zwerge_Holz_c_256.tga[39m[0m
+[  99% ] [90m[1m_update_scan_actions[22m | Zwerge_mechZeitalter_b.tga[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started Импорт или повторный импорт ассетов (295 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   0% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   0% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   1% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   1% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   1% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   2% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   2% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   2% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   3% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   3% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   3% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   4% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   4% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   4% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   5% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   5% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   5% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   6% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   6% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   6% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   7% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   7% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   7% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   8% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   8% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   8% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   9% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   9% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   9% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  10% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  10% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  10% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  11% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  11% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  11% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  12% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  12% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  12% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  13% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  13% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  13% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  14% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  14% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  14% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  15% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  15% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  15% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  16% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  16% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  16% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  17% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  17% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  17% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  18% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  18% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  18% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  19% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  19% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  19% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  20% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  20% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  20% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  21% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  21% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  21% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  22% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  22% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  22% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  23% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  23% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  23% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  24% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  24% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  25% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  25% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  25% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  26% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  26% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  26% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  27% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  27% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  27% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  28% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  28% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  28% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  29% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  29% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  29% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  30% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  30% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  30% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  31% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  31% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  31% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  32% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  32% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  32% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  33% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  33% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  33% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  34% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  34% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  34% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  35% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  35% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  35% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  36% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  36% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  36% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  37% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  37% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  37% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  38% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  38% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  38% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  39% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  39% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  39% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  40% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  40% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  40% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  41% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  41% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  41% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  42% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  42% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  42% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  43% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  43% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  43% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  44% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  44% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  44% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  45% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  45% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  45% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  46% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  46% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  46% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  47% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  47% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  47% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  48% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  48% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  48% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  49% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  49% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  50% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  50% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  50% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  51% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  51% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  51% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  52% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  52% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  52% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  53% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  53% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  53% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  54% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  54% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  54% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  55% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  55% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  55% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  56% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  56% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  56% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  57% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  57% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  57% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  58% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  58% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  58% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  59% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  59% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  59% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  60% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  60% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  60% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  61% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  61% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  61% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  62% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  62% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  62% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  63% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  63% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  63% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  64% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  64% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  64% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  65% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  65% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  65% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  66% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  66% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  66% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  67% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  67% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  67% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  68% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  68% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  68% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  69% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  69% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  69% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  70% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  70% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  70% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  71% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  71% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  71% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  72% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  72% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  72% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  73% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  73% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  73% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  74% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  74% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  75% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  75% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  75% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  76% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  76% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  76% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  77% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  77% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  77% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  78% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  78% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  78% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  79% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  79% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  79% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  80% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  80% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  80% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  81% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  81% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  81% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  82% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  82% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  82% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  83% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  83% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  83% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  84% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  84% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  84% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  85% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  85% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  85% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  86% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  86% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  86% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  87% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  87% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  87% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  88% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  88% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  88% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  89% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  89% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  89% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  90% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  90% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  90% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  91% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  91% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  91% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  92% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  92% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  92% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  93% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  93% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  93% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  94% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  94% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  94% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  95% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  95% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  95% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  96% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  96% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  96% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  97% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  97% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  97% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  98% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  98% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  98% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[  99% ] [90m[1mreimport[22m | Подготовка файлов к повторному импорту…[39m[0m
+[   0% ] [90m[1mreimport[22m | Выполнение предимпортных операций…[39m[0m
+[   0% ] [90m[1mreimport[22m | Native_1112.tga[39m[0m
+[   0% ] [90m[1mreimport[22m | Native_1110.tga[39m[0m
+[   0% ] [90m[1mreimport[22m | Native_1102.tga[39m[0m
+[   1% ] [90m[1mreimport[22m | Native_1101.tga[39m[0m
+[   1% ] [90m[1mreimport[22m | Native_1100.tga[39m[0m
+[   1% ] [90m[1mreimport[22m | Native_1022.tga[39m[0m
+[   2% ] [90m[1mreimport[22m | Native_1021.tga[39m[0m
+[   2% ] [90m[1mreimport[22m | Native_1020.tga[39m[0m
+[   2% ] [90m[1mreimport[22m | Native_1012.tga[39m[0m
+[   3% ] [90m[1mreimport[22m | Native_1011.tga[39m[0m
+[   3% ] [90m[1mreimport[22m | Native_1010.tga[39m[0m
+[   3% ] [90m[1mreimport[22m | Native_1002.tga[39m[0m
+[   4% ] [90m[1mreimport[22m | Native_1001.tga[39m[0m
+[   4% ] [90m[1mreimport[22m | Native_1000.tga[39m[0m
+[   4% ] [90m[1mreimport[22m | Native_0222.tga[39m[0m
+[   5% ] [90m[1mreimport[22m | Native_0221.tga[39m[0m
+[   5% ] [90m[1mreimport[22m | Native_0220.tga[39m[0m
+[   5% ] [90m[1mreimport[22m | Native_0212.tga[39m[0m
+[   6% ] [90m[1mreimport[22m | Native_2012.tga[39m[0m
+[   6% ] [90m[1mreimport[22m | Native_2011.tga[39m[0m
+[   6% ] [90m[1mreimport[22m | Native_2010.tga[39m[0m
+[   7% ] [90m[1mreimport[22m | Native_2002.tga[39m[0m
+[   7% ] [90m[1mreimport[22m | Native_2001.tga[39m[0m
+[   7% ] [90m[1mreimport[22m | Native_2000.tga[39m[0m
+[   8% ] [90m[1mreimport[22m | Native_1222.tga[39m[0m
+[   8% ] [90m[1mreimport[22m | Native_1221.tga[39m[0m
+[   8% ] [90m[1mreimport[22m | Native_1220.tga[39m[0m
+[   9% ] [90m[1mreimport[22m | Native_1212.tga[39m[0m
+[   9% ] [90m[1mreimport[22m | Native_1211.tga[39m[0m
+[   9% ] [90m[1mreimport[22m | Native_1210.tga[39m[0m
+[  10% ] [90m[1mreimport[22m | Native_1202.tga[39m[0m
+[  10% ] [90m[1mreimport[22m | Native_1201.tga[39m[0m
+[  10% ] [90m[1mreimport[22m | Native_1200.tga[39m[0m
+[  11% ] [90m[1mreimport[22m | Native_1122.tga[39m[0m
+[  11% ] [90m[1mreimport[22m | Native_1121.tga[39m[0m
+[  11% ] [90m[1mreimport[22m | Native_1120.tga[39m[0m
+[  12% ] [90m[1mreimport[22m | Native_0010.tga[39m[0m
+[  12% ] [90m[1mreimport[22m | Native_0002.tga[39m[0m
+[  12% ] [90m[1mreimport[22m | Native_0001.tga[39m[0m
+[  13% ] [90m[1mreimport[22m | Gnd_C15.tga[39m[0m
+[  13% ] [90m[1mreimport[22m | Gnd_C14.tga[39m[0m
+[  13% ] [90m[1mreimport[22m | Gnd_C13.tga[39m[0m
+[  14% ] [90m[1mreimport[22m | Gnd_C12.tga[39m[0m
+[  14% ] [90m[1mreimport[22m | Gnd_C11.tga[39m[0m
+[  14% ] [90m[1mreimport[22m | Gnd_C10.tga[39m[0m
+[  15% ] [90m[1mreimport[22m | Gnd_C09.tga[39m[0m
+[  15% ] [90m[1mreimport[22m | Gnd_C08.tga[39m[0m
+[  15% ] [90m[1mreimport[22m | Gnd_C07.tga[39m[0m
+[  16% ] [90m[1mreimport[22m | Gnd_C06.tga[39m[0m
+[  16% ] [90m[1mreimport[22m | Gnd_C05.tga[39m[0m
+[  16% ] [90m[1mreimport[22m | Gnd_C04.tga[39m[0m
+[  17% ] [90m[1mreimport[22m | Gnd_C03.tga[39m[0m
+[  17% ] [90m[1mreimport[22m | Gnd_C02.tga[39m[0m
+[  17% ] [90m[1mreimport[22m | Gnd_C01.tga[39m[0m
+[  18% ] [90m[1mreimport[22m | Native_0211.tga[39m[0m
+[  18% ] [90m[1mreimport[22m | Native_0210.tga[39m[0m
+[  18% ] [90m[1mreimport[22m | Native_0202.tga[39m[0m
+[  19% ] [90m[1mreimport[22m | Native_0201.tga[39m[0m
+[  19% ] [90m[1mreimport[22m | Native_0200.tga[39m[0m
+[  19% ] [90m[1mreimport[22m | Native_0122.tga[39m[0m
+[  20% ] [90m[1mreimport[22m | Native_0121.tga[39m[0m
+[  20% ] [90m[1mreimport[22m | Native_0120.tga[39m[0m
+[  20% ] [90m[1mreimport[22m | Native_0112.tga[39m[0m
+[  21% ] [90m[1mreimport[22m | Native_0111.tga[39m[0m
+[  21% ] [90m[1mreimport[22m | Native_0110.tga[39m[0m
+[  21% ] [90m[1mreimport[22m | Native_0102.tga[39m[0m
+[  22% ] [90m[1mreimport[22m | Native_0101.tga[39m[0m
+[  22% ] [90m[1mreimport[22m | Native_0100.tga[39m[0m
+[  22% ] [90m[1mreimport[22m | Native_0022.tga[39m[0m
+[  23% ] [90m[1mreimport[22m | Native_0021.tga[39m[0m
+[  23% ] [90m[1mreimport[22m | Native_0020.tga[39m[0m
+[  23% ] [90m[1mreimport[22m | Native_0012.tga[39m[0m
+[  24% ] [90m[1mreimport[22m | Native_0011.tga[39m[0m
+[  24% ] [90m[1mreimport[22m | Urwald_Moos_a_256.tga[39m[0m
+[  25% ] [90m[1mreimport[22m | Urwald_Lianen_a.tga[39m[0m
+[  25% ] [90m[1mreimport[22m | Troll_Kopf001.tga[39m[0m
+[  25% ] [90m[1mreimport[22m | Trollh_Tueren_a_256.tga[39m[0m
+[  26% ] [90m[1mreimport[22m | Trollh_Licht_a_256.tga[39m[0m
+[  26% ] [90m[1mreimport[22m | Trollh_Folterkammer_a_256.tga[39m[0m
+[  26% ] [90m[1mreimport[22m | Trollh_Boden_b_End_b_256.tga[39m[0m
+[  27% ] [90m[1mreimport[22m | Trollh_Boden_b_256.tga[39m[0m
+[  27% ] [90m[1mreimport[22m | Trollh_Bodenkram_a_256.tga[39m[0m
+[  27% ] [90m[1mreimport[22m | trollh_4_wand_c.tga[39m[0m
+[  28% ] [90m[1mreimport[22m | trollh_4_wand_b.tga[39m[0m
+[  28% ] [90m[1mreimport[22m | trollh_4_boden_a.tga[39m[0m
+[  28% ] [90m[1mreimport[22m | Troll001.tga[39m[0m
+[  29% ] [90m[1mreimport[22m | sumpfwasser.tga[39m[0m
+[  29% ] [90m[1mreimport[22m | Struktur_Rohstoffe_c_256.tga[39m[0m
+[  29% ] [90m[1mreimport[22m | Struktur_Rohstoffe_a_256.tga[39m[0m
+[  30% ] [90m[1mreimport[22m | Stein_Standard_a_256.tga[39m[0m
+[  30% ] [90m[1mreimport[22m | Spinnweben_b.tga[39m[0m
+[  30% ] [90m[1mreimport[22m | Zwerge_mechZeitalter_b.tga[39m[0m
+[  31% ] [90m[1mreimport[22m | Zwerge_Holz_c_256.tga[39m[0m
+[  31% ] [90m[1mreimport[22m | ZMann_Koerper_unten.tga[39m[0m
+[  31% ] [90m[1mreimport[22m | ZMann_Koerper_oben.tga[39m[0m
+[  32% ] [90m[1mreimport[22m | ZMann_Haare.tga[39m[0m
+[  32% ] [90m[1mreimport[22m | ZMann_Gesicht_normal.tga[39m[0m
+[  32% ] [90m[1mreimport[22m | ZMann_Augen_normal.tga[39m[0m
+[  33% ] [90m[1mreimport[22m | wuker01.tga[39m[0m
+[  33% ] [90m[1mreimport[22m | Urwald_Wurzeln_d_256.tga[39m[0m
+[  33% ] [90m[1mreimport[22m | Urwald_Wurzeln_b_256.tga[39m[0m
+[  34% ] [90m[1mreimport[22m | Urwald_Wurzeln_a_256.tga[39m[0m
+[  34% ] [90m[1mreimport[22m | Urwald_stein_256.tga[39m[0m
+[  34% ] [90m[1mreimport[22m | Urwald_Rankelwand_a_256.tga[39m[0m
+[  35% ] [90m[1mreimport[22m | Urwald_Pilz_a_256.tga[39m[0m
+[  35% ] [90m[1mreimport[22m | Urwald_Pflanzen_e.tga[39m[0m
+[  35% ] [90m[1mreimport[22m | Urwald_Pflanzen_c.tga[39m[0m
+[  36% ] [90m[1mreimport[22m | Urwald_Pflanzen_b.tga[39m[0m
+[  36% ] [90m[1mreimport[22m | Urwald_Pflanzen_a.tga[39m[0m
+[  36% ] [90m[1mreimport[22m | Urwald_Moos_b_256.tga[39m[0m
+[  37% ] [90m[1mreimport[22m | Native_2212.tga[39m[0m
+[  37% ] [90m[1mreimport[22m | Native_2211.tga[39m[0m
+[  37% ] [90m[1mreimport[22m | Native_2210.tga[39m[0m
+[  38% ] [90m[1mreimport[22m | Native_2202.tga[39m[0m
+[  38% ] [90m[1mreimport[22m | Native_2201.tga[39m[0m
+[  38% ] [90m[1mreimport[22m | Native_2200.tga[39m[0m
+[  39% ] [90m[1mreimport[22m | Native_2122.tga[39m[0m
+[  39% ] [90m[1mreimport[22m | Native_2121.tga[39m[0m
+[  39% ] [90m[1mreimport[22m | Native_2120.tga[39m[0m
+[  40% ] [90m[1mreimport[22m | Native_2112.tga[39m[0m
+[  40% ] [90m[1mreimport[22m | Native_2111.tga[39m[0m
+[  40% ] [90m[1mreimport[22m | Native_2110.tga[39m[0m
+[  41% ] [90m[1mreimport[22m | Native_2102.tga[39m[0m
+[  41% ] [90m[1mreimport[22m | Native_2101.tga[39m[0m
+[  41% ] [90m[1mreimport[22m | Native_2100.tga[39m[0m
+[  42% ] [90m[1mreimport[22m | Native_2022.tga[39m[0m
+[  42% ] [90m[1mreimport[22m | Native_2021.tga[39m[0m
+[  42% ] [90m[1mreimport[22m | Native_2020.tga[39m[0m
+[  43% ] [90m[1mreimport[22m | Spinnweben_a.tga[39m[0m
+[  43% ] [90m[1mreimport[22m | obw_berg_a.tga[39m[0m
+[  43% ] [90m[1mreimport[22m | obw_4_boden_c.tga[39m[0m
+[  44% ] [90m[1mreimport[22m | obw_4_boden_b.tga[39m[0m
+[  44% ] [90m[1mreimport[22m | obw_4_boden_a.tga[39m[0m
+[  44% ] [90m[1mreimport[22m | Oberwelt_Baum_d.tga[39m[0m
+[  45% ] [90m[1mreimport[22m | Oberwelt_Baum_b.tga[39m[0m
+[  45% ] [90m[1mreimport[22m | Metall_Werkzeuge_a_128.tga[39m[0m
+[  45% ] [90m[1mreimport[22m | Holz_Standard_e_256.tga[39m[0m
+[  46% ] [90m[1mreimport[22m | Holz_Standard_d_256.tga[39m[0m
+[  46% ] [90m[1mreimport[22m | Holz_Standard_b_256.tga[39m[0m
+[  46% ] [90m[1mreimport[22m | Holz_Standard_a_256.tga[39m[0m
+[  47% ] [90m[1mreimport[22m | FX_Licht.tga[39m[0m
+[  47% ] [90m[1mreimport[22m | Elfen_Koerper.tga[39m[0m
+[  47% ] [90m[1mreimport[22m | Character_Raupe_a_128.tga[39m[0m
+[  48% ] [90m[1mreimport[22m | Character_Hamster_a_128.tga[39m[0m
+[  48% ] [90m[1mreimport[22m | Character_Drache_b_256.tga[39m[0m
+[  48% ] [90m[1mreimport[22m | Native_2221.tga[39m[0m
+[  49% ] [90m[1mreimport[22m | Native_2220.tga[39m[0m
+[  49% ] [90m[1mreimport[22m | urw2_1100.tga[39m[0m
+[  50% ] [90m[1mreimport[22m | urw2_1011.tga[39m[0m
+[  50% ] [90m[1mreimport[22m | urw2_1010.tga[39m[0m
+[  50% ] [90m[1mreimport[22m | urw2_1001.tga[39m[0m
+[  51% ] [90m[1mreimport[22m | urw2_1000.tga[39m[0m
+[  51% ] [90m[1mreimport[22m | urw2_0111.tga[39m[0m
+[  51% ] [90m[1mreimport[22m | urw2_0110.tga[39m[0m
+[  52% ] [90m[1mreimport[22m | urw2_0101.tga[39m[0m
+[  52% ] [90m[1mreimport[22m | urw2_0100.tga[39m[0m
+[  52% ] [90m[1mreimport[22m | urw2_0011.tga[39m[0m
+[  53% ] [90m[1mreimport[22m | urw2_0010.tga[39m[0m
+[  53% ] [90m[1mreimport[22m | urw2_0001.tga[39m[0m
+[  53% ] [90m[1mreimport[22m | swf_1111_f.tga[39m[0m
+[  54% ] [90m[1mreimport[22m | swf_1111_e.tga[39m[0m
+[  54% ] [90m[1mreimport[22m | swf_1111_d.tga[39m[0m
+[  54% ] [90m[1mreimport[22m | swf_1111_c.tga[39m[0m
+[  55% ] [90m[1mreimport[22m | swf_1111_b.tga[39m[0m
+[  55% ] [90m[1mreimport[22m | swf_1111_a.tga[39m[0m
+[  55% ] [90m[1mreimport[22m | urw_1100.tga[39m[0m
+[  56% ] [90m[1mreimport[22m | urw_1011.tga[39m[0m
+[  56% ] [90m[1mreimport[22m | urw_1010.tga[39m[0m
+[  56% ] [90m[1mreimport[22m | urw_1001.tga[39m[0m
+[  57% ] [90m[1mreimport[22m | urw_1000.tga[39m[0m
+[  57% ] [90m[1mreimport[22m | urw_0111.tga[39m[0m
+[  57% ] [90m[1mreimport[22m | urw_0110.tga[39m[0m
+[  58% ] [90m[1mreimport[22m | urw_0101.tga[39m[0m
+[  58% ] [90m[1mreimport[22m | urw_0100.tga[39m[0m
+[  58% ] [90m[1mreimport[22m | urw_0011.tga[39m[0m
+[  59% ] [90m[1mreimport[22m | urw_0010.tga[39m[0m
+[  59% ] [90m[1mreimport[22m | urw_0001.tga[39m[0m
+[  59% ] [90m[1mreimport[22m | urw2_1111_f.tga[39m[0m
+[  60% ] [90m[1mreimport[22m | urw2_1111_d.tga[39m[0m
+[  60% ] [90m[1mreimport[22m | urw2_1111_c.tga[39m[0m
+[  60% ] [90m[1mreimport[22m | urw2_1111_b.tga[39m[0m
+[  61% ] [90m[1mreimport[22m | urw2_1111.tga[39m[0m
+[  61% ] [90m[1mreimport[22m | urw2_1110.tga[39m[0m
+[  61% ] [90m[1mreimport[22m | urw2_1101.tga[39m[0m
+[  62% ] [90m[1mreimport[22m | lava_1100.tga[39m[0m
+[  62% ] [90m[1mreimport[22m | lava_1011.tga[39m[0m
+[  62% ] [90m[1mreimport[22m | lava_1010.tga[39m[0m
+[  63% ] [90m[1mreimport[22m | lava_1001.tga[39m[0m
+[  63% ] [90m[1mreimport[22m | lava_1000.tga[39m[0m
+[  63% ] [90m[1mreimport[22m | lava_0111.tga[39m[0m
+[  64% ] [90m[1mreimport[22m | lava_0110.tga[39m[0m
+[  64% ] [90m[1mreimport[22m | lava_0101.tga[39m[0m
+[  64% ] [90m[1mreimport[22m | lava_0100.tga[39m[0m
+[  65% ] [90m[1mreimport[22m | lava_0011.tga[39m[0m
+[  65% ] [90m[1mreimport[22m | lava_0010.tga[39m[0m
+[  65% ] [90m[1mreimport[22m | lava_0001.tga[39m[0m
+[  66% ] [90m[1mreimport[22m | kris_1100.tga[39m[0m
+[  66% ] [90m[1mreimport[22m | kris_1000.tga[39m[0m
+[  66% ] [90m[1mreimport[22m | kris_0101.tga[39m[0m
+[  67% ] [90m[1mreimport[22m | kris_0100.tga[39m[0m
+[  67% ] [90m[1mreimport[22m | kris_0001.tga[39m[0m
+[  67% ] [90m[1mreimport[22m | 50PGray.tga[39m[0m
+[  68% ] [90m[1mreimport[22m | swf_1111.tga[39m[0m
+[  68% ] [90m[1mreimport[22m | swf_1110.tga[39m[0m
+[  68% ] [90m[1mreimport[22m | swf_1101.tga[39m[0m
+[  69% ] [90m[1mreimport[22m | swf_1100.tga[39m[0m
+[  69% ] [90m[1mreimport[22m | swf_1011.tga[39m[0m
+[  69% ] [90m[1mreimport[22m | swf_1010.tga[39m[0m
+[  70% ] [90m[1mreimport[22m | swf_1001.tga[39m[0m
+[  70% ] [90m[1mreimport[22m | swf_1000.tga[39m[0m
+[  70% ] [90m[1mreimport[22m | swf_0111.tga[39m[0m
+[  71% ] [90m[1mreimport[22m | swf_0110.tga[39m[0m
+[  71% ] [90m[1mreimport[22m | swf_0101.tga[39m[0m
+[  71% ] [90m[1mreimport[22m | swf_0100.tga[39m[0m
+[  72% ] [90m[1mreimport[22m | swf_0011.tga[39m[0m
+[  72% ] [90m[1mreimport[22m | swf_0010.tga[39m[0m
+[  72% ] [90m[1mreimport[22m | swf_0001.tga[39m[0m
+[  73% ] [90m[1mreimport[22m | native_campaign_detail_atlas.png[39m[0m
+[  73% ] [90m[1mreimport[22m | lava_1111.tga[39m[0m
+[  73% ] [90m[1mreimport[22m | lava_1110.tga[39m[0m
+[  74% ] [90m[1mreimport[22m | lava_1101.tga[39m[0m
+[  74% ] [90m[1mreimport[22m | Gnd_A11.tga[39m[0m
+[  75% ] [90m[1mreimport[22m | Gnd_A10.tga[39m[0m
+[  75% ] [90m[1mreimport[22m | Gnd_A09.tga[39m[0m
+[  75% ] [90m[1mreimport[22m | Gnd_A08.tga[39m[0m
+[  76% ] [90m[1mreimport[22m | Gnd_A07.tga[39m[0m
+[  76% ] [90m[1mreimport[22m | Gnd_A06.tga[39m[0m
+[  76% ] [90m[1mreimport[22m | Gnd_A05.tga[39m[0m
+[  77% ] [90m[1mreimport[22m | Gnd_A04.tga[39m[0m
+[  77% ] [90m[1mreimport[22m | Gnd_A03.tga[39m[0m
+[  77% ] [90m[1mreimport[22m | Gnd_A02.tga[39m[0m
+[  78% ] [90m[1mreimport[22m | Gnd_A01.tga[39m[0m
+[  78% ] [90m[1mreimport[22m | wuker01.tga[39m[0m
+[  78% ] [90m[1mreimport[22m | Urwald_Wurzeln_c_256.tga[39m[0m
+[  79% ] [90m[1mreimport[22m | Urwald_Riesenpilzbaum_c.tga[39m[0m
+[  79% ] [90m[1mreimport[22m | Urwald_Riesenpilzbaum_a.tga[39m[0m
+[  79% ] [90m[1mreimport[22m | Troll_Kopf001.tga[39m[0m
+[  80% ] [90m[1mreimport[22m | Trollh_Wandschmuck_e_256.tga[39m[0m
+[  80% ] [90m[1mreimport[22m | Trollh_Wandschmuck_a_256.tga[39m[0m
+[  80% ] [90m[1mreimport[22m | Gnd_B15.tga[39m[0m
+[  81% ] [90m[1mreimport[22m | Gnd_B14.tga[39m[0m
+[  81% ] [90m[1mreimport[22m | Gnd_B13.tga[39m[0m
+[  81% ] [90m[1mreimport[22m | Gnd_B12.tga[39m[0m
+[  82% ] [90m[1mreimport[22m | Gnd_B11.tga[39m[0m
+[  82% ] [90m[1mreimport[22m | Gnd_B10.tga[39m[0m
+[  82% ] [90m[1mreimport[22m | Gnd_B09.tga[39m[0m
+[  83% ] [90m[1mreimport[22m | Gnd_B08.tga[39m[0m
+[  83% ] [90m[1mreimport[22m | Gnd_B07.tga[39m[0m
+[  83% ] [90m[1mreimport[22m | Gnd_B06.tga[39m[0m
+[  84% ] [90m[1mreimport[22m | Gnd_B05.tga[39m[0m
+[  84% ] [90m[1mreimport[22m | Gnd_B04.tga[39m[0m
+[  84% ] [90m[1mreimport[22m | Gnd_B03.tga[39m[0m
+[  85% ] [90m[1mreimport[22m | Gnd_B02.tga[39m[0m
+[  85% ] [90m[1mreimport[22m | Gnd_B01.tga[39m[0m
+[  85% ] [90m[1mreimport[22m | Gnd_A15.tga[39m[0m
+[  86% ] [90m[1mreimport[22m | Gnd_A14.tga[39m[0m
+[  86% ] [90m[1mreimport[22m | Gnd_A13.tga[39m[0m
+[  86% ] [90m[1mreimport[22m | Gnd_A12.tga[39m[0m
+[  87% ] [90m[1mreimport[22m | kristall_details_b.tga[39m[0m
+[  87% ] [90m[1mreimport[22m | Holz_Standard_c_256.tga[39m[0m
+[  87% ] [90m[1mreimport[22m | Holz_Standard_a_256.tga[39m[0m
+[  88% ] [90m[1mreimport[22m | gelbneb_schw_boden.tga[39m[0m
+[  88% ] [90m[1mreimport[22m | gelbneb_schw_boden2.tga[39m[0m
+[  88% ] [90m[1mreimport[22m | gelbneb_4_metall.tga[39m[0m
+[  89% ] [90m[1mreimport[22m | FX_Licht_b.tga[39m[0m
+[  89% ] [90m[1mreimport[22m | enviro_chrome.tga[39m[0m
+[  89% ] [90m[1mreimport[22m | Character_Troll_Kopf_f.tga[39m[0m
+[  90% ] [90m[1mreimport[22m | urw_1111_f.tga[39m[0m
+[  90% ] [90m[1mreimport[22m | urw_1111_e.tga[39m[0m
+[  90% ] [90m[1mreimport[22m | urw_1111_d.tga[39m[0m
+[  91% ] [90m[1mreimport[22m | urw_1111_c.tga[39m[0m
+[  91% ] [90m[1mreimport[22m | urw_1111_b.tga[39m[0m
+[  91% ] [90m[1mreimport[22m | urw_1111_a.tga[39m[0m
+[  92% ] [90m[1mreimport[22m | urw_1111.tga[39m[0m
+[  92% ] [90m[1mreimport[22m | urw_1110.tga[39m[0m
+[  92% ] [90m[1mreimport[22m | urw_1101.tga[39m[0m
+[  93% ] [90m[1mreimport[22m | Trollh_Folterkammer_b_256.tga[39m[0m
+[  93% ] [90m[1mreimport[22m | Trollh_Boden_b_End_256.tga[39m[0m
+[  93% ] [90m[1mreimport[22m | trollh_4_wand_d.tga[39m[0m
+[  94% ] [90m[1mreimport[22m | trollh_4_wand_a.tga[39m[0m
+[  94% ] [90m[1mreimport[22m | Troll001.tga[39m[0m
+[  94% ] [90m[1mreimport[22m | sumpfwasser.tga[39m[0m
+[  95% ] [90m[1mreimport[22m | Struktur_Leder_a_256.tga[39m[0m
+[  95% ] [90m[1mreimport[22m | Struktur_Bettzeug_a_256.tga[39m[0m
+[  95% ] [90m[1mreimport[22m | Stein_Standard_d.tga[39m[0m
+[  96% ] [90m[1mreimport[22m | spielkarten_128.tga[39m[0m
+[  96% ] [90m[1mreimport[22m | schwef_nahtlos.tga[39m[0m
+[  96% ] [90m[1mreimport[22m | obw_4_boden_b.tga[39m[0m
+[  97% ] [90m[1mreimport[22m | obw_4_boden_a.tga[39m[0m
+[  97% ] [90m[1mreimport[22m | Oberwelt_Baum_d.tga[39m[0m
+[  97% ] [90m[1mreimport[22m | Oberwelt_Baum_b.tga[39m[0m
+[  98% ] [90m[1mreimport[22m | Metall_Standard_b_256.tga[39m[0m
+[  98% ] [90m[1mreimport[22m | Metall_Standard_a_256.tga[39m[0m
+[  98% ] [90m[1mreimport[22m | Metall_Moebel_a_256.tga[39m[0m
+[  99% ] [90m[1mreimport[22m | kr_enviroment_b.tga[39m[0m
+[  99% ] [90m[1mreimport[22m | Завершение импорта активов…[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started Импорт или повторный импорт ассетов (295 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Выполнение операций после реимпорта…[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Загрузка редактора (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Загрузка макета редактора…[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Загрузка док-панели…[39m[0m
+[  33% ] [90m[1mloading_editor_layout[22m | Повторное открытие сцен…[39m[0m
+[  50% ] [90m[1mloading_editor_layout[22m | Загрузка макета центрального редактора…[39m[0m
+[  66% ] [90m[1mloading_editor_layout[22m | Загрузка макета окна плагина…[39m[0m
+[  83% ] [90m[1mloading_editor_layout[22m | Макет редактора готов.[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m

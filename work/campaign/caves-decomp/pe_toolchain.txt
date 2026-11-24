@@ -1,0 +1,74 @@
+FILE: C:\Users\frant\OneDrive\Документы\MiniMax\Diggles\work\campaign\ref\Diggles.exe
+SIZE: 3813376 bytes
+PE offset: 0x128
+Machine: 0x014C (i386)
+Sections: 5
+TimeDateStamp: 0x5FE4FAC3 (1608841923)
+  -> UTC: 2020-12-24T20:32:03Z
+Characteristics: 0x0102
+OptionalHeader magic: 0x010B (PE32)
+Linker version: 14.28
+EntryPoint RVA: 0x002CF39B
+ImageBase: 0x00400000
+Subsystem: 2 (GUI)
+DllCharacteristics: 0x8140
+NumberOfRvaAndSizes: 16
+SECTIONS:
+  .text      RVA=0x00001000 VSize=0x0031393A Raw=0x00000400 RawSz=0x00313A00 Chars=0x60000020
+  .rdata     RVA=0x00315000 VSize=0x00051354 Raw=0x00313E00 RawSz=0x00051400 Chars=0x40000040
+  .data      RVA=0x00367000 VSize=0x00549754 Raw=0x00365200 RawSz=0x00002800 Chars=0xC0000040
+  .rsrc      RVA=0x008B1000 VSize=0x0000ECA8 Raw=0x00367A00 RawSz=0x0000EE00 Chars=0x40000040
+  .reloc     RVA=0x008C0000 VSize=0x0002C710 Raw=0x00376800 RawSz=0x0002C800 Chars=0x42000040
+
+RICH HEADER:
+  XOR key: 0xAFE0477D
+  prodid=0x0103 build=26715   count=36     tool 0x103
+  prodid=0x00C7 build=41118   count=11     Utc1610_C (VS2019)
+  prodid=0x0105 build=29118   count=42     tool 0x105
+  prodid=0x0104 build=29118   count=17     tool 0x104
+  prodid=0x0103 build=29118   count=22     tool 0x103
+  prodid=0x0101 build=29334   count=4      tool 0x101
+  prodid=0x0104 build=26715   count=27     tool 0x104
+  prodid=0x0105 build=26715   count=200    tool 0x105
+  prodid=0x0106 build=26715   count=3      tool 0x106
+  prodid=0x0101 build=26715   count=22     tool 0x101
+  prodid=0x009C build=40219   count=3      tool 0x9C
+  prodid=0x0001 build=0       count=428    Import0 (VS6 imp lib)
+  prodid=0x0109 build=29334   count=311    tool 0x109
+  prodid=0x00FF build=29334   count=1      Unknown
+  prodid=0x0097 build=0       count=1      tool 0x97
+  prodid=0x0102 build=29334   count=1      tool 0x102
+
+VERSION RESOURCE:
+  signature: 0xFEEF04BD
+  FileVersion: 2.1.1.10
+  ProductVersion: 2.1.1.10
+  FileFlagsMask: 0x3f
+  FileOS: 0x1
+  FileType: 0x40004
+  CompanyName: SEK-Ost
+  FileDescription: Diggles
+  FileVersion: 2.1.1.10
+  InternalName: Diggles
+  LegalCopyright: Copyright © 2020
+  OriginalFilename: Diggles.exe
+  ProductName: SEK-Ost Diggles
+  ProductVersion: 2.1.1.10
+  Comments: 0CompanyName
+  LegalTrademarks: @OriginalFilename
+  PrivateBuild: @ProductName
+  SpecialBuild: D
+
+IMPORTED DLLs:
+  SDL2.dll
+  WS2_32.dll
+  DSOUND.dll
+  WINMM.dll
+  KERNEL32.dll
+  USER32.dll
+  GDI32.dll
+  ADVAPI32.dll
+  ole32.dll
+  DigglesPort.dll
+  tcl83.dll
+  RPCRT4.dll

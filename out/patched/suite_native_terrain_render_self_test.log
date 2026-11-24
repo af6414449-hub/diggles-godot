@@ -1,0 +1,27 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+NATIVE_CAVE_BRUSHES_READY count=4 anchor=[16.0, 32.0]
+NATIVE_CAVE_BRUSH brush=1 cells=38 bounds=[P: (11, 27), S: (9, 4)]
+NATIVE_CAVE_BRUSH brush=2 cells=58 bounds=[P: (9, 27), S: (13, 4)]
+NATIVE_CAVE_BRUSH brush=3 cells=136 bounds=[P: (7, 23), S: (17, 8)]
+NATIVE_CAVE_BRUSH brush=4 cells=128 bounds=[P: (9, 20), S: (13, 11)]
+NATIVE_CAVE_SKIN_READY size=1 meshes=2
+NATIVE_CAVE_SKIN_READY size=2 meshes=2
+NATIVE_CAVE_SKIN_READY size=3 meshes=2
+NATIVE_CAVE_SKIN_READY size=4 meshes=2
+NATIVE_TERRAIN_GRID_READY size=44x24 cells=943
+TERRAIN_BACKDROP_OPENING source_triangles=5619 omitted_back_faces=317 retained_triangles=5302
+NATIVE_L2M_READY cells=943 detail_textures=34 surfaces=793
+DWARF_DIG_CLIPS_READY clips=7 frames=55
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=456
+NATIVE_SCENE_LIGHTS_READY lights=9 horizons=1 terrain_materials=source native_diffuse_preview=true models=world_subset_and_godot
+NATIVE_AUTOLIGHT_READY actors=3 source_model=fackel.standard mode=STILL host_rng_seed=1
+WORLD_MODEL_LIGHT_READY surfaces=32 skipped=0 enabled=true host_owner=255 shared_source_gain=0.100000
+NATIVE_TERRAIN_READY cells=943 triangles=5619 packed_depth=8.0..14.5
+MULTIPLAYER_START_MODELS_READY placements=109 unique_models=54 original_textures=45
+NATIVE_TERRAIN_RENDER_SELF_TEST_OK assertions=2431 vertices=15906 textures=41
+WILD_HAMSTER_NAV_READY level=18.50 size=53x25 blocked=475
+WILD_HAMSTER Hamster_023 clip=hoppeln_start pos=(37.7272, -18.5, 12.26)
+WILD_HAMSTER Hamster_024 clip=maennchen pos=(16.0321, -14.5, 5.95995)
+WILD_HAMSTER Hamster_038 clip=maennchen pos=(9.74837, -14.5, 5.95995)
+WILD_HAMSTER Hamster_039 clip=hoppeln_start pos=(36.9994, -18.5, 5.95995)

@@ -1,0 +1,23 @@
+﻿Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BENCH_RUN kind=full strikes=273 accepted=273 byte_changing=141 rebuilt=289114 skipped=0 changed=7387 total_us=10558217 max_us=101752 height_calls=1804460 gate_calls=294544 cell_calls=0
+BENCH_RUN kind=cached strikes=273 accepted=273 byte_changing=141 rebuilt=199840 skipped=89946 changed=7387 total_us=1782966 max_us=18128 height_calls=86624 gate_calls=1326 cell_calls=0
+BENCH_RUN kind=bulk strikes=273 accepted=273 byte_changing=141 rebuilt=199840 skipped=89946 changed=7387 total_us=1605783 max_us=10667 height_calls=0 gate_calls=1326 cell_calls=1392
+BENCH_RUN kind=full strikes=273 accepted=273 byte_changing=141 rebuilt=289114 skipped=0 changed=7387 total_us=10241624 max_us=100032 height_calls=1804460 gate_calls=294544 cell_calls=0
+BENCH_RUN kind=cached strikes=273 accepted=273 byte_changing=141 rebuilt=199840 skipped=89946 changed=7387 total_us=1783392 max_us=18985 height_calls=86624 gate_calls=1326 cell_calls=0
+BENCH_RUN kind=bulk strikes=273 accepted=273 byte_changing=141 rebuilt=199840 skipped=89946 changed=7387 total_us=1544871 max_us=11039 height_calls=0 gate_calls=1326 cell_calls=1392
+BENCH_RUN kind=full strikes=273 accepted=273 byte_changing=141 rebuilt=289114 skipped=0 changed=7387 total_us=9287083 max_us=86884 height_calls=1804460 gate_calls=294544 cell_calls=0
+BENCH_RUN kind=cached strikes=273 accepted=273 byte_changing=141 rebuilt=199840 skipped=89946 changed=7387 total_us=1679813 max_us=17721 height_calls=86624 gate_calls=1326 cell_calls=0
+BENCH_RUN kind=bulk strikes=273 accepted=273 byte_changing=141 rebuilt=199840 skipped=89946 changed=7387 total_us=1528268 max_us=12130 height_calls=0 gate_calls=1326 cell_calls=1392
+BENCH_RUN kind=full strikes=273 accepted=273 byte_changing=141 rebuilt=289114 skipped=0 changed=7387 total_us=9789464 max_us=94158 height_calls=1804460 gate_calls=294544 cell_calls=0
+BENCH_RUN kind=cached strikes=273 accepted=273 byte_changing=141 rebuilt=199840 skipped=89946 changed=7387 total_us=1678709 max_us=17428 height_calls=86624 gate_calls=1326 cell_calls=0
+BENCH_RUN kind=bulk strikes=273 accepted=273 byte_changing=141 rebuilt=199840 skipped=89946 changed=7387 total_us=1454477 max_us=9002 height_calls=0 gate_calls=1326 cell_calls=1392
+BENCH_RUN kind=full strikes=273 accepted=273 byte_changing=141 rebuilt=289114 skipped=0 changed=7387 total_us=9365964 max_us=93780 height_calls=1804460 gate_calls=294544 cell_calls=0
+BENCH_RUN kind=cached strikes=273 accepted=273 byte_changing=141 rebuilt=199840 skipped=89946 changed=7387 total_us=1685194 max_us=17612 height_calls=86624 gate_calls=1326 cell_calls=0
+BENCH_RUN kind=bulk strikes=273 accepted=273 byte_changing=141 rebuilt=199840 skipped=89946 changed=7387 total_us=1645796 max_us=12730 height_calls=0 gate_calls=1326 cell_calls=1392
+BENCH_COMPARE repeats=5 strikes=273 accepted=273 byte_changing=141
+BENCH_COMPARE full    total_us=9789464 avg_us=35858 max_us=94158 height_calls=1804460 gate_calls=294544 cell_calls=0 rebuilt=289114
+BENCH_COMPARE cached  total_us=1685194 avg_us=6172 max_us=17612 height_calls=86624 gate_calls=1326 cell_calls=0 rebuilt=199840 skipped=89946 speedup=5.81x
+BENCH_COMPARE bulk    total_us=1544871 avg_us=5658 max_us=11039 height_calls=0 gate_calls=1326 cell_calls=1392 rebuilt=199840 skipped=89946 speedup=6.34x
+BENCH_COMPARE host_call_reduction cached=20.8x bulk=1804460.0x
+BENCH_COMPARE_DONE assertions=20 failures=0

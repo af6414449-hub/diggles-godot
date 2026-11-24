@@ -1,0 +1,96 @@
+{
+  "schema": "native-multiplayer-world-evidence-v1",
+  "status": "confirmed_source_paths_conditional_profiles_live_instance_unknown",
+  "verification": {"result": "NATIVE_MULTIPLAYER_WORLD_EVIDENCE_OK", "tcl_hashes": 7, "exe_byte_spans": 7, "conditional_profiles": 2, "tiles": 6, "exact_samples": 1056, "fields_per_sample": 3, "original_process_executed": false},
+  "data_root": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data",
+  "exe_sha256": "58a01d3d80670a6042c66a82684397c98e39c503e00a6e2c2c511f338a30ed74",
+  "source_sha256": {
+    "GameScripts/multiplayer.tcl": "c1eaa85ef503bf6e76747166bea5af211246738152ed40a03c1c544343c9cc2a",
+    "Scripts/init/mpinit.tcl": "8405c5735fc859fad161fd47996b8b5e1020dc2ed97eeabe2123cc992c34f202",
+    "Scripts/misc/mp_tools.tcl": "180d8d6b49ff8e8b6cd8793f7f0b0c3b4319847156fb38c58e193b2564f8dcb0",
+    "GameScripts/multi_dm_kris_2p_001.tcl": "c94819f6dc5f97f8432c36b656ed8c10469c8d8920ab38cca7935cfa6a7bf65b",
+    "GameScripts/multi_dm_kris_4p_001.tcl": "15a285630ac956d768982b2f285fc972a19da7fe91fd16938c9af14821ef04f2",
+    "Templates/multi_urw_start_010_a_0.tcl": "11b326c6766e7f12c3d061aa392952b56f9fb47fc2dac7128731f103e697635c",
+    "Templates/tcl/multi_urw_start_010_a_0.tcl": "e660b407d99621375a8cdd1ba7352bfb14f692fc9d69ce6cf028b23b855c9d61"
+  },
+  "game_data_indices": {"GameSave": 0, "GameType": 1, "UseMap": 2, "Density": 3, "Resources": 4, "Set": 5, "Size": 6, "NumGnomes": 7},
+  "random_size_options": [128, 256, 384, 512],
+  "density_options": [0.2, 0.4, 0.7],
+  "two_argument_map_create": {
+    "origin": [0, 0],
+    "bounds_xyxy_exclusive": [0, 0, "W", "H"],
+    "runtime_bounds_offsets": ["0x84", "0x88", "0x8C", "0x90"],
+    "proof": ["0x6327D9", "0x63286E..0x632886", "0x6B4533..0x6B4545", "0x594481..0x594580"]
+  },
+  "placement_formula": {
+    "generation_area": [16, 16, "W-16", "H-16"],
+    "input_preset_order": ["x", "y", "name"],
+    "output_level_order": ["filename", "x", "y"],
+    "successful_preset_level_xy": ["preset.x + 16", "preset.y + 16"],
+    "apply_level_additional_offset": [0, 0],
+    "precondition": "Preset accepted and represented in final level; this file is not a capture of a particular level."
+  },
+  "instruction_bytes": [
+    {"va": "0x6327D9", "hex": "c745e000000000c745e800000000", "meaning": "zero default optional map origins"},
+    {"va": "0x58A68E", "hex": "8b4d0c56894804", "meaning": "store raw preset x"},
+    {"va": "0x58A69C", "hex": "8b4d10894808", "meaning": "store raw preset y"},
+    {"va": "0x584CAF", "hex": "8b4e508b55dc034d0c894c0204", "meaning": "output.x = area_min_x + preset.x"},
+    {"va": "0x584CD1", "hex": "8b4e548b078b75dc034d10894c0608", "meaning": "output.y = area_min_y + preset.y"},
+    {"va": "0x652F89", "hex": "8b45d8ff7004ff1568557100", "meaning": "lg_get_level emits output record x directly"},
+    {"va": "0x653010", "hex": "8b45d8ff7008ff1568557100", "meaning": "lg_get_level emits output record y directly"}
+  ],
+  "target": {
+    "name": "multi_urw_start_010_a_0",
+    "pmp": "Templates/multi_start_010.pmp",
+    "pmp_sha256": "b6fc5ef7b1800dce9fb0dd4a42de879b8198f25ac84eb82b524266378ddb7807",
+    "pmp_size": [44, 24],
+    "samples": 1056,
+    "multiplayer_entry": "Templates/tcl/multi_urw_start_010_a_0.tcl:1-8",
+    "apply_level": "Scripts/misc/mp_tools.tcl:23-46",
+    "split_loader": "Scripts/misc/mp_tools.tcl:5-18",
+    "tile_pmp_pattern": "Templates/pmp/split/splt_multi_start_010_t{part}.pmp",
+    "tile_tcl_pattern": "Templates/tcl/split/splt_multi_urw_start_010_a_0_t{part}.tcl",
+    "tiles": [
+      {"part": "AA", "offset": [0, 0], "size": [16, 16], "sha256": "1d90cf73ceac8e3d03674a6773acf2d14b26a8defe3a68fcdcb5af6b0945fa34"},
+      {"part": "BA", "offset": [16, 0], "size": [16, 16], "sha256": "b4b906bbea80adb062781b6dc126d5fbe2942a47ffc4a8e63624302d08a730f6"},
+      {"part": "CA", "offset": [32, 0], "size": [12, 16], "sha256": "a091916fd4f34dcc7e7d32da3e8e3ad0f0396313f9ecc5ff0222f8bc3a7380d9"},
+      {"part": "AB", "offset": [0, 16], "size": [16, 8], "sha256": "5f32b004eaa9baeaac358c2d88709b2b4c68271828d369152bc245e6639537ac"},
+      {"part": "BB", "offset": [16, 16], "size": [16, 8], "sha256": "0a9b5579741d08979127547123076dbc20fc84db55bcb06e7a71c3921ba1b671"},
+      {"part": "CB", "offset": [32, 16], "size": [12, 8], "sha256": "4a77db94fb6d49f108580605f65d58b9b57b92e561e9e3988661d40989e34f1e"}
+    ],
+    "split_comparison": {"coverage": 1056, "overlap": 0, "equal_flags": 1056, "equal_refs": 1056, "equal_trailing_attributes": 1056, "status": "verified_source_fields_not_full_loader_simulation"}
+  },
+  "conditional_profiles": [
+    {
+      "id": "authored_2p",
+      "source": "GameScripts/multi_dm_kris_2p_001.tcl",
+      "source_lines": {"map_size": 3, "zone": 5, "density": 10, "target_preset": 49},
+      "world_size": [600, 600], "world_origin": [0, 0], "world_bounds": [0, 0, 600, 600],
+      "zone": "Urwald", "density": 0.31,
+      "generation_area": [16, 16, 584, 584],
+      "preset_xy": [76, 68], "conditional_level_xy": [92, 84],
+      "target_extent_exclusive": [92, 84, 136, 108],
+      "fixture_local_point": [9, 3], "fixture_world_point": [101, 87]
+    },
+    {
+      "id": "authored_4p",
+      "source": "GameScripts/multi_dm_kris_4p_001.tcl",
+      "source_lines": {"map_size": 3, "zone": 5, "density": 10, "target_preset": 55},
+      "world_size": [600, 600], "world_origin": [0, 0], "world_bounds": [0, 0, 600, 600],
+      "zone": "Urwald", "density": 0.31,
+      "generation_area": [16, 16, 584, 584],
+      "preset_xy": [184, 92], "conditional_level_xy": [200, 108],
+      "target_extent_exclusive": [200, 108, 244, 132],
+      "fixture_local_point": [9, 3], "fixture_world_point": [209, 111]
+    }
+  ],
+  "procedural_branch": {
+    "condition": "server and !UseMap, Set=0, iCnt=0, irandom selects index0",
+    "source": "GameScripts/multiplayer.tcl:238-255; Scripts/init/mpinit.tcl:7-12",
+    "get_mpstartpos_args": ["S-32", "S-32", "ordered active-player teamlist"],
+    "start_pool": ["multi_urw_start_010_a_0", "multi_urw_start_011_a_0"],
+    "conditional_target_offset": ["stposlist[0].x+16", "stposlist[0].y+16"],
+    "positions_rng_seed": "unknown; native get_mpstartpos algorithm and seed initialization not reconstructed here"
+  },
+  "runtime_instance": {"status": "unknown", "world_size": null, "template_offset": null, "needed": ["GameData branch or authoritative network level W H", "final level entry for target template", "PlayerData and RNG state only if replaying generation"]}
+}

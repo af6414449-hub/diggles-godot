@@ -1,0 +1,9 @@
+ERROR: EXCAVATED_WALK_SELF_TEST_FAILED new navigation floor lacks terrain collision
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _expect (res://tools/excavated_walk_self_test.gd:183)
+       [1] _run (res://tools/excavated_walk_self_test.gd:70)
+WARNING: 18 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 4 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

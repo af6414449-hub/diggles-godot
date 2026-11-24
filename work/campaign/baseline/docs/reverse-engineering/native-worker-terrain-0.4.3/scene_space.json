@@ -1,0 +1,2615 @@
+{
+	"corridor_marks": [],
+	"corridor_preview_active": false,
+	"depth_offset": 7.0,
+	"depth_scale": 0.5,
+	"nodes": [
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_01_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_08_0",
+			"render_bounds_max": [
+				43.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				1.0,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_00_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_13_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-24.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_08_2",
+			"render_bounds_max": [
+				37.25,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				8.5,
+				-17.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_11_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-24.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_05_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_12_0",
+			"render_bounds_max": [
+				43.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				1.0,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_04_0",
+			"render_bounds_max": [
+				43.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				2.0,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_08_1",
+			"render_bounds_max": [
+				37.5,
+				-1.75,
+				14.5
+			],
+			"render_bounds_min": [
+				2.0,
+				-18.5,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_12_1",
+			"render_bounds_max": [
+				42.0,
+				-3.25,
+				14.5
+			],
+			"render_bounds_min": [
+				9.0,
+				-18.5,
+				8.0
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_12_2",
+			"render_bounds_max": [
+				39.0,
+				-3.0,
+				14.5
+			],
+			"render_bounds_min": [
+				9.0,
+				-19.0,
+				8.0
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_05_1",
+			"render_bounds_max": [
+				44.0,
+				-4.25,
+				14.5
+			],
+			"render_bounds_min": [
+				5.0,
+				-18.5,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_05_2",
+			"render_bounds_max": [
+				44.0,
+				-4.0,
+				14.5
+			],
+			"render_bounds_min": [
+				5.5,
+				-21.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_13_1",
+			"render_bounds_max": [
+				40.0,
+				-4.5,
+				14.5
+			],
+			"render_bounds_min": [
+				6.0,
+				-21.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_13_2",
+			"render_bounds_max": [
+				39.75,
+				-4.5,
+				14.5
+			],
+			"render_bounds_min": [
+				6.0,
+				-21.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_00_1",
+			"render_bounds_max": [
+				37.0,
+				-4.25,
+				14.5
+			],
+			"render_bounds_min": [
+				3.0,
+				-18.5,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_01_1",
+			"render_bounds_max": [
+				40.0,
+				-4.5,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-18.75,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_01_2",
+			"render_bounds_max": [
+				40.0,
+				-4.5,
+				14.5
+			],
+			"render_bounds_min": [
+				13.25,
+				-19.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_11_1",
+			"render_bounds_max": [
+				42.0,
+				-5.0,
+				14.5
+			],
+			"render_bounds_min": [
+				7.0,
+				-21.75,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_11_2",
+			"render_bounds_max": [
+				39.75,
+				-5.25,
+				14.5
+			],
+			"render_bounds_min": [
+				7.0,
+				-22.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_04_1",
+			"render_bounds_max": [
+				38.0,
+				-5.0,
+				14.5
+			],
+			"render_bounds_min": [
+				8.0,
+				-20.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_04_2",
+			"render_bounds_max": [
+				37.5,
+				-5.0,
+				14.5
+			],
+			"render_bounds_min": [
+				8.25,
+				-20.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_00_2",
+			"render_bounds_max": [
+				37.0,
+				-6.25,
+				14.5
+			],
+			"render_bounds_min": [
+				4.75,
+				-16.25,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeCorridorPreview",
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				19.8771991729736,
+				-14.5,
+				10.460000038147
+			],
+			"name": "Dummy_Multi_Moos_Mix_uh_001_001",
+			"render_position": [
+				19.8771991729736,
+				-14.5,
+				12.2299995422363
+			]
+		},
+		{
+			"logical_position": [
+				39.187801361084,
+				-18.6000003814697,
+				4.85999011993408
+			],
+			"name": "Dummy_Multi_Moos_Mix_uh_007_002",
+			"render_position": [
+				39.187801361084,
+				-18.6000003814697,
+				9.42999458312988
+			]
+		},
+		{
+			"logical_position": [
+				3.5,
+				-14.5,
+				15.0500001907349
+			],
+			"name": "Dummy_Multi_Holzstuetze_a_003",
+			"render_position": [
+				3.5,
+				-14.5,
+				14.5249996185303
+			]
+		},
+		{
+			"logical_position": [
+				19.3297004699707,
+				-18.5,
+				15.1000003814697
+			],
+			"name": "Dummy_Multi_Holzstuetze_b_004",
+			"render_position": [
+				19.3297004699707,
+				-18.5,
+				14.5500001907349
+			]
+		},
+		{
+			"logical_position": [
+				41.717601776123,
+				-18.5,
+				15.0600004196167
+			],
+			"name": "Dummy_Multi_Holzstuetze_c_005",
+			"render_position": [
+				41.717601776123,
+				-18.5,
+				14.5300006866455
+			]
+		},
+		{
+			"logical_position": [
+				32.4953002929688,
+				-5.19358015060425,
+				9.51998996734619
+			],
+			"name": "Dummy_Liane_b_006",
+			"render_position": [
+				32.4953002929688,
+				-5.19358015060425,
+				11.7599945068359
+			]
+		},
+		{
+			"logical_position": [
+				12.555100440979,
+				-8.45709037780762,
+				7.5599799156189
+			],
+			"name": "Dummy_Liane_c_007",
+			"render_position": [
+				12.555100440979,
+				-8.45709037780762,
+				10.779990196228
+			]
+		},
+		{
+			"logical_position": [
+				30.2570991516113,
+				-18.5,
+				13.3199996948242
+			],
+			"name": "Pilz_008",
+			"render_position": [
+				30.2570991516113,
+				-18.5,
+				13.6599998474121
+			]
+		},
+		{
+			"logical_position": [
+				35.7366981506348,
+				-18.5,
+				13.6199998855591
+			],
+			"name": "Pilz_009",
+			"render_position": [
+				35.7366981506348,
+				-18.5,
+				13.8099994659424
+			]
+		},
+		{
+			"logical_position": [
+				10.9120998382568,
+				-14.5,
+				13.6199998855591
+			],
+			"name": "Pilz_010",
+			"render_position": [
+				10.9120998382568,
+				-14.5,
+				13.8099994659424
+			]
+		},
+		{
+			"logical_position": [
+				39.5848999023438,
+				-18.5,
+				10.2200002670288
+			],
+			"name": "Stein_011",
+			"render_position": [
+				39.5848999023438,
+				-18.5,
+				12.1100006103516
+			]
+		},
+		{
+			"logical_position": [
+				27.2917995452881,
+				-18.5799999237061,
+				10.2200002670288
+			],
+			"name": "Stein_012",
+			"render_position": [
+				27.2917995452881,
+				-18.5799999237061,
+				12.1100006103516
+			]
+		},
+		{
+			"logical_position": [
+				19.4759998321533,
+				-14.6877002716064,
+				10.2200002670288
+			],
+			"name": "Stein_013",
+			"render_position": [
+				19.4759998321533,
+				-14.6877002716064,
+				12.1100006103516
+			]
+		},
+		{
+			"logical_position": [
+				8.47970962524414,
+				-14.5714998245239,
+				7.41995000839233
+			],
+			"name": "Stein_014",
+			"render_position": [
+				8.47970962524414,
+				-14.5714998245239,
+				10.7099752426147
+			]
+		},
+		{
+			"logical_position": [
+				15.5,
+				-14.5,
+				7.01000022888184
+			],
+			"name": "Feuerstelle_018",
+			"render_position": [
+				15.5,
+				-14.5,
+				10.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				37.7271995544434,
+				-18.5,
+				12.2600002288818
+			],
+			"name": "Hamster_023",
+			"render_position": [
+				37.7271995544434,
+				-18.5,
+				13.1300001144409
+			]
+		},
+		{
+			"logical_position": [
+				16.0321006774902,
+				-14.5,
+				5.95994997024536
+			],
+			"name": "Hamster_024",
+			"render_position": [
+				16.0321006774902,
+				-14.5,
+				9.9799747467041
+			]
+		},
+		{
+			"logical_position": [
+				9.74837017059326,
+				-14.5,
+				5.95994997024536
+			],
+			"name": "Hamster_038",
+			"render_position": [
+				9.74837017059326,
+				-14.5,
+				9.9799747467041
+			]
+		},
+		{
+			"logical_position": [
+				36.9994010925293,
+				-18.5,
+				5.95994997024536
+			],
+			"name": "Hamster_039",
+			"render_position": [
+				36.9994010925293,
+				-18.5,
+				9.9799747467041
+			]
+		},
+		{
+			"logical_position": [
+				11.9928998947144,
+				-14.5,
+				5.11999988555908
+			],
+			"name": "Schatztonne_040",
+			"render_position": [
+				11.9928998947144,
+				-14.5,
+				9.55999946594238
+			]
+		},
+		{
+			"logical_position": [
+				31.9696998596191,
+				-18.5,
+				5.42000007629395
+			],
+			"name": "Schatztonne_041",
+			"render_position": [
+				31.9696998596191,
+				-18.5,
+				9.71000003814697
+			]
+		},
+		{
+			"logical_position": [
+				21.0849990844727,
+				-18.5,
+				12.1000003814697
+			],
+			"name": "Schatztonne_042",
+			"render_position": [
+				21.0849990844727,
+				-18.5,
+				13.0500001907349
+			]
+		},
+		{
+			"logical_position": [
+				21.0718994140625,
+				-18.5,
+				12.1000003814697
+			],
+			"name": "Grillhamster_043",
+			"render_position": [
+				21.0718994140625,
+				-18.5,
+				13.0500001907349
+			]
+		},
+		{
+			"logical_position": [
+				21.0718994140625,
+				-18.5,
+				12.1000003814697
+			],
+			"name": "Grillhamster_044",
+			"render_position": [
+				21.0718994140625,
+				-18.5,
+				13.0500001907349
+			]
+		},
+		{
+			"logical_position": [
+				21.0718994140625,
+				-18.5,
+				12.1000003814697
+			],
+			"name": "Grillhamster_045",
+			"render_position": [
+				21.0718994140625,
+				-18.5,
+				13.0500001907349
+			]
+		},
+		{
+			"logical_position": [
+				31.9589004516602,
+				-18.5,
+				5.42000007629395
+			],
+			"name": "Grillpilz_046",
+			"render_position": [
+				31.9589004516602,
+				-18.5,
+				9.71000003814697
+			]
+		},
+		{
+			"logical_position": [
+				31.9589004516602,
+				-18.5,
+				5.42000007629395
+			],
+			"name": "Grillpilz_047",
+			"render_position": [
+				31.9589004516602,
+				-18.5,
+				9.71000003814697
+			]
+		},
+		{
+			"logical_position": [
+				31.9589004516602,
+				-18.5,
+				5.42000007629395
+			],
+			"name": "Grillpilz_048",
+			"render_position": [
+				31.9589004516602,
+				-18.5,
+				9.71000003814697
+			]
+		},
+		{
+			"logical_position": [
+				9.54312992095947,
+				-14.5,
+				10.8000001907349
+			],
+			"name": "Raupe_052",
+			"render_position": [
+				9.54312992095947,
+				-14.5,
+				12.3999996185303
+			]
+		},
+		{
+			"logical_position": [
+				37.013500213623,
+				-18.5,
+				10.8000001907349
+			],
+			"name": "Raupe_053",
+			"render_position": [
+				37.013500213623,
+				-18.5,
+				12.3999996185303
+			]
+		},
+		{
+			"logical_position": [
+				27.7628993988037,
+				-10.5,
+				15.0
+			],
+			"name": "Dummy_Moos_uv_b_054",
+			"render_position": [
+				27.7628993988037,
+				-10.5,
+				14.5
+			]
+		},
+		{
+			"logical_position": [
+				19.5,
+				-11.5,
+				-55.0099983215332
+			],
+			"name": "Dummy_Swf_bergwand_059",
+			"render_position": [
+				19.5,
+				-11.5,
+				-20.5049991607666
+			]
+		},
+		{
+			"logical_position": [
+				40.5,
+				-11.5,
+				-53.0099983215332
+			],
+			"name": "Dummy_Swf_bergwand_060",
+			"render_position": [
+				40.5,
+				-11.5,
+				-19.5049991607666
+			]
+		},
+		{
+			"logical_position": [
+				33.5,
+				-20.1000003814697,
+				-39.0099983215332
+			],
+			"name": "Dummy_Urw_sumpf_062",
+			"render_position": [
+				33.5,
+				-20.1000003814697,
+				-12.5049991607666
+			]
+		},
+		{
+			"logical_position": [
+				11.5,
+				-13.5,
+				3.00999999046326
+			],
+			"name": "Dummy_Feuerkelch_b_065",
+			"render_position": [
+				11.5,
+				-13.5,
+				8.50500011444092
+			]
+		},
+		{
+			"logical_position": [
+				17.5,
+				-13.5,
+				3.00999999046326
+			],
+			"name": "Dummy_Feuerkelch_b_066",
+			"render_position": [
+				17.5,
+				-13.5,
+				8.50500011444092
+			]
+		},
+		{
+			"logical_position": [
+				22.5,
+				-17.5,
+				11.0100002288818
+			],
+			"name": "Dummy_Feuerkelch_b_067",
+			"render_position": [
+				22.5,
+				-17.5,
+				12.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				34.7573013305664,
+				-18.5,
+				3.01999998092651
+			],
+			"name": "Dummy_Urw_bas_aa_070",
+			"render_position": [
+				34.7573013305664,
+				-18.5,
+				8.51000022888184
+			]
+		},
+		{
+			"logical_position": [
+				36.5,
+				-20.2999992370605,
+				-45.0099983215332
+			],
+			"name": "Dummy_Urw_baumstumpf_b_071",
+			"render_position": [
+				36.5,
+				-20.2999992370605,
+				-15.5049991607666
+			]
+		},
+		{
+			"logical_position": [
+				25.5,
+				-20.0,
+				-39.0099983215332
+			],
+			"name": "Dummy_Urw_baumstumpf_a_072",
+			"render_position": [
+				25.5,
+				-20.0,
+				-12.5049991607666
+			]
+		},
+		{
+			"logical_position": [
+				31.6000003814697,
+				-21.5,
+				-63.6100997924805
+			],
+			"name": "Dummy_Obw_berg_a_073",
+			"render_position": [
+				31.6000003814697,
+				-21.5,
+				-24.8050498962402
+			]
+		},
+		{
+			"logical_position": [
+				9.28724956512451,
+				-14.5,
+				3.95999002456665
+			],
+			"name": "Dummy_Multi_Moos_Mix_uh_002_074",
+			"render_position": [
+				9.28724956512451,
+				-14.5,
+				8.97999477386475
+			]
+		},
+		{
+			"logical_position": [
+				24.4288005828857,
+				-10.5,
+				8.27999019622803
+			],
+			"name": "Dummy_Multi_Moos_Mix_uh_3_075",
+			"render_position": [
+				24.4288005828857,
+				-10.5,
+				11.1399955749512
+			]
+		},
+		{
+			"logical_position": [
+				30.9762001037598,
+				-18.5,
+				15.0
+			],
+			"name": "Dummy_Multi_Moos_Mix_uv_002_076",
+			"render_position": [
+				30.9762001037598,
+				-18.5,
+				14.5
+			]
+		},
+		{
+			"logical_position": [
+				27.2317008972168,
+				-4.43668985366821,
+				9.51998996734619
+			],
+			"name": "Dummy_Liane_a_077",
+			"render_position": [
+				27.2317008972168,
+				-4.43668985366821,
+				11.7599945068359
+			]
+		},
+		{
+			"logical_position": [
+				36.560001373291,
+				-11.1000003814697,
+				9.01000022888184
+			],
+			"name": "Dummy_Wurzel_04_b_078",
+			"render_position": [
+				36.560001373291,
+				-11.1000003814697,
+				11.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				9.7191801071167,
+				-8.93013000488281,
+				10.7200002670288
+			],
+			"name": "Dummy_Liane_d_079",
+			"render_position": [
+				9.7191801071167,
+				-8.93013000488281,
+				12.3600006103516
+			]
+		},
+		{
+			"logical_position": [
+				17.3719005584717,
+				-16.233699798584,
+				14.3000001907349
+			],
+			"name": "Dummy_Liane_d_080",
+			"render_position": [
+				17.3719005584717,
+				-16.233699798584,
+				14.1499996185303
+			]
+		},
+		{
+			"logical_position": [
+				28.8917999267578,
+				-11.7889995574951,
+				5.65997982025146
+			],
+			"name": "Dummy_Liane_l_081",
+			"render_position": [
+				28.8917999267578,
+				-11.7889995574951,
+				9.82999038696289
+			]
+		},
+		{
+			"logical_position": [
+				37.138500213623,
+				-12.0892000198364,
+				10.5600004196167
+			],
+			"name": "Dummy_Liane_l_082",
+			"render_position": [
+				37.138500213623,
+				-12.0892000198364,
+				12.2800006866455
+			]
+		},
+		{
+			"logical_position": [
+				32.3935012817383,
+				-5.80017995834351,
+				5.15997982025146
+			],
+			"name": "Dummy_Liane_l_083",
+			"render_position": [
+				32.3935012817383,
+				-5.80017995834351,
+				9.57999038696289
+			]
+		},
+		{
+			"logical_position": [
+				16.8222007751465,
+				-7.47044992446899,
+				9.31995010375977
+			],
+			"name": "Dummy_Liane_a_084",
+			"render_position": [
+				16.8222007751465,
+				-7.47044992446899,
+				11.6599750518799
+			]
+		},
+		{
+			"logical_position": [
+				7.24411010742188,
+				-10.8673000335693,
+				11.9200000762939
+			],
+			"name": "Dummy_Liane_h_085",
+			"render_position": [
+				7.24411010742188,
+				-10.8673000335693,
+				12.960000038147
+			]
+		},
+		{
+			"logical_position": [
+				21.8535003662109,
+				-16.0181007385254,
+				14.1199998855591
+			],
+			"name": "Dummy_Liane_g_086",
+			"render_position": [
+				21.8535003662109,
+				-16.0181007385254,
+				14.0599994659424
+			]
+		},
+		{
+			"logical_position": [
+				28.5459003448486,
+				-4.66740989685059,
+				13.3199996948242
+			],
+			"name": "Dummy_Liane_g_087",
+			"render_position": [
+				28.5459003448486,
+				-4.66740989685059,
+				13.6599998474121
+			]
+		},
+		{
+			"logical_position": [
+				23.5,
+				-10.5,
+				11.0100002288818
+			],
+			"name": "Dummy_Wand_kaserne_j_088",
+			"render_position": [
+				23.5,
+				-10.5,
+				12.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				21.5,
+				-10.5,
+				11.0100002288818
+			],
+			"name": "Dummy_Wand_kaserne_k_089",
+			"render_position": [
+				21.5,
+				-10.5,
+				12.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				20.4276008605957,
+				-14.5,
+				9.01389026641846
+			],
+			"name": "Dummy_Wand_kaserne_k_090",
+			"render_position": [
+				20.4276008605957,
+				-14.5,
+				11.5069446563721
+			]
+		},
+		{
+			"logical_position": [
+				21.5,
+				-12.5,
+				11.0100002288818
+			],
+			"name": "Dummy_Wand_kaserne_l_091",
+			"render_position": [
+				21.5,
+				-12.5,
+				12.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				21.5,
+				-14.5,
+				11.0100002288818
+			],
+			"name": "Dummy_Wand_kaserne_a_092",
+			"render_position": [
+				21.5,
+				-14.5,
+				12.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				25.5,
+				-14.5,
+				11.0100002288818
+			],
+			"name": "Dummy_Wand_kaserne_j_093",
+			"render_position": [
+				25.5,
+				-14.5,
+				12.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				23.5,
+				-14.5,
+				11.0100002288818
+			],
+			"name": "Dummy_Wand_kaserne_a_094",
+			"render_position": [
+				23.5,
+				-14.5,
+				12.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				25.5,
+				-16.5,
+				11.0100002288818
+			],
+			"name": "Dummy_Wand_kaserne_l_095",
+			"render_position": [
+				25.5,
+				-16.5,
+				12.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				25.5,
+				-18.5,
+				11.0100002288818
+			],
+			"name": "Dummy_Wand_kaserne_l_096",
+			"render_position": [
+				25.5,
+				-18.5,
+				12.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				28.6044998168945,
+				-10.5,
+				15.0
+			],
+			"name": "Dummy_Moos_uv_a_097",
+			"render_position": [
+				28.6044998168945,
+				-10.5,
+				14.5
+			]
+		},
+		{
+			"logical_position": [
+				28.132999420166,
+				-10.5,
+				13.5100002288818
+			],
+			"name": "Dummy_Moos_um_a_098",
+			"render_position": [
+				28.132999420166,
+				-10.5,
+				13.7550001144409
+			]
+		},
+		{
+			"logical_position": [
+				28.1256008148193,
+				-10.5,
+				14.710000038147
+			],
+			"name": "Dummy_Tomblume_b_099",
+			"render_position": [
+				28.1256008148193,
+				-10.5,
+				14.3549995422363
+			]
+		},
+		{
+			"logical_position": [
+				27.3204002380371,
+				-18.5,
+				8.15999031066895
+			],
+			"name": "Dummy_Multi_Moos_Mix_uh_009_100",
+			"render_position": [
+				27.3204002380371,
+				-18.5,
+				11.0799951553345
+			]
+		},
+		{
+			"logical_position": [
+				11.7971000671387,
+				-14.5,
+				15.0
+			],
+			"name": "Dummy_Multi_Moos_Mix_uv_10_101",
+			"render_position": [
+				11.7971000671387,
+				-14.5,
+				14.5
+			]
+		},
+		{
+			"logical_position": [
+				10.8805999755859,
+				-13.5200004577637,
+				3.01999998092651
+			],
+			"name": "Dummy_Holzwand_b_102",
+			"render_position": [
+				10.8805999755859,
+				-13.5200004577637,
+				8.51000022888184
+			]
+		},
+		{
+			"logical_position": [
+				13.7237997055054,
+				-13.5158996582031,
+				3.01999998092651
+			],
+			"name": "Dummy_Holzwand_d_103",
+			"render_position": [
+				13.7237997055054,
+				-13.5158996582031,
+				8.51000022888184
+			]
+		},
+		{
+			"logical_position": [
+				15.1885995864868,
+				-13.4621000289917,
+				3.01999998092651
+			],
+			"name": "Dummy_Holzwand_g_104",
+			"render_position": [
+				15.1885995864868,
+				-13.4621000289917,
+				8.51000022888184
+			]
+		},
+		{
+			"logical_position": [
+				21.4244995117188,
+				-2.15395998954773,
+				11.0200004577637
+			],
+			"name": "Dummy_Holzwand_l_105",
+			"render_position": [
+				21.4244995117188,
+				-2.15395998954773,
+				12.5100002288818
+			]
+		},
+		{
+			"logical_position": [
+				29.9999008178711,
+				-11.0799999237061,
+				9.01000022888184
+			],
+			"name": "Dummy_Wurzel_04_a_106",
+			"render_position": [
+				29.9999008178711,
+				-11.0799999237061,
+				11.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				32.8261985778809,
+				-11.7440996170044,
+				9.96000003814697
+			],
+			"name": "Dummy_Liane_b_107",
+			"render_position": [
+				32.8261985778809,
+				-11.7440996170044,
+				11.9799995422363
+			]
+		},
+		{
+			"logical_position": [
+				33.6931991577148,
+				-5.28231000900269,
+				13.1599998474121
+			],
+			"name": "Dummy_Liane_d_108",
+			"render_position": [
+				33.6931991577148,
+				-5.28231000900269,
+				13.5799999237061
+			]
+		},
+		{
+			"logical_position": [
+				30.2394008636475,
+				-11.2658004760742,
+				12.0200004577637
+			],
+			"name": "Dummy_Liane_d_109",
+			"render_position": [
+				30.2394008636475,
+				-11.2658004760742,
+				13.0100002288818
+			]
+		},
+		{
+			"logical_position": [
+				27.3705997467041,
+				-12.0444002151489,
+				8.71998023986816
+			],
+			"name": "Dummy_Liane_d_110",
+			"render_position": [
+				27.3705997467041,
+				-12.0444002151489,
+				11.3599901199341
+			]
+		},
+		{
+			"logical_position": [
+				38.1356010437012,
+				-14.486499786377,
+				5.4199800491333
+			],
+			"name": "Dummy_Liane_d_111",
+			"render_position": [
+				38.1356010437012,
+				-14.486499786377,
+				9.70998954772949
+			]
+		},
+		{
+			"logical_position": [
+				17.8542003631592,
+				-9.26626968383789,
+				5.4199800491333
+			],
+			"name": "Dummy_Liane_d_112",
+			"render_position": [
+				17.8542003631592,
+				-9.26626968383789,
+				9.70998954772949
+			]
+		},
+		{
+			"logical_position": [
+				15.0031003952026,
+				-7.8977198600769,
+				13.0
+			],
+			"name": "Dummy_Liane_d_113",
+			"render_position": [
+				15.0031003952026,
+				-7.8977198600769,
+				13.5
+			]
+		},
+		{
+			"logical_position": [
+				26.3631000518799,
+				-4.8029899597168,
+				13.0200004577637
+			],
+			"name": "Dummy_Liane_l_114",
+			"render_position": [
+				26.3631000518799,
+				-4.8029899597168,
+				13.5100002288818
+			]
+		},
+		{
+			"logical_position": [
+				11.5957002639771,
+				-9.42801952362061,
+				5.15997982025146
+			],
+			"name": "Dummy_Liane_l_115",
+			"render_position": [
+				11.5957002639771,
+				-9.42801952362061,
+				9.57999038696289
+			]
+		},
+		{
+			"logical_position": [
+				30.2996006011963,
+				-5.27299022674561,
+				9.31995010375977
+			],
+			"name": "Dummy_Liane_h_116",
+			"render_position": [
+				30.2996006011963,
+				-5.27299022674561,
+				11.6599750518799
+			]
+		},
+		{
+			"logical_position": [
+				16.9671993255615,
+				-7.9663200378418,
+				11.9200000762939
+			],
+			"name": "Dummy_Liane_h_117",
+			"render_position": [
+				16.9671993255615,
+				-7.9663200378418,
+				12.960000038147
+			]
+		},
+		{
+			"logical_position": [
+				40.6231994628906,
+				-16.0259990692139,
+				13.3199996948242
+			],
+			"name": "Dummy_Liane_g_118",
+			"render_position": [
+				40.6231994628906,
+				-16.0259990692139,
+				13.6599998474121
+			]
+		},
+		{
+			"logical_position": [
+				2.91510009765625,
+				-12.0739002227783,
+				13.3199996948242
+			],
+			"name": "Dummy_Liane_g_119",
+			"render_position": [
+				2.91510009765625,
+				-12.0739002227783,
+				13.6599998474121
+			]
+		},
+		{
+			"logical_position": [
+				24.5,
+				-18.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Boden_kaserne_c_120",
+			"render_position": [
+				24.5,
+				-18.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				26.5,
+				-18.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Boden_kaserne_d_121",
+			"render_position": [
+				26.5,
+				-18.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				23.5,
+				-14.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Boden_kaserne_d_122",
+			"render_position": [
+				23.5,
+				-14.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				23.5,
+				-10.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Boden_kaserne_e_123",
+			"render_position": [
+				23.5,
+				-10.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				21.5,
+				-14.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Boden_kaserne_c_124",
+			"render_position": [
+				21.5,
+				-14.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				23.7000007629395,
+				-10.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Abschluss_kaserne_a_125",
+			"render_position": [
+				23.7000007629395,
+				-10.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				23.0,
+				-14.5,
+				14.9899997711182
+			],
+			"name": "Dummy_Abschluss_kaserne_a_126",
+			"render_position": [
+				23.0,
+				-14.5,
+				14.4949998855591
+			]
+		},
+		{
+			"logical_position": [
+				24.6399993896484,
+				-18.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Abschluss_kaserne_a_127",
+			"render_position": [
+				24.6399993896484,
+				-18.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				26.1000003814697,
+				-18.5,
+				14.9899997711182
+			],
+			"name": "Dummy_Abschluss_kaserne_a_128",
+			"render_position": [
+				26.1000003814697,
+				-18.5,
+				14.4949998855591
+			]
+		},
+		{
+			"logical_position": [
+				21.5,
+				-14.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Abschluss_kaserne_a_129",
+			"render_position": [
+				21.5,
+				-14.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				23.6886005401611,
+				-18.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Ecke_kaserne_a_130",
+			"render_position": [
+				23.6886005401611,
+				-18.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				27.0953006744385,
+				-18.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Ecke_kaserne_a_131",
+			"render_position": [
+				27.0953006744385,
+				-18.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				24.0224990844727,
+				-14.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Ecke_kaserne_a_132",
+			"render_position": [
+				24.0224990844727,
+				-14.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				20.5359992980957,
+				-14.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Ecke_kaserne_a_133",
+			"render_position": [
+				20.5359992980957,
+				-14.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				22.7618999481201,
+				-10.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Ecke_kaserne_a_134",
+			"render_position": [
+				22.7618999481201,
+				-10.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				24.6609001159668,
+				-10.5,
+				15.0100002288818
+			],
+			"name": "Dummy_Ecke_kaserne_a_135",
+			"render_position": [
+				24.6609001159668,
+				-10.5,
+				14.5050001144409
+			]
+		},
+		{
+			"logical_position": [
+				28.6912994384766,
+				-10.5,
+				14.3100004196167
+			],
+			"name": "Dummy_Pilze_01_a_136",
+			"render_position": [
+				28.6912994384766,
+				-10.5,
+				14.1550006866455
+			]
+		},
+		{
+			"logical_position": [
+				27.7903995513916,
+				-10.5,
+				14.5100002288818
+			],
+			"name": "Dummy_Tomblume_137",
+			"render_position": [
+				27.7903995513916,
+				-10.5,
+				14.2550001144409
+			]
+		},
+		{
+			"logical_position": [
+				3.0,
+				-14.5,
+				12.0
+			],
+			"name": "Zwerg_1106",
+			"render_position": [
+				3.0,
+				-14.5,
+				13.0
+			]
+		},
+		{
+			"logical_position": [
+				10.0,
+				-14.5,
+				10.0
+			],
+			"name": "Zwerg_1107",
+			"render_position": [
+				10.0,
+				-14.5,
+				12.0
+			]
+		},
+		{
+			"logical_position": [
+				12.0,
+				-14.5,
+				10.0
+			],
+			"name": "Zwerg_1108",
+			"render_position": [
+				12.0,
+				-14.5,
+				12.0
+			]
+		},
+		{
+			"logical_position": [
+				8.14568042755127,
+				-12.0982999801636,
+				12.5600004196167
+			],
+			"name": "SourceLight_Misc_LightSrc_c_015",
+			"render_position": [
+				8.14568042755127,
+				-12.0982999801636,
+				13.2800006866455
+			]
+		},
+		{
+			"logical_position": [
+				26.8568000793457,
+				-8.27136039733887,
+				12.5600004196167
+			],
+			"name": "SourceLight_Misc_LightSrc_c_016",
+			"render_position": [
+				26.8568000793457,
+				-8.27136039733887,
+				13.2800006866455
+			]
+		},
+		{
+			"logical_position": [
+				32.8151016235352,
+				-15.1840000152588,
+				15.0
+			],
+			"name": "SourceLight_Misc_LightSrc_d_017",
+			"render_position": [
+				32.8151016235352,
+				-15.1840000152588,
+				14.5
+			]
+		},
+		{
+			"logical_position": [
+				32.4053993225098,
+				-15.4933004379272,
+				3.01999998092651
+			],
+			"name": "SourceLight_Misc_LightSrc_f_056",
+			"render_position": [
+				32.4053993225098,
+				-15.4933004379272,
+				8.51000022888184
+			]
+		},
+		{
+			"logical_position": [
+				30.0601997375488,
+				-7.93649959564209,
+				3.01999998092651
+			],
+			"name": "SourceLight_Misc_LightSrc_f_057",
+			"render_position": [
+				30.0601997375488,
+				-7.93649959564209,
+				8.51000022888184
+			]
+		},
+		{
+			"logical_position": [
+				14.5916004180908,
+				-11.4246997833252,
+				14.0
+			],
+			"name": "SourceLight_Misc_LightSrc_f_058",
+			"render_position": [
+				14.5916004180908,
+				-11.4246997833252,
+				14.0
+			]
+		},
+		{
+			"logical_position": [
+				11.5,
+				-13.0,
+				3.71000003814697
+			],
+			"name": "SourceLight_Dummy_Feuerkelch_b_065",
+			"render_position": [
+				11.5,
+				-13.0,
+				8.85499954223633
+			]
+		},
+		{
+			"logical_position": [
+				17.5,
+				-13.0,
+				3.71000003814697
+			],
+			"name": "SourceLight_Dummy_Feuerkelch_b_066",
+			"render_position": [
+				17.5,
+				-13.0,
+				8.85499954223633
+			]
+		},
+		{
+			"logical_position": [
+				22.5,
+				-17.0,
+				11.710000038147
+			],
+			"name": "SourceLight_Dummy_Feuerkelch_b_067",
+			"render_position": [
+				22.5,
+				-17.0,
+				12.8549995422363
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_09_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_07_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_02_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				1.0,
+				-24.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_02_2",
+			"render_bounds_max": [
+				38.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				1.25,
+				-24.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_07_1",
+			"render_bounds_max": [
+				40.5,
+				-4.25,
+				14.5
+			],
+			"render_bounds_min": [
+				1.25,
+				-22.75,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_07_2",
+			"render_bounds_max": [
+				40.5,
+				-4.25,
+				14.5
+			],
+			"render_bounds_min": [
+				1.25,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_09_1",
+			"render_bounds_max": [
+				43.0,
+				-4.75,
+				14.5
+			],
+			"render_bounds_min": [
+				2.25,
+				-22.5,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_09_2",
+			"render_bounds_max": [
+				40.5,
+				-4.75,
+				14.5
+			],
+			"render_bounds_min": [
+				2.25,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_02_1",
+			"render_bounds_max": [
+				38.0,
+				-5.0,
+				14.5
+			],
+			"render_bounds_min": [
+				1.0,
+				-18.5,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_14_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_06_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				1.0,
+				-24.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_03_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-24.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_10_0",
+			"render_bounds_max": [
+				44.0,
+				0.0,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-23.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_06_1",
+			"render_bounds_max": [
+				41.0,
+				-1.5,
+				14.5
+			],
+			"render_bounds_min": [
+				5.5,
+				-18.5,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_06_2",
+			"render_bounds_max": [
+				40.25,
+				-1.0,
+				14.5
+			],
+			"render_bounds_min": [
+				5.5,
+				-24.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_03_1",
+			"render_bounds_max": [
+				43.0,
+				-2.25,
+				14.5
+			],
+			"render_bounds_min": [
+				6.0,
+				-18.5,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_03_2",
+			"render_bounds_max": [
+				39.75,
+				-2.25,
+				14.5
+			],
+			"render_bounds_min": [
+				6.0,
+				-18.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_10_1",
+			"render_bounds_max": [
+				44.0,
+				-2.25,
+				14.5
+			],
+			"render_bounds_min": [
+				0.0,
+				-18.5,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_10_2",
+			"render_bounds_max": [
+				39.0,
+				-2.0,
+				14.5
+			],
+			"render_bounds_min": [
+				5.5,
+				-18.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_14_1",
+			"render_bounds_max": [
+				40.5,
+				-3.25,
+				14.5
+			],
+			"render_bounds_min": [
+				2.0,
+				-18.5,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		},
+		{
+			"logical_position": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"name": "NativeTerrain_14_2",
+			"render_bounds_max": [
+				40.0,
+				-3.0,
+				14.5
+			],
+			"render_bounds_min": [
+				2.0,
+				-18.0,
+				8.5
+			],
+			"render_position": [
+				0.0,
+				0.0,
+				7.0
+			]
+		}
+	],
+	"source_pmp": "templates/multi_start_010.pmp",
+	"source_pmp_sha256": "b6fc5ef7b1800dce9fb0dd4a42de879b8198f25ac84eb82b524266378ddb7807",
+	"source_template": "Templates/multi_urw_start_010_a_0.tcl",
+	"space": "native_renderer",
+	"terrain_revision": 2,
+	"terrain_triangles": 5727,
+	"views": [
+		{
+			"camera": [
+				19.0,
+				-12.0,
+				47.0
+			],
+			"image": "C:/Users/frant/OneDrive/Документы/ChatGPT/Diggles/docs/reverse-engineering/native-worker-terrain-0.4.3/multi_start_010_native_0.png",
+			"pitch": 0.0,
+			"yaw": 0.0
+		},
+		{
+			"camera": [
+				32.8400001525879,
+				-6.26454448699951,
+				43.7346725463867
+			],
+			"image": "C:/Users/frant/OneDrive/Документы/ChatGPT/Diggles/docs/reverse-engineering/native-worker-terrain-0.4.3/multi_start_010_native_1.png",
+			"pitch": 0.159999996423721,
+			"yaw": 0.400000005960464
+		},
+		{
+			"camera": [
+				9.04324817657471,
+				0.681872367858887,
+				43.1874694824219
+			],
+			"image": "C:/Users/frant/OneDrive/Документы/ChatGPT/Diggles/docs/reverse-engineering/native-worker-terrain-0.4.3/multi_start_010_native_2.png",
+			"pitch": 0.360000014305115,
+			"yaw": -0.300000011920929
+		}
+	]
+}

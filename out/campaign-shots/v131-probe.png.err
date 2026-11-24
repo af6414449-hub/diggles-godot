@@ -1,0 +1,5 @@
+SCRIPT ERROR: Invalid call. Nonexistent function 'intersect_ray' in base 'ArrayMesh'.
+   at: _probe_camera_ray (res://scripts/native_campaign_first_level.gd:1566)
+   GDScript backtrace (most recent call first):
+       [0] _probe_camera_ray (res://scripts/native_campaign_first_level.gd:1566)
+       [1] _process (res://scripts/native_campaign_first_level.gd:1542)

@@ -1,0 +1,4556 @@
+{
+ "schema": "diggles.campaign_lights.v1",
+ "source": {
+  "chapter": "native_campaign_chapter.json",
+  "classes": "Scripts/classes/**/*.tcl",
+  "rule": "class_light {offset} range {colour}"
+ },
+ "class_count": 90,
+ "light_count": 122,
+ "class_summary": {
+  "Lava_LightSrc_g": 6,
+  "Lava_LightSrc_g2": 11,
+  "Lava_LightSrc_red1": 4,
+  "Kris_LightSrc_b": 6,
+  "Dummy_Baumpilz_b": 3,
+  "Misc_LightSrc_e": 6,
+  "Misc_LightSrc_c": 6,
+  "Dummy_Baumpilz_e": 3,
+  "Misc_LightSrc_a": 1,
+  "Misc_LightSrc_d": 4,
+  "Misc_Light": 10,
+  "Dummy_Feuerkelch_a": 19,
+  "Dummy_Tischlicht": 1,
+  "Swf_LightSrc_j1": 1,
+  "Misc_LightSrc_b": 5,
+  "Misc_LightSrc_f": 9,
+  "Dummy_Leuchtblume_boden": 2,
+  "Urw_LightSrc_a": 3,
+  "Dummy_Feuerkelch_b": 4,
+  "Dummy_Baumpilz_d": 1,
+  "Urw_LightSrc_q": 1,
+  "Urw_LightSrc_f": 1,
+  "Urw_LightSrc_b": 1,
+  "Dummy_Haengelicht": 2,
+  "Lava_LightSrc_g1": 2,
+  "Dummy_Leuchtblume_wand": 2,
+  "Urw_LightSrc_d1": 1,
+  "Swf_LightSrc_j": 7
+ },
+ "lights": [
+  {
+   "class": "Lava_LightSrc_g",
+   "ordinal": 0,
+   "position": [
+    41.5,
+    42.5,
+    17.5497
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 377
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 18,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g",
+   "ordinal": 1,
+   "position": [
+    42.7,
+    32.69998,
+    20.0099
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 377
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 24,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g",
+   "ordinal": 2,
+   "position": [
+    52.5,
+    38.5,
+    19.9099
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 377
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 30,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g",
+   "ordinal": 3,
+   "position": [
+    51.5,
+    45.5,
+    20.3099
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 377
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 36,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g",
+   "ordinal": 4,
+   "position": [
+    37.5,
+    49.5,
+    19.5099
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 377
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 42,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g2",
+   "ordinal": 0,
+   "position": [
+    46.8,
+    48.5,
+    16.81
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 393
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 48,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g2",
+   "ordinal": 1,
+   "position": [
+    46.7,
+    50.6,
+    16.11
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 393
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 54,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g2",
+   "ordinal": 2,
+   "position": [
+    46.5,
+    51.9,
+    17.6899
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 393
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 60,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g2",
+   "ordinal": 3,
+   "position": [
+    45.8,
+    53.4,
+    17.21
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 393
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 66,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g2",
+   "ordinal": 4,
+   "position": [
+    44.3,
+    54.0,
+    16.9699
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 393
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 72,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_red1",
+   "ordinal": 0,
+   "position": [
+    46.2999,
+    30.19997,
+    16.29
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 5.0,
+   "color": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 367
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 78,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Kris_LightSrc_b",
+   "ordinal": 0,
+   "position": [
+    41.4998,
+    33.819900000000004,
+    22.9899
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.23,
+    0.44,
+    0.63
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 185
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 84,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_red1",
+   "ordinal": 1,
+   "position": [
+    55.5,
+    36.5,
+    15.71
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 5.0,
+   "color": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 367
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 90,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Kris_LightSrc_b",
+   "ordinal": 1,
+   "position": [
+    53.6,
+    37.6,
+    24.6099
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.23,
+    0.44,
+    0.63
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 185
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 96,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Kris_LightSrc_b",
+   "ordinal": 2,
+   "position": [
+    52.5,
+    46.1,
+    21.7099
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.23,
+    0.44,
+    0.63
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 185
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 102,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Kris_LightSrc_b",
+   "ordinal": 3,
+   "position": [
+    42.8999,
+    55.4,
+    22.1099
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.23,
+    0.44,
+    0.63
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 185
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 108,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_red1",
+   "ordinal": 2,
+   "position": [
+    47.2399,
+    48.199799999999996,
+    15.9499
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 5.0,
+   "color": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 367
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 114,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g2",
+   "ordinal": 5,
+   "position": [
+    42.6,
+    55.0,
+    17.13
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 393
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 120,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g2",
+   "ordinal": 6,
+   "position": [
+    41.5,
+    56.5,
+    18.0299
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 393
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 126,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Kris_LightSrc_b",
+   "ordinal": 4,
+   "position": [
+    37.5,
+    51.2,
+    17.71
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.23,
+    0.44,
+    0.63
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 185
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 132,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_red1",
+   "ordinal": 3,
+   "position": [
+    40.46,
+    43.8,
+    15.4897
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 5.0,
+   "color": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 367
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 138,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Kris_LightSrc_b",
+   "ordinal": 5,
+   "position": [
+    43.480000000000004,
+    41.56,
+    15.53
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.23,
+    0.44,
+    0.63
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 185
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_hoehlenmalerei.tcl",
+    "line": 144,
+    "template": "urw_unq_hoehlenmalerei",
+    "template_x": 30.0,
+    "template_y": 23.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Baumpilz_b",
+   "ordinal": 0,
+   "position": [
+    274.37284999999997,
+    38.80146,
+    4.92
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    1.8,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.25,
+    0.3,
+    0.25
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_flusslandschaft.tcl",
+    "line": 62
+   },
+   "placement_source": {
+    "file": "Templates/urw_hol_001_a.tcl",
+    "line": 123,
+    "template": "urw_hol_001_a",
+    "template_x": 268.0,
+    "template_y": 36.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_e",
+   "ordinal": 0,
+   "position": [
+    274.58281,
+    39.724000000000004,
+    7.71999
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 43
+   },
+   "placement_source": {
+    "file": "Templates/urw_hol_001_a.tcl",
+    "line": 129,
+    "template": "urw_hol_001_a",
+    "template_x": 268.0,
+    "template_y": 36.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_c",
+   "ordinal": 0,
+   "position": [
+    281.5995,
+    40.33089,
+    4.42
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 28
+   },
+   "placement_source": {
+    "file": "Templates/urw_hol_001_a.tcl",
+    "line": 135,
+    "template": "urw_hol_001_a",
+    "template_x": 268.0,
+    "template_y": 36.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Baumpilz_e",
+   "ordinal": 0,
+   "position": [
+    281.5308,
+    39.86477,
+    4.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    1.8,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.25,
+    0.25,
+    0.3
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_flusslandschaft.tcl",
+    "line": 86
+   },
+   "placement_source": {
+    "file": "Templates/urw_hol_001_a.tcl",
+    "line": 141,
+    "template": "urw_hol_001_a",
+    "template_x": 268.0,
+    "template_y": 36.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Baumpilz_b",
+   "ordinal": 1,
+   "position": [
+    223.8099,
+    62.8015,
+    2.3
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    1.8,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.25,
+    0.3,
+    0.25
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_flusslandschaft.tcl",
+    "line": 62
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_001_a.tcl",
+    "line": 24,
+    "template": "urw_unq_vodo_001_a",
+    "template_x": 212.0,
+    "template_y": 56.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_a",
+   "ordinal": 0,
+   "position": [
+    227.5,
+    65.5,
+    8.75
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 14
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_001_a.tcl",
+    "line": 30,
+    "template": "urw_unq_vodo_001_a",
+    "template_x": 212.0,
+    "template_y": 56.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_e",
+   "ordinal": 1,
+   "position": [
+    229.5275,
+    64.26676,
+    15.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 43
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_001_a.tcl",
+    "line": 328,
+    "template": "urw_unq_vodo_001_a",
+    "template_x": 212.0,
+    "template_y": 56.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_d",
+   "ordinal": 0,
+   "position": [
+    218.5,
+    64.5,
+    7.38999
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 5.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 35
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_001_a.tcl",
+    "line": 334,
+    "template": "urw_unq_vodo_001_a",
+    "template_x": 212.0,
+    "template_y": 56.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_Light",
+   "ordinal": 0,
+   "position": [
+    233.1549,
+    65.55325,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    1.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.9,
+    0.9,
+    0.8
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 7
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_001_a.tcl",
+    "line": 340,
+    "template": "urw_unq_vodo_001_a",
+    "template_x": 212.0,
+    "template_y": 56.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 0,
+   "position": [
+    76.6063,
+    85.73337000000001,
+    10.9
+   ],
+   "rotation": [
+    0.0,
+    6.28284,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_einsiedler.tcl",
+    "line": 12,
+    "template": "urw_unq_einsiedler",
+    "template_x": 64.0,
+    "template_y": 76.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 1,
+   "position": [
+    71.91309,
+    85.80127,
+    1.89999
+   ],
+   "rotation": [
+    0.0,
+    0.000345267,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_einsiedler.tcl",
+    "line": 18,
+    "template": "urw_unq_einsiedler",
+    "template_x": 64.0,
+    "template_y": 76.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Tischlicht",
+   "ordinal": 0,
+   "position": [
+    72.91255,
+    86.5185,
+    3.14
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 1.0,
+   "color": [
+    0.6,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 56
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_einsiedler.tcl",
+    "line": 24,
+    "template": "urw_unq_einsiedler",
+    "template_x": 64.0,
+    "template_y": 76.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Swf_LightSrc_j1",
+   "ordinal": 0,
+   "position": [
+    88.2,
+    85.19997000000001,
+    7.51
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    1.0,
+    1.0,
+    0.33
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 428
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_einsiedler.tcl",
+    "line": 218,
+    "template": "urw_unq_einsiedler",
+    "template_x": 64.0,
+    "template_y": 76.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g",
+   "ordinal": 5,
+   "position": [
+    88.2,
+    85.69996,
+    8.40999
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 377
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_einsiedler.tcl",
+    "line": 224,
+    "template": "urw_unq_einsiedler",
+    "template_x": 64.0,
+    "template_y": 76.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_b",
+   "ordinal": 0,
+   "position": [
+    82.8,
+    84.79998,
+    10.41
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 3.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 21
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_einsiedler.tcl",
+    "line": 230,
+    "template": "urw_unq_einsiedler",
+    "template_x": 64.0,
+    "template_y": 76.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_f",
+   "ordinal": 0,
+   "position": [
+    162.0917,
+    103.1862,
+    11.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 8.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 51
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_raetsel_001.tcl",
+    "line": 344,
+    "template": "urw_unq_raetsel_001",
+    "template_x": 148.0,
+    "template_y": 76.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_b",
+   "ordinal": 1,
+   "position": [
+    170.5464,
+    104.79050000000001,
+    7.30999
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 3.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 21
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_raetsel_001.tcl",
+    "line": 368,
+    "template": "urw_unq_raetsel_001",
+    "template_x": 148.0,
+    "template_y": 76.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_b",
+   "ordinal": 2,
+   "position": [
+    157.07301999999999,
+    96.0891,
+    15.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 3.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 21
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_raetsel_001.tcl",
+    "line": 374,
+    "template": "urw_unq_raetsel_001",
+    "template_x": 148.0,
+    "template_y": 76.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_b",
+   "ordinal": 3,
+   "position": [
+    161.0215,
+    95.8502,
+    15.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 3.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 21
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_raetsel_001.tcl",
+    "line": 380,
+    "template": "urw_unq_raetsel_001",
+    "template_x": 148.0,
+    "template_y": 76.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_b",
+   "ordinal": 4,
+   "position": [
+    164.5254,
+    95.8637,
+    15.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 3.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 21
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_raetsel_001.tcl",
+    "line": 386,
+    "template": "urw_unq_raetsel_001",
+    "template_x": 148.0,
+    "template_y": 76.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Leuchtblume_boden",
+   "ordinal": 0,
+   "position": [
+    170.88288,
+    156.75952,
+    14.4
+   ],
+   "rotation": [
+    0.0,
+    3.5632,
+    0.0
+   ],
+   "offset": [
+    1.3,
+    -2.2,
+    2.5
+   ],
+   "range": 4.0,
+   "color": [
+    0.6,
+    0.45,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_flusslandschaft.tcl",
+    "line": 29
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_003_a.tcl",
+    "line": 64,
+    "template": "urw_unq_vodo_003_a",
+    "template_x": 168.0,
+    "template_y": 150.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Urw_LightSrc_a",
+   "ordinal": 0,
+   "position": [
+    158.5,
+    156.0,
+    13.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.0,
+    0.29,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 263
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_002_a.tcl",
+    "line": 227,
+    "template": "urw_unq_vodo_002_a",
+    "template_x": 132.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_f",
+   "ordinal": 1,
+   "position": [
+    157.2777,
+    154.6876,
+    3.91999
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 8.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 51
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_002_a.tcl",
+    "line": 233,
+    "template": "urw_unq_vodo_002_a",
+    "template_x": 132.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_f",
+   "ordinal": 2,
+   "position": [
+    141.80436,
+    150.58865,
+    8.81999
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 8.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 51
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_002_a.tcl",
+    "line": 239,
+    "template": "urw_unq_vodo_002_a",
+    "template_x": 132.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_e",
+   "ordinal": 2,
+   "position": [
+    154.0224,
+    153.2832,
+    11.8
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 43
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_002_a.tcl",
+    "line": 245,
+    "template": "urw_unq_vodo_002_a",
+    "template_x": 132.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_d",
+   "ordinal": 1,
+   "position": [
+    139.03932,
+    152.16,
+    6.91998
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 5.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 35
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_002_a.tcl",
+    "line": 251,
+    "template": "urw_unq_vodo_002_a",
+    "template_x": 132.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_Light",
+   "ordinal": 1,
+   "position": [
+    129.5,
+    175.5,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    1.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.9,
+    0.9,
+    0.8
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 7
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_008_a.tcl",
+    "line": 30,
+    "template": "urw_unq_vodo_008_a",
+    "template_x": 128.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_Light",
+   "ordinal": 2,
+   "position": [
+    129.5,
+    167.5,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    1.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.9,
+    0.9,
+    0.8
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 7
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_008_a.tcl",
+    "line": 36,
+    "template": "urw_unq_vodo_008_a",
+    "template_x": 128.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_Light",
+   "ordinal": 3,
+   "position": [
+    129.5,
+    155.5,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    1.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.9,
+    0.9,
+    0.8
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 7
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_008_a.tcl",
+    "line": 42,
+    "template": "urw_unq_vodo_008_a",
+    "template_x": 128.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Baumpilz_b",
+   "ordinal": 2,
+   "position": [
+    105.32898,
+    151.24788,
+    1.62
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    1.8,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.25,
+    0.3,
+    0.25
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_flusslandschaft.tcl",
+    "line": 62
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_004_a.tcl",
+    "line": 171,
+    "template": "urw_unq_vodo_004_a",
+    "template_x": 96.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Baumpilz_e",
+   "ordinal": 1,
+   "position": [
+    119.8852,
+    150.35552,
+    3.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    1.8,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.25,
+    0.25,
+    0.3
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_flusslandschaft.tcl",
+    "line": 86
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_004_a.tcl",
+    "line": 177,
+    "template": "urw_unq_vodo_004_a",
+    "template_x": 96.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Baumpilz_e",
+   "ordinal": 2,
+   "position": [
+    105.31282,
+    158.5945,
+    1.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    1.8,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.25,
+    0.25,
+    0.3
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_flusslandschaft.tcl",
+    "line": 86
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_004_a.tcl",
+    "line": 183,
+    "template": "urw_unq_vodo_004_a",
+    "template_x": 96.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_d",
+   "ordinal": 2,
+   "position": [
+    114.69579999999999,
+    155.6388,
+    14.4
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 5.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 35
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_004_a.tcl",
+    "line": 189,
+    "template": "urw_unq_vodo_004_a",
+    "template_x": 96.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_e",
+   "ordinal": 3,
+   "position": [
+    105.25518,
+    158.7228,
+    2.19996
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 43
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_004_a.tcl",
+    "line": 195,
+    "template": "urw_unq_vodo_004_a",
+    "template_x": 96.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_e",
+   "ordinal": 4,
+   "position": [
+    119.9247,
+    150.85081,
+    4.22
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 43
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_004_a.tcl",
+    "line": 201,
+    "template": "urw_unq_vodo_004_a",
+    "template_x": 96.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_f",
+   "ordinal": 3,
+   "position": [
+    105.24869,
+    152.5565,
+    8.09997
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 8.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 51
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_004_a.tcl",
+    "line": 207,
+    "template": "urw_unq_vodo_004_a",
+    "template_x": 96.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_b",
+   "ordinal": 0,
+   "position": [
+    115.5,
+    155.5,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 17
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_004_a.tcl",
+    "line": 213,
+    "template": "urw_unq_vodo_004_a",
+    "template_x": 96.0,
+    "template_y": 142.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Baumpilz_d",
+   "ordinal": 0,
+   "position": [
+    113.13926000000001,
+    165.9278,
+    1.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    1.8,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.25,
+    0.25,
+    0.3
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_flusslandschaft.tcl",
+    "line": 78
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_007_a.tcl",
+    "line": 206,
+    "template": "urw_unq_vodo_007_a",
+    "template_x": 104.0,
+    "template_y": 162.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_f",
+   "ordinal": 4,
+   "position": [
+    113.32615,
+    166.19606,
+    3.52
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 8.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 51
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_007_a.tcl",
+    "line": 212,
+    "template": "urw_unq_vodo_007_a",
+    "template_x": 104.0,
+    "template_y": 162.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_f",
+   "ordinal": 5,
+   "position": [
+    140.0637,
+    173.2653,
+    15.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 8.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 51
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_005_a.tcl",
+    "line": 36,
+    "template": "urw_unq_vodo_005_a",
+    "template_x": 132.0,
+    "template_y": 162.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Urw_LightSrc_q",
+   "ordinal": 0,
+   "position": [
+    161.18954,
+    177.5128,
+    11.3
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.08,
+    0.34,
+    0.82
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 563
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_006_a.tcl",
+    "line": 31,
+    "template": "urw_unq_vodo_006_a",
+    "template_x": 152.0,
+    "template_y": 162.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 2,
+   "position": [
+    153.5,
+    175.5,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_vodo_006_a.tcl",
+    "line": 37,
+    "template": "urw_unq_vodo_006_a",
+    "template_x": 152.0,
+    "template_y": 162.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_b",
+   "ordinal": 1,
+   "position": [
+    103.5,
+    169.3,
+    3.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 17
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_feen.tcl",
+    "line": 238,
+    "template": "urw_unq_feen",
+    "template_x": 60.0,
+    "template_y": 160.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_b",
+   "ordinal": 2,
+   "position": [
+    107.5,
+    169.3,
+    3.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 17
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_feen.tcl",
+    "line": 244,
+    "template": "urw_unq_feen",
+    "template_x": 60.0,
+    "template_y": 160.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_b",
+   "ordinal": 3,
+   "position": [
+    111.5,
+    169.3,
+    3.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 17
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_feen.tcl",
+    "line": 250,
+    "template": "urw_unq_feen",
+    "template_x": 60.0,
+    "template_y": 160.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Urw_LightSrc_f",
+   "ordinal": 0,
+   "position": [
+    96.9,
+    197.2,
+    8.70999
+   ],
+   "rotation": [
+    0.0,
+    -1.5708,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.49,
+    0.77,
+    0.46
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 341
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_feen.tcl",
+    "line": 1035,
+    "template": "urw_unq_feen",
+    "template_x": 60.0,
+    "template_y": 160.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Urw_LightSrc_b",
+   "ordinal": 0,
+   "position": [
+    102.7,
+    197.2,
+    10.71
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.64,
+    0.46,
+    0.64
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 272
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_feen.tcl",
+    "line": 1041,
+    "template": "urw_unq_feen",
+    "template_x": 60.0,
+    "template_y": 160.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_c",
+   "ordinal": 1,
+   "position": [
+    109.4998,
+    168.99998,
+    13.4
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 28
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_feen.tcl",
+    "line": 1047,
+    "template": "urw_unq_feen",
+    "template_x": 60.0,
+    "template_y": 160.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_c",
+   "ordinal": 2,
+   "position": [
+    105.5,
+    169.29999,
+    12.4
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 28
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_feen.tcl",
+    "line": 1053,
+    "template": "urw_unq_feen",
+    "template_x": 60.0,
+    "template_y": 160.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Urw_LightSrc_a",
+   "ordinal": 1,
+   "position": [
+    93.2,
+    173.5,
+    15.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.0,
+    0.29,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 263
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_feen.tcl",
+    "line": 1059,
+    "template": "urw_unq_feen",
+    "template_x": 60.0,
+    "template_y": 160.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 3,
+   "position": [
+    63.5,
+    97.5,
+    11.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_012_a.tcl",
+    "line": 54,
+    "template": "urw_unq_troll_012_a",
+    "template_x": 60.0,
+    "template_y": 88.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 4,
+   "position": [
+    79.5,
+    97.5,
+    11.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_012_a.tcl",
+    "line": 60,
+    "template": "urw_unq_troll_012_a",
+    "template_x": 60.0,
+    "template_y": 88.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 5,
+   "position": [
+    67.5,
+    99.5,
+    11.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_012_a.tcl",
+    "line": 66,
+    "template": "urw_unq_troll_012_a",
+    "template_x": 60.0,
+    "template_y": 88.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 6,
+   "position": [
+    75.5,
+    99.5,
+    11.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_012_a.tcl",
+    "line": 72,
+    "template": "urw_unq_troll_012_a",
+    "template_x": 60.0,
+    "template_y": 88.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 7,
+   "position": [
+    71.5,
+    99.8,
+    7.84
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_012_a.tcl",
+    "line": 78,
+    "template": "urw_unq_troll_012_a",
+    "template_x": 60.0,
+    "template_y": 88.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_c",
+   "ordinal": 3,
+   "position": [
+    71.5,
+    100.5,
+    13.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 28
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_012_a.tcl",
+    "line": 189,
+    "template": "urw_unq_troll_012_a",
+    "template_x": 60.0,
+    "template_y": 88.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 8,
+   "position": [
+    172.5395,
+    149.9226,
+    7.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 656,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 9,
+   "position": [
+    172.4355,
+    145.9093,
+    3.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 662,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 10,
+   "position": [
+    186.5259,
+    149.5572,
+    3.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 668,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 11,
+   "position": [
+    180.4904,
+    149.5573,
+    3.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 674,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Haengelicht",
+   "ordinal": 0,
+   "position": [
+    183.387,
+    144.8254,
+    10.78
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    1.5,
+    0.0
+   ],
+   "range": 4.5,
+   "color": [
+    0.7,
+    0.5,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 27
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 680,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Haengelicht",
+   "ordinal": 1,
+   "position": [
+    195.6798,
+    141.66859,
+    8.49998
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    1.5,
+    0.0
+   ],
+   "range": 4.5,
+   "color": [
+    0.7,
+    0.5,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 27
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 698,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 12,
+   "position": [
+    203.4692,
+    141.93301,
+    7.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 710,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g1",
+   "ordinal": 0,
+   "position": [
+    198.6049,
+    149.2243,
+    7.69994
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 385
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1363,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_c",
+   "ordinal": 4,
+   "position": [
+    203.4612,
+    145.6305,
+    13.6
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 28
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1369,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_f",
+   "ordinal": 6,
+   "position": [
+    165.5,
+    148.5,
+    15.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 8.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 51
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1375,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g2",
+   "ordinal": 7,
+   "position": [
+    172.1886,
+    144.8984,
+    10.4999
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 393
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1417,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 13,
+   "position": [
+    205.5,
+    145.5,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1423,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 14,
+   "position": [
+    190.9,
+    145.7,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1429,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_f",
+   "ordinal": 7,
+   "position": [
+    181.8,
+    146.6999,
+    15.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 8.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 51
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1435,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 15,
+   "position": [
+    163.5,
+    161.5,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1441,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 16,
+   "position": [
+    175.5,
+    161.5,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1447,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 17,
+   "position": [
+    191.5,
+    161.5,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1453,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_Light",
+   "ordinal": 4,
+   "position": [
+    191.5,
+    149.5,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    1.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.9,
+    0.9,
+    0.8
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 7
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1499,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_Light",
+   "ordinal": 5,
+   "position": [
+    201.5,
+    149.5,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    1.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.9,
+    0.9,
+    0.8
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 7
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_005_a.tcl",
+    "line": 1505,
+    "template": "urw_unq_troll_005_a",
+    "template_x": 148.0,
+    "template_y": 132.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Feuerkelch_a",
+   "ordinal": 18,
+   "position": [
+    107.4599,
+    146.0198,
+    7.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.7
+   ],
+   "range": 2.0,
+   "color": [
+    0.7,
+    0.6,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_trollhausen.tcl",
+    "line": 8
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_001_a.tcl",
+    "line": 214,
+    "template": "urw_unq_troll_001_a",
+    "template_x": 92.0,
+    "template_y": 136.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_Light",
+   "ordinal": 6,
+   "position": [
+    100.2845,
+    145.24189,
+    7.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    1.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.9,
+    0.9,
+    0.8
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 7
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_001_a.tcl",
+    "line": 238,
+    "template": "urw_unq_troll_001_a",
+    "template_x": 92.0,
+    "template_y": 136.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_Light",
+   "ordinal": 7,
+   "position": [
+    107.1788,
+    141.43338,
+    7.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    1.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.9,
+    0.9,
+    0.8
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 7
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_001_a.tcl",
+    "line": 303,
+    "template": "urw_unq_troll_001_a",
+    "template_x": 92.0,
+    "template_y": 136.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_Light",
+   "ordinal": 8,
+   "position": [
+    109.6694,
+    141.48896,
+    7.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    1.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.9,
+    0.9,
+    0.8
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 7
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_001_a.tcl",
+    "line": 309,
+    "template": "urw_unq_troll_001_a",
+    "template_x": 92.0,
+    "template_y": 136.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g1",
+   "ordinal": 1,
+   "position": [
+    100.23632,
+    144.73605,
+    8.41997
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 385
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_001_a.tcl",
+    "line": 491,
+    "template": "urw_unq_troll_001_a",
+    "template_x": 92.0,
+    "template_y": 136.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g2",
+   "ordinal": 8,
+   "position": [
+    109.1639,
+    145.26506,
+    14.5
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 393
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_001_a.tcl",
+    "line": 497,
+    "template": "urw_unq_troll_001_a",
+    "template_x": 92.0,
+    "template_y": 136.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g2",
+   "ordinal": 9,
+   "position": [
+    105.5145,
+    145.30254,
+    14.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 393
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_001_a.tcl",
+    "line": 503,
+    "template": "urw_unq_troll_001_a",
+    "template_x": 92.0,
+    "template_y": 136.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Lava_LightSrc_g2",
+   "ordinal": 10,
+   "position": [
+    105.7165,
+    141.30087,
+    13.7199
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 2.0,
+   "color": [
+    0.98,
+    0.53,
+    0.03
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 393
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_001_a.tcl",
+    "line": 509,
+    "template": "urw_unq_troll_001_a",
+    "template_x": 92.0,
+    "template_y": 136.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_d",
+   "ordinal": 3,
+   "position": [
+    115.1112,
+    144.73774,
+    11.7199
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 5.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 35
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_troll_001_a.tcl",
+    "line": 515,
+    "template": "urw_unq_troll_001_a",
+    "template_x": 92.0,
+    "template_y": 136.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Leuchtblume_wand",
+   "ordinal": 0,
+   "position": [
+    175.4631,
+    179.2377,
+    5.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    1.3,
+    1.9,
+    5.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.3,
+    0.45,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_flusslandschaft.tcl",
+    "line": 45
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_metalltor.tcl",
+    "line": 20,
+    "template": "urw_unq_metalltor",
+    "template_x": 160.0,
+    "template_y": 168.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Leuchtblume_boden",
+   "ordinal": 1,
+   "position": [
+    188.9517,
+    182.54,
+    6.24
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    1.3,
+    -2.2,
+    2.5
+   ],
+   "range": 4.0,
+   "color": [
+    0.6,
+    0.45,
+    0.4
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_flusslandschaft.tcl",
+    "line": 29
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_metalltor.tcl",
+    "line": 26,
+    "template": "urw_unq_metalltor",
+    "template_x": 160.0,
+    "template_y": 168.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Dummy_Leuchtblume_wand",
+   "ordinal": 1,
+   "position": [
+    198.5641,
+    178.6304,
+    7.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    1.3,
+    1.9,
+    5.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.3,
+    0.45,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/deco/dummy_flusslandschaft.tcl",
+    "line": 45
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_metalltor.tcl",
+    "line": 32,
+    "template": "urw_unq_metalltor",
+    "template_x": 160.0,
+    "template_y": 168.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_Light",
+   "ordinal": 9,
+   "position": [
+    181.8436,
+    177.23849,
+    7.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    1.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.9,
+    0.9,
+    0.8
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 7
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_metalltor.tcl",
+    "line": 44,
+    "template": "urw_unq_metalltor",
+    "template_x": 160.0,
+    "template_y": 168.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Urw_LightSrc_d1",
+   "ordinal": 0,
+   "position": [
+    192.9,
+    179.9999,
+    11.01
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.0,
+    0.45,
+    0.21
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 300
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_metalltor.tcl",
+    "line": 172,
+    "template": "urw_unq_metalltor",
+    "template_x": 160.0,
+    "template_y": 168.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Urw_LightSrc_a",
+   "ordinal": 2,
+   "position": [
+    184.1,
+    181.28,
+    13.21
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.0,
+    0.29,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 263
+   },
+   "placement_source": {
+    "file": "Templates/urw_unq_metalltor.tcl",
+    "line": 178,
+    "template": "urw_unq_metalltor",
+    "template_x": 160.0,
+    "template_y": 168.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Swf_LightSrc_j",
+   "ordinal": 0,
+   "position": [
+    174.3326,
+    203.8126,
+    0.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    1.0,
+    1.0,
+    0.33
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 420
+   },
+   "placement_source": {
+    "file": "Templates/swf_unq_start.tcl",
+    "line": 357,
+    "template": "swf_unq_start",
+    "template_x": 164.0,
+    "template_y": 192.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Swf_LightSrc_j",
+   "ordinal": 1,
+   "position": [
+    179.8293,
+    202.863,
+    0.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    1.0,
+    1.0,
+    0.33
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 420
+   },
+   "placement_source": {
+    "file": "Templates/swf_unq_start.tcl",
+    "line": 363,
+    "template": "swf_unq_start",
+    "template_x": 164.0,
+    "template_y": 192.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Swf_LightSrc_j",
+   "ordinal": 2,
+   "position": [
+    178.1666,
+    200.33223,
+    0.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    1.0,
+    1.0,
+    0.33
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 420
+   },
+   "placement_source": {
+    "file": "Templates/swf_unq_start.tcl",
+    "line": 369,
+    "template": "swf_unq_start",
+    "template_x": 164.0,
+    "template_y": 192.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_f",
+   "ordinal": 8,
+   "position": [
+    197.386,
+    202.3127,
+    15.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 8.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 51
+   },
+   "placement_source": {
+    "file": "Templates/swf_unq_start.tcl",
+    "line": 375,
+    "template": "swf_unq_start",
+    "template_x": 164.0,
+    "template_y": 192.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_e",
+   "ordinal": 5,
+   "position": [
+    185.6985,
+    201.20649,
+    9.69998
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    0.7,
+    0.7,
+    0.6
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 43
+   },
+   "placement_source": {
+    "file": "Templates/swf_unq_start.tcl",
+    "line": 381,
+    "template": "swf_unq_start",
+    "template_x": 164.0,
+    "template_y": 192.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Misc_LightSrc_c",
+   "ordinal": 5,
+   "position": [
+    184.7001,
+    205.3878,
+    10.3
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    -0.5,
+    0.0
+   ],
+   "range": 4.0,
+   "color": [
+    0.6,
+    0.6,
+    0.5
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 28
+   },
+   "placement_source": {
+    "file": "Templates/swf_unq_start.tcl",
+    "line": 387,
+    "template": "swf_unq_start",
+    "template_x": 164.0,
+    "template_y": 192.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Swf_LightSrc_j",
+   "ordinal": 3,
+   "position": [
+    234.5,
+    207.5,
+    0.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    1.0,
+    1.0,
+    0.33
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 420
+   },
+   "placement_source": {
+    "file": "Templates/swf_unq_start2.tcl",
+    "line": 145,
+    "template": "swf_unq_start2",
+    "template_x": 216.0,
+    "template_y": 196.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Swf_LightSrc_j",
+   "ordinal": 4,
+   "position": [
+    254.9491,
+    207.5479,
+    0.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    1.0,
+    1.0,
+    0.33
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 420
+   },
+   "placement_source": {
+    "file": "Templates/swf_unq_start2.tcl",
+    "line": 151,
+    "template": "swf_unq_start2",
+    "template_x": 216.0,
+    "template_y": 196.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Swf_LightSrc_j",
+   "ordinal": 5,
+   "position": [
+    242.0477,
+    207.193,
+    0.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    1.0,
+    1.0,
+    0.33
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 420
+   },
+   "placement_source": {
+    "file": "Templates/swf_unq_start2.tcl",
+    "line": 157,
+    "template": "swf_unq_start2",
+    "template_x": 216.0,
+    "template_y": 196.0
+   },
+   "autolight": false
+  },
+  {
+   "class": "Swf_LightSrc_j",
+   "ordinal": 6,
+   "position": [
+    248.6867,
+    207.3529,
+    0.02
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "offset": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "range": 6.0,
+   "color": [
+    1.0,
+    1.0,
+    0.33
+   ],
+   "class_source": {
+    "file": "Scripts/classes/items/emitter.tcl",
+    "line": 420
+   },
+   "placement_source": {
+    "file": "Templates/swf_unq_start2.tcl",
+    "line": 163,
+    "template": "swf_unq_start2",
+    "template_x": 216.0,
+    "template_y": 196.0
+   },
+   "autolight": false
+  }
+ ]
+}

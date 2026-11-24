@@ -1,0 +1,666 @@
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:244)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:362)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:317)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_ground (res://scripts/native_campaign_first_level.gd:482)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:318)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)
+SCRIPT ERROR: Invalid assignment of property or key 'texture_filter' with value of type 'int' on a base object of type 'ShaderMaterial'.
+   at: NativeCampaignProfile.terrain_material (res://scripts/native_campaign_profile.gd:399)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:399)
+       [1] _build_ground (res://scripts/native_campaign_first_level.gd:482)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:318)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:172)

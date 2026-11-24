@@ -1,0 +1,104 @@
+КЛЮЧИ: atlas, attributes, cells, deleted_class, fog_remover, generator_state, initial_view, layer2, layer2_decoded, map_size, materials, meshes, normals, objects, placements, rng, schema, seed, source, story_placements, summary, templates
+
+initial_view = {'x': 246.7, 'y': 28.8, 'zoom': 1.478, 'rx': -0.29, 'ry': 0.05}
+map_size = {'width': 512, 'height': 640}
+source = {'campaign': 'Scripts/gameplay/Campaign.tcl', 'procedure': 'Campaign.tcl:22-191 first_level', 'prologue': 'Campaign.tcl:12-15', 'epilogue': 'Campaign.tcl:198-216', 'chapter_call': 'Campaign.tcl:195 first_level 208 0', 'map_create': 'Campaign.tcl:2 map create 512 640', 'story_zone': 'CampaignInit.tcl:675-692 sm_add_zone/sm_add_temp Urwald', 'story_groups': 'CampaignInit.tcl:110-188 sm_def_temp_group'}
+
+=== placements (14) ===
+  {"template": "urw_unq_start", "x": 208, "y": 0, "role": "chapter_start"}
+  {"template": "urw_unq_hoehlenmalerei", "x": 30, "y": 23, "role": "layer_only"}
+  {"template": "urw_hol_027_a", "x": 228, "y": 36, "role": "cave"}
+  {"template": "urw_gng_021_h", "x": 224, "y": 40, "role": "cave_end"}
+  {"template": "urw_hol_001_a", "x": 268, "y": 36, "role": "cave"}
+  {"template": "urw_gng_022_b", "x": 288, "y": 40, "role": "cave_end"}
+  {"template": "urw_gng_013_c", "x": 244, "y": 40, "role": "tunnel"}
+  {"template": "urw_gng_003_c", "x": 248, "y": 40, "role": "tunnel"}
+  {"template": "urw_gng_002_a", "x": 260, "y": 40, "role": "tunnel"}
+  {"template": "urw_gng_027_c", "x": 244, "y": 44, "role": "voodoo"}
+  {"template": "urw_gng_001_a", "x": 244, "y": 64, "role": "voodoo"}
+  {"template": "urw_gng_030_a", "x": 248, "y": 56, "role": "voodoo"}
+  {"template": "urw_gng_022_g", "x": 260, "y": 64, "role": "voodoo"}
+  {"template": "urw_unq_vodo_001_a", "x": 212, "y": 56, "role": "voodoo"}
+
+=== story_placements (25) ===
+  {"template": "urw_gng_019_b", "x": 120, "y": 84, "role": "story", "group": "urw_der_einsiedler", "source": "CampaignInit.tcl sm_def_temp_group urw_der_einsiedler"}
+  {"template": "urw_unq_einsiedler", "x": 64, "y": 76, "role": "story", "group": "urw_der_einsiedler", "source": "CampaignInit.tcl sm_def_temp_group urw_der_einsiedler"}
+  {"template": "urw_unq_raetsel_001", "x": 148, "y": 76, "role": "story", "group": "urw_der_einsiedler", "source": "CampaignInit.tcl sm_def_temp_group urw_der_einsiedler"}
+  {"template": "urw_gng_018_a", "x": 132, "y": 92, "role": "story", "group": "urw_der_einsiedler", "source": "CampaignInit.tcl sm_def_temp_group urw_der_einsiedler"}
+  {"template": "urw_gng_044_a", "x": 124, "y": 84, "role": "story", "group": "urw_der_einsiedler", "source": "CampaignInit.tcl sm_def_temp_group urw_der_einsiedler"}
+  {"template": "urw_gng_003_a", "x": 136, "y": 92, "role": "story", "group": "urw_der_einsiedler", "source": "CampaignInit.tcl sm_def_temp_group urw_der_einsiedler"}
+  {"template": "urw_unq_vodo_003_a", "x": 168, "y": 150, "role": "story", "group": "urw_unq_voodoo_dorf", "source": "CampaignInit.tcl sm_def_temp_group urw_unq_voodoo_dorf"}
+  {"template": "urw_unq_vodo_002_a", "x": 132, "y": 142, "role": "story", "group": "urw_unq_voodoo_dorf", "source": "CampaignInit.tcl sm_def_temp_group urw_unq_voodoo_dorf"}
+  {"template": "urw_unq_vodo_008_a", "x": 128, "y": 142, "role": "story", "group": "urw_unq_voodoo_dorf", "source": "CampaignInit.tcl sm_def_temp_group urw_unq_voodoo_dorf"}
+  {"template": "urw_unq_vodo_004_a", "x": 96, "y": 142, "role": "story", "group": "urw_unq_voodoo_dorf", "source": "CampaignInit.tcl sm_def_temp_group urw_unq_voodoo_dorf"}
+  {"template": "urw_unq_vodo_007_a", "x": 104, "y": 162, "role": "story", "group": "urw_unq_voodoo_dorf", "source": "CampaignInit.tcl sm_def_temp_group urw_unq_voodoo_dorf"}
+  {"template": "urw_unq_vodo_005_a", "x": 132, "y": 162, "role": "story", "group": "urw_unq_voodoo_dorf", "source": "CampaignInit.tcl sm_def_temp_group urw_unq_voodoo_dorf"}
+  {"template": "urw_unq_vodo_006_a", "x": 152, "y": 162, "role": "story", "group": "urw_unq_voodoo_dorf", "source": "CampaignInit.tcl sm_def_temp_group urw_unq_voodoo_dorf"}
+  {"template": "urw_unq_feen", "x": 60, "y": 160, "role": "story", "source": "CampaignInit.tcl sm_add_temp urw_unq_feen"}
+  {"template": "urw_unq_troll_012_a", "x": 60, "y": 88, "role": "story", "source": "CampaignInit.tcl sm_add_temp urw_unq_troll_012_a"}
+  {"template": "urw_gng_015_b", "x": 144, "y": 148, "role": "story", "group": "urw_trollburg_ring", "source": "CampaignInit.tcl sm_def_temp_group urw_trollburg_ring"}
+  {"template": "urw_unq_troll_005_a", "x": 148, "y": 132, "role": "story", "group": "urw_trollburg_ring", "source": "CampaignInit.tcl sm_def_temp_group urw_trollburg_ring"}
+  {"template": "urw_unq_troll_001_a", "x": 92, "y": 136, "role": "story", "group": "urw_trollburg_ring", "source": "CampaignInit.tcl sm_def_temp_group urw_trollburg_ring"}
+  {"template": "urw_gng_020_a", "x": 144, "y": 152, "role": "story", "group": "urw_trollburg_ring", "source": "CampaignInit.tcl sm_def_temp_group urw_trollburg_ring"}
+  {"template": "urw_gng_002_a", "x": 136, "y": 152, "role": "story", "group": "urw_trollburg_ring", "source": "CampaignInit.tcl sm_def_temp_group urw_trollburg_ring"}
+  {"template": "urw_gng_025_b", "x": 124, "y": 144, "role": "story", "group": "urw_trollburg_ring", "source": "CampaignInit.tcl sm_def_temp_group urw_trollburg_ring"}
+  {"template": "urw_unq_metalltor", "x": 160, "y": 168, "role": "story", "group": "urw_uebergang_swf", "source": "CampaignInit.tcl sm_def_temp_group urw_uebergang_swf"}
+  {"template": "swf_unq_start", "x": 164, "y": 192, "role": "story", "group": "urw_uebergang_swf", "source": "CampaignInit.tcl sm_def_temp_group urw_uebergang_swf"}
+  {"template": "swf_unq_start2", "x": 216, "y": 196, "role": "story", "group": "urw_uebergang_swf", "source": "CampaignInit.tcl sm_def_temp_group urw_uebergang_swf"}
+  {"template": "swf_gng_022_c", "x": 272, "y": 208, "role": "story", "group": "urw_uebergang_swf", "source": "CampaignInit.tcl sm_def_temp_group urw_uebergang_swf"}
+
+=== templates (38) ===
+  {"template": "urw_unq_start", "placements": [{"x": 208, "y": 0, "role": "chapter_start"}], "pmp": "data/templates/unq_start.pmp", "l2m": "data/templates/urw_unq_start.l2m", "width": 60, "height": 36, "cells": 2160, "objects": 81}
+  {"template": "urw_unq_hoehlenmalerei", "placements": [{"x": 30, "y": 23, "role": "layer_only"}], "pmp": "", "l2m": "data/templates/urw_unq_hoehlenmalerei.l2m", "width": 0, "height": 0, "cells": 0, "objects": 24}
+  {"template": "urw_hol_027_a", "placements": [{"x": 228, "y": 36, "role": "cave"}], "pmp": "data/templates/hol_027.pmp", "l2m": "data/templates/urw_hol_027_a.l2m", "width": 16, "height": 12, "cells": 181, "objects": 38}
+  {"template": "urw_gng_021_h", "placements": [{"x": 224, "y": 40, "role": "cave_end"}], "pmp": "data/templates/gng_021.pmp", "l2m": "data/templates/urw_gng_021_h.l2m", "width": 4, "height": 4, "cells": 16, "objects": 4}
+  {"template": "urw_hol_001_a", "placements": [{"x": 268, "y": 36, "role": "cave"}], "pmp": "data/templates/hol_001.pmp", "l2m": "data/templates/urw_hol_001_a.l2m", "width": 20, "height": 8, "cells": 160, "objects": 49}
+  {"template": "urw_gng_022_b", "placements": [{"x": 288, "y": 40, "role": "cave_end"}], "pmp": "data/templates/gng_022.pmp", "l2m": "data/templates/urw_gng_022_b.l2m", "width": 4, "height": 4, "cells": 16, "objects": 8}
+  {"template": "urw_gng_013_c", "placements": [{"x": 244, "y": 40, "role": "tunnel"}], "pmp": "data/templates/gng_013.pmp", "l2m": "data/templates/urw_gng_013_c.l2m", "width": 4, "height": 4, "cells": 16, "objects": 7}
+  {"template": "urw_gng_003_c", "placements": [{"x": 248, "y": 40, "role": "tunnel"}], "pmp": "data/templates/gng_003.pmp", "l2m": "data/templates/urw_gng_003_c.l2m", "width": 12, "height": 4, "cells": 48, "objects": 8}
+  {"template": "urw_gng_002_a", "placements": [{"x": 260, "y": 40, "role": "tunnel"}, {"x": 136, "y": 152, "role": "story"}], "pmp": "data/templates/gng_002.pmp", "l2m": "data/templates/urw_gng_002_a.l2m", "width": 8, "height": 4, "cells": 64, "objects": 14}
+  {"template": "urw_gng_027_c", "placements": [{"x": 244, "y": 44, "role": "voodoo"}], "pmp": "data/templates/gng_027.pmp", "l2m": "data/templates/urw_gng_027_c.l2m", "width": 12, "height": 12, "cells": 144, "objects": 12}
+  {"template": "urw_gng_001_a", "placements": [{"x": 244, "y": 64, "role": "voodoo"}], "pmp": "data/templates/gng_001.pmp", "l2m": "data/templates/urw_gng_001_a.l2m", "width": 4, "height": 4, "cells": 16, "objects": 4}
+  {"template": "urw_gng_030_a", "placements": [{"x": 248, "y": 56, "role": "voodoo"}], "pmp": "data/templates/gng_030.pmp", "l2m": "data/templates/urw_gng_030_a.l2m", "width": 12, "height": 12, "cells": 130, "objects": 14}
+  {"template": "urw_gng_022_g", "placements": [{"x": 260, "y": 64, "role": "voodoo"}], "pmp": "data/templates/gng_022.pmp", "l2m": "data/templates/urw_gng_022_g.l2m", "width": 4, "height": 4, "cells": 16, "objects": 6}
+  {"template": "urw_unq_vodo_001_a", "placements": [{"x": 212, "y": 56, "role": "voodoo"}], "pmp": "data/templates/unq_vodo_001.pmp", "l2m": "data/templates/urw_unq_vodo_001_a.l2m", "width": 32, "height": 16, "cells": 512, "objects": 92}
+  {"template": "urw_gng_019_b", "placements": [{"x": 120, "y": 84, "role": "story"}], "pmp": "data/templates/gng_019.pmp", "l2m": "data/templates/urw_gng_019_b.l2m", "width": 4, "height": 4, "cells": 16, "objects": 5}
+  {"template": "urw_unq_einsiedler", "placements": [{"x": 64, "y": 76, "role": "story"}], "pmp": "data/templates/unq_einsiedler.pmp", "l2m": "data/templates/urw_unq_einsiedler.l2m", "width": 56, "height": 16, "cells": 756, "objects": 67}
+  {"template": "urw_unq_raetsel_001", "placements": [{"x": 148, "y": 76, "role": "story"}], "pmp": "data/templates/hol_raetsel_001.pmp", "l2m": "data/templates/urw_unq_raetsel_001.l2m", "width": 40, "height": 40, "cells": 966, "objects": 148}
+  {"template": "urw_gng_018_a", "placements": [{"x": 132, "y": 92, "role": "story"}], "pmp": "data/templates/gng_018.pmp", "l2m": "data/templates/urw_gng_018_a.l2m", "width": 4, "height": 4, "cells": 16, "objects": 5}
+  {"template": "urw_gng_044_a", "placements": [{"x": 124, "y": 84, "role": "story"}], "pmp": "data/templates/gng_044.pmp", "l2m": "data/templates/urw_gng_044_a.l2m", "width": 12, "height": 8, "cells": 81, "objects": 10}
+  {"template": "urw_gng_003_a", "placements": [{"x": 136, "y": 92, "role": "story"}], "pmp": "data/templates/gng_003.pmp", "l2m": "data/templates/urw_gng_003_a.l2m", "width": 12, "height": 4, "cells": 48, "objects": 9}
+  {"template": "urw_unq_vodo_003_a", "placements": [{"x": 168, "y": 150, "role": "story"}], "pmp": "data/templates/unq_vodo_003.pmp", "l2m": "data/templates/urw_unq_vodo_003_a.l2m", "width": 8, "height": 8, "cells": 64, "objects": 21}
+  {"template": "urw_unq_vodo_002_a", "placements": [{"x": 132, "y": 142, "role": "story"}], "pmp": "data/templates/unq_vodo_002.pmp", "l2m": "data/templates/urw_unq_vodo_002_a.l2m", "width": 36, "height": 20, "cells": 706, "objects": 111}
+  {"template": "urw_unq_vodo_008_a", "placements": [{"x": 128, "y": 142, "role": "story"}], "pmp": "data/templates/unq_vodo_gng.pmp", "l2m": "data/templates/urw_unq_vodo_008_a.l2m", "width": 4, "height": 40, "cells": 116, "objects": 8}
+  {"template": "urw_unq_vodo_004_a", "placements": [{"x": 96, "y": 142, "role": "story"}], "pmp": "data/templates/unq_vodo_004.pmp", "l2m": "data/templates/urw_unq_vodo_004_a.l2m", "width": 32, "height": 20, "cells": 540, "objects": 123}
+  {"template": "urw_unq_vodo_007_a", "placements": [{"x": 104, "y": 162, "role": "story"}], "pmp": "data/templates/hol_022.pmp", "l2m": "data/templates/urw_unq_vodo_007_a.l2m", "width": 24, "height": 12, "cells": 260, "objects": 58}
+  {"template": "urw_unq_vodo_005_a", "placements": [{"x": 132, "y": 162, "role": "story"}], "pmp": "data/templates/hol_014.pmp", "l2m": "data/templates/urw_unq_vodo_005_a.l2m", "width": 20, "height": 20, "cells": 331, "objects": 24}
+  {"template": "urw_unq_vodo_006_a", "placements": [{"x": 152, "y": 162, "role": "story"}], "pmp": "data/templates/unq_vodo_006.pmp", "l2m": "data/templates/urw_unq_vodo_006_a.l2m", "width": 16, "height": 20, "cells": 203, "objects": 15}
+  {"template": "urw_unq_feen", "placements": [{"x": 60, "y": 160, "role": "story"}], "pmp": "data/templates/unq_feen.pmp", "l2m": "data/templates/urw_unq_feen.l2m", "width": 80, "height": 48, "cells": 3095, "objects": 368}
+  {"template": "urw_unq_troll_012_a", "placements": [{"x": 60, "y": 88, "role": "story"}], "pmp": "data/templates/unq_troll_012.pmp", "l2m": "data/templates/urw_unq_troll_012_a.l2m", "width": 24, "height": 16, "cells": 304, "objects": 79}
+  {"template": "urw_gng_015_b", "placements": [{"x": 144, "y": 148, "role": "story"}], "pmp": "data/templates/gng_015.pmp", "l2m": "data/templates/urw_gng_015_b.l2m", "width": 4, "height": 4, "cells": 16, "objects": 4}
+  {"template": "urw_unq_troll_005_a", "placements": [{"x": 148, "y": 132, "role": "story"}], "pmp": "data/templates/unq_troll_005.pmp", "l2m": "data/templates/urw_unq_troll_005_a.l2m", "width": 68, "height": 36, "cells": 2103, "objects": 354}
+  {"template": "urw_unq_troll_001_a", "placements": [{"x": 92, "y": 136, "role": "story"}], "pmp": "data/templates/unq_troll_001.pmp", "l2m": "data/templates/urw_unq_troll_001_a.l2m", "width": 32, "height": 16, "cells": 432, "objects": 147}
+  {"template": "urw_gng_020_a", "placements": [{"x": 144, "y": 152, "role": "story"}], "pmp": "data/templates/gng_020.pmp", "l2m": "data/templates/urw_gng_020_a.l2m", "width": 4, "height": 4, "cells": 16, "objects": 4}
+  {"template": "urw_gng_025_b", "placements": [{"x": 124, "y": 144, "role": "story"}], "pmp": "data/templates/gng_025.pmp", "l2m": "data/templates/urw_gng_025_b.l2m", "width": 12, "height": 12, "cells": 144, "objects": 16}
+  {"template": "urw_unq_metalltor", "placements": [{"x": 160, "y": 168, "role": "story"}], "pmp": "data/templates/unq_urw_metalltor.pmp", "l2m": "data/templates/urw_unq_metalltor.l2m", "width": 56, "height": 24, "cells": 1223, "objects": 58}
+  {"template": "swf_unq_start", "placements": [{"x": 164, "y": 192, "role": "story"}], "pmp": "data/templates/unq_swf_start.pmp", "l2m": "data/templates/swf_unq_start.l2m", "width": 52, "height": 24, "cells": 1194, "objects": 118}
+  {"template": "swf_unq_start2", "placements": [{"x": 216, "y": 196, "role": "story"}], "pmp": "data/templates/hol_015.pmp", "l2m": "data/templates/swf_unq_start2.l2m", "width": 56, "height": 20, "cells": 904, "objects": 72}
+  {"template": "swf_gng_022_c", "placements": [{"x": 272, "y": 208, "role": "story"}], "pmp": "data/templates/gng_022.pmp", "l2m": "data/templates/swf_gng_022_c.l2m", "width": 4, "height": 4, "cells": 16, "objects": 9}
+
+=== сверка с формулой оригинала (std = (244, 40)) ===
+  urw_unq_start                (208, 0)  →  (std_x-36, std_y-40)
+  urw_unq_hoehlenmalerei       (30, 23)  →  (std_x-214, std_y-17)
+  urw_hol_027_a                (228, 36)  →  (std_x-16, std_y-4)
+  urw_gng_021_h                (224, 40)  →  (std_x-20, std_y+0)
+  urw_hol_001_a                (268, 36)  →  (std_x+24, std_y-4)
+  urw_gng_022_b                (288, 40)  →  (std_x+44, std_y+0)
+  urw_gng_013_c                (244, 40)  →  (std_x+0, std_y+0)
+  urw_gng_003_c                (248, 40)  →  (std_x+4, std_y+0)
+  urw_gng_002_a                (260, 40)  →  (std_x+16, std_y+0)
+  urw_gng_027_c                (244, 44)  →  (std_x+0, std_y+4)
+  urw_gng_001_a                (244, 64)  →  (std_x+0, std_y+24)
+  urw_gng_030_a                (248, 56)  →  (std_x+4, std_y+16)
+  urw_gng_022_g                (260, 64)  →  (std_x+16, std_y+24)
+  urw_unq_vodo_001_a           (212, 56)  →  (std_x-32, std_y+16)

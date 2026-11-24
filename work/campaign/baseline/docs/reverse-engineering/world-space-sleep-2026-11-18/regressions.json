@@ -1,0 +1,155 @@
+[
+  {
+    "test": "world_space",
+    "exit_code": 0,
+    "markers": [
+      "WORLD_SPACE_SELF_TEST checks=24 failures=0"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "floor_sleep",
+    "exit_code": 0,
+    "markers": [
+      "FLOOR_SLEEP_SELF_TEST checks=53 failures=0"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "native_terrain_state",
+    "exit_code": 0,
+    "markers": [
+      "NATIVE_TERRAIN_STATE_SELF_TEST_OK assertions=76 fixtures=7"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "native_terrain_render",
+    "exit_code": 0,
+    "markers": [
+      "NATIVE_TERRAIN_RENDER_SELF_TEST_OK assertions=556 vertices=15906 textures=41"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "native_corridor_input",
+    "exit_code": 0,
+    "markers": [
+      "NATIVE_CORRIDOR_INPUT_SELF_TEST_OK assertions=85"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "manual_dig_region",
+    "exit_code": 0,
+    "markers": [
+      "MANUAL_DIG_REGION_SELF_TEST_OK assertions=27"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "wall_branch_continuation",
+    "exit_code": 0,
+    "markers": [
+      "WALL_BRANCH_CONTINUATION_SELF_TEST checks=16 failures=0 mutations=12 max_step=0.085717"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "surface_depth_route",
+    "exit_code": 0,
+    "markers": [
+      "SURFACE_DEPTH_ROUTE_SELF_TEST checks=19 failures=0"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "native_surface_walk",
+    "exit_code": 0,
+    "markers": [
+      "NATIVE_SURFACE_WALK_SELF_TEST_OK assertions=45 trips=2 floors=2 wall_idle=ok"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "native_dwarf_life",
+    "exit_code": 0,
+    "markers": [
+      "NATIVE_DWARF_LIFE_SELF_TEST checks=194 failures=0"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "dwarf_life_runtime",
+    "exit_code": 0,
+    "markers": [
+      "DWARF_LIFE_RUNTIME_SELF_TEST checks=27 failures=0"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "native_actor_tasks",
+    "exit_code": 0,
+    "markers": [
+      "NATIVE_ACTOR_TASKS_SELF_TEST checks=76 failures=0"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "dwarf_task_runtime",
+    "exit_code": 0,
+    "markers": [
+      "DWARF_TASK_RUNTIME_SELF_TEST checks=39 failures=0"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "dwarf_parallel_work",
+    "exit_code": 0,
+    "markers": [
+      "DWARF_PARALLEL_WORK_SELF_TEST_OK assertions=21 workers=2 independent_walkers=3 mutations=2"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "world_model_light",
+    "exit_code": 0,
+    "markers": [
+      "WORLD_MODEL_LIGHT_SELF_TEST checks=31 failures=0"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "automatic_torch_runtime",
+    "exit_code": 0,
+    "markers": [
+      "AUTOMATIC_TORCH_RUNTIME_SELF_TEST checks=33 failures=0"
+    ],
+    "errors": [],
+    "ok": true
+  },
+  {
+    "test": "native_scene_profile",
+    "exit_code": 0,
+    "markers": [
+      "NATIVE_PROFILE_SELF_TEST_OK lights=9 editor_markers=0 retained_triangles=5302 source_triangles=5619 terrain_surfaces=168"
+    ],
+    "errors": [],
+    "ok": true
+  }
+]

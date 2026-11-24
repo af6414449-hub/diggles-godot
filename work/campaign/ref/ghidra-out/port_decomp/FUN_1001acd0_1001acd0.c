@@ -1,0 +1,166 @@
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined * FUN_1001acd0(void)
+
+{
+  undefined4 *puVar1;
+  int iVar2;
+  
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  DAT_1005112c = 0;
+  _DAT_10051128 = 0;
+  iVar2 = 0x400;
+  _DAT_10051130 = 0;
+  DAT_10051140 = 0;
+  _DAT_1005113c = 0;
+  _DAT_10051144 = 0;
+  _DAT_10052180 = 0;
+  _DAT_1005217c = 0;
+  _DAT_10052178 = 0;
+  _DAT_100521a0 = 0;
+  _DAT_10052190 = 0;
+  uRam10052194 = 0;
+  uRam10052198 = 0;
+  uRam1005219c = 0;
+  _DAT_10052188 = 0;
+  _DAT_100521a4 = 0;
+  puVar1 = &DAT_10052ecc;
+  do {
+    puVar1[1] = 0;
+    *puVar1 = 0x3f800000;
+    puVar1[2] = 0x3f800000;
+    puVar1[-1] = 0x49742400;
+    puVar1[-2] = 0;
+    puVar1[-8] = 0;
+    puVar1[-7] = 0;
+    puVar1[-6] = 0;
+    puVar1[-5] = 0;
+    puVar1[-4] = 0;
+    puVar1[-3] = 0;
+    puVar1[7] = 0;
+    puVar1[3] = 0;
+    puVar1[5] = 0;
+    puVar1[4] = 0;
+    puVar1[6] = 0;
+    puVar1[0x10] = 0;
+    puVar1[0x11] = 0;
+    puVar1[8] = 0;
+    puVar1[9] = 0;
+    puVar1[10] = 0;
+    puVar1[0xb] = 0;
+    puVar1[0xc] = 0;
+    puVar1[0xd] = 0;
+    puVar1[0xe] = 0;
+    puVar1[0xf] = 0;
+    iVar2 = iVar2 + -1;
+    puVar1 = puVar1 + 0x1a;
+  } while (iVar2 != 0);
+  DAT_10051118 = 0;
+  DAT_10052154 = 2;
+  _DAT_100521a8 = 0;
+  uRam100521ac = 0;
+  uRam100521b0 = 0;
+  uRam100521b4 = 0;
+  _DAT_10052174 = 1;
+  DAT_1006deb8 = 1;
+  _DAT_10051110 = 0;
+  _DAT_10051114 = 0;
+  _DAT_1005111c = 0;
+  DAT_10051134 = 0;
+  _DAT_10051138 = 0;
+  _DAT_10052150 = 0;
+  _DAT_10052158 = 0;
+  _DAT_1005215c = 0;
+  _DAT_10052160 = 0;
+  _DAT_10052164 = 0;
+  _DAT_10052168 = 0;
+  _DAT_1005216c = 0;
+  _DAT_10052170 = 0;
+  puVar1 = &DAT_1006ceb4;
+  for (iVar2 = 0x401; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar1 = 0;
+    puVar1 = puVar1 + 1;
+  }
+  _DAT_100521b8 = 0;
+  DAT_100521d8 = 0;
+  _DAT_100521bc = 0;
+  DAT_100521dc = 0;
+  _DAT_100521c0 = 0;
+  _DAT_100521e0 = 0;
+  _DAT_100521c4 = 0;
+  _DAT_100521e4 = 0;
+  _DAT_100521c8 = 0;
+  _DAT_100521e8 = 0;
+  _DAT_100521cc = 0;
+  _DAT_100521ec = 0;
+  _DAT_100521d0 = 0;
+  _DAT_100521f0 = 0;
+  _DAT_100521d4 = 0;
+  _DAT_100521f4 = 0;
+  puVar1 = &DAT_10052218;
+  do {
+    puVar1[0x100] = 0;
+    *puVar1 = 0;
+    puVar1[0x200] = 0;
+    puVar1 = puVar1 + 1;
+  } while ((int)puVar1 < 0x10052618);
+  _DAT_100521f8 = 0;
+  _DAT_100521fc = 0;
+  _DAT_10052200 = 0;
+  uRam10052204 = 0;
+  uRam10052208 = 0;
+  uRam1005220c = 0;
+  _DAT_10052210 = 0;
+  _DAT_10052214 = 0;
+  puVar1 = &DAT_10051150;
+  for (iVar2 = 0x400; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar1 = 0;
+    puVar1 = puVar1 + 1;
+  }
+  _DAT_10052e20 = 0;
+  uRam10052e24 = 0;
+  uRam10052e28 = 0;
+  uRam10052e2c = 0xbf800000;
+  _DAT_10052e30 = 0;
+  uRam10052e34 = 0x3f800000;
+  uRam10052e38 = 0;
+  uRam10052e3c = 0;
+  DAT_1006ceac = 0;
+  DAT_1006ceb0 = 0;
+  _DAT_10052e18 = 0;
+  _DAT_10052e1c = 0;
+  _DAT_10052e40 = 0;
+  _DAT_10052e44 = 0;
+  _DAT_10051124 = 0;
+  DAT_10051148 = 0;
+  DAT_1005114c = 0;
+  _DAT_10052e48 = 0x43aba666;
+  DAT_10051120 = 0x10;
+  _DAT_10052e4c = 0;
+  _DAT_10052e50 = 0;
+  _DAT_10052e54 = 0;
+  uRam10052e58 = 0;
+  _DAT_10052e5c = 0;
+  _DAT_10052e60 = 0;
+  uRam10052e64 = 0;
+  uRam10052e68 = 0;
+  _DAT_10052e6c = 0;
+  _DAT_10052e70 = 0;
+  _DAT_10052e74 = 0;
+  _DAT_10052e78 = 0;
+  _DAT_10052e7c = 0;
+  _DAT_10052e80 = 0;
+  uRam10052e84 = 0;
+  uRam10052e88 = 0;
+  _DAT_10052e8c = 0;
+  _DAT_10052e90 = 0;
+  uRam10052e94 = 0;
+  uRam10052e98 = 0;
+  _DAT_10052e9c = 0;
+  _DAT_10052ea0 = 0;
+  _DAT_10052ea4 = 0;
+  _DAT_10052ea8 = 0;
+  return &DAT_10051110;
+}
+

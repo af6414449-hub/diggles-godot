@@ -1,0 +1,27 @@
+SCRIPT ERROR: Parse Error: Function "_trigger()" not found in base self.
+   at: GDScript::reload (res://scripts/native_raupe_actor.gd:124)
+SCRIPT ERROR: Parse Error: Function "_trigger()" not found in base self.
+   at: GDScript::reload (res://scripts/native_raupe_actor.gd:179)
+SCRIPT ERROR: Parse Error: Function "_trigger()" not found in base self.
+   at: GDScript::reload (res://scripts/native_raupe_actor.gd:217)
+SCRIPT ERROR: Parse Error: Function "_trigger()" not found in base self.
+   at: GDScript::reload (res://scripts/native_raupe_actor.gd:248)
+SCRIPT ERROR: Parse Error: Function "_trigger()" not found in base self.
+   at: GDScript::reload (res://scripts/native_raupe_actor.gd:269)
+SCRIPT ERROR: Parse Error: Function "_trigger()" not found in base self.
+   at: GDScript::reload (res://scripts/native_raupe_actor.gd:435)
+SCRIPT ERROR: Parse Error: Function "_trigger()" not found in base self.
+   at: GDScript::reload (res://scripts/native_raupe_actor.gd:600)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://tools/native_raupe_actor_self_test.gd:0)
+ERROR: Failed to load script "res://tools/native_raupe_actor_self_test.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: _make_actor (res://tools/native_raupe_actor_self_test.gd:83)
+   GDScript backtrace (most recent call first):
+       [0] _make_actor (res://tools/native_raupe_actor_self_test.gd:83)
+       [1] _run (res://tools/native_raupe_actor_self_test.gd:91)
+SCRIPT ERROR: Cannot call method 'call' on a null value.
+   at: _run (res://tools/native_raupe_actor_self_test.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tools/native_raupe_actor_self_test.gd:92)

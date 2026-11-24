@@ -1,0 +1,446 @@
+extends RefCounted
+## Imported initial C+0x3C navigation bytes. A changed, unrecomputed cache is
+## unknown; the original cached flags must never silently survive excavation.
+##
+## The navigation bytes stay the source-derived 0/1/3 walk bytes of EXE
+## 0x5A6B40. rebuild_after_strike keeps an incremental cache of the current
+## BlockDB surface heights and evaluates the native-clipped dependency rect
+## against that cache instead of re-reading the host height table through a
+## Callable for every probe of every sample.
+##
+## Source basis of the cache: the native producer materialises the very same
+## padded height window before it evaluates samples (0x5A6BD7..0x5A6C3B builds
+## (L-8, T-16, R+8, B+2) and 0x595E40 fills it from the current BDB refs).
+## That window is exactly the probe footprint of the output rect, grown by one
+## sample on each side. This implementation keeps the same window alive across
+## strikes and refetches only the cells whose block ref a strike replaced.
+
+const PRODUCER: Script = preload("res://scripts/native_walk_flags.gd")
+const REPRESENTATIVE: Script = preload("res://scripts/native_navigation_representative.gd")
+
+## Native padded height window of the producer (0x5A6BD7..0x5A6C3B).
+const WINDOW_LEFT: int = 8
+const WINDOW_TOP: int = 16
+const WINDOW_RIGHT: int = 8
+const WINDOW_BOTTOM: int = 2
+
+## Dilation of a replaced cell by the probe footprint: a sample S changes only
+## when one of its probes reads a replaced height. The native clearance table
+## (0x5A6E0A..0x5A7578) probes dx in [-7,7] and dy in [-15,+1] around S, plus
+## the current sample itself. A replaced cell owns the samples
+## (cx*8..cx*8+7, cy*8..cy*8+7), so the samples that read it are exactly
+## S in (cx*8-7..cx*8+14, cy*8-1..cy*8+22). The native dependency rect
+## (L-8, T-2, R+8, B+16) is this very set grown by one sample on each side.
+const AFFECT_MIN_X: int = -7
+const AFFECT_MAX_X: int = 14
+const AFFECT_MIN_Y: int = -1
+const AFFECT_MAX_Y: int = 22
+
+var representatives_revision: int = -1
+var representatives: Dictionary = {}
+
+var data: Dictionary = {}
+var flags: PackedByteArray = PackedByteArray()
+var unknown_samples: PackedByteArray = PackedByteArray()
+var sample_bounds: Rect2i
+var current: bool = false
+var unknown_count: int = 0
+var revision: int = 0
+var stage: String = "initial_pmp_cache"
+var last_rebuild: Dictionary = {}
+
+## Current BlockDB surface height per sample. `surface_known` is 1 only for a
+## real current height; a cached null stays unknown.
+var surface_heights: PackedInt32Array = PackedInt32Array()
+## 0 = never read, 1 = current, 2 = stale (the owning cell block was replaced).
+var surface_state: PackedByteArray = PackedByteArray()
+## 1 = the cached navigation byte equals the current computed value.
+var verified_samples: PackedByteArray = PackedByteArray()
+## 1 = the sample may have changed in this rebuild.
+var dirty_flag: PackedByteArray = PackedByteArray()
+## Material gate byte per map cell: 0 = not fetched, 1 = fetched, 2 = null.
+var gate_state: PackedByteArray = PackedByteArray()
+var gate_values: PackedByteArray = PackedByteArray()
+
+var grid_origin: Vector2i = Vector2i.ZERO
+var grid_stride: int = 0
+var grid_rows: int = 0
+var cell_origin: Vector2i = Vector2i.ZERO
+var cell_width: int = 0
+var cell_height: int = 0
+## Restrict the recompute to the samples a strike can really change.
+var narrow_to_dirty_samples: bool = true
+## The gate byte of a cell may only change together with its block ref.
+var assume_static_gate: bool = true
+var cache_stats: Dictionary = {}
+
+
+func load_map(path: String, terrain: Dictionary) -> bool:
+	representatives_revision = -1
+	representatives.clear()
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
+	if not parsed is Dictionary:
+		return false
+	data = parsed
+	if data.get("source_pmp_sha256") != terrain.get("source_pmp_sha256") \
+			or data.get("source_bdb_sha256") != terrain.get("source_bdb_sha256"):
+		return false
+	var width: int = int(data.get("width", 0))
+	var height: int = int(data.get("height", 0))
+	if width != int(terrain["width"]) * 8 or height != int(terrain["height"]) * 8:
+		return false
+	var source_flags: Array = data.get("flags", [])
+	if source_flags.size() != width * height:
+		return false
+	for value: int in source_flags:
+		if value < 0 or value > 3:
+			return false
+	flags = PackedByteArray(source_flags)
+	unknown_samples.resize(flags.size())
+	unknown_samples.fill(0)
+	unknown_count = 0
+	sample_bounds = Rect2i(0, 0, width, height)
+	_initialize_caches()
+	current = true
+	return true
+
+
+func _initialize_caches() -> void:
+	grid_origin = sample_bounds.position
+	grid_stride = sample_bounds.size.x
+	grid_rows = sample_bounds.size.y
+	cell_origin = Vector2i(floori(float(grid_origin.x) / 8.0), floori(float(grid_origin.y) / 8.0))
+	cell_width = ceili(float(grid_origin.x + grid_stride) / 8.0) - cell_origin.x
+	cell_height = ceili(float(grid_origin.y + grid_rows) / 8.0) - cell_origin.y
+	var sample_total: int = grid_stride * grid_rows
+	surface_heights = PackedInt32Array()
+	surface_heights.resize(sample_total)
+	surface_heights.fill(-1)
+	surface_state = PackedByteArray()
+	surface_state.resize(sample_total)
+	surface_state.fill(0)
+	verified_samples = PackedByteArray()
+	verified_samples.resize(sample_total)
+	verified_samples.fill(0)
+	dirty_flag = PackedByteArray()
+	dirty_flag.resize(sample_total)
+	dirty_flag.fill(0)
+	var cell_total: int = maxi(cell_width * cell_height, 0)
+	gate_state = PackedByteArray()
+	gate_state.resize(cell_total)
+	gate_state.fill(0)
+	gate_values = PackedByteArray()
+	gate_values.resize(cell_total)
+	gate_values.fill(0)
+	cache_stats = {"height_fetches": 0, "cell_fetches": 0, "gate_fetches": 0}
+
+
+func sample(point: Vector2i) -> Variant:
+	if not sample_bounds.has_point(point):
+		return null
+	var index: int = point.y * sample_bounds.size.x + point.x
+	if unknown_samples[index] != 0:
+		return null
+	return int(flags[index])
+
+
+func cell_representative(cell: Vector2i) -> Variant:
+	if representatives_revision!=revision:
+		representatives.clear()
+		representatives_revision = revision
+	if representatives.has(cell):
+		return representatives[cell]
+	var bytes: PackedByteArray = PackedByteArray()
+	for y: int in range(8):
+		for x: int in range(8):
+			var value: Variant = sample(cell*8+Vector2i(x,y))
+			if value==null or (int(value)&12)!=0:
+				representatives[cell] = null
+				return null
+			bytes.append(int(value))
+	var local: Variant = REPRESENTATIVE.choose(bytes)
+	if local is Vector2i:
+		representatives[cell] = cell*8+local
+	else:
+		representatives[cell] = null
+	return representatives[cell]
+
+
+func is_newly_navigable(point: Vector2i) -> bool:
+	# Compare current source terrain bytes against the preserved initial PMP.
+	# Unknown/closed samples must not be offered as newly opened destinations.
+	var value: Variant = sample(point)
+	if value == null or (int(value) & 1) == 0:
+		return false
+	var index: int = point.y * sample_bounds.size.x + point.x
+	return (int(data["flags"][index]) & 1) == 0
+
+
+func invalidate() -> void:
+	unknown_samples.fill(1)
+	unknown_count = flags.size()
+	for index: int in range(surface_state.size()):
+		surface_state[index] = 2
+		verified_samples[index] = 0
+	current = false
+	stage = "dirty_unknown"
+
+
+func rebuild_after_strike(patch: Dictionary, heights: Callable, gates: Callable, world_sample_bounds: Rect2i,
+		surface_cells: Callable = Callable()) -> Dictionary:
+	# Native producer 0x5A6B40 clips by +24,+16,-24,-24 samples.
+	# Object overlays are a separate, currently unported pass; this is terrain.
+	var producer_bounds: Rect2i = Rect2i(world_sample_bounds.position + Vector2i(24, 16),
+		world_sample_bounds.size - Vector2i(48, 40))
+	var rebuilt: int = 0
+	var changed: int = 0
+	var skipped: int = 0
+	var rebuilt_full: int = 0
+	var rects: Array[Rect2i] = []
+	var replaced: Array[Vector2i] = _invalidate_replaced_cells(patch)
+	var affected: Array[Rect2i] = []
+	var narrowed: bool = narrow_to_dirty_samples and assume_static_gate and patch.has("changes")
+	if narrowed:
+		affected = _affected_rects(replaced)
+		_mark_affected(affected)
+	for invalidation: Dictionary in patch["invalidations"]:
+		if (int(invalidation["flags"]) & 0x10000) == 0:
+			continue
+		var clipped: Rect2i = (invalidation["rect"] as Rect2i).intersection(world_sample_bounds)
+		if not clipped.has_area():
+			continue
+		var expanded: Rect2i = PRODUCER.terrain_dependency_rect(clipped).intersection(world_sample_bounds)
+		var output: Rect2i = expanded.intersection(producer_bounds).intersection(sample_bounds)
+		rects.append(output)
+		_prefetch_heights(output, heights, surface_cells)
+		_prefetch_gates(output, gates)
+		for y: int in range(output.position.y, output.end.y):
+			for x: int in range(output.position.x, output.end.x):
+				var point: Vector2i = Vector2i(x, y)
+				var index: int = (y - grid_origin.y) * grid_stride + (x - grid_origin.x)
+				if narrowed and verified_samples[index] != 0 and dirty_flag[index] == 0:
+					# The cached byte is already the current computed value and no
+					# input of this sample changed, so the full rebuild would have
+					# written the same byte here.
+					skipped += 1
+					if unknown_samples[index] == 0:
+						rebuilt_full += 1
+					continue
+				var gate: Variant = _gate_at(point)
+				var value: Variant = PRODUCER.terrain_sample_query_cached(point, surface_heights,
+					grid_origin, grid_stride, grid_rows, gate)
+				if value == null:
+					if unknown_samples[index] == 0:
+						unknown_count += 1
+					unknown_samples[index] = 1
+					verified_samples[index] = 1
+				else:
+					rebuilt += 1
+					rebuilt_full += 1
+					if int(flags[index]) != int(value):
+						changed += 1
+					flags[index] = int(value)
+					if unknown_samples[index] != 0:
+						unknown_count -= 1
+					unknown_samples[index] = 0
+					verified_samples[index] = 1
+	if narrowed:
+		_clear_affected(affected)
+	current = unknown_count == 0
+	revision += 1
+	stage = "native_terrain_rebuilt"
+	last_rebuild = {"rebuilt": rebuilt, "changed": changed, "unknown_total": unknown_count,
+		"rects": rects, "object_overlays_applied": false,
+		"rebuilt_full": rebuilt_full, "skipped": skipped, "narrowed": narrowed,
+		"replaced_cells": replaced.size(),
+		"height_fetches": int(cache_stats.get("height_fetches", 0)),
+		"cell_fetches": int(cache_stats.get("cell_fetches", 0)),
+		"gate_fetches": int(cache_stats.get("gate_fetches", 0))}
+	return last_rebuild
+
+
+func _invalidate_replaced_cells(patch: Dictionary) -> Array[Vector2i]:
+	# The native core writes exactly four block refs (NW/NE/SW/SE) per accepted
+	# strike, so only those cells can change their surface heights.
+	var result: Array[Vector2i] = []
+	if not patch.has("changes"):
+		# Without the proven four-corner list no cached height may be trusted.
+		for index: int in range(surface_state.size()):
+			surface_state[index] = 2
+			verified_samples[index] = 0
+		return result
+	for change: Dictionary in patch["changes"]:
+		if int(change.get("before", -1)) == int(change.get("after", -2)):
+			continue
+		var cell: Vector2i = change["cell"] as Vector2i
+		result.append(cell)
+		_invalidate_cell(cell)
+	return result
+
+
+func _invalidate_cell(cell: Vector2i) -> void:
+	# A replaced cell changes its own 8x8 surface block. Its material byte can
+	# change with the block ref as well, so the cached gate of that cell is
+	# dropped too; the gate is refetched with the next prefetch.
+	if _cell_in_grid(cell.x, cell.y):
+		var gate_index: int = (cell.y - cell_origin.y) * cell_width + (cell.x - cell_origin.x)
+		gate_state[gate_index] = 0
+	for ly: int in range(8):
+		for lx: int in range(8):
+			var px: int = cell.x * 8 + lx - grid_origin.x
+			var py: int = cell.y * 8 + ly - grid_origin.y
+			if px < 0 or py < 0 or px >= grid_stride or py >= grid_rows:
+				continue
+			surface_state[py * grid_stride + px] = 2
+			verified_samples[py * grid_stride + px] = 0
+
+
+func _affected_rects(replaced: Array[Vector2i]) -> Array[Rect2i]:
+	# The samples whose value a strike can change are exactly those whose
+	# height footprint or whose gate cell covers a replaced cell. The native
+	# dependency rect (L-8, T-2, R+8, B+16) is this set grown by one sample.
+	var result: Array[Rect2i] = []
+	for cell: Vector2i in replaced:
+		result.append(Rect2i(Vector2i(cell.x * 8 + AFFECT_MIN_X, cell.y * 8 + AFFECT_MIN_Y),
+			Vector2i(AFFECT_MAX_X - AFFECT_MIN_X + 1, AFFECT_MAX_Y - AFFECT_MIN_Y + 1)))
+		# The gate cell of a sample is floor((sample + 4) / 8), so the samples
+		# whose gate belongs to this cell are the shifted 8x8 window below.
+		result.append(Rect2i(Vector2i(cell.x * 8 - 4, cell.y * 8 - 4), Vector2i(8, 8)))
+	return result
+
+
+func _mark_affected(rects: Array[Rect2i]) -> void:
+	for rect: Rect2i in rects:
+		for y: int in range(rect.position.y, rect.end.y):
+			for x: int in range(rect.position.x, rect.end.x):
+				var px: int = x - grid_origin.x
+				var py: int = y - grid_origin.y
+				if px < 0 or py < 0 or px >= grid_stride or py >= grid_rows:
+					continue
+				var index: int = py * grid_stride + px
+				dirty_flag[index] = 1
+				verified_samples[index] = 0
+
+
+func _clear_affected(rects: Array[Rect2i]) -> void:
+	for rect: Rect2i in rects:
+		for y: int in range(rect.position.y, rect.end.y):
+			for x: int in range(rect.position.x, rect.end.x):
+				var px: int = x - grid_origin.x
+				var py: int = y - grid_origin.y
+				if px < 0 or py < 0 or px >= grid_stride or py >= grid_rows:
+					continue
+				dirty_flag[py * grid_stride + px] = 0
+
+
+func _prefetch_heights(output: Rect2i, heights: Callable, surface_cells: Callable) -> void:
+	# The producer reads the padded window (L-8, T-16, R+8, B+2) of the output
+	# rect; only the positions whose cached height is stale are read again.
+	var window: Rect2i = Rect2i(output.position - Vector2i(WINDOW_LEFT, WINDOW_TOP),
+		output.size + Vector2i(WINDOW_LEFT + WINDOW_RIGHT, WINDOW_TOP + WINDOW_BOTTOM))
+	window = window.intersection(Rect2i(grid_origin, Vector2i(grid_stride, grid_rows)))
+	if not window.has_area():
+		return
+	if surface_cells.is_valid():
+		var first_cell: Vector2i = Vector2i(floori(float(window.position.x) / 8.0),
+			floori(float(window.position.y) / 8.0))
+		var last_cell: Vector2i = Vector2i(floori(float(window.end.x - 1) / 8.0),
+			floori(float(window.end.y - 1) / 8.0))
+		for cy: int in range(first_cell.y, last_cell.y + 1):
+			for cx: int in range(first_cell.x, last_cell.x + 1):
+				_refresh_cell(cx, cy, surface_cells)
+		return
+	for y: int in range(window.position.y, window.end.y):
+		for x: int in range(window.position.x, window.end.x):
+			var index: int = (y - grid_origin.y) * grid_stride + (x - grid_origin.x)
+			if surface_state[index] == 1:
+				continue
+			var value: Variant = heights.call(Vector2i(x, y))
+			surface_state[index] = 1
+			cache_stats["height_fetches"] = int(cache_stats.get("height_fetches", 0)) + 1
+			if value == null:
+				surface_heights[index] = -1
+			else:
+				surface_heights[index] = int(value) & 0xFF
+
+
+func _refresh_cell(cx: int, cy: int, surface_cells: Callable) -> void:
+	# One host call returns the whole 8x8 surface block of one map cell.
+	var cell: Vector2i = Vector2i(cx, cy)
+	if not _cell_in_grid(cx, cy):
+		return
+	var cell_index: int = (cy - cell_origin.y) * cell_width + (cx - cell_origin.x)
+	if cell_index < 0 or cell_index >= cell_width * cell_height:
+		return
+	var base_x: int = cx * 8
+	var base_y: int = cy * 8
+	var needed: bool = false
+	for ly: int in range(8):
+		for lx: int in range(8):
+			var px: int = base_x + lx - grid_origin.x
+			var py: int = base_y + ly - grid_origin.y
+			if px < 0 or py < 0 or px >= grid_stride or py >= grid_rows:
+				continue
+			if surface_state[py * grid_stride + px] != 1:
+				needed = true
+				break
+		if needed:
+			break
+	if not needed:
+		return
+	var samples: Variant = surface_cells.call(cell)
+	cache_stats["cell_fetches"] = int(cache_stats.get("cell_fetches", 0)) + 1
+	var has_samples: bool = samples is PackedByteArray and (samples as PackedByteArray).size() == 64
+	for ly: int in range(8):
+		for lx: int in range(8):
+			var px: int = base_x + lx - grid_origin.x
+			var py: int = base_y + ly - grid_origin.y
+			if px < 0 or py < 0 or px >= grid_stride or py >= grid_rows:
+				continue
+			var index: int = py * grid_stride + px
+			surface_state[index] = 1
+			if has_samples:
+				surface_heights[index] = int((samples as PackedByteArray)[ly * 8 + lx]) & 0xFF
+			else:
+				surface_heights[index] = -1
+
+
+func _prefetch_gates(output: Rect2i, gates: Callable) -> void:
+	# The gate cell of a sample is floor((sample+4)/8); fetch each of them once.
+	var first: Vector2i = Vector2i((output.position.x + 4) >> 3, (output.position.y + 4) >> 3)
+	var last: Vector2i = Vector2i((output.end.x - 1 + 4) >> 3, (output.end.y - 1 + 4) >> 3)
+	for cy: int in range(first.y, last.y + 1):
+		for cx: int in range(first.x, last.x + 1):
+			if not _cell_in_grid(cx, cy):
+				continue
+			var cell_index: int = (cy - cell_origin.y) * cell_width + (cx - cell_origin.x)
+			if gate_state[cell_index] != 0:
+				continue
+			var value: Variant = gates.call(Vector2i(cx, cy))
+			cache_stats["gate_fetches"] = int(cache_stats.get("gate_fetches", 0)) + 1
+			if value == null:
+				gate_state[cell_index] = 2
+			else:
+				gate_state[cell_index] = 1
+				gate_values[cell_index] = int(value) & 0xFF
+
+
+func _cell_in_grid(cx: int, cy: int) -> bool:
+	# The flat cell index (cy - cell_origin.y) * cell_width + (cx - cell_origin.x)
+	# is unique only inside the cell grid. A cell one column past the right edge
+	# aliases the first cell of the next row and would poison that cell's
+	# cached gate, so every cell access is bounds checked by coordinate.
+	return cx >= cell_origin.x and cy >= cell_origin.y \
+		and cx < cell_origin.x + cell_width and cy < cell_origin.y + cell_height
+
+
+func _gate_at(point: Vector2i) -> Variant:
+	var cell: Vector2i = Vector2i((point.x + 4) >> 3, (point.y + 4) >> 3)
+	if not _cell_in_grid(cell.x, cell.y):
+		return null
+	var cell_index: int = (cell.y - cell_origin.y) * cell_width + (cell.x - cell_origin.x)
+	if cell_index < 0 or cell_index >= cell_width * cell_height:
+		return null
+	if gate_state[cell_index] == 1:
+		return int(gate_values[cell_index])
+	return null

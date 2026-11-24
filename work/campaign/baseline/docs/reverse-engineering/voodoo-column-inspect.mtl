@@ -1,0 +1,9 @@
+newmtl Trollh_Boden_b_256
+Kd 1 1 1
+Ka 0 0 0
+map_Kd Trollh_Boden_b_256.tga
+
+newmtl Urwald_stein_256
+Kd 1 1 1
+Ka 0 0 0
+map_Kd Urwald_stein_256.tga

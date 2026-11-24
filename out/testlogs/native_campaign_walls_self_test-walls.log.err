@@ -1,0 +1,6 @@
+FAIL: only the real step between the ground and the floor is walled
+FAIL: the wall is as high as the step
+FAIL: the wall stands on the shared edge
+FAIL: the wall ends at the ground
+FAIL: the normal points into the excavation
+NATIVE_CAMPAIGN_WALLS_SELF_TEST_FAIL failures=5

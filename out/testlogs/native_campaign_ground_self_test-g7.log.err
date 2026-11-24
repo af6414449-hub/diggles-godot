@@ -1,0 +1,3 @@
+FAIL: the rock of the map covers 267776 cells of the save
+FAIL: the north west corner of the map is air
+NATIVE_CAMPAIGN_GROUND_SELF_TEST_FAIL failures=2

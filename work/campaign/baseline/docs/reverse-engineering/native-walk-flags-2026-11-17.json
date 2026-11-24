@@ -1,0 +1,340 @@
+{
+  "format": "diggles-native-walk-flags-evidence-v1",
+  "status": "confirmed_bounded_terrain_producer_and_object_byte_operation",
+  "date": "2026-11-17",
+  "sources": {
+    "exe": {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/Diggles.exe",
+      "image_base": "0x400000",
+      "sha256": "58a01d3d80670a6042c66a82684397c98e39c503e00a6e2c2c511f338a30ed74"
+    },
+    "pmp": {
+      "path": "data/Templates/multi_start_010.pmp",
+      "sha256": "b6fc5ef7b1800dce9fb0dd4a42de879b8198f25ac84eb82b524266378ddb7807",
+      "width": 44,
+      "height": 24
+    },
+    "bdb": {
+      "path": "data/BlockDB2.BDB",
+      "sha256": "13d06172ae42a42657c10fe6007c8213fc525a7fde8132fe0041f48c9507b856",
+      "metadata_stride": 89,
+      "metadata_offset": 2136412
+    }
+  },
+  "coordinates": {
+    "sample_per_map_unit": 8,
+    "byte_address": "C(sx>>3,sy>>3)+0x3C+(sy&7)*8+(sx&7)",
+    "height_address": "BDB.metadata[current_block_ref]+(sy&7)*8+(sx&7)",
+    "gate_cell": "((sx+4)>>3,(sy+4)>>3)",
+    "gate_byte": "C+0x18",
+    "gate_reject_mask": 128
+  },
+  "producer": {
+    "entry_va": "0x5A6B40",
+    "height_reader_va": "0x595E40",
+    "sample_writer_va": "0x596550",
+    "clearance_threshold_exclusive": 14,
+    "output_values": [
+      0,
+      1,
+      3
+    ],
+    "upper_edge": "H(x,y-1)+2 < H(x,y) AND H(x,y-11)+2 < H(x,y)",
+    "lower_edge": "H(x,y)+2 < H(x,y+1) AND H(x,y-10)+2 < H(x,y+1)",
+    "edge_va": [
+      "0x5A75E1..0x5A765B",
+      "0x5A7665..0x5A76E7"
+    ],
+    "gate_va": "0x5A6D76..0x5A6DC8"
+  },
+  "clearance_probes": [
+    [
+      0,
+      -8,
+      "0x5A6E0A"
+    ],
+    [
+      -7,
+      -15,
+      "0x5A6E59"
+    ],
+    [
+      7,
+      -15,
+      "0x5A6E93"
+    ],
+    [
+      0,
+      -15,
+      "0x5A6ECC"
+    ],
+    [
+      0,
+      -1,
+      "0x5A6F10"
+    ],
+    [
+      -7,
+      -8,
+      "0x5A6F4A"
+    ],
+    [
+      7,
+      -8,
+      "0x5A6F7D"
+    ],
+    [
+      -4,
+      -3,
+      "0x5A6FC5"
+    ],
+    [
+      4,
+      -3,
+      "0x5A7005"
+    ],
+    [
+      -7,
+      -5,
+      "0x5A7051"
+    ],
+    [
+      7,
+      -5,
+      "0x5A7087"
+    ],
+    [
+      -7,
+      -12,
+      "0x5A70DA"
+    ],
+    [
+      7,
+      -12,
+      "0x5A7116"
+    ],
+    [
+      -4,
+      -15,
+      "0x5A7154"
+    ],
+    [
+      4,
+      -15,
+      "0x5A718B"
+    ],
+    [
+      0,
+      -12,
+      "0x5A71C7"
+    ],
+    [
+      0,
+      -4,
+      "0x5A7202"
+    ],
+    [
+      -4,
+      -8,
+      "0x5A723E"
+    ],
+    [
+      4,
+      -8,
+      "0x5A7271"
+    ],
+    [
+      -3,
+      -13,
+      "0x5A72B9"
+    ],
+    [
+      3,
+      -13,
+      "0x5A72ED"
+    ],
+    [
+      -5,
+      -11,
+      "0x5A733E"
+    ],
+    [
+      5,
+      -11,
+      "0x5A7374"
+    ],
+    [
+      -2,
+      -10,
+      "0x5A73C1"
+    ],
+    [
+      2,
+      -10,
+      "0x5A73FD"
+    ],
+    [
+      -2,
+      -6,
+      "0x5A7441"
+    ],
+    [
+      2,
+      -6,
+      "0x5A7481"
+    ],
+    [
+      -5,
+      -5,
+      "0x5A74BB"
+    ],
+    [
+      5,
+      -5,
+      "0x5A74F5"
+    ],
+    [
+      -2,
+      -2,
+      "0x5A7539"
+    ],
+    [
+      2,
+      -2,
+      "0x5A7575"
+    ]
+  ],
+  "initial": {
+    "decode_va": "0x599D80..0x599DC2",
+    "writer_call_va": "0x599E50",
+    "dispatch_call_va": "0x599E9D",
+    "dispatch_flags": "0x40000",
+    "dependencies": [
+      "0x2",
+      "0x4",
+      "0x10",
+      "0x40"
+    ],
+    "terrain_producer_scheduled": false,
+    "rle_rule": "value=word&3; count=(word>>2) or 0x4000",
+    "rle_sample_count": 67584,
+    "rle_histogram": {
+      "0": 65544,
+      "1": 1473,
+      "3": 567
+    }
+  },
+  "dirty": {
+    "strike_calls": [
+      {
+        "va": "0x5972BF",
+        "flags": "0x10040",
+        "rect": "(8*x-8,8*y-8,8*x+8,8*y+8)"
+      },
+      {
+        "va": "0x5972FF",
+        "flags": "0x200",
+        "rect": "(8*x-4,8*y-4,8*x+4,8*y+4)"
+      }
+    ],
+    "terrain_dependency_va": "0x5A409E..0x5A40CE",
+    "terrain_dependency": "(L-8,T-2,R+8,B+16), flags=7",
+    "queue_order": [
+      {
+        "flag": "0x1",
+        "call_va": "0x5A495E",
+        "function_va": "0x5A6B40"
+      },
+      {
+        "flag": "0x2",
+        "call_va": "0x5A4A8C",
+        "function_va": "0x5A5DA0"
+      },
+      {
+        "flag": "0x4",
+        "call_va": "0x5A4BBC",
+        "function_va": "0x5A6350"
+      }
+    ],
+    "clip_policy": "External input; dispatcher clips before/after dependency expansion and producer also clips. World bounds intentionally not inferred."
+  },
+  "object_overlay": {
+    "entry_va": "0x5A5DA0",
+    "eligibility_va": "0x5A5F1B..0x5A5F40",
+    "eligibility": "(obj[0x268]!=0 OR obj[0x264]==INT_MAX) AND (obj[0x3D0]&0x400001)==0x400001",
+    "operation_va": "0x5A6106..0x5A61EF",
+    "formula": "(old & (obj[0x264]==INT_MAX ? 0 : 0xF3)) | uint8(obj[0x268])",
+    "rect_va": "0x5A5F46..0x5A60C3",
+    "order": "active object manager iteration order",
+    "limits": "Actual object rect, eligibility, order and source FPU placement rounding are caller inputs, not synthesized by this module."
+  },
+  "fixtures": [
+    {
+      "sample": [
+        55,
+        33
+      ],
+      "center_cell_byte18_high_bit": 0,
+      "required_height_default": 15,
+      "height_overrides": [],
+      "expected": 0,
+      "initial_rle_value": 0
+    },
+    {
+      "sample": [
+        171,
+        33
+      ],
+      "center_cell_byte18_high_bit": 0,
+      "required_height_default": 11,
+      "height_overrides": [
+        [
+          -7,
+          -15,
+          12
+        ]
+      ],
+      "expected": 1,
+      "initial_rle_value": 1
+    },
+    {
+      "sample": [
+        180,
+        84
+      ],
+      "center_cell_byte18_high_bit": 0,
+      "required_height_default": 11,
+      "height_overrides": [
+        [
+          0,
+          0,
+          15
+        ],
+        [
+          0,
+          1,
+          15
+        ]
+      ],
+      "expected": 3,
+      "initial_rle_value": 3
+    }
+  ],
+  "verification": {
+    "instruction_replay": {
+      "status": "CAPSTONE_INSTRUCTION_REPLAY_OK",
+      "cases": 4419,
+      "seed": "0x5A6B40",
+      "range": "0x5A6DBE..0x5A76EB",
+      "method": "Independent small interpreter of original predicate instructions; mocked checked-array accessor 0x41FAD0; positive in-range samples. Native process not executed."
+    },
+    "source_fixtures": "34 required height locations per fixture independently read from installed PMP refs / BDB metadata. Gate bit comes from initial PMP source byte high bit (0x599947..0x599A8E)."
+  },
+  "unknowns": [
+    "Live original frame at which dirty queues complete relative to vector_fixdig.",
+    "Actual runtime object snapshot and footprints; no guessed object fields.",
+    "Whole-map native boundary policy and placement are owned by another task."
+  ],
+  "hypotheses": [],
+  "limits": "Pure confirmed terrain predicate and object byte operation; no integrated current-map service, navigation graph, pathfinding, or attachments. Preserve initial RLE; replace native-clipped dirty samples using CURRENT BDB refs; replay eligible objects. Integer arithmetic has no float32/Godot-double mismatch in positive bounded map XY."
+}

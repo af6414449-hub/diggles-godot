@@ -1,0 +1,177 @@
+{
+  "ok": true,
+  "exe_sha256": "58a01d3d80670a6042c66a82684397c98e39c503e00a6e2c2c511f338a30ed74",
+  "native_depth_emitter_va": "0x409baf",
+  "logical_to_render": {
+    "scale": 0.5,
+    "offset": 7.0
+  },
+  "map_axes": {
+    "x": "horizontal",
+    "y": "vertical/down",
+    "z": "logical depth"
+  },
+  "corner_checks": 531,
+  "corner_depth_pairs": [
+    [
+      1,
+      7.5
+    ],
+    [
+      2,
+      8.0
+    ],
+    [
+      3,
+      8.5
+    ],
+    [
+      4,
+      9.0
+    ],
+    [
+      5,
+      9.5
+    ],
+    [
+      6,
+      10.0
+    ],
+    [
+      7,
+      10.5
+    ],
+    [
+      8,
+      11.0
+    ],
+    [
+      9,
+      11.5
+    ],
+    [
+      10,
+      12.0
+    ],
+    [
+      11,
+      12.5
+    ],
+    [
+      12,
+      13.0
+    ],
+    [
+      13,
+      13.5
+    ],
+    [
+      14,
+      14.0
+    ],
+    [
+      15,
+      14.5
+    ]
+  ],
+  "floor": {
+    "source_y": 10.5,
+    "logical_depth_range": [
+      1,
+      15
+    ],
+    "cells": [
+      [
+        5,
+        10
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        10
+      ],
+      [
+        11,
+        10
+      ],
+      [
+        12,
+        10
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        14,
+        10
+      ],
+      [
+        15,
+        10
+      ],
+      [
+        16,
+        10
+      ]
+    ]
+  },
+  "wall_torches": [
+    {
+      "ordinal": 1,
+      "position": [
+        9.2668,
+        9.32853,
+        1.01
+      ],
+      "wall_logical_depth": 1,
+      "wall_render_depth": 7.5,
+      "torch_render_depth": 7.505,
+      "render_clearance": 0.0050000000000000044
+    },
+    {
+      "ordinal": 14,
+      "position": [
+        13.7457,
+        9.19199,
+        1.01
+      ],
+      "wall_logical_depth": 1,
+      "wall_render_depth": 7.5,
+      "torch_render_depth": 7.505,
+      "render_clearance": 0.0050000000000000044
+    }
+  ],
+  "native_normals": 256,
+  "runtime_checks": {
+    "path": "docs\\reverse-engineering\\flag-standards-final\\scene_space.json",
+    "placements": 70,
+    "views": 3,
+    "terrain_bounds_min": [
+      0.0,
+      -16.0,
+      7.5
+    ],
+    "terrain_bounds_max": [
+      24.0,
+      0.0,
+      14.5
+    ]
+  },
+  "limits": "Model world size, rotation conventions, material mapping and animation remain separate concerns."
+}

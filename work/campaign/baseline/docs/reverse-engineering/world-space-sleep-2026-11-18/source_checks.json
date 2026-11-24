@@ -1,0 +1,22 @@
+[
+  {
+    "ok": true,
+    "check": true,
+    "size": [
+      128,
+      128
+    ],
+    "shift": [
+      40,
+      40
+    ],
+    "source_block": 0
+  },
+  {
+    "ok": true,
+    "check": true,
+    "clips": 3,
+    "frames": 33,
+    "oracle": 10
+  }
+]

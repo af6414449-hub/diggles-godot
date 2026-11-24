@@ -1,0 +1,40 @@
+PROBE_ENV use_native_diffuse=true template_offset=(92, 84) static_lights=9 materials=41 meshes=793
+PROBE_MATERIAL_SUMMARY stage=BEFORE shader_pipeline=41 shader_detail=0 count_values={ 0: 41 }
+PROBE_TORCH_COUNT created=5 runtime_torches=5 terrain_lights=14
+PROBE_MATERIAL_SUMMARY stage=AFTER shader_pipeline=41 shader_detail=0 count_values={ 5: 41 }
+PROBE_TORCH id=1109 chunk=(0, 1) source=(93.56357, 99.29875, 11.0) local=(1.563568, 15.29875, 11.0) range=6.0 color=(13.5, 13.5, 12.0) terrain_lights_index=9 baked_excluded=true
+PROBE_TORCH id=1109 uniform_slot=[0] materials_pipeline=41 materials_detail=0 materials_holding_torch=41 counts=[5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+PROBE_TORCH id=1110 chunk=(1, 2) source=(101.5135, 102.5895, 11.0) local=(9.513519, 18.58952, 11.0) range=6.0 color=(13.5, 13.5, 12.0) terrain_lights_index=10 baked_excluded=true
+PROBE_TORCH id=1110 uniform_slot=[1] materials_pipeline=41 materials_detail=0 materials_holding_torch=41 counts=[5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+PROBE_TORCH id=1111 chunk=(1, 0) source=(105.1659, 87.15269, 11.0) local=(13.16589, 3.152695, 11.0) range=6.0 color=(13.5, 13.5, 12.0) terrain_lights_index=11 baked_excluded=true
+PROBE_TORCH id=1111 uniform_slot=[2] materials_pipeline=41 materials_detail=0 materials_holding_torch=41 counts=[5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+PROBE_TORCH id=1112 chunk=(4, 0) source=(129.3779, 87.29109, 11.0) local=(37.37787, 3.291092, 11.0) range=6.0 color=(13.5, 13.5, 12.0) terrain_lights_index=12 baked_excluded=true
+PROBE_TORCH id=1112 uniform_slot=[3] materials_pipeline=41 materials_detail=0 materials_holding_torch=41 counts=[5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+PROBE_TORCH id=1113 chunk=(5, 1) source=(133.663, 95.13377, 11.0) local=(41.66302, 11.13377, 11.0) range=6.0 color=(13.5, 13.5, 12.0) terrain_lights_index=13 baked_excluded=true
+PROBE_TORCH id=1113 uniform_slot=[4] materials_pipeline=41 materials_detail=0 materials_holding_torch=41 counts=[5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+PROBE_VERTEX id=1109 chunk_key=02:0:Gnd_C03.tga:0:1 index=4 mesh_vertex=(2.0, -15.0, 11.0) baked_color=(0.1843, 0.1843, 0.1843, 1.0)
+PROBE_VERTEX id=1109 shader_source_point=(2.0, 15.0, 12.5) cpu_source_point=(2.0, 15.0, 12.5) space_match=true
+PROBE_VERTEX id=1109 light_pos=(1.563568, 14.79875, 13.0) dist2=0.4810 radius=6.00 factor=0.688341
+PROBE_VERTEX id=1109 uniform_colour=(0.005294, 0.005294, 0.004706) shader_delta=(0.003644, 0.003644, 0.003239) cpu_delta=(0.815686, 0.815686, 0.815686) ratio=232.0997
+PROBE_VERTEX id=1109 albedo_shader=0.187958 albedo_cpu=1.000000 albedo_no_torch=0.184314
+PROBE_VERTEX id=1110 chunk_key=06:0:Gnd_C07.tga:1:2 index=7 mesh_vertex=(10.0, -18.5, 11.0) baked_color=(0.1059, 0.1059, 0.1059, 1.0)
+PROBE_VERTEX id=1110 shader_source_point=(10.0, 18.5, 12.5) cpu_source_point=(10.0, 18.5, 12.5) space_match=true
+PROBE_VERTEX id=1110 light_pos=(9.513519, 18.08952, 13.0) dist2=0.6552 radius=6.00 factor=0.175246
+PROBE_VERTEX id=1110 uniform_colour=(0.005294, 0.005294, 0.004706) shader_delta=(0.000928, 0.000928, 0.000825) cpu_delta=(0.235294, 0.235294, 0.207843) ratio=253.1646
+PROBE_VERTEX id=1110 albedo_shader=0.106810 albedo_cpu=0.341176 albedo_no_torch=0.105882
+PROBE_VERTEX id=1111 chunk_key=01:1:Gnd_C02.tga:1:0 index=12 mesh_vertex=(13.0, -3.0, 11.0) baked_color=(0.0118, 0.0118, 0.0118, 1.0)
+PROBE_VERTEX id=1111 shader_source_point=(13.0, 3.0, 12.5) cpu_source_point=(13.0, 3.0, 12.5) space_match=true
+PROBE_VERTEX id=1111 light_pos=(13.16589, 2.652695, 13.0) dist2=0.3981 radius=6.00 factor=0.097812
+PROBE_VERTEX id=1111 uniform_colour=(0.005294, 0.005294, 0.004706) shader_delta=(0.000518, 0.000518, 0.00046) cpu_delta=(0.133333, 0.133333, 0.117647) ratio=256.9499
+PROBE_VERTEX id=1111 albedo_shader=0.012283 albedo_cpu=0.145098 albedo_no_torch=0.011765
+PROBE_VERTEX id=1112 chunk_key=04:1:Native_2202.tga:4:0 index=12 mesh_vertex=(37.0, -3.0, 11.0) baked_color=(0.0118, 0.0118, 0.0118, 1.0)
+PROBE_VERTEX id=1112 shader_source_point=(37.0, 3.0, 12.5) cpu_source_point=(37.0, 3.0, 12.5) space_match=true
+PROBE_VERTEX id=1112 light_pos=(37.37787, 2.791092, 13.0) dist2=0.4364 radius=6.00 factor=0.326083
+PROBE_VERTEX id=1112 uniform_colour=(0.005294, 0.005294, 0.004706) shader_delta=(0.001726, 0.001726, 0.001535) cpu_delta=(0.439216, 0.439216, 0.392157) ratio=254.7454
+PROBE_VERTEX id=1112 albedo_shader=0.013491 albedo_cpu=0.450980 albedo_no_torch=0.011765
+PROBE_VERTEX id=1113 chunk_key=07:0:Gnd_C08.tga:5:1 index=16 mesh_vertex=(42.0, -11.0, 11.0) baked_color=(0.1843, 0.1843, 0.1843, 1.0)
+PROBE_VERTEX id=1113 shader_source_point=(42.0, 11.0, 12.5) cpu_source_point=(42.0, 11.0, 12.5) space_match=true
+PROBE_VERTEX id=1113 light_pos=(41.66302, 10.63377, 13.0) dist2=0.4977 radius=6.00 factor=0.701650
+PROBE_VERTEX id=1113 uniform_colour=(0.005294, 0.005294, 0.004706) shader_delta=(0.003715, 0.003715, 0.003302) cpu_delta=(0.815686, 0.815686, 0.815686) ratio=227.6973
+PROBE_VERTEX id=1113 albedo_shader=0.188028 albedo_cpu=1.000000 albedo_no_torch=0.184314
+PROBE_DONE

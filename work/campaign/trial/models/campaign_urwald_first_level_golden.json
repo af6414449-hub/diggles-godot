@@ -1,0 +1,277 @@
+{
+ "1": {
+  "seed": 1,
+  "start": {
+   "x": 208,
+   "y": 0
+  },
+  "placements": [
+   {
+    "template": "urw_hol_027_a",
+    "x": 232,
+    "y": 36
+   },
+   {
+    "template": "urw_gng_021_c",
+    "x": 228,
+    "y": 40
+   },
+   {
+    "template": "urw_hol_019_b",
+    "x": 272,
+    "y": 24
+   },
+   {
+    "template": "urw_gng_022_a",
+    "x": 296,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_002_b",
+    "x": 248,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_003_a",
+    "x": 256,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_013_c",
+    "x": 268,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_008_b",
+    "x": 268,
+    "y": 44
+   },
+   {
+    "template": "urw_gng_032_b",
+    "x": 248,
+    "y": 60
+   },
+   {
+    "template": "urw_gng_045_a",
+    "x": 256,
+    "y": 52
+   },
+   {
+    "template": "urw_gng_019_c",
+    "x": 268,
+    "y": 52
+   },
+   {
+    "template": "urw_gng_022_e",
+    "x": 272,
+    "y": 52
+   },
+   {
+    "template": "urw_gng_023_a",
+    "x": 256,
+    "y": 72
+   },
+   {
+    "template": "urw_unq_vodo_001_a",
+    "x": 216,
+    "y": 56
+   }
+  ],
+  "selection": {
+   "present_side": 1,
+   "comb_index": 7,
+   "conn_index": 5,
+   "vodo_chain_count": 6
+  },
+  "draws": [
+   3556162021,
+   4012392791,
+   221657543,
+   586320575,
+   3355844478,
+   1469533884,
+   3503894243,
+   3772467657
+  ]
+ },
+ "4357": {
+  "seed": 4357,
+  "start": {
+   "x": 208,
+   "y": 0
+  },
+  "placements": [
+   {
+    "template": "urw_hol_001_a",
+    "x": 224,
+    "y": 36
+   },
+   {
+    "template": "urw_gng_021_c",
+    "x": 220,
+    "y": 40
+   },
+   {
+    "template": "urw_hol_027_a",
+    "x": 268,
+    "y": 36
+   },
+   {
+    "template": "urw_gng_022_e",
+    "x": 284,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_013_b",
+    "x": 244,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_003_b",
+    "x": 248,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_002_b",
+    "x": 260,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_043_b",
+    "x": 244,
+    "y": 44
+   },
+   {
+    "template": "urw_gng_044_b",
+    "x": 256,
+    "y": 48
+   },
+   {
+    "template": "urw_gng_004_b",
+    "x": 244,
+    "y": 64
+   },
+   {
+    "template": "urw_gng_030_a",
+    "x": 260,
+    "y": 56
+   },
+   {
+    "template": "urw_gng_022_a",
+    "x": 272,
+    "y": 64
+   },
+   {
+    "template": "urw_unq_vodo_001_a",
+    "x": 212,
+    "y": 56
+   }
+  ],
+  "selection": {
+   "present_side": 1,
+   "comb_index": 2,
+   "conn_index": 1,
+   "vodo_chain_count": 3
+  },
+  "draws": [
+   2867219139,
+   1585203162,
+   3113124129,
+   2953900839,
+   2463794868,
+   3482265796,
+   1164297043,
+   3598195569
+  ]
+ },
+ "123456789": {
+  "seed": 123456789,
+  "start": {
+   "x": 208,
+   "y": 0
+  },
+  "placements": [
+   {
+    "template": "urw_hol_001_a",
+    "x": 224,
+    "y": 36
+   },
+   {
+    "template": "urw_gng_021_b",
+    "x": 220,
+    "y": 40
+   },
+   {
+    "template": "urw_hol_027_a",
+    "x": 268,
+    "y": 36
+   },
+   {
+    "template": "urw_gng_022_f",
+    "x": 284,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_002_a",
+    "x": 244,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_013_b",
+    "x": 252,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_003_b",
+    "x": 256,
+    "y": 40
+   },
+   {
+    "template": "urw_gng_008_a",
+    "x": 252,
+    "y": 44
+   },
+   {
+    "template": "urw_gng_042_a",
+    "x": 244,
+    "y": 52
+   },
+   {
+    "template": "urw_gng_012_a",
+    "x": 240,
+    "y": 56
+   },
+   {
+    "template": "urw_gng_039_b",
+    "x": 232,
+    "y": 60
+   },
+   {
+    "template": "urw_gng_023_a",
+    "x": 232,
+    "y": 72
+   },
+   {
+    "template": "urw_unq_vodo_001_a",
+    "x": 200,
+    "y": 56
+   }
+  ],
+  "selection": {
+   "present_side": 0,
+   "comb_index": 2,
+   "conn_index": 2,
+   "vodo_chain_count": 9
+  },
+  "draws": [
+   2363614702,
+   2507124434,
+   646205460,
+   1158682820,
+   1964210241,
+   3144191809,
+   2776662769,
+   202934630
+  ]
+ }
+}

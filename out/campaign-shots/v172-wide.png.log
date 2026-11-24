@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.13596 Core Profile Forward-Compatible Context 20.10.44 27.20.11044.7 - Compatibility - Using Device: ATI Technologies Inc. - AMD Radeon(TM) Vega 8 Graphics
+
+CAMPAIGN_BUILD_STAGE geometry ms=37941
+CAMPAIGN_BUILD_STAGE objects ms=31253
+BACKDROP_FRAME fov=38.00 frame=2938.3x1652.8 viewport=(1280.0, 720.0) slide=-71.111 focus_row=360.0
+BACKDROP_QUAD index=0 name=CampaignPanorama_0 verts=6 aabb=[P: (-1469.131, 417.7842, 0.0), S: (2938.262, 408.6021, 0.00001)] global=(82.55629, 447.4433, -1842.825) mat_transp=1 tex=(2048.0, 720.0) uv=(0.1875, 0.247222) .. (0.8125, -0.0)
+BACKDROP_QUAD index=1 name=CampaignPanorama_1 verts=6 aabb=[P: (-1469.131, 252.5069, 0.0), S: (2938.262, 165.2773, 0.00001)] global=(82.55869, 447.429, -1842.777) mat_transp=1 tex=(2048.0, 720.0) uv=(0.1875, 0.347222) .. (0.8125, 0.247222)
+BACKDROP_QUAD index=2 name=CampaignPanorama_2 verts=6 aabb=[P: (-1469.131, 137.731, 0.0), S: (2938.262, 114.7759, 0.00001)] global=(82.56109, 447.4147, -1842.73) mat_transp=1 tex=(2048.0, 720.0) uv=(0.1875, 0.416667) .. (0.8125, 0.347222)
+BACKDROP_QUAD index=3 name=CampaignPanorama_3 verts=6 aabb=[P: (-1469.131, -826.3863, 0.0), S: (2938.262, 964.1173, 0.00001)] global=(82.56347, 447.4004, -1842.682) mat_transp=1 tex=(2048.0, 720.0) uv=(0.1875, 1.0) .. (0.8125, 0.416667)
+BACKDROP_CAM near=0.050 far=3000.0 origin=(197.4976, -238.8422, 454.0858) basis_z=(0.047892, -0.285952, 0.957046)
+CAMPAIGN_BUILD_STAGE camera ms=162
+CAMPAIGN_FIRST_LEVEL_READY seed=0 cells=15709 templates=38 placements=14 story=25 objects=1732 dwarfs=16 lights=122 deleted_wuker=7 overworld=22 surfaces=146 walls=1556 ground=311969 rock=311971 backdrop_omitted=3064 triangles=924440
+CAMPAIGN_CHAPTER_SOURCE Campaign.tcl:22-191 first_level seed=0 map=512x640 view={ "x": 246.7, "y": 28.8, "zoom": 1.478, "rx": -0.29, "ry": 0.05 }
+CAMPAIGN_CAPTURE_READY path=C:\Users\frant\OneDrive\Документы\MiniMax\Diggles\out\campaign-shots\v172-wide.png error=0 size=(1280, 720)

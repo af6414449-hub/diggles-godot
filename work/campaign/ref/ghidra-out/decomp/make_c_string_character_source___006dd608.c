@@ -1,0 +1,21 @@
+
+/* Library Function - Multiple Matches With Same Base Name
+    class __crt_strtox::c_string_character_source<char> __cdecl
+   __crt_strtox::make_c_string_character_source<char,char * *>(char const * const,char * * const)
+    class __crt_strtox::c_string_character_source<wchar_t> __cdecl
+   __crt_strtox::make_c_string_character_source<wchar_t,wchar_t * *>(wchar_t const * const,wchar_t *
+   * const)
+   
+   Library: Visual Studio 2019 Release */
+
+void make_c_string_character_source<>(undefined4 *param_1,undefined4 param_2,undefined4 *param_3)
+
+{
+  *param_1 = param_2;
+  param_1[1] = param_3;
+  if (param_3 != (undefined4 *)0x0) {
+    *param_3 = param_2;
+  }
+  return;
+}
+

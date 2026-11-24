@@ -1,0 +1,110 @@
+======================================================================
+=== FUN_004899b0  (FUN_004899b0_004899b0.c)  lines=353
+  87:   if ((param_1[4] == 9) || (local_11 = '\x01', param_1[4] == 0x23)) {
+ 114:   FUN_0045fd00(0x2c2,iVar14,0);
+ 280:   param_1[3] = 4;
+ 281:   param_1[2] = 0x14;
+ 283:     param_1[4] = 0x19;
+ 285:   uVar7 = param_1[4];
+ 287:   if (*(uint *)(iVar14 + 0x854) <= uVar7) {
+ 290:   if (*(int *)(uVar7 * 0x6c + 4 + *(int *)(iVar14 + 0x850)) == 0) {
+ 291:     param_1[2] = 0x15;
+
+======================================================================
+=== FUN_0048a240  (FUN_0048a240_0048a240.c)  lines=318
+  55:   if (param_1[4] == 0x21) {
+ 101:   FUN_0045fd00(0x1c2,iVar12,0);
+ 112:   if ((param_1[4] == 9) || (local_11 = '\x01', param_1[4] == 0x23)) {
+ 245:   param_1[3] = 4;
+ 246:   param_1[2] = 0x14;
+ 248:     param_1[4] = 0x19;
+ 249:     param_1[2] = 0x15;
+ 251:   uVar4 = param_1[4];
+ 253:   if (*(uint *)(iVar12 + 0x854) <= uVar4) {
+ 256:   if (*(int *)(uVar4 * 0x6c + 4 + *(int *)(iVar12 + 0x850)) == 0) {
+ 257:     param_1[2] = 0x15;
+
+======================================================================
+=== FUN_0048aa60  (FUN_0048aa60_0048aa60.c)  lines=339
+  94:       if ((param_1[4] == 9) || (local_11 = '\x01', param_1[4] == 0x23)) {
+ 120:       FUN_0045fd00(0x2c2,iVar8,0);
+ 265:       param_1[3] = 4;
+ 266:       param_1[2] = 0x14;
+ 268:         param_1[4] = 0x19;
+ 269:         param_1[2] = 0x15;
+ 271:       uVar3 = param_1[4];
+ 273:       if (*(uint *)(iVar8 + 0x854) <= uVar3) {
+ 276:       if (*(int *)(uVar3 * 0x6c + 4 + *(int *)(iVar8 + 0x850)) == 0) {
+ 277:         param_1[2] = 0x15;
+
+======================================================================
+=== FUN_0048b290  (FUN_0048b290_0048b290.c)  lines=319
+  59:   if (param_1[4] == 0x21) {
+  88:         if ((param_1[4] == 9) || (bVar4 = true, param_1[4] == 0x23)) {
+ 114:         FUN_0045fd00(0x1c2,iVar12,0);
+ 245:         param_1[3] = 4;
+ 246:         param_1[2] = 0x14;
+ 248:           param_1[4] = 0x19;
+ 249:           param_1[2] = 0x15;
+ 251:         uVar10 = param_1[4];
+ 253:         if (*(uint *)(iVar12 + 0x854) <= uVar10) {
+ 256:         if (*(int *)(uVar10 * 0x6c + 4 + *(int *)(iVar12 + 0x850)) == 0) {
+ 257:           param_1[2] = 0x15;
+
+======================================================================
+=== FUN_0048ba80  (FUN_0048ba80_0048ba80.c)  lines=344
+  94:   if ((param_1[4] == 9) || (local_11 = '\x01', param_1[4] == 0x23)) {
+ 121:   FUN_0045fd00(0x1c2,iVar3,0);
+ 270:   param_1[3] = 4;
+ 271:   param_1[2] = 0x14;
+ 273:     param_1[4] = 0x19;
+ 274:     param_1[2] = 0x15;
+ 276:   uVar4 = param_1[4];
+ 278:   if (*(uint *)(iVar5 + 0x854) <= uVar4) {
+ 281:   if (*(int *)(uVar4 * 0x6c + 4 + *(int *)(iVar5 + 0x850)) == 0) {
+ 282:     param_1[2] = 0x15;
+
+======================================================================
+=== FUN_0048c3f0  (FUN_0048c3f0_0048c3f0.c)  lines=354
+ 100:       if ((param_1[4] == 9) || (local_11 = '\x01', param_1[4] == 0x23)) {
+ 103:       local_64 = FUN_006ba810(0x6c8,uVar4);
+ 126:       FUN_0045fd00(0x1c2,iVar3,0);
+ 280:       param_1[3] = 4;
+ 281:       param_1[2] = 0x14;
+ 283:         param_1[4] = 0x19;
+ 284:         param_1[2] = 0x15;
+ 286:       uVar4 = param_1[4];
+ 288:       if (*(uint *)(iVar5 + 0x854) <= uVar4) {
+ 291:       if (*(int *)(uVar4 * 0x6c + 4 + *(int *)(iVar5 + 0x850)) == 0) {
+ 292:         param_1[2] = 0x15;
+
+======================================================================
+=== FUN_0048d490  (FUN_0048d490_0048d490.c)  lines=347
+SIG: void FUN_0048d490(undefined4 *param_1,int param_2,undefined4 param_3,float param_4,float param_5,
+  98:   FUN_0045fd00(0x1c2,iVar10,0);
+ 105:     piVar21 = *(int **)(iVar17 + 0x6c);
+ 109:     piVar21 = (int *)(*(int *)(iVar17 + 0x6c) + iVar1 * 4);
+ 274:   param_1[3] = 4;
+ 275:   param_1[2] = 0x14;
+ 277:     param_1[4] = 0x19;
+ 278:     param_1[2] = 0x15;
+ 280:   param_4 = (float)param_1[4];
+ 282:   if ((uint)*(float *)(iVar10 + 0x854) <= (uint)param_4) {
+ 285:   if (*(int *)((int)param_4 * 0x6c + 4 + *(int *)(iVar10 + 0x850)) == 0) {
+ 286:     param_1[2] = 0x15;
+
+======================================================================
+=== FUN_0048dce0  (FUN_0048dce0_0048dce0.c)  lines=363
+SIG: void FUN_0048dce0(undefined4 *param_1,int param_2,ushort *param_3,undefined4 param_4,float param_5,
+  95:     FUN_0045fd00(0x1c2,iVar14,0);
+ 102:       piVar12 = *(int **)(iVar1 + 0x6c);
+ 105:       piVar12 = (int *)(*(int *)(iVar1 + 0x6c) + iVar2 * 4);
+ 292:     param_1[3] = 4;
+ 293:     param_1[2] = 0x14;
+ 295:       param_1[4] = 0x19;
+ 296:       param_1[2] = 0x15;
+ 298:     param_5 = (float)param_1[4];
+ 300:     if ((uint)*(float *)(iVar14 + 0x854) <= (uint)param_5) {
+ 303:     if (*(int *)((int)param_5 * 0x6c + 4 + *(int *)(iVar14 + 0x850)) == 0) {
+ 304:       param_1[2] = 0x15;
+

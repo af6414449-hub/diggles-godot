@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+NATIVE_CAVE_BRUSHES_READY count=4 anchor=[16.0, 32.0]
+NATIVE_CAVE_BRUSH brush=1 cells=38 bounds=[P: (11, 27), S: (9, 4)]
+NATIVE_CAVE_BRUSH brush=2 cells=58 bounds=[P: (9, 27), S: (13, 4)]
+NATIVE_CAVE_BRUSH brush=3 cells=136 bounds=[P: (7, 23), S: (17, 8)]
+NATIVE_CAVE_BRUSH brush=4 cells=128 bounds=[P: (9, 20), S: (13, 11)]
+NATIVE_CAVE_SKIN_READY size=1 meshes=2
+NATIVE_CAVE_SKIN_READY size=2 meshes=2
+NATIVE_CAVE_SKIN_READY size=3 meshes=2
+NATIVE_CAVE_SKIN_READY size=4 meshes=2
+NATIVE_TERRAIN_GRID_READY size=44x24 cells=943
+TERRAIN_BACKDROP_OPENING source_triangles=5619 omitted_back_faces=317 retained_triangles=5302
+NATIVE_L2M_READY cells=943 detail_textures=34 surfaces=45
+DWARF_DIG_CLIPS_READY clips=6 frames=42
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=456
+NATIVE_SCENE_LIGHTS_READY lights=9 horizons=1 attenuation=godot_adapter
+NATIVE_TERRAIN_READY cells=943 triangles=5619 packed_depth=8.0..14.5
+MULTIPLAYER_START_MODELS_READY placements=109 unique_models=54 original_textures=45
+[SMOKE] scene=res://scenes/multiplayer_test.tscn frames=60 fps=60 viewport=1280x720
+[SMOKE_RESULT] {"ended":"completed","findings":[],"frames":60,"mode":"fixed_fps","notes":[],"perf":{"frame_ms":{"avg":0.18,"end":0.14,"max":0.59,"min":0.08,"p95":0.38,"samples":60,"start":0.14},"node_count_end":2504,"node_count_start":2504,"orphan_nodes":0,"samples":12,"static_memory_mb":122.26},"scene":"res://scenes/multiplayer_test.tscn","seconds_simulated":1.0,"target_frames":60}

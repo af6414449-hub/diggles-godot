@@ -1,0 +1,60 @@
+SCRIPT ERROR: Out of bounds get index '148688' (on base: 'PackedByteArray')
+   at: rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+   GDScript backtrace (most recent call first):
+       [0] rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+       [1] native_dig_apply_cell (res://scripts/multiplayer_test.gd:611)
+       [2] _run (res://tools/world_space_self_test.gd:73)
+SCRIPT ERROR: Out of bounds get index '148848' (on base: 'PackedByteArray')
+   at: rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+   GDScript backtrace (most recent call first):
+       [0] rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+       [1] native_dig_apply_cell (res://scripts/multiplayer_test.gd:611)
+       [2] _update_dwarf_dig_jobs (res://scripts/multiplayer_test.gd:3343)
+       [3] _process (res://scripts/multiplayer_test.gd:1959)
+       [4] _run (res://tools/world_space_self_test.gd:88)
+SCRIPT ERROR: Out of bounds get index '146032' (on base: 'PackedByteArray')
+   at: rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+   GDScript backtrace (most recent call first):
+       [0] rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+       [1] native_dig_apply_cell (res://scripts/multiplayer_test.gd:611)
+       [2] _update_dwarf_dig_jobs (res://scripts/multiplayer_test.gd:3343)
+       [3] _process (res://scripts/multiplayer_test.gd:1959)
+       [4] _run (res://tools/world_space_self_test.gd:88)
+SCRIPT ERROR: Out of bounds get index '148840' (on base: 'PackedByteArray')
+   at: rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+   GDScript backtrace (most recent call first):
+       [0] rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+       [1] native_dig_apply_cell (res://scripts/multiplayer_test.gd:611)
+       [2] _update_dwarf_dig_jobs (res://scripts/multiplayer_test.gd:3343)
+       [3] _process (res://scripts/multiplayer_test.gd:1959)
+       [4] _run (res://tools/world_space_self_test.gd:88)
+SCRIPT ERROR: Out of bounds get index '146024' (on base: 'PackedByteArray')
+   at: rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+   GDScript backtrace (most recent call first):
+       [0] rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+       [1] native_dig_apply_cell (res://scripts/multiplayer_test.gd:611)
+       [2] _update_dwarf_dig_jobs (res://scripts/multiplayer_test.gd:3343)
+       [3] _process (res://scripts/multiplayer_test.gd:1959)
+       [4] _run (res://tools/world_space_self_test.gd:88)
+SCRIPT ERROR: Out of bounds get index '148832' (on base: 'PackedByteArray')
+   at: rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+   GDScript backtrace (most recent call first):
+       [0] rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+       [1] native_dig_apply_cell (res://scripts/multiplayer_test.gd:611)
+       [2] _update_dwarf_dig_jobs (res://scripts/multiplayer_test.gd:3343)
+       [3] _process (res://scripts/multiplayer_test.gd:1959)
+       [4] _run (res://tools/world_space_self_test.gd:88)
+SCRIPT ERROR: Out of bounds get index '146016' (on base: 'PackedByteArray')
+   at: rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+   GDScript backtrace (most recent call first):
+       [0] rebuild_after_strike (res://scripts/native_walkmap.gd:221)
+       [1] native_dig_apply_cell (res://scripts/multiplayer_test.gd:611)
+       [2] _update_dwarf_dig_jobs (res://scripts/multiplayer_test.gd:3343)
+       [3] _process (res://scripts/multiplayer_test.gd:1959)
+       [4] _run (res://tools/world_space_self_test.gd:88)
+FAIL worker actually digs entire source corridor beyond the old border
+FAIL worker traverses the newly excavated extension
+WARNING: 18 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 4 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

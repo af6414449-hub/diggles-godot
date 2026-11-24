@@ -1,0 +1,213 @@
+{
+  "format": "Diggles BDB v11 (little endian)",
+  "layout_source": "docs/reverse-engineering/blockdb-loader-disassembly.txt: LoadDB 0x565ab0",
+  "section_ranges": "offset and size in bytes; end is exclusive",
+  "unresolved": [
+    "89-byte block metadata",
+    "three part meanings",
+    "per-vertex U8 attribute meaning"
+  ],
+  "files": [
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Diggles The Myth of Fenris\\data\\BlockDB0.BDB",
+      "size_bytes": 20751437,
+      "sha256": "116af11558a53ebd928216a890fe9a04c1eac157f20d3b3eca7a95149d9e1586",
+      "header": {
+        "version": 11,
+        "u1": 0,
+        "block_count": 118688,
+        "u3": 0,
+        "index_count": 561168,
+        "u8_record_count": 17564,
+        "vertex_count": 1411
+      },
+      "sections": {
+        "header": {
+          "offset": 0,
+          "size": 28
+        },
+        "part_catalog": {
+          "offset": 28,
+          "size": 2136384
+        },
+        "opaque_block_metadata": {
+          "offset": 2136412,
+          "size": 10563232
+        },
+        "index_pool": {
+          "offset": 12699644,
+          "size": 1122336
+        },
+        "topology_table": {
+          "offset": 13821980,
+          "size": 140512
+        },
+        "vertex_pool": {
+          "offset": 13962492,
+          "size": 28220
+        },
+        "part_payloads": {
+          "offset": 13990712,
+          "size": 6760725
+        }
+      },
+      "part_vertex_references": 2253575,
+      "end_offset": 20751437,
+      "validation": {
+        "valid": true,
+        "exact_end": true,
+        "trailing_bytes": 0,
+        "checked": {
+          "topology_records": 17564,
+          "referenced_topologies": 17564,
+          "parts": 356064,
+          "local_index_references": 4199613,
+          "vertex_ids": 2253575,
+          "float_components": 7055
+        },
+        "errors": {
+          "topology_bounds": 0,
+          "topology_triangle_counts": 0,
+          "part_topology_ids": 0,
+          "part_local_indices": 0,
+          "part_vertex_ids": 0,
+          "nonfinite_floats": 0
+        }
+      }
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Diggles The Myth of Fenris\\data\\BlockDB1.BDB",
+      "size_bytes": 26067491,
+      "sha256": "cc5311a0f8e4d7d6e3fbd9f7b0507f14a81add16b07a025302e8690138ccd5a7",
+      "header": {
+        "version": 11,
+        "u1": 0,
+        "block_count": 118688,
+        "u3": 0,
+        "index_count": 1688496,
+        "u8_record_count": 51424,
+        "vertex_count": 2504
+      },
+      "sections": {
+        "header": {
+          "offset": 0,
+          "size": 28
+        },
+        "part_catalog": {
+          "offset": 28,
+          "size": 2136384
+        },
+        "opaque_block_metadata": {
+          "offset": 2136412,
+          "size": 10563232
+        },
+        "index_pool": {
+          "offset": 12699644,
+          "size": 3376992
+        },
+        "topology_table": {
+          "offset": 16076636,
+          "size": 411392
+        },
+        "vertex_pool": {
+          "offset": 16488028,
+          "size": 50080
+        },
+        "part_payloads": {
+          "offset": 16538108,
+          "size": 9529383
+        }
+      },
+      "part_vertex_references": 3176461,
+      "end_offset": 26067491,
+      "validation": {
+        "valid": true,
+        "exact_end": true,
+        "trailing_bytes": 0,
+        "checked": {
+          "topology_records": 51424,
+          "referenced_topologies": 51424,
+          "parts": 356064,
+          "local_index_references": 5998482,
+          "vertex_ids": 3176461,
+          "float_components": 12520
+        },
+        "errors": {
+          "topology_bounds": 0,
+          "topology_triangle_counts": 0,
+          "part_topology_ids": 0,
+          "part_local_indices": 0,
+          "part_vertex_ids": 0,
+          "nonfinite_floats": 0
+        }
+      }
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Diggles The Myth of Fenris\\data\\BlockDB2.BDB",
+      "size_bytes": 37045082,
+      "sha256": "13d06172ae42a42657c10fe6007c8213fc525a7fde8132fe0041f48c9507b856",
+      "header": {
+        "version": 11,
+        "u1": 0,
+        "block_count": 118688,
+        "u3": 0,
+        "index_count": 4195746,
+        "u8_record_count": 104056,
+        "vertex_count": 3323
+      },
+      "sections": {
+        "header": {
+          "offset": 0,
+          "size": 28
+        },
+        "part_catalog": {
+          "offset": 28,
+          "size": 2136384
+        },
+        "opaque_block_metadata": {
+          "offset": 2136412,
+          "size": 10563232
+        },
+        "index_pool": {
+          "offset": 12699644,
+          "size": 8391492
+        },
+        "topology_table": {
+          "offset": 21091136,
+          "size": 832448
+        },
+        "vertex_pool": {
+          "offset": 21923584,
+          "size": 66460
+        },
+        "part_payloads": {
+          "offset": 21990044,
+          "size": 15055038
+        }
+      },
+      "part_vertex_references": 5018346,
+      "end_offset": 37045082,
+      "validation": {
+        "valid": true,
+        "exact_end": true,
+        "trailing_bytes": 0,
+        "checked": {
+          "topology_records": 104056,
+          "referenced_topologies": 104056,
+          "parts": 356064,
+          "local_index_references": 9417594,
+          "vertex_ids": 5018346,
+          "float_components": 16615
+        },
+        "errors": {
+          "topology_bounds": 0,
+          "topology_triangle_counts": 0,
+          "part_topology_ids": 0,
+          "part_local_indices": 0,
+          "part_vertex_ids": 0,
+          "nonfinite_floats": 0
+        }
+      }
+    }
+  ]
+}

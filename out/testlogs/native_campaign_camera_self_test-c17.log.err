@@ -1,0 +1,5 @@
+FAIL: the distance follows the native zoom
+FAIL: the chapter is seen as a whole, not as a close up
+FAIL: the controller uses the native distance
+FAIL: the controller zooms the camera
+NATIVE_CAMPAIGN_CAMERA_SELF_TEST_FAIL failures=4

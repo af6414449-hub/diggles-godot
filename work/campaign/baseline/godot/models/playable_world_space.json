@@ -1,0 +1,40 @@
+{
+  "schema": "diggles.playable_world_space.v1",
+  "size": [
+    128,
+    128
+  ],
+  "template_shift": [
+    40,
+    40
+  ],
+  "source_pmp_sha256": "b6fc5ef7b1800dce9fb0dd4a42de879b8198f25ac84eb82b524266378ddb7807",
+  "source_bdb_sha256": "13d06172ae42a42657c10fe6007c8213fc525a7fde8132fe0041f48c9507b856",
+  "template_size": [
+    44,
+    24
+  ],
+  "solid_cell": {
+    "x": 13,
+    "y": 1,
+    "block": 0,
+    "flags": 2,
+    "cell_attribute": 4,
+    "ground_family": "B",
+    "ground_variant": 13
+  },
+  "solid_fact": {
+    "material_low": 2,
+    "block": 0,
+    "next_height": 11,
+    "support_ok": true
+  },
+  "material": 2,
+  "attribute": 4,
+  "detail_word": 0,
+  "policy": "Expanded host field; all added solid geometry/transitions use original BDB block0. Imported known template cells are translated unchanged.",
+  "limits": [
+    "Native lg_start, random surrounding cave placement/resources and full 600x600 streaming are not replayed.",
+    "Field size, placement, uniform substrate and texture-variant spread are explicit host choices."
+  ]
+}

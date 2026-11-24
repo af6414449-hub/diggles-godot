@@ -1,0 +1,1154 @@
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_geometry (res://scripts/native_campaign_first_level.gd:285)
+       [2] _ready (res://scripts/native_campaign_first_level.gd:213)
+SHADER ERROR: No matching function found for: 'Vector2'.
+   at: (null) (res://shaders/native_campaign_terrain.gdshader:53)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:424)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:379)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:213)
+ERROR: Shader compilation failed.
+   at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   GDScript backtrace (most recent call first):
+       [0] terrain_material (res://scripts/native_campaign_profile.gd:487)
+       [1] _build_walls (res://scripts/native_campaign_first_level.gd:424)
+       [2] _build_geometry (res://scripts/native_campaign_first_level.gd:379)
+       [3] _ready (res://scripts/native_campaign_first_level.gd:213)

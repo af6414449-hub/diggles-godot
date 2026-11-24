@@ -1,0 +1,5 @@
+FAIL: a failed place search waits once
+SCRIPT ERROR: Out of bounds get index '0' (on base: 'Array[Dictionary]')
+   at: _run (res://tools/native_raupe_actor_self_test.gd:115)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tools/native_raupe_actor_self_test.gd:115)

@@ -1,0 +1,24 @@
+SCRIPT ERROR: Parse Error: Preload file "res://scripts/native_raupe_ai.gd" does not exist.
+   at: GDScript::reload (res://tools/native_raupe_ai_self_test.gd:7)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "request" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_raupe_ai_self_test.gd:58)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "rectangle" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_raupe_ai_self_test.gd:68)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "shifted" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_raupe_ai_self_test.gd:73)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "farm_request" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_raupe_ai_self_test.gd:76)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "farm_request_without" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_raupe_ai_self_test.gd:81)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "step" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_raupe_ai_self_test.gd:85)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "plant_request" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_raupe_ai_self_test.gd:94)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "particle" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_raupe_ai_self_test.gd:114)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "still" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_raupe_ai_self_test.gd:133)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "crawl" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tools/native_raupe_ai_self_test.gd:136)
+ERROR: Failed to load script "res://tools/native_raupe_ai_self_test.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

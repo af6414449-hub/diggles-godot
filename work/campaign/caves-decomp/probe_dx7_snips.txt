@@ -1,0 +1,812 @@
+--- 10018450 (41 lines total)
+int FUN_10018450(CSdlWindowHandle *param_1,undefined4 param_2,undefined4 param_3)
+{
+  HWND__ *pHVar1;
+  void *_Dst;
+  int iVar2;
+  undefined4 extraout_ECX;
+  undefined4 extraout_ECX_00;
+  undefined4 uVar3;
+  undefined4 in_EDX;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10042ab7;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+--- 10018520 (9 lines total)
+undefined4 FUN_10018520(int param_1)
+{
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  *(undefined4 *)(param_1 + 0x54) = 0x20;
+  return 0;
+}
+--- 10016f40 (8 lines total)
+undefined4 FUN_10016f40(void)
+{
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  return 0;
+}
+--- 10019080 (54 lines total)
+void FUN_10019080(undefined4 param_1,int param_2,undefined4 param_3,uint param_4,int param_5)
+{
+  int iVar1;
+  void *_Dst;
+  int *in_ECX;
+  undefined4 in_EDX;
+  undefined1 local_10c [36];
+  void *local_e8;
+  undefined1 local_90 [104];
+  uint local_28;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10042b8a;
+--- 10018fe0 (11 lines total)
+undefined4 FUN_10018fe0(undefined4 param_1)
+{
+  int *in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  (**(code **)(*in_ECX + 100))(param_1);
+  return 0;
+}
+--- 10019010 (27 lines total)
+undefined4 FUN_10019010(undefined4 *param_1)
+{
+  undefined4 uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  uVar1 = *(undefined4 *)(in_ECX + 0x9c);
+  uVar2 = *(undefined4 *)(in_ECX + 0xa0);
+  uVar3 = *(undefined4 *)(in_ECX + 0xa4);
+  *param_1 = *(undefined4 *)(in_ECX + 0x98);
+  param_1[1] = uVar1;
+  param_1[2] = uVar2;
+  param_1[3] = uVar3;
+  uVar1 = *(undefined4 *)(in_ECX + 0xac);
+  uVar2 = *(undefined4 *)(in_ECX + 0xb0);
+--- 10018ca0 (11 lines total)
+undefined4 FUN_10018ca0(undefined4 param_1)
+{
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  *(undefined4 *)(in_ECX + 0xf8) = param_1;
+  return 0;
+}
+--- 10018cc0 (11 lines total)
+undefined4 FUN_10018cc0(undefined4 param_1)
+{
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  *(undefined4 *)(in_ECX + 0xfc) = param_1;
+  return 0;
+}
+--- 100191d0 (38 lines total)
+undefined4 FUN_100191d0(int *param_1,int *param_2,undefined4 *param_3)
+{
+  int *piVar1;
+  int *piVar2;
+  uint uVar3;
+  bool bVar4;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  piVar2 = &DAT_10043480;
+  uVar3 = 0xc;
+  piVar1 = param_2;
+  while (*piVar1 == *piVar2) {
+    piVar1 = piVar1 + 1;
+    piVar2 = piVar2 + 1;
+    bVar4 = uVar3 < 4;
+    uVar3 = uVar3 - 4;
+    if (bVar4) goto LAB_10019221;
+--- 10019250 (16 lines total)
+int FUN_10019250(int param_1)
+{
+  int *piVar1;
+  int iVar2;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  LOCK();
+  piVar1 = (int *)(param_1 + 0x2c);
+  iVar2 = *piVar1;
+  *piVar1 = *piVar1 + 1;
+  UNLOCK();
+  return iVar2 + 1;
+}
+--- 10019270 (20 lines total)
+int FUN_10019270(int param_1)
+{
+  int *piVar1;
+  int iVar2;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  piVar1 = (int *)(param_1 + 0x2c);
+  LOCK();
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  iVar2 = *piVar1;
+  if (iVar2 == 0) {
+    FUN_100183c0(param_1);
+    iVar2 = 0;
+  }
+  return iVar2;
+}
+--- 10019040 (10 lines total)
+undefined4 FUN_10019040(void)
+{
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  return *(undefined4 *)(in_ECX + 0xcc);
+}
+--- 10018830 (11 lines total)
+undefined4 FUN_10018830(undefined4 *param_1)
+{
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  *param_1 = *(undefined4 *)(in_ECX + 0x44);
+  return 0;
+}
+--- 10018850 (11 lines total)
+undefined4 FUN_10018850(undefined4 *param_1)
+{
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  *param_1 = *(undefined4 *)(in_ECX + 0x48);
+  return 0;
+}
+--- 10018870 (23 lines total)
+undefined4 FUN_10018870(int *param_1)
+{
+  int in_ECX;
+  int *piVar1;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  piVar1 = *(int **)(in_ECX + 0x44);
+  param_1 = (int *)*param_1;
+  if (piVar1 != param_1) {
+    if (param_1 != (int *)0x0) {
+      (**(code **)(*param_1 + 4))(param_1);
+      piVar1 = *(int **)(in_ECX + 0x44);
+    }
+    *(int **)(in_ECX + 0x44) = param_1;
+    if (piVar1 != (int *)0x0) {
+      (**(code **)(*piVar1 + 8))(piVar1);
+    }
+--- 100188f0 (23 lines total)
+undefined4 FUN_100188f0(undefined4 *param_1)
+{
+  int in_ECX;
+  int iVar1;
+  undefined4 *puVar2;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  puVar2 = (undefined4 *)(in_ECX + 0x50);
+  for (iVar1 = 0x1f; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *puVar2 = *param_1;
+    param_1 = param_1 + 1;
+    puVar2 = puVar2 + 1;
+  }
+  *(undefined4 *)(in_ECX + 0x38) = *(undefined4 *)(in_ECX + 0x58);
+  iVar1 = *(int *)(in_ECX + 0xa4);
+  *(int *)(in_ECX + 0x3c) = iVar1;
+  *(int *)(in_ECX + 0x34) = *(int *)(in_ECX + 0x5c);
+--- 10018940 (18 lines total)
+undefined4 FUN_10018940(undefined4 *param_1)
+{
+  int in_ECX;
+  int iVar1;
+  undefined4 *puVar2;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  puVar2 = (undefined4 *)(in_ECX + 0x50);
+  for (iVar1 = 0x1f; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *param_1 = *puVar2;
+    puVar2 = puVar2 + 1;
+    param_1 = param_1 + 1;
+  }
+  return 0x80004005;
+}
+--- 10018770 (37 lines total)
+void FUN_10018770(void)
+{
+  int in_ECX;
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 *local_8;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  iVar2 = 1;
+  iVar3 = *(int *)(in_ECX + 0x34);
+  iVar1 = *(int *)(in_ECX + 0x38);
+  *(undefined **)(in_ECX + 0xd0) = &DAT_1016dec0;
+  *(undefined **)(in_ECX + 0xcc) = &DAT_1016dec0;
+  if (1 < *(int *)(in_ECX + 0x40)) {
+    local_8 = (undefined4 *)(in_ECX + 0xd4);
+    do {
+--- 100188b0 (10 lines total)
+undefined4 FUN_100188b0(void)
+{
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  return *(undefined4 *)(in_ECX + 0x34);
+}
+--- 100188d0 (10 lines total)
+undefined4 FUN_100188d0(void)
+{
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  return *(undefined4 *)(in_ECX + 0x38);
+}
+--- 10019060 (11 lines total)
+void FUN_10019060(undefined1 param_1)
+{
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  *(undefined1 *)(in_ECX + 0x28) = param_1;
+  return;
+}
+--- 100189f0 (89 lines total)
+void FUN_100189f0(int *param_1)
+{
+  undefined1 uVar1;
+  int *piVar2;
+  int *piVar3;
+  char cVar4;
+  int *piVar5;
+  int *piVar6;
+  undefined4 extraout_ECX;
+  undefined4 in_EDX;
+  int *local_6c;
+  int *local_68;
+  undefined4 local_64;
+  undefined4 local_60;
+  float local_24;
+  uint local_14;
+--- 10018ce0 (44 lines total)
+undefined4 FUN_10018ce0(int *param_1,int param_2)
+{
+  void *_Dst;
+  int iVar1;
+  int *in_ECX;
+  undefined4 in_EDX;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_100425c7;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01,in_EDX,DAT_1005000c ^ (uint)&stack0xfffffffc);
+  if (DAT_10050c64 == 0) {
+    _Dst = (void *)FUN_1003ff62(0xcbc);
+--- 10018de0 (76 lines total)
+void FUN_10018de0(int *param_1)
+{
+  int iVar1;
+  int iVar2;
+  ID3D11Texture2D *pIVar3;
+  int *piVar4;
+  void *_Dst;
+  int *in_ECX;
+  int iVar5;
+  int *piVar6;
+  int *piVar7;
+  int aiStack_164 [24];
+  undefined4 uStack_104;
+  int *piStack_100;
+  ChunkedTexture local_c8 [180];
+  uint local_14;
+--- 10018fb0 (12 lines total)
+undefined4 FUN_10018fb0(undefined4 param_1)
+{
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  *(undefined4 *)(in_ECX + 4 + *(int *)(in_ECX + 0x24) * 4) = param_1;
+  *(int *)(in_ECX + 0x24) = *(int *)(in_ECX + 0x24) + 1;
+  return 0;
+}
+--- 10017550 (8 lines total)
+undefined4 FUN_10017550(void)
+{
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  return 0;
+}
+--- 10017ed0 (38 lines total)
+undefined4 FUN_10017ed0(int *param_1,int *param_2,undefined4 *param_3)
+{
+  int *piVar1;
+  int *piVar2;
+  uint uVar3;
+  bool bVar4;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  piVar2 = &DAT_10043480;
+  uVar3 = 0xc;
+  piVar1 = param_2;
+  while (*piVar1 == *piVar2) {
+    piVar1 = piVar1 + 1;
+    piVar2 = piVar2 + 1;
+    bVar4 = uVar3 < 4;
+    uVar3 = uVar3 - 4;
+    if (bVar4) goto LAB_10017f21;
+--- 10017f50 (16 lines total)
+int FUN_10017f50(int param_1)
+{
+  int *piVar1;
+  int iVar2;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  LOCK();
+  piVar1 = (int *)(param_1 + 0x18);
+  iVar2 = *piVar1;
+  *piVar1 = *piVar1 + 1;
+  UNLOCK();
+  return iVar2 + 1;
+}
+--- 10017f70 (37 lines total)
+int FUN_10017f70(int param_1)
+{
+  int *piVar1;
+  int iVar2;
+  undefined4 uVar3;
+  undefined4 uVar4;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  piVar1 = (int *)(param_1 + 0x18);
+  LOCK();
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  iVar2 = *piVar1;
+  if (iVar2 == 0) {
+    if (DAT_10050c64 == 0) {
+      piVar1 = *(int **)(param_1 + 0x14);
+      if (piVar1 != (int *)0x0) {
+--- 10017d20 (8 lines total)
+undefined4 FUN_10017d20(void)
+{
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  return 0;
+}
+--- 10017d30 (34 lines total)
+void FUN_10017d30(undefined4 param_1,undefined4 *param_2)
+{
+  void *_Dst;
+  int in_ECX;
+  undefined4 in_EDX;
+  undefined4 local_20 [3];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10042a37;
+  local_10 = ExceptionList;
+  local_14 = DAT_1005000c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01,in_EDX,local_14);
+--- 10017e00 (29 lines total)
+undefined4 FUN_10017e00(void)
+{
+  void *_Dst;
+  int in_ECX;
+  undefined4 in_EDX;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_100425c7;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01,in_EDX,DAT_1005000c ^ (uint)&stack0xfffffffc);
+  if (DAT_10050c64 == (int *)0x0) {
+    _Dst = (void *)FUN_1003ff62(0xcbc);
+    local_8 = 0;
+--- 10017ea0 (20 lines total)
+undefined4 FUN_10017ea0(undefined4 *param_1)
+{
+  undefined4 uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  uVar1 = *(undefined4 *)(in_ECX + 8);
+  uVar2 = *(undefined4 *)(in_ECX + 0xc);
+  uVar3 = *(undefined4 *)(in_ECX + 0x10);
+  *param_1 = *(undefined4 *)(in_ECX + 4);
+  param_1[1] = uVar1;
+  param_1[2] = uVar2;
+  param_1[3] = uVar3;
+  return 0;
+}
+--- 10017cf0 (18 lines total)
+undefined4 FUN_10017cf0(int *param_1)
+{
+  int iVar1;
+  undefined4 uVar2;
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  iVar1 = *(int *)(in_ECX + 0x14);
+  *param_1 = iVar1;
+  uVar2 = 0;
+  if (iVar1 == 0) {
+    uVar2 = 0x80004005;
+  }
+  return uVar2;
+}
+--- 100179e0 (55 lines total)
+undefined4 FUN_100179e0(int *param_1,int *param_2,uint *param_3)
+{
+  int *piVar1;
+  int *piVar2;
+  uint uVar3;
+  bool bVar4;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  piVar2 = &DAT_10043480;
+  uVar3 = 0xc;
+  piVar1 = param_2;
+  do {
+    if (*piVar1 != *piVar2) {
+      piVar2 = &DAT_10043450;
+      uVar3 = 0xc;
+      piVar1 = param_2;
+      do {
+--- 10017ab0 (16 lines total)
+int FUN_10017ab0(int param_1)
+{
+  int *piVar1;
+  int iVar2;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  LOCK();
+  piVar1 = (int *)(param_1 + 8);
+  iVar2 = *piVar1;
+  *piVar1 = *piVar1 + 1;
+  UNLOCK();
+  return iVar2 + 1;
+}
+--- 10017ad0 (20 lines total)
+int FUN_10017ad0(int param_1)
+{
+  int *piVar1;
+  int iVar2;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  piVar1 = (int *)(param_1 + 8);
+  LOCK();
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  iVar2 = *piVar1;
+  if (iVar2 == 0) {
+    FUN_100402ac(param_1,0x6c);
+    iVar2 = 0;
+  }
+  return iVar2;
+}
+--- 10016810 (21 lines total)
+undefined4 FUN_10016810(undefined4 *param_1)
+{
+  undefined4 uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  uVar1 = param_1[1];
+  uVar2 = param_1[2];
+  uVar3 = param_1[3];
+  *(undefined4 *)(in_ECX + 0xc) = *param_1;
+  *(undefined4 *)(in_ECX + 0x10) = uVar1;
+  *(undefined4 *)(in_ECX + 0x14) = uVar2;
+  *(undefined4 *)(in_ECX + 0x18) = uVar3;
+  *(undefined8 *)(in_ECX + 0x1c) = *(undefined8 *)(param_1 + 4);
+  return 0;
+--- 10016840 (21 lines total)
+undefined4 FUN_10016840(undefined4 *param_1)
+{
+  undefined4 uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  uVar1 = *(undefined4 *)(in_ECX + 0x10);
+  uVar2 = *(undefined4 *)(in_ECX + 0x14);
+  uVar3 = *(undefined4 *)(in_ECX + 0x18);
+  *param_1 = *(undefined4 *)(in_ECX + 0xc);
+  param_1[1] = uVar1;
+  param_1[2] = uVar2;
+  param_1[3] = uVar3;
+  *(undefined8 *)(param_1 + 4) = *(undefined8 *)(in_ECX + 0x1c);
+  return 0;
+--- 10016870 (42 lines total)
+undefined4 FUN_10016870(undefined4 *param_1)
+{
+  undefined4 uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  uVar1 = param_1[1];
+  uVar2 = param_1[2];
+  uVar3 = param_1[3];
+  *(undefined4 *)(in_ECX + 0x24) = *param_1;
+  *(undefined4 *)(in_ECX + 0x28) = uVar1;
+  *(undefined4 *)(in_ECX + 0x2c) = uVar2;
+  *(undefined4 *)(in_ECX + 0x30) = uVar3;
+  uVar1 = param_1[5];
+  uVar2 = param_1[6];
+--- 100168b0 (42 lines total)
+undefined4 FUN_100168b0(undefined4 *param_1)
+{
+  undefined4 uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  uVar1 = *(undefined4 *)(in_ECX + 0x28);
+  uVar2 = *(undefined4 *)(in_ECX + 0x2c);
+  uVar3 = *(undefined4 *)(in_ECX + 0x30);
+  *param_1 = *(undefined4 *)(in_ECX + 0x24);
+  param_1[1] = uVar1;
+  param_1[2] = uVar2;
+  param_1[3] = uVar3;
+  uVar1 = *(undefined4 *)(in_ECX + 0x38);
+  uVar2 = *(undefined4 *)(in_ECX + 0x3c);
+--- 100168f0 (86 lines total)
+void FUN_100168f0(int param_1,int *param_2)
+{
+  int iVar1;
+  int iVar2;
+  int *piVar3;
+  int *piVar4;
+  undefined4 in_EDX;
+  undefined1 local_40 [16];
+  undefined1 local_30 [16];
+  void *local_20;
+  int *local_1c;
+  int *local_18;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+--- 10016e80 (31 lines total)
+undefined4 FUN_10016e80(void)
+{
+  int iVar1;
+  void *_Dst;
+  int in_ECX;
+  undefined4 in_EDX;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10041aa7;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01,in_EDX,DAT_1005000c ^ (uint)&stack0xfffffffc);
+  iVar1 = DAT_10050c64;
+  *(undefined1 *)(in_ECX + 0x68) = 1;
+--- 10016f10 (14 lines total)
+undefined4 FUN_10016f10(void)
+{
+  int in_ECX;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  if (*(char *)(in_ECX + 0x68) == '\0') {
+    return 0x80004005;
+  }
+  *(undefined1 *)(in_ECX + 0x68) = 0;
+  return 0;
+}
+--- 10016f60 (84 lines total)
+void FUN_10016f60(undefined4 param_1,undefined4 param_2,uint param_3,uint param_4,undefined4 param_5
+                 )
+{
+  int iVar1;
+  void *pvVar2;
+  undefined4 in_EDX;
+  undefined4 uVar3;
+  float local_24;
+  float local_20;
+  float local_1c;
+  float local_18;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+--- 100171c0 (27 lines total)
+undefined4 FUN_100171c0(undefined4 param_1,undefined4 param_2)
+{
+  void *_Dst;
+  undefined4 in_EDX;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10041aa7;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01,in_EDX,DAT_1005000c ^ (uint)&stack0xfffffffc);
+  if (DAT_10050c64 == 0) {
+    _Dst = (void *)FUN_1003ff62(0xcbc);
+    local_8 = 0;
+    memset(_Dst,0,0xcbc);
+--- 10017260 (37 lines total)
+undefined4 FUN_10017260(uint param_1,undefined4 param_2)
+{
+  int iVar1;
+  undefined4 in_EDX;
+  undefined1 local_24 [16];
+  void *local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10042967;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01,in_EDX,DAT_1005000c ^ (uint)&stack0xfffffffc);
+  if (DAT_10050c64 == 0) {
+    local_14 = (void *)FUN_1003ff62(0xcbc);
+--- 10017340 (68 lines total)
+undefined4 FUN_10017340(uint param_1,undefined4 *param_2)
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  undefined4 uVar4;
+  int iVar5;
+  void *_Dst;
+  undefined4 in_EDX;
+  int iVar6;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_100425c7;
+  local_10 = ExceptionList;
+--- 10017410 (68 lines total)
+undefined4 FUN_10017410(uint param_1,undefined4 *param_2)
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  undefined4 uVar4;
+  int iVar5;
+  void *_Dst;
+  undefined4 in_EDX;
+  int iVar6;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_100425c7;
+  local_10 = ExceptionList;
+--- 100174e0 (22 lines total)
+void FUN_100174e0(code *param_1,undefined4 param_2)
+{
+  int iVar1;
+  undefined **ppuVar2;
+  undefined1 local_2c [32];
+  uint local_c;
+  local_c = DAT_1005000c ^ (uint)local_2c;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  ppuVar2 = &PTR_FUN_10043890;
+  do {
+    (*(code *)*ppuVar2)(local_2c);
+    iVar1 = (*param_1)(local_2c,param_2);
+    if (iVar1 != 1) break;
+    ppuVar2 = ppuVar2 + 1;
+  } while ((int)ppuVar2 < 0x100438ac);
+  __security_check_cookie(local_c ^ (uint)local_2c);
+--- 10017560 (86 lines total)
+void FUN_10017560(undefined4 param_1,int *param_2,undefined4 param_3,undefined4 param_4,
+                 undefined4 param_5,undefined4 param_6)
+{
+  int *piVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int iVar4;
+  undefined4 in_EDX;
+  int *piVar5;
+  undefined1 local_54 [16];
+  int *local_44;
+  undefined4 local_40;
+  undefined4 local_3c;
+  int *local_38;
+  void *local_34;
+  void *local_30;
+--- 10017750 (82 lines total)
+void FUN_10017750(undefined4 param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+{
+  int *piVar1;
+  int iVar2;
+  undefined4 in_EDX;
+  int *piVar3;
+  undefined1 local_4c [16];
+  int *local_3c;
+  int *local_38;
+  int *local_34;
+  int *local_30;
+  undefined1 local_2c [8];
+  undefined4 local_24;
+  undefined4 local_1c;
+  void *local_18;
+  uint local_14;
+--- 10017920 (35 lines total)
+void FUN_10017920(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+                 undefined4 param_5,undefined4 param_6)
+{
+  int iVar1;
+  void *_Dst;
+  undefined4 extraout_ECX;
+  undefined4 in_EDX;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10041aa7;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01,in_EDX,DAT_1005000c ^ (uint)&stack0xfffffffc);
+  if (DAT_10050c64 == 0) {
+--- 100186b0 (21 lines total)
+int FUN_100186b0(int param_1)
+{
+  int *piVar1;
+  int iVar2;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  piVar1 = (int *)(param_1 + 4);
+  LOCK();
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  iVar2 = *piVar1;
+  if (iVar2 == 0) {
+    FUN_1000ed60();
+    FUN_100402ac(param_1,8);
+    iVar2 = 0;
+  }
+  return iVar2;
+--- 100185c0 (62 lines total)
+undefined4 FUN_100185c0(int *param_1,int *param_2,undefined4 *param_3)
+{
+  undefined4 *puVar1;
+  int iVar2;
+  int *piVar3;
+  int *piVar4;
+  uint uVar5;
+  bool bVar6;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  piVar4 = &DAT_10043480;
+  uVar5 = 0xc;
+  piVar3 = param_2;
+  do {
+    if (*piVar3 != *piVar4) {
+      piVar4 = &DAT_10043400;
+      uVar5 = 0xc;
+--- 100186f0 (38 lines total)
+undefined4 FUN_100186f0(int *param_1,int *param_2,undefined4 *param_3)
+{
+  int *piVar1;
+  int *piVar2;
+  uint uVar3;
+  bool bVar4;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  piVar2 = &DAT_10043480;
+  uVar3 = 0xc;
+  piVar1 = param_2;
+  while (*piVar1 == *piVar2) {
+    piVar1 = piVar1 + 1;
+    piVar2 = piVar2 + 1;
+    bVar4 = uVar3 < 4;
+    uVar3 = uVar3 - 4;
+    if (bVar4) goto LAB_10018741;
+--- 100191d0 (38 lines total)
+undefined4 FUN_100191d0(int *param_1,int *param_2,undefined4 *param_3)
+{
+  int *piVar1;
+  int *piVar2;
+  uint uVar3;
+  bool bVar4;
+  __CheckForDebuggerJustMyCode(&DAT_14170d01);
+  piVar2 = &DAT_10043480;
+  uVar3 = 0xc;
+  piVar1 = param_2;
+  while (*piVar1 == *piVar2) {
+    piVar1 = piVar1 + 1;
+    piVar2 = piVar2 + 1;
+    bVar4 = uVar3 < 4;
+    uVar3 = uVar3 - 4;
+    if (bVar4) goto LAB_10019221;

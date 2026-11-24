@@ -1,0 +1,119 @@
+prefix	class	cpp_method	tcl_command	uses	kind
+TCL	CTclGlobalMethods	Sound	sound	3212	
+TCL	CTclClassDefMethods	SetClassAnim	set_class_anim	1142	
+TCL	CTclGlobalMethods	Smalltalk	smalltalk	898	
+TCL	CTclGlobalMethods	Def_Class	def_class	668	
+TCL	CTclMapEditMethods	def_class	def_class	668	
+TCL	CTclGlobalMethods	AdaptiveSound	adaptive_sound	600	
+TCL	CTclObjMethods	SetParticleSource	set_particlesource	279	
+TCL	CTclGlobalMethods	CallMethod	call_method	227	
+TCL	CTclGlobalMethods	Call	call	219	
+TCL	CTclObjMethods	LinkObj	link_obj	174	
+TCL	CTclObjMethods	SetAnim	set_anim	162	
+TCL	CTclObjMethods	SetRotY	set_roty	158	
+TCL	CTclObjMethods	ChangeParticleSource	change_particlesource	154	
+TCL	CTclClassDefMethods	Method	method	98	
+TCL	CTclObjMethods	SetTextureAnimation	set_textureanimation	96	
+TCL	CTclObjMethods	SetVisibility	set_visibility	93	
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CGameThread	Init	init	85	Init:1
+	CMap	Init	init	85	Init:1
+TCL	CTclGlobalMethods	GameTime	gametime	65	
+TCL	CTclGlobalMethods	Random	random	63	
+TCL	CTclGlobalMethods	SMAddEvent	sm_add_event	61	
+TCL	CTclObjMethods	SetPos	set_pos	61	
+TCL	CTclGlobalMethods	Elf	elf	50	
+TCL	CTclGlobalMethods	DefAttrib	def_attrib	45	
+TCL	CTclGlobalMethods	Del	del	33	
+TCL	CTclGlobalMethods	SMAddTemp	sm_add_temp	33	
+TCL	CTclClassDefMethods	SetClassAnimSet	set_class_animset	28	
+TCL	CTclObjMethods	FreeParticleSource	free_particlesource	26	
+TCL	CTclObjMethods	SetPhysic	set_physic	26	
+TCL	CTclObjMethods	SetRotX	set_rotx	26	
+TCL	CTclGlobalMethods	SMDefTempGroup	sm_def_temp_group	23	
+TCL	CTclObjMethods	ChangeLight	change_light	21	
+TCL	CTclObjMethods	GetPos	get_pos	21	
+TCL	CTclClassDefMethods	Member	member	20	
+TCL	CTclObjMethods	SetVel	set_vel	19	
+TCL	CTclGlobalMethods	SMMusicTheme	sm_music_theme	16	
+TCL	CTclGlobalMethods	CreateParticleSource	create_particlesource	15	
+TCL	CTclGlobalMethods	Sel	sel	14	
+TCL	CTclGlobalMethods	DBLoad	db_load	11	
+TCL	CTclGlobalMethods	VectorSub	vector_sub	10	
+TCL	CTclObjMethods	SetAutoLight	set_autolight	9	
+TCL	CTclObjMethods	SetRot	set_rot	9	
+	CProdPlannerMgr	Reset	reset	8	
+TCL	CTclGlobalMethods	Def_Event	def_event	8	
+TCL	CTclGlobalMethods	LoadScapeTexture	load_scape_texture	8	
+TCL	CTclGlobalMethods	New	new	8	
+TCL	CTclGlobalMethods	Option	option	8	
+TCL	CTclGlobalMethods	SMAddZone	sm_add_zone	8	
+TCL	CTclGlobalMethods	SMDrawStone	sm_draw_stone	8	
+TCL	CTclGlobalMethods	SetView	set_view	8	
+TCL	CTclObjMethods	Action	action	8	
+TCL	CTclObjMethods	SetSequenceActive	set_sequenceactive	8	
+TCL	CTclGlobalMethods	locale	locale	7	
+TCL	CTclObjMethods	SetEvent	set_event	7	
+TCL	CTclGlobalMethods	GenerateColorVariation	generate_color_variation	6	
+TCL	CTclGlobalMethods	LNAnd	lnand	6	
+TCL	CTclGlobalMethods	Map	map	6	
+TCL	CTclGlobalMethods	SetLightBegin	set_light_begin	6	
+TCL	CTclGlobalMethods	ShowLoading	show_loading	6	
+TCL	CTclObjMethods	SetCollision	set_collision	6	
+TCL	CTclObjMethods	SetRotZ	set_rotz	6	
+TCL	CTclGlobalMethods	SMSetTEmp	sm_set_temp	5	
+TCL	CTclObjMethods	Destruct	destruct	5	
+TCL	CTclGlobalMethods	RefGet	ref_get	4	
+TCL	CTclGlobalMethods	SMCreateMap	sm_create_map	3	
+TCL	CTclGlobalMethods	SMForceZone	sm_force_zone	3	
+TCL	CTclGlobalMethods	SMReset	sm_reset	3	
+TCL	CTclGlobalMethods	SMSetDigCount	sm_set_digcount	3	
+	CWigglesApp	Run	Run	3	
+TCL	CTclClassDefMethods	Handle_Event	handle_event	2	
+TCL	CTclGlobalMethods	GetView	get_view	2	
+TCL	CTclObjMethods	GetRotY	get_roty	2	
+TCL	CTclObjMethods	InvAdd	inv_add	2	
+TCL	CTclObjMethods	InvGet	inv_get	2	
+TCL	CTclObjMethods	SetAttrib	set_attrib	2	
+TCL	CTclObjMethods	SetHoverable	set_hoverable	2	
+TCL	CTclObjMethods	SetOwner	set_owner	2	
+TCL	CTclObjMethods	SetUndeletable	set_undeletable	2	
+TCL	CTclObjMethods	TaskListClear	tasklist_clear	2	
+TCL	CTclClassDefMethods	GetClassName	get_class_name	1	
+TCL	CTclClassDefMethods	MethodConst	method_const	1	
+TCL	CTclClassDefMethods	Obj_Exit	obj_exit	1	
+TCL	CTclGlobalMethods	CallMethodStatic	call_method_static	1	
+TCL	CTclGlobalMethods	ClassList	ClassList	1	
+TCL	CTclGlobalMethods	DBFindAnim	db_findanim	1	
+TCL	CTclGlobalMethods	EventGenerator	event_generator	1	
+TCL	CTclGlobalMethods	GetSelectedObject	get_selectedobject	1	
+TCL	CTclGlobalMethods	GetTime	gettime	1	
+TCL	CTclGlobalMethods	GuiNewGame	gui_new_game	1	
+TCL	CTclGlobalMethods	LGAddFilterClass	lg_addfilterclass	1	
+TCL	CTclGlobalMethods	MapSetLayer2	map_setlayer2	1	
+TCL	CTclGlobalMethods	ResetOwnerAttribs	reset_owner_attribs	1	
+TCL	CTclGlobalMethods	SMMapSet	sm_map_set	1	
+TCL	CTclGlobalMethods	SetFoWBegin	set_fow_begin	1	
+TCL	CTclGlobalMethods	SetSequence	set_sequence	1	
+TCL	CTclGlobalMethods	Sparetime	sparetime	1	
+TCL	CTclObjMethods	GetObjType	get_objtype	1	
+TCL	CTclObjMethods	GetProdBuildUp	get_prod_buildup	1	
+TCL	CTclObjMethods	GetProdOwnerStrength	get_prod_ownerstrength	1	
+TCL	CTclObjMethods	GetProdPack	get_prod_pack	1	
+TCL	CTclObjMethods	GetProdSlotCnt	get_prod_slot_cnt	1	
+TCL	CTclObjMethods	GetProdUnpack	get_prod_unpack	1	
+TCL	CTclObjMethods	SetPosZ	set_posz	1	
+TCL	CTclObjMethods	SetSelectable	set_selectable	1	
+TCL	CTclObjMethods	StateTriggerFresh	state_triggerfresh	1	
+TCL	CTclObjMethods	TimerEvent	timer_event	1	

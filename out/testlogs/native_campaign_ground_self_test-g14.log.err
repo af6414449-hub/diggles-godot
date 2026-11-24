@@ -1,0 +1,4 @@
+SCRIPT ERROR: Parse Error: There is already a variable named "meshes" declared in this scope.
+   at: GDScript::reload (res://tools/native_campaign_ground_self_test.gd:189)
+ERROR: Failed to load script "res://tools/native_campaign_ground_self_test.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

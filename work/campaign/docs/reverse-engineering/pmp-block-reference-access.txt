@@ -1,0 +1,40 @@
+  4093f0:      	push	ebp
+  4093f1:      	mov	ebp, esp
+  4093f3:      	push	ebx
+  4093f4:      	mov	ebx, dword ptr [ebp + 0x8]
+  4093f7:      	push	esi
+  4093f8:      	push	edi
+  4093f9:      	mov	edi, dword ptr [ebp + 0xc]
+  4093fc:      	mov	esi, ecx
+  4093fe:      	mov	eax, edi
+  409400:      	sar	eax, 0x3
+  409403:      	push	eax
+  409404:      	mov	eax, ebx
+  409406:      	sar	eax, 0x3
+  409409:      	push	eax
+  40940a:      	call	0x592f10 <.text+0x191f10>
+  40940f:      	mov	esi, dword ptr [esi + 0x24]
+  409412:      	mov	eax, dword ptr [eax]
+  409414:      	test	eax, eax
+  409416:      	js	0x409425 <.text+0x8425>
+  409418:      	cmp	eax, dword ptr [esi + 0x14]
+  40941b:      	jge	0x409425 <.text+0x8425>
+  40941d:      	imul	eax, eax, 0x59
+  409420:      	add	eax, dword ptr [esi + 0x10]
+  409423:      	jmp	0x409439 <.text+0x8439>
+  409425:      	push	0x0
+  409427:      	push	0x0
+  409429:      	push	0x1
+  40942b:      	push	0xc000008c
+  409430:      	call	dword ptr [0x715340]
+  409436:      	mov	eax, dword ptr [esi + 0x10]
+  409439:      	and	edi, 0x7
+  40943c:      	and	ebx, 0x7
+  40943f:      	shl	edi, 0x3
+  409442:      	or	edi, ebx
+  409444:      	mov	al, byte ptr [edi + eax]
+  409447:      	pop	edi
+  409448:      	pop	esi
+  409449:      	pop	ebx
+  40944a:      	pop	ebp
+  40944b:      	ret	0x8

@@ -1,0 +1,8 @@
+
+void Unwind_006ffb18(void)
+
+{
+  FUN_006bad60();
+  return;
+}
+

@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-15",
+  "engine": "Godot 4.7.2",
+  "renderer": "OpenGL Compatibility / AMD Vega 8",
+  "project_validation": {
+    "ok": true,
+    "counts": {
+      "total": 0,
+      "errors": 0,
+      "parse_errors": 0,
+      "warnings": 0,
+      "info": 0
+    }
+  },
+  "runtime_errors_or_warnings": [],
+  "runtime_marker_present": true,
+  "terrain": {
+    "cells": 384,
+    "unique_blocks": 115,
+    "vertices": 4763,
+    "triangles": 2800,
+    "depth_range": [
+      7.5,
+      14.5
+    ]
+  },
+  "frames": [
+    {
+      "file": "docs\\reverse-engineering\\native-terrain-views\\hol_024_native_0.png",
+      "bytes": 128413,
+      "sha256": "c1b992a4abe67a73ef23d0f5d70b0d8d6869ec3a23b59f5970e592dcbb858a29"
+    },
+    {
+      "file": "docs\\reverse-engineering\\native-terrain-views\\hol_024_native_1.png",
+      "bytes": 115319,
+      "sha256": "cea358a1ddfc873675a49b179d153043ad1658f3ea843d0cc19433547a9e837f"
+    },
+    {
+      "file": "docs\\reverse-engineering\\native-terrain-views\\hol_024_native_2.png",
+      "bytes": 112769,
+      "sha256": "fc66aeba44bc1a1c1354801555ad3dd68ed8866f55a970ea93ab2e4248b2d618"
+    }
+  ],
+  "limits": [
+    "PC native geometry preview only",
+    "Original textures, objects and lighting pending",
+    "Android export not yet performed"
+  ]
+}

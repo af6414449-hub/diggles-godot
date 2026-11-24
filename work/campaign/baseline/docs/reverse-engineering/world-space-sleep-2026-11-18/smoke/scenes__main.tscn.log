@@ -1,0 +1,45 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[SMOKE] scene=res://scenes/main.tscn frames=120 fps=60 viewport=1280x720
+[SMOKE] fuzz seed=0 project_actions=8 ui_actions=15 mouse=false
+[SMOKE_INPUT] f6 +attack
+[SMOKE_INPUT] f12 +interact
+[SMOKE_INPUT] f13 -attack
+[SMOKE_INPUT] f18 -interact
+[SMOKE_INPUT] f18 +move_down
+[SMOKE_INPUT] f23 -move_down
+[SMOKE_INPUT] f24 +ui_down
+[SMOKE_INPUT] f26 -ui_down
+[SMOKE_INPUT] f30 +ui_focus_next
+[SMOKE_INPUT] f36 +move_up
+[SMOKE_INPUT] f38 -move_up
+[SMOKE_INPUT] f40 -ui_focus_next
+[SMOKE_INPUT] f42 +ui_end
+[SMOKE_INPUT] f48 +jump
+[SMOKE_INPUT] f50 -ui_end
+[SMOKE_INPUT] f53 -jump
+[SMOKE_INPUT] f54 +move_up
+[SMOKE_INPUT] f60 +jump
+[SMOKE_INPUT] f61 -move_up
+[SMOKE_INPUT] f62 -jump
+[SMOKE_INPUT] f66 +ui_page_down
+[SMOKE_INPUT] f68 -ui_page_down
+[SMOKE_INPUT] f72 +move_left
+[SMOKE_INPUT] f78 +move_right
+[SMOKE_INPUT] f79 -move_left
+[SMOKE_INPUT] f80 -move_right
+[SMOKE_INPUT] f84 +move_down
+[SMOKE_INPUT] f90 +ui_focus_prev
+[SMOKE_INPUT] f91 -ui_focus_prev
+[SMOKE_INPUT] f96 -move_down
+[SMOKE_INPUT] f96 +pause
+[SMOKE_INPUT] f101 -pause
+[SMOKE_INPUT] f102 +move_up
+[SMOKE_INPUT] f106 -move_up
+[SMOKE_INPUT] f108 +attack
+[SMOKE_INPUT] f114 +move_right
+[SMOKE_INPUT] f118 -attack
+[SMOKE_INPUT] f120 +interact
+[SMOKE_INPUT] f120 -move_right
+[SMOKE_INPUT] f120 -interact
+[SMOKE_RESULT] {"ended":"completed","findings":[],"frames":120,"fuzz":{"event_count":40,"events":["f6 +attack","f12 +interact","f13 -attack","f18 -interact","f18 +move_down","f23 -move_down","f24 +ui_down","f26 -ui_down","f30 +ui_focus_next","f36 +move_up","f38 -move_up","f40 -ui_focus_next","f42 +ui_end","f48 +jump","f50 -ui_end","f53 -jump","f54 +move_up","f60 +jump","f61 -move_up","f62 -jump","f66 +ui_page_down","f68 -ui_page_down","f72 +move_left","f78 +move_right","f79 -move_left","f80 -move_right","f84 +move_down","f90 +ui_focus_prev","f91 -ui_focus_prev","f96 -move_down","f96 +pause","f101 -pause","f102 +move_up","f106 -move_up","f108 +attack","f114 +move_right","f118 -attack","f120 +interact","f120 -move_right","f120 -interact"],"seed":0},"mode":"fixed_fps","notes":[],"perf":{"frame_ms":{"avg":0.08,"end":0.02,"max":2.5,"min":0.01,"p95":0.12,"samples":120,"start":0.05},"node_count_end":11,"node_count_start":11,"orphan_nodes":0,"samples":22,"static_memory_mb":26.36},"scene":"res://scenes/main.tscn","seconds_simulated":2.0,"target_frames":120}

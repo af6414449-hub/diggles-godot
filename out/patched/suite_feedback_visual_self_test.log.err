@@ -1,0 +1,12 @@
+WARNING: Loaded resource as image file, this will not work on export: 'res://textures/native_flame/particle_a_128d.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] configure (res://scripts/native_flame_emitter.gd:60)
+       [1] _add_source_flame (res://scripts/multiplayer_test.gd:4085)
+       [2] _initialize_source_flames (res://scripts/multiplayer_test.gd:4070)
+       [3] _ready (res://scripts/multiplayer_test.gd:352)
+       [4] _run (res://tools/feedback_visual_self_test.gd:21)
+WARNING: 18 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 4 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

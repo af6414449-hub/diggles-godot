@@ -1,0 +1,58 @@
+# ─────────────────────────────────────────────────────────────
+# Diggles: The Myth of Fenris — порт на Godot 4.7.2
+#
+# В репозиторий идёт код, документация, извлечённые данные оригинала
+# и рабочие артефакты (work/, out/). Снимки-истории, кэши сборки и
+# посторонние данные — исключены.
+# ─────────────────────────────────────────────────────────────
+
+# ── Godot ───────────────────────────────────────────────────
+godot/.godot/
+godot/.import/
+godot/export_templates/
+godot/feature_profiles/
+godot/android/build/
+godot/android/.gradle/
+godot/android/.idea/
+godot/build/
+*.translation
+
+# ── Python ─────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# ── Редакторы и ОС ─────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# ── Снимки-истории вне work/ ───────────────────────────────
+# Основание: PROJECT-MAP-2026-11-21.md §2.3 — это копии деревьев
+# и песочницы верификатора, а не актуальный проект.
+# Содержимое work/campaign/baseline, work/campaign/godot и
+# work/campaign/trial остаётся в репозитории вместе с work/.
+/baseline/
+/repro/
+/trial/
+/review-tmp/
+
+# ── Посторонняя задача (отказы по визам) — к Diggles отношения
+#    не имеет и в репозитории проекта не нужна.
+/RefusalRates/
+/RefusalRates_PDF_FY06-FY25.zip
+/refusal_rates_by_nationality.csv
+/refusal_rates_by_nationality.xlsx
+/review-tmp-diff.json
+
+# ── Разовый мусор ──────────────────────────────────────────
+/work/tmp_re/
+/out/_scratch/

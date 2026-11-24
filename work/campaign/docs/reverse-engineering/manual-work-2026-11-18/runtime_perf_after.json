@@ -1,0 +1,1470 @@
+{
+  "adapter": "AMD Radeon(TM) Vega 8 Graphics",
+  "callback_microbench": {
+    "_process_us_per_call": {
+      "max": 36.14,
+      "mean": 26.454,
+      "min": 24.89,
+      "p50": 25.76,
+      "p95": 36.14
+    },
+    "_update_dwarf_dig_jobs_us_per_call": {
+      "max": 0.99,
+      "mean": 0.952,
+      "min": 0.94,
+      "p50": 0.95,
+      "p95": 0.99
+    },
+    "_update_dwarf_idle_animations_us_per_call": {
+      "max": 20.52,
+      "mean": 18.9805,
+      "min": 17.95,
+      "p50": 19.15,
+      "p95": 20.52
+    },
+    "_update_dwarf_locomotion_us_per_call": {
+      "max": 2.15,
+      "mean": 1.911,
+      "min": 1.87,
+      "p50": 1.89,
+      "p95": 2.15
+    }
+  },
+  "display": "Windows",
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "inventory": {
+    "lights": [
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_c_015",
+        "position": "(8.14568, -12.0983, 13.28)",
+        "range": 4.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_c_016",
+        "position": "(26.8568, -8.27136, 13.28)",
+        "range": 4.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_d_017",
+        "position": "(32.8151, -15.184, 14.5)",
+        "range": 5.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_056",
+        "position": "(32.4054, -15.4933, 8.51)",
+        "range": 8.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_057",
+        "position": "(30.0602, -7.9365, 8.51)",
+        "range": 8.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_058",
+        "position": "(14.5916, -11.4247, 14.0)",
+        "range": 8.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_065",
+        "position": "(11.5, -13.0, 8.855)",
+        "range": 2.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_066",
+        "position": "(17.5, -13.0, 8.855)",
+        "range": 2.0,
+        "shadow": false
+      },
+      {
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_067",
+        "position": "(22.5, -17.0, 12.855)",
+        "range": 2.0,
+        "shadow": false
+      }
+    ],
+    "mesh_instances": 365,
+    "nodes": 838,
+    "scripted_processors": [
+      "/root/MultiplayerTest"
+    ],
+    "top_level": [
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/NativeCorridorPreview"
+      },
+      {
+        "children": 5,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uh_001_001"
+      },
+      {
+        "children": 5,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uh_007_002"
+      },
+      {
+        "children": 4,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Holzstuetze_a_003"
+      },
+      {
+        "children": 4,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Holzstuetze_b_004"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Holzstuetze_c_005"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_b_006"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_c_007"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Pilz_008"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Pilz_009"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Pilz_010"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Stein_011"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Stein_012"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Stein_013"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Stein_014"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Feuerstelle_018"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Hamster_023"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Hamster_024"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Hamster_038"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Hamster_039"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Schatztonne_040"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Schatztonne_041"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Schatztonne_042"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillhamster_043"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillhamster_044"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillhamster_045"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillpilz_046"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillpilz_047"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Grillpilz_048"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Raupe_052"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Raupe_053"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Moos_uv_b_054"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Swf_bergwand_059"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Swf_bergwand_060"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Urw_sumpf_062"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Feuerkelch_b_065"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Feuerkelch_b_066"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Feuerkelch_b_067"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Urw_bas_aa_070"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Urw_baumstumpf_b_071"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Urw_baumstumpf_a_072"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Obw_berg_a_073"
+      },
+      {
+        "children": 5,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uh_002_074"
+      },
+      {
+        "children": 4,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uh_3_075"
+      },
+      {
+        "children": 4,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uv_002_076"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_a_077"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wurzel_04_b_078"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_079"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_080"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_l_081"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_l_082"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_l_083"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_a_084"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_h_085"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_g_086"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_g_087"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_j_088"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_k_089"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_k_090"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_l_091"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_a_092"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_j_093"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_a_094"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_l_095"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wand_kaserne_l_096"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Moos_uv_a_097"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Moos_um_a_098"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Tomblume_b_099"
+      },
+      {
+        "children": 5,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uh_009_100"
+      },
+      {
+        "children": 5,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Multi_Moos_Mix_uv_10_101"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Holzwand_b_102"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Holzwand_d_103"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Holzwand_g_104"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Holzwand_l_105"
+      },
+      {
+        "children": 3,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Wurzel_04_a_106"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_b_107"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_108"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_109"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_110"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_111"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_112"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_d_113"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_l_114"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_l_115"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_h_116"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_h_117"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_g_118"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Liane_g_119"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Boden_kaserne_c_120"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Boden_kaserne_d_121"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Boden_kaserne_d_122"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Boden_kaserne_e_123"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Boden_kaserne_c_124"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Abschluss_kaserne_a_125"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Abschluss_kaserne_a_126"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Abschluss_kaserne_a_127"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Abschluss_kaserne_a_128"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Abschluss_kaserne_a_129"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_130"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_131"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_132"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_133"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_134"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Ecke_kaserne_a_135"
+      },
+      {
+        "children": 1,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Pilze_01_a_136"
+      },
+      {
+        "children": 2,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Dummy_Tomblume_137"
+      },
+      {
+        "children": 6,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Zwerg_1106"
+      },
+      {
+        "children": 6,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Zwerg_1107"
+      },
+      {
+        "children": 6,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/Zwerg_1108"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_c_015"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_c_016"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_d_017"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_056"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_057"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Misc_LightSrc_f_058"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_065"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_066"
+      },
+      {
+        "children": 0,
+        "path": "/root/MultiplayerTest/NativeRenderSpace/SourceLight_Dummy_Feuerkelch_b_067"
+      }
+    ],
+    "unique_materials": 166,
+    "unique_meshes": 293,
+    "unique_visible_materials": 161,
+    "visible_material_modes": {
+      "ShaderMaterial": 168,
+      "StandardMaterial3D:alpha=0:cull=2": 57,
+      "StandardMaterial3D:alpha=2:cull=2": 124
+    },
+    "visible_meshes": 349
+  },
+  "load_ready_ms": 2194.005,
+  "note": "Desktop idle fixed camera; no input/network stress. Frame wall time includes wait/present; TIME_PROCESS is engine monitor, not script-exclusive CPU. Zero GPU/viewport timings mean unavailable, not free.",
+  "phases": [
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "baseline",
+      "physics_monitor_ms": {
+        "max": 0.658,
+        "mean": 0.648900000000001,
+        "min": 0.619,
+        "p50": 0.658,
+        "p95": 0.658
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 16.813,
+        "mean": 16.6228333333334,
+        "min": 15.998,
+        "p50": 16.813,
+        "p95": 16.813
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131652398.0,
+      "viewport_cpu_ms": {
+        "max": 7.29099988937378,
+        "mean": 5.68759998083115,
+        "min": 4.89900016784668,
+        "p50": 5.60099983215332,
+        "p95": 6.65999984741211
+      },
+      "viewport_gpu_ms": {
+        "max": 4.96799993515015,
+        "mean": 4.05844999154409,
+        "min": 3.50500011444092,
+        "p50": 3.97699999809265,
+        "p95": 4.77899980545044
+      },
+      "wall_ms": {
+        "max": 9.122,
+        "mean": 6.87270833333333,
+        "min": 5.792,
+        "p50": 6.807,
+        "p95": 8.02
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "root_process_off",
+      "physics_monitor_ms": {
+        "max": 0.872,
+        "mean": 0.735199999999999,
+        "min": 0.72,
+        "p50": 0.72,
+        "p95": 0.872
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 8.762,
+        "mean": 8.73699999999997,
+        "min": 8.512,
+        "p50": 8.762,
+        "p95": 8.762
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131659394.0,
+      "viewport_cpu_ms": {
+        "max": 7.20100021362305,
+        "mean": 5.79198333819707,
+        "min": 4.89099979400635,
+        "p50": 5.76100015640259,
+        "p95": 6.6710000038147
+      },
+      "viewport_gpu_ms": {
+        "max": 5.61299991607666,
+        "mean": 4.10606667796771,
+        "min": 3.50399994850159,
+        "p50": 4.05900001525879,
+        "p95": 4.86499977111816
+      },
+      "wall_ms": {
+        "max": 8.611,
+        "mean": 6.925375,
+        "min": 5.647,
+        "p50": 6.839,
+        "p95": 8.115
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "baseline_return_1",
+      "physics_monitor_ms": {
+        "max": 1.025,
+        "mean": 0.971450000000002,
+        "min": 0.872,
+        "p50": 1.025,
+        "p95": 1.025
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 8.512,
+        "mean": 8.41579999999998,
+        "min": 8.364,
+        "p50": 8.364,
+        "p95": 8.512
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131666406.0,
+      "viewport_cpu_ms": {
+        "max": 7.68300008773804,
+        "mean": 5.97382499376933,
+        "min": 4.87799978256226,
+        "p50": 5.95699977874756,
+        "p95": 7.03999996185303
+      },
+      "viewport_gpu_ms": {
+        "max": 5.56699991226196,
+        "mean": 4.26730833252271,
+        "min": 3.5090000629425,
+        "p50": 4.23899984359741,
+        "p95": 5.05200004577637
+      },
+      "wall_ms": {
+        "max": 9.429,
+        "mean": 7.280625,
+        "min": 5.863,
+        "p50": 7.327,
+        "p95": 8.519
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "omni_off",
+      "physics_monitor_ms": {
+        "max": 0.74,
+        "mean": 0.721099999999999,
+        "min": 0.677,
+        "p50": 0.74,
+        "p95": 0.74
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 13.332,
+        "mean": 12.7323,
+        "min": 11.333,
+        "p50": 13.332,
+        "p95": 13.332
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131659358.0,
+      "viewport_cpu_ms": {
+        "max": 12.3830003738403,
+        "mean": 7.95434999068578,
+        "min": 5.13800001144409,
+        "p50": 7.43900012969971,
+        "p95": 11.2729997634888
+      },
+      "viewport_gpu_ms": {
+        "max": 9.48400020599365,
+        "mean": 5.76959165930748,
+        "min": 3.59299993515015,
+        "p50": 5.25500011444092,
+        "p95": 8.45800018310547
+      },
+      "wall_ms": {
+        "max": 15.199,
+        "mean": 9.705475,
+        "min": 5.992,
+        "p50": 9.119,
+        "p95": 13.679
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "baseline_after_omni",
+      "physics_monitor_ms": {
+        "max": 0.676,
+        "mean": 0.645483333333335,
+        "min": 0.54,
+        "p50": 0.676,
+        "p95": 0.676
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 19.024,
+        "mean": 17.4417583333333,
+        "min": 14.701,
+        "p50": 19.024,
+        "p95": 19.024
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131673630.0,
+      "viewport_cpu_ms": {
+        "max": 13.3369998931885,
+        "mean": 11.5869333346685,
+        "min": 10.2229995727539,
+        "p50": 11.58899974823,
+        "p95": 12.7969999313354
+      },
+      "viewport_gpu_ms": {
+        "max": 10.2849998474121,
+        "mean": 8.70660829544067,
+        "min": 6.68100023269653,
+        "p50": 8.70499992370605,
+        "p95": 9.95199966430664
+      },
+      "wall_ms": {
+        "max": 15.742,
+        "mean": 13.5237416666667,
+        "min": 11.638,
+        "p50": 13.494,
+        "p95": 14.946
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "msaa_off",
+      "physics_monitor_ms": {
+        "max": 0.77,
+        "mean": 0.628333333333334,
+        "min": 0.52,
+        "p50": 0.52,
+        "p95": 0.77
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 14.063,
+        "mean": 13.7014666666667,
+        "min": 13.425,
+        "p50": 13.425,
+        "p95": 14.063
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131680594.0,
+      "viewport_cpu_ms": {
+        "max": 11.9280004501343,
+        "mean": 8.99498335520426,
+        "min": 5.76100015640259,
+        "p50": 9.41100025177002,
+        "p95": 11.4709997177124
+      },
+      "viewport_gpu_ms": {
+        "max": 9.06900024414063,
+        "mean": 6.65406667391459,
+        "min": 4.3270001411438,
+        "p50": 6.86100006103516,
+        "p95": 8.69699954986572
+      },
+      "wall_ms": {
+        "max": 13.659,
+        "mean": 10.4611166666667,
+        "min": 6.799,
+        "p50": 11.036,
+        "p95": 13.454
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "msaa_2x",
+      "physics_monitor_ms": {
+        "max": 0.701,
+        "mean": 0.691033333333332,
+        "min": 0.678,
+        "p50": 0.701,
+        "p95": 0.701
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 22.25,
+        "mean": 15.6948,
+        "min": 10.682,
+        "p50": 10.682,
+        "p95": 22.25
+      },
+      "render_memory_bytes": 52226717.0,
+      "static_memory_bytes": 131687954.0,
+      "viewport_cpu_ms": {
+        "max": 9.48400020599365,
+        "mean": 7.88376666704814,
+        "min": 6.99499988555908,
+        "p50": 7.80999994277954,
+        "p95": 8.83699989318848
+      },
+      "viewport_gpu_ms": {
+        "max": 7.4980001449585,
+        "mean": 6.23925831715266,
+        "min": 5.53299999237061,
+        "p50": 6.22599983215332,
+        "p95": 7.04699993133545
+      },
+      "wall_ms": {
+        "max": 11.22,
+        "mean": 9.3774,
+        "min": 8.025,
+        "p50": 9.333,
+        "p95": 10.632
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "msaa_4x",
+      "physics_monitor_ms": {
+        "max": 0.83,
+        "mean": 0.732466666666666,
+        "min": 0.678,
+        "p50": 0.678,
+        "p95": 0.83
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 20.398,
+        "mean": 14.4792666666666,
+        "min": 11.174,
+        "p50": 11.174,
+        "p95": 20.398
+      },
+      "render_memory_bytes": 66972317.0,
+      "static_memory_bytes": 131694918.0,
+      "viewport_cpu_ms": {
+        "max": 10.0699996948242,
+        "mean": 8.6417249639829,
+        "min": 7.95499992370605,
+        "p50": 8.57100009918213,
+        "p95": 9.69699954986572
+      },
+      "viewport_gpu_ms": {
+        "max": 8.11200046539307,
+        "mean": 7.03418334325155,
+        "min": 6.49399995803833,
+        "p50": 6.95800018310547,
+        "p95": 7.68200016021729
+      },
+      "wall_ms": {
+        "max": 11.986,
+        "mean": 10.1208416666667,
+        "min": 9.008,
+        "p50": 10.151,
+        "p95": 11.133
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "baseline_after_msaa",
+      "physics_monitor_ms": {
+        "max": 0.809,
+        "mean": 0.775316666666665,
+        "min": 0.723,
+        "p50": 0.809,
+        "p95": 0.809
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 11.567,
+        "mean": 11.2712916666667,
+        "min": 10.812,
+        "p50": 11.567,
+        "p95": 11.567
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131703494.0,
+      "viewport_cpu_ms": {
+        "max": 9.35599994659424,
+        "mean": 6.58792499701182,
+        "min": 4.92600011825562,
+        "p50": 6.48600006103516,
+        "p95": 7.82800006866455
+      },
+      "viewport_gpu_ms": {
+        "max": 6.33300018310547,
+        "mean": 4.74656665523847,
+        "min": 3.59899997711182,
+        "p50": 4.72599983215332,
+        "p95": 5.75299978256226
+      },
+      "wall_ms": {
+        "max": 10.975,
+        "mean": 8.12,
+        "min": 6.409,
+        "p50": 7.998,
+        "p95": 9.929
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 178,
+        "mean": 178.0,
+        "min": 178,
+        "p50": 178,
+        "p95": 178
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 602,
+        "mean": 602.0,
+        "min": 602,
+        "p50": 602,
+        "p95": 602
+      },
+      "phase": "terrain_hidden",
+      "physics_monitor_ms": {
+        "max": 0.599,
+        "mean": 0.598999999999999,
+        "min": 0.599,
+        "p50": 0.599,
+        "p95": 0.599
+      },
+      "primitives": {
+        "max": 12074,
+        "mean": 12074.0,
+        "min": 12074,
+        "p50": 12074,
+        "p95": 12074
+      },
+      "process_monitor_ms": {
+        "max": 9.963,
+        "mean": 9.96299999999999,
+        "min": 9.963,
+        "p50": 9.963,
+        "p95": 9.963
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131747398.0,
+      "viewport_cpu_ms": {
+        "max": 8.31099987030029,
+        "mean": 6.04266667366028,
+        "min": 4.09999990463257,
+        "p50": 5.84999990463257,
+        "p95": 7.95800018310547
+      },
+      "viewport_gpu_ms": {
+        "max": 5.95300006866455,
+        "mean": 4.3143666823705,
+        "min": 2.96399998664856,
+        "p50": 4.2480001449585,
+        "p95": 5.64900016784668
+      },
+      "wall_ms": {
+        "max": 10.671,
+        "mean": 7.54579166666667,
+        "min": 5.214,
+        "p50": 7.444,
+        "p95": 9.734
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 133,
+        "mean": 133.0,
+        "min": 133,
+        "p50": 133,
+        "p95": 133
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 557,
+        "mean": 557.0,
+        "min": 557,
+        "p50": 557,
+        "p95": 557
+      },
+      "phase": "objects_hidden",
+      "physics_monitor_ms": {
+        "max": 0.702,
+        "mean": 0.645941666666666,
+        "min": 0.485,
+        "p50": 0.702,
+        "p95": 0.702
+      },
+      "primitives": {
+        "max": 6457,
+        "mean": 6457.0,
+        "min": 6457,
+        "p50": 6457,
+        "p95": 6457
+      },
+      "process_monitor_ms": {
+        "max": 11.682,
+        "mean": 10.456725,
+        "min": 6.939,
+        "p50": 11.682,
+        "p95": 11.682
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131761822.0,
+      "viewport_cpu_ms": {
+        "max": 5.90999984741211,
+        "mean": 4.91108334461848,
+        "min": 4.02799987792969,
+        "p50": 4.875,
+        "p95": 5.55999994277954
+      },
+      "viewport_gpu_ms": {
+        "max": 3.97399997711182,
+        "mean": 3.01620833675067,
+        "min": 2.33599996566772,
+        "p50": 2.98200011253357,
+        "p95": 3.82599997520447
+      },
+      "wall_ms": {
+        "max": 7.037,
+        "mean": 5.884475,
+        "min": 5.057,
+        "p50": 5.858,
+        "p95": 6.556
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "baseline_return_2",
+      "physics_monitor_ms": {
+        "max": 0.525,
+        "mean": 0.516666666666666,
+        "min": 0.485,
+        "p50": 0.525,
+        "p95": 0.525
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 8.802,
+        "mean": 8.41387500000001,
+        "min": 6.939,
+        "p50": 8.802,
+        "p95": 8.802
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131766618.0,
+      "viewport_cpu_ms": {
+        "max": 7.25,
+        "mean": 5.59506665070852,
+        "min": 4.87099981307983,
+        "p50": 5.57100009918213,
+        "p95": 6.38500022888184
+      },
+      "viewport_gpu_ms": {
+        "max": 5.19000005722046,
+        "mean": 4.01060833334923,
+        "min": 3.48799991607666,
+        "p50": 3.94199991226196,
+        "p95": 4.56699991226196
+      },
+      "wall_ms": {
+        "max": 9.081,
+        "mean": 6.747875,
+        "min": 5.784,
+        "p50": 6.74,
+        "p95": 8.128
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "frozen_before_prune",
+      "physics_monitor_ms": {
+        "max": 0.826,
+        "mean": 0.648375,
+        "min": 0.581,
+        "p50": 0.581,
+        "p95": 0.826
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 106.904,
+        "mean": 79.7609500000002,
+        "min": 8.202,
+        "p50": 106.904,
+        "p95": 106.904
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131777942.0,
+      "viewport_cpu_ms": {
+        "max": 7.33500003814697,
+        "mean": 5.88346665302912,
+        "min": 4.99100017547607,
+        "p50": 5.74599981307983,
+        "p95": 7.04899978637695
+      },
+      "viewport_gpu_ms": {
+        "max": 5.34600019454956,
+        "mean": 4.18249999880791,
+        "min": 3.53399991989136,
+        "p50": 4.11499977111816,
+        "p95": 4.96400022506714
+      },
+      "wall_ms": {
+        "max": 9.258,
+        "mean": 6.97288333333333,
+        "min": 5.762,
+        "p50": 6.764,
+        "p95": 8.417
+      }
+    },
+    {
+      "draw_calls": {
+        "max": 289,
+        "mean": 289.0,
+        "min": 289,
+        "p50": 289,
+        "p95": 289
+      },
+      "nodes": 839.0,
+      "objects": {
+        "max": 713,
+        "mean": 713.0,
+        "min": 713,
+        "p50": 713,
+        "p95": 713
+      },
+      "phase": "frozen_hidden_frames_pruned",
+      "physics_monitor_ms": {
+        "max": 0.826,
+        "mean": 0.684899999999998,
+        "min": 0.66,
+        "p50": 0.66,
+        "p95": 0.826
+      },
+      "primitives": {
+        "max": 17163,
+        "mean": 17163.0,
+        "min": 17163,
+        "p50": 17163,
+        "p95": 17163
+      },
+      "process_monitor_ms": {
+        "max": 9.975,
+        "mean": 9.70905,
+        "min": 8.202,
+        "p50": 9.975,
+        "p95": 9.975
+      },
+      "render_memory_bytes": 37481117.0,
+      "static_memory_bytes": 131786578.0,
+      "viewport_cpu_ms": {
+        "max": 7.32600021362305,
+        "mean": 5.919733329614,
+        "min": 4.96600008010864,
+        "p50": 5.83300018310547,
+        "p95": 6.97200012207031
+      },
+      "viewport_gpu_ms": {
+        "max": 4.97599983215332,
+        "mean": 4.18799167076747,
+        "min": 3.50500011444092,
+        "p50": 4.17799997329712,
+        "p95": 4.83400011062622
+      },
+      "wall_ms": {
+        "max": 12.621,
+        "mean": 7.13870833333333,
+        "min": 5.848,
+        "p50": 7.009,
+        "p95": 8.584
+      }
+    }
+  ],
+  "pruned_hidden_frame_nodes": 0,
+  "renderer": "gl_compatibility",
+  "sample_frames": 120,
+  "scene_script_sha256_at_end": "d153a2f1e481858f2c6981c007f9e12f304ad001467d67ce60dc50270bfd1bbe",
+  "scene_script_sha256_at_load": "d153a2f1e481858f2c6981c007f9e12f304ad001467d67ce60dc50270bfd1bbe",
+  "viewport": "(1280, 720)",
+  "vsync": 0
+}

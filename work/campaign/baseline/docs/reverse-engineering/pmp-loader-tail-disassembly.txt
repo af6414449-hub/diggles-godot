@@ -1,0 +1,413 @@
+﻿
+C:\Program Files (x86)\Steam\steamapps\common\Diggles The Myth of Fenris\Diggles.exe:	file format coff-i386
+
+Disassembly of section .text:
+
+00401000 <.text>:
+  599a80:      	add	dword ptr [eax - 0x74], ebp
+  599a83:      	add	byte ptr [eax], al
+  599a85:      	sar	bh, 0xd6
+  599a88:      	mov	eax, dword ptr [edi + 0x14]
+  599a8b:      	mov	ecx, dword ptr [ebp - 0x54]
+  599a8e:      	mov	word ptr [eax + 0x18], cx
+  599a92:      	mov	eax, dword ptr [ebp - 0x50]
+  599a95:      	imul	eax, dword ptr [ebp - 0x14]
+  599a99:      	add	eax, dword ptr [ebp - 0x24]
+  599a9c:      	js	0x599aab <.text+0x198aab>
+  599a9e:      	cmp	eax, dword ptr [ebp - 0x80]
+  599aa1:      	jge	0x599aab <.text+0x198aab>
+  599aa3:      	mov	ecx, dword ptr [ebp - 0x74]
+  599aa6:      	lea	eax, [ecx + 4*eax]
+  599aa9:      	jmp	0x599abb <.text+0x198abb>
+  599aab:      	push	0x0
+  599aad:      	push	0x0
+  599aaf:      	push	0x1
+  599ab1:      	push	0xc000008c
+  599ab6:      	call	esi
+  599ab8:      	mov	eax, dword ptr [ebp - 0x74]
+  599abb:      	mov	eax, dword ptr [eax]
+  599abd:      	mov	dword ptr [ebp - 0x54], eax
+  599ac0:      	mov	eax, dword ptr [0x77241c]
+  599ac5:      	mov	dword ptr [ebp - 0x18], eax
+  599ac8:      	mov	edi, dword ptr [eax + 0x84]
+  599ace:      	cmp	dword ptr [ebp - 0x20], edi
+  599ad1:      	mov	edx, dword ptr [eax + 0x88]
+  599ad7:      	cmovge	edi, dword ptr [ebp - 0x20]
+  599adb:      	mov	ecx, dword ptr [eax + 0x90]
+  599ae1:      	cmp	dword ptr [ebp - 0x30], edx
+  599ae4:      	mov	esi, dword ptr [eax + 0x8c]
+  599aea:      	cmovge	edx, dword ptr [ebp - 0x30]
+  599aee:      	cmp	edx, ecx
+  599af0:      	lea	eax, [ecx - 0x1]
+  599af3:      	mov	ecx, dword ptr [ebp - 0x18]
+  599af6:      	cmovl	eax, edx
+  599af9:      	imul	eax, dword ptr [ecx + 0x44]
+  599afd:      	cmp	edi, esi
+  599aff:      	lea	ecx, [esi - 0x1]
+  599b02:      	cmovl	ecx, edi
+  599b05:      	mov	edi, dword ptr [ebp - 0x18]
+  599b08:      	add	eax, ecx
+  599b0a:      	cdq
+  599b0b:      	idiv	dword ptr [edi + 0x4c]
+  599b0e:      	test	edx, edx
+  599b10:      	js	0x599b25 <.text+0x198b25>
+  599b12:      	cmp	edx, dword ptr [edi + 0x18]
+  599b15:      	jge	0x599b25 <.text+0x198b25>
+  599b17:      	mov	esi, dword ptr [0x715340]
+  599b1d:      	imul	eax, edx, 0x7c
+  599b20:      	add	eax, dword ptr [edi + 0x14]
+  599b23:      	jmp	0x599b3b <.text+0x198b3b>
+  599b25:      	mov	esi, dword ptr [0x715340]
+  599b2b:      	push	0x0
+  599b2d:      	push	0x0
+  599b2f:      	push	0x1
+  599b31:      	push	0xc000008c
+  599b36:      	call	esi
+  599b38:      	mov	eax, dword ptr [edi + 0x14]
+  599b3b:      	mov	ecx, dword ptr [ebp - 0x54]
+  599b3e:      	mov	dword ptr [eax], ecx
+  599b40:      	mov	eax, dword ptr [ebp - 0x50]
+  599b43:      	imul	eax, dword ptr [ebp - 0x14]
+  599b47:      	add	eax, dword ptr [ebp - 0x24]
+  599b4a:      	js	0x599b56 <.text+0x198b56>
+  599b4c:      	cmp	eax, dword ptr [ebp - 0x58]
+  599b4f:      	jge	0x599b56 <.text+0x198b56>
+  599b51:      	add	eax, dword ptr [ebp - 0x70]
+  599b54:      	jmp	0x599b66 <.text+0x198b66>
+  599b56:      	push	0x0
+  599b58:      	push	0x0
+  599b5a:      	push	0x1
+  599b5c:      	push	0xc000008c
+  599b61:      	call	esi
+  599b63:      	mov	eax, dword ptr [ebp - 0x70]
+  599b66:      	mov	al, byte ptr [eax]
+  599b68:      	mov	byte ptr [ebp - 0x25], al
+  599b6b:      	mov	eax, dword ptr [0x77241c]
+  599b70:      	mov	dword ptr [ebp - 0x18], eax
+  599b73:      	mov	edi, dword ptr [eax + 0x84]
+  599b79:      	cmp	dword ptr [ebp - 0x20], edi
+  599b7c:      	mov	edx, dword ptr [eax + 0x88]
+  599b82:      	cmovge	edi, dword ptr [ebp - 0x20]
+  599b86:      	mov	ecx, dword ptr [eax + 0x90]
+  599b8c:      	cmp	dword ptr [ebp - 0x30], edx
+  599b8f:      	mov	esi, dword ptr [eax + 0x8c]
+  599b95:      	cmovge	edx, dword ptr [ebp - 0x30]
+  599b99:      	cmp	edx, ecx
+  599b9b:      	lea	eax, [ecx - 0x1]
+  599b9e:      	mov	ecx, dword ptr [ebp - 0x18]
+  599ba1:      	cmovl	eax, edx
+  599ba4:      	imul	eax, dword ptr [ecx + 0x44]
+  599ba8:      	cmp	edi, esi
+  599baa:      	lea	ecx, [esi - 0x1]
+  599bad:      	cmovl	ecx, edi
+  599bb0:      	mov	edi, dword ptr [ebp - 0x18]
+  599bb3:      	add	eax, ecx
+  599bb5:      	cdq
+  599bb6:      	idiv	dword ptr [edi + 0x4c]
+  599bb9:      	test	edx, edx
+  599bbb:      	js	0x599bd0 <.text+0x198bd0>
+  599bbd:      	cmp	edx, dword ptr [edi + 0x18]
+  599bc0:      	jge	0x599bd0 <.text+0x198bd0>
+  599bc2:      	mov	esi, dword ptr [0x715340]
+  599bc8:      	imul	eax, edx, 0x7c
+  599bcb:      	add	eax, dword ptr [edi + 0x14]
+  599bce:      	jmp	0x599be6 <.text+0x198be6>
+  599bd0:      	mov	esi, dword ptr [0x715340]
+  599bd6:      	push	0x0
+  599bd8:      	push	0x0
+  599bda:      	push	0x1
+  599bdc:      	push	0xc000008c
+  599be1:      	call	esi
+  599be3:      	mov	eax, dword ptr [edi + 0x14]
+  599be6:      	mov	cl, byte ptr [ebp - 0x25]
+  599be9:      	mov	edi, dword ptr [ebp - 0x78]
+  599bec:      	mov	byte ptr [eax + 0x7], cl
+  599bef:      	mov	edx, dword ptr [ebp - 0x24]
+  599bf2:      	inc	dword ptr [ebp - 0x20]
+  599bf5:      	inc	edx
+  599bf6:      	mov	ecx, dword ptr [ebp - 0x50]
+  599bf9:      	mov	dword ptr [ebp - 0x24], edx
+  599bfc:      	cmp	edx, dword ptr [ebp - 0x48]
+  599bff:      	jl	0x5997e0 <.text+0x1987e0>
+  599c05:      	inc	dword ptr [ebp - 0x30]
+  599c08:      	inc	ecx
+  599c09:      	mov	edx, dword ptr [ebp - 0x40]
+  599c0c:      	mov	dword ptr [ebp - 0x50], ecx
+  599c0f:      	cmp	ecx, dword ptr [ebp - 0x4c]
+  599c12:      	jl	0x5997c0 <.text+0x1987c0>
+  599c18:      	cmp	dword ptr [0x772414], 0x0
+  599c1f:      	jne	0x599c57 <.text+0x198c57>
+  599c21:      	push	0xd03
+  599c26:      	mov	edx, 0x72a7d0
+  599c2b:      	mov	ecx, 0x1ac
+  599c30:      	call	0x6ba810 <.text+0x2b9810>
+  599c35:      	add	esp, 0x4
+  599c38:      	mov	dword ptr [ebp - 0x58], eax
+  599c3b:      	mov	byte ptr [ebp - 0x4], 0x5
+  599c3f:      	test	eax, eax
+  599c41:      	je	0x599c4c <.text+0x198c4c>
+  599c43:      	mov	ecx, eax
+  599c45:      	call	0x581470 <.text+0x180470>
+  599c4a:      	jmp	0x599c4e <.text+0x198c4e>
+  599c4c:      	xor	eax, eax
+  599c4e:      	mov	byte ptr [ebp - 0x4], 0x4
+  599c52:      	mov	dword ptr [0x772414], eax
+  599c57:      	mov	ecx, dword ptr [0x77241c]
+  599c5d:      	mov	edx, dword ptr [ebp - 0x2c]
+  599c60:      	add	edx, dword ptr [ebp - 0x38]
+  599c63:      	mov	eax, dword ptr [ebp - 0x14]
+  599c66:      	add	eax, dword ptr [ebp - 0x3c]
+  599c69:      	mov	esi, dword ptr [ecx + 0x84]
+  599c6f:      	cmp	esi, dword ptr [ebp - 0x3c]
+  599c72:      	cmovle	esi, dword ptr [ebp - 0x3c]
+  599c76:      	mov	dword ptr [ebp - 0x58], esi
+  599c79:      	mov	esi, dword ptr [ecx + 0x88]
+  599c7f:      	mov	dword ptr [ebp - 0x40], esi
+  599c82:      	mov	esi, dword ptr [ecx + 0x8c]
+  599c88:      	cmp	esi, eax
+  599c8a:      	mov	ecx, dword ptr [ecx + 0x90]
+  599c90:      	cmovge	esi, eax
+  599c93:      	mov	eax, dword ptr [ebp - 0x40]
+  599c96:      	cmp	ecx, edx
+  599c98:      	mov	dword ptr [ebp - 0x4c], esi
+  599c9b:      	cmovge	ecx, edx
+  599c9e:      	cmp	eax, dword ptr [ebp - 0x38]
+  599ca1:      	mov	dword ptr [ebp - 0x44], ecx
+  599ca4:      	cmovle	eax, dword ptr [ebp - 0x38]
+  599ca8:      	mov	dword ptr [ebp - 0x40], eax
+  599cab:      	cmp	eax, ecx
+  599cad:      	jge	0x599d71 <.text+0x198d71>
+  599cb3:      	mov	edx, dword ptr [ebp - 0x44]
+  599cb6:      	mov	ecx, esi
+  599cb8:      	nop	dword ptr [eax + eax]
+  599cc0:      	mov	edi, dword ptr [ebp - 0x58]
+  599cc3:      	cmp	edi, ecx
+  599cc5:      	jge	0x599d62 <.text+0x198d62>
+  599ccb:      	nop	dword ptr [eax + eax]
+  599cd0:      	mov	edx, dword ptr [0x77241c]
+  599cd6:      	mov	dword ptr [ebp - 0x18], edx
+  599cd9:      	mov	eax, dword ptr [edx + 0x8c]
+  599cdf:      	mov	ecx, dword ptr [edx + 0x84]
+  599ce5:      	cmp	edi, ecx
+  599ce7:      	cmovge	ecx, edi
+  599cea:      	cmp	ecx, eax
+  599cec:      	lea	esi, [eax - 0x1]
+  599cef:      	mov	eax, esi
+  599cf1:      	cmovl	eax, ecx
+  599cf4:      	mov	ecx, dword ptr [edx + 0x88]
+  599cfa:      	cmp	dword ptr [ebp - 0x40], ecx
+  599cfd:      	mov	dword ptr [ebp - 0x48], eax
+  599d00:      	cmovge	ecx, dword ptr [ebp - 0x40]
+  599d04:      	mov	eax, dword ptr [edx + 0x90]
+  599d0a:      	cmp	ecx, eax
+  599d0c:      	jl	0x599d11 <.text+0x198d11>
+  599d0e:      	lea	ecx, [eax - 0x1]
+  599d11:      	mov	eax, dword ptr [edx + 0x44]
+  599d14:      	imul	eax, ecx
+  599d17:      	mov	ecx, dword ptr [ebp - 0x18]
+  599d1a:      	mov	esi, dword ptr [0x715340]
+  599d20:      	add	eax, dword ptr [ebp - 0x48]
+  599d23:      	cdq
+  599d24:      	idiv	dword ptr [ecx + 0x4c]
+  599d27:      	test	edx, edx
+  599d29:      	js	0x599d38 <.text+0x198d38>
+  599d2b:      	cmp	edx, dword ptr [ecx + 0x18]
+  599d2e:      	jge	0x599d38 <.text+0x198d38>
+  599d30:      	imul	eax, edx, 0x7c
+  599d33:      	add	eax, dword ptr [ecx + 0x14]
+  599d36:      	jmp	0x599d4b <.text+0x198d4b>
+  599d38:      	push	0x0
+  599d3a:      	push	0x0
+  599d3c:      	push	0x1
+  599d3e:      	push	0xc000008c
+  599d43:      	call	esi
+  599d45:      	mov	eax, dword ptr [ebp - 0x18]
+  599d48:      	mov	eax, dword ptr [eax + 0x14]
+  599d4b:      	or	byte ptr [eax + 0x13], 0x1
+  599d4f:      	inc	edi
+  599d50:      	cmp	edi, dword ptr [ebp - 0x4c]
+  599d53:      	jl	0x599cd0 <.text+0x198cd0>
+  599d59:      	mov	eax, dword ptr [ebp - 0x40]
+  599d5c:      	mov	ecx, dword ptr [ebp - 0x4c]
+  599d5f:      	mov	edx, dword ptr [ebp - 0x44]
+  599d62:      	inc	eax
+  599d63:      	mov	dword ptr [ebp - 0x40], eax
+  599d66:      	cmp	eax, edx
+  599d68:      	jl	0x599cc0 <.text+0x198cc0>
+  599d6e:      	mov	edi, dword ptr [ebp - 0x78]
+  599d71:      	mov	edx, dword ptr [ebp - 0x5c]
+  599d74:      	xor	ecx, ecx
+  599d76:      	xor	eax, eax
+  599d78:      	test	edx, edx
+  599d7a:      	jle	0x599dcd <.text+0x198dcd>
+  599d7c:      	xor	edi, edi
+  599d7e:      	nop
+  599d80:      	mov	ecx, dword ptr [ebp - 0x88]
+  599d86:      	movzx	esi, word ptr [ecx + 2*eax]
+  599d8a:      	inc	eax
+  599d8b:      	mov	ecx, esi
+  599d8d:      	mov	dword ptr [ebp - 0x18], eax
+  599d90:      	shr	esi, 0x2
+  599d93:      	and	ecx, 0x3
+  599d96:      	test	esi, esi
+  599d98:      	jne	0x599da1 <.text+0x198da1>
+  599d9a:      	mov	esi, 0x4000
+  599d9f:      	jmp	0x599da8 <.text+0x198da8>
+  599da1:      	mov	dword ptr [ebp - 0x18], eax
+  599da4:      	test	esi, esi
+  599da6:      	je	0x599dc0 <.text+0x198dc0>
+  599da8:      	mov	eax, dword ptr [ebp - 0x7c]
+  599dab:      	push	esi
+  599dac:      	add	eax, edi
+  599dae:      	push	ecx
+  599daf:      	push	eax
+  599db0:      	call	0x6d0560 <.text+0x2cf560>
+  599db5:      	mov	edx, dword ptr [ebp - 0x5c]
+  599db8:      	add	esp, 0xc
+  599dbb:      	mov	eax, dword ptr [ebp - 0x18]
+  599dbe:      	add	edi, esi
+  599dc0:      	cmp	eax, edx
+  599dc2:      	jl	0x599d80 <.text+0x198d80>
+  599dc4:      	mov	dword ptr [ebp - 0x18], edi
+  599dc7:      	mov	edi, dword ptr [ebp - 0x78]
+  599dca:      	mov	ecx, dword ptr [ebp - 0x18]
+  599dcd:      	mov	edx, dword ptr [ebp - 0x3c]
+  599dd0:      	mov	dword ptr [ebp - 0x5c], ecx
+  599dd3:      	mov	ecx, dword ptr [0x77241c]
+  599dd9:      	mov	eax, dword ptr [ecx + 0x84]
+  599ddf:      	mov	dword ptr [ebp - 0x58], eax
+  599de2:      	cmp	edx, eax
+  599de4:      	jl	0x599e55 <.text+0x198e55>
+  599de6:      	mov	esi, dword ptr [ecx + 0x8c]
+  599dec:      	cmp	edx, esi
+  599dee:      	jge	0x599e55 <.text+0x198e55>
+  599df0:      	mov	eax, dword ptr [ecx + 0x88]
+  599df6:      	mov	dword ptr [ebp - 0x80], eax
+  599df9:      	cmp	dword ptr [ebp - 0x38], eax
+  599dfc:      	jl	0x599e55 <.text+0x198e55>
+  599dfe:      	mov	eax, dword ptr [ecx + 0x90]
+  599e04:      	mov	ecx, dword ptr [ebp - 0x38]
+  599e07:      	cmp	ecx, eax
+  599e09:      	jge	0x599e55 <.text+0x198e55>
+  599e0b:      	add	edx, dword ptr [ebp - 0x14]
+  599e0e:      	add	ecx, dword ptr [ebp - 0x2c]
+  599e11:      	cmp	edx, dword ptr [ebp - 0x58]
+  599e14:      	jl	0x599e55 <.text+0x198e55>
+  599e16:      	cmp	edx, esi
+  599e18:      	jge	0x599e55 <.text+0x198e55>
+  599e1a:      	cmp	ecx, dword ptr [ebp - 0x80]
+  599e1d:      	jl	0x599e55 <.text+0x198e55>
+  599e1f:      	cmp	ecx, eax
+  599e21:      	jge	0x599e55 <.text+0x198e55>
+  599e23:      	mov	eax, dword ptr [ebp - 0x3c]
+  599e26:      	shl	eax, 0x3
+  599e29:      	mov	dword ptr [ebp - 0x6c], eax
+  599e2c:      	lea	eax, [8*ecx]
+  599e33:      	mov	dword ptr [ebp - 0x60], eax
+  599e36:      	mov	eax, dword ptr [ebp - 0x38]
+  599e39:      	shl	eax, 0x3
+  599e3c:      	mov	dword ptr [ebp - 0x68], eax
+  599e3f:      	lea	eax, [8*edx]
+  599e46:      	mov	dword ptr [ebp - 0x64], eax
+  599e49:      	lea	eax, [ebp - 0x6c]
+  599e4c:      	push	eax
+  599e4d:      	push	dword ptr [ebp - 0x7c]
+  599e50:      	call	0x596550 <.text+0x195550>
+  599e55:      	mov	eax, dword ptr [ebp - 0x2c]
+  599e58:      	mov	edx, dword ptr [ebp - 0x38]
+  599e5b:      	add	eax, edx
+  599e5d:      	mov	ecx, dword ptr [ebp - 0x3c]
+  599e60:      	shl	eax, 0x3
+  599e63:      	mov	dword ptr [ebp - 0x60], eax
+  599e66:      	lea	eax, [8*edx]
+  599e6d:      	mov	dword ptr [ebp - 0x68], eax
+  599e70:      	lea	esi, [8*ecx]
+  599e77:      	mov	eax, dword ptr [ebp - 0x14]
+  599e7a:      	add	eax, ecx
+  599e7c:      	mov	dword ptr [ebp - 0x6c], esi
+  599e7f:      	shl	eax, 0x3
+  599e82:      	push	0x40000
+  599e87:      	mov	dword ptr [ebp - 0x64], eax
+  599e8a:      	sub	esp, 0x10
+  599e8d:      	movups	xmm0, xmmword ptr [ebp - 0x6c]
+  599e91:      	mov	eax, esp
+  599e93:      	movups	xmmword ptr [eax], xmm0
+  599e96:      	call	0x5a3dd0 <.text+0x1a2dd0>
+  599e9b:      	mov	ecx, eax
+  599e9d:      	call	0x5a3fd0 <.text+0x1a2fd0>
+  599ea2:      	mov	ecx, dword ptr [ebp - 0x38]
+  599ea5:      	lea	eax, [esi - 0x8]
+  599ea8:      	mov	dword ptr [ebp - 0x6c], eax
+  599eab:      	mov	eax, dword ptr [ebp - 0x2c]
+  599eae:      	add	eax, ecx
+  599eb0:      	push	0x400
+  599eb5:      	sub	esp, 0x10
+  599eb8:      	lea	eax, [8*eax + 0x8]
+  599ebf:      	mov	dword ptr [ebp - 0x60], eax
+  599ec2:      	lea	eax, [8*ecx - 0x8]
+  599ec9:      	mov	dword ptr [ebp - 0x68], eax
+  599ecc:      	mov	eax, dword ptr [ebp - 0x14]
+  599ecf:      	add	eax, dword ptr [ebp - 0x3c]
+  599ed2:      	lea	eax, [8*eax + 0x8]
+  599ed9:      	mov	dword ptr [ebp - 0x64], eax
+  599edc:      	mov	eax, esp
+  599ede:      	movups	xmm0, xmmword ptr [ebp - 0x6c]
+  599ee2:      	movups	xmmword ptr [eax], xmm0
+  599ee5:      	call	0x5a3dd0 <.text+0x1a2dd0>
+  599eea:      	mov	ecx, eax
+  599eec:      	call	0x5a3fd0 <.text+0x1a2fd0>
+  599ef1:      	mov	eax, dword ptr [ebp - 0x14]
+  599ef4:      	add	eax, dword ptr [ebp - 0x3c]
+  599ef7:      	mov	ecx, dword ptr [ebp - 0x38]
+  599efa:      	mov	edx, dword ptr [ebp - 0x2c]
+  599efd:      	shl	eax, 0x3
+  599f00:      	mov	dword ptr [ebp - 0x64], eax
+  599f03:      	mov	eax, dword ptr [0x7683d8]
+  599f08:      	lea	edx, [edx + ecx]
+  599f0b:      	mov	dword ptr [ebp - 0x6c], esi
+  599f0e:      	lea	esi, [8*ecx]
+  599f15:      	shl	edx, 0x3
+  599f18:      	mov	dword ptr [ebp - 0x60], edx
+  599f1b:      	lea	ecx, [eax + 0x3]
+  599f1e:      	mov	dword ptr [ebp - 0x68], esi
+  599f21:      	cmp	edx, ecx
+  599f23:      	jle	0x599f2b <.text+0x198f2b>
+  599f25:      	lea	edx, [eax + 0x2]
+  599f28:      	mov	dword ptr [ebp - 0x60], edx
+  599f2b:      	cmp	esi, edx
+  599f2d:      	jge	0x599f49 <.text+0x198f49>
+  599f2f:      	movups	xmm0, xmmword ptr [ebp - 0x6c]
+  599f33:      	push	0x8
+  599f35:      	sub	esp, 0x10
+  599f38:      	mov	eax, esp
+  599f3a:      	movups	xmmword ptr [eax], xmm0
+  599f3d:      	call	0x5a3dd0 <.text+0x1a2dd0>
+  599f42:      	mov	ecx, eax
+  599f44:      	call	0x5a3fd0 <.text+0x1a2fd0>
+  599f49:      	mov	eax, dword ptr [0x772400]
+  599f4e:      	push	dword ptr [ebp - 0x70]
+  599f51:      	mov	byte ptr [eax + 0x97], 0x1
+  599f58:      	mov	eax, dword ptr [0x77241c]
+  599f5d:      	mov	byte ptr [eax + 0x29], 0x1
+  599f61:      	call	0x6cece6 <.text+0x2cdce6>
+  599f66:      	push	dword ptr [ebp - 0x88]
+  599f6c:      	call	0x6cece6 <.text+0x2cdce6>
+  599f71:      	push	dword ptr [ebp - 0x7c]
+  599f74:      	call	0x6cece6 <.text+0x2cdce6>
+  599f79:      	push	dword ptr [ebp - 0x74]
+  599f7c:      	call	0x6cece6 <.text+0x2cdce6>
+  599f81:      	push	edi
+  599f82:      	call	0x6cece6 <.text+0x2cdce6>
+  599f87:      	add	esp, 0x14
+  599f8a:      	mov	ecx, dword ptr [ebp - 0xc]
+  599f8d:      	mov	dword ptr fs:[0x0], ecx
+  599f94:      	pop	ecx
+  599f95:      	pop	edi
+  599f96:      	pop	esi
+  599f97:      	mov	ecx, dword ptr [ebp - 0x10]
+  599f9a:      	xor	ecx, ebp
+  599f9c:      	call	0x6ce927 <.text+0x2cd927>
+  599fa1:      	mov	esp, ebp
+  599fa3:      	pop	ebp
+  599fa4:      	ret	0xc
+  599fa7:      	nop

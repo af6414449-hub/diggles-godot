@@ -1,0 +1,17 @@
+SCRIPT ERROR: Parse Error: Cannot pass a value of type "int" as "PackedVector3Array".
+   at: GDScript::reload (res://scripts/native_campaign_backdrop.gd:202)
+SCRIPT ERROR: Parse Error: Invalid argument for "add_triangle_fan()" function: argument 1 should be "PackedVector3Array" but is "int".
+   at: GDScript::reload (res://scripts/native_campaign_backdrop.gd:202)
+SCRIPT ERROR: Parse Error: Cannot pass a value of type "int" as "PackedVector3Array".
+   at: GDScript::reload (res://scripts/native_campaign_backdrop.gd:237)
+SCRIPT ERROR: Parse Error: Invalid argument for "add_triangle_fan()" function: argument 1 should be "PackedVector3Array" but is "int".
+   at: GDScript::reload (res://scripts/native_campaign_backdrop.gd:237)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://scripts/native_campaign_first_level.gd:0)
+ERROR: Failed to load script "res://scripts/native_campaign_first_level.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: _build_camera_and_light (res://scripts/native_campaign_first_level.gd:943)
+   GDScript backtrace (most recent call first):
+       [0] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:943)
+       [1] _ready (res://scripts/native_campaign_first_level.gd:178)

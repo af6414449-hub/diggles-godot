@@ -1,0 +1,246 @@
+{
+  "ok": true,
+  "project_path": "C:\\Users\\frant\\OneDrive\\\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b\\ChatGPT\\Diggles\\godot",
+  "static": {
+    "checked": 101,
+    "config_hint_count": 0,
+    "config_warning_count": 0,
+    "config_warnings": [],
+    "config_warnings_enabled": true,
+    "counts": {
+      "extensions": 0,
+      "plugins": 0,
+      "resources": 0,
+      "scenes": 3,
+      "scripts": 93,
+      "shaders": 5
+    },
+    "failed": [],
+    "failed_count": 0,
+    "instantiate": true,
+    "ok": 101,
+    "physics_layers": {
+      "2d": {
+        "layers": []
+      },
+      "3d": {
+        "layers": [
+          {
+            "bit": 1,
+            "name": "world",
+            "occupied_by": [
+              "res://scenes/main.tscn::root/World/Ground"
+            ],
+            "occupied_count": 1,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 1
+          },
+          {
+            "bit": 2,
+            "name": "player",
+            "occupied_by": [],
+            "occupied_count": 0,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 2
+          },
+          {
+            "bit": 3,
+            "name": "enemies",
+            "occupied_by": [],
+            "occupied_count": 0,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 4
+          },
+          {
+            "bit": 4,
+            "name": "pickups",
+            "occupied_by": [],
+            "occupied_count": 0,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 8
+          },
+          {
+            "bit": 5,
+            "name": "hitboxes",
+            "occupied_by": [],
+            "occupied_count": 0,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 16
+          },
+          {
+            "bit": 6,
+            "name": "hurtboxes",
+            "occupied_by": [],
+            "occupied_count": 0,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 32
+          }
+        ]
+      },
+      "finding_count": 1,
+      "findings": [
+        {
+          "bit": 1,
+          "dimension": "3d",
+          "fix": "Set the bit on whatever should detect them, e.g. configure_node '{\"scene_path\":\"res://<scene>.tscn\",\"node_path\":\"root/<Detector>\",\"properties\":{\"collision_mask\":1}}', or move them to a layer that is scanned.",
+          "layer_name": "world",
+          "message": "1 node(s) sit on 3d physics layer 1 (\"world\"), but nothing in the project scans it: no collision_mask, ray, shape cast, tile set or grid map has that bit set, so those objects can never be hit or detected.",
+          "node_path": "root/World/Ground",
+          "rule": "layer_never_scanned",
+          "scene": "res://scenes/main.tscn",
+          "severity": "hint"
+        }
+      ],
+      "truncated": false
+    },
+    "project_path": "res://",
+    "scenes_instantiated": 3
+  },
+  "counts": {
+    "total": 0,
+    "errors": 0,
+    "parse_errors": 0,
+    "warnings": 0,
+    "info": 0
+  },
+  "diagnostics": [],
+  "lint": {
+    "ran": true,
+    "ok": true,
+    "counts": {
+      "total": 0,
+      "errors": 0,
+      "warnings": 0,
+      "parse_errors": 0
+    },
+    "categories": {
+      "godot3_api": 0,
+      "godot3_shader": 0,
+      "inference": 0,
+      "node_ref": 0,
+      "unique_name": 0,
+      "signal_target": 0,
+      "missing_resource": 0,
+      "input_action": 0,
+      "group_ref": 0,
+      "res_path": 0,
+      "animation_ref": 0
+    },
+    "scan_summary": {
+      "gd": 93,
+      "tscn": 3,
+      "tres": 0,
+      "shader": 5,
+      "project_godot": 1,
+      "scene_script_pairs": 2,
+      "node_paths_checked": 0,
+      "skipped_dynamic_paths": 0,
+      "skipped_gdignore_dirs": 0
+    }
+  },
+  "node_config": {
+    "ran": true,
+    "counts": {
+      "warnings": 0,
+      "hints": 0
+    },
+    "hints": [],
+    "physics_layers": {
+      "2d": {
+        "layers": []
+      },
+      "3d": {
+        "layers": [
+          {
+            "bit": 1,
+            "name": "world",
+            "occupied_by": [
+              "res://scenes/main.tscn::root/World/Ground"
+            ],
+            "occupied_count": 1,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 1
+          },
+          {
+            "bit": 2,
+            "name": "player",
+            "occupied_by": [],
+            "occupied_count": 0,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 2
+          },
+          {
+            "bit": 3,
+            "name": "enemies",
+            "occupied_by": [],
+            "occupied_count": 0,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 4
+          },
+          {
+            "bit": 4,
+            "name": "pickups",
+            "occupied_by": [],
+            "occupied_count": 0,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 8
+          },
+          {
+            "bit": 5,
+            "name": "hitboxes",
+            "occupied_by": [],
+            "occupied_count": 0,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 16
+          },
+          {
+            "bit": 6,
+            "name": "hurtboxes",
+            "occupied_by": [],
+            "occupied_count": 0,
+            "scanned_by": [],
+            "scanned_count": 0,
+            "value": 32
+          }
+        ]
+      },
+      "finding_count": 1,
+      "findings": [
+        {
+          "bit": 1,
+          "dimension": "3d",
+          "fix": "Set the bit on whatever should detect them, e.g. configure_node '{\"scene_path\":\"res://<scene>.tscn\",\"node_path\":\"root/<Detector>\",\"properties\":{\"collision_mask\":1}}', or move them to a layer that is scanned.",
+          "layer_name": "world",
+          "message": "1 node(s) sit on 3d physics layer 1 (\"world\"), but nothing in the project scans it: no collision_mask, ray, shape cast, tile set or grid map has that bit set, so those objects can never be hit or detected.",
+          "node_path": "root/World/Ground",
+          "rule": "layer_never_scanned",
+          "scene": "res://scenes/main.tscn",
+          "severity": "hint"
+        }
+      ],
+      "truncated": false
+    }
+  },
+  "godot": {
+    "returncode": 0,
+    "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n[INFO] Operation: check_project\n[INFO] Checking project resources under: res://\n[INFO] Compiling shader: res://shaders/native_model_material.gdshader\n[INFO] Compiling shader: res://shaders/native_terrain_detail.gdshader\n[INFO] Compiling shader: res://shaders/native_terrain_pipeline.gdshader\n[INFO] Compiling shader: res://shaders/native_world_model.gdshader\n[INFO] Compiling shader: res://shaders/native_world_model_blend.gdshader\n[INFO] Check complete. Checked 101 files, 0 failed to load.\n{\"checked\":101,\"config_hint_count\":0,\"config_warning_count\":0,\"config_warnings\":[],\"config_warnings_enabled\":true,\"counts\":{\"extensions\":0,\"plugins\":0,\"resources\":0,\"scenes\":3,\"scripts\":93,\"shaders\":5},\"failed\":[],\"failed_count\":0,\"instantiate\":true,\"ok\":101,\"physics_layers\":{\"2d\":{\"layers\":[]},\"3d\":{\"layers\":[{\"bit\":1,\"name\":\"world\",\"occupied_by\":[\"res://scenes/main.tscn::root/World/Ground\"],\"occupied_count\":1,\"scanned_by\":[],\"scanned_count\":0,\"value\":1},{\"bit\":2,\"name\":\"player\",\"occupied_by\":[],\"occupied_count\":0,\"scanned_by\":[],\"scanned_count\":0,\"value\":2},{\"bit\":3,\"name\":\"enemies\",\"occupied_by\":[],\"occupied_count\":0,\"scanned_by\":[],\"scanned_count\":0,\"value\":4},{\"bit\":4,\"name\":\"pickups\",\"occupied_by\":[],\"occupied_count\":0,\"scanned_by\":[],\"scanned_count\":0,\"value\":8},{\"bit\":5,\"name\":\"hitboxes\",\"occupied_by\":[],\"occupied_count\":0,\"scanned_by\":[],\"scanned_count\":0,\"value\":16},{\"bit\":6,\"name\":\"hurtboxes\",\"occupied_by\":[],\"occupied_count\":0,\"scanned_by\":[],\"scanned_count\":0,\"value\":32}]},\"finding_count\":1,\"findings\":[{\"bit\":1,\"dimension\":\"3d\",\"fix\":\"Set the bit on whatever should detect them, e.g. configure_node '{\\\"scene_path\\\":\\\"res://<scene>.tscn\\\",\\\"node_path\\\":\\\"root/<Detector>\\\",\\\"properties\\\":{\\\"collision_mask\\\":1}}', or move them to a layer that is scanned.\",\"layer_name\":\"world\",\"message\":\"1 node(s) sit on 3d physics layer 1 (\\\"world\\\"), but nothing in the project scans it: no collision_mask, ray, shape cast, tile set or grid map has that bit set, so those objects can never be hit or detected.\",\"node_path\":\"root/World/Ground\",\"rule\":\"layer_never_scanned\",\"scene\":\"res://scenes/main.tscn\",\"severity\":\"hint\"}],\"truncated\":false},\"project_path\":\"res://\",\"scenes_instantiated\":3}\n",
+    "stderr": ""
+  },
+  "csharp": {
+    "requested": false,
+    "ran": false,
+    "projects": [],
+    "ok": true
+  }
+}

@@ -1,0 +1,74 @@
+﻿{
+	"version" : "0.4",
+	"author" : "cech12",
+	
+	"name" :  {
+		"en" : "Recycling",
+		"de" : "Recycling"
+	},
+	"description" : {
+		"en" : "Recycle items or buildings with Alt-Click.",
+		"de" : "Recycle Items und Gebäude mit Alt-Klick."
+	},
+	
+	"links" : {
+		"download" : "https://github.com/DigglesMods/Recycling/releases",
+		"wiki" : "https://github.com/DigglesMods/Recycling/wiki"
+	},
+	
+	"settings" : [
+		{
+			"id": "CHANCE",
+			"type": "int",
+			"default": 60,
+			"min": 0,
+			"max": 100,
+			"name" :  {
+				"en" : "Chance",
+				"de" : "Wahrscheinlichkeit"
+			},
+			"description" : {
+				"en" : "Chance (0-100%) for any material of being recycled",
+				"de" : "Wahrscheinlichkeit (0-100%) für jedes Material recycelt zu werden"
+			}
+		},
+		{
+			"id" : "EXP_INFLUENCE",
+			"type" : "bool",
+			"default" : true,
+			"name" :  {
+				"en" : "Experience Influence",
+				"de" : "Erfahrungseinfluss"
+			},
+			"description" : {
+				"en" : "Experience is taken into account when recycling",
+				"de" : "Erfahrung wird beim Recyceln berücksichtigt"
+			}
+		},
+		{
+			"id" : "INGOTS_TO_ORE",
+			"type" : "bool",
+			"default" : true,
+			"name" :  {
+				"en" : "Ingot to ore",
+				"de" : "Barren zu Erz"
+			},
+			"description" : {
+				"en" : "Replaces iron, gold and crystal when recycled with its ore variants",
+				"de" : "Ersetzt Eisen, Gold und Kristall beim Recyceln mit ihren Erz-Varianten"
+			}
+		}
+	],
+	
+	
+	"directories" : [
+		{
+			"type" : "data",
+			"path" : "Data_HD",
+			"condition" : {
+				"type" : "mod",
+				"id" : "DigglesHDmod"
+			}
+		}
+	]
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "diggles.native_story_sequencer_commands.v1",
+  "source": "Scripts/classes/story/sequencer.tcl",
+  "commands": {
+    "show_loading": {"category": "lifecycle", "args": ["yes|no"], "status": "implemented"},
+    "obj_clear": {"category": "lifecycle", "args": [], "status": "implemented"},
+    "map": {"category": "world", "args": ["create", "width", "height"], "status": "implemented"},
+    "sel": {"category": "world", "args": ["selection"], "status": "implemented"},
+    "set_view": {"category": "camera", "args": ["x", "y", "zoom", "rx", "ry"], "status": "implemented"},
+    "call": {"category": "world", "args": ["script"], "status": "recorded_adapter"},
+    "MapTemplateSet": {"category": "world", "args": ["x", "y"], "status": "implemented"},
+    "sm_def_temp_group": {"category": "world", "args": ["name", "templates"], "status": "recorded_adapter"},
+    "sequence_enable": {"category": "lifecycle", "args": ["all|actor_index"], "status": "implemented"},
+    "sequence_disable": {"category": "lifecycle", "args": ["all|actor_index"], "status": "implemented"},
+    "sq_actor": {"category": "actor", "args": ["subcommand", "selector", "..."], "status": "recorded_adapter"},
+    "sq_object": {"category": "object", "args": ["subcommand", "..."], "status": "recorded_adapter"},
+    "sq_text": {"category": "text", "args": ["file", "name"], "status": "recorded_adapter"},
+    "sq_audio": {"category": "audio", "args": ["open", "name"], "status": "recorded_adapter"},
+    "sq_music": {"category": "audio", "args": ["theme", "position"], "status": "recorded_adapter"},
+    "sq_camera": {"category": "camera", "args": ["subcommand", "..."], "status": "recorded_adapter"},
+    "sq_screenvibe": {"category": "screen", "args": ["preset|parameters"], "status": "recorded_adapter"},
+    "do_wait": {"category": "timing", "args": ["none|time|camera", "value"], "status": "recorded_adapter"},
+    "do_text": {"category": "text", "args": ["text_or_line", "actor_selector", "..."], "status": "recorded_adapter"}
+    ,"call_method": {"category": "object", "args": ["target", "method", "..."], "status": "recorded_adapter"}
+    ,"timer_event": {"category": "timing", "args": ["target", "event", "..."], "status": "recorded_adapter"}
+    ,"keybind": {"category": "input", "args": ["set", "key", "action"], "status": "recorded_adapter"}
+  },
+  "known_original_procedures": ["parse_next", "parse_text", "parse_audio_file", "parse_pos", "parse_pen", "parse_actors", "parse_objects", "sq_actor", "sq_object", "sq_text", "sq_audio", "sq_music", "sq_camera", "sq_screenvibe", "sq_wait", "do_wait", "do_text", "do_action", "do_script"]
+}

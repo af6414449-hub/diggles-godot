@@ -1,0 +1,20 @@
+{
+  "candidate": "C:\\Users\\frant\\.minimax\\sessions\\mvs_e213cb8b6788404489ad3b0b5c39827f\\workspace\\Diggles-mcode\\work\\godot\\models\\native_animation_aliases.json",
+  "candidate_sha256": "44dcfddce9ba26000be6c6250a1998214089427ab683740f769a294238e0a261",
+  "verified_aliases": 926,
+  "verified_animsets": 20,
+  "original_sources": {
+    "Scripts/classes/zwerg/z_anims.tcl": "32ed931b608439dfe16b525e7a7640e5365fb2c18c660d7bebfb25c89f587ef6",
+    "3db/mann.3db": "20a8f710f25ae5007ce228734e18976b103e142e61c7cd6d03189f59eed364bd"
+  },
+  "result": "semantic match after Tcl argument decoding",
+  "face_argument_delimiters_removed": [
+    "djhigh",
+    "showerb",
+    "carveloop",
+    "dontknow",
+    "stummble",
+    "smokepot"
+  ],
+  "read_only": true
+}

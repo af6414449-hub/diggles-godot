@@ -1,0 +1,128 @@
+
+undefined4
+CTclGlobalMethods__VectorFix(undefined4 param_1,undefined4 param_2,int *param_3,undefined4 param_4)
+
+{
+  undefined4 uVar1;
+  int *piVar2;
+  undefined1 uVar3;
+  int iVar4;
+  int *piVar5;
+  int iVar6;
+  undefined4 *puVar7;
+  undefined8 uVar8;
+  int local_48;
+  undefined8 local_38;
+  undefined4 local_30;
+  undefined8 local_2c;
+  undefined4 local_24;
+  undefined4 *local_20;
+  uint local_1c;
+  int local_18;
+  undefined4 *local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_0070d12d;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+                    /* WARNING: Load size is inaccurate */
+  if ((*(int *)(*ThreadLocalStoragePointer + 4) < DAT_00ca6f08) &&
+     (FUN_006cebf4(&DAT_00ca6f08,DAT_0076700c ^ (uint)&stack0xfffffffc), iVar4 = DAT_00783650,
+     DAT_00ca6f08 == -1)) {
+    iVar6 = DAT_00783650 * 0x40;
+    DAT_00ca6f0c = DAT_00783650;
+    *(char **)(&DAT_0077368c + iVar6) = "TCL:CTclGlobalMethods::VectorFix()";
+    *(int *)(&DAT_00773650 + iVar6) = iVar4;
+    DAT_00783650 = DAT_00783650 + 1;
+    FUN_006cebaa(&DAT_00ca6f08);
+  }
+  iVar6 = DAT_00ca6f0c;
+  local_14 = &DAT_00ca6f0c;
+  uVar1 = *(undefined4 *)(&DAT_00773650 + DAT_00ca6f0c * 0x40);
+  iVar4 = FUN_0043fcc0();
+  *(undefined4 *)(iVar4 + *(int *)(iVar4 + 0x8000) * 4) = uVar1;
+  *(int *)(iVar4 + 0x8000) = *(int *)(iVar4 + 0x8000) + 1;
+  iVar4 = (&DAT_00773654)[iVar6 * 0x10];
+  if (iVar4 == 0) {
+    uVar8 = FUN_006bd180();
+    iVar4 = (&DAT_00773654)[iVar6 * 0x10];
+    *(undefined8 *)(&DAT_00773658 + iVar6 * 0x10) = uVar8;
+  }
+  (&DAT_00773654)[iVar6 * 0x10] = iVar4 + 1;
+  local_8 = 0;
+  FUN_006bc170(param_2);
+  iVar4 = (int)param_3;
+  local_8._0_1_ = 1;
+  FUN_004298b0(param_3,param_4);
+  local_8._0_1_ = 2;
+  uVar3 = (undefined1)local_8;
+  local_8._0_1_ = 2;
+  if (1 < iVar4) {
+    local_8._0_1_ = uVar3;
+    if (local_18 < 2) {
+      RaiseException(0xc000008c,1,0,(ULONG_PTR *)0x0);
+      puVar7 = local_20;
+      if (local_1c == 0) {
+        RaiseException(0xc000008c,1,0,(ULONG_PTR *)0x0);
+        puVar7 = local_20;
+      }
+    }
+    else {
+      if (local_1c < 2) {
+        RaiseException(0xc000008c,1,0,(ULONG_PTR *)0x0);
+      }
+      puVar7 = local_20 + 1;
+    }
+    piVar2 = (int *)*puVar7;
+    if (piVar2 != (int *)0x0) {
+      *piVar2 = *piVar2 + 1;
+    }
+    param_3 = piVar2;
+    FUN_006bafe0(&local_2c);
+    FUN_00595770(&local_38,&local_2c,(int)&param_3 + 3);
+    local_24 = local_30;
+    local_2c = local_38;
+    piVar5 = (int *)FUN_006badc0(&local_2c);
+    if (local_48 != 0) {
+      if (*piVar5 == 0) {
+        Tcl_ResetResult(local_48);
+      }
+      else {
+        Tcl_SetObjResult(local_48,*piVar5);
+      }
+    }
+    if ((param_3 != (int *)0x0) && (*param_3 = *param_3 + -1, *param_3 < 1)) {
+      TclFreeObj(param_3);
+    }
+    if ((piVar2 != (int *)0x0) && (*piVar2 = *piVar2 + -1, *piVar2 < 1)) {
+      TclFreeObj(piVar2);
+    }
+    local_8._0_1_ = 5;
+    FUN_004297b0(0);
+    local_8 = CONCAT31(local_8._1_3_,6);
+    FUN_004297b0(0);
+    if (local_20 != (undefined4 *)0x0) {
+      FUN_006ba940();
+    }
+    FUN_006bc0d0();
+    FUN_0043fd30();
+    ExceptionList = local_10;
+    return 0;
+  }
+  FUN_006bc8f0(1);
+  local_8._0_1_ = 3;
+  FUN_004297b0(0);
+  local_8 = CONCAT31(local_8._1_3_,4);
+  FUN_004297b0(0);
+  if (local_20 != (undefined4 *)0x0) {
+    FUN_006ba940();
+  }
+  FUN_006bc0d0();
+  FUN_0043fd30();
+  ExceptionList = local_10;
+  return 1;
+}
+

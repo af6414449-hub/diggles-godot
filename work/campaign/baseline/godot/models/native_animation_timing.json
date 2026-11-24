@@ -1,0 +1,1057 @@
+{
+  "schema": "diggles.native_animation_timing.v1",
+  "evidence": "docs/reverse-engineering/native-animation-timing-2026-11-17.json",
+  "exe_sha256": "58a01d3d80670a6042c66a82684397c98e39c503e00a6e2c2c511f338a30ed74",
+  "status": "game_time_contract_confirmed",
+  "constants": {
+    "vec_a_to_slot_speed": 0.05000000074505806,
+    "model_to_world_scale": 0.004999999888241291,
+    "controller_frames_per_game_second": 10.0,
+    "controller_frame_bias": 0.05000000074505806,
+    "simulation_step_game_seconds": 0.1,
+    "wall_mean_scale": 0.25,
+    "clock_long_delta_threshold": 0.3,
+    "one": 1.0
+  },
+  "time_domain": "game seconds; caller owns pause and time factor",
+  "x87_rounding": "not observed in running original; must be supplied explicitly",
+  "wall_clock_capture": "not performed",
+  "models": {
+    "mann": {
+      "source": "data/3db/mann.3db",
+      "sha256": "20a8f710f25ae5007ce228734e18976b103e142e61c7cd6d03189f59eed364bd",
+      "version": "3DDB 1.0",
+      "db_name": "mann",
+      "catalog_end": 3327250,
+      "file_bytes": 33483591,
+      "clips": {
+        "gehen_start": {
+          "animation_index": 6,
+          "record_offset": 3137571,
+          "vec_a_offset": 3137688,
+          "frame_count": 3,
+          "mesh_indices": [
+            59,
+            60,
+            61
+          ],
+          "vec_a": [
+            0.0,
+            -16.221752166748047,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 8652,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_gehen_start.sex",
+          "slot_speed_world_per_game_second": 0.8110876083374023,
+          "distance_world_per_nominal_tick": 0.08110876083374023,
+          "nominal_duration_game_seconds": 0.3,
+          "nominal_cycle_distance_world": 0.24332628250122068
+        },
+        "gehen_loop": {
+          "animation_index": 7,
+          "record_offset": 3137712,
+          "vec_a_offset": 3137855,
+          "frame_count": 10,
+          "mesh_indices": [
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "vec_a": [
+            0.0,
+            -16.221752166748047,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 0,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_gehen_loop.sex",
+          "slot_speed_world_per_game_second": 0.8110876083374023,
+          "distance_world_per_nominal_tick": 0.08110876083374023,
+          "nominal_duration_game_seconds": 1.0,
+          "nominal_cycle_distance_world": 0.8110876083374023
+        },
+        "gehen_end": {
+          "animation_index": 8,
+          "record_offset": 3137879,
+          "vec_a_offset": 3137996,
+          "frame_count": 4,
+          "mesh_indices": [
+            72,
+            73,
+            74,
+            75
+          ],
+          "vec_a": [
+            0.0,
+            -16.221752166748047,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26691,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_gehen_end.sex",
+          "slot_speed_world_per_game_second": 0.8110876083374023,
+          "distance_world_per_nominal_tick": 0.08110876083374023,
+          "nominal_duration_game_seconds": 0.4,
+          "nominal_cycle_distance_world": 0.324435043334961
+        },
+        "laufen_schnell_start": {
+          "animation_index": 9,
+          "record_offset": 3138020,
+          "vec_a_offset": 3138155,
+          "frame_count": 3,
+          "mesh_indices": [
+            76,
+            77,
+            78
+          ],
+          "vec_a": [
+            0.0,
+            -34.28672790527344,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 23667,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_laufen_schnell_start.sex",
+          "slot_speed_world_per_game_second": 1.7143363952636719,
+          "distance_world_per_nominal_tick": 0.1714336395263672,
+          "nominal_duration_game_seconds": 0.3,
+          "nominal_cycle_distance_world": 0.5143009185791015
+        },
+        "laufen_schnell_loop": {
+          "animation_index": 10,
+          "record_offset": 3138179,
+          "vec_a_offset": 3138340,
+          "frame_count": 10,
+          "mesh_indices": [
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88
+          ],
+          "vec_a": [
+            0.0,
+            -34.28672409057617,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 7,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_laufen_schnell_loop.sex",
+          "slot_speed_world_per_game_second": 1.7143362760543823,
+          "distance_world_per_nominal_tick": 0.17143362760543823,
+          "nominal_duration_game_seconds": 1.0,
+          "nominal_cycle_distance_world": 1.7143362760543823
+        },
+        "laufen_schnell_end": {
+          "animation_index": 11,
+          "record_offset": 3138364,
+          "vec_a_offset": 3138499,
+          "frame_count": 4,
+          "mesh_indices": [
+            89,
+            90,
+            91,
+            92
+          ],
+          "vec_a": [
+            0.0,
+            -34.28672409057617,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 0,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_laufen_schnell_end.sex",
+          "slot_speed_world_per_game_second": 1.7143362760543823,
+          "distance_world_per_nominal_tick": 0.17143362760543823,
+          "nominal_duration_game_seconds": 0.4,
+          "nominal_cycle_distance_world": 0.6857345104217529
+        },
+        "kletter_hoch_schnell": {
+          "animation_index": 31,
+          "record_offset": 3141586,
+          "vec_a_offset": 3141753,
+          "frame_count": 11,
+          "mesh_indices": [
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248
+          ],
+          "vec_a": [
+            0.0,
+            0.0,
+            15.052401542663574
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 0,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_kletter_hoch_schnell.sex",
+          "slot_speed_world_per_game_second": 0.7526201009750366,
+          "distance_world_per_nominal_tick": 0.07526201009750366,
+          "nominal_duration_game_seconds": 1.1,
+          "nominal_cycle_distance_world": 0.8278821110725404
+        },
+        "kletter_links_schnell": {
+          "animation_index": 32,
+          "record_offset": 3141777,
+          "vec_a_offset": 3141946,
+          "frame_count": 11,
+          "mesh_indices": [
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259
+          ],
+          "vec_a": [
+            15.884525299072266,
+            0.0,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 83,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_kletter_links_schnell.sex",
+          "slot_speed_world_per_game_second": 0.7942262887954712,
+          "distance_world_per_nominal_tick": 0.07942262887954712,
+          "nominal_duration_game_seconds": 1.1,
+          "nominal_cycle_distance_world": 0.8736489176750184
+        },
+        "kletter_rechts_schnell": {
+          "animation_index": 33,
+          "record_offset": 3141970,
+          "vec_a_offset": 3142141,
+          "frame_count": 11,
+          "mesh_indices": [
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270
+          ],
+          "vec_a": [
+            -14.951774597167969,
+            0.0,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 0,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_kletter_rechts_schnell.sex",
+          "slot_speed_world_per_game_second": 0.7475887537002563,
+          "distance_world_per_nominal_tick": 0.07475887537002564,
+          "nominal_duration_game_seconds": 1.1,
+          "nominal_cycle_distance_world": 0.822347629070282
+        },
+        "kletter_runter_schnell": {
+          "animation_index": 34,
+          "record_offset": 3142165,
+          "vec_a_offset": 3142336,
+          "frame_count": 11,
+          "mesh_indices": [
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280,
+            281
+          ],
+          "vec_a": [
+            0.0,
+            0.0,
+            -14.829263687133789
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26995,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_kletter_runter_schnell.sex",
+          "slot_speed_world_per_game_second": 0.7414631843566895,
+          "distance_world_per_nominal_tick": 0.07414631843566895,
+          "nominal_duration_game_seconds": 1.1,
+          "nominal_cycle_distance_world": 0.8156095027923584
+        },
+        "kletter_hoch_loop": {
+          "animation_index": 608,
+          "record_offset": 3250329,
+          "vec_a_offset": 3250522,
+          "frame_count": 19,
+          "mesh_indices": [
+            6969,
+            6970,
+            6971,
+            6972,
+            6973,
+            6974,
+            6975,
+            6976,
+            6977,
+            6978,
+            6979,
+            6980,
+            6981,
+            6982,
+            6983,
+            6984,
+            6985,
+            6986,
+            6987
+          ],
+          "vec_a": [
+            0.0,
+            0.0,
+            8.357107162475586
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 44536,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_kletter_hoch_loop.sex",
+          "slot_speed_world_per_game_second": 0.4178553521633148,
+          "distance_world_per_nominal_tick": 0.04178553521633148,
+          "nominal_duration_game_seconds": 1.9,
+          "nominal_cycle_distance_world": 0.7939251691102981
+        },
+        "kletter_links_loop": {
+          "animation_index": 609,
+          "record_offset": 3250546,
+          "vec_a_offset": 3250741,
+          "frame_count": 19,
+          "mesh_indices": [
+            6988,
+            6989,
+            6990,
+            6991,
+            6992,
+            6993,
+            6994,
+            6995,
+            6996,
+            6997,
+            6998,
+            6999,
+            7000,
+            7001,
+            7002,
+            7003,
+            7004,
+            7005,
+            7006
+          ],
+          "vec_a": [
+            8.288270950317383,
+            0.0,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 44536,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_kletter_links_loop.sex",
+          "slot_speed_world_per_game_second": 0.41441354155540466,
+          "distance_world_per_nominal_tick": 0.04144135415554047,
+          "nominal_duration_game_seconds": 1.9,
+          "nominal_cycle_distance_world": 0.7873857289552688
+        },
+        "kletter_rechts_loop": {
+          "animation_index": 611,
+          "record_offset": 3250950,
+          "vec_a_offset": 3251147,
+          "frame_count": 19,
+          "mesh_indices": [
+            7015,
+            7016,
+            7017,
+            7018,
+            7019,
+            7020,
+            7021,
+            7022,
+            7023,
+            7024,
+            7025,
+            7026,
+            7027,
+            7028,
+            7029,
+            7030,
+            7031,
+            7032,
+            7033
+          ],
+          "vec_a": [
+            -8.306541442871094,
+            0.0,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 44536,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_kletter_rechts_loop.sex",
+          "slot_speed_world_per_game_second": 0.4153270721435547,
+          "distance_world_per_nominal_tick": 0.041532707214355466,
+          "nominal_duration_game_seconds": 1.9,
+          "nominal_cycle_distance_world": 0.7891214370727538
+        },
+        "kletter_runter_loop": {
+          "animation_index": 613,
+          "record_offset": 3251358,
+          "vec_a_offset": 3251555,
+          "frame_count": 19,
+          "mesh_indices": [
+            7042,
+            7043,
+            7044,
+            7045,
+            7046,
+            7047,
+            7048,
+            7049,
+            7050,
+            7051,
+            7052,
+            7053,
+            7054,
+            7055,
+            7056,
+            7057,
+            7058,
+            7059,
+            7060
+          ],
+          "vec_a": [
+            0.0,
+            0.0,
+            -8.29141902923584
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 44536,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Mann\\mann_kletter_runter_loop.sex",
+          "slot_speed_world_per_game_second": 0.41457095742225647,
+          "distance_world_per_nominal_tick": 0.04145709574222565,
+          "nominal_duration_game_seconds": 1.9,
+          "nominal_cycle_distance_world": 0.7876848191022873
+        }
+      },
+      "wall_group_speed_world_per_game_second": {
+        "loop": 0.41554173082113266,
+        "schnell": 0.7589745819568634
+      }
+    },
+    "frau": {
+      "source": "data/3db/frau.3db",
+      "sha256": "5ea7d068ba0bb1d098be4a46051a7f85af83712e9baf138151176bbca221f548",
+      "version": "3DDB 1.0",
+      "db_name": "frau",
+      "catalog_end": 3273106,
+      "file_bytes": 30866436,
+      "clips": {
+        "gehen_start": {
+          "animation_index": 6,
+          "record_offset": 3084059,
+          "vec_a_offset": 3084176,
+          "frame_count": 3,
+          "mesh_indices": [
+            59,
+            60,
+            61
+          ],
+          "vec_a": [
+            0.0,
+            -16.206886291503906,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26981,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_gehen_start.sex",
+          "slot_speed_world_per_game_second": 0.8103443384170532,
+          "distance_world_per_nominal_tick": 0.08103443384170532,
+          "nominal_duration_game_seconds": 0.3,
+          "nominal_cycle_distance_world": 0.24310330152511594
+        },
+        "gehen_loop": {
+          "animation_index": 7,
+          "record_offset": 3084200,
+          "vec_a_offset": 3084343,
+          "frame_count": 10,
+          "mesh_indices": [
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "vec_a": [
+            0.0,
+            -16.206884384155273,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26981,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_gehen_loop.sex",
+          "slot_speed_world_per_game_second": 0.8103442192077637,
+          "distance_world_per_nominal_tick": 0.08103442192077637,
+          "nominal_duration_game_seconds": 1.0,
+          "nominal_cycle_distance_world": 0.8103442192077637
+        },
+        "gehen_end": {
+          "animation_index": 8,
+          "record_offset": 3084367,
+          "vec_a_offset": 3084484,
+          "frame_count": 4,
+          "mesh_indices": [
+            72,
+            73,
+            74,
+            75
+          ],
+          "vec_a": [
+            0.0,
+            -16.206884384155273,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26981,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_gehen_end.sex",
+          "slot_speed_world_per_game_second": 0.8103442192077637,
+          "distance_world_per_nominal_tick": 0.08103442192077637,
+          "nominal_duration_game_seconds": 0.4,
+          "nominal_cycle_distance_world": 0.32413768768310547
+        },
+        "laufen_schnell_start": {
+          "animation_index": 9,
+          "record_offset": 3084508,
+          "vec_a_offset": 3084643,
+          "frame_count": 3,
+          "mesh_indices": [
+            76,
+            77,
+            78
+          ],
+          "vec_a": [
+            0.0,
+            -33.48541259765625,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26981,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_laufen_schnell_start.sex",
+          "slot_speed_world_per_game_second": 1.6742706298828125,
+          "distance_world_per_nominal_tick": 0.16742706298828125,
+          "nominal_duration_game_seconds": 0.3,
+          "nominal_cycle_distance_world": 0.5022811889648438
+        },
+        "laufen_schnell_loop": {
+          "animation_index": 10,
+          "record_offset": 3084667,
+          "vec_a_offset": 3084828,
+          "frame_count": 10,
+          "mesh_indices": [
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88
+          ],
+          "vec_a": [
+            0.0,
+            -33.48541259765625,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26981,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_laufen_schnell_loop.sex",
+          "slot_speed_world_per_game_second": 1.6742706298828125,
+          "distance_world_per_nominal_tick": 0.16742706298828125,
+          "nominal_duration_game_seconds": 1.0,
+          "nominal_cycle_distance_world": 1.6742706298828125
+        },
+        "laufen_schnell_end": {
+          "animation_index": 11,
+          "record_offset": 3084852,
+          "vec_a_offset": 3084987,
+          "frame_count": 4,
+          "mesh_indices": [
+            89,
+            90,
+            91,
+            92
+          ],
+          "vec_a": [
+            0.0,
+            -33.485416412353516,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26981,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_laufen_schnell_end.sex",
+          "slot_speed_world_per_game_second": 1.6742708683013916,
+          "distance_world_per_nominal_tick": 0.16742708683013915,
+          "nominal_duration_game_seconds": 0.4,
+          "nominal_cycle_distance_world": 0.6697083473205567
+        },
+        "kletter_hoch_schnell": {
+          "animation_index": 31,
+          "record_offset": 3088074,
+          "vec_a_offset": 3088241,
+          "frame_count": 11,
+          "mesh_indices": [
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248
+          ],
+          "vec_a": [
+            0.0,
+            -1.9073486612342094e-07,
+            15.08349323272705
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26981,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_kletter_hoch_schnell.sex",
+          "slot_speed_world_per_game_second": 0.7541746497154236,
+          "distance_world_per_nominal_tick": 0.07541746497154236,
+          "nominal_duration_game_seconds": 1.1,
+          "nominal_cycle_distance_world": 0.829592114686966
+        },
+        "kletter_links_schnell": {
+          "animation_index": 32,
+          "record_offset": 3088265,
+          "vec_a_offset": 3088434,
+          "frame_count": 11,
+          "mesh_indices": [
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259
+          ],
+          "vec_a": [
+            14.869131088256836,
+            0.0,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26981,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_kletter_links_schnell.sex",
+          "slot_speed_world_per_game_second": 0.7434565424919128,
+          "distance_world_per_nominal_tick": 0.07434565424919129,
+          "nominal_duration_game_seconds": 1.1,
+          "nominal_cycle_distance_world": 0.8178021967411042
+        },
+        "kletter_rechts_schnell": {
+          "animation_index": 33,
+          "record_offset": 3088458,
+          "vec_a_offset": 3088629,
+          "frame_count": 11,
+          "mesh_indices": [
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270
+          ],
+          "vec_a": [
+            -15.056591987609863,
+            0.0,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26981,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_kletter_rechts_schnell.sex",
+          "slot_speed_world_per_game_second": 0.7528296113014221,
+          "distance_world_per_nominal_tick": 0.07528296113014221,
+          "nominal_duration_game_seconds": 1.1,
+          "nominal_cycle_distance_world": 0.8281125724315644
+        },
+        "kletter_runter_schnell": {
+          "animation_index": 34,
+          "record_offset": 3088653,
+          "vec_a_offset": 3088824,
+          "frame_count": 11,
+          "mesh_indices": [
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280,
+            281
+          ],
+          "vec_a": [
+            0.0,
+            0.0,
+            -14.90881061553955
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 26981,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_kletter_runter_schnell.sex",
+          "slot_speed_world_per_game_second": 0.7454405426979065,
+          "distance_world_per_nominal_tick": 0.07454405426979065,
+          "nominal_duration_game_seconds": 1.1,
+          "nominal_cycle_distance_world": 0.8199845969676972
+        },
+        "kletter_hoch_loop": {
+          "animation_index": 608,
+          "record_offset": 3196793,
+          "vec_a_offset": 3196986,
+          "frame_count": 19,
+          "mesh_indices": [
+            6963,
+            6964,
+            6965,
+            6966,
+            6967,
+            6968,
+            6969,
+            6970,
+            6971,
+            6972,
+            6973,
+            6974,
+            6975,
+            6976,
+            6977,
+            6978,
+            6979,
+            6980,
+            6981
+          ],
+          "vec_a": [
+            0.0,
+            -1.059638137235197e-07,
+            8.377645492553711
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 43424,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_kletter_hoch_loop.sex",
+          "slot_speed_world_per_game_second": 0.41888228058815,
+          "distance_world_per_nominal_tick": 0.041888228058815,
+          "nominal_duration_game_seconds": 1.9,
+          "nominal_cycle_distance_world": 0.795876333117485
+        },
+        "kletter_links_loop": {
+          "animation_index": 609,
+          "record_offset": 3197010,
+          "vec_a_offset": 3197205,
+          "frame_count": 19,
+          "mesh_indices": [
+            6982,
+            6983,
+            6984,
+            6985,
+            6986,
+            6987,
+            6988,
+            6989,
+            6990,
+            6991,
+            6992,
+            6993,
+            6994,
+            6995,
+            6996,
+            6997,
+            6998,
+            6999,
+            7000
+          ],
+          "vec_a": [
+            8.276192665100098,
+            0.0,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 43424,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_kletter_links_loop.sex",
+          "slot_speed_world_per_game_second": 0.4138096272945404,
+          "distance_world_per_nominal_tick": 0.04138096272945404,
+          "nominal_duration_game_seconds": 1.9,
+          "nominal_cycle_distance_world": 0.7862382918596267
+        },
+        "kletter_rechts_loop": {
+          "animation_index": 611,
+          "record_offset": 3197414,
+          "vec_a_offset": 3197611,
+          "frame_count": 19,
+          "mesh_indices": [
+            7009,
+            7010,
+            7011,
+            7012,
+            7013,
+            7014,
+            7015,
+            7016,
+            7017,
+            7018,
+            7019,
+            7020,
+            7021,
+            7022,
+            7023,
+            7024,
+            7025,
+            7026,
+            7027
+          ],
+          "vec_a": [
+            -8.357659339904785,
+            0.0,
+            0.0
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 43424,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_kletter_rechts_loop.sex",
+          "slot_speed_world_per_game_second": 0.4178829789161682,
+          "distance_world_per_nominal_tick": 0.041788297891616824,
+          "nominal_duration_game_seconds": 1.9,
+          "nominal_cycle_distance_world": 0.7939776599407196
+        },
+        "kletter_runter_loop": {
+          "animation_index": 613,
+          "record_offset": 3197822,
+          "vec_a_offset": 3198019,
+          "frame_count": 19,
+          "mesh_indices": [
+            7036,
+            7037,
+            7038,
+            7039,
+            7040,
+            7041,
+            7042,
+            7043,
+            7044,
+            7045,
+            7046,
+            7047,
+            7048,
+            7049,
+            7050,
+            7051,
+            7052,
+            7053,
+            7054
+          ],
+          "vec_a": [
+            0.0,
+            0.0,
+            -8.282672882080078
+          ],
+          "vec_b": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stored_u16": 43424,
+          "stored_f32": 0.0,
+          "origin": "\\\\FILESERVER\\Projects\\Heinz\\Grafik\\Sexport\\Charakter\\Frau\\frau_kletter_runter_loop.sex",
+          "slot_speed_world_per_game_second": 0.41413363814353943,
+          "distance_world_per_nominal_tick": 0.04141336381435394,
+          "nominal_duration_game_seconds": 1.9,
+          "nominal_cycle_distance_world": 0.7868539124727248
+        }
+      },
+      "wall_group_speed_world_per_game_second": {
+        "loop": 0.4161771312355995,
+        "schnell": 0.7489753365516663
+      }
+    }
+  }
+}

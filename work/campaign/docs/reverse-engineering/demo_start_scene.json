@@ -1,0 +1,1353 @@
+{
+  "source_tcl": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Diggles The Myth of Fenris\\data\\Templates\\demo_start.tcl",
+  "map_template": "hol_024.pmp",
+  "layer2": "demo_start.l2m",
+  "objects": [
+    {
+      "ordinal": 1,
+      "line": 5,
+      "class": "Misc_Light",
+      "position": [
+        9.2668,
+        9.32853,
+        1.01
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "fackel",
+      "model_package": "licht.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 2,
+      "line": 11,
+      "class": "Feuerstelle",
+      "position": [
+        14.6248,
+        10.4012,
+        9.47998
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "feuerstelle",
+      "model_package": "produktionsstaetten.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 3,
+      "line": 17,
+      "class": "Dummy_Gras_04",
+      "position": [
+        12.9994,
+        10.5,
+        13.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "gras_04_a",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 4,
+      "line": 23,
+      "class": "Dummy_Baumstumpf_moss_a",
+      "position": [
+        6.30173,
+        10.5,
+        4.3
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "baumstumpf_moss_a",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 5,
+      "line": 29,
+      "class": "Dummy_Moos_uh_e",
+      "position": [
+        6.43185,
+        10.5,
+        1.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "moos_uh_e",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 6,
+      "line": 35,
+      "class": "Dummy_Liane_b",
+      "position": [
+        15.4955,
+        4.76294,
+        12.3
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "liane_b",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 7,
+      "line": 41,
+      "class": "Dummy_Liane_c",
+      "position": [
+        8.26733,
+        4.13,
+        7.75999
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "liane_c",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 8,
+      "line": 47,
+      "class": "Dummy_Wurzel_05_b",
+      "position": [
+        12.8289,
+        3.17273,
+        15.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        5.72319
+      ],
+      "model_object": "wurzel_05_b",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 9,
+      "line": 53,
+      "class": "Dummy_Wurzel_04_a",
+      "position": [
+        16.5279,
+        7.00013,
+        6.1
+      ],
+      "rotation": [
+        0.0,
+        0.839999,
+        0.0
+      ],
+      "model_object": "wurzel_04_a",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 10,
+      "line": 59,
+      "class": "Dummy_Liane_d",
+      "position": [
+        17.176,
+        7.02289,
+        9.1
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "liane_d",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 11,
+      "line": 65,
+      "class": "Dummy_Wand_laub_cc",
+      "position": [
+        8.57176,
+        10.54,
+        5.0
+      ],
+      "rotation": [
+        4.71239,
+        0.0,
+        0.0
+      ],
+      "model_object": "wand_laub_cc",
+      "model_package": "wandboden.3db",
+      "mapping_source": "dummy_wandboden.tcl"
+    },
+    {
+      "ordinal": 12,
+      "line": 71,
+      "class": "Dummy_Wand_laub_cc",
+      "position": [
+        10.0143,
+        10.5345,
+        5.0
+      ],
+      "rotation": [
+        4.71239,
+        0.0,
+        0.0
+      ],
+      "model_object": "wand_laub_cc",
+      "model_package": "wandboden.3db",
+      "mapping_source": "dummy_wandboden.tcl"
+    },
+    {
+      "ordinal": 13,
+      "line": 77,
+      "class": "Dummy_Baumpilz_b",
+      "position": [
+        11.8099,
+        6.8015,
+        2.3
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "baumpilz_b",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 14,
+      "line": 83,
+      "class": "Misc_Light",
+      "position": [
+        13.7457,
+        9.19199,
+        1.01
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "fackel",
+      "model_package": "licht.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 15,
+      "line": 89,
+      "class": "Misc_LightSrc_c",
+      "position": [
+        5.26212,
+        9.17021,
+        14.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ordinal": 16,
+      "line": 95,
+      "class": "Misc_LightSrc_a",
+      "position": [
+        16.2979,
+        8.38948,
+        14.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ordinal": 17,
+      "line": 101,
+      "class": "Pilz",
+      "position": [
+        6.92461,
+        10.5,
+        13.3
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "pilz",
+      "model_package": "produktionsstaetten.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 18,
+      "line": 107,
+      "class": "Pilz",
+      "position": [
+        5.5246,
+        10.4036,
+        11.7
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "pilz",
+      "model_package": "produktionsstaetten.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 19,
+      "line": 113,
+      "class": "Dummy_Traeger_b",
+      "position": [
+        17.4628,
+        10.5,
+        4.74
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "traeger_b",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "dummy_trollhausen.tcl"
+    },
+    {
+      "ordinal": 20,
+      "line": 119,
+      "class": "Dummy_Traeger_a",
+      "position": [
+        15.5028,
+        10.5,
+        4.74
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "traeger_a",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "dummy_trollhausen.tcl"
+    },
+    {
+      "ordinal": 21,
+      "line": 125,
+      "class": "Dummy_Traeger_e",
+      "position": [
+        14.7959,
+        10.5,
+        2.88
+      ],
+      "rotation": [
+        0.0,
+        1.5708,
+        0.0
+      ],
+      "model_object": "traeger_e",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "dummy_trollhausen.tcl"
+    },
+    {
+      "ordinal": 22,
+      "line": 131,
+      "class": "Dummy_Moos_um_g",
+      "position": [
+        14.6323,
+        10.5,
+        3.32
+      ],
+      "rotation": [
+        0.0,
+        4.68319,
+        0.0
+      ],
+      "model_object": "moos_um_g",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 23,
+      "line": 137,
+      "class": "Dummy_Moos_um_e",
+      "position": [
+        18.2795,
+        10.5,
+        5.08
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "moos_um_e",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 24,
+      "line": 143,
+      "class": "Dummy_Spinweb_b",
+      "position": [
+        18.0561,
+        8.83088,
+        4.92
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        5.56319
+      ],
+      "model_object": "spinweb_b",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 25,
+      "line": 149,
+      "class": "Dummy_Liane_h",
+      "position": [
+        17.1556,
+        8.54291,
+        5.08
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "liane_h",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 26,
+      "line": 155,
+      "class": "Bier",
+      "position": [
+        15.5931,
+        10.5,
+        2.84
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ordinal": 27,
+      "line": 161,
+      "class": "Raupe",
+      "position": [
+        5.28425,
+        10.44,
+        9.39998
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "raupe01",
+      "model_package": "rohstoffe.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 28,
+      "line": 167,
+      "class": "Hamster",
+      "position": [
+        12.9929,
+        10.5,
+        4.39999
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "hamster",
+      "model_package": "hamster.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 29,
+      "line": 173,
+      "class": "Dummy_Moos_uv_a",
+      "position": [
+        19.7765,
+        10.5,
+        15.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "moos_uv_a",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 30,
+      "line": 179,
+      "class": "Dummy_Moos_um_d",
+      "position": [
+        19.83,
+        10.5,
+        14.3
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "moos_um_d",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 31,
+      "line": 185,
+      "class": "Dummy_Gras_04",
+      "position": [
+        19.9533,
+        10.5,
+        14.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "gras_04_a",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 32,
+      "line": 191,
+      "class": "Dummy_Moos_ov_b",
+      "position": [
+        19.968,
+        7.96833,
+        15.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "moos_ov_b",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 33,
+      "line": 197,
+      "class": "Zelt",
+      "position": [
+        9.9217,
+        10.46,
+        8.49999
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "zelt_a",
+      "model_package": "produktionsstaetten.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 34,
+      "line": 203,
+      "class": "Dummy_Moos_uv_a",
+      "position": [
+        16.7762,
+        8.49352,
+        5.72
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "moos_uv_a",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 35,
+      "line": 209,
+      "class": "Dummy_Strohballen_a",
+      "position": [
+        18.2293,
+        10.5,
+        9.81999
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "strohballen_a",
+      "model_package": "wandboden.3db",
+      "mapping_source": "dummy_wandboden.tcl"
+    },
+    {
+      "ordinal": 36,
+      "line": 215,
+      "class": "Dummy_Strohballen_c",
+      "position": [
+        18.2017,
+        10.0,
+        8.09998
+      ],
+      "rotation": [
+        0.0,
+        5.60319,
+        4.68319
+      ],
+      "model_object": "strohballen_c",
+      "model_package": "wandboden.3db",
+      "mapping_source": "dummy_wandboden.tcl"
+    },
+    {
+      "ordinal": 37,
+      "line": 221,
+      "class": "Dummy_Eimer_b",
+      "position": [
+        18.9225,
+        10.5,
+        10.76
+      ],
+      "rotation": [
+        0.0,
+        0.879999,
+        0.0
+      ],
+      "model_object": "eimer_b",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "dummy_trollhausen.tcl"
+    },
+    {
+      "ordinal": 38,
+      "line": 227,
+      "class": "Dummy_Moos_uv_d",
+      "position": [
+        20.8261,
+        7.73819,
+        15.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "moos_uv_d",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 39,
+      "line": 233,
+      "class": "Dummy_Liane_g",
+      "position": [
+        19.791,
+        7.71481,
+        14.8
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "liane_g",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 40,
+      "line": 239,
+      "class": "Dummy_Pickerpilz_a",
+      "position": [
+        19.3777,
+        10.42,
+        14.46
+      ],
+      "rotation": [
+        0.0799996,
+        0.0,
+        0.04
+      ],
+      "model_object": "pickerpilz_a",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 41,
+      "line": 245,
+      "class": "Schatztonne",
+      "position": [
+        16.3996,
+        10.48,
+        5.8
+      ],
+      "rotation": [
+        0.0,
+        4.55457,
+        0.0
+      ],
+      "model_object": "tonne",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 42,
+      "line": 251,
+      "class": "Grillpilz",
+      "position": [
+        16.4004,
+        10.4015,
+        5.8
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "grillpilz",
+      "model_package": "nahrung.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 43,
+      "line": 257,
+      "class": "Grillpilz",
+      "position": [
+        16.4004,
+        10.4015,
+        5.8
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "grillpilz",
+      "model_package": "nahrung.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 44,
+      "line": 263,
+      "class": "Grillpilz",
+      "position": [
+        16.4004,
+        10.4015,
+        5.8
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "grillpilz",
+      "model_package": "nahrung.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 45,
+      "line": 269,
+      "class": "Grillpilz",
+      "position": [
+        16.4004,
+        10.4015,
+        5.8
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "grillpilz",
+      "model_package": "nahrung.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 46,
+      "line": 275,
+      "class": "Grillpilz",
+      "position": [
+        16.4004,
+        10.4015,
+        5.8
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "grillpilz",
+      "model_package": "nahrung.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 47,
+      "line": 281,
+      "class": "Grillpilz",
+      "position": [
+        16.4004,
+        10.4015,
+        5.8
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "grillpilz",
+      "model_package": "nahrung.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 48,
+      "line": 287,
+      "class": "Dummy_Moos_hm_b",
+      "position": [
+        20.3649,
+        9.41381,
+        11.02
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "moos_hm_b",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 49,
+      "line": 293,
+      "class": "Dummy_Moos_hm_a",
+      "position": [
+        22.2026,
+        9.81429,
+        11.02
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "moos_hm_a",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 50,
+      "line": 299,
+      "class": "Dummy_Moos_um_d",
+      "position": [
+        22.6633,
+        10.5,
+        12.5
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "moos_um_d",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 51,
+      "line": 305,
+      "class": "Dummy_Wurzel_02_b",
+      "position": [
+        11.0556,
+        11.3741,
+        15.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "wurzel_02_b",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 52,
+      "line": 311,
+      "class": "Dummy_Balken_e",
+      "position": [
+        13.465,
+        9.93263,
+        13.69
+      ],
+      "rotation": [
+        0.0,
+        0.319999,
+        5.72319
+      ],
+      "model_object": "balken_e",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "dummy_trollhausen.tcl"
+    },
+    {
+      "ordinal": 53,
+      "line": 317,
+      "class": "Dummy_Seule_m_g",
+      "position": [
+        14.4468,
+        10.24,
+        12.75
+      ],
+      "rotation": [
+        1.27602,
+        1.82102,
+        5.03242
+      ],
+      "model_object": "seule_m_g",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "dummy_trollhausen.tcl"
+    },
+    {
+      "ordinal": 54,
+      "line": 323,
+      "class": "Dummy_Seule_m_g",
+      "position": [
+        14.6136,
+        10.42,
+        14.45
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "seule_m_g",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "dummy_trollhausen.tcl"
+    },
+    {
+      "ordinal": 55,
+      "line": 329,
+      "class": "Dummy_Seule_o_d",
+      "position": [
+        14.9753,
+        10.32,
+        13.55
+      ],
+      "rotation": [
+        1.19424,
+        5.69267,
+        6.04819
+      ],
+      "model_object": "seule_o_d",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "dummy_trollhausen.tcl"
+    },
+    {
+      "ordinal": 56,
+      "line": 335,
+      "class": "Dummy_Moos_uv_a",
+      "position": [
+        11.2133,
+        8.37036,
+        13.25
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "moos_uv_a",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 57,
+      "line": 341,
+      "class": "Dummy_Liane_l",
+      "position": [
+        11.6592,
+        8.47969,
+        13.15
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "liane_l",
+      "model_package": "flusslandschaft.3db",
+      "mapping_source": "dummy_flusslandschaft.tcl"
+    },
+    {
+      "ordinal": 58,
+      "line": 347,
+      "class": "Dummy_Multi_Voodoo_Seule_m_1",
+      "position": [
+        12.5,
+        10.5,
+        13.01
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "Multi_Voodoo_Seule_m_1",
+      "model_package": "joinedobjs.3db",
+      "mapping_source": "dummy_joinedobjs.tcl"
+    },
+    {
+      "ordinal": 59,
+      "line": 353,
+      "class": "Dummy_Multi_Voodoo_Seule_m_1",
+      "position": [
+        10.5,
+        10.5,
+        13.01
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "Multi_Voodoo_Seule_m_1",
+      "model_package": "joinedobjs.3db",
+      "mapping_source": "dummy_joinedobjs.tcl"
+    },
+    {
+      "ordinal": 60,
+      "line": 359,
+      "class": "Dummy_Balken_e",
+      "position": [
+        11.5,
+        8.5,
+        13.01
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "balken_e",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "dummy_trollhausen.tcl"
+    },
+    {
+      "ordinal": 61,
+      "line": 365,
+      "class": "Dummy_Multi_Moos_Mix_uh_3",
+      "position": [
+        9.77009,
+        10.5,
+        1.42
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "Multi_Moos_Mix_uh_3",
+      "model_package": "joinedobjs.3db",
+      "mapping_source": "dummy_joinedobjs.tcl"
+    },
+    {
+      "ordinal": 62,
+      "line": 371,
+      "class": "Dummy_Multi_Moos_Mix_uv_11",
+      "position": [
+        10.7144,
+        10.5,
+        15.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "Multi_Moos_Mix_uv_11",
+      "model_package": "joinedobjs.3db",
+      "mapping_source": "dummy_joinedobjs.tcl"
+    },
+    {
+      "ordinal": 63,
+      "line": 377,
+      "class": "Dummy_Multi_Moos_Mix_uv_14",
+      "position": [
+        4.53726,
+        10.5,
+        15.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "Multi_Moos_Mix_uv_14",
+      "model_package": "joinedobjs.3db",
+      "mapping_source": "dummy_joinedobjs.tcl"
+    },
+    {
+      "ordinal": 64,
+      "line": 383,
+      "class": "Dummy_Multi_Moos_Mix_um_8",
+      "position": [
+        6.61556,
+        10.5,
+        6.79998
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "Multi_Moos_Mix_um_8",
+      "model_package": "joinedobjs.3db",
+      "mapping_source": "dummy_joinedobjs.tcl"
+    },
+    {
+      "ordinal": 65,
+      "line": 389,
+      "class": "Info_Coll_e",
+      "position": [
+        10.5,
+        10.5,
+        13.01
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ordinal": 66,
+      "line": 395,
+      "class": "Info_Coll_e",
+      "position": [
+        12.5,
+        10.5,
+        13.01
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ordinal": 67,
+      "line": 401,
+      "class": "Info_Coll_a",
+      "position": [
+        15.32,
+        10.5,
+        13.81
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ordinal": 68,
+      "line": 407,
+      "class": "Info_Coll_b",
+      "position": [
+        13.72,
+        10.5,
+        13.01
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ordinal": 69,
+      "line": 413,
+      "class": "Info_Coll_c",
+      "position": [
+        14.5,
+        10.5,
+        3.01
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ordinal": 70,
+      "line": 419,
+      "class": "Info_Coll_e",
+      "position": [
+        14.72,
+        10.5,
+        5.01
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ordinal": 71,
+      "line": 425,
+      "class": "Info_Coll_a",
+      "position": [
+        18.2363,
+        10.5,
+        8.99
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "ordinal": 72,
+      "line": 431,
+      "class": "Zwerg",
+      "position": [
+        17.1851,
+        10.5,
+        12.8
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "mann",
+      "model_package": "mann.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 73,
+      "line": 437,
+      "class": "Zwerg",
+      "position": [
+        16.2561,
+        10.5,
+        9.69998
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "mann",
+      "model_package": "mann.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 74,
+      "line": 443,
+      "class": "Zwerg",
+      "position": [
+        8.38393,
+        10.5,
+        10.7
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "mann",
+      "model_package": "mann.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 75,
+      "line": 449,
+      "class": "Schatztonne",
+      "position": [
+        22.5957,
+        10.5,
+        12.2
+      ],
+      "rotation": [
+        0.0,
+        0.0689941,
+        0.0
+      ],
+      "model_object": "tonne",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    },
+    {
+      "ordinal": 76,
+      "line": 455,
+      "class": "Schatzbuch",
+      "position": [
+        22.6065,
+        10.5,
+        12.2
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_object": "buch_blau",
+      "model_package": "halbzeuge.3db",
+      "mapping_source": "verified static representative; randomized/runtime variant may differ"
+    }
+  ],
+  "unresolved_declarations": [],
+  "summary": {
+    "static_object_declarations": 76,
+    "objects_with_literal_transforms": 76,
+    "objects_mapped_to_3db": 66,
+    "unique_classes": 55
+  },
+  "limits": "Static declarations only; Tcl execution, conditional branches, and engine-generated terrain geometry are not evaluated."
+}

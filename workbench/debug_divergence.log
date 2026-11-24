@@ -1,0 +1,46 @@
+﻿Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+  DEBUG diff at (0, 65) base=0/0 opt=0/1 verified=1 dirty=0 host_h=15 cached_h=15
+  DEBUG diff at (1, 65) base=0/0 opt=0/1 verified=1 dirty=0 host_h=15 cached_h=15
+  DEBUG diff at (2, 65) base=0/0 opt=0/1 verified=1 dirty=0 host_h=15 cached_h=15
+DEBUG opt_report={ "rebuilt": 628, "changed": 0, "unknown_total": 1733, "rects": [[P: (0, 62), S: (24, 34)]], "object_overlays_applied": false, "rebuilt_full": 665, "skipped": 37, "narrowed": true, "replaced_cells": 4, "height_fetches": 71808, "cell_fetches": 0, "gate_fetches": 457 }
+DEBUG base_report={ "rebuilt": 789, "changed": 0, "unknown_total": 1609, "rects": [[P: (0, 62), S: (24, 34)]], "object_overlays_applied": false }
+DEBUG strike=(1, 9) marks=3 base_changed=0 opt_changed=0 opt_rebuilt=628 opt_skipped=37 diffs=124 base_unknown=1609 opt_unknown=1733
+  DEBUG change cell=(0, 8) before=0 after=22
+  DEBUG change cell=(1, 8) before=0 after=32
+  DEBUG change cell=(0, 9) before=0 after=44
+  DEBUG change cell=(1, 9) before=0 after=54
+  DEBUG base rect=[P: (0, 62), S: (24, 34)]
+  DEBUG probe dump for (0, 65) cached_h=15 state=1 verified=1 dirty=0
+  DEBUG base block (0,8)=22 opt block (0,8)=22 base (0,7)=-1 opt (0,7)=-1
+  DEBUG probe (0, -8) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-7, -15) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (7, -15) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (0, -15) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-7, -8) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (7, -8) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-4, -3) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (4, -3) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-7, -5) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (7, -5) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-7, -12) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (7, -12) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-4, -15) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (4, -15) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (0, -12) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (0, -4) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-4, -8) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (4, -8) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-3, -13) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (3, -13) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-5, -11) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (5, -11) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-2, -10) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (2, -10) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-2, -6) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (2, -6) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-5, -5) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (5, -5) opt_host=<null> base_host=<null> cached=-1
+  DEBUG probe (-2, -2) opt_host=<null> base_host=<null> cached=-999
+  DEBUG probe (2, -2) opt_host=<null> base_host=<null> cached=-1
+  DEBUG gate_cell=(0, 8) base_gate=0 opt_gate=0

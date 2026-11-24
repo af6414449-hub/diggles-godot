@@ -1,0 +1,1967 @@
+--- /dev/null
++++ b/scripts/native_raupe_ai.gd
+@@ -0,0 +1,298 @@
++extends RefCounted
++## Behaviour of the Raupe class, ported from the original Tcl.
++##
++## The Raupe is a farmable food creature, not a hostile monster: it is bred by
++## the Farm class and it eats the plants of the dig site when it is loose.
++##
++## Sources (original install, data/Scripts/classes/characters/raupe.tcl):
++##   :3         def_class Raupe food material 0 {reproduces lives moves}
++##   :6-20     animation aliases: standard (still) and kriechen (crawl)
++##   :27-65    obj_init: variant, weight, hitpoints, farm test
++##   :67-85    crawl_free
++##   :87-115   crawl_farmed
++##   :117-146  find_plant
++##   :148-164  move and wait
++##   :166-178  evt_timer0: the one second farm classification
++##   :184-205  methods: die, get_type, set_type
++##   :207-216  state free
++##   :218-236  state farmed
++##   :238-251  state contained
++##   :253-319  state plant_attack
++##
++## The scene dependent parts (object queries, get_place, the move action and
++## the particles) stay in the host: native_raupe_actor.gd reaches them through
++## an adapter, this module only holds the rules.
++
++# --- variant and class data (raupe.tcl:31-58) --------------------------------
++const VARIANT_MIN: int = 1
++const VARIANT_MAX: int = 13
++
++## FACT (raupe.tcl:48-52): the original sets attacktyp 1 when
++## `land $rtyp {02 06 07 08}` finds the type in that list. `land` is the list
++## search of the engine and returns the matching element, so the four types
++## 02, 06, 07 and 08 are the ones that can search for a plant.
++const PREDATORY_VARIANTS: Array[int] = [2, 6, 7, 8]
++
++const ATTACK_COUNTER_LIMIT: int = 10
++const HITPOINTS: float = 0.02
++const WEIGHT: float = 0.01
++const DEATH_THRESHOLD: float = 0.01
++
++# --- geometry (raupe.tcl:64, :91) ---------------------------------------------
++## The obj_query bounding boxes are half extents in x, y and z.
++const FARM_BOX: Vector3 = Vector3(2.0, 0.5, 3.0)
++const GNOME_BOX: Vector3 = Vector3(3.0, 0.5, 5.0)
++
++# --- free roaming (raupe.tcl:67-85) ------------------------------------------
++const MOVE_SPEED: float = 0.03
++const YAW_OFFSET: float = 1.57
++const TURN_JITTER: float = 1.5
++const REVERSE_CHANCE: float = 0.2
++const REVERSE_ANGLE: float = 3.14
++const FREE_DISTANCE_MIN: float = 2.0
++const FREE_DISTANCE_MAX: float = 4.0
++const FREE_CIRCLE: float = 3.0
++const FREE_RANDOM: float = 2.0
++const FOW_MIN: float = 10.0
++const WAIT_NO_PLACE: float = 3.0
++
++# --- farm pen (raupe.tcl:87-115) ----------------------------------------------
++const FARM_RECT_X_MIN: float = -2.0
++const FARM_RECT_X_MAX: float = 1.5
++const FARM_RECT_Z_MIN: float = -3.0
++const FARM_RECT_Z_MAX: float = 3.0
++const FARM_MINDIST: float = 0.6
++const FARM_RANDOM: float = 2.0
++const FARMED_WAIT_CHANCE: float = 0.05
++const WAIT_FARMED: float = 1.0
++
++# --- plant attack (raupe.tcl:117-146, :253-319) -------------------------------
++const PLANT_RANGE: float = 8.0
++const APPROACH_RANGE: float = 5.0
++const APPROACH_MIN_DISTANCE: float = 2.0
++const ATTACK_DISTANCE: float = 0.55
++const ATTACK_DISTANCE_TOLERANCE: float = 0.1
++const ATTACK_FRAMES: Array[int] = [5, 9]
++const WINDUP_SHORT: float = 0.5
++const WINDUP_LONG: float = 0.9
++const PLANT_DAMAGE: float = 0.03
++const SELF_DAMAGE: float = 0.05
++const PARTICLE_SOURCE: int = 15
++const PARTICLE_SCALE: float = 15.0
++## The original calls create_particlesource with the five arguments
++## 15, position, direction, 16, 1 (raupe.tcl:299). The engine meaning of the
++## last two is not documented in the Tcl sources, so they are forwarded as they
++## are.
++const PARTICLE_AMOUNT: int = 16
++const PARTICLE_FLAG: int = 1
++
++# --- waits and states (raupe.tcl:79, :110, :230, :240) -----------------------
++const WAIT_CONTAINED: float = 4.0
++const STATE_FREE: String = "free"
++const STATE_FARMED: String = "farmed"
++const STATE_CONTAINED: String = "contained"
++const STATE_PLANT_ATTACK: String = "plant_attack"
++const ANIM_WAIT: String = "wait"
++const ANIM_CRAWL: String = "crawl"
++
++
++## The two digit type tag of obj_init (raupe.tcl:31-32).
++static func variant_tag(draw: int) -> String:
++	return "%02d" % draw
++
++
++## The attacktyp of obj_init (raupe.tcl:48-52).
++static func attack_type(variant: int) -> int:
++	return 1 if PREDATORY_VARIANTS.has(variant) else 0
++
++
++## Whether the type may search for a plant (raupe.tcl:119).
++static func is_predatory(variant: int) -> bool:
++	return attack_type(variant) == 1
++
++
++## get_vectorxz: a vector in the xz plane (raupe.tcl:70, :76, :282).
++static func vector_xz(angle: float, length: float) -> Vector3:
++	return Vector3(sin(angle), 0.0, cos(angle)) * length
++
++
++## get_anglexz: the angle from one point to another in the xz plane
++## (raupe.tcl:81, :112, :277).
++static func angle_xz(from: Vector3, to: Vector3) -> float:
++	return atan2(to.x - from.x, to.z - from.z)
++
++
++## The model yaw that faces a target (raupe.tcl:81, :112, :315).
++##
++## The original models face along their local x axis, so the world angle is
++## shifted by a quarter turn.
++static func yaw_towards(from: Vector3, to: Vector3) -> float:
++	return angle_xz(from, to) - YAW_OFFSET
++
++
++## The model yaw that faces away from a target (raupe.tcl:285).
++static func yaw_away(from: Vector3, to: Vector3) -> float:
++	return angle_xz(from, to) + YAW_OFFSET
++
++
++## The turn of crawl_free (raupe.tcl:70-71).
++static func free_turn(yaw: float, jitter: float) -> float:
++	return yaw + YAW_OFFSET + jitter
++
++
++## The twenty percent reversal of crawl_free (raupe.tcl:73-75).
++static func free_reverse(angle: float, roll: float) -> float:
++	if roll < REVERSE_CHANCE:
++		return angle + REVERSE_ANGLE
++	return angle
++
++
++## The roaming candidate of crawl_free (raupe.tcl:76).
++static func free_candidate(position: Vector3, angle: float, distance: float) -> Vector3:
++	return position + vector_xz(angle, distance)
++
++
++## The get_place request of crawl_free (raupe.tcl:77).
++static func free_place_request(position: Vector3, candidate: Vector3) -> Dictionary:
++	return {
++		"center": candidate,
++		"circle": FREE_CIRCLE,
++		"nearpos": position,
++		"random": FREE_RANDOM,
++	}
++
++
++## The farm rectangle of crawl_farmed (raupe.tcl:98-102).
++##
++## The original builds the rectangle from the difference between the farm and
++## the centre and asks for it relative to the centre, so the rectangle always
++## covers the farm area x -2..1.5 and z -3..3 in world coordinates, even when
++## the centre is a dwarf next to the farm.
++static func farm_rectangle(farm_pos: Vector3, centre: Vector3) -> Array[float]:
++	var difference := farm_pos - centre
++	var x_min: float = difference.x + FARM_RECT_X_MIN
++	var z_min: float = difference.z + FARM_RECT_Z_MIN
++	var x_max: float = x_min + (FARM_RECT_X_MAX - FARM_RECT_X_MIN)
++	var z_max: float = z_min + (FARM_RECT_Z_MAX - FARM_RECT_Z_MIN)
++	var rectangle: Array[float] = [x_min, z_min, x_max, z_max]
++	return rectangle
++
++
++## The get_place request of crawl_farmed (raupe.tcl:104-108).
++static func farm_place_request(farm_pos: Vector3, centre: Vector3, has_gnome: bool, own_position: Vector3) -> Dictionary:
++	var request: Dictionary = {
++		"center": centre,
++		"rect": farm_rectangle(farm_pos, centre),
++		"mindist": FARM_MINDIST,
++		"random": FARM_RANDOM,
++	}
++	if has_gnome:
++		request["nearpos"] = own_position
++	return request
++
++
++## The plant search counts to eleven (raupe.tcl:120-124).
++static func attack_counter_step(counter: int) -> Dictionary:
++	if counter < ATTACK_COUNTER_LIMIT:
++		return {"counter": counter + 1, "search": false}
++	return {"counter": 0, "search": true}
++
++
++## The windup frame of the attack (raupe.tcl:281).
++static func attack_frame(draw: int) -> int:
++	return ATTACK_FRAMES[draw % ATTACK_FRAMES.size()]
++
++
++## The windup length of the attack: wait 0.5 or wait 0.9 (raupe.tcl:288).
++static func windup_seconds(frame: int) -> float:
++	return WINDUP_SHORT if frame == 5 else WINDUP_LONG
++
++
++## The attack is over when the distance to the plant is 0.55 +- 0.1
++## (raupe.tcl:308).
++static func approach_finished(distance: float) -> bool:
++	return absf(distance - ATTACK_DISTANCE) < ATTACK_DISTANCE_TOLERANCE
++
++
++## The approach point: 0.55 away from the plant (raupe.tcl:313).
++static func approach_point(plant_position: Vector3, angle: float) -> Vector3:
++	return plant_position + vector_xz(angle, ATTACK_DISTANCE)
++
++
++## The particle source of the attack (raupe.tcl:282-284, :299).
++static func attack_particle(plant_position: Vector3, angle: float) -> Dictionary:
++	var direction := vector_xz(angle, 0.02)
++	direction.y = -0.02
++	return {
++		"source": PARTICLE_SOURCE,
++		"position": plant_position + direction * PARTICLE_SCALE,
++		"direction": direction,
++		"amount": PARTICLE_AMOUNT,
++		"flag": PARTICLE_FLAG,
++	}
++
++
++## Five percent of the farmed ticks wait instead of roaming (raupe.tcl:229).
++static func farmed_wait(roll: float) -> bool:
++	return roll < FARMED_WAIT_CHANCE
++
++
++## get_place returns a list whose first entry is a status code. The original
++## compares that code with 0, 1 or -1 depending on the caller (raupe.tcl:78,
++## :109, :132).
++static func place_failed(code: int, minimum: int) -> bool:
++	return code < minimum
++
++
++## The obj_query of test_farmed (raupe.tcl:64).
++static func farm_query(own_position: Vector3) -> Dictionary:
++	return {
++		"center": own_position,
++		"class": "Farm",
++		"box": FARM_BOX,
++		"limit": 1,
++	}
++
++
++## The obj_query of crawl_farmed (raupe.tcl:91).
++static func dwarf_query(farm_position: Vector3) -> Dictionary:
++	return {
++		"center": farm_position,
++		"class": "Zwerg",
++		"box": GNOME_BOX,
++		"limit": 1,
++	}
++
++
++## The obj_query of find_plant (raupe.tcl:126).
++static func plant_query(own_position: Vector3) -> Dictionary:
++	return {
++		"center": own_position,
++		"class": "Fresspflanze",
++		"range": PLANT_RANGE,
++		"limit": 1,
++	}
++
++
++## The get_place request of the plant approach (raupe.tcl:131).
++static func plant_place_request(plant_position: Vector3, own_position: Vector3) -> Dictionary:
++	return {
++		"center": plant_position,
++		"circle": APPROACH_RANGE,
++		"mindist": APPROACH_MIN_DISTANCE,
++		"nearpos": own_position,
++	}
++
++
++## The move action of the original (raupe.tcl:151-156).
++static func move_request(position: Vector3) -> Dictionary:
++	return {"target": position, "speed": MOVE_SPEED}
++
++
++## The animation aliases of the class (raupe.tcl:8-20): standstill and
++## hangstill use standard, every crawl and turn uses kriechen.
++static func anim_clip(variant: int, mode: String, frame: int = 0) -> Dictionary:
++	var tag := variant_tag(variant)
++	if mode == ANIM_CRAWL:
++		return {"mode": ANIM_CRAWL, "clip": "raupe%s.kriechen" % tag, "frame": frame}
++	return {"mode": ANIM_WAIT, "clip": "raupe%s.standard" % tag, "frame": frame}
+
+--- /dev/null
++++ b/scripts/native_raupe_actor.gd
+@@ -0,0 +1,653 @@
++extends RefCounted
++## Autonomous Raupe actor: the original raupe.tcl control flow as a runtime.
++##
++## The Raupe is a farm animal: it is bred by a Farm, it roams around the farm
++## pen, it waits in the inventory and - when it is loose - it eats the plants
++## of the dig site until it dies of its own bite.
++##
++## Sources (original install, data/Scripts/classes/characters/raupe.tcl):
++##   :27-65    obj_init: variant, weight, hitpoints, farm test
++##   :67-85    crawl_free
++##   :87-115   crawl_farmed
++##   :117-146  find_plant
++##   :148-164  move and wait
++##   :166-178  evt_timer0: the one second farm classification
++##   :207-216  state free
++##   :218-236  state farmed
++##   :238-251  state contained
++##   :253-319  state plant_attack
++##
++## Adapter contract (all optional):
++##   actor_pos        Callable() -> Vector3
++##   max_fow          Callable() -> float          (get_max_fow)
++##   is_contained     Callable() -> bool
++##   owner_id         Callable() -> String         (get_owner)
++##   query_farm       Callable(Dictionary) -> Dictionary   ({ref, position})
++##   farm_state       Callable(String) -> Dictionary        ({valid, buildup})
++##   query_dwarf      Callable(Dictionary) -> Dictionary   ({ref, position})
++##   query_plant      Callable(Dictionary) -> Dictionary   ({ref, position})
++##   plant_state      Callable(String) -> Dictionary        ({valid, position})
++##   pick_place       Callable(Dictionary) -> Dictionary    ({code, position})
++##   damage_plant     Callable(String, float) -> void
++##   emit_particles   Callable(Dictionary) -> void
++##   destroy_actor    Callable() -> void
++##   move_action      Callable(Dictionary) -> bool
++##   move_complete    Callable() -> bool
++##   play_clip        Callable(Dictionary) -> bool
++##
++## ENGINE ADAPTATION: the original triggers the free and the farmed state
++## fresh every second. Whether the engine applies that trigger while an action
++## runs is not visible in the Tcl sources. The port keeps the classification
++## every second but does not let it interrupt a running action, because the
++## original waits four seconds in the inventory and the plant attack cycle is
++## longer than the one second of the timer. Without that rule the documented
++## plant attack could never finish.
++
++const RaupeAi = preload("res://scripts/native_raupe_ai.gd")
++const DigglesRandom = preload("res://scripts/diggles_irandom.gd")
++
++const TIMER_INTERVAL: float = 1.0
++const YAW_RANGE: float = 6.28
++const PLACE_MIN_FREE: int = 0
++const PLACE_MIN_FARM: int = 1
++const PLACE_MIN_PLANT: int = 1
++const ATTACK_HOLD: float = 1.0
++const ATTACK_TICK: float = 0.2
++
++var _adapters: Dictionary = {}
++var _rng: RefCounted = null
++
++# --- original instance state (raupe.tcl:31-58) -------------------------------
++var _state: String = RaupeAi.STATE_FREE
++var _state_enabled: bool = true
++var _variant: int = 1
++var _attack_type: int = 0
++var _attack_counter: int = 0
++var _attack_plant: String = ""
++var _plant_position: Vector3 = Vector3.ZERO
++var _approached: int = 0
++var _attack_frame: int = 5
++var _hitpoints: float = RaupeAi.HITPOINTS
++var _farmed: bool = false
++var _farm_id: String = ""
++var _farm_position: Vector3 = Vector3.ZERO
++var _owner_id: String = ""
++var _anim_mode: String = RaupeAi.ANIM_WAIT
++var _yaw: float = 0.0
++var _particle_direction: Vector3 = Vector3.ZERO
++var _particle_position: Vector3 = Vector3.ZERO
++
++# --- runtime -----------------------------------------------------------------
++var _time: float = 0.0
++var _timer_accumulator: float = 0.0
++var _action_kind: String = ""
++var _wait_remaining: float = 0.0
++var _after_wait: Callable = Callable()
++var _trace: Array[String] = []
++
++
++## Create the actor and draw its type from the seeded random generator.
++func setup(adapters: Dictionary = {}, seed_value: int = 0) -> void:
++	_adapters = adapters.duplicate()
++	_rng = DigglesRandom.new()
++	_rng.call("seed_with", seed_value)
++	_variant = 1 + int(_rng.call("irandom", RaupeAi.VARIANT_MAX))
++	_attack_type = RaupeAi.attack_type(_variant)
++	_yaw = _random_float(0.0, YAW_RANGE)
++	_hitpoints = RaupeAi.HITPOINTS
++	_anim_mode = RaupeAi.ANIM_WAIT
++	_trace.clear()
++	_trace.append("variant:%d" % _variant)
++	_set_anim(RaupeAi.ANIM_WAIT, 0)
++
++
++## Advance the actor: run the timer event and the state machine.
++func tick(delta: float) -> void:
++	var step := maxf(0.0, delta)
++	_time += step
++	_advance_action(step)
++	_timer_accumulator += step
++	if _timer_accumulator >= TIMER_INTERVAL:
++		_timer_accumulator = 0.0
++		_timer_event()
++	if _state_enabled:
++		_state_step()
++
++
++## The one second classification timer (raupe.tcl:166-178).
++func _timer_event() -> void:
++	_classify_farm()
++	if _state == RaupeAi.STATE_PLANT_ATTACK and _attack_plant != "":
++		return
++	if not _state_enabled:
++		return
++	_trigger(RaupeAi.STATE_FARMED if _farmed else RaupeAi.STATE_FREE)
++
++
++## One state machine step.
++func _state_step() -> void:
++	if _state == RaupeAi.STATE_FREE:
++		_free_proc()
++	elif _state == RaupeAi.STATE_FARMED:
++		_farmed_proc()
++	elif _state == RaupeAi.STATE_CONTAINED:
++		_contained_proc()
++	else:
++		_plant_attack_proc()
++
++
++## The free state (raupe.tcl:207-216).
++func _free_proc() -> void:
++	if _is_contained():
++		_enter_contained()
++		return
++	_crawl_free()
++
++
++## crawl_free (raupe.tcl:67-85).
++##
++## The visibility gate comes first: a Raupe that cannot see enough does
++## nothing at all, not even a plant search.
++func _crawl_free() -> void:
++	if _max_fow() < RaupeAi.FOW_MIN:
++		return
++	var position := _own_position()
++	var turn := RaupeAi.free_turn(_yaw, _random_unit() * 3.0 - 1.5)
++	if _find_plant():
++		return
++	turn = RaupeAi.free_reverse(turn, _random_unit())
++	var distance := _random_float(RaupeAi.FREE_DISTANCE_MIN, RaupeAi.FREE_DISTANCE_MAX)
++	var candidate := RaupeAi.free_candidate(position, turn, distance)
++	var place := _pick_place(RaupeAi.free_place_request(position, candidate))
++	if RaupeAi.place_failed(int(place.get("code", -1)), PLACE_MIN_FREE):
++		_wait_idle(RaupeAi.WAIT_NO_PLACE)
++		return
++	var target: Variant = place.get("position", candidate)
++	if not (target is Vector3):
++		_wait_idle(RaupeAi.WAIT_NO_PLACE)
++		return
++	_yaw = RaupeAi.yaw_towards(position, target as Vector3)
++	_start_move(target as Vector3)
++
++
++## The farmed state (raupe.tcl:218-236).
++func _farmed_proc() -> void:
++	if _is_contained():
++		_enter_contained()
++		return
++	if not _farm_is_valid():
++		_trigger(RaupeAi.STATE_FREE)
++		_trace.append("state:free")
++		return
++	if RaupeAi.farmed_wait(_random_unit()):
++		_wait_idle(RaupeAi.WAIT_FARMED)
++		return
++	_crawl_farmed()
++
++
++## crawl_farmed (raupe.tcl:87-115).
++func _crawl_farmed() -> void:
++	var position := _own_position()
++	var dwarf := _query_dwarf()
++	var centre := position
++	var has_dwarf := false
++	if not dwarf.is_empty():
++		var dwarf_position: Variant = dwarf.get("position", null)
++		if dwarf_position is Vector3:
++			centre = dwarf_position as Vector3
++			has_dwarf = true
++	var place := _pick_place(RaupeAi.farm_place_request(_farm_position, centre, has_dwarf, position))
++	if RaupeAi.place_failed(int(place.get("code", -1)), PLACE_MIN_FARM):
++		_wait_idle(RaupeAi.WAIT_NO_PLACE)
++		return
++	var target: Variant = place.get("position", centre)
++	if not (target is Vector3):
++		_wait_idle(RaupeAi.WAIT_NO_PLACE)
++		return
++	_yaw = RaupeAi.yaw_towards(position, target as Vector3)
++	_start_move(target as Vector3)
++
++
++## The contained state (raupe.tcl:238-251).
++func _contained_proc() -> void:
++	if _is_contained():
++		_wait_idle(RaupeAi.WAIT_CONTAINED)
++		return
++	_classify_farm()
++	_trigger(RaupeAi.STATE_FARMED if _farmed else RaupeAi.STATE_FREE)
++
++
++## find_plant (raupe.tcl:117-146).
++##
++## The search runs on the eleventh call of a predatory type.
++func _find_plant() -> bool:
++	if _attack_type == 0:
++		return false
++	var step := RaupeAi.attack_counter_step(_attack_counter)
++	_attack_counter = int(step["counter"])
++	if not bool(step["search"]):
++		return false
++	var owner := _owner()
++	if owner == "" or owner == "-1":
++		return false
++	var plant := _query_plant()
++	if plant.is_empty():
++		return false
++	var reference := String(plant.get("ref", ""))
++	if reference == "":
++		return false
++	_attack_plant = reference
++	var position: Variant = plant.get("position", null)
++	if position is Vector3:
++		_plant_position = position as Vector3
++	var own := _own_position()
++	if own.distance_to(_plant_position) > RaupeAi.APPROACH_RANGE:
++		var place := _pick_place(RaupeAi.plant_place_request(_plant_position, own))
++		if RaupeAi.place_failed(int(place.get("code", -1)), PLACE_MIN_PLANT):
++			return false
++	_trigger(RaupeAi.STATE_PLANT_ATTACK)
++	_trace.append("state:plant_attack")
++	return true
++
++
++## The plant attack (raupe.tcl:253-319).
++##
++## The attack is self sacrificing: every bite takes more from the Raupe than
++## from the plant, so the Raupe dies after its first bite.
++func _plant_attack_proc() -> void:
++	if _hitpoints < RaupeAi.DEATH_THRESHOLD:
++		_destroy()
++		return
++	if _is_contained():
++		_attack_plant = ""
++		_approached = 0
++		_enter_contained()
++		return
++	if not _plant_is_valid():
++		_attack_plant = ""
++		_approached = 0
++		_trigger(RaupeAi.STATE_FREE)
++		_set_anim(RaupeAi.ANIM_CRAWL, 0)
++		_trace.append("state:free")
++		return
++	var own := _own_position()
++	var distance := own.distance_to(_plant_position)
++	var angle := RaupeAi.angle_xz(_plant_position, own)
++	if _approached == 0:
++		if RaupeAi.approach_finished(distance):
++			_approached = 1
++			_trace.append("approached")
++			return
++		_yaw = RaupeAi.yaw_towards(own, _plant_position)
++		_start_move(RaupeAi.approach_point(_plant_position, angle))
++		return
++	if _approached == 1:
++		_approached = 2
++		_attack_frame = RaupeAi.attack_frame(_random_int(0, 1))
++		var particle := RaupeAi.attack_particle(_plant_position, angle)
++		_particle_direction = particle["direction"] as Vector3
++		_particle_position = particle["position"] as Vector3
++		_yaw = RaupeAi.yaw_away(_plant_position, own)
++		_set_anim(RaupeAi.ANIM_CRAWL, 0)
++		_start_wait(RaupeAi.windup_seconds(_attack_frame), func() -> void:
++			_set_anim(RaupeAi.ANIM_CRAWL, _attack_frame)
++			_start_wait(ATTACK_HOLD))
++		_trace.append("windup")
++		return
++	_damage_plant(_attack_plant, RaupeAi.PLANT_DAMAGE)
++	_set_anim(RaupeAi.ANIM_CRAWL, _attack_frame - 1)
++	_start_wait(ATTACK_TICK, func() -> void:
++		_emit_particles()
++		_hitpoints -= RaupeAi.SELF_DAMAGE
++		_set_anim(RaupeAi.ANIM_CRAWL, _attack_frame)
++		_start_wait(ATTACK_HOLD))
++	_trace.append("damage")
++
++
++## A state trigger only selects the state, like the original state_triggerfresh.
++##
++## The state machine runs the current state on every step, so a fresh trigger
++## is the same as a plain one here.
++func _trigger(state_name: String) -> void:
++	_state = state_name
++
++
++## --- actions -----------------------------------------------------------------
++
++## The move action of the original (raupe.tcl:148-156).
++func _start_move(target: Vector3) -> void:
++	if _anim_mode != RaupeAi.ANIM_CRAWL:
++		_set_anim(RaupeAi.ANIM_CRAWL, 0)
++	_state_enabled = false
++	_action_kind = "move"
++	_after_wait = Callable()
++	if _adapters.has("move_action"):
++		(_adapters["move_action"] as Callable).call(RaupeAi.move_request(target))
++	_trace.append("move")
++
++
++## The wait action of the original (raupe.tcl:158-164).
++func _start_wait(seconds: float, after: Callable = Callable()) -> void:
++	_state_enabled = false
++	_action_kind = "wait"
++	_wait_remaining = maxf(0.0, seconds)
++	_after_wait = after
++	_trace.append("wait:%.2f" % seconds)
++
++
++## A wait that also switches to the still animation of the original.
++func _wait_idle(seconds: float) -> void:
++	_set_anim(RaupeAi.ANIM_WAIT, 0)
++	_start_wait(seconds)
++
++
++## Advance the running action and release the state machine when it ends.
++func _advance_action(delta: float) -> void:
++	if _action_kind == "move":
++		if not _adapters.has("move_complete"):
++			_finish_action()
++		elif bool((_adapters["move_complete"] as Callable).call()):
++			_finish_action()
++		return
++	if _action_kind != "wait":
++		return
++	_wait_remaining -= maxf(0.0, delta)
++	if _wait_remaining > 0.0:
++		return
++	_finish_action()
++	if not _after_wait.is_valid():
++		return
++	var callback := _after_wait
++	_after_wait = Callable()
++	callback.call()
++
++
++func _finish_action() -> void:
++	_action_kind = ""
++	_state_enabled = true
++
++
++## --- world -------------------------------------------------------------------
++
++## test_farmed (raupe.tcl:62-65).
++func _classify_farm() -> void:
++	var farm := _query_farm()
++	if farm.is_empty():
++		_farmed = false
++		_farm_id = ""
++		_farm_position = Vector3.ZERO
++		return
++	_farmed = true
++	_farm_id = String(farm.get("ref", ""))
++	var position: Variant = farm.get("position", null)
++	if position is Vector3:
++		_farm_position = position as Vector3
++
++
++## The farm handle has to be alive and built up (raupe.tcl:225).
++func _farm_is_valid() -> bool:
++	if _farm_id == "":
++		return false
++	if not _adapters.has("farm_state"):
++		return true
++	var value: Variant = (_adapters["farm_state"] as Callable).call(_farm_id)
++	if not (value is Dictionary):
++		return false
++	var state: Dictionary = value as Dictionary
++	return bool(state.get("valid", false)) and bool(state.get("buildup", false))
++
++
++## The plant has to be alive (raupe.tcl:267).
++func _plant_is_valid() -> bool:
++	if _attack_plant == "":
++		return false
++	if not _adapters.has("plant_state"):
++		return true
++	var value: Variant = (_adapters["plant_state"] as Callable).call(_attack_plant)
++	if not (value is Dictionary):
++		return false
++	var state: Dictionary = value as Dictionary
++	var valid := bool(state.get("valid", false))
++	var position: Variant = state.get("position", null)
++	if valid and position is Vector3:
++		_plant_position = position as Vector3
++	return valid
++
++
++func _damage_plant(reference: String, amount: float) -> void:
++	if not _adapters.has("damage_plant"):
++		return
++	(_adapters["damage_plant"] as Callable).call(reference, amount)
++
++
++func _emit_particles() -> void:
++	if not _adapters.has("emit_particles"):
++		return
++	(_adapters["emit_particles"] as Callable).call({
++		"source": RaupeAi.PARTICLE_SOURCE,
++		"position": _particle_position,
++		"direction": _particle_direction,
++		"amount": RaupeAi.PARTICLE_AMOUNT,
++		"flag": RaupeAi.PARTICLE_FLAG,
++	})
++
++
++func _destroy() -> void:
++	_state_enabled = false
++	_trace.append("destroy")
++	if _adapters.has("destroy_actor"):
++		(_adapters["destroy_actor"] as Callable).call()
++
++
++func _enter_contained() -> void:
++	_trigger(RaupeAi.STATE_CONTAINED)
++	_set_anim(RaupeAi.ANIM_WAIT, 0)
++	_trace.append("state:contained")
++
++
++func _set_anim(mode: String, frame: int = 0) -> void:
++	_anim_mode = mode
++	if _adapters.has("play_clip"):
++		(_adapters["play_clip"] as Callable).call(RaupeAi.anim_clip(_variant, mode, frame))
++	_trace.append("anim:%s:%d" % [mode, frame])
++
++
++## --- adapters ----------------------------------------------------------------
++
++func _own_position() -> Vector3:
++	if not _adapters.has("actor_pos"):
++		return Vector3.ZERO
++	var value: Variant = (_adapters["actor_pos"] as Callable).call()
++	if value is Vector3:
++		return value as Vector3
++	return Vector3.ZERO
++
++
++func _max_fow() -> float:
++	if not _adapters.has("max_fow"):
++		return RaupeAi.FOW_MIN
++	return float((_adapters["max_fow"] as Callable).call())
++
++
++func _is_contained() -> bool:
++	if not _adapters.has("is_contained"):
++		return false
++	return bool((_adapters["is_contained"] as Callable).call())
++
++
++func _owner() -> String:
++	if _adapters.has("owner_id"):
++		return String((_adapters["owner_id"] as Callable).call())
++	return _owner_id
++
++
++func _query_farm() -> Dictionary:
++	if not _adapters.has("query_farm"):
++		return {}
++	var value: Variant = (_adapters["query_farm"] as Callable).call(RaupeAi.farm_query(_own_position()))
++	if value is Dictionary:
++		return value as Dictionary
++	return {}
++
++
++func _query_dwarf() -> Dictionary:
++	if not _adapters.has("query_dwarf"):
++		return {}
++	var value: Variant = (_adapters["query_dwarf"] as Callable).call(RaupeAi.dwarf_query(_farm_position))
++	if value is Dictionary:
++		return value as Dictionary
++	return {}
++
++
++func _query_plant() -> Dictionary:
++	if not _adapters.has("query_plant"):
++		return {}
++	var value: Variant = (_adapters["query_plant"] as Callable).call(RaupeAi.plant_query(_own_position()))
++	if value is Dictionary:
++		return value as Dictionary
++	return {}
++
++
++func _pick_place(request: Dictionary) -> Dictionary:
++	if not _adapters.has("pick_place"):
++		return {"code": -1, "position": Vector3.ZERO}
++	var value: Variant = (_adapters["pick_place"] as Callable).call(request)
++	if value is Dictionary:
++		return value as Dictionary
++	return {"code": -1, "position": Vector3.ZERO}
++
++
++## --- random ------------------------------------------------------------------
++
++func _random_unit() -> float:
++	var value: int = int(_rng.call("next_u32")) & 0x7FFFFFFF
++	return float(value) / 2147483648.0
++
++
++func _random_float(low: float, high: float) -> float:
++	return low + _random_unit() * (high - low)
++
++
++func _random_int(low: int, high: int) -> int:
++	if high < low:
++		return low
++	return low + int(_rng.call("irandom", high - low + 1))
++
++
++## --- public class methods -----------------------------------------------------
++
++func get_state() -> String:
++	return _state
++
++
++func get_variant() -> int:
++	return _variant
++
++
++func get_variant_tag() -> String:
++	return RaupeAi.variant_tag(_variant)
++
++
++func get_attack_type() -> int:
++	return _attack_type
++
++
++func get_hitpoints() -> float:
++	return _hitpoints
++
++
++func get_anim_mode() -> String:
++	return _anim_mode
++
++
++func get_attack_plant() -> String:
++	return _attack_plant
++
++
++func get_approached() -> int:
++	return _approached
++
++
++func get_yaw() -> float:
++	return _yaw
++
++
++func get_farm_id() -> String:
++	return _farm_id
++
++
++func get_trace() -> Array[String]:
++	return _trace.duplicate()
++
++
++## Set the type of an existing Raupe (raupe.tcl:192-194).
++func set_variant(variant: int) -> void:
++	_variant = clampi(variant, RaupeAi.VARIANT_MIN, RaupeAi.VARIANT_MAX)
++	_attack_type = RaupeAi.attack_type(_variant)
++
++
++## The owner of the Raupe (get_owner this).
++func set_owner(owner_id: String) -> void:
++	_owner_id = owner_id
++
++
++## The farm the Raupe belongs to.
++func set_farm(reference: String, position: Vector3) -> void:
++	_farm_id = reference
++	_farm_position = position
++	_farmed = reference != ""
++
++
++## The inventory state of the Raupe.
++func set_contained(contained: bool) -> void:
++	if contained:
++		_enter_contained()
++		return
++	if _state == RaupeAi.STATE_CONTAINED:
++		_classify_farm()
++		_trigger(RaupeAi.STATE_FARMED if _farmed else RaupeAi.STATE_FREE)
++
++
++## The serialisable state of the actor, for a multiplayer snapshot.
++func get_state_snapshot() -> Dictionary:
++	return {
++		"variant": _variant,
++		"state": _state,
++		"attack_type": _attack_type,
++		"attack_counter": _attack_counter,
++		"attack_plant": _attack_plant,
++		"plant_position": _plant_position,
++		"approached": _approached,
++		"attack_frame": _attack_frame,
++		"hitpoints": _hitpoints,
++		"farmed": _farmed,
++		"farm_id": _farm_id,
++		"farm_position": _farm_position,
++		"owner_id": _owner_id,
++		"anim_mode": _anim_mode,
++		"yaw": _yaw,
++		"time": _time,
++		"rng": _rng.call("get_state"),
++	}
++
++
++## Restore an actor from a snapshot.
++func restore_from_snapshot(snapshot: Dictionary) -> void:
++	_variant = int(snapshot.get("variant", _variant))
++	_attack_type = int(snapshot.get("attack_type", _attack_type))
++	_state = String(snapshot.get("state", _state))
++	_attack_counter = int(snapshot.get("attack_counter", _attack_counter))
++	_attack_plant = String(snapshot.get("attack_plant", _attack_plant))
++	_plant_position = snapshot.get("plant_position", _plant_position)
++	_approached = int(snapshot.get("approached", _approached))
++	_attack_frame = int(snapshot.get("attack_frame", _attack_frame))
++	_hitpoints = float(snapshot.get("hitpoints", _hitpoints))
++	_farmed = bool(snapshot.get("farmed", _farmed))
++	_farm_id = String(snapshot.get("farm_id", _farm_id))
++	_farm_position = snapshot.get("farm_position", _farm_position)
++	_owner_id = String(snapshot.get("owner_id", _owner_id))
++	_anim_mode = String(snapshot.get("anim_mode", _anim_mode))
++	_yaw = float(snapshot.get("yaw", _yaw))
++	_time = float(snapshot.get("time", _time))
++	if snapshot.has("rng"):
++		_rng.call("set_state", snapshot["rng"])
+
+--- /dev/null
++++ b/scripts/native_farm_raupe.gd
+@@ -0,0 +1,160 @@
++extends RefCounted
++## The worm side of the Farm class, ported from the original Tcl.
++##
++## The farm itself lives in the host scene. This module holds the rules of the
++## Raupe production branch and the worm bookkeeping of one farm: the counter,
++## the fodder, the lock on the original worm and the shared creation cooldown.
++##
++## Sources (original install, data/Scripts/classes/work/farm.tcl):
++##   :72-79    obj_init: wormfodder, farmcounter and the class branch
++##   :131-140  the production reset and the initial value of lastcreation
++##   :243-270  the Raupe production branch
++##   :251      the threshold 60 - material*12 + rand()*5
++##   :254-255  the fodder and the counter reset
++##   :334-343  remove_from_inv_raupe
++##   :354-357  free_original_worm
++##   :470-481  actualize_worm
++##   :498-513  recreate_raupe
++
++# --- production (farm.tcl:243-270) --------------------------------------------
++const MAX_WORMS: int = 6
++const THRESHOLD_BASE: float = 60.0
++const MATERIAL_FACTOR: float = 12.0
++const THRESHOLD_JITTER: float = 5.0
++const WORM_FODDER_COST: float = 30.0
++const PLACE_RANDOM: int = 2
++
++# --- creation (farm.tcl:498-513) ----------------------------------------------
++const CREATION_COOLDOWN: float = 50.0
++const CREATE_RECT_X: float = 1.7
++const CREATE_RECT_Z: float = 2.5
++
++# --- candidates (farm.tcl:245) ------------------------------------------------
++const CANDIDATE_BOX: Vector3 = Vector3(2.0, 0.5, 3.0)
++
++## FACT (farm.tcl:74): a fresh farm starts with a counter of fifty.
++const INITIAL_FARM_COUNTER: int = 50
++## FACT (farm.tcl:79): the Raupe branch starts with a hundred fodder.
++const INITIAL_WORM_FODDER: float = 100.0
++
++var farm_counter: int = INITIAL_FARM_COUNTER
++var worm_fodder: float = INITIAL_WORM_FODDER
++var original_worm: String = ""
++## FACT (farm.tcl:140): the shared creation cooldown starts at zero, so the
++## first creation of a farm has to wait for the fifty seconds of the cooldown.
++var last_creation: float = 0.0
++
++
++## The candidate query of the Raupe branch (farm.tcl:245).
++static func candidate_request(farm_position: Vector3) -> Dictionary:
++	return {
++		"center": farm_position,
++		"class": "Raupe",
++		"box": CANDIDATE_BOX,
++		"flagneg": ["contained"],
++		"limit": 0,
++	}
++
++
++## The recreation threshold of the Raupe branch (farm.tcl:251).
++static func threshold(material: int, roll: float) -> float:
++	return THRESHOLD_BASE - float(material) * MATERIAL_FACTOR + roll * THRESHOLD_JITTER
++
++
++## The inventory hand in (farm.tcl:334-343): the Raupe is taken out of the
++## inventory and recreated with the same type.
++static func inventory_removal(rtyp: int) -> Dictionary:
++	return {"remove": true, "type": rtyp, "recreate": true}
++
++
++## actualize_worm (farm.tcl:470-481).
++##
++## The worm that is already locked keeps the lock as long as it is still a
++## candidate, otherwise the first free candidate is locked.
++func actualize_worm(candidates: Array, locked_ref: String) -> String:
++	for entry: Variant in candidates:
++		var candidate: Dictionary = entry
++		var reference := String(candidate.get("ref", ""))
++		if reference != "" and reference == locked_ref:
++			original_worm = reference
++			return reference
++	for entry: Variant in candidates:
++		var candidate: Dictionary = entry
++		if not bool(candidate.get("locked", false)):
++			var reference := String(candidate.get("ref", ""))
++			original_worm = reference
++			return reference
++	original_worm = ""
++	return ""
++
++
++## The production plan of the Raupe branch (farm.tcl:243-270).
++##
++## A farm with six Raupen does nothing, an empty farm waits for its schedule,
++## and a farm that a dwarf visited counts up until it crosses the threshold.
++func production_plan(count: int, counter: int, material: int, roll: float, dwarf_present: bool) -> Dictionary:
++	if count >= MAX_WORMS:
++		return {"recreate": false, "counter": counter, "counter_before": counter, "fodder": 0.0, "reason": "full"}
++	if count == 0:
++		return {"recreate": false, "counter": counter, "counter_before": counter, "fodder": 0.0, "reason": "empty"}
++	if not dwarf_present:
++		return {"recreate": false, "counter": counter, "counter_before": counter, "fodder": 0.0, "reason": "no_dwarf"}
++	var limit := threshold(material, roll)
++	if counter > limit:
++		return {
++			"recreate": true,
++			"counter": 0,
++			"counter_before": counter,
++			"fodder": WORM_FODDER_COST,
++			"reason": "recreate",
++			"threshold": limit,
++		}
++	return {
++		"recreate": false,
++		"counter": counter + 1,
++		"counter_before": counter,
++		"fodder": 0.0,
++		"reason": "counter",
++		"threshold": limit,
++	}
++
++
++## Applying the result of a creation (farm.tcl:252-255).
++##
++## A failed creation changes nothing: the counter keeps its value and no
++## fodder is spent.
++func apply_creation(plan: Dictionary, created: bool) -> Dictionary:
++	if not bool(plan.get("recreate", false)):
++		return {"counter": farm_counter, "fodder": 0.0}
++	if not created:
++		return {"counter": int(plan.get("counter_before", farm_counter)), "fodder": 0.0}
++	farm_counter = 0
++	var cost := float(plan.get("fodder", 0.0))
++	worm_fodder -= cost
++	return {"counter": farm_counter, "fodder": cost}
++
++
++## The creation cooldown (farm.tcl:500).
++##
++## The cooldown is shared with the hamster recreation of the same farm.
++func can_recreate(now: float) -> bool:
++	return now - last_creation >= CREATION_COOLDOWN
++
++
++## Remember a successful creation (farm.tcl:505).
++func register_creation(now: float) -> void:
++	last_creation = now
++
++
++## The get_place request of recreate_raupe (farm.tcl:502).
++func recreate_request(farm_position: Vector3) -> Dictionary:
++	return {
++		"center": farm_position,
++		"rect": [-CREATE_RECT_X, -CREATE_RECT_Z, CREATE_RECT_X, CREATE_RECT_Z],
++		"random": PLACE_RANDOM,
++	}
++
++
++## Releasing the worm lock (farm.tcl:354-357).
++func free_original_worm() -> void:
++	original_worm = ""
+
+--- /dev/null
++++ b/scripts/native_raupe_probe.gd
+@@ -0,0 +1,82 @@
++extends Node3D
++## Probe scene for the Raupe.
++##
++## One Raupe crawls on a small floor. The probe owns the actor and ticks it,
++## so the headless scene test can read the state of the actor.
++##
++## Run: res://scenes/native_raupe_probe.tscn
++
++const Actor = preload("res://scripts/native_raupe_actor.gd")
++
++var actor: RefCounted = null
++var ticks: int = 0
++
++
++func _ready() -> void:
++	var light := DirectionalLight3D.new()
++	light.rotation_degrees = Vector3(-55.0, -35.0, 0.0)
++	light.light_energy = 1.1
++	add_child(light)
++
++	var floor_mesh := MeshInstance3D.new()
++	var plane := PlaneMesh.new()
++	plane.size = Vector2(12.0, 8.0)
++	floor_mesh.mesh = plane
++	var floor_material := StandardMaterial3D.new()
++	floor_material.albedo_color = Color(0.32, 0.29, 0.25)
++	floor_mesh.mesh.material = floor_material
++	floor_mesh.position = Vector3(1.5, 0.0, 0.0)
++	add_child(floor_mesh)
++
++	var camera := Camera3D.new()
++	camera.position = Vector3(1.5, 4.0, 8.0)
++	add_child(camera)
++	camera.look_at_from_position(camera.position, Vector3(1.5, 0.25, 0.0), Vector3.UP)
++	camera.make_current()
++
++	actor = Actor.new()
++	actor.call("setup", _host(), 20261119)
++
++
++func _process(delta: float) -> void:
++	if actor == null:
++		return
++	actor.call("tick", delta)
++	ticks += 1
++
++
++## The fake world of the probe: an empty dig site without a farm and without a
++## plant, so the Raupe only roams.
++func _host() -> Dictionary:
++	return {
++		"actor_pos": func() -> Vector3: return global_position,
++		"max_fow": func() -> float: return 20.0,
++		"is_contained": func() -> bool: return false,
++		"owner_id": func() -> String: return "probe",
++		"query_farm": func(_request: Dictionary) -> Dictionary: return {},
++		"farm_state": func(_reference: String) -> Dictionary:
++			return {"valid": false, "buildup": false},
++		"query_dwarf": func(_request: Dictionary) -> Dictionary: return {},
++		"query_plant": func(_request: Dictionary) -> Dictionary: return {},
++		"plant_state": func(_reference: String) -> Dictionary:
++			return {"valid": false, "position": Vector3.ZERO},
++		"pick_place": func(request: Dictionary) -> Dictionary:
++			return {"code": 1, "position": request.get("center", Vector3.ZERO)},
++		"damage_plant": func(_reference: String, _amount: float) -> void: pass,
++		"emit_particles": func(_request: Dictionary) -> void: pass,
++		"destroy_actor": func() -> void: pass,
++		"move_action": func(params: Dictionary) -> bool:
++			_apply_move(params)
++			return true,
++		"move_complete": func() -> bool: return true,
++		"play_clip": func(_request: Dictionary) -> bool: return true,
++	}
++
++
++## Follow the move of the actor, so the picture shows where the Raupe looks.
++func _apply_move(params: Dictionary) -> void:
++	var target: Variant = params.get("target", null)
++	if target is Vector3:
++		position = target as Vector3
++	if actor != null:
++		rotation.y = float(actor.call("get_yaw"))
+
+--- /dev/null
++++ b/scenes/native_raupe_probe.tscn
+@@ -0,0 +1,6 @@
++[gd_scene format=3]
++
++[ext_resource type="Script" path="res://scripts/native_raupe_probe.gd" id="1_probe"]
++
++[node name="NativeRaupeProbe" type="Node3D"]
++script = ExtResource("1_probe")
+
+--- /dev/null
++++ b/tools/native_raupe_ai_self_test.gd
+@@ -0,0 +1,144 @@
++extends SceneTree
++## --headless --path godot --script res://tools/native_raupe_ai_self_test.gd
++## Checks the ported Raupe rules: the variant table, the geometry helpers, the
++## free and farmed roaming, the plant search cadence and the attack values.
++##
++## Sources (original install, data/Scripts/classes/characters/raupe.tcl).
++const Raupe = preload("res://scripts/native_raupe_ai.gd")
++
++var _checks: int = 0
++var _failures: Array[String] = []
++
++
++func _initialize() -> void:
++	call_deferred("_run")
++
++
++func _check(condition: bool, message: String) -> void:
++	_checks += 1
++	if not condition:
++		_failures.append(message)
++		printerr("FAIL: " + message)
++
++
++func _run() -> void:
++	# --- variant and class data (raupe.tcl:31-58) -----------------------------
++	_check(Raupe.variant_tag(1) == "01", "a one digit variant gets a leading zero")
++	_check(Raupe.variant_tag(13) == "13", "a two digit variant stays as it is")
++	_check(Raupe.attack_type(2) == 1, "type 02 is a plant eater")
++	_check(Raupe.attack_type(6) == 1, "type 06 is a plant eater")
++	_check(Raupe.attack_type(7) == 1, "type 07 is a plant eater")
++	_check(Raupe.attack_type(8) == 1, "type 08 is a plant eater")
++	_check(Raupe.attack_type(1) == 0, "type 01 does not eat plants")
++	_check(Raupe.attack_type(5) == 0, "type 05 does not eat plants")
++	_check(Raupe.attack_type(13) == 0, "type 13 does not eat plants")
++	_check(Raupe.is_predatory(8) and not Raupe.is_predatory(9), "only four of the thirteen types are predatory")
++	_check(Raupe.HITPOINTS == 0.02, "the Raupe starts with 0.02 hit points")
++	_check(Raupe.WEIGHT == 0.01, "the Raupe weighs 0.01")
++	_check(Raupe.DEATH_THRESHOLD == 0.01, "the Raupe dies below 0.01 hit points")
++	_check(Raupe.MOVE_SPEED == 0.03, "the move action runs with speed 0.03")
++
++	# --- geometry (raupe.tcl:64, :91, :277-284) -------------------------------
++	var zero := Vector3.ZERO
++	_check(Raupe.vector_xz(0.0, 2.0) == Vector3(0.0, 0.0, 2.0), "a zero angle points along z")
++	_check(Raupe.vector_xz(PI * 0.5, 1.0).is_equal_approx(Vector3(1.0, 0.0, 0.0)), "a quarter turn points along x")
++	_check(absf(Raupe.angle_xz(zero, Vector3(0.0, 0.0, 5.0))) < 0.0001, "a target along z has the angle zero")
++	_check(absf(Raupe.angle_xz(zero, Vector3(5.0, 0.0, 0.0)) - PI * 0.5) < 0.0001, "a target along x has a quarter turn angle")
++	_check(absf(Raupe.yaw_towards(zero, Vector3(0.0, 0.0, 5.0)) + 1.57) < 0.0001, "the yaw towards a target is shifted by 1.57")
++	_check(absf(Raupe.yaw_away(zero, Vector3(0.0, 0.0, 5.0)) - 1.57) < 0.0001, "the yaw away from a target is shifted the other way")
++	_check(Raupe.FARM_BOX == Vector3(2.0, 0.5, 3.0), "the farm query box is two by three")
++	_check(Raupe.GNOME_BOX == Vector3(3.0, 0.5, 5.0), "the dwarf query box is three by five")
++
++	# --- free roaming (raupe.tcl:67-85) ---------------------------------------
++	_check(absf(Raupe.free_turn(0.0, 0.0) - 1.57) < 0.0001, "the free turn starts at a quarter turn")
++	_check(absf(Raupe.free_turn(0.0, 0.5) - 2.07) < 0.0001, "the free turn carries the jitter")
++	_check(absf(Raupe.free_reverse(1.0, 0.1) - 4.14) < 0.0001, "a low roll reverses the turn")
++	_check(absf(Raupe.free_reverse(1.0, 0.5) - 1.0) < 0.0001, "a high roll keeps the turn")
++	_check(Raupe.free_candidate(zero, 0.0, 2.0) == Vector3(0.0, 0.0, 2.0), "the roaming candidate is two units ahead")
++	var request := Raupe.free_place_request(zero, Vector3(0.0, 0.0, 3.0))
++	_check((request["center"] as Vector3) == Vector3(0.0, 0.0, 3.0), "the free place search is centred on the candidate")
++	_check(int(request["circle"]) == 3, "the free place search uses a radius of three")
++	_check((request["nearpos"] as Vector3) == zero, "the free place search starts at the own position")
++	_check(int(request["random"]) == 2, "the free place search randomises by two")
++	_check(Raupe.FOW_MIN == 10.0, "the free roaming needs a visibility of ten")
++	_check(Raupe.WAIT_NO_PLACE == 3.0, "a failed place search waits three seconds")
++
++	# --- farm pen (raupe.tcl:87-115) ------------------------------------------
++	var farm_position := Vector3(10.0, 0.0, 0.0)
++	var rectangle := Raupe.farm_rectangle(farm_position, farm_position)
++	_check(absf(rectangle[0] + 2.0) < 0.0001, "the farm rectangle starts two units before the farm")
++	_check(absf(rectangle[1] + 3.0) < 0.0001, "the farm rectangle starts three units before the farm")
++	_check(absf(rectangle[2] - 1.5) < 0.0001, "the farm rectangle ends one and a half units after the farm")
++	_check(absf(rectangle[3] - 3.0) < 0.0001, "the farm rectangle ends three units after the farm")
++	var shifted := Raupe.farm_rectangle(farm_position, Vector3(12.0, 0.0, 0.0))
++	_check(absf((shifted[0] + 12.0) - 8.0) < 0.0001, "the rectangle follows the centre it is given")
++	_check(absf((shifted[2] + 12.0) - 11.5) < 0.0001, "the shifted rectangle keeps its width")
++	var farm_request := Raupe.farm_place_request(farm_position, Vector3(12.0, 0.0, 0.0), true, zero)
++	_check((farm_request["center"] as Vector3) == Vector3(12.0, 0.0, 0.0), "the farm place search is centred on the dwarf")
++	_check(farm_request.has("nearpos"), "a nearby dwarf keeps the own position as the near position")
++	_check(absf(float(farm_request["mindist"]) - 0.6) < 0.0001, "the farm place search keeps a distance of 0.6")
++	_check(int(farm_request["random"]) == 2, "the farm place search randomises by two")
++	var farm_request_without := Raupe.farm_place_request(farm_position, zero, false, zero)
++	_check(not farm_request_without.has("nearpos"), "without a dwarf there is no near position")
++
++	# --- plant search (raupe.tcl:117-146) -------------------------------------
++	var step := Raupe.attack_counter_step(0)
++	_check(int(step["counter"]) == 1 and not bool(step["search"]), "the first search counts up")
++	step = Raupe.attack_counter_step(9)
++	_check(int(step["counter"]) == 10 and not bool(step["search"]), "the tenth count still waits")
++	step = Raupe.attack_counter_step(10)
++	_check(int(step["counter"]) == 0 and bool(step["search"]), "the eleventh count searches and resets")
++	_check(Raupe.PLANT_RANGE == 8.0, "the plant search reaches eight units")
++	_check(Raupe.APPROACH_RANGE == 5.0, "a plant beyond five units needs an approach")
++	_check(Raupe.APPROACH_MIN_DISTANCE == 2.0, "the approach point keeps two units from the plant")
++	var plant_request := Raupe.plant_place_request(Vector3(0.0, 0.0, 4.0), zero)
++	_check((plant_request["center"] as Vector3) == Vector3(0.0, 0.0, 4.0), "the approach is centred on the plant")
++	_check(absf(float(plant_request["mindist"]) - 2.0) < 0.0001, "the approach keeps two units from the plant")
++	_check((plant_request["nearpos"] as Vector3) == zero, "the approach starts at the own position")
++
++	# --- the attack (raupe.tcl:253-319) ---------------------------------------
++	_check(Raupe.attack_frame(0) == 5, "the first windup frame is five")
++	_check(Raupe.attack_frame(1) == 9, "the second windup frame is nine")
++	_check(absf(Raupe.windup_seconds(5) - 0.5) < 0.0001, "frame five waits half a second")
++	_check(absf(Raupe.windup_seconds(9) - 0.9) < 0.0001, "frame nine waits nine tenths of a second")
++	_check(absf(Raupe.ATTACK_DISTANCE - 0.55) < 0.0001, "the attack closes to 0.55")
++	_check(absf(Raupe.ATTACK_DISTANCE_TOLERANCE - 0.1) < 0.0001, "the attack tolerance is 0.1")
++	_check(Raupe.approach_finished(0.5), "a distance of 0.5 is close enough")
++	_check(Raupe.approach_finished(0.55), "a distance of 0.55 is close enough")
++	_check(not Raupe.approach_finished(0.4), "a distance of 0.4 is too far")
++	_check(not Raupe.approach_finished(0.7), "a distance of 0.7 is too far")
++	_check(Raupe.approach_point(zero, 0.0) == Vector3(0.0, 0.0, 0.55), "the approach point is 0.55 from the plant")
++	_check(absf(Raupe.PLANT_DAMAGE - 0.03) < 0.0001, "the attack takes 0.03 from the plant")
++	_check(absf(Raupe.SELF_DAMAGE - 0.05) < 0.0001, "the attack takes 0.05 from the Raupe")
++	_check(Raupe.PARTICLE_SOURCE == 15, "the attack uses particle source fifteen")
++	var particle := Raupe.attack_particle(zero, 0.0)
++	_check(absf(float((particle["direction"] as Vector3).y) + 0.02) < 0.0001, "the particles point slightly down")
++	_check(absf((particle["position"] as Vector3).z - 0.3) < 0.0001, "the particles sit fifteen units along the direction")
++	_check(int(particle["source"]) == 15, "the particle request keeps the source")
++
++	# --- waits and states ----------------------------------------------------
++	_check(Raupe.farmed_wait(0.04), "a low roll makes the farmed Raupe wait")
++	_check(not Raupe.farmed_wait(0.06), "a high roll lets the farmed Raupe roam")
++	_check(absf(Raupe.WAIT_FARMED - 1.0) < 0.0001, "the farmed wait is one second")
++	_check(absf(Raupe.WAIT_CONTAINED - 4.0) < 0.0001, "the contained wait is four seconds")
++	_check(Raupe.STATE_FREE == "free" and Raupe.STATE_FARMED == "farmed", "the state names match the original")
++	_check(Raupe.STATE_CONTAINED == "contained" and Raupe.STATE_PLANT_ATTACK == "plant_attack", "the remaining state names match")
++	_check(not Raupe.place_failed(0, 0), "a free place with code zero is good enough")
++	_check(Raupe.place_failed(-1, 0), "a negative code is no place")
++	_check(Raupe.place_failed(0, 1), "code zero is not enough for the farm")
++	_check(not Raupe.place_failed(1, 1), "code one is enough for the farm")
++	_check(Raupe.place_failed(0, 1), "code zero is not enough for the approach")
++
++	# --- animation aliases (raupe.tcl:8-20) ----------------------------------
++	var still := Raupe.anim_clip(2, Raupe.ANIM_WAIT)
++	_check(String(still["clip"]) == "raupe02.standard", "the still clip carries the type")
++	_check(int(still["frame"]) == 0, "the still clip starts at frame zero")
++	var crawl := Raupe.anim_clip(2, Raupe.ANIM_CRAWL, 5)
++	_check(String(crawl["clip"]) == "raupe02.kriechen", "the crawl clip carries the type")
++	_check(int(crawl["frame"]) == 5, "the crawl clip can hold a frame")
++
++	if _failures.is_empty():
++		print("NATIVE_RAUPE_AI_SELF_TEST_OK assertions=%d" % _checks)
++	else:
++		printerr("NATIVE_RAUPE_AI_SELF_TEST_FAIL failures=%d" % _failures.size())
++	quit(0 if _failures.is_empty() else 1)
+
+--- /dev/null
++++ b/tools/native_raupe_actor_self_test.gd
+@@ -0,0 +1,285 @@
++extends SceneTree
++## --headless --path godot --script res://tools/native_raupe_actor_self_test.gd
++## Checks the autonomous Raupe actor: the state machine, the visibility gate,
++## the roaming, the plant search cadence, the self sacrificing attack, the
++## inventory, the farm and the seeded replay.
++##
++## Sources (original install, data/Scripts/classes/characters/raupe.tcl).
++const Actor = preload("res://scripts/native_raupe_actor.gd")
++const Raupe = preload("res://scripts/native_raupe_ai.gd")
++
++var _checks: int = 0
++var _failures: Array[String] = []
++
++
++## Mutable world used by the actor adapters.
++class FakeWorld extends RefCounted:
++	var position: Vector3 = Vector3.ZERO
++	var max_fow: float = 20.0
++	var contained: bool = false
++	var owner_id: String = "dwarf1"
++	var farm: Dictionary = {}
++	var farm_valid: bool = true
++	var farm_buildup: bool = true
++	var dwarf: Dictionary = {}
++	var plant: Dictionary = {}
++	var plant_valid: bool = true
++	var place_code: int = 1
++	var place_position: Vector3 = Vector3.ZERO
++	var moves: Array[Dictionary] = []
++	var waits: Array[Dictionary] = []
++	var clips: Array[Dictionary] = []
++	var damages: Array[Dictionary] = []
++	var particles: Array[Dictionary] = []
++	var place_requests: Array[Dictionary] = []
++	var destroyed: bool = false
++	var destroyed_count: int = 0
++
++
++func _initialize() -> void:
++	call_deferred("_run")
++
++
++func _check(condition: bool, message: String) -> void:
++	_checks += 1
++	if not condition:
++		_failures.append(message)
++		printerr("FAIL: " + message)
++
++
++func _adapters(world: FakeWorld) -> Dictionary:
++	return {
++		"actor_pos": func() -> Vector3: return world.position,
++		"max_fow": func() -> float: return world.max_fow,
++		"is_contained": func() -> bool: return world.contained,
++		"owner_id": func() -> String: return world.owner_id,
++		"query_farm": func(_request: Dictionary) -> Dictionary: return world.farm,
++		"farm_state": func(_reference: String) -> Dictionary:
++			return {"valid": world.farm_valid, "buildup": world.farm_buildup},
++		"query_dwarf": func(_request: Dictionary) -> Dictionary: return world.dwarf,
++		"query_plant": func(_request: Dictionary) -> Dictionary: return world.plant,
++		"plant_state": func(_reference: String) -> Dictionary:
++			return {"valid": world.plant_valid, "position": world.plant.get("position", Vector3.ZERO)},
++		"pick_place": func(request: Dictionary) -> Dictionary:
++			world.place_requests.append(request)
++			return {"code": world.place_code, "position": world.place_position},
++		"damage_plant": func(reference: String, amount: float) -> void:
++			world.damages.append({"ref": reference, "amount": amount}),
++		"emit_particles": func(request: Dictionary) -> void: world.particles.append(request),
++		"destroy_actor": func() -> void:
++			world.destroyed = true
++			world.destroyed_count += 1,
++		"move_action": func(params: Dictionary) -> bool:
++			world.moves.append(params)
++			return true,
++		"move_complete": func() -> bool: return true,
++		"play_clip": func(request: Dictionary) -> bool:
++			world.clips.append(request)
++			return true,
++	}
++
++
++func _make_actor(world: FakeWorld, seed_value: int = 1) -> RefCounted:
++	var actor: RefCounted = Actor.new()
++	actor.call("setup", _adapters(world), seed_value)
++	return actor
++
++
++func _waits(actor: RefCounted) -> Array[float]:
++	var result: Array[float] = []
++	var trace: Array = actor.call("get_trace")
++	for entry: Variant in trace:
++		var text := String(entry)
++		if text.begins_with("wait:"):
++			result.append(float(text.substr(5)))
++	return result
++
++
++func _run() -> void:
++	# --- construction (raupe.tcl:27-60) --------------------------------------
++	var world := FakeWorld.new()
++	var actor := _make_actor(world, 12345)
++	var variant := int(actor.call("get_variant"))
++	_check(variant >= 1 and variant <= 13, "the variant is one of the thirteen types")
++	_check(String(actor.call("get_variant_tag")).length() == 2, "the variant tag has two digits")
++	_check(absf(float(actor.call("get_hitpoints")) - 0.02) < 0.0001, "the Raupe starts with 0.02 hit points")
++	_check(String(actor.call("get_state")) == "free", "a fresh Raupe is free")
++	_check(String(actor.call("get_anim_mode")) == "wait", "a fresh Raupe uses the still animation")
++
++	# --- the visibility gate (raupe.tcl:68) -----------------------------------
++	var dark := FakeWorld.new()
++	dark.max_fow = 5.0
++	var dark_actor := _make_actor(dark, 7)
++	dark_actor.call("tick", 1.0)
++	_check(dark.place_requests.is_empty(), "a blind Raupe asks for no place")
++	_check(dark.moves.is_empty(), "a blind Raupe does not move")
++	_check(String(dark_actor.call("get_state")) == "free", "a blind Raupe stays free")
++
++	# --- a failed place search (raupe.tcl:78-80) -----------------------------
++	var blocked := FakeWorld.new()
++	blocked.place_code = -1
++	var blocked_actor := _make_actor(blocked, 7)
++	blocked_actor.call("tick", 1.0)
++	_check(blocked.moves.is_empty(), "a failed place search does not move")
++	var blocked_waits := _waits(blocked_actor)
++	_check(blocked_waits.size() == 1, "a failed place search waits once")
++	_check(absf(blocked_waits[0] - 3.0) < 0.0001, "a failed place search waits three seconds")
++	_check(String(blocked_actor.call("get_anim_mode")) == "wait", "a waiting Raupe uses the still animation")
++
++	# --- free roaming (raupe.tcl:70-84) ---------------------------------------
++	var roam := FakeWorld.new()
++	roam.place_position = Vector3(0.0, 0.0, 3.0)
++	var roam_actor := _make_actor(roam, 7)
++	roam_actor.call("tick", 1.0)
++	_check(roam.moves.size() == 1, "a free Raupe moves")
++	_check(roam.place_requests.size() == 1, "a free Raupe asks for a place")
++	var request := roam.place_requests[0]
++	_check(int(request["circle"]) == 3, "the roaming place search uses a radius of three")
++	_check(int(request["random"]) == 2, "the roaming place search randomises by two")
++	var candidate := request["center"] as Vector3
++	_check(candidate.length() >= 2.0 and candidate.length() <= 4.0, "the roaming candidate is two to four units away")
++	_check((request["nearpos"] as Vector3) == Vector3.ZERO, "the roaming place search starts at the own position")
++	_check(absf(float(roam.moves[0]["speed"]) - 0.03) < 0.0001, "the move runs with speed 0.03")
++	_check(String(roam_actor.call("get_anim_mode")) == "crawl", "a moving Raupe uses the crawl animation")
++	var last_clip: Dictionary = roam.clips[roam.clips.size() - 1]
++	_check(String(last_clip["clip"]) == "raupe%s.kriechen" % String(roam_actor.call("get_variant_tag")), "the crawl clip carries the type")
++
++	# --- the plant search cadence (raupe.tcl:120-124) -------------------------
++	var hunt := FakeWorld.new()
++	hunt.plant = {"ref": "plant1", "position": Vector3(0.0, 0.0, 3.0)}
++	hunt.place_position = Vector3(0.0, 0.0, 3.0)
++	var hunt_actor := _make_actor(hunt, 7)
++	hunt_actor.call("set_variant", 6)
++	for _index: int in range(10):
++		hunt_actor.call("tick", 1.0)
++	_check(String(hunt_actor.call("get_state")) == "free", "the plant search waits for the eleventh tick")
++	for _index: int in range(1):
++		hunt_actor.call("tick", 1.0)
++	_check(String(hunt_actor.call("get_state")) == "plant_attack", "the eleventh tick starts the plant attack")
++	_check(String(hunt_actor.call("get_attack_plant")) == "plant1", "the attack keeps the plant")
++
++	# --- a type that does not eat plants (raupe.tcl:48-52, :119) -------------
++	var peaceful := FakeWorld.new()
++	peaceful.plant = {"ref": "plant1", "position": Vector3(0.0, 0.0, 3.0)}
++	peaceful.place_position = Vector3(0.0, 0.0, 3.0)
++	var peaceful_actor := _make_actor(peaceful, 7)
++	peaceful_actor.call("set_variant", 5)
++	for _index: int in range(20):
++		peaceful_actor.call("tick", 1.0)
++	_check(String(peaceful_actor.call("get_state")) == "free", "a type outside 02, 06, 07 and 08 never attacks")
++	_check(peaceful.damages.is_empty(), "a peaceful type never damages a plant")
++
++	# --- the approach (raupe.tcl:307-317) -------------------------------------
++	var approach := FakeWorld.new()
++	approach.plant = {"ref": "plant1", "position": Vector3(0.0, 0.0, 3.0)}
++	approach.place_position = Vector3(0.0, 0.0, 3.0)
++	var approach_actor := _make_actor(approach, 7)
++	approach_actor.call("set_variant", 7)
++	for _index: int in range(11):
++		approach_actor.call("tick", 1.0)
++	_check(String(approach_actor.call("get_state")) == "plant_attack", "the attack starts")
++	_check(int(approach_actor.call("get_approached")) == 0, "the attack starts with the approach")
++	approach.position = Vector3(0.0, 0.0, 2.45)
++	approach_actor.call("tick", 0.1)
++	_check(int(approach_actor.call("get_approached")) == 1, "the approach ends at 0.55")
++
++	# --- the attack (raupe.tcl:278-306) --------------------------------------
++	var fight := FakeWorld.new()
++	fight.plant = {"ref": "plant1", "position": Vector3(0.0, 0.0, 0.55)}
++	fight.place_position = Vector3(0.0, 0.0, 0.55)
++	var fight_actor := _make_actor(fight, 7)
++	fight_actor.call("set_variant", 8)
++	for _index: int in range(11):
++		fight_actor.call("tick", 1.0)
++	_check(String(fight_actor.call("get_state")) == "plant_attack", "the attack starts at the plant")
++	fight_actor.call("tick", 0.1)
++	_check(int(fight_actor.call("get_approached")) == 1, "the attack closes to the plant")
++	fight_actor.call("tick", 0.1)
++	_check(int(fight_actor.call("get_approached")) == 2, "the windup starts the second phase")
++	_check(fight.damages.is_empty(), "the windup does not damage yet")
++	fight_actor.call("tick", 1.2)
++	fight_actor.call("tick", 1.2)
++	_check(fight.damages.size() == 1, "the attack damages the plant once")
++	_check(absf(float(fight.damages[0]["amount"]) - 0.03) < 0.0001, "the plant loses 0.03")
++	fight_actor.call("tick", 1.2)
++	_check(float(fight_actor.call("get_hitpoints")) < 0.01, "the attack costs the Raupe 0.05 hit points")
++	fight_actor.call("tick", 1.2)
++	_check(fight.destroyed, "the Raupe dies below 0.01 hit points")
++	_check(fight.destroyed_count == 1, "the Raupe dies only once")
++
++	# --- a plant that vanishes (raupe.tcl:267-273) ---------------------------
++	var lost := FakeWorld.new()
++	lost.plant = {"ref": "plant1", "position": Vector3(0.0, 0.0, 3.0)}
++	lost.place_position = Vector3(0.0, 0.0, 3.0)
++	var lost_actor := _make_actor(lost, 7)
++	lost_actor.call("set_variant", 6)
++	for _index: int in range(11):
++		lost_actor.call("tick", 1.0)
++	_check(String(lost_actor.call("get_state")) == "plant_attack", "the attack starts")
++	lost.plant_valid = false
++	lost_actor.call("tick", 0.1)
++	_check(String(lost_actor.call("get_state")) == "free", "a vanished plant sends the Raupe back to free")
++	_check(String(lost_actor.call("get_attack_plant")) == "", "a vanished plant leaves no target")
++
++	# --- the inventory (raupe.tcl:207-216, :238-251) -------------------------
++	var stored := FakeWorld.new()
++	stored.contained = true
++	var stored_actor := _make_actor(stored, 7)
++	stored_actor.call("tick", 0.1)
++	_check(String(stored_actor.call("get_state")) == "contained", "a stored Raupe is contained")
++	stored_actor.call("tick", 0.1)
++	var stored_waits := _waits(stored_actor)
++	_check(stored_waits.size() >= 1, "a stored Raupe waits")
++	_check(absf(stored_waits[0] - 4.0) < 0.0001, "a stored Raupe waits four seconds")
++	stored.contained = false
++	stored_actor.call("tick", 4.1)
++	_check(String(stored_actor.call("get_state")) == "free", "a released Raupe becomes free")
++
++	# --- the farm (raupe.tcl:218-236, :87-115) -------------------------------
++	var farm_world := FakeWorld.new()
++	farm_world.farm = {"ref": "farm1", "position": Vector3.ZERO}
++	var farm_actor := _make_actor(farm_world, 7)
++	farm_actor.call("tick", 1.0)
++	_check(String(farm_actor.call("get_state")) == "farmed", "a Raupe next to a farm is farmed")
++	_check(farm_world.moves.size() >= 1, "a farmed Raupe roams inside the farm")
++	var farm_request := farm_world.place_requests[0]
++	_check(farm_request.has("rect"), "the farmed place search is limited to the farm rectangle")
++	var rectangle: Array = farm_request["rect"]
++	_check(absf(float(rectangle[0]) + 2.0) < 0.0001, "the farm rectangle starts two units before the farm")
++	_check(absf(float(rectangle[3]) - 3.0) < 0.0001, "the farm rectangle ends three units after the farm")
++
++	farm_world.farm_buildup = false
++	farm_actor.call("tick", 1.0)
++	_check(String(farm_actor.call("get_state")) == "free", "a farm without buildup sends the Raupe back to free")
++
++	# --- the seeded replay (raupe.tcl:31, :60) --------------------------------
++	var first_world := FakeWorld.new()
++	var second_world := FakeWorld.new()
++	var first_actor := _make_actor(first_world, 4242)
++	var second_actor := _make_actor(second_world, 4242)
++	_check(int(first_actor.call("get_variant")) == int(second_actor.call("get_variant")), "the same seed gives the same type")
++	for _index: int in range(12):
++		first_actor.call("tick", 1.0)
++		second_actor.call("tick", 1.0)
++	_check(str(first_actor.call("get_trace")) == str(second_actor.call("get_trace")), "the same seed gives the same trace")
++
++	# --- the snapshot (multiplayer state) -------------------------------------
++	var snapshot_world := FakeWorld.new()
++	var snapshot_actor := _make_actor(snapshot_world, 99)
++	for _index: int in range(3):
++		snapshot_actor.call("tick", 1.0)
++	var snapshot: Dictionary = snapshot_actor.call("get_state_snapshot")
++	_check(int(snapshot["variant"]) == int(snapshot_actor.call("get_variant")), "the snapshot carries the type")
++	_check(String(snapshot["state"]) == String(snapshot_actor.call("get_state")), "the snapshot carries the state")
++	_check(snapshot.has("rng"), "the snapshot carries the random generator")
++	var restored_world := FakeWorld.new()
++	var restored := _make_actor(restored_world, 1)
++	restored.call("restore_from_snapshot", snapshot)
++	_check(int(restored.call("get_variant")) == int(snapshot_actor.call("get_variant")), "the restored Raupe keeps the type")
++	_check(String(restored.call("get_state")) == String(snapshot_actor.call("get_state")), "the restored Raupe keeps the state")
++
++	if _failures.is_empty():
++		print("NATIVE_RAUPE_ACTOR_SELF_TEST_OK assertions=%d" % _checks)
++	else:
++		printerr("NATIVE_RAUPE_ACTOR_SELF_TEST_FAIL failures=%d" % _failures.size())
++	quit(0 if _failures.is_empty() else 1)
+
+--- /dev/null
++++ b/tools/native_farm_raupe_self_test.gd
+@@ -0,0 +1,111 @@
++extends SceneTree
++## --headless --path godot --script res://tools/native_farm_raupe_self_test.gd
++## Checks the worm side of the Farm class: the candidate query, the worm lock,
++## the production threshold, the fodder, the creation cooldown and the
++## inventory hand in.
++##
++## Sources (original install, data/Scripts/classes/work/farm.tcl).
++const FarmRaupe = preload("res://scripts/native_farm_raupe.gd")
++
++var _checks: int = 0
++var _failures: Array[String] = []
++
++
++func _initialize() -> void:
++	call_deferred("_run")
++
++
++func _check(condition: bool, message: String) -> void:
++	_checks += 1
++	if not condition:
++		_failures.append(message)
++		printerr("FAIL: " + message)
++
++
++func _run() -> void:
++	# --- the candidate query (farm.tcl:245) ------------------------------------
++	var request := FarmRaupe.candidate_request(Vector3(4.0, 0.0, 0.0))
++	_check(String(request["class"]) == "Raupe", "the farm looks for Raupen")
++	_check((request["box"] as Vector3) == Vector3(2.0, 0.5, 3.0), "the candidates are the ones next to the farm")
++	_check((request["flagneg"] as Array).has("contained"), "a contained Raupe is no candidate")
++	_check((request["center"] as Vector3) == Vector3(4.0, 0.0, 0.0), "the query is centred on the farm")
++
++	# --- the worm lock (farm.tcl:470-481) -------------------------------------
++	var farm := FarmRaupe.new()
++	var candidates: Array = [
++		{"ref": "w1", "locked": false},
++		{"ref": "w2", "locked": true},
++	]
++	_check(String(farm.actualize_worm(candidates, "w1")) == "w1", "a locked worm that is still there keeps the lock")
++	_check(String(farm.actualize_worm(candidates, "w9")) == "w1", "a lost lock falls to the first free worm")
++	var all_locked: Array = [
++		{"ref": "w1", "locked": true},
++		{"ref": "w2", "locked": true},
++	]
++	_check(String(farm.actualize_worm(all_locked, "w1")) == "w1", "a worm that is still there keeps the lock")
++	_check(String(farm.actualize_worm(all_locked, "w9")) == "", "without a free worm there is no lock")
++
++	# --- the production threshold (farm.tcl:248-259) --------------------------
++	_check(FarmRaupe.MAX_WORMS == 6, "a farm holds six Raupen")
++	_check(absf(FarmRaupe.threshold(0, 0.0) - 60.0) < 0.0001, "an empty material needs sixty ticks")
++	_check(absf(FarmRaupe.threshold(1, 0.0) - 48.0) < 0.0001, "one material removes twelve ticks")
++	_check(absf(FarmRaupe.threshold(1, 0.5) - 50.5) < 0.0001, "the threshold carries five random ticks")
++	_check(absf(FarmRaupe.WORM_FODDER_COST - 30.0) < 0.0001, "a recreated worm costs thirty fodder")
++
++	var plan := farm.production_plan(6, 100, 0, 0.0, true)
++	_check(not bool(plan["recreate"]), "a full farm does not recreate")
++	_check(int(plan["counter"]) == 100, "a full farm does not count")
++	plan = farm.production_plan(0, 100, 0, 0.0, true)
++	_check(not bool(plan["recreate"]), "an empty farm does not recreate")
++	plan = farm.production_plan(1, 100, 0, 0.0, false)
++	_check(not bool(plan["recreate"]), "without a dwarf there is no recreation")
++	_check(int(plan["counter"]) == 100, "without a dwarf there is no counting")
++	plan = farm.production_plan(1, 10, 0, 0.0, true)
++	_check(not bool(plan["recreate"]), "below the threshold there is no recreation")
++	_check(int(plan["counter"]) == 11, "below the threshold the counter grows")
++	plan = farm.production_plan(1, 60, 0, 0.0, true)
++	_check(not bool(plan["recreate"]), "the threshold is exclusive")
++	_check(int(plan["counter"]) == 61, "the exclusive threshold still counts")
++	plan = farm.production_plan(1, 61, 0, 0.0, true)
++	_check(bool(plan["recreate"]), "above the threshold the farm recreates")
++	_check(absf(float(plan["fodder"]) - 30.0) < 0.0001, "a recreation costs thirty fodder")
++	_check(int(plan["counter"]) == 0, "a recreation resets the counter")
++
++	# --- the creation cooldown (farm.tcl:498-502) ----------------------------
++	_check(absf(FarmRaupe.CREATION_COOLDOWN - 50.0) < 0.0001, "the creation cooldown is fifty seconds")
++	var cooldown := FarmRaupe.new()
++	cooldown.last_creation = 100.0
++	_check(not cooldown.can_recreate(149.9), "the cooldown blocks a creation")
++	_check(cooldown.can_recreate(150.0), "the cooldown ends after fifty seconds")
++	var create_request := cooldown.recreate_request(Vector3(2.0, 0.0, 3.0))
++	_check((create_request["center"] as Vector3) == Vector3(2.0, 0.0, 3.0), "the new worm appears at the farm")
++	var rectangle: Array = create_request["rect"]
++	_check(absf(float(rectangle[0]) + 1.7) < 0.0001, "the new worm starts 1.7 units before the farm")
++	_check(absf(float(rectangle[1]) + 2.5) < 0.0001, "the new worm starts 2.5 units before the farm")
++	_check(absf(float(rectangle[2]) - 1.7) < 0.0001, "the new worm ends 1.7 units after the farm")
++	_check(absf(float(rectangle[3]) - 2.5) < 0.0001, "the new worm ends 2.5 units after the farm")
++	_check(int(create_request["random"]) == 2, "the new worm position is randomised by two")
++
++	# --- applying a creation (farm.tcl:252-255) ------------------------------
++	var applied := farm.apply_creation(plan, false)
++	_check(int(applied["counter"]) == 61, "a failed creation keeps the counter")
++	_check(absf(float(applied["fodder"])) < 0.0001, "a failed creation costs no fodder")
++	applied = farm.apply_creation(plan, true)
++	_check(int(applied["counter"]) == 0, "a creation resets the counter")
++	_check(absf(float(applied["fodder"]) - 30.0) < 0.0001, "a creation costs thirty fodder")
++
++	# --- the inventory hand in (farm.tcl:334-343) ----------------------------
++	var removal := FarmRaupe.inventory_removal(7)
++	_check(int(removal["type"]) == 7, "the inventory Raupe keeps its type")
++	_check(bool(removal["remove"]), "the inventory Raupe is taken out")
++
++	# --- releasing the lock (farm.tcl:354-357) -------------------------------
++	farm.original_worm = "w1"
++	farm.free_original_worm()
++	_check(String(farm.original_worm) == "", "releasing the worm clears the lock")
++
++	if _failures.is_empty():
++		print("NATIVE_FARM_RAUPE_SELF_TEST_OK assertions=%d" % _checks)
++	else:
++		printerr("NATIVE_FARM_RAUPE_SELF_TEST_FAIL failures=%d" % _failures.size())
++	quit(0 if _failures.is_empty() else 1)
+
+--- /dev/null
++++ b/tools/native_raupe_scene_self_test.gd
+@@ -0,0 +1,54 @@
++extends SceneTree
++## --headless --path godot --script res://tools/native_raupe_scene_self_test.gd
++## Checks the Raupe in a scene: the probe scene loads and runs, the actor
++## reports its state and the multiplayer map stays free of quiet Raupe spawns.
++##
++## The multiplayer scene and its script are only read, never instantiated, so
++## the test cannot change the game.
++
++const ProbeScene = preload("res://scenes/native_raupe_probe.tscn")
++
++var _checks: int = 0
++var _failures: Array[String] = []
++
++
++func _initialize() -> void:
++	call_deferred("_run")
++
++
++func _check(condition: bool, message: String) -> void:
++	_checks += 1
++	if not condition:
++		_failures.append(message)
++		printerr("FAIL: " + message)
++
++
++func _run() -> void:
++	# --- the probe scene ------------------------------------------------------
++	var probe: Node = ProbeScene.instantiate()
++	_check(probe != null, "the probe scene loads")
++	root.add_child(probe)
++	for _index: int in range(10):
++		await process_frame
++	var actor: Variant = probe.get("actor")
++	_check(actor != null, "the probe owns a Raupe")
++	if actor != null:
++		_check(int(probe.get("ticks")) > 0, "the probe ticks the Raupe")
++		_check(String(actor.call("get_state")) == "free", "the Raupe of the scene stays free")
++		_check((actor.call("get_trace") as Array).size() > 1, "the Raupe of the scene acts")
++		_check(int(actor.call("get_variant")) >= 1, "the Raupe of the scene has a type")
++	probe.queue_free()
++
++	# --- the multiplayer map --------------------------------------------------
++	var multiplayer: PackedScene = load("res://scenes/multiplayer_test.tscn")
++	_check(multiplayer != null and multiplayer.can_instantiate(), "the multiplayer scene loads")
++	var scene_text := FileAccess.get_file_as_string("res://scenes/multiplayer_test.tscn")
++	var script_text := FileAccess.get_file_as_string("res://scripts/multiplayer_test.gd")
++	_check(not scene_text.to_lower().contains("raupe"), "the multiplayer scene has no quiet Raupe spawn")
++	_check(not script_text.to_lower().contains("raupe"), "the multiplayer script has no quiet Raupe spawn")
++
++	if _failures.is_empty():
++		print("NATIVE_RAUPE_SCENE_SELF_TEST_OK assertions=%d" % _checks)
++	else:
++		printerr("NATIVE_RAUPE_SCENE_SELF_TEST_FAIL failures=%d" % _failures.size())
++	quit(0 if _failures.is_empty() else 1)
+
+--- /dev/null
++++ b/scripts/diggles_irandom.gd
+@@ -0,0 +1,135 @@
++extends RefCounted
++## Diggles.exe `irandom` stream, recovered from the native binary.
++##
++## FACT (Diggles.exe disassembly, read-only source of truth):
++##   * `irandom` is a native Tcl command. Its name is registered at 0x61AFC8 and
++##     the handler lives at 0x62F780.
++##   * The handler draws one 32 bit value from the generator at 0x49C670, masks
++##     it with 0x7FFFFFFF and returns the remainder of the Tcl argument:
++##     `irandom n` == `(draw & 0x7FFFFFFF) % n`. A limit of 1 (or 0) divides by
++##     0x7FFFFFFF instead.
++##   * The generator is a Mersenne Twister: 624 state words, the classic mag01
++##     table {0x0, 0x9908B0DF}, tempering masks 0x9D2C5680 and 0xEFC60000.
++##     The state is *not* filled by the standard MT19937 initialiser; the native
++##     seeding routine at 0x4454D0 derives it from an LCG with the multiplier
++##     69069.
++##   * Diggles.exe seeds the generator once at start-up with `GetTickCount()`
++##     (0x401AE0 -> 0x4454D0), so the original campaign level depends on the
++##     moment the game started. The algorithm is reproduced here; the seed value
++##     is chosen by the host.
++##
++## The draw order therefore matches the original. Only the seed differs from a
++## recorded original session.
++
++const STATE_SIZE: int = 624
++const LAST_INDEX: int = 623
++const MATRIX_A: int = 0x9908B0DF
++const TEMPER_B: int = 0x9D2C5680
++const TEMPER_C: int = 0xEFC60000
++const LCG_MULTIPLIER: int = 69069
++const UINT32: int = 0xFFFFFFFF
++const SIGN_CLEARED: int = 0x7FFFFFFF
++const FIRST_LOOP_END: int = 227
++const MATRIX_LAG: int = 397
++const SECOND_LOOP_LAG: int = 227
++const LAST_ELEMENT_SOURCE: int = 396
++
++var _state: PackedInt32Array = PackedInt32Array()
++var _index: int = 0
++
++
++func _init(seed_value: int = 0) -> void:
++	seed_with(seed_value)
++
++
++## Fill the 624 word state exactly like the native routine at 0x4454D0.
++func seed_with(seed_value: int) -> void:
++	_state.resize(STATE_SIZE)
++	var value: int = seed_value & UINT32
++	for index: int in range(STATE_SIZE):
++		var high: int = value & 0xFFFF0000
++		var next_value: int = ((value * LCG_MULTIPLIER) + 1) & UINT32
++		_state[index] = high | (next_value >> 16)
++		value = ((next_value * LCG_MULTIPLIER) + 1) & UINT32
++	_index = STATE_SIZE
++
++
++## One tempered 32 bit draw, identical to the native generator at 0x49C670.
++func next_u32() -> int:
++	var value: int = 0
++	if _index >= STATE_SIZE:
++		_twist()
++		_index = 1
++		value = _state[0] & UINT32
++	else:
++		value = _state[_index] & UINT32
++		_index += 1
++	return _temper(value)
++
++
++## The native `irandom n` command.
++##
++## The handler reads the argument with `Tcl_GetIntFromObj` into a local int,
++## divides the masked draw by that value and keeps the remainder. A limit of
++## zero is replaced by 0x7FFFFFFF; a limit of one therefore yields zero, which
++## is what Campaign.tcl relies on for its single element shift lists.
++func irandom(limit: int) -> int:
++	var value: int = next_u32() & SIGN_CLEARED
++	if limit == 0:
++		return value % SIGN_CLEARED
++	return value % limit
++
++
++## The state of the generator, for a multiplayer snapshot.
++##
++## The state is the 624 words of the generator plus the index of the next
++## draw, so a restored generator continues with exactly the same sequence.
++func get_state() -> Dictionary:
++	return {"state": _state.duplicate(), "index": _index}
++
++
++## Restore a generator from the state of get_state.
++func set_state(data: Dictionary) -> void:
++	var words: Variant = data.get("state", null)
++	if not (words is PackedInt32Array):
++		return
++	_state = (words as PackedInt32Array).duplicate()
++	_index = int(data.get("index", 0))
++
++
++func _temper(value: int) -> int:
++	var result: int = value & UINT32
++	result = (result ^ (result >> 11)) & UINT32
++	result = (result ^ ((result << 7) & TEMPER_B)) & UINT32
++	result = (result ^ ((result << 15) & TEMPER_C)) & UINT32
++	result = (result ^ (result >> 18)) & UINT32
++	return result
++
++
++## The native state is unsigned. GDScript integers are signed, so every word is
++## masked back into the 0..0xFFFFFFFF range before it is shifted.
++func _twist() -> void:
++	for index: int in range(0, FIRST_LOOP_END):
++		var current: int = _state[index] & UINT32
++		var following: int = _state[index + 1] & UINT32
++		var mixed: int = (((current ^ following) & SIGN_CLEARED) ^ current) & UINT32
++		mixed = ((mixed >> 1) ^ (MATRIX_A if (mixed & 1) != 0 else 0)) & UINT32
++		_state[index] = (mixed ^ (_state[index + MATRIX_LAG] & UINT32)) & UINT32
++	for index: int in range(FIRST_LOOP_END, LAST_INDEX):
++		var current: int = _state[index] & UINT32
++		var following: int = _state[index + 1] & UINT32
++		var mixed: int = (((current ^ following) & SIGN_CLEARED) ^ current) & UINT32
++		mixed = ((mixed >> 1) ^ (MATRIX_A if (mixed & 1) != 0 else 0)) & UINT32
++		_state[index] = (mixed ^ (_state[index - SECOND_LOOP_LAG] & UINT32)) & UINT32
++	# Native index 623: the engine's bounds guard falls back to state[0].
++	var tail_current: int = _state[LAST_INDEX] & UINT32
++	var tail_next: int = _state[0] & UINT32
++	var tail: int = (((tail_current ^ tail_next) & SIGN_CLEARED) ^ tail_current) & UINT32
++	tail = ((tail >> 1) ^ (MATRIX_A if (tail & 1) != 0 else 0)) & UINT32
++	_state[LAST_INDEX] = (tail ^ (_state[LAST_ELEMENT_SOURCE] & UINT32)) & UINT32
++	# Native post-twist step at 0x49C87A: one further state[623] update.
++	var previous: int = _state[LAST_INDEX] & UINT32
++	var first: int = _state[0] & UINT32
++	var post: int = (((first ^ previous) & SIGN_CLEARED) ^ previous) & UINT32
++	post = ((post >> 1) ^ (MATRIX_A if (post & 1) != 0 else 0)) & UINT32
++	_state[LAST_INDEX] = (post ^ (_state[LAST_ELEMENT_SOURCE] & UINT32)) & UINT32

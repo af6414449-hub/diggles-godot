@@ -1,0 +1,256 @@
+{
+  "date": "2026-11-18",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "renderer": "GL Compatibility / AMD Vega8",
+  "tests": [
+    {
+      "test": "surface_depth_route",
+      "exit_code": 0,
+      "markers": [
+        "SURFACE_DEPTH_ROUTE_SELF_TEST checks=19 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/surface_depth_route.log"
+    },
+    {
+      "test": "navigation_representative",
+      "exit_code": 0,
+      "markers": [
+        "NAVIGATION_REPRESENTATIVE_SELF_TEST checks=11 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/navigation_representative.log"
+    },
+    {
+      "test": "wall_branch_continuation",
+      "exit_code": 0,
+      "markers": [
+        "WALL_BRANCH_CONTINUATION_SELF_TEST checks=16 failures=0 mutations=12 max_step=0.085717"
+      ],
+      "errors": [],
+      "log": "logs/wall_branch_continuation.log"
+    },
+    {
+      "test": "native_flame",
+      "exit_code": 0,
+      "markers": [
+        {
+          "checks": 51,
+          "failures": [],
+          "gpu_pixels_verified": false,
+          "ok": true,
+          "source_visible_texels": 39
+        }
+      ],
+      "errors": [],
+      "log": "logs/native_flame.log"
+    },
+    {
+      "test": "native_model_material",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_MODEL_MATERIAL_SELF_TEST_OK assertions=208"
+      ],
+      "errors": [],
+      "log": "logs/native_model_material.log"
+    },
+    {
+      "test": "native_dig_feedback",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_DIG_FEEDBACK_SELF_TEST PASS checks=629 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/native_dig_feedback.log"
+    },
+    {
+      "test": "native_surface_walk",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_SURFACE_WALK_SELF_TEST_OK assertions=44 trips=2 floors=2 wall_idle=ok"
+      ],
+      "errors": [],
+      "log": "logs/native_surface_walk.log"
+    },
+    {
+      "test": "native_surface_dig",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_SURFACE_DIG_SELF_TEST_OK assertions=22 assignments=1 wall_mutations=2"
+      ],
+      "errors": [],
+      "log": "logs/native_surface_dig.log"
+    },
+    {
+      "test": "manual_dig_region",
+      "exit_code": 0,
+      "markers": [
+        "MANUAL_DIG_REGION_SELF_TEST_OK assertions=27"
+      ],
+      "errors": [],
+      "log": "logs/manual_dig_region.log"
+    },
+    {
+      "test": "excavated_walk",
+      "exit_code": 0,
+      "markers": [
+        "EXCAVATED_WALK_SELF_TEST_OK assertions=37 mutations=4 new_floor=16.5 original_floor=14.5"
+      ],
+      "errors": [],
+      "log": "logs/excavated_walk.log"
+    },
+    {
+      "test": "native_dig_queue",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_DIG_QUEUE_SELF_TEST_OK assertions=31 assignments=1 callbacks=3 mutations=3"
+      ],
+      "errors": [],
+      "log": "logs/native_dig_queue.log"
+    },
+    {
+      "test": "dwarf_parallel_work",
+      "exit_code": 0,
+      "markers": [
+        "DWARF_PARALLEL_WORK_SELF_TEST_OK assertions=21 workers=2 independent_walkers=3 mutations=2"
+      ],
+      "errors": [],
+      "log": "logs/dwarf_parallel_work.log"
+    },
+    {
+      "test": "native_dwarf_dig",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_DWARF_DIG_SELF_TEST_OK assertions=218 callbacks=1 worker_strikes=1 fixture_strikes=1"
+      ],
+      "errors": [],
+      "log": "logs/native_dwarf_dig.log"
+    },
+    {
+      "test": "native_terrain_render",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_TERRAIN_RENDER_SELF_TEST_OK assertions=556 vertices=15906 textures=41"
+      ],
+      "errors": [],
+      "log": "logs/native_terrain_render.log"
+    },
+    {
+      "test": "automatic_torch_runtime",
+      "markers": [
+        "AUTOMATIC_TORCH_RUNTIME_SELF_TEST checks=33 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/automatic_torch_runtime.log"
+    },
+    {
+      "test": "feedback_visual_opengl",
+      "markers": [
+        "FEEDBACK_VISUAL_SELF_TEST checks=16 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/feedback_visual_opengl.log"
+    },
+    {
+      "test": "model_material_gpu",
+      "markers": [
+        "NATIVE_MODEL_MATERIAL_SELF_TEST_OK assertions=213"
+      ],
+      "errors": [],
+      "log": "logs/model_material_gpu.log"
+    }
+  ],
+  "source_checks": [
+    {
+      "tool": "export_native_flame.py",
+      "exit_code": 0,
+      "output": "{\"ok\": true, \"check\": true, \"files\": 3, \"texture\": \"Texture/Misc/particle_a_128d.tga\", \"lifetime_ticks\": 32}\r\n",
+      "log": "logs/export_native_flame.py.log"
+    },
+    {
+      "tool": "export_native_dig_feedback.py",
+      "exit_code": 0,
+      "output": "{\"status\": \"CHECK_OK\", \"files\": 8, \"clips\": {\"digup\": 13, \"digupaccident\": 29, \"digfront\": 13, \"digdown\": 13, \"digdownaccident\": 31}, \"bytes\": 6210215, \"boards\": \"unknown\"}\r\n",
+      "log": "logs/export_native_dig_feedback.py.log"
+    },
+    {
+      "tool": "export_native_model_material.py",
+      "exit_code": 0,
+      "output": "{\"status\": \"CHECK_OK\", \"objects\": 9, \"normals\": 256}\r\n",
+      "log": "logs/export_native_model_material.py.log"
+    },
+    {
+      "tool": "audit_shaft_path_center.py",
+      "exit_code": 0,
+      "output": "EXE SHA256 58a01d3d80670a6042c66a82684397c98e39c503e00a6e2c2c511f338a30ed74\r\nSHAFT_PATH_SOURCE_OK spans=8 constants=7 (static evidence, not live execution)\r\n",
+      "log": "logs/audit_shaft_path_center.py.log"
+    },
+    {
+      "tool": "audit_tunnel_cladding.py",
+      "exit_code": 0,
+      "output": "{\"ok\": true, \"check\": true, \"candidates\": 6, \"package_objects\": 135, \"placement\": \"unknown\"}\n",
+      "log": "logs/audit_tunnel_cladding.py.log"
+    }
+  ],
+  "lint": {
+    "counts": {
+      "total": 0,
+      "errors": 0,
+      "warnings": 0,
+      "parse_errors": 0
+    },
+    "log": "logs/lint.json"
+  },
+  "smoke": {
+    "counts": {
+      "scenes": 3,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "warnings": 0,
+      "findings": 0
+    },
+    "log": "logs/smoke.json"
+  },
+  "images": [
+    {
+      "file": "overview.png",
+      "sha256": "12a2c3ad11a86d5dfc3d36b23d8d9d3ce1603fd6c025f8df9de62fb0c7513f74"
+    },
+    {
+      "file": "torch_close.png",
+      "sha256": "b8280a9552a29b45a743b575bba967a17b287e4f156d23ba4098738a9faafcc2"
+    },
+    {
+      "file": "pick_stuck.png",
+      "sha256": "3900b3f0d9c569c743a6c5430f9f41f284ae218688401f79d7b53cdcd8c70462"
+    }
+  ],
+  "references": [
+    {
+      "file": "original-lighting.png",
+      "source": "C:/Users/frant/AppData/Local/Temp/codex-clipboard-9f5683ca-605e-4f65-bf9c-6693f1c4723b.png",
+      "sha256": "b73754dcfe789b3aba6bc41ad0eab57a7832d40a4794db9b6e29631bf7b984fe"
+    },
+    {
+      "file": "godot-before.png",
+      "source": "C:/Users/frant/AppData/Local/Temp/codex-clipboard-c16d2456-f700-4892-aadc-6a6e625888d8.png",
+      "sha256": "edcf66a438fc136567e2bd4d3121f1da0e932ff1d56c92bfc4901dfd790abe87"
+    },
+    {
+      "file": "original-boards.png",
+      "source": "C:/Users/frant/AppData/Local/Temp/codex-clipboard-785282e7-ca68-43be-a083-1cfea423b5db.png",
+      "sha256": "01c381e841e5bdb1b94044e8cf5b9eca064451c1a5e8aabd067421a7383f1f42"
+    }
+  ],
+  "phone_benchmark": false,
+  "apk_built": false,
+  "original_runtime_live_trace": false,
+  "limits": [
+    "Source primitive + host navigation, not complete Calc1.",
+    "Model lighting/fog/FOW incomplete.",
+    "Tunnel boards placement unknown.",
+    "Skill growth absent; host actors default exp_Stein=0.",
+    "Flame blend states, visibility gates and historical frame cadence incomplete."
+  ]
+}

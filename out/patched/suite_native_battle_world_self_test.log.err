@@ -1,0 +1,4 @@
+FAIL loads source-derived first battle slice
+FAIL all first-slice invariants hold
+FAIL world uses source 112x88 bounds
+FAIL area offset is source 16,16

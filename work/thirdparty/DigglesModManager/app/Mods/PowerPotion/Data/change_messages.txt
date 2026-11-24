@@ -1,0 +1,17 @@
+$start
+$before
+## "Bier"
+$put
+## "Powerpotion"
+en "Power Potion"
+cz "Power Potion"
+de "Powertrank"
+fr "Power Potion"
+it "Power Potion"
+nl "Power Potion"
+es "Power Potion"
+pl "Napój mocy"
+ru "Power Potion"
+
+
+$end

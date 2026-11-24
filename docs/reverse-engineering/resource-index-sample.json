@@ -1,0 +1,717 @@
+{
+  "root": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris",
+  "file_count": 100,
+  "extensions": {
+    ".3db": 43,
+    ".bdb": 3,
+    ".bin": 1,
+    ".tcl": 48,
+    ".tga": 5
+  },
+  "kinds": {
+    "tga": 5,
+    "unknown": 95
+  },
+  "files": [
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/auskleidung.3db",
+      "extension": ".3db",
+      "size": 430254,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 0B 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/baby.3db",
+      "extension": ".3db",
+      "size": 1130551,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 04 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/brut.3db",
+      "extension": ".3db",
+      "size": 1266713,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 04 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/drache.3db",
+      "extension": ".3db",
+      "size": 14272229,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 06 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/drache01.3db",
+      "extension": ".3db",
+      "size": 4427270,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 08 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/einrichtung.3db",
+      "extension": ".3db",
+      "size": 5502621,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 0B 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/elfe.3db",
+      "extension": ".3db",
+      "size": 7982253,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 04 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/fenrir.3db",
+      "extension": ".3db",
+      "size": 49434611,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 06 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/fifi.3db",
+      "extension": ".3db",
+      "size": 1320705,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 04 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/fisch_a.3db",
+      "extension": ".3db",
+      "size": 46447,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 07 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/flusslandschaft.3db",
+      "extension": ".3db",
+      "size": 2010992,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 0F 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/frau.3db",
+      "extension": ".3db",
+      "size": 30866436,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 04 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/freizeit.3db",
+      "extension": ".3db",
+      "size": 3736082,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 08 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/halbzeuge.3db",
+      "extension": ".3db",
+      "size": 232326,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 09 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/hamster.3db",
+      "extension": ".3db",
+      "size": 358625,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 07 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/hinterlegung.3db",
+      "extension": ".3db",
+      "size": 1248787,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 0C 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/Interface.3db",
+      "extension": ".3db",
+      "size": 117130,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 09 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/JoinedObjs.3db",
+      "extension": ".3db",
+      "size": 2969553,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 0A 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/kampf.3db",
+      "extension": ".3db",
+      "size": 306286,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 05 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/krake.3db",
+      "extension": ".3db",
+      "size": 6853785,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 05 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/kristall.3db",
+      "extension": ".3db",
+      "size": 3162304,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 08 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/lavawelt.3db",
+      "extension": ".3db",
+      "size": 1461302,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 08 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/licht.3db",
+      "extension": ".3db",
+      "size": 16994,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 05 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/mann.3db",
+      "extension": ".3db",
+      "size": 33483591,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 04 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/metalltech.3db",
+      "extension": ".3db",
+      "size": 2522697,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 0A 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/muetzen.3db",
+      "extension": ".3db",
+      "size": 152490,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 0B 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/nahrung.3db",
+      "extension": ".3db",
+      "size": 36580,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 07 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/oberwelt.3db",
+      "extension": ".3db",
+      "size": 1495079,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 08 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/odin.3db",
+      "extension": ".3db",
+      "size": 7317898,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 04 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/odinshand.3db",
+      "extension": ".3db",
+      "size": 729340,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 09 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/produktionsstaetten.3db",
+      "extension": ".3db",
+      "size": 8679132,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 13 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/riesenelfe.3db",
+      "extension": ".3db",
+      "size": 2433138,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 0A 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/riesenhamster.3db",
+      "extension": ".3db",
+      "size": 1041572,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 0D 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/ringe.3db",
+      "extension": ".3db",
+      "size": 112296,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 05 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/rohstoffe.3db",
+      "extension": ".3db",
+      "size": 364600,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 09 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/spinne.3db",
+      "extension": ".3db",
+      "size": 2382847,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 06 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/spinne_2.3db",
+      "extension": ".3db",
+      "size": 2398908,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 08 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/transport.3db",
+      "extension": ".3db",
+      "size": 544603,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 09 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/troll.3db",
+      "extension": ".3db",
+      "size": 12843155,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 05 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/trollhausen.3db",
+      "extension": ".3db",
+      "size": 1018141,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 0B 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/wandboden.3db",
+      "extension": ".3db",
+      "size": 107993,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 09 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/werkzeuge.3db",
+      "extension": ".3db",
+      "size": 48355,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 09 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/3db/wuker.3db",
+      "extension": ".3db",
+      "size": 2560652,
+      "kind": null,
+      "header_hex": "08 00 00 00 33 44 44 42 20 31 2E 30 05 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/alphabet.bin",
+      "extension": ".bin",
+      "size": 817,
+      "kind": null,
+      "header_hex": "04 00 00 00 08 00 00 00 54 72 69 61 6E 67 6C 65"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/BlockDB0.BDB",
+      "extension": ".bdb",
+      "size": 20751437,
+      "kind": null,
+      "header_hex": "0B 00 00 00 00 00 00 00 A0 CF 01 00 00 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/BlockDB1.BDB",
+      "extension": ".bdb",
+      "size": 26067491,
+      "kind": null,
+      "header_hex": "0B 00 00 00 00 00 00 00 A0 CF 01 00 00 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/BlockDB2.BDB",
+      "extension": ".bdb",
+      "size": 37045082,
+      "kind": null,
+      "header_hex": "0B 00 00 00 00 00 00 00 A0 CF 01 00 00 00 00 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_cw_001.tcl",
+      "extension": ".tcl",
+      "size": 3832,
+      "kind": null,
+      "header_hex": "2F 2F 20 64 65 5F 54 77 69 73 74 65 64 5F 50 61"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_cw_002.tcl",
+      "extension": ".tcl",
+      "size": 3244,
+      "kind": null,
+      "header_hex": "2F 2F 20 63 77 5F 44 69 67 69 74 61 6C 5F 56 65"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_cw_003.tcl",
+      "extension": ".tcl",
+      "size": 2148,
+      "kind": null,
+      "header_hex": "2F 2F 20 64 65 5F 44 6F 75 62 6C 65 5F 54 72 6F"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_cw_004.tcl",
+      "extension": ".tcl",
+      "size": 3208,
+      "kind": null,
+      "header_hex": "2F 2F 20 64 65 5F 32 57 61 79 73 5F 44 6F 77 6E"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_cw_005.tcl",
+      "extension": ".tcl",
+      "size": 2227,
+      "kind": null,
+      "header_hex": "2F 2F 20 63 77 5F 42 65 68 69 6E 64 5F 74 68 65"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_cw_006.tcl",
+      "extension": ".tcl",
+      "size": 2941,
+      "kind": null,
+      "header_hex": "2F 2F 20 63 77 5F 4E 65 77 5F 59 6F 72 6B 5F 43"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_dm_kris_2p_001.tcl",
+      "extension": ".tcl",
+      "size": 2820,
+      "kind": null,
+      "header_hex": "2F 2F 20 32 5F E8 E3 F0 EE EA E0 5F 28 EA E0 EC"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_dm_kris_4p_001.tcl",
+      "extension": ".tcl",
+      "size": 2966,
+      "kind": null,
+      "header_hex": "2F 2F 20 34 5F E8 E3 F0 EE EA E0 5F 28 EA E0 EC"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_dm_kris_4p_002.tcl",
+      "extension": ".tcl",
+      "size": 1442,
+      "kind": null,
+      "header_hex": "2F 2F 20 34 5F E8 E3 F0 EE EA E0 5F 28 EA F0 E8"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_dm_kris_8p_001.tcl",
+      "extension": ".tcl",
+      "size": 918,
+      "kind": null,
+      "header_hex": "2F 2F 20 32 5F E8 E3 F0 EE EA E0 5F 28 EA F0 E8"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_dm_lava_2p_001.tcl",
+      "extension": ".tcl",
+      "size": 2452,
+      "kind": null,
+      "header_hex": "2F 2F 20 32 5F E8 E3 F0 EE EA E0 5F 28 F1 E5 F0"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_dm_lava_4p_001.tcl",
+      "extension": ".tcl",
+      "size": 4203,
+      "kind": null,
+      "header_hex": "2F 2F 20 34 5F E8 E3 F0 EE EA E0 5F 28 F1 E5 F0"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_dm_lava_4p_002.tcl",
+      "extension": ".tcl",
+      "size": 1633,
+      "kind": null,
+      "header_hex": "2F 2F 20 32 5F E8 E3 F0 EE EA E0 5F 28 EB E0 E2"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multi_dm_lava_8p_001.tcl",
+      "extension": ".tcl",
+      "size": 993,
+      "kind": null,
+      "header_hex": "2F 2F 20 34 5F E8 E3 F0 EE EA E0 5F 28 EB E0 E2"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/multiplayer.tcl",
+      "extension": ".tcl",
+      "size": 6539,
+      "kind": null,
+      "header_hex": "63 61 6C 6C 20 64 61 74 61 2F 73 63 72 69 70 74"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/oberwelt.tcl",
+      "extension": ".tcl",
+      "size": 7083,
+      "kind": null,
+      "header_hex": "6D 61 70 20 63 72 65 61 74 65 20 35 30 30 20 32"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/sandbox_Kristall.tcl",
+      "extension": ".tcl",
+      "size": 113,
+      "kind": null,
+      "header_hex": "6F 62 6A 5F 63 6C 65 61 72 0D 0A 73 65 6C 20 2F"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/sandbox_Lava.tcl",
+      "extension": ".tcl",
+      "size": 111,
+      "kind": null,
+      "header_hex": "6F 62 6A 5F 63 6C 65 61 72 0D 0A 73 65 6C 20 2F"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/sandbox_Schwefel.tcl",
+      "extension": ".tcl",
+      "size": 110,
+      "kind": null,
+      "header_hex": "6F 62 6A 5F 63 6C 65 61 72 0D 0A 73 65 6C 20 2F"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/sandbox_Urwald.tcl",
+      "extension": ".tcl",
+      "size": 149,
+      "kind": null,
+      "header_hex": "6F 62 6A 5F 63 6C 65 61 72 0D 0A 73 65 6C 20 2F"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Campaign.tcl",
+      "extension": ".tcl",
+      "size": 74,
+      "kind": null,
+      "header_hex": "23 63 61 6C 6C 20 47 61 6D 65 53 63 72 69 70 74"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Campaign6000.tcl",
+      "extension": ".tcl",
+      "size": 85,
+      "kind": null,
+      "header_hex": "6F 62 6A 5F 63 6C 65 61 72 0D 0A 73 65 6C 20 2F"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_CampaignKristall.tcl",
+      "extension": ".tcl",
+      "size": 109,
+      "kind": null,
+      "header_hex": "6F 62 6A 5F 63 6C 65 61 72 0D 0A 73 65 6C 20 2F"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_CampaignLava.tcl",
+      "extension": ".tcl",
+      "size": 87,
+      "kind": null,
+      "header_hex": "6F 62 6A 5F 63 6C 65 61 72 0D 0A 73 65 6C 20 2F"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_CampaignMetall.tcl",
+      "extension": ".tcl",
+      "size": 86,
+      "kind": null,
+      "header_hex": "6F 62 6A 5F 63 6C 65 61 72 0D 0A 73 65 6C 20 2F"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_CampaignX.tcl",
+      "extension": ".tcl",
+      "size": 993,
+      "kind": null,
+      "header_hex": "6F 62 6A 5F 63 6C 65 61 72 0D 0A 73 65 6C 20 2F"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_DragonQuest.tcl",
+      "extension": ".tcl",
+      "size": 1053,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Ende-Test.tcl",
+      "extension": ".tcl",
+      "size": 343,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Kathedrale.tcl",
+      "extension": ".tcl",
+      "size": 677,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Knockersdorf.tcl",
+      "extension": ".tcl",
+      "size": 4465,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Metalltor.tcl",
+      "extension": ".tcl",
+      "size": 285,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Minimal.tcl",
+      "extension": ".tcl",
+      "size": 1736,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Seq_Dragon_Quest.tcl",
+      "extension": ".tcl",
+      "size": 687,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Seq_Fairy_Quest.tcl",
+      "extension": ".tcl",
+      "size": 407,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Seq_FirstContact.tcl",
+      "extension": ".tcl",
+      "size": 499,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Seq_Hermit_Quest.tcl",
+      "extension": ".tcl",
+      "size": 485,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_seq_Schwefelbruecke.tcl",
+      "extension": ".tcl",
+      "size": 423,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Startcamp.tcl",
+      "extension": ".tcl",
+      "size": 39,
+      "kind": null,
+      "header_hex": "63 61 6C 6C 20 47 61 6D 65 53 63 72 69 70 74 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Starttut.tcl",
+      "extension": ".tcl",
+      "size": 181,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Test_Lorelei_Brains.tcl",
+      "extension": ".tcl",
+      "size": 16759,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Testvulkan.tcl",
+      "extension": ".tcl",
+      "size": 661,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Tournament.tcl",
+      "extension": ".tcl",
+      "size": 797,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Trollburg.tcl",
+      "extension": ".tcl",
+      "size": 406,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_Tutorial.tcl",
+      "extension": ".tcl",
+      "size": 1177,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_VoodooDorf.tcl",
+      "extension": ".tcl",
+      "size": 670,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_wassermatch.tcl",
+      "extension": ".tcl",
+      "size": 7232,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/single_wigglesburg.tcl",
+      "extension": ".tcl",
+      "size": 776,
+      "kind": null,
+      "header_hex": "73 68 6F 77 5F 6C 6F 61 64 69 6E 67 20 79 65 73"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/GameScripts/startseqs.tcl",
+      "extension": ".tcl",
+      "size": 393,
+      "kind": null,
+      "header_hex": "6F 62 6A 5F 63 6C 65 61 72 0D 0A 6D 61 70 20 63"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/Ground/detail/50PGray.tga",
+      "extension": ".tga",
+      "size": 48,
+      "kind": "tga",
+      "header_hex": "00 00 02 00 00 00 00 00 00 00 00 00 01 00 01 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/Ground/detail/kris2_0001.tga",
+      "extension": ".tga",
+      "size": 16428,
+      "kind": "tga",
+      "header_hex": "00 00 02 00 00 00 00 00 00 00 00 00 40 00 40 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/Ground/detail/kris2_0010.tga",
+      "extension": ".tga",
+      "size": 16428,
+      "kind": "tga",
+      "header_hex": "00 00 02 00 00 00 00 00 00 00 00 00 40 00 40 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/Ground/detail/kris2_0011.tga",
+      "extension": ".tga",
+      "size": 16428,
+      "kind": "tga",
+      "header_hex": "00 00 02 00 00 00 00 00 00 00 00 00 40 00 40 00"
+    },
+    {
+      "path": "C:/Program Files (x86)/Steam/steamapps/common/Diggles The Myth of Fenris/data/Ground/detail/kris2_0100.tga",
+      "extension": ".tga",
+      "size": 16428,
+      "kind": "tga",
+      "header_hex": "00 00 02 00 00 00 00 00 00 00 00 00 40 00 40 00"
+    }
+  ]
+}

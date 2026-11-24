@@ -1,0 +1,38 @@
+{
+	"version" : "1.4",
+	"author" : "Chris1231 (idea: Heidenpast)",
+	
+	"name" :  {
+		"en" : "Power Potion",
+		"de" : "Powertrank"
+	},
+	"description" : {
+		"en" : "Add PowerPotion as new item to the game.",
+		"de" : "Neues Item Powertrank wird dem Spiel hinzugefügt."
+	},
+	
+	"links" : {
+		"download" : "https://github.com/DigglesMods/PowerPotion/releases",
+		"wiki" : "https://github.com/DigglesMods/PowerPotion/wiki"
+	},
+	
+	"messages" : [
+		{
+			"content" :  {
+				"en" : "This mod is changing the techtree and is not compatible with savegames with another techtree. After installing this mod, please start a new game.",
+				"de" : "Diese Mod ändert den Technologiebaum und ist nicht kompatibel mit Spielständen mit einem anderen Technologiebaum. Bitte starten Sie ein neues Spiel nach der Installation dieser Mod."
+			}
+		}
+	],
+	
+	"directories" : [
+		{
+			"type" : "data",
+			"path" : "Data_HD",
+			"condition" : {
+				"type" : "mod",
+				"id" : "DigglesHDmod"
+			}
+		}
+	]
+}

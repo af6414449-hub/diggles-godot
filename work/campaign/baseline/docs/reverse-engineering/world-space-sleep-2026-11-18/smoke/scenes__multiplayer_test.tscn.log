@@ -1,0 +1,65 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+NATIVE_CAVE_BRUSHES_READY count=4 anchor=[16.0, 32.0]
+NATIVE_CAVE_BRUSH brush=1 cells=38 bounds=[P: (11, 27), S: (9, 4)]
+NATIVE_CAVE_BRUSH brush=2 cells=58 bounds=[P: (9, 27), S: (13, 4)]
+NATIVE_CAVE_BRUSH brush=3 cells=136 bounds=[P: (7, 23), S: (17, 8)]
+NATIVE_CAVE_BRUSH brush=4 cells=128 bounds=[P: (9, 20), S: (13, 11)]
+NATIVE_CAVE_SKIN_READY size=1 meshes=2
+NATIVE_CAVE_SKIN_READY size=2 meshes=2
+NATIVE_CAVE_SKIN_READY size=3 meshes=2
+NATIVE_CAVE_SKIN_READY size=4 meshes=2
+NATIVE_TERRAIN_GRID_READY size=44x24 cells=943
+NATIVE_TERRAIN_GRID_READY size=128x128 cells=16384
+TERRAIN_BACKDROP_OPENING source_triangles=36501 omitted_back_faces=317 retained_triangles=36184
+NATIVE_L2M_READY cells=16384 detail_textures=37 surfaces=191
+DWARF_DIG_CLIPS_READY clips=7 frames=55
+DWARF_NAV_READY size=34x29 obstacles=3 blocked=456
+NATIVE_SCENE_LIGHTS_READY lights=9 horizons=1 terrain_materials=source native_diffuse_preview=true models=world_subset_and_godot
+NATIVE_AUTOLIGHT_READY actors=3 source_model=fackel.standard mode=STILL host_rng_seed=1
+WORLD_MODEL_LIGHT_READY surfaces=32 skipped=0 enabled=true host_owner=255 shared_source_gain=0.100000
+NATIVE_TERRAIN_READY cells=16384 triangles=36501 packed_depth=8.0..14.5
+MULTIPLAYER_START_MODELS_READY placements=109 unique_models=54 original_textures=45
+[SMOKE] scene=res://scenes/multiplayer_test.tscn frames=120 fps=60 viewport=1280x720
+[SMOKE] fuzz seed=0 project_actions=8 ui_actions=15 mouse=false
+[SMOKE_INPUT] f6 +attack
+[SMOKE_INPUT] f12 +interact
+[SMOKE_INPUT] f13 -attack
+[SMOKE_INPUT] f18 -interact
+[SMOKE_INPUT] f18 +move_down
+[SMOKE_INPUT] f23 -move_down
+[SMOKE_INPUT] f24 +ui_down
+[SMOKE_INPUT] f26 -ui_down
+[SMOKE_INPUT] f30 +ui_focus_next
+[SMOKE_INPUT] f36 +move_up
+[SMOKE_INPUT] f38 -move_up
+[SMOKE_INPUT] f40 -ui_focus_next
+[SMOKE_INPUT] f42 +ui_end
+[SMOKE_INPUT] f48 +jump
+[SMOKE_INPUT] f50 -ui_end
+[SMOKE_INPUT] f53 -jump
+[SMOKE_INPUT] f54 +move_up
+[SMOKE_INPUT] f60 +jump
+[SMOKE_INPUT] f61 -move_up
+[SMOKE_INPUT] f62 -jump
+[SMOKE_INPUT] f66 +ui_page_down
+[SMOKE_INPUT] f68 -ui_page_down
+[SMOKE_INPUT] f72 +move_left
+[SMOKE_INPUT] f78 +move_right
+[SMOKE_INPUT] f79 -move_left
+[SMOKE_INPUT] f80 -move_right
+[SMOKE_INPUT] f84 +move_down
+[SMOKE_INPUT] f90 +ui_focus_prev
+[SMOKE_INPUT] f91 -ui_focus_prev
+[SMOKE_INPUT] f96 -move_down
+[SMOKE_INPUT] f96 +pause
+[SMOKE_INPUT] f101 -pause
+[SMOKE_INPUT] f102 +move_up
+[SMOKE_INPUT] f106 -move_up
+[SMOKE_INPUT] f108 +attack
+[SMOKE_INPUT] f114 +move_right
+[SMOKE_INPUT] f118 -attack
+[SMOKE_INPUT] f120 +interact
+[SMOKE_INPUT] f120 -move_right
+[SMOKE_INPUT] f120 -interact
+[SMOKE_RESULT] {"ended":"completed","findings":[],"frames":120,"fuzz":{"event_count":40,"events":["f6 +attack","f12 +interact","f13 -attack","f18 -interact","f18 +move_down","f23 -move_down","f24 +ui_down","f26 -ui_down","f30 +ui_focus_next","f36 +move_up","f38 -move_up","f40 -ui_focus_next","f42 +ui_end","f48 +jump","f50 -ui_end","f53 -jump","f54 +move_up","f60 +jump","f61 -move_up","f62 -jump","f66 +ui_page_down","f68 -ui_page_down","f72 +move_left","f78 +move_right","f79 -move_left","f80 -move_right","f84 +move_down","f90 +ui_focus_prev","f91 -ui_focus_prev","f96 -move_down","f96 +pause","f101 -pause","f102 +move_up","f106 -move_up","f108 +attack","f114 +move_right","f118 -attack","f120 +interact","f120 -move_right","f120 -interact"],"seed":0},"mode":"fixed_fps","notes":[],"perf":{"frame_ms":{"avg":6.7,"end":8.28,"max":17.22,"min":1.19,"p95":10.23,"samples":120,"start":1.19},"node_count_end":917,"node_count_start":917,"orphan_nodes":0,"samples":22,"static_memory_mb":191.21},"scene":"res://scenes/multiplayer_test.tscn","seconds_simulated":2.0,"target_frames":120}

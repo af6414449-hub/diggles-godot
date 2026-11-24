@@ -1,0 +1,8 @@
+WARNING: Loaded resource as image file, this will not work on export: 'res://textures/native_flame/particle_a_128d.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load_from_file (core/io/image.cpp:2780)
+   GDScript backtrace (most recent call first):
+       [0] configure (res://scripts/native_flame_emitter.gd:60)
+       [1] _add_source_flame (res://scripts/multiplayer_test.gd:3791)
+       [2] _initialize_source_flames (res://scripts/multiplayer_test.gd:3776)
+       [3] _ready (res://scripts/multiplayer_test.gd:342)
+       [4] _run (res://tools/floor_sleep_self_test.gd:33)

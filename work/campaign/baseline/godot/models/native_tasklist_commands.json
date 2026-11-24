@@ -1,0 +1,1013 @@
+{
+  "schema": "diggles.native_tasklist_commands.v1",
+  "status": "recovered_command_vocabulary",
+  "source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Diggles The Myth of Fenris\\data\\Scripts",
+  "stats": {
+    "tasklist_calls": 1573,
+    "unique_commands": 200,
+    "files": 37,
+    "compound_calls": 71
+  },
+  "commands": [
+    {
+      "command": "play_anim",
+      "occurrences": 361,
+      "example": "play_anim peestart"
+    },
+    {
+      "command": "elf_action",
+      "occurrences": 295,
+      "example": "elf_action -screen \\{200 200 16\\}"
+    },
+    {
+      "command": "prod_anim",
+      "occurrences": 253,
+      "example": "prod_anim illstart"
+    },
+    {
+      "command": "task_to_ticker",
+      "occurrences": 51,
+      "example": "task_to_ticker 2101a"
+    },
+    {
+      "command": "walk_dummy",
+      "occurrences": 51,
+      "example": "walk_dummy $school $dummy"
+    },
+    {
+      "command": "call_method",
+      "occurrences": 50,
+      "example": "call_method [get_ref this] add_guest $user"
+    },
+    {
+      "command": "walk_pos",
+      "occurrences": 40,
+      "example": "walk_pos \\{ $bathpos \\}"
+    },
+    {
+      "command": "rotate_tofront",
+      "occurrences": 33,
+      "example": "rotate_tofront"
+    },
+    {
+      "command": "rotate_towards",
+      "occurrences": 32,
+      "example": "rotate_towards $fzwerg"
+    },
+    {
+      "command": "change_tool",
+      "occurrences": 28,
+      "example": "change_tool Presslufthammer"
+    },
+    {
+      "command": "walk_near_item",
+      "occurrences": 18,
+      "example": "walk_near_item $myobj 2.0"
+    },
+    {
+      "command": "cameracorrection",
+      "occurrences": 16,
+      "example": "cameracorrection 1 0.2 0.7"
+    },
+    {
+      "command": "set_particlesource",
+      "occurrences": 14,
+      "example": "set_particlesource this 8 5"
+    },
+    {
+      "command": "rotate_toback",
+      "occurrences": 12,
+      "example": "rotate_toback"
+    },
+    {
+      "command": "set",
+      "occurrences": 11,
+      "example": "set action_state loop"
+    },
+    {
+      "command": "drinkpotion",
+      "occurrences": 10,
+      "example": "drinkpotion [get_ref this]"
+    },
+    {
+      "command": "set_pos",
+      "occurrences": 9,
+      "example": "set_pos this $bathpos"
+    },
+    {
+      "command": "set_roty",
+      "occurrences": 9,
+      "example": "set_roty this 4.71"
+    },
+    {
+      "command": "rotate_toangle",
+      "occurrences": 8,
+      "example": "rotate_toangle 1.64"
+    },
+    {
+      "command": "walk_random",
+      "occurrences": 8,
+      "example": "walk_random 5"
+    },
+    {
+      "command": "walk_pos_loop",
+      "occurrences": 8,
+      "example": "walk_pos_loop"
+    },
+    {
+      "command": "sparetime_eat",
+      "occurrences": 7,
+      "example": "sparetime_eat [get_ref this] ground"
+    },
+    {
+      "command": "prod_changetool",
+      "occurrences": 7,
+      "example": "prod_changetool Hammer"
+    },
+    {
+      "command": "inv_rem",
+      "occurrences": 6,
+      "example": "inv_rem $user [inv_find_obj $user $item]"
+    },
+    {
+      "command": "rotate_toright",
+      "occurrences": 6,
+      "example": "rotate_toright"
+    },
+    {
+      "command": "waittime",
+      "occurrences": 6,
+      "example": "waittime 2"
+    },
+    {
+      "command": "beam_from_inv_to_pos",
+      "occurrences": 6,
+      "example": "beam_from_inv_to_pos \\{$item\\} \\{$pos\\}"
+    },
+    {
+      "command": "prod_machineanim",
+      "occurrences": 6,
+      "example": "prod_machineanim $animname"
+    },
+    {
+      "command": "wait_time_fenris",
+      "occurrences": 5,
+      "example": "wait_time_fenris 4"
+    },
+    {
+      "command": "rotate_toang",
+      "occurrences": 5,
+      "example": "rotate_toang $troll_startroty"
+    },
+    {
+      "command": "change_particlesource",
+      "occurrences": 5,
+      "example": "change_particlesource this 8 26 {0 0 0.5} {0 0 0} 24 5 0 1"
+    },
+    {
+      "command": "add_attrib",
+      "occurrences": 5,
+      "example": "add_attrib this atr_Mood $loss"
+    },
+    {
+      "command": "prod_turnback",
+      "occurrences": 5,
+      "example": "prod_turnback"
+    },
+    {
+      "command": "get_beambackpos",
+      "occurrences": 5,
+      "example": "get_beambackpos"
+    },
+    {
+      "command": "if",
+      "occurrences": 4,
+      "example": "if {\\[vector_dist \\[get_pos $myobj\\] \\[get_pos this\\]\\] > 4.0} {log \\\"tasklist clear\\\"; tasklist_clear this}"
+    },
+    {
+      "command": "del_current_muetze",
+      "occurrences": 4,
+      "example": "del_current_muetze"
+    },
+    {
+      "command": "set_anim",
+      "occurrences": 4,
+      "example": "set_anim this standloop 0 2"
+    },
+    {
+      "command": "weapon_putin",
+      "occurrences": 4,
+      "example": "weapon_putin"
+    },
+    {
+      "command": "rotate_toleft",
+      "occurrences": 4,
+      "example": "rotate_toleft"
+    },
+    {
+      "command": "unlock_item",
+      "occurrences": 4,
+      "example": "unlock_item"
+    },
+    {
+      "command": "set_visibility",
+      "occurrences": 4,
+      "example": "set_visibility $item 1"
+    },
+    {
+      "command": "prod_turnleft",
+      "occurrences": 4,
+      "example": "prod_turnleft"
+    },
+    {
+      "command": "beam_back",
+      "occurrences": 4,
+      "example": "beam_back"
+    },
+    {
+      "command": "try_reach_enemy",
+      "occurrences": 3,
+      "example": "try_reach_enemy"
+    },
+    {
+      "command": "fillbath",
+      "occurrences": 3,
+      "example": "fillbath"
+    },
+    {
+      "command": "rotate_to",
+      "occurrences": 3,
+      "example": "rotate_to$dir"
+    },
+    {
+      "command": "del",
+      "occurrences": 3,
+      "example": "del $obj"
+    },
+    {
+      "command": "viewlock",
+      "occurrences": 3,
+      "example": "viewlock 1"
+    },
+    {
+      "command": "set_sequenceactive",
+      "occurrences": 3,
+      "example": "set_sequenceactive this 1"
+    },
+    {
+      "command": "set_viewpos",
+      "occurrences": 3,
+      "example": "set_viewpos [get_pos $gatter1] 1.2 -0.2 -0.3 1"
+    },
+    {
+      "command": "elf",
+      "occurrences": 3,
+      "example": "elf hide"
+    },
+    {
+      "command": "mine",
+      "occurrences": 3,
+      "example": "mine \\{$evtitem\\} 30"
+    },
+    {
+      "command": "pickup",
+      "occurrences": 3,
+      "example": "pickup $item"
+    },
+    {
+      "command": "beamto_world",
+      "occurrences": 3,
+      "example": "beamto_world $item $angle"
+    },
+    {
+      "command": "set_objworkicons",
+      "occurrences": 3,
+      "example": "set_objworkicons this arrow_down [get_objclass $item]"
+    },
+    {
+      "command": "check_pilz_valid",
+      "occurrences": 3,
+      "example": "check_pilz_valid $item"
+    },
+    {
+      "command": "sparetime_idle_loop",
+      "occurrences": 3,
+      "example": "sparetime_idle_loop"
+    },
+    {
+      "command": "create_muetze",
+      "occurrences": 3,
+      "example": "create_muetze $muetze"
+    },
+    {
+      "command": "prod_store_collect_all_items",
+      "occurrences": 3,
+      "example": "prod_store_collect_all_items"
+    },
+    {
+      "command": "st_walk_pos",
+      "occurrences": 2,
+      "example": "st_walk_pos \\{$near_pos\\}"
+    },
+    {
+      "command": "change_shield_finish_in",
+      "occurrences": 2,
+      "example": "change_shield_finish_in"
+    },
+    {
+      "command": "change_weapon_finish_in",
+      "occurrences": 2,
+      "example": "change_weapon_finish_in"
+    },
+    {
+      "command": "take_item",
+      "occurrences": 2,
+      "example": "take_item $foodref"
+    },
+    {
+      "command": "explore_walk",
+      "occurrences": 2,
+      "example": "explore_walk"
+    },
+    {
+      "command": "deliver_turn",
+      "occurrences": 2,
+      "example": "deliver_turn"
+    },
+    {
+      "command": "run_pos_obj",
+      "occurrences": 2,
+      "example": "run_pos_obj \\{$pos\\} $who"
+    },
+    {
+      "command": "initiate_alarm",
+      "occurrences": 2,
+      "example": "initiate_alarm $fzwerg \\{$bpos\\}"
+    },
+    {
+      "command": "start_attack",
+      "occurrences": 2,
+      "example": "start_attack $fzwerg"
+    },
+    {
+      "command": "change_to_wait",
+      "occurrences": 2,
+      "example": "change_to_wait"
+    },
+    {
+      "command": "game_over",
+      "occurrences": 2,
+      "example": "game_over"
+    },
+    {
+      "command": "log",
+      "occurrences": 2,
+      "example": "log elfsleepnow"
+    },
+    {
+      "command": "rotate_tognome",
+      "occurrences": 2,
+      "example": "rotate_tognome"
+    },
+    {
+      "command": "walk_out_of",
+      "occurrences": 2,
+      "example": "walk_out_of $prodref"
+    },
+    {
+      "command": "learn_school",
+      "occurrences": 2,
+      "example": "learn_school"
+    },
+    {
+      "command": "walk_pos_dig",
+      "occurrences": 2,
+      "example": "walk_pos_dig \\{$walkpos\\} \\{$edgepos\\}"
+    },
+    {
+      "command": "dig_anim",
+      "occurrences": 2,
+      "example": "dig_anim \\{$digpoint\\}"
+    },
+    {
+      "command": "play_dig_anim_loop",
+      "occurrences": 2,
+      "example": "play_dig_anim_loop airhamm${dir} $animcnt \\{$digpos\\} $accident"
+    },
+    {
+      "command": "laser",
+      "occurrences": 2,
+      "example": "laser this 12 \\{$digpos\\} [expr {$animcnt+0.5}]"
+    },
+    {
+      "command": "dig_starttask",
+      "occurrences": 2,
+      "example": "dig_starttask \\{$evtpos\\}"
+    },
+    {
+      "command": "check_switcher_dist",
+      "occurrences": 2,
+      "example": "check_switcher_dist \\{$pos\\}"
+    },
+    {
+      "command": "play_anim_pickup",
+      "occurrences": 2,
+      "example": "play_anim_pickup $item"
+    },
+    {
+      "command": "check_valid",
+      "occurrences": 2,
+      "example": "check_valid $item"
+    },
+    {
+      "command": "check_lockedbyother",
+      "occurrences": 2,
+      "example": "check_lockedbyother $item"
+    },
+    {
+      "command": "kill_item",
+      "occurrences": 2,
+      "example": "kill_item $item"
+    },
+    {
+      "command": "mine_rep",
+      "occurrences": 2,
+      "example": "mine_rep $item $cnt"
+    },
+    {
+      "command": "sparetime_fun_relief",
+      "occurrences": 2,
+      "example": "sparetime_fun_relief 0.02"
+    },
+    {
+      "command": "sparetime_consume",
+      "occurrences": 2,
+      "example": "sparetime_consume $item $food"
+    },
+    {
+      "command": "try_getoutof_water",
+      "occurrences": 2,
+      "example": "try_getoutof_water"
+    },
+    {
+      "command": "bear_child",
+      "occurrences": 2,
+      "example": "bear_child $cnt 1"
+    },
+    {
+      "command": "prod_bringtoprod",
+      "occurrences": 2,
+      "example": "prod_bringtoprod $itemref $prodplace"
+    },
+    {
+      "command": "prod_buildup_waitforfree",
+      "occurrences": 2,
+      "example": "prod_buildup_waitforfree $item $timeout"
+    },
+    {
+      "command": "hide_obj_ghost",
+      "occurrences": 2,
+      "example": "hide_obj_ghost $item"
+    },
+    {
+      "command": "prod_buildup_rep",
+      "occurrences": 2,
+      "example": "prod_buildup_rep $item"
+    },
+    {
+      "command": "prod_builddown_rep",
+      "occurrences": 2,
+      "example": "prod_builddown_rep $item"
+    },
+    {
+      "command": "prod_repair_rep",
+      "occurrences": 2,
+      "example": "prod_repair_rep $item 0"
+    },
+    {
+      "command": "conquer_callback",
+      "occurrences": 2,
+      "example": "conquer_callback $building $offset"
+    },
+    {
+      "command": "set_prod_ownerstrength",
+      "occurrences": 2,
+      "example": "set_prod_ownerstrength $building [fincr strength -$offset]"
+    },
+    {
+      "command": "unlink_divingbell",
+      "occurrences": 2,
+      "example": "unlink_divingbell"
+    },
+    {
+      "command": "add_expattrib",
+      "occurrences": 2,
+      "example": "add_expattrib this $genre $increase"
+    },
+    {
+      "command": "free_particlesource",
+      "occurrences": 2,
+      "example": "free_particlesource this 4"
+    },
+    {
+      "command": "prod_goworkdummy",
+      "occurrences": 2,
+      "example": "prod_goworkdummy $dummy"
+    },
+    {
+      "command": "prod_turnright",
+      "occurrences": 2,
+      "example": "prod_turnright"
+    },
+    {
+      "command": "exec_salto",
+      "occurrences": 1,
+      "example": "exec_salto \\{[calc_vel $angle $dist $anim]\\}"
+    },
+    {
+      "command": "exec_spin",
+      "occurrences": 1,
+      "example": "exec_spin \\{[calc_vel $angle $dist $anim]\\} $angle"
+    },
+    {
+      "command": "st_hopp_pos",
+      "occurrences": 1,
+      "example": "st_hopp_pos \\{$evtpos\\}"
+    },
+    {
+      "command": "st_rotate_towards",
+      "occurrences": 1,
+      "example": "st_rotate_towards $enemy"
+    },
+    {
+      "command": "burnstart",
+      "occurrences": 1,
+      "example": "burnstart"
+    },
+    {
+      "command": "sitdownanim",
+      "occurrences": 1,
+      "example": "sitdownanim"
+    },
+    {
+      "command": "standupanim",
+      "occurrences": 1,
+      "example": "standupanim"
+    },
+    {
+      "command": "poisoncheck",
+      "occurrences": 1,
+      "example": "poisoncheck"
+    },
+    {
+      "command": "run_random",
+      "occurrences": 1,
+      "example": "run_random [expr {4 + [irandom 3]}]"
+    },
+    {
+      "command": "fight_startfight",
+      "occurrences": 1,
+      "example": "fight_startfight"
+    },
+    {
+      "command": "timer_unset",
+      "occurrences": 1,
+      "example": "timer_unset this 1"
+    },
+    {
+      "command": "st_rotate_toangle",
+      "occurrences": 1,
+      "example": "st_rotate_toangle $baserot"
+    },
+    {
+      "command": "get_up",
+      "occurrences": 1,
+      "example": "get_up"
+    },
+    {
+      "command": "find_enemy",
+      "occurrences": 1,
+      "example": "find_enemy 18"
+    },
+    {
+      "command": "error_freeze",
+      "occurrences": 1,
+      "example": "error_freeze"
+    },
+    {
+      "command": "wait_time",
+      "occurrences": 1,
+      "example": "wait_time 3"
+    },
+    {
+      "command": "become_lovecrazed",
+      "occurrences": 1,
+      "example": "become_lovecrazed"
+    },
+    {
+      "command": "become_fertile",
+      "occurrences": 1,
+      "example": "become_fertile"
+    },
+    {
+      "command": "wear_divingbell",
+      "occurrences": 1,
+      "example": "wear_divingbell 1"
+    },
+    {
+      "command": "remove_divingbell",
+      "occurrences": 1,
+      "example": "remove_divingbell 1"
+    },
+    {
+      "command": "playanim",
+      "occurrences": 1,
+      "example": "playanim dontknow"
+    },
+    {
+      "command": "park_gnomes",
+      "occurrences": 1,
+      "example": "park_gnomes"
+    },
+    {
+      "command": "close_brains_eyes",
+      "occurrences": 1,
+      "example": "close_brains_eyes"
+    },
+    {
+      "command": "exec_deferred",
+      "occurrences": 1,
+      "example": "exec_deferred {call GameScripts/single_CampaignX.tcl}"
+    },
+    {
+      "command": "eval",
+      "occurrences": 1,
+      "example": "eval \\\"set_view \\[lreplace \\[get_view\\] 2 2 1.5\\] 1\\\""
+    },
+    {
+      "command": "create_trigger",
+      "occurrences": 1,
+      "example": "create_trigger $voodoopoint Tut_2015 70"
+    },
+    {
+      "command": "set_view",
+      "occurrences": 1,
+      "example": "set_view [lrange [vector_add [get_pos $door] {-5 0 0}] 0 1] 2.3 -0.2 0.4 1"
+    },
+    {
+      "command": "soundfile_open",
+      "occurrences": 1,
+      "example": "soundfile_open 2025g2040g"
+    },
+    {
+      "command": "self_destroy",
+      "occurrences": 1,
+      "example": "self_destroy"
+    },
+    {
+      "command": "prod_guest",
+      "occurrences": 1,
+      "example": "prod_guest addorder $school $seat"
+    },
+    {
+      "command": "goto_school",
+      "occurrences": 1,
+      "example": "goto_school $current_school"
+    },
+    {
+      "command": "crawl_random",
+      "occurrences": 1,
+      "example": "crawl_random [hf2i [random 2 4]]"
+    },
+    {
+      "command": "dig_continue",
+      "occurrences": 1,
+      "example": "dig_continue"
+    },
+    {
+      "command": "wait_time_dig",
+      "occurrences": 1,
+      "example": "wait_time_dig $animcnt \\{$digpos\\}"
+    },
+    {
+      "command": "play_anim_time",
+      "occurrences": 1,
+      "example": "play_anim_time $diganim $animcnt \\{$digpos\\}"
+    },
+    {
+      "command": "adjust_gnome_rotation",
+      "occurrences": 1,
+      "example": "adjust_gnome_rotation"
+    },
+    {
+      "command": "show_info",
+      "occurrences": 1,
+      "example": "show_info \\{$evtitem\\}"
+    },
+    {
+      "command": "use_item",
+      "occurrences": 1,
+      "example": "use_item $evtitem"
+    },
+    {
+      "command": "objaction_item",
+      "occurrences": 1,
+      "example": "objaction_item $evtitem"
+    },
+    {
+      "command": "kidnap",
+      "occurrences": 1,
+      "example": "kidnap $evtitem"
+    },
+    {
+      "command": "handle_bomb",
+      "occurrences": 1,
+      "example": "handle_bomb $evtitem"
+    },
+    {
+      "command": "open_box",
+      "occurrences": 1,
+      "example": "open_box \\{$evtitem\\}"
+    },
+    {
+      "command": "beamto_world_all",
+      "occurrences": 1,
+      "example": "beamto_world_all"
+    },
+    {
+      "command": "send_gnomes_outofplacement",
+      "occurrences": 1,
+      "example": "send_gnomes_outofplacement $evtitem"
+    },
+    {
+      "command": "unpack_pos_unfixed",
+      "occurrences": 1,
+      "example": "unpack_pos_unfixed $evtitem \\{$evtpos\\} 0"
+    },
+    {
+      "command": "switch_item",
+      "occurrences": 1,
+      "example": "switch_item \\{$evtitem\\}"
+    },
+    {
+      "command": "shoot",
+      "occurrences": 1,
+      "example": "shoot $item"
+    },
+    {
+      "command": "set_item_owner",
+      "occurrences": 1,
+      "example": "set_item_owner $item $own"
+    },
+    {
+      "command": "walk_near_hamster",
+      "occurrences": 1,
+      "example": "walk_near_hamster $item"
+    },
+    {
+      "command": "shoot_result",
+      "occurrences": 1,
+      "example": "shoot_result $item"
+    },
+    {
+      "command": "read_book",
+      "occurrences": 1,
+      "example": "read_book $item"
+    },
+    {
+      "command": "prod_builddown",
+      "occurrences": 1,
+      "example": "prod_builddown $item"
+    },
+    {
+      "command": "walk_outoftransit",
+      "occurrences": 1,
+      "example": "walk_outoftransit"
+    },
+    {
+      "command": "exp_transp_increase",
+      "occurrences": 1,
+      "example": "exp_transp_increase"
+    },
+    {
+      "command": "prod_buildup_new",
+      "occurrences": 1,
+      "example": "prod_buildup_new $item \\{$pos\\}"
+    },
+    {
+      "command": "weapon_inanim",
+      "occurrences": 1,
+      "example": "weapon_inanim"
+    },
+    {
+      "command": "placelock_rem",
+      "occurrences": 1,
+      "example": "placelock_rem $myref"
+    },
+    {
+      "command": "sparetime_start_sleep",
+      "occurrences": 1,
+      "example": "sparetime_start_sleep"
+    },
+    {
+      "command": "sparetime_disappoint",
+      "occurrences": 1,
+      "example": "sparetime_disappoint"
+    },
+    {
+      "command": "incr",
+      "occurrences": 1,
+      "example": "incr has_bathed 2"
+    },
+    {
+      "command": "prod_ill_leicht",
+      "occurrences": 1,
+      "example": "prod_ill_leicht $sparetime_current_place_ref $arzt"
+    },
+    {
+      "command": "sparetime_talk_relief",
+      "occurrences": 1,
+      "example": "sparetime_talk_relief $part"
+    },
+    {
+      "command": "prod_transfertoprod",
+      "occurrences": 1,
+      "example": "prod_transfertoprod $item $prodplace \\{$itempos\\}"
+    },
+    {
+      "command": "create_particlesource",
+      "occurrences": 1,
+      "example": "create_particlesource 13 \\\"\\[get_pos this\\]\\\" {0 -0.1 0.1} 32 2"
+    },
+    {
+      "command": "prod_inventattribute",
+      "occurrences": 1,
+      "example": "prod_inventattribute $item $current_workplace"
+    },
+    {
+      "command": "prod_buildup_check",
+      "occurrences": 1,
+      "example": "prod_buildup_check $item"
+    },
+    {
+      "command": "set_boxed",
+      "occurrences": 1,
+      "example": "set_boxed $item 0"
+    },
+    {
+      "command": "prod_buildup",
+      "occurrences": 1,
+      "example": "prod_buildup $item"
+    },
+    {
+      "command": "clear_beambackpos",
+      "occurrences": 1,
+      "example": "clear_beambackpos"
+    },
+    {
+      "command": "prod_repair",
+      "occurrences": 1,
+      "example": "prod_repair $building"
+    },
+    {
+      "command": "link_divingbell",
+      "occurrences": 1,
+      "example": "link_divingbell"
+    },
+    {
+      "command": "prod_",
+      "occurrences": 1,
+      "example": "prod_$animname"
+    },
+    {
+      "command": "set_rot",
+      "occurrences": 1,
+      "example": "set_rot $obj $rx $ry $rz"
+    },
+    {
+      "command": "link_obj",
+      "occurrences": 1,
+      "example": "link_obj $dummybox"
+    },
+    {
+      "command": "rotate_towards_with_box",
+      "occurrences": 1,
+      "example": "rotate_towards_with_box \\{$itempos\\}"
+    },
+    {
+      "command": "walk_pos_with_box",
+      "occurrences": 1,
+      "example": "walk_pos_with_box \\{$walkpos\\}"
+    },
+    {
+      "command": "profi_training",
+      "occurrences": 1,
+      "example": "profi_training"
+    },
+    {
+      "command": "school_knowledge_transfer",
+      "occurrences": 1,
+      "example": "school_knowledge_transfer $babe"
+    },
+    {
+      "command": "state_disable",
+      "occurrences": 1,
+      "example": "state_disable this"
+    },
+    {
+      "command": "walk_action",
+      "occurrences": 1,
+      "example": "walk_action \\\"-target \\{[get_pos $next_item]\\} \\\" {state_enable this}"
+    },
+    {
+      "command": "store_pickup_item",
+      "occurrences": 1,
+      "example": "store_pickup_item $next_item"
+    },
+    {
+      "command": "prod_beam_to_store_slot",
+      "occurrences": 1,
+      "example": "prod_beam_to_store_slot $next_item $slotidx"
+    },
+    {
+      "command": "prod_exp",
+      "occurrences": 1,
+      "example": "prod_exp $exp_incr 1.0"
+    },
+    {
+      "command": "prod_store_collected_items",
+      "occurrences": 1,
+      "example": "prod_store_collected_items \\{$exp_incr\\} $dummy"
+    },
+    {
+      "command": "beamto_inv",
+      "occurrences": 1,
+      "example": "beamto_inv $item"
+    },
+    {
+      "command": "prod_waittime",
+      "occurrences": 1,
+      "example": "prod_waittime 1"
+    },
+    {
+      "command": "set_attrib",
+      "occurrences": 1,
+      "example": "set_attrib $patient atr_Hitpoints 1"
+    },
+    {
+      "command": "prod_feind_suchen",
+      "occurrences": 1,
+      "example": "prod_feind_suchen $richtung"
+    },
+    {
+      "command": "trigger",
+      "occurrences": 1,
+      "example": "trigger delete this"
+    },
+    {
+      "command": "prod_turnfront",
+      "occurrences": 1,
+      "example": "prod_turnfront"
+    },
+    {
+      "command": "breathe",
+      "occurrences": 1,
+      "example": "breathe"
+    },
+    {
+      "command": "prod_getfromanywhere",
+      "occurrences": 1,
+      "example": "prod_getfromanywhere $current_workclass"
+    },
+    {
+      "command": "prod_transporttoprodlist",
+      "occurrences": 1,
+      "example": "prod_transporttoprodlist \\{ $current_workclass \\} $current_workplace"
+    },
+    {
+      "command": "prod_autobuild",
+      "occurrences": 1,
+      "example": "prod_autobuild $current_workclass $current_workplace"
+    },
+    {
+      "command": "prod_autopack",
+      "occurrences": 1,
+      "example": "prod_autopack $current_workplace"
+    },
+    {
+      "command": "prod_autobuildup",
+      "occurrences": 1,
+      "example": "prod_autobuildup $current_workplace"
+    },
+    {
+      "command": "prod_autounpack",
+      "occurrences": 1,
+      "example": "prod_autounpack $current_workplace \\{$current_workpos\\}"
+    },
+    {
+      "command": "prod_autorepair",
+      "occurrences": 1,
+      "example": "prod_autorepair $current_workplace"
+    }
+  ]
+}

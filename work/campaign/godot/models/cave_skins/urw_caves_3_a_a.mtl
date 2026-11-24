@@ -1,0 +1,9 @@
+newmtl Holz_Standard_a_256
+Kd 1 1 1
+Ka 0 0 0
+map_Kd Holz_Standard_a_256.tga
+
+newmtl trollh_4_wand_d
+Kd 1 1 1
+Ka 0 0 0
+map_Kd trollh_4_wand_d.tga

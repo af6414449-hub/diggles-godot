@@ -1,0 +1,13 @@
+SCRIPT ERROR: Parse Error: Too few arguments for "add_triangle_fan()" call. Expected at least 1 but received 0.
+   at: GDScript::reload (res://scripts/native_campaign_backdrop.gd:202)
+SCRIPT ERROR: Parse Error: Too few arguments for "add_triangle_fan()" call. Expected at least 1 but received 0.
+   at: GDScript::reload (res://scripts/native_campaign_backdrop.gd:237)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://scripts/native_campaign_first_level.gd:0)
+ERROR: Failed to load script "res://scripts/native_campaign_first_level.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: _build_camera_and_light (res://scripts/native_campaign_first_level.gd:931)
+   GDScript backtrace (most recent call first):
+       [0] _build_camera_and_light (res://scripts/native_campaign_first_level.gd:931)
+       [1] _ready (res://scripts/native_campaign_first_level.gd:170)

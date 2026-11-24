@@ -1,0 +1,20 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+NATIVE_CAVE_BRUSHES_READY count=4 anchor=[16.0, 32.0]
+NATIVE_CAVE_BRUSH brush=1 cells=38 bounds=[P: (11, 27), S: (9, 4)]
+NATIVE_CAVE_BRUSH brush=2 cells=58 bounds=[P: (9, 27), S: (13, 4)]
+NATIVE_CAVE_BRUSH brush=3 cells=136 bounds=[P: (7, 23), S: (17, 8)]
+NATIVE_CAVE_BRUSH brush=4 cells=128 bounds=[P: (9, 20), S: (13, 11)]
+NATIVE_CAVE_SKIN_READY size=1 meshes=2
+NATIVE_CAVE_SKIN_READY size=2 meshes=2
+NATIVE_CAVE_SKIN_READY size=3 meshes=2
+NATIVE_CAVE_SKIN_READY size=4 meshes=2
+NATIVE_TERRAIN_GRID_READY size=24x16 cells=384
+DWARF_NAV_READY size=40x29 obstacles=18 blocked=201
+NATIVE_TERRAIN_READY cells=384 triangles=2800 packed_depth=7.5..14.5
+DEMO_START_MODELS_READY placements=70 unique_models=49 original_textures=47
+DWARF_WALK_START Zwerg_072 target=(5.0, -10.5, 14.0) nodes=27 speed=0.980
+DWARF_WALK_RESULT Zwerg_072 result=4
+DWARF_WALK_START Zwerg_072 target=(5.5, -10.5, 13.5) nodes=2 speed=2.071
+DWARF_WALK_RESULT Zwerg_072 result=4
+INTERACTION_SELF_TEST_OK assertions=55

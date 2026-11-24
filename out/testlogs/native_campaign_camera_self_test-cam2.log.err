@@ -1,0 +1,2 @@
+FAIL: a horizontal drag does not change the elevation
+NATIVE_CAMPAIGN_CAMERA_SELF_TEST_FAIL failures=1

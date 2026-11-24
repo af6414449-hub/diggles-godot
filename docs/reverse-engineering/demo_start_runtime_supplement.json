@@ -1,0 +1,27 @@
+{
+  "source": "Two flag standards visible in the running original demo_start scene but absent from the static template object list.",
+  "objects": [
+    {
+      "ordinal": 1001,
+      "line": 0,
+      "class": "Dummy_Fahne_a",
+      "position": [11.35, 8.0, 12.1],
+      "rotation": [0.0, 0.0, 0.0],
+      "model_object": "fahne_a",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "dummy_trollhausen.tcl",
+      "placement_source": "runtime-reference reconstruction"
+    },
+    {
+      "ordinal": 1002,
+      "line": 0,
+      "class": "Dummy_Fahne_a",
+      "position": [13.35, 8.0, 12.1],
+      "rotation": [0.0, 0.0, 0.0],
+      "model_object": "fahne_a",
+      "model_package": "trollhausen.3db",
+      "mapping_source": "dummy_trollhausen.tcl",
+      "placement_source": "runtime-reference reconstruction"
+    }
+  ]
+}

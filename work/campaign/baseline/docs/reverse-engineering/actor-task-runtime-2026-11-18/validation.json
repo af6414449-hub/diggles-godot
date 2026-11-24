@@ -1,0 +1,119 @@
+{
+  "tests": [
+    {
+      "test": "native_actor_tasks",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_ACTOR_TASKS_SELF_TEST checks=76 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_actor_dispatch_native_actor_tasks.log"
+    },
+    {
+      "test": "dwarf_task_runtime",
+      "exit_code": 0,
+      "markers": [
+        "DWARF_TASK_RUNTIME_SELF_TEST checks=39 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_actor_dispatch_dwarf_task_runtime.log"
+    },
+    {
+      "test": "dwarf_parallel_work",
+      "exit_code": 0,
+      "markers": [
+        "DWARF_PARALLEL_WORK_SELF_TEST_OK assertions=21 workers=2 independent_walkers=3 mutations=2"
+      ],
+      "errors": [],
+      "log": "logs/tmp_actor_dispatch_dwarf_parallel_work.log"
+    },
+    {
+      "test": "manual_dig_region",
+      "exit_code": 0,
+      "markers": [
+        "MANUAL_DIG_REGION_SELF_TEST_OK assertions=27"
+      ],
+      "errors": [],
+      "log": "logs/tmp_actor_dispatch_manual_dig_region.log"
+    },
+    {
+      "test": "surface_depth_route",
+      "exit_code": 0,
+      "markers": [
+        "SURFACE_DEPTH_ROUTE_SELF_TEST checks=19 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_actor_dispatch_surface_depth_route.log"
+    },
+    {
+      "test": "wall_branch_continuation",
+      "exit_code": 0,
+      "markers": [
+        "WALL_BRANCH_CONTINUATION_SELF_TEST checks=16 failures=0 mutations=12 max_step=0.085717"
+      ],
+      "errors": [],
+      "log": "logs/tmp_actor_dispatch_wall_branch_continuation.log"
+    },
+    {
+      "test": "movement_feedback",
+      "exit_code": 0,
+      "markers": [
+        "MOVEMENT_FEEDBACK_SELF_TEST_OK assertions=20"
+      ],
+      "errors": [],
+      "log": "logs/tmp_actor_dispatch_movement_feedback.log"
+    },
+    {
+      "test": "native_surface_dig",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_SURFACE_DIG_SELF_TEST_OK assertions=22 assignments=1 wall_mutations=2"
+      ],
+      "errors": [],
+      "log": "logs/tmp_actor_dispatch_native_surface_dig.log"
+    },
+    {
+      "test": "native_corridor_input",
+      "exit_code": 0,
+      "markers": [
+        "NATIVE_CORRIDOR_INPUT_SELF_TEST_OK assertions=85"
+      ],
+      "errors": [],
+      "log": "logs/tmp_actor_dispatch_native_corridor_input.log"
+    },
+    {
+      "test": "world_model_light",
+      "exit_code": 0,
+      "markers": [
+        "WORLD_MODEL_LIGHT_SELF_TEST checks=31 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_actor_dispatch_world_model_light.log"
+    },
+    {
+      "test": "automatic_torch_runtime",
+      "exit_code": 0,
+      "markers": [
+        "AUTOMATIC_TORCH_RUNTIME_SELF_TEST checks=33 failures=0"
+      ],
+      "errors": [],
+      "log": "logs/tmp_actor_dispatch_automatic_torch_runtime.log"
+    }
+  ],
+  "headless_assertions": 389,
+  "source_check": "python tools/export_actor_task_contract.py --check",
+  "oracle_fixtures": 24,
+  "original_source_files": 6,
+  "minimax": {
+    "root": "C:\\Users\\frant\\.minimax\\sessions\\mvs_e213cb8b6788404489ad3b0b5c39827f\\workspace\\Diggles-mcode",
+    "read_only": true,
+    "inputs_sha256": {
+      "work/godot/scripts/native_tasklist.gd": "e04655bc4a37351e773f7032cab52ad2cdd8dc82e9f74f70cb339e30732bac3f",
+      "work/godot/scripts/native_command_dispatcher.gd": "b9206f63f24891ae469d5a0ddac94491a269b0d295defd999030f7b82ffb38ed",
+      "notes/2026-11-18-tasklist-actor-queue.md": "efa35a470cc995d5387dad8d762d342d7cb455769cccdc174b22ff8da1e29bfa",
+      "notes/2026-11-18-command-dispatcher.md": "aa296b47573e52835259482e52ee9220d294309737d0440948204bf13a9c4106"
+    }
+  },
+  "gpu": "No rendering changes in this increment; no new GPU acceptance performed.",
+  "apk_rebuilt": false
+}

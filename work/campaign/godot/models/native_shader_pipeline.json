@@ -1,0 +1,55 @@
+{
+  "schema": "diggles.shader_pipeline.v1",
+  "sources": {
+    "Common.fxh": {
+      "path": "Shaders/Common.fxh",
+      "sha256": "01e75af7f4b2f76f562b9eeac3e504998c48f7b631bd14ebe12d6095c8a3e5b3"
+    },
+    "Gamma.fxh": {
+      "path": "Shaders/Gamma.fxh",
+      "sha256": "67345d56387a09d5224545acc1c534f608c348034079fa17c40a407dd7cc233d"
+    },
+    "UL2CS.fx": {
+      "path": "Shaders/UL2CS.fx",
+      "sha256": "7d6dbc07e5e358c8f484232b919989fae2dc3b80e6996329cf119225801766b8"
+    },
+    "TL2CS.fx": {
+      "path": "Shaders/TL2CS.fx",
+      "sha256": "78464ca3319e5d51d15e566b0a2b861b5b322bad63902dbcbcb80c60d6300278"
+    },
+    "Composition.fx": {
+      "path": "Shaders/Composition.fx",
+      "sha256": "93d6c31af26a3d3b5f5de1a132956202088cec4f591d4b17819521f13b853be8"
+    }
+  },
+  "exe_sha256": "58a01d3d80670a6042c66a82684397c98e39c503e00a6e2c2c511f338a30ed74",
+  "port_sha256": "ace39618ac4946454eadaf35a824144c67b525ccafffad8a19ad200b3fdb6cf3",
+  "defaults": {
+    "raw_first": 50.0,
+    "raw_second": 50.0,
+    "divisor": 100.0,
+    "gamma_offset": 0.30000001192092896,
+    "brightness_offset": 0.5,
+    "gamma": 1.2999999523162842,
+    "brightness": 0.0
+  },
+  "stages": {
+    "initial": "diffuse",
+    "secondary": "add after both texture stages",
+    "gamma": "pow(rgb,1/gamma), then saturate(rgb+brightness)"
+  },
+  "light_conversion": {
+    "class_multiplier": 31.0,
+    "renderer_multiplier": 0.5
+  },
+  "host_program": {
+    "ground_op": 4,
+    "detail_op": 5,
+    "secondary_enabled": true
+  },
+  "limits": [
+    "Terrain draw-state stage operations have not been independently traced; existing MODULATE/MODULATE2X program remains explicit.",
+    "Defaults are EXE fallback settings, not a capture of the user original game settings.",
+    "Bloom/composition color bias, alpha testing, fog and dynamic owner bytes remain outside this terrain preview."
+  ]
+}

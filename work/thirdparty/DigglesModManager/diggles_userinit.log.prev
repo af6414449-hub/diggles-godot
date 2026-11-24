@@ -1,0 +1,15 @@
+START
+get_view -> 5 values: 2.84621206309e-38 5.39705214103e+33 1.20000004768 0.0 0.0
+calling dig_pan 0 -1
+PAN get_view -> 5 values: 2.84621206309e-38 5.39705214103e+33 1.20000004768 0.0 0.0
+PAN types: x=2.84621206309e-38 y=5.39705214103e+33 z=1.20000004768 ax=0.0 ay=0.0
+PAN about to set_view 2.84621206309e-38 5.39705214103e+33 1.20000004768 0.0 0.0
+PAN set_view ok
+PAN view now: 2.84621206309e-38 5.39705214103e+33 1.20000004768 0.0 0.0
+dig_pan survived
+after P bind: {P {dig_log "KEY P PRESSED"}}
+F1 OK
+F2 OK
+F1 down OK
+current: {P {dig_log "KEY P PRESSED"}}
+END

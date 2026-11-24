@@ -1,0 +1,58 @@
+$start
+$before
+
+## "Golderz"
+$put
+## "Golderz_"
+en "Gold ore"
+cz "Zlatá ruda"
+de "Golderz"
+fr "Minerai d'or"
+it "Minerale d'oro"
+nl "Gouderts"
+es "Mineral de oro"
+pl "Ruda z³ota"
+ru "Çîëîòàÿ ğóäà"
+
+
+$end
+
+
+$start
+$before
+
+## "Eisenerz"
+$put
+## "Eisenerz_"
+en "Iron ore"
+cz "elezná ruda"
+de "Eisenerz"
+fr "Minerai de fer"
+it "Minerale di ferro"
+nl "IJzererts"
+es "Mineral de hierro"
+pl "Ruda ¿elaza"
+ru "Æåëåçíàÿ ğóäà"
+
+
+$end
+
+
+$start
+$before
+
+## "Kohle"
+$put
+## "Kohle_"
+en "Coal"
+cz "Uhlí"
+de "Kohle"
+fr "Charbon"
+it "Carbone"
+nl "Kolen"
+es "Carbón"
+pl "Wêgiel"
+ru "Óãîëü"
+
+
+$end

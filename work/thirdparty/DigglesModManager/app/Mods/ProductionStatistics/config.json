@@ -1,0 +1,18 @@
+{
+	"version" : "0.7",
+	"author" : "zed2000",
+	
+	"name" :  {
+		"en" : "ProductionStatistics",
+		"de" : "Produktionsstatistik"
+	},
+	"description" : {
+		"en" : "Adds new game features accessible via production menu: exchange of weapons/tools between dwarves, pickup large amount of items at once, extended statistics",
+		"de" : "Fügt neue Features hinzu, die über das Menü Produktion erreichbar sind: Austausch von Waffen/Werkzeugen, Erteilen von mehreren Aufhebe-befehlen auf einmal, Erweiterte Statistik"
+	},
+	
+	"links" : {
+		"download" : "https://github.com/DigglesMods/ProductionStatistics/releases",
+		"wiki" : "https://github.com/DigglesMods/ProductionStatistics/wiki"
+	}
+}

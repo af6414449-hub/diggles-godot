@@ -1,0 +1,601 @@
+{
+  "schema": "diggles.actor_task_contract.v1",
+  "sources": {
+    "z_events.tcl": {
+      "sha256": "afdff4ac425b841611e879e814852fd5930372f28260495073c92ac07c7b9028",
+      "excerpts": [
+        {
+          "first": 336,
+          "last": 365,
+          "lines": [
+            "\tproc evt_task_walk_proc {} {",
+            "\t\tglobal event_log current_plan",
+            "\t\tglobal last_event event_repeat last_userevent_time",
+            "",
+            "\t\tif {$event_log} {",
+            "\t\t\tlog \"[get_objname this] getting event EVT_TASK_WALK\"",
+            "\t\t}",
+            "",
+            "\t\tset evtpos [event_get this -pos1]",
+            "",
+            "\t\tgnome_failed_work this",
+            "\t\ttasklist_clear this",
+            "\t\tkill_all_ghosts",
+            "\t\tstop_prod",
+            "",
+            "\t\tset this_event \"walk \\{$evtpos\\}\"",
+            "\t\tif {[lindex $last_event 0]==\"walk\"&&[vector_dist3d $evtpos [lindex $last_event 1]]<3} {set event_repeat 1}",
+            "\t\tset last_event $this_event",
+            "",
+            "\t\tnotify_userevent",
+            "",
+            "\t\ttasklist_add this \"walk_pos \\{$evtpos\\}\"",
+            "",
+            "\t\tstate_triggerfresh this task",
+            "\t\tset_objworkicons this",
+            "\t\tprod_gnome_state this walk \"$evtpos\"",
+            "\t}",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "first": 1019,
+          "last": 1058,
+          "lines": [
+            "\tproc evt_task_dig_proc {} {",
+            "\t\tglobal event_log current_plan current_workplace current_digpos",
+            "\t\tglobal last_event event_repeat current_tool_class last_userevent_time",
+            "",
+            "\t\tif {$event_log} {",
+            "\t\t\tlog \"[get_objname this] getting event EVT_TASK_DIG\"",
+            "\t\t}",
+            "",
+            "\t\tset evtpos [event_get this -pos1]",
+            "",
+            "\t\tgnome_failed_work this",
+            "\t\ttasklist_clear this",
+            "\t\tkill_all_ghosts",
+            "",
+            "\t\tif {$current_tool_class==\"Spitzhacke\"} {",
+            "\t\t\tstop_prod 0",
+            "\t\t} else {",
+            "\t\t\tstop_prod",
+            "\t\t}",
+            "",
+            "\t\tset this_event \"dig \\{$evtpos\\}\"",
+            "\t\tif {[lindex $last_event 0]==\"dig\"&&[vector_dist $evtpos [lindex $last_event 1]]<3} {set event_repeat 1}",
+            "\t\tset last_event $this_event",
+            "\t\tnotify_userevent",
+            "",
+            "\t\tset current_plan \"work\"",
+            "\t\tset current_workplace \"dig\"",
+            "\t\tset current_digpos $evtpos",
+            "",
+            "\t\ttasklist_add this \"dig_starttask \\{$evtpos\\}\"",
+            "\t\tprod_change_muetze stone",
+            "",
+            "\t\tstate_triggerfresh this work_dispatch",
+            "\t\tset_objworkicons this Spitzhacke",
+            "",
+            "\t\tprod_gnome_state this dig \"$evtpos\"",
+            "\t}",
+            "",
+            "",
+            "\tproc evt_task_workprod_proc {} {"
+          ]
+        }
+      ]
+    },
+    "z_work_states.tcl": {
+      "sha256": "568fe691e25933b86f30d7890eece38e6b663298f2ac99ab3e2233c7dc3a15c9",
+      "excerpts": [
+        {
+          "first": 13,
+          "last": 23,
+          "lines": [
+            "\tstate work_dispatch {",
+            "\t\tif { [tasklist_cnt this] > 0 } {",
+            "\t\t\tset command [tasklist_get this 0]",
+            "\t\t\ttasklist_rem this 0",
+            "//\t\t\tlog \"task-command:$command\"",
+            "\t\t\teval $command",
+            "\t\t\treturn;",
+            "\t\t}",
+            "\t\tstate_work_dispatch_proc",
+            "\t}",
+            ""
+          ]
+        },
+        {
+          "first": 129,
+          "last": 134,
+          "lines": [
+            "\t\t}",
+            "\t\tif { $current_worktask == \"pack\" } {",
+            "\t\t\tstate_trigger this work_dispatch",
+            "\t\t\ttasklist_add this \"prod_autopack $current_workplace\"",
+            "\t\t\treturn",
+            "\t\t}"
+          ]
+        }
+      ]
+    },
+    "zwerg.tcl": {
+      "sha256": "e0c037e70dd972815dff1e6f2cb592d6a76749e71936c6c9196f3b0cc3c334f2",
+      "excerpts": [
+        {
+          "first": 321,
+          "last": 335,
+          "lines": [
+            "",
+            "\tstate task {",
+            "\t\tif {$state_log} {log \"[get_objname this] passing state code TASK\"}",
+            "\t\tif {$state_shell} {print \"[get_objname this] passing state code TASK\"}",
+            "\t\tif { [tasklist_cnt this] == 0 } {",
+            "\t\t\tstate_trigger this idle",
+            "\t\t} else {",
+            "\t\t\tset current_occupation \"work\"",
+            "\t\t\tset command [tasklist_get this 0]",
+            "\t\t\ttasklist_rem this 0",
+            "//\t\t\tlog \"[get_objname this]: Task to do:'$command'\"",
+            "\t\t\teval $command",
+            "\t\t}",
+            "\t}",
+            ""
+          ]
+        }
+      ]
+    },
+    "z_procs.tcl": {
+      "sha256": "38007f1f56cf8949967f85a12f76bad49c8229d83b5429425acb48cf1bfe23dc",
+      "excerpts": [
+        {
+          "first": 186,
+          "last": 205,
+          "lines": [
+            "proc play_anim {anim args} {",
+            "\tglobal sparetime_talkevents",
+            "",
+            "\tif {[string first \"accident\" $anim]!=-1} {",
+            "\t\tlappend sparetime_talkevents \"uqw\"",
+            "\t}",
+            "",
+            "\tstate_disable this",
+            "\tif {$args!=\"\"} {",
+            "\t\taction this anim $anim \"state_enable this;dig_execute $args;dig_continue\"",
+            "\t} else {",
+            "\t\taction this anim $anim {state_enable this}",
+            "\t}",
+            "\tif {[set fanim [get_classaniminfo $anim]]!=\"\"} {",
+            "\t\tif {$fanim==\"Illegel Anim\"} {log \"illegal Anim: $anim!!!\";return true}",
+            "\t\tset submesh [lindex $fanim 0]",
+            "\t\tset fanim [lrange $fanim 1 end]",
+            "\t\tstart_fanim_sequence $fanim \"-mesh $submesh\"",
+            "\t}",
+            "\treturn true"
+          ]
+        }
+      ]
+    },
+    "z_dignwalk.tcl": {
+      "sha256": "c0d6f01eade25f6659890bf79debbcfad0eef6d7acc0a8cdb700557bfff93846",
+      "excerpts": [
+        {
+          "first": 136,
+          "last": 165,
+          "lines": [
+            "proc dig_starttask {startpos} {",
+            "\tglobal current_digpose",
+            "\tif {$startpos==0} {set current_digpos [get_pos this]} {global current_digpos}",
+            "\tset startpos $current_digpos",
+            "\tlog \"dig_starttask @ $startpos\"",
+            "\tlog \"mypos: [get_pos this]\"",
+            "",
+            "\tgnome_announce_dig this $startpos",
+            "\tset edgepos [get_digedge $startpos this]\t\t\t;# Kante zum Anfangen finden",
+            "\tlog \"Startedgepos: $edgepos\"",
+            "",
+            "\tif {[vector_unpacky $edgepos]>0} {",
+            "\t\tset originalz [lindex $edgepos 2]",
+            "\t\tset walkpos [vector_fixdig $edgepos [get_pos this]]",
+            "\t\tlrep walkpos 2 $originalz",
+            "\t\tlog \"Startwalkpos: $walkpos\"",
+            "\t\ttasklist_add this \"walk_pos_dig \\{$walkpos\\} \\{$edgepos\\}\"",
+            "\t\ttasklist_add this \"dig_continue\"",
+            "\t\tset current_digpose \"\"",
+            "//\t\tif {[inv_find this Presslufthammer]==-1} {",
+            "//\t\t\ttasklist_add this \"prod_changetool Spitzhacke\"",
+            "//\t\t} else {",
+            "//\t\t\ttasklist_add this \"prod_changetool Presslufthammer\"",
+            "//\t\t}",
+            "\t\treturn true",
+            "\t} else {",
+            "\t\treturn false",
+            "\t}",
+            "}",
+            ""
+          ]
+        },
+        {
+          "first": 590,
+          "last": 605,
+          "lines": [
+            "proc walk_pos {pos {force 0}} {",
+            "    //log \"WALK - POS [get_objname this]\"",
+            "\tbeam_back",
+            "\tnote_pathlength $pos",
+            "\tstate_disable this",
+            "//\tlog \"[get_objname this]: state_disable f\u00fcr walkpos...\"",
+            "\tset pos [vector_fix $pos]",
+            "\tif {$force} {set force \"-forcetarget $force\"} {set force \"-forcetarget 0\"}",
+            "\twalk_action \"-target \\{$pos\\} -waving 1 $force\" {",
+            "\t\twalkfail",
+            "\t} {",
+            "\t\t//log \"[get_objname this]: walk break\"",
+            "\t}",
+            "\treturn true",
+            "}",
+            ""
+          ]
+        }
+      ]
+    },
+    "z_spare_fun.tcl": {
+      "sha256": "5260d026d66b2c7a861eb25a8e64aae06f3662b80f2257324528e5e5dc609cf7",
+      "excerpts": [
+        {
+          "first": 295,
+          "last": 307,
+          "lines": [
+            "\t\t}",
+            "\t\t\"none\" {",
+            "\t\t\tif {[get_gnomeposition this]} {sparetime_climb_somewhere;return}",
+            "\t\t\tglobal civ_state stt_fun_idleloss",
+            "\t\t\ttasklist_add this {play_anim standloop[string index abcd [irandom 4]]}",
+            "\t\t\ttasklist_add this \"sparetime_idle_loop\"",
+            "\t\t\ttasklist_add this {play_anim standloop[string index abcd [irandom 4]]}",
+            "\t\t\ttasklist_add this {play_anim standloop[string index abcd [irandom 4]]}",
+            "\t\t\ttasklist_add this \"sparetime_idle_loop\"",
+            "\t\t\tset loss [hmax [expr {-$stt_fun_idleloss}] [expr {-0.03*$civ_state}] -0.01]",
+            "\t\t\ttasklist_add this \"add_attrib this atr_Mood $loss\"",
+            "\t\t\ttasklist_add this {play_anim standloop[string index abcd [irandom 4]]}",
+            "\t\t\ttasklist_add this \"sparetime_idle_loop\""
+          ]
+        }
+      ]
+    }
+  },
+  "oracle_tcl": "8.6.12",
+  "fixtures": [
+    {
+      "name": "grouping",
+      "script": "capture {a b} \"c d\" x\\;y",
+      "variables": {},
+      "code": 0,
+      "value": "x;y",
+      "trace": [
+        [
+          "capture",
+          "a b",
+          "c d",
+          "x;y"
+        ]
+      ]
+    },
+    {
+      "name": "scalar_is_one_word",
+      "script": "capture $position",
+      "variables": {
+        "position": "1 2 3;capture injected"
+      },
+      "code": 0,
+      "value": "1 2 3;capture injected",
+      "trace": [
+        [
+          "capture",
+          "1 2 3;capture injected"
+        ]
+      ]
+    },
+    {
+      "name": "braces_are_literal",
+      "script": "capture {$position [irandom 4]}",
+      "variables": {
+        "position": "now"
+      },
+      "code": 0,
+      "value": "$position [irandom 4]",
+      "trace": [
+        [
+          "capture",
+          "$position [irandom 4]"
+        ]
+      ]
+    },
+    {
+      "name": "source_deferred_idle",
+      "script": "play_anim standloop[string index abcd [irandom 4]]",
+      "variables": {},
+      "code": 0,
+      "value": "1",
+      "trace": [
+        [
+          "irandom",
+          "4"
+        ],
+        [
+          "play_anim",
+          "standloopb"
+        ]
+      ]
+    },
+    {
+      "name": "false_is_success",
+      "script": "returns_false;capture later",
+      "variables": {},
+      "code": 0,
+      "value": "later",
+      "trace": [
+        [
+          "returns_false"
+        ],
+        [
+          "capture",
+          "later"
+        ]
+      ]
+    },
+    {
+      "name": "same_compound",
+      "script": "play_anim standloopa;capture created;capture end",
+      "variables": {},
+      "code": 0,
+      "value": "end",
+      "trace": [
+        [
+          "play_anim",
+          "standloopa"
+        ],
+        [
+          "capture",
+          "created"
+        ],
+        [
+          "capture",
+          "end"
+        ]
+      ]
+    },
+    {
+      "name": "scalar_updates",
+      "script": "set value before;capture $value;set value after;capture ${value}",
+      "variables": {},
+      "code": 0,
+      "value": "after",
+      "trace": [
+        [
+          "capture",
+          "before"
+        ],
+        [
+          "capture",
+          "after"
+        ]
+      ]
+    },
+    {
+      "name": "quotes_and_escapes",
+      "script": "capture \"a\\n$position\";capture escaped\\ space",
+      "variables": {
+        "position": "point"
+      },
+      "code": 0,
+      "value": "escaped space",
+      "trace": [
+        [
+          "capture",
+          "a\npoint"
+        ],
+        [
+          "capture",
+          "escaped space"
+        ]
+      ]
+    },
+    {
+      "name": "nested_braces",
+      "script": "capture {outer {inner} braces}",
+      "variables": {},
+      "code": 0,
+      "value": "outer {inner} braces",
+      "trace": [
+        [
+          "capture",
+          "outer {inner} braces"
+        ]
+      ]
+    },
+    {
+      "name": "nested_command",
+      "script": "capture [capture first]",
+      "variables": {},
+      "code": 0,
+      "value": "first",
+      "trace": [
+        [
+          "capture",
+          "first"
+        ],
+        [
+          "capture",
+          "first"
+        ]
+      ]
+    },
+    {
+      "name": "empty_arguments",
+      "script": "capture {} \"\"",
+      "variables": {},
+      "code": 0,
+      "value": "",
+      "trace": [
+        [
+          "capture",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "comment_and_newline",
+      "script": "# ignored\ncapture first\ncapture second",
+      "variables": {},
+      "code": 0,
+      "value": "second",
+      "trace": [
+        [
+          "capture",
+          "first"
+        ],
+        [
+          "capture",
+          "second"
+        ]
+      ]
+    },
+    {
+      "name": "failure_aborts_compound",
+      "script": "capture before;error boom;capture after",
+      "variables": {},
+      "code": 1,
+      "value": null,
+      "trace": [
+        [
+          "capture",
+          "before"
+        ]
+      ]
+    },
+    {
+      "name": "unknown_variable",
+      "script": "capture $missing",
+      "variables": {},
+      "code": 1,
+      "value": null,
+      "trace": []
+    },
+    {
+      "name": "missing_brace",
+      "script": "capture {open",
+      "variables": {},
+      "code": 1,
+      "value": null,
+      "trace": []
+    },
+    {
+      "name": "missing_quote",
+      "script": "capture \"open",
+      "variables": {},
+      "code": 1,
+      "value": null,
+      "trace": []
+    },
+    {
+      "name": "missing_bracket",
+      "script": "capture [string index abcd 1",
+      "variables": {},
+      "code": 1,
+      "value": null,
+      "trace": []
+    },
+    {
+      "name": "extra_after_brace",
+      "script": "capture {closed}extra",
+      "variables": {},
+      "code": 1,
+      "value": null,
+      "trace": []
+    },
+    {
+      "name": "continuation_bare",
+      "script": "capture a\\\n  b",
+      "variables": {},
+      "code": 0,
+      "value": "b",
+      "trace": [
+        [
+          "capture",
+          "a",
+          "b"
+        ]
+      ]
+    },
+    {
+      "name": "continuation_braced",
+      "script": "capture {a\\\n  b}",
+      "variables": {},
+      "code": 0,
+      "value": "a b",
+      "trace": [
+        [
+          "capture",
+          "a b"
+        ]
+      ]
+    },
+    {
+      "name": "escaped_brace",
+      "script": "capture {a\\}b}",
+      "variables": {},
+      "code": 0,
+      "value": "a\\}b",
+      "trace": [
+        [
+          "capture",
+          "a\\}b"
+        ]
+      ]
+    },
+    {
+      "name": "unknown_command",
+      "script": "not_implemented argument",
+      "variables": {},
+      "code": 1,
+      "value": null,
+      "trace": []
+    },
+    {
+      "name": "comment_continuation",
+      "script": "# ignore\\\n capture ignored\ncapture kept",
+      "variables": {},
+      "code": 0,
+      "value": "kept",
+      "trace": [
+        [
+          "capture",
+          "kept"
+        ]
+      ]
+    },
+    {
+      "name": "empty_substitution",
+      "script": "capture []",
+      "variables": {},
+      "code": 0,
+      "value": "",
+      "trace": [
+        [
+          "capture",
+          ""
+        ]
+      ]
+    }
+  ],
+  "limits": [
+    "Only the explicitly supported evaluator subset is compared.",
+    "Native state tick cadence, tasklist implementation and irandom algorithm are not recovered.",
+    "Movement/mining handlers embed existing host actions; full Tcl AI is not replayed."
+  ]
+}

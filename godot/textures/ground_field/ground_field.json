@@ -1,0 +1,268 @@
+{
+ "source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Diggles The Myth of Fenris\\data\\Ground",
+ "output": "C:\\Users\\frant\\OneDrive\\Документы\\MiniMax\\Diggles\\godot\\textures\\ground_field",
+ "tile": 64,
+ "slots": 16,
+ "placements": 1200,
+ "feather": 0.25,
+ "seed": 20261120,
+ "fields": [
+  {
+   "file": "ground_field_A.png",
+   "family": "Gnd_A",
+   "seam": {
+    "inside_x": 123.42,
+    "inside_y": 124.12,
+    "seam_x": 127.11,
+    "seam_y": 118.82
+   }
+  },
+  {
+   "file": "ground_field_B.png",
+   "family": "Gnd_B",
+   "seam": {
+    "inside_x": 121.19,
+    "inside_y": 121.55,
+    "seam_x": 117.88,
+    "seam_y": 128.38
+   }
+  },
+  {
+   "file": "ground_field_C.png",
+   "family": "Gnd_C",
+   "seam": {
+    "inside_x": 121.52,
+    "inside_y": 122.23,
+    "seam_x": 118.96,
+    "seam_y": 123.86
+   }
+  }
+ ],
+ "tiles": [
+  {
+   "file": "Gnd_A01.png",
+   "family": "Gnd_A",
+   "variant": 1
+  },
+  {
+   "file": "Gnd_A02.png",
+   "family": "Gnd_A",
+   "variant": 2
+  },
+  {
+   "file": "Gnd_A03.png",
+   "family": "Gnd_A",
+   "variant": 3
+  },
+  {
+   "file": "Gnd_A04.png",
+   "family": "Gnd_A",
+   "variant": 4
+  },
+  {
+   "file": "Gnd_A05.png",
+   "family": "Gnd_A",
+   "variant": 5
+  },
+  {
+   "file": "Gnd_A06.png",
+   "family": "Gnd_A",
+   "variant": 6
+  },
+  {
+   "file": "Gnd_A07.png",
+   "family": "Gnd_A",
+   "variant": 7
+  },
+  {
+   "file": "Gnd_A08.png",
+   "family": "Gnd_A",
+   "variant": 8
+  },
+  {
+   "file": "Gnd_A09.png",
+   "family": "Gnd_A",
+   "variant": 9
+  },
+  {
+   "file": "Gnd_A10.png",
+   "family": "Gnd_A",
+   "variant": 10
+  },
+  {
+   "file": "Gnd_A11.png",
+   "family": "Gnd_A",
+   "variant": 11
+  },
+  {
+   "file": "Gnd_A12.png",
+   "family": "Gnd_A",
+   "variant": 12
+  },
+  {
+   "file": "Gnd_A13.png",
+   "family": "Gnd_A",
+   "variant": 13
+  },
+  {
+   "file": "Gnd_A14.png",
+   "family": "Gnd_A",
+   "variant": 14
+  },
+  {
+   "file": "Gnd_A15.png",
+   "family": "Gnd_A",
+   "variant": 15
+  },
+  {
+   "file": "Gnd_B01.png",
+   "family": "Gnd_B",
+   "variant": 1
+  },
+  {
+   "file": "Gnd_B02.png",
+   "family": "Gnd_B",
+   "variant": 2
+  },
+  {
+   "file": "Gnd_B03.png",
+   "family": "Gnd_B",
+   "variant": 3
+  },
+  {
+   "file": "Gnd_B04.png",
+   "family": "Gnd_B",
+   "variant": 4
+  },
+  {
+   "file": "Gnd_B05.png",
+   "family": "Gnd_B",
+   "variant": 5
+  },
+  {
+   "file": "Gnd_B06.png",
+   "family": "Gnd_B",
+   "variant": 6
+  },
+  {
+   "file": "Gnd_B07.png",
+   "family": "Gnd_B",
+   "variant": 7
+  },
+  {
+   "file": "Gnd_B08.png",
+   "family": "Gnd_B",
+   "variant": 8
+  },
+  {
+   "file": "Gnd_B09.png",
+   "family": "Gnd_B",
+   "variant": 9
+  },
+  {
+   "file": "Gnd_B10.png",
+   "family": "Gnd_B",
+   "variant": 10
+  },
+  {
+   "file": "Gnd_B11.png",
+   "family": "Gnd_B",
+   "variant": 11
+  },
+  {
+   "file": "Gnd_B12.png",
+   "family": "Gnd_B",
+   "variant": 12
+  },
+  {
+   "file": "Gnd_B13.png",
+   "family": "Gnd_B",
+   "variant": 13
+  },
+  {
+   "file": "Gnd_B14.png",
+   "family": "Gnd_B",
+   "variant": 14
+  },
+  {
+   "file": "Gnd_B15.png",
+   "family": "Gnd_B",
+   "variant": 15
+  },
+  {
+   "file": "Gnd_C01.png",
+   "family": "Gnd_C",
+   "variant": 1
+  },
+  {
+   "file": "Gnd_C02.png",
+   "family": "Gnd_C",
+   "variant": 2
+  },
+  {
+   "file": "Gnd_C03.png",
+   "family": "Gnd_C",
+   "variant": 3
+  },
+  {
+   "file": "Gnd_C04.png",
+   "family": "Gnd_C",
+   "variant": 4
+  },
+  {
+   "file": "Gnd_C05.png",
+   "family": "Gnd_C",
+   "variant": 5
+  },
+  {
+   "file": "Gnd_C06.png",
+   "family": "Gnd_C",
+   "variant": 6
+  },
+  {
+   "file": "Gnd_C07.png",
+   "family": "Gnd_C",
+   "variant": 7
+  },
+  {
+   "file": "Gnd_C08.png",
+   "family": "Gnd_C",
+   "variant": 8
+  },
+  {
+   "file": "Gnd_C09.png",
+   "family": "Gnd_C",
+   "variant": 9
+  },
+  {
+   "file": "Gnd_C10.png",
+   "family": "Gnd_C",
+   "variant": 10
+  },
+  {
+   "file": "Gnd_C11.png",
+   "family": "Gnd_C",
+   "variant": 11
+  },
+  {
+   "file": "Gnd_C12.png",
+   "family": "Gnd_C",
+   "variant": 12
+  },
+  {
+   "file": "Gnd_C13.png",
+   "family": "Gnd_C",
+   "variant": 13
+  },
+  {
+   "file": "Gnd_C14.png",
+   "family": "Gnd_C",
+   "variant": 14
+  },
+  {
+   "file": "Gnd_C15.png",
+   "family": "Gnd_C",
+   "variant": 15
+  }
+ ]
+}

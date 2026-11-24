@@ -1,0 +1,132 @@
+{
+  "format": "diggles-native-terrain-strike-fixtures-v1",
+  "evidence": "Static EXE control flow plus direct independent PMP/BDB byte reads; not native execution.",
+  "sources": {
+    "exe_sha256": "58a01d3d80670a6042c66a82684397c98e39c503e00a6e2c2c511f338a30ed74",
+    "pmp": "Templates/multi_start_010.pmp",
+    "pmp_sha256": "b6fc5ef7b1800dce9fb0dd4a42de879b8198f25ac84eb82b524266378ddb7807",
+    "bdb": "BlockDB2.BDB",
+    "bdb_sha256": "13d06172ae42a42657c10fe6007c8213fc525a7fde8132fe0041f48c9507b856",
+    "bdb_metadata_offset": 2136412,
+    "bdb_metadata_stride": 89
+  },
+  "corner_order": ["NW", "NE", "SW", "SE"],
+  "corner_indices": [3, 2, 1, 0],
+  "preconditions": {
+    "template_offset": [0, 0],
+    "point_inside_actual_native_interior_bounds": true,
+    "policy_0x5976B0_passed": true,
+    "worker_slot": 0,
+    "all_referenced_metadata_available": true
+  },
+  "fixtures": [
+    {
+      "id": "A_initial_9_3_corridor",
+      "base": "initial_pmp",
+      "point": [9, 3],
+      "cells": [[8, 2], [9, 2], [8, 3], [9, 3]],
+      "mark_nibble": 3,
+      "target": 11,
+      "old_refs": [0, 0, 0, 0],
+      "candidate_refs": [22, 32, 44, 54],
+      "candidate_heights": [11, 11, 11, 11],
+      "pre_Hnext": 11,
+      "new_refs": [22, 32, 44, 54],
+      "new_corner_bytes_50_53": [[15, 15, 15, 11], [15, 15, 11, 15], [15, 11, 15, 15], [11, 15, 15, 15]],
+      "post_Hnext": 7,
+      "new_mark_nibble": 0,
+      "result": true,
+      "dirty_rect_requests": [
+        {"flags": "0x10040", "rect": [64, 16, 80, 32]},
+        {"flags": "0x200", "rect": [68, 20, 76, 28]}
+      ]
+    },
+    {
+      "id": "B_neighbor_10_3_after_A",
+      "base": "A_initial_9_3_corridor",
+      "point": [10, 3],
+      "cells": [[9, 2], [10, 2], [9, 3], [10, 3]],
+      "mark_nibble": 3,
+      "target": 11,
+      "old_refs": [32, 0, 54, 0],
+      "candidate_refs": [207, 32, 81, 54],
+      "candidate_heights": [11, 11, 11, 11],
+      "pre_Hnext": 11,
+      "new_refs": [207, 32, 81, 54],
+      "post_Hnext": 7,
+      "new_mark_nibble": 0,
+      "result": true
+    },
+    {
+      "id": "C_partial_21_2",
+      "base": "initial_pmp",
+      "point": [21, 2],
+      "cells": [[20, 1], [21, 1], [20, 2], [21, 2]],
+      "mark_nibble": 3,
+      "target": 11,
+      "old_refs": [11197, 80, 11683, 80],
+      "candidate_refs": [33, 34524, 37200, 34522],
+      "candidate_heights": [11, 7, 11, 7],
+      "pre_Hnext": 11,
+      "new_refs": [33, 80, 37200, 80],
+      "post_Hnext": 7,
+      "current_corner_heights_before_and_after": [11, 11, 11, 11],
+      "new_mark_nibble": 0,
+      "result": true
+    },
+    {
+      "id": "D_multi_slot_after_A_geometry",
+      "base": "initial_pmp",
+      "point": [9, 3],
+      "old_refs": [0, 0, 0, 0],
+      "new_refs": [22, 32, 44, 54],
+      "marks_before": "0x20F89BA3",
+      "marks_after": "0x000890A0",
+      "group_word_before_and_after": "0x76543210",
+      "dirty_byte13_before": [64, 128, 32, 16],
+      "dirty_byte13_after": [65, 129, 33, 19],
+      "post_Hnext": 7,
+      "result": true
+    },
+    {
+      "id": "E_corridor_rejected_after_A",
+      "base": "A_initial_9_3_corridor",
+      "point": [9, 3],
+      "mark_nibble": 3,
+      "target": 11,
+      "pre_Hnext": 7,
+      "old_refs": [22, 32, 44, 54],
+      "new_refs": [22, 32, 44, 54],
+      "new_mark_nibble": 0,
+      "other_slots_unchanged": true,
+      "additional_dirty_rect_requests": [],
+      "result": false
+    },
+    {
+      "id": "F_cave_target7_first_strike",
+      "base": "initial_pmp",
+      "point": [9, 3],
+      "mark_nibble": 10,
+      "target": 7,
+      "pre_Hnext": 11,
+      "old_refs": [0, 0, 0, 0],
+      "new_refs": [22, 32, 44, 54],
+      "post_Hnext": 7,
+      "new_mark_nibble": 10,
+      "result": true
+    },
+    {
+      "id": "G_cave_target7_second_strike",
+      "base": "F_cave_target7_first_strike",
+      "point": [9, 3],
+      "mark_nibble": 10,
+      "target": 7,
+      "pre_Hnext": 7,
+      "old_refs": [22, 32, 44, 54],
+      "new_refs": [34503, 34505, 34510, 34511],
+      "post_Hnext": 3,
+      "new_mark_nibble": 0,
+      "result": true
+    }
+  ]
+}

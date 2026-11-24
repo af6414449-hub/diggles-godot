@@ -1,0 +1,27 @@
+{
+	"version" : "1.2",
+	"author" : "Chris1231",
+	
+	"name" :  {
+		"en" : "StoneDoor",
+		"de" : "Steintür"
+	},
+	"description" : {
+		"en" : "Add a stone door to the game.",
+		"de" : "Diese Mod fügt dem Spiel eine Steintür hinzu."
+	},
+	
+	"links" : {
+		"download" : "https://github.com/DigglesMods/StoneDoor/releases",
+		"wiki" : "https://github.com/DigglesMods/StoneDoor/wiki"
+	},
+
+	"messages" : [
+		{
+			"content" :  {
+				"en" : "This mod is changing the techtree and is not compatible with savegames with another techtree. After installing this mod, please start a new game.",
+				"de" : "Diese Mod ändert den Technologiebaum und ist nicht kompatibel mit Spielständen mit einem anderen Technologiebaum. Bitte starten Sie ein neues Spiel nach der Installation dieser Mod."
+			}
+		}
+	]
+}

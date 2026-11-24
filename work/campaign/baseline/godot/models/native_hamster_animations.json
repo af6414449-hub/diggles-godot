@@ -1,0 +1,226 @@
+{
+  "schema": "diggles.native_hamster_animations.v1",
+  "status": "extracted_from_original_tcl",
+  "source": "data/Scripts/classes/characters/hamster.tcl",
+  "package": "data/3db/hamster.3db",
+  "classes": {
+    "Hamster": {
+      "source": "classes/characters/hamster.tcl",
+      "category": [
+        "food",
+        "material"
+      ],
+      "flags": "{reproduces lives moves}",
+      "aliases": {
+        "standstill": {
+          "target": "hamster.stand_anim",
+          "frames": 12,
+          "source_line": 5
+        },
+        "turnleft": {
+          "target": "hamster.drehen_links_90",
+          "frames": 17,
+          "source_line": 6
+        },
+        "turnright": {
+          "target": "hamster.drehen_rechts_90",
+          "frames": 17,
+          "source_line": 7
+        },
+        "turn180left": {
+          "target": "hamster.drehen_links_90",
+          "frames": 17,
+          "source_line": 8
+        },
+        "turn180right": {
+          "target": "hamster.drehen_rechts_90",
+          "frames": 17,
+          "source_line": 9
+        },
+        "walkstart": {
+          "target": "hamster.laufen_start",
+          "frames": 4,
+          "source_line": 11
+        },
+        "walkloop": {
+          "target": "hamster.laufen_loop",
+          "frames": 7,
+          "source_line": 12
+        },
+        "walkstop": {
+          "target": "hamster.laufen_end",
+          "frames": 6,
+          "source_line": 13
+        },
+        "hoppelstart": {
+          "target": "hamster.hoppeln_start",
+          "frames": 4,
+          "source_line": 15
+        },
+        "hoppelloop": {
+          "target": "hamster.hoppeln_loop",
+          "frames": 7,
+          "source_line": 16
+        },
+        "hoppelstop": {
+          "target": "hamster.hoppeln_end",
+          "frames": 6,
+          "source_line": 17
+        },
+        "galopstart": {
+          "target": "hamster.galopp_start",
+          "frames": 2,
+          "source_line": 19
+        },
+        "galoploop": {
+          "target": "hamster.galopp_loop",
+          "frames": 6,
+          "source_line": 20
+        },
+        "galopstop": {
+          "target": "hamster.galopp_end",
+          "frames": 3,
+          "source_line": 21
+        },
+        "ridestill": {
+          "target": "hamster.reiten_stand",
+          "frames": 2,
+          "source_line": 23
+        },
+        "sleepstart": {
+          "target": "hamster.schlafen_start",
+          "frames": 4,
+          "source_line": 25
+        },
+        "sleeploop": {
+          "target": "hamster.schlafen_loop",
+          "frames": 8,
+          "source_line": 26
+        },
+        "sleepstop": {
+          "target": "hamster.schlafen_end",
+          "frames": 5,
+          "source_line": 27
+        },
+        "cleanstart": {
+          "target": "hamster.putzen_start",
+          "frames": 3,
+          "source_line": 29
+        },
+        "cleanloop": {
+          "target": "hamster.putzen_loop",
+          "frames": 10,
+          "source_line": 30
+        },
+        "cleanstop": {
+          "target": "hamster.putzen_end",
+          "frames": 4,
+          "source_line": 31
+        },
+        "beg": {
+          "target": "hamster.maennchen",
+          "frames": 17,
+          "source_line": 33
+        },
+        "goteaten": {
+          "target": "hamster.gefressen_werden",
+          "frames": 12,
+          "source_line": 34
+        },
+        "gothit": {
+          "target": "hamster.getroffen",
+          "frames": 15,
+          "source_line": 35
+        },
+        "wheel_start": {
+          "target": "hamster.laufrad_start",
+          "frames": 4,
+          "source_line": 37
+        },
+        "wheel_loop": {
+          "target": "hamster.laufrad_loop",
+          "frames": 8,
+          "source_line": 38
+        },
+        "wheel_end": {
+          "target": "hamster.laufrad_end",
+          "frames": 5,
+          "source_line": 39
+        }
+      },
+      "animsets": {
+        "0": {
+          "entries": {
+            "standard": "hamster.stand_anim",
+            "walk_start": "hamster.laufen_start",
+            "walk_loop": "hamster.laufen_loop",
+            "walk_stop": "hamster.laufen_end",
+            "turn_left_90": "hamster.drehen_links_90",
+            "turn_right_90": "hamster.drehen_rechts_90",
+            "turn_left_180": "hamster.drehen_links_90",
+            "turn_right_180": "hamster.drehen_rechts_90",
+            "climb_standard": "hamster.gefressen_werden",
+            "climb_up": "hamster.gefressen_werden",
+            "climb_down": "hamster.gefressen_werden",
+            "climb_right": "hamster.gefressen_werden",
+            "climb_left": "hamster.gefressen_werden",
+            "ground_to_wall": "hamster.gefressen_werden",
+            "wall_to_ground": "hamster.gefressen_werden",
+            "walk_loop_wave": "hamster.gefressen_werden",
+            "ladder_climb_up": "hamster.gefressen_werden",
+            "ladder_climb_down": "hamster.gefressen_werden",
+            "ground_to_ladder": "hamster.gefressen_werden",
+            "ladder_to_ground": "hamster.gefressen_werden"
+          },
+          "source_line": 67
+        },
+        "1": {
+          "entries": {
+            "walk_start": "hamster.hoppeln_start",
+            "walk_loop": "hamster.hoppeln_loop",
+            "walk_stop": "hamster.hoppeln_end"
+          },
+          "source_line": 74
+        },
+        "2": {
+          "entries": {
+            "walk_start": "hamster.galopp_start",
+            "walk_loop": "hamster.galopp_loop",
+            "walk_stop": "hamster.galopp_end"
+          },
+          "source_line": 81
+        }
+      }
+    }
+  },
+  "clips": {
+    "standard": 2,
+    "laufen_end": 6,
+    "laufen_loop": 7,
+    "laufen_start": 4,
+    "schlafen_loop": 8,
+    "stand_anim": 12,
+    "schlafen_end": 5,
+    "schlafen_start": 4,
+    "sterben": 21,
+    "putzen_start": 3,
+    "putzen_loop": 10,
+    "putzen_end": 4,
+    "maennchen": 17,
+    "laufrad_start": 4,
+    "laufrad_loop": 8,
+    "laufrad_end": 5,
+    "gefressen_werden": 12,
+    "getroffen": 15,
+    "galopp_start": 2,
+    "galopp_loop": 6,
+    "galopp_end": 3,
+    "reiten_stand": 2,
+    "reiten_dreh_links": 7,
+    "hoppeln_start": 4,
+    "hoppeln_loop": 7,
+    "hoppeln_end": 6,
+    "drehen_links_90": 17,
+    "drehen_rechts_90": 17
+  }
+}

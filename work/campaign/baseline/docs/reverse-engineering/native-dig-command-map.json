@@ -1,0 +1,1364 @@
+{
+  "executable": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Diggles The Myth of Fenris\\Diggles.exe",
+  "image_base": 4194304,
+  "commands": {
+    "add_cave_skin_class": {
+      "address": 6387056,
+      "rva": 2192752,
+      "size_to_padding": 2713,
+      "direct_calls": [
+        {
+          "at": 6387143,
+          "target": 4455616,
+          "known_name": null
+        },
+        {
+          "at": 6387173,
+          "target": 7065984,
+          "known_name": null
+        },
+        {
+          "at": 6387216,
+          "target": 7061872,
+          "known_name": null
+        },
+        {
+          "at": 6387235,
+          "target": 4364464,
+          "known_name": null
+        },
+        {
+          "at": 6387276,
+          "target": 7063200,
+          "known_name": null
+        },
+        {
+          "at": 6387301,
+          "target": 7063792,
+          "known_name": null
+        },
+        {
+          "at": 6387714,
+          "target": 5810208,
+          "known_name": null
+        },
+        {
+          "at": 6387765,
+          "target": 7056080,
+          "known_name": null
+        },
+        {
+          "at": 6387869,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6387883,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6387895,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6387903,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6387923,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6387953,
+          "target": 7138292,
+          "known_name": null
+        },
+        {
+          "at": 6388018,
+          "target": 7138218,
+          "known_name": null
+        },
+        {
+          "at": 6388163,
+          "target": 4491648,
+          "known_name": null
+        },
+        {
+          "at": 6388336,
+          "target": 4491648,
+          "known_name": null
+        },
+        {
+          "at": 6388502,
+          "target": 4491648,
+          "known_name": null
+        },
+        {
+          "at": 6388612,
+          "target": 7056080,
+          "known_name": null
+        },
+        {
+          "at": 6388717,
+          "target": 7056080,
+          "known_name": null
+        },
+        {
+          "at": 6388819,
+          "target": 7056080,
+          "known_name": null
+        },
+        {
+          "at": 6388907,
+          "target": 7154063,
+          "known_name": null
+        },
+        {
+          "at": 6388931,
+          "target": 7055376,
+          "known_name": null
+        },
+        {
+          "at": 6388960,
+          "target": 4456416,
+          "known_name": null
+        },
+        {
+          "at": 6388993,
+          "target": 7162748,
+          "known_name": null
+        },
+        {
+          "at": 6389004,
+          "target": 4456416,
+          "known_name": null
+        },
+        {
+          "at": 6389041,
+          "target": 7162748,
+          "known_name": null
+        },
+        {
+          "at": 6389241,
+          "target": 4456416,
+          "known_name": null
+        },
+        {
+          "at": 6389271,
+          "target": 7162748,
+          "known_name": null
+        },
+        {
+          "at": 6389317,
+          "target": 4456416,
+          "known_name": null
+        },
+        {
+          "at": 6389347,
+          "target": 7162748,
+          "known_name": null
+        },
+        {
+          "at": 6389358,
+          "target": 4456416,
+          "known_name": null
+        },
+        {
+          "at": 6389393,
+          "target": 7162748,
+          "known_name": null
+        },
+        {
+          "at": 6389413,
+          "target": 4456416,
+          "known_name": null
+        },
+        {
+          "at": 6389443,
+          "target": 7162748,
+          "known_name": null
+        },
+        {
+          "at": 6389629,
+          "target": 4456416,
+          "known_name": null
+        },
+        {
+          "at": 6389665,
+          "target": 7162748,
+          "known_name": null
+        },
+        {
+          "at": 6389707,
+          "target": 4456416,
+          "known_name": null
+        },
+        {
+          "at": 6389738,
+          "target": 7162748,
+          "known_name": null
+        },
+        {
+          "at": 6389744,
+          "target": 7138534,
+          "known_name": null
+        },
+        {
+          "at": 6389753,
+          "target": 7161446,
+          "known_name": null
+        }
+      ],
+      "ascii_references": {
+        "0x0072CBA0": "no class defined.",
+        "0x00715540": "|[6",
+        "0x00715574": "d\\6",
+        "0x0071CE9C": "C:\\dev\\wiggles\\CodeLib\\StdTools\\KStdLib\\Include\\DSFastArray.h",
+        "0x0072CF7C": "TCL:CTclClassDefMethods::AddCaveSkinClass()",
+        "0x0071C894": "w",
+        "0x0072D168": "C:\\dev\\wiggles\\Wiggles\\Wiggles\\Tcl\\TclGlobalMethods.cpp"
+      }
+    },
+    "dig_mark": {
+      "address": 6653632,
+      "rva": 2459328,
+      "size_to_padding": 1400,
+      "direct_calls": [
+        {
+          "at": 6653719,
+          "target": 4455616,
+          "known_name": null
+        },
+        {
+          "at": 6653749,
+          "target": 7065984,
+          "known_name": null
+        },
+        {
+          "at": 6653792,
+          "target": 7061872,
+          "known_name": null
+        },
+        {
+          "at": 6653811,
+          "target": 4364464,
+          "known_name": null
+        },
+        {
+          "at": 6653830,
+          "target": 7063792,
+          "known_name": null
+        },
+        {
+          "at": 6654481,
+          "target": 7063792,
+          "known_name": null
+        },
+        {
+          "at": 6654499,
+          "target": 4363744,
+          "known_name": null
+        },
+        {
+          "at": 6654717,
+          "target": 5661792,
+          "known_name": "DigMark_singleton"
+        },
+        {
+          "at": 6654733,
+          "target": 5844752,
+          "known_name": null
+        },
+        {
+          "at": 6654769,
+          "target": 5844752,
+          "known_name": null
+        },
+        {
+          "at": 6654783,
+          "target": 5661792,
+          "known_name": "DigMark_singleton"
+        },
+        {
+          "at": 6654790,
+          "target": 5665488,
+          "known_name": "mark_tunnel_cell"
+        },
+        {
+          "at": 6654824,
+          "target": 5661792,
+          "known_name": "DigMark_singleton"
+        },
+        {
+          "at": 6654831,
+          "target": 5665184,
+          "known_name": "mark_cave_cell"
+        },
+        {
+          "at": 6654870,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6654884,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6654896,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6654904,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6654924,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6654954,
+          "target": 7138292,
+          "known_name": null
+        },
+        {
+          "at": 6655019,
+          "target": 7138218,
+          "known_name": null
+        }
+      ],
+      "ascii_references": {
+        "0x00715540": "|[6",
+        "0x00715574": "d\\6",
+        "0x00730C08": "TCL:CTclGlobalMethods::DigMark()"
+      }
+    },
+    "dig_apply": {
+      "address": 6506400,
+      "rva": 2312096,
+      "size_to_padding": 935,
+      "direct_calls": [
+        {
+          "at": 6506487,
+          "target": 4455616,
+          "known_name": null
+        },
+        {
+          "at": 6506517,
+          "target": 7065984,
+          "known_name": null
+        },
+        {
+          "at": 6506560,
+          "target": 7061872,
+          "known_name": null
+        },
+        {
+          "at": 6506579,
+          "target": 4364464,
+          "known_name": null
+        },
+        {
+          "at": 6506598,
+          "target": 7063792,
+          "known_name": null
+        },
+        {
+          "at": 6506612,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6506626,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6506638,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6506646,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6506666,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6506794,
+          "target": 7057376,
+          "known_name": null
+        },
+        {
+          "at": 6506886,
+          "target": 6058432,
+          "known_name": null
+        },
+        {
+          "at": 6506929,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6506949,
+          "target": 6258816,
+          "known_name": null
+        },
+        {
+          "at": 6506956,
+          "target": 6279264,
+          "known_name": null
+        },
+        {
+          "at": 6506961,
+          "target": 5974224,
+          "known_name": null
+        },
+        {
+          "at": 6507004,
+          "target": 5810208,
+          "known_name": null
+        },
+        {
+          "at": 6507011,
+          "target": 5812528,
+          "known_name": null
+        },
+        {
+          "at": 6507027,
+          "target": 5860224,
+          "known_name": null
+        },
+        {
+          "at": 6507034,
+          "target": 5974224,
+          "known_name": null
+        },
+        {
+          "at": 6507077,
+          "target": 5810208,
+          "known_name": null
+        },
+        {
+          "at": 6507084,
+          "target": 5814784,
+          "known_name": null
+        },
+        {
+          "at": 6507173,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6507187,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6507199,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6507207,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6507227,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6507257,
+          "target": 7138292,
+          "known_name": null
+        },
+        {
+          "at": 6507322,
+          "target": 7138218,
+          "known_name": null
+        }
+      ],
+      "ascii_references": {
+        "0x00715540": "|[6",
+        "0x0072F458": "TCL:CTclGlobalMethods::DigApply()"
+      }
+    },
+    "dig_next": {
+      "address": 6507344,
+      "rva": 2313040,
+      "size_to_padding": 869,
+      "direct_calls": [
+        {
+          "at": 6507431,
+          "target": 4455616,
+          "known_name": null
+        },
+        {
+          "at": 6507461,
+          "target": 7065984,
+          "known_name": null
+        },
+        {
+          "at": 6507505,
+          "target": 7061872,
+          "known_name": null
+        },
+        {
+          "at": 6507524,
+          "target": 4364464,
+          "known_name": null
+        },
+        {
+          "at": 6507645,
+          "target": 7057376,
+          "known_name": null
+        },
+        {
+          "at": 6507661,
+          "target": 6058432,
+          "known_name": null
+        },
+        {
+          "at": 6507704,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6507728,
+          "target": 4363744,
+          "known_name": null
+        },
+        {
+          "at": 6507747,
+          "target": 7057120,
+          "known_name": null
+        },
+        {
+          "at": 6507757,
+          "target": 7056736,
+          "known_name": null
+        },
+        {
+          "at": 6507791,
+          "target": 4363744,
+          "known_name": null
+        },
+        {
+          "at": 6507810,
+          "target": 7057168,
+          "known_name": null
+        },
+        {
+          "at": 6507821,
+          "target": 7056736,
+          "known_name": null
+        },
+        {
+          "at": 6507842,
+          "target": 5864224,
+          "known_name": null
+        },
+        {
+          "at": 6507854,
+          "target": 7056832,
+          "known_name": null
+        },
+        {
+          "at": 6507950,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6507964,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6507976,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6507984,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6508004,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6508034,
+          "target": 7063792,
+          "known_name": null
+        },
+        {
+          "at": 6508048,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6508062,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6508074,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6508082,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6508102,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6508135,
+          "target": 7138292,
+          "known_name": null
+        },
+        {
+          "at": 6508200,
+          "target": 7138218,
+          "known_name": null
+        }
+      ],
+      "ascii_references": {
+        "0x00715540": "|[6",
+        "0x0072F47C": "TCL:CTclGlobalMethods::DigNext()"
+      }
+    },
+    "get_digedge": {
+      "address": 6508928,
+      "rva": 2314624,
+      "size_to_padding": 2680,
+      "direct_calls": [
+        {
+          "at": 6509015,
+          "target": 4455616,
+          "known_name": null
+        },
+        {
+          "at": 6509045,
+          "target": 7065984,
+          "known_name": null
+        },
+        {
+          "at": 6509088,
+          "target": 7061872,
+          "known_name": null
+        },
+        {
+          "at": 6509107,
+          "target": 4364464,
+          "known_name": null
+        },
+        {
+          "at": 6509126,
+          "target": 7063792,
+          "known_name": null
+        },
+        {
+          "at": 6509140,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6509154,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6509166,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6509174,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6509194,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6509516,
+          "target": 7057216,
+          "known_name": null
+        },
+        {
+          "at": 6509533,
+          "target": 7057216,
+          "known_name": null
+        },
+        {
+          "at": 6509550,
+          "target": 7057216,
+          "known_name": null
+        },
+        {
+          "at": 6509558,
+          "target": 7056736,
+          "known_name": null
+        },
+        {
+          "at": 6509566,
+          "target": 7056736,
+          "known_name": null
+        },
+        {
+          "at": 6509574,
+          "target": 7056736,
+          "known_name": null
+        },
+        {
+          "at": 6509592,
+          "target": 6058432,
+          "known_name": null
+        },
+        {
+          "at": 6509631,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6509797,
+          "target": 5865936,
+          "known_name": null
+        },
+        {
+          "at": 6509842,
+          "target": 7056832,
+          "known_name": null
+        },
+        {
+          "at": 6509932,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6509946,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6509958,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6509966,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6509986,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6510016,
+          "target": 7138292,
+          "known_name": null
+        },
+        {
+          "at": 6510081,
+          "target": 7138218,
+          "known_name": null
+        },
+        {
+          "at": 6510183,
+          "target": 4455616,
+          "known_name": null
+        },
+        {
+          "at": 6510213,
+          "target": 7065984,
+          "known_name": null
+        },
+        {
+          "at": 6510256,
+          "target": 7061872,
+          "known_name": null
+        },
+        {
+          "at": 6510275,
+          "target": 4364464,
+          "known_name": null
+        },
+        {
+          "at": 6510294,
+          "target": 7063792,
+          "known_name": null
+        },
+        {
+          "at": 6510308,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6510322,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6510334,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6510342,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6510362,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6510488,
+          "target": 7057376,
+          "known_name": null
+        },
+        {
+          "at": 6510508,
+          "target": 7057376,
+          "known_name": null
+        },
+        {
+          "at": 6510599,
+          "target": 7057376,
+          "known_name": null
+        },
+        {
+          "at": 6510619,
+          "target": 7057376,
+          "known_name": null
+        },
+        {
+          "at": 6510636,
+          "target": 5852672,
+          "known_name": null
+        },
+        {
+          "at": 6510677,
+          "target": 7056832,
+          "known_name": null
+        },
+        {
+          "at": 6510750,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6510764,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6510776,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6510784,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6510804,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6510834,
+          "target": 7138292,
+          "known_name": null
+        },
+        {
+          "at": 6510899,
+          "target": 7138218,
+          "known_name": null
+        },
+        {
+          "at": 6510998,
+          "target": 4455616,
+          "known_name": null
+        },
+        {
+          "at": 6511028,
+          "target": 7065984,
+          "known_name": null
+        },
+        {
+          "at": 6511071,
+          "target": 7061872,
+          "known_name": null
+        },
+        {
+          "at": 6511090,
+          "target": 4364464,
+          "known_name": null
+        },
+        {
+          "at": 6511109,
+          "target": 7063792,
+          "known_name": null
+        },
+        {
+          "at": 6511123,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6511137,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6511149,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6511157,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6511177,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6511300,
+          "target": 7057376,
+          "known_name": null
+        },
+        {
+          "at": 6511323,
+          "target": 5855088,
+          "known_name": null
+        },
+        {
+          "at": 6511351,
+          "target": 7056832,
+          "known_name": null
+        },
+        {
+          "at": 6511447,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6511461,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6511473,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6511481,
+          "target": 7061712,
+          "known_name": null
+        },
+        {
+          "at": 6511501,
+          "target": 4455728,
+          "known_name": null
+        },
+        {
+          "at": 6511530,
+          "target": 7138292,
+          "known_name": null
+        },
+        {
+          "at": 6511595,
+          "target": 7138218,
+          "known_name": null
+        }
+      ],
+      "ascii_references": {
+        "0x00715540": "|[6",
+        "0x00715548": "P[6",
+        "0x0072F4E8": "TCL:CTclGlobalMethods::GetDigEdge()",
+        "0x0072F50C": "TCL:CTclGlobalMethods::VectorFixDig()",
+        "0x0072F534": "TCL:CTclGlobalMethods::VectorFix()"
+      }
+    },
+    "cave_skin": {
+      "address": 6728096,
+      "rva": 2533792,
+      "size_to_padding": 1308,
+      "direct_calls": [
+        {
+          "at": 6728141,
+          "target": 7061872,
+          "known_name": null
+        },
+        {
+          "at": 6728163,
+          "target": 4364464,
+          "known_name": null
+        },
+        {
+          "at": 6728182,
+          "target": 7063792,
+          "known_name": null
+        },
+        {
+          "at": 6728321,
+          "target": 7049136,
+          "known_name": null
+        },
+        {
+          "at": 6728444,
+          "target": 7063792,
+          "known_name": null
+        },
+        {
+          "at": 6728464,
+          "target": 4363744,
+          "known_name": null
+        },
+        {
+          "at": 6728535,
+          "target": 4363744,
+          "known_name": null
+        },
+        {
+          "at": 6728661,
+          "target": 4363744,
+          "known_name": null
+        },
+        {
+          "at": 6728787,
+          "target": 4363744,
+          "known_name": null
+        },
+        {
+          "at": 6728913,
+          "target": 4363744,
+          "known_name": null
+        },
+        {
+          "at": 6729034,
+          "target": 5810208,
+          "known_name": null
+        },
+        {
+          "at": 6729047,
+          "target": 5827376,
+          "known_name": null
+        },
+        {
+          "at": 6729057,
+          "target": 5831440,
+          "known_name": null
+        },
+        {
+          "at": 6729164,
+          "target": 7063792,
+          "known_name": null
+        },
+        {
+          "at": 6729184,
+          "target": 4363744,
+          "known_name": null
+        },
+        {
+          "at": 6729203,
+          "target": 7057280,
+          "known_name": null
+        },
+        {
+          "at": 6729235,
+          "target": 7056736,
+          "known_name": null
+        },
+        {
+          "at": 6729245,
+          "target": 4363744,
+          "known_name": null
+        },
+        {
+          "at": 6729264,
+          "target": 7057280,
+          "known_name": null
+        },
+        {
+          "at": 6729294,
+          "target": 7056736,
+          "known_name": null
+        },
+        {
+          "at": 6729303,
+          "target": 5810208,
+          "known_name": null
+        },
+        {
+          "at": 6729310,
+          "target": 5827584,
+          "known_name": null
+        },
+        {
+          "at": 6729332,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6729346,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6729360,
+          "target": 4364208,
+          "known_name": null
+        },
+        {
+          "at": 6729372,
+          "target": 7055680,
+          "known_name": null
+        },
+        {
+          "at": 6729380,
+          "target": 7061712,
+          "known_name": null
+        }
+      ],
+      "ascii_references": {
+        "0x00715544": "d[6",
+        "0x00715540": "|[6",
+        "0x00722ABC": "add",
+        "0x00715574": "d\\6",
+        "0x00731690": "rem"
+      }
+    }
+  },
+  "digmark_core": {
+    "DigMark_constructor": {
+      "address": 5661120,
+      "rva": 1466816,
+      "size_to_padding": 579,
+      "direct_calls": [
+        {
+          "at": 5661180,
+          "target": 7137592,
+          "known_name": null
+        },
+        {
+          "at": 5661398,
+          "target": 7055376,
+          "known_name": null
+        },
+        {
+          "at": 5661444,
+          "target": 7055376,
+          "known_name": null
+        },
+        {
+          "at": 5661534,
+          "target": 7078768,
+          "known_name": null
+        },
+        {
+          "at": 5661547,
+          "target": 7078768,
+          "known_name": null
+        },
+        {
+          "at": 5661560,
+          "target": 7078768,
+          "known_name": null
+        },
+        {
+          "at": 5661573,
+          "target": 7078768,
+          "known_name": null
+        }
+      ],
+      "ascii_references": {
+        "0x0072A3C0": "C:\\dev\\wiggles\\Wiggles\\Wiggles\\Map\\DigMark.cpp",
+        "0x0072A3F0": "data/templates/cave0.tga",
+        "0x0072A40C": "data/templates/cave1.tga",
+        "0x0072A428": "data/templates/cave2.tga",
+        "0x0072A444": "data/templates/cave3.tga"
+      }
+    },
+    "mark_cave_cell": {
+      "address": 5665184,
+      "rva": 1470880,
+      "size_to_padding": 618,
+      "direct_calls": [
+        {
+          "at": 5665270,
+          "target": 5844752,
+          "known_name": null
+        },
+        {
+          "at": 5665358,
+          "target": 5859504,
+          "known_name": null
+        },
+        {
+          "at": 5665367,
+          "target": 5862448,
+          "known_name": null
+        },
+        {
+          "at": 5665574,
+          "target": 5844752,
+          "known_name": null
+        },
+        {
+          "at": 5665663,
+          "target": 5859504,
+          "known_name": null
+        },
+        {
+          "at": 5665673,
+          "target": 5862448,
+          "known_name": null
+        },
+        {
+          "at": 5665700,
+          "target": 5662832,
+          "known_name": null
+        }
+      ],
+      "ascii_references": {}
+    },
+    "mark_tunnel_cell": {
+      "address": 5665488,
+      "rva": 1471184,
+      "size_to_padding": 314,
+      "direct_calls": [
+        {
+          "at": 5665574,
+          "target": 5844752,
+          "known_name": null
+        },
+        {
+          "at": 5665663,
+          "target": 5859504,
+          "known_name": null
+        },
+        {
+          "at": 5665673,
+          "target": 5862448,
+          "known_name": null
+        },
+        {
+          "at": 5665700,
+          "target": 5662832,
+          "known_name": null
+        }
+      ],
+      "ascii_references": {}
+    },
+    "apply_player_cave_brush": {
+      "address": 5668016,
+      "rva": 1473712,
+      "size_to_padding": 1010,
+      "direct_calls": [
+        {
+          "at": 5668103,
+          "target": 5665808,
+          "known_name": null
+        },
+        {
+          "at": 5668225,
+          "target": 5663328,
+          "known_name": null
+        },
+        {
+          "at": 5668236,
+          "target": 7138534,
+          "known_name": null
+        },
+        {
+          "at": 5668249,
+          "target": 6258816,
+          "known_name": null
+        },
+        {
+          "at": 5668274,
+          "target": 6268176,
+          "known_name": null
+        },
+        {
+          "at": 5668527,
+          "target": 5692944,
+          "known_name": null
+        },
+        {
+          "at": 5668537,
+          "target": 5692944,
+          "known_name": null
+        },
+        {
+          "at": 5668688,
+          "target": 5665184,
+          "known_name": "mark_cave_cell"
+        },
+        {
+          "at": 5668801,
+          "target": 5810208,
+          "known_name": null
+        },
+        {
+          "at": 5668814,
+          "target": 5827376,
+          "known_name": null
+        },
+        {
+          "at": 5668824,
+          "target": 5831440,
+          "known_name": null
+        },
+        {
+          "at": 5668929,
+          "target": 5914064,
+          "known_name": null
+        },
+        {
+          "at": 5668939,
+          "target": 5914576,
+          "known_name": null
+        },
+        {
+          "at": 5668946,
+          "target": 7138534,
+          "known_name": null
+        }
+      ],
+      "ascii_references": {}
+    }
+  }
+}

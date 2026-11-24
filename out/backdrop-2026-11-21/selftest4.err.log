@@ -1,0 +1,4 @@
+SCRIPT ERROR: Trying to assign value of type 'Nil' to a variable of type 'Array'.
+   at: _run (res://tools/native_campaign_backdrop_self_test.gd:120)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tools/native_campaign_backdrop_self_test.gd:120)
