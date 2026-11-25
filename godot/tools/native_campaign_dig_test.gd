@@ -74,6 +74,7 @@ func _run() -> void:
 	_check_cave_skin_size_matches_brush(dig)
 	_check_cave_frame_appears_after_completion(dig)
 	_check_cave_uses_separate_skin(dig)
+	_check_cave_frame_stands_on_the_dug_floor(dig)
 	_check_falling_object_reaches_solid_floor(dig)
 	_check_object_without_ground_is_hidden(dig)
 	_check_attachment_is_removed(dig)
@@ -84,7 +85,7 @@ func _run() -> void:
 		+ "cave_requires_connection=1 cave_skin_size_matches_brush=1 cave_frame_appears_after_completion=1 " \
 		+ "cave_uses_separate_skin=1 falling_object_reaches_solid_floor=1 object_without_ground_is_hidden=1 " \
 		+ "moss_removed=1 source_support_survives_tunnel=1 source_support_removed_by_cave=1 " \
-		+ "support_below_shaft_removed=1 cave_touches_tunnel=1 " \
+		+ "support_below_shaft_removed=1 cave_touches_tunnel=1 cave_frame_on_dug_floor=1 " \
 		+ "right_click_clears_tool=1 hover_tracks_mouse=1")
 	quit(0)
 
@@ -316,6 +317,29 @@ func _check_cave_uses_separate_skin(dig: RefCounted) -> void:
 	for cell: Vector2i in dig.decorated:
 		assert(not dig.excavated_cave_cells.has(cell))
 	assert(dig.cave_frames.size() == 1)
+
+
+## The frame of the cave stands on the floor that was really dug, not on the
+## depth that the brush asked for.
+func _check_cave_frame_stands_on_the_dug_floor(dig: RefCounted) -> void:
+	var record: Dictionary = dig.finished_caves[0]
+	var cells: Array = record["cells"]
+	var frame: Node3D = dig.cave_frames[0]
+	# The cave was finished without a dig: the depth of the brush decides.
+	assert(is_equal_approx(frame.position.z, float(record["chamber_level"])))
+	# After the dig the frame follows the floor that the transition left.
+	dig.excavated_cells.clear()
+	for cell: Vector2i in cells:
+		dig.excavated_cells[cell] = true
+	dig.block_overrides[cells[0]] = 80
+	var floor_level: float = dig._cave_floor_level(cells)
+	assert(floor_level > 0.0)
+	dig._spawn_cave_frame(record)
+	var frames: Array = dig.cave_frames
+	var dug_frame: Node3D = frames[frames.size() - 1]
+	assert(is_equal_approx(dug_frame.position.z, floor_level))
+	dig.cave_frames.remove_at(dig.cave_frames.size() - 1)
+	dug_frame.queue_free()
 
 
 ## A free object falls to the ground of its cell and stays there.

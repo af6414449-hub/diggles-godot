@@ -877,6 +877,26 @@ func _cave_center(cells: Array) -> Vector2:
 	return Vector2((minimum.x + maximum.x + 1.0) * 0.5, (minimum.y + maximum.y + 1.0) * 0.5)
 
 
+## The level of the floor that was really dug under the cave.
+##
+## Only the cells that the transition of the blocks opened carry a floor; the
+## cells of the brush that stayed in the rock are not a floor of the chamber.
+func _cave_floor_level(cells: Array) -> float:
+	var total: float = 0.0
+	var count: int = 0
+	for cell: Vector2i in cells:
+		if not excavated_cells.has(cell):
+			continue
+		var level: float = _cell_surface_level(cell)
+		if level < 0.0:
+			continue
+		total += level
+		count += 1
+	if count == 0:
+		return -1.0
+	return total / float(count)
+
+
 ## The frame of a cave: the original skin of the size of the brush, on the
 ## floor of the chamber of the cave.
 func _spawn_cave_frame(record: Dictionary) -> void:
@@ -888,7 +908,13 @@ func _spawn_cave_frame(record: Dictionary) -> void:
 	if frame.get_child_count() == 0:
 		return
 	var center: Vector2 = record["center"]
-	frame.position = Vector3(center.x, -center.y, float(record["chamber_level"]))
+	# The frame stands on the floor that was really dug under the cave: the
+	# depth of the brush is the wish of the mark, the transition of the blocks
+	# of the map can stop earlier. Without a dig the brush decides.
+	var level: float = _cave_floor_level(record["cells"])
+	if level < 0.0:
+		level = float(record["chamber_level"])
+	frame.position = Vector3(center.x, -center.y, level)
 	frame.set_meta("generated_decor", true)
 	root.add_child(frame)
 	cave_frames.append(frame)
