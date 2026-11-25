@@ -445,6 +445,11 @@ func _mark_cave(number: int, cursor: Vector2i) -> void:
 	if not _has_valid_cave_base(samples):
 		status.text = "Основание пещеры должно полностью лежать на линии туннеля"
 		return
+	# SOURCE: the cave of the original is cut from a passage: its outline has
+	# to touch an open cell or a marked tunnel (the rule of _touches_tunnel).
+	if not _touches_tunnel(samples):
+		status.text = "Пещера должна касаться туннеля"
+		return
 	var group: int = next_group
 	next_group += 1
 	var cells: Array[Vector2i] = []
@@ -644,6 +649,14 @@ func _settle_objects() -> void:
 		# the live trace sees them rise into a dug tunnel. Opening that tunnel
 		# therefore must not hide the source placement.
 		if str(object.get_meta("native_class")).begins_with("Dummy_Multi_Holzstuetze_"):
+			# ADAPTER: a support under a shaft that has just been opened cannot
+			# stand there any more: the crossing of a horizontal and a vertical
+			# tunnel takes it away. The trace of the original covers a support
+			# inside a dug tunnel (it rises and stays) and a support inside the
+			# area of a cave (it disappears), but not the crossing itself.
+			if newly_open.has(cell + Vector2i.UP) or newly_open.has(cell + Vector2i.UP + Vector2i.LEFT) \
+					or newly_open.has(cell + Vector2i.UP + Vector2i.RIGHT):
+				object.visible = false
 			continue
 		if _is_attachment(str(object.get_meta("native_class"))):
 			object.visible = false

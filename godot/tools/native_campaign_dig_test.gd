@@ -63,6 +63,7 @@ func _run() -> void:
 	_check_erase_corridor(dig)
 	_check_dig_flow(dig)
 	_check_template_support_survives_tunnel(dig)
+	_check_support_below_open_shaft_disappears(dig)
 	_check_open_cell_not_marked_again(dig)
 	_check_hover(dig)
 	_check_right_click_clears_tool(dig)
@@ -83,6 +84,7 @@ func _run() -> void:
 		+ "cave_requires_connection=1 cave_skin_size_matches_brush=1 cave_frame_appears_after_completion=1 " \
 		+ "cave_uses_separate_skin=1 falling_object_reaches_solid_floor=1 object_without_ground_is_hidden=1 " \
 		+ "moss_removed=1 source_support_survives_tunnel=1 source_support_removed_by_cave=1 " \
+		+ "support_below_shaft_removed=1 cave_touches_tunnel=1 " \
 		+ "right_click_clears_tool=1 hover_tracks_mouse=1")
 	quit(0)
 
@@ -135,6 +137,21 @@ func _check_template_support_survives_tunnel(dig: RefCounted) -> void:
 	dig.newly_open[Vector2i(10, 10)] = true
 	dig._settle_objects()
 	assert(support.visible)
+	support.queue_free()
+
+
+## The crossing of a horizontal and a vertical tunnel takes the support of the
+## horizontal tunnel away: the shaft opens the space above it.
+func _check_support_below_open_shaft_disappears(dig: RefCounted) -> void:
+	var support := Node3D.new()
+	support.name = "TemplateSupportShaftTest"
+	support.position = Vector3(24.5, -24.5, 15.04)
+	support.set_meta("native_class", "Dummy_Multi_Holzstuetze_a")
+	dig.root.add_child(support)
+	dig.newly_open.clear()
+	dig.newly_open[Vector2i(24, 23)] = true
+	dig._settle_objects()
+	assert(not support.visible)
 	support.queue_free()
 
 
@@ -249,6 +266,8 @@ func _check_cave_requires_tunnel(dig: RefCounted) -> void:
 	dig._mark_cave(3, Vector2i(100, 100))
 	assert(dig.marked_cave_cells.size() > 0)
 	assert(dig.cave_groups.size() == 1)
+	# The accepted cave touches the tunnel it is cut from.
+	assert(dig._touches_tunnel(cave_cells))
 
 
 ## The size of the brush chooses the size of the frame of the cave.
