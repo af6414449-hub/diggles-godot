@@ -86,6 +86,7 @@ func _run() -> void:
 		+ "cave_uses_separate_skin=1 falling_object_reaches_solid_floor=1 object_without_ground_is_hidden=1 " \
 		+ "moss_removed=1 source_support_survives_tunnel=1 source_support_removed_by_cave=1 " \
 		+ "support_below_shaft_removed=1 cave_touches_tunnel=1 cave_frame_on_dug_floor=1 " \
+		+ "cave_base_on_the_tunnel_row=1 " \
 		+ "right_click_clears_tool=1 hover_tracks_mouse=1")
 	quit(0)
 
@@ -257,13 +258,14 @@ func _check_cave_requires_tunnel(dig: RefCounted) -> void:
 			min_x = mini(min_x, sample.x)
 			max_x = maxi(max_x, sample.x)
 	# A partial support row must still be refused.
-	dig.marked_corridor_cells[Vector2i(min_x, bottom + 1)] = true
+	dig.block_overrides[Vector2i(min_x, bottom)] = 80
 	dig._mark_cave(3, Vector2i(100, 100))
 	assert(dig.marked_cave_cells.is_empty())
-	dig.marked_corridor_cells.clear()
-	# The complete legal horizontal base is accepted.
+	# The complete legal horizontal base is accepted: the base of the cave is
+	# the row of its own lowest cells, the row of the tunnel.
+	assert(dig._cave_base_row(cave_cells) == bottom)
 	for x: int in range(min_x, max_x + 1):
-		dig.marked_corridor_cells[Vector2i(x, bottom + 1)] = true
+		dig.block_overrides[Vector2i(x, bottom)] = 80
 	dig._mark_cave(3, Vector2i(100, 100))
 	assert(dig.marked_cave_cells.size() > 0)
 	assert(dig.cave_groups.size() == 1)

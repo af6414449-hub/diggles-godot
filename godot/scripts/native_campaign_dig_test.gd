@@ -494,10 +494,24 @@ func _touches_tunnel(samples: Array[Vector3i]) -> bool:
 	return false
 
 
-## A cave is supported by the complete horizontal tunnel row immediately below
-## its lowest cells. A single touching mark is not enough: that produced the
-## old floating/half-supported cave preview. The same parity gate as the
-## native corridor rasterizer keeps the base on a legal tunnel line.
+## The lowest row of the cave: the row that lies on the line of the tunnel.
+##
+## The base of the cave is this row itself: the marking of the cave reaches
+## one cell lower, into the row of the tunnel, where the ramp of the brush
+## meets the passage.
+func _cave_base_row(samples: Array[Vector3i]) -> int:
+	var lowest: int = -1
+	for sample: Vector3i in samples:
+		lowest = maxi(lowest, sample.z)
+	return lowest
+
+
+## A cave is supported by the complete horizontal tunnel row of its own lowest
+## cells: the marking of the cave reaches one cell lower, into the row of the
+## tunnel, where the ramp of the brush meets the passage. A single touching
+## mark is not enough: that produced the old floating/half-supported cave
+## preview. The same parity gate as the native corridor rasterizer keeps the
+## base on a legal tunnel line.
 func _has_valid_cave_base(samples: Array[Vector3i]) -> bool:
 	if samples.is_empty():
 		return false
@@ -506,7 +520,12 @@ func _has_valid_cave_base(samples: Array[Vector3i]) -> bool:
 	for sample: Vector3i in samples:
 		lowest = maxi(lowest, sample.z)
 		columns[sample.x] = true
-	var base_row: int = lowest + 1
+	# The base of the cave is the row of its own lowest cells: the marking
+	# reaches one cell lower, into the row of the tunnel, where the ramp of
+	# the brush meets the passage. The trace of the original shows the bottom
+	# rows of the cave on the row of the tunnel: the cells of the code 3 keep
+	# the level of the tunnel and the rest of the row is dug deeper.
+	var base_row: int = _cave_base_row(samples)
 	if columns.is_empty():
 		return false
 	var min_x: int = int(columns.keys()[0])
@@ -881,8 +900,12 @@ func _cave_center(cells: Array) -> Vector2:
 ##
 ## Only the cells that the transition of the blocks opened carry a floor; the
 ## cells of the brush that stayed in the rock are not a floor of the chamber.
+## The floor is the level that most of the cells of the chamber have: the ramp
+## of the brush keeps the level of the tunnel and is not the floor of the
+## chamber. ADAPTER: the trace of the original does not show the position of
+## the frame along Z.
 func _cave_floor_level(cells: Array) -> float:
-	var total: float = 0.0
+	var levels: Dictionary = {}
 	var count: int = 0
 	for cell: Vector2i in cells:
 		if not excavated_cells.has(cell):
@@ -890,11 +913,17 @@ func _cave_floor_level(cells: Array) -> float:
 		var level: float = _cell_surface_level(cell)
 		if level < 0.0:
 			continue
-		total += level
+		levels[level] = int(levels.get(level, 0)) + 1
 		count += 1
 	if count == 0:
 		return -1.0
-	return total / float(count)
+	var floor_level: float = -1.0
+	var best: int = 0
+	for level: Variant in levels:
+		if int(levels[level]) > best:
+			best = int(levels[level])
+			floor_level = float(level)
+	return floor_level
 
 
 ## The frame of a cave: the original skin of the size of the brush, on the

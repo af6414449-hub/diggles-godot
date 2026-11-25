@@ -288,11 +288,19 @@ func _ready() -> void:
 	dig_test.setup(scene_root, camera, profile, start_cells, cave_padding,
 		get_node("HUDLayer"), dig_caption)
 	if args.has("--demo-dig") or args.has("--demo-mark") or args.has("--demo-join") \
-			or args.has("--demo-cave-below") or args.has("--demo-upper"):
+			or args.has("--demo-cave-below") or args.has("--demo-cave-above") \
+			or args.has("--demo-upper"):
 		var demo_stroke: RefCounted = preload("res://scripts/native_corridor_stroke.gd").new()
 		if args.has("--demo-cave-below"):
-			demo_stroke.begin(Vector2(253, 49), Rect2i(0, 0, 511, 639))
-			demo_stroke.update(Vector2(274, 49))
+			# The base of a cave is the row of its own lowest cells: the tunnel
+			# of the demonstration lies on that row, the cave reaches into it.
+			demo_stroke.begin(Vector2(260, 54), Rect2i(0, 0, 511, 639))
+			demo_stroke.update(Vector2(275, 54))
+		elif args.has("--demo-cave-above"):
+			# The row 50 is a continuous run of the rasterizer of the original,
+			# the row 48 is not: the base of a cave must be a whole tunnel.
+			demo_stroke.begin(Vector2(268, 50), Rect2i(0, 0, 511, 639))
+			demo_stroke.update(Vector2(281, 50))
 		elif args.has("--demo-join"):
 			# A new tunnel that starts inside the open shaft of the original
 			# chapter: the cells x=245 and x=246 are open on the rows 45 and 46,
@@ -304,7 +312,7 @@ func _ready() -> void:
 			demo_stroke.update(Vector2(282, 50))
 		dig_test._mark_corridor(demo_stroke.finish())
 		if args.has("--demo-dig") or args.has("--demo-join") or args.has("--demo-cave-below") \
-				or args.has("--demo-upper"):
+				or args.has("--demo-cave-above") or args.has("--demo-upper"):
 			dig_test.start_digging()
 			for demo_step: int in range(240):
 				if dig_test.queue.is_empty():
@@ -339,7 +347,9 @@ func _ready() -> void:
 	if args.has("--demo-cave-above"):
 		# A cave above the tunnel of the demo. The frame of wood of the tunnel
 		# stands under an open space after that, so it must be taken away.
-		dig_test._mark_cave(1, Vector2i(275, 49))
+		# The base of the cave is the row of the tunnel: the cursor of the
+		# brush is one row above it.
+		dig_test._mark_cave(1, Vector2i(275, 51))
 		print("CAMPAIGN_CAVE_ABOVE_MARKS count=%d reason=%s" % [dig_test.marked_count(), dig_caption.text])
 		if dig_test.marked_count() > 0:
 			dig_test.start_digging()
