@@ -38,6 +38,15 @@ const TOP: float = 15.0
 const SUPPORT_MIN_RUN: int = 7
 ## The distance to an original or to a generated frame of wood.
 const SUPPORT_MIN_DISTANCE: float = 3.0
+## ADAPTER: the marking of a tunnel stops at the rock. The owner wants the
+## tunnel to end where the granite begins, and the red band of the selection
+## shows the rock while the button of the mouse is held.
+## SOURCE: the original commits every cell of the selection on its own
+## (FUN_00566550 calls FUN_005672d0 for every cell of the rectangle and never
+## leaves the loop), so the native marking continues behind the granite: the
+## cells of the rock simply carry no mark. This constant switches between
+## the rule of the port and the rule of the original.
+const STOP_AT_GRANITE: bool = true
 ## SOURCE: the live trace sees supports, moss and roots rise along Z during
 ## digging, and supports leave obj_query while a cave is excavated. The trace
 ## does not establish when those objects were created. Immediate dig_apply
@@ -83,6 +92,9 @@ var cave_group_cells: Dictionary = {}
 var excavated_cells: Dictionary = {}
 ## The open cells of a finished cave: Vector2i -> {"group": int, "brush": int}.
 var excavated_cave_cells: Dictionary = {}
+## The cells that a dwarf of the chapter digs with his own clock: the
+## automatic excavation leaves them alone.
+var dwarf_cells: Dictionary = {}
 ## The caves that are finished: {"group", "brush", "skin_key", "center", "chamber_level"}.
 var finished_caves: Array[Dictionary] = []
 
@@ -100,6 +112,10 @@ var cut_mesh: MeshInstance3D
 var mark_mesh: MeshInstance3D
 var cave_mesh: MeshInstance3D
 var hover_mesh: MeshInstance3D
+## The rock of the selection: the cells that the original draws in red while
+## the button of the mouse is held.
+var blocked_mesh: MeshInstance3D
+var hover_blocked_mesh: MeshInstance3D
 var _choosing: bool = false
 
 
@@ -167,6 +183,26 @@ func setup(render_root: Node3D, view: Camera3D, source_profile: RefCounted,
 	hover_material.cull_mode = BaseMaterial3D.CULL_DISABLED
 	hover_mesh.material_override = hover_material
 	root.add_child(hover_mesh)
+	# SOURCE: the original paints the cells of the selection that the check of
+	# the tunnel rejects with the red of the marker: the drawing of the
+	# selection (FUN_0056d0b0) asks FUN_00566870 for every corner of every
+	# cell and sets the invalid flag of the corners that fail, and the guides
+	# of the original show the red band over the rock (the screenshot H04 of
+	# the visual spec, the rule 23 of the control research).
+	# ADAPTER: the exact tone of the original is not measured; the red of the
+	# battle scene is the same tone.
+	blocked_mesh = MeshInstance3D.new()
+	blocked_mesh.name = "CampaignDigBlocked"
+	var blocked_material := preview.duplicate() as StandardMaterial3D
+	blocked_material.albedo_color = Color(0.85, 0.12, 0.10, 0.42)
+	blocked_mesh.material_override = blocked_material
+	root.add_child(blocked_mesh)
+	hover_blocked_mesh = MeshInstance3D.new()
+	hover_blocked_mesh.name = "CampaignDigHoverBlocked"
+	var hover_blocked_material := hover_material.duplicate() as StandardMaterial3D
+	hover_blocked_material.albedo_color = Color(0.85, 0.12, 0.10, 0.42)
+	hover_blocked_mesh.material_override = hover_blocked_material
+	root.add_child(hover_blocked_mesh)
 	toolbar = HBoxContainer.new()
 	toolbar.name = "CampaignDigToolbar"
 	hud.add_child(toolbar)
@@ -239,8 +275,7 @@ func marked_count() -> int:
 func can_dig(cell: Vector2i, target: int = 11) -> bool:
 	if cell.x <= 1 or cell.y <= 1 or cell.x >= 510 or cell.y >= 638:
 		return false
-	var material: int = int(profile.call("cell_material", cell))
-	if material != 1 and material != 2:
+	if _is_rock(cell):
 		return false
 	var current: int = _block_ref(cell)
 	if native_blocks.has(str(current)):
@@ -253,6 +288,64 @@ func can_dig(cell: Vector2i, target: int = 11) -> bool:
 		if not native_blocks.has(str(_block_ref(cell + corner))):
 			return false
 	return true
+
+
+## The public face of the excavation for the dwarves of the chapter.
+##
+## A dwarf digs the marked cells of the board, one strike per clip of the
+## digging, so the module of the dwarves (native_campaign_dwarf.gd) needs the
+## mark of a cell, the level that the mark asks for and the step of the
+## excavation that opens the cell.
+
+## Whether a cell of the board carries a mark.
+func is_marked(cell: Vector2i) -> bool:
+	return _is_marked(cell)
+
+
+## The level that the mark of a cell asks for: the floor of the cell when the
+## excavation of the mark is done.
+func mark_target_level(cell: Vector2i) -> int:
+	return RULES.target_height(_mark_nibble(cell))
+
+
+## The level of the ground of a cell of the board.
+func cell_level(cell: Vector2i) -> float:
+	return _cell_level(cell)
+
+
+## The strike of a dwarf on a marked cell: one step of the excavation of the
+## cell, and the mark goes away when the cell reached its target depth.
+##
+## The cell leaves the queue of the automatic excavation: the dwarf digs it
+## with his own clock, so the two clocks must not strike the same cell.
+func apply_dwarf_strike(cell: Vector2i) -> bool:
+	if not _is_marked(cell):
+		return false
+	var nibble: int = _mark_nibble(cell)
+	queue.erase(cell)
+	dwarf_cells[cell] = true
+	var applied: bool = _native_strike(cell, nibble)
+	if _next_height(cell) >= 0 and RULES.target_height(nibble) <= _next_height(cell):
+		pass
+	else:
+		_clear_mark(cell)
+		dwarf_cells.erase(cell)
+	if applied:
+		texture.update(image)
+		_draw_cut()
+		_settle_objects()
+		_revalidate_supports()
+		_draw_marks()
+	return applied
+
+
+## The rock of the map: the cell that cannot be tunnelled through.
+## SOURCE: the native gate of the tunnel (FUN_00566870, 0x566913..0x566930)
+## rejects the material codes 0 and 3, the codes 1 and 2 are the two diggable
+## kinds of sand and earth. The port uses the same codes.
+func _is_rock(cell: Vector2i) -> bool:
+	var material: int = int(profile.call("cell_material", cell))
+	return material != 1 and material != 2
 
 
 func _block_ref(cell: Vector2i) -> int:
@@ -368,7 +461,8 @@ func handle_input(event: InputEvent) -> bool:
 			if dragging and point is Vector2:
 				if tool.contains("Туннель"):
 					stroke.update(point)
-					_mark_corridor(stroke.finish())
+					var direction: Vector2 = stroke.endpoint - stroke.anchor
+					_mark_corridor(stroke.finish(), direction)
 				elif tool.contains("Пещера"):
 					_mark_cave(int(tool.right(1)), Vector2i(point.floor()))
 				elif tool.contains("Стёрка"):
@@ -394,18 +488,102 @@ func handle_input(event: InputEvent) -> bool:
 	return false
 
 
-func _mark_corridor(samples: Array[Vector2i]) -> void:
+## The marking of a tunnel.
+##
+## ADAPTER: the marking stops at the rock (the constant STOP_AT_GRANITE), so
+## the tunnel ends where the granite begins. The red band of the selection
+## shows the rock while the button of the mouse is held.
+## SOURCE: the original commits every cell of the selection on its own
+## (FUN_00566550 calls FUN_005672d0 for every cell of the rectangle and never
+## leaves the loop), so the native marking continues behind the granite: the
+## cells of the rock simply carry no mark.
+##
+## The direction is the line of the stroke: the cells are walked in the order
+## in which the player dragged them, so the rock is met in the order of the
+## drag and not in the row order of the raster.
+func _mark_corridor(samples: Array[Vector2i], direction: Vector2 = Vector2.ZERO) -> void:
+	var result: Dictionary = _selection_result(samples, direction)
 	var accepted: int = 0
-	for cell: Vector2i in samples:
-		if not RULES.corridor_indices_allowed(cell) or not can_dig(cell) \
-				or marked_corridor_cells.has(cell) or marked_cave_cells.has(cell):
+	for cell: Vector2i in result["marked"]:
+		if not RULES.corridor_indices_allowed(cell) or marked_corridor_cells.has(cell) \
+				or marked_cave_cells.has(cell):
 			continue
 		marked_corridor_cells[cell] = true
 		queue.append(cell)
 		accepted += 1
-	if accepted > 0:
+	if STOP_AT_GRANITE and not result["blocked"].is_empty():
+		if accepted > 0:
+			status.text = "Туннель: %d клеток размечено, дальше гранит" % accepted
+		else:
+			status.text = "Туннель: гранит, разметки нет"
+	elif accepted > 0:
 		status.text = "Туннель: %d клеток размечено; нажмите «Вскопка»" % accepted
 	_draw_marks()
+
+
+## The result of a selection: the cells that the marking takes and the cells
+## that the original draws in red while the button of the mouse is held.
+## The preview of the selection and the marking of the tunnel are built from
+## the same rule, so the green band of the preview is exactly the band that
+## the release marks.
+func _selection_result(samples: Array[Vector2i], direction: Vector2 = Vector2.ZERO) -> Dictionary:
+	var marked: Dictionary = {}
+	var blocked: Dictionary = {}
+	var stopped: bool = false
+	for cell: Vector2i in _stroke_order(samples, direction):
+		if not can_dig(cell):
+			# The rock and the cells that are already open are red.
+			blocked[cell] = true
+			if STOP_AT_GRANITE and _is_rock(cell):
+				# The rock stops the marking: the cells behind it stay empty.
+				stopped = true
+			continue
+		if stopped:
+			continue
+		marked[cell] = true
+	return {"marked": marked, "blocked": blocked}
+
+
+## The cells of a selection that cannot be dug: the rock and the cells that
+## are already open. The original draws them in red while the button of the
+## mouse is held.
+func blocked_cells(samples: Array[Vector2i]) -> Dictionary:
+	var blocked: Dictionary = {}
+	for cell: Vector2i in samples:
+		if not can_dig(cell):
+			blocked[cell] = true
+	return blocked
+
+
+## The order of the cells of a selection along the stroke: the projection of
+## the cell on the line of the stroke, from its start to its end. The raster
+## of the original walks the selection row by row (FUN_00566550), the order of
+## the port follows the line of the stroke, so that the rock is met in the
+## order in which the player dragged it.
+func _stroke_order(samples: Array[Vector2i], direction: Vector2 = Vector2.ZERO) -> Array[Vector2i]:
+	var ordered: Array[Vector2i] = []
+	for cell: Vector2i in samples:
+		ordered.append(cell)
+	if ordered.is_empty():
+		return ordered
+	var axis: Vector2 = direction
+	if axis.length_squared() <= 0.0 and ordered.size() >= 2:
+		var first: Vector2i = ordered[0]
+		var last: Vector2i = ordered[ordered.size() - 1]
+		axis = Vector2(float(last.x - first.x), float(last.y - first.y))
+	if axis.length_squared() <= 0.0:
+		axis = Vector2.RIGHT
+	axis = axis.normalized()
+	var start: Vector2 = Vector2(float(ordered[0].x) + 0.5, float(ordered[0].y) + 0.5)
+	ordered.sort_custom(func(a: Vector2i, b: Vector2i) -> bool:
+		var centre_a: Vector2 = Vector2(float(a.x) + 0.5, float(a.y) + 0.5)
+		var centre_b: Vector2 = Vector2(float(b.x) + 0.5, float(b.y) + 0.5)
+		var along_a: float = (centre_a - start).dot(axis)
+		var along_b: float = (centre_b - start).dot(axis)
+		if is_equal_approx(along_a, along_b):
+			return (centre_a - start).length_squared() < (centre_b - start).length_squared()
+		return along_a < along_b)
+	return ordered
 
 
 func _cave_cells(number: int, cursor: Vector2i) -> Array[Vector3i]:
@@ -625,6 +803,9 @@ func advance(delta: float) -> void:
 			break
 		var cell: Vector2i = queue.pop_front()
 		if not _is_marked(cell):
+			continue
+		if dwarf_cells.has(cell):
+			# A dwarf of the chapter digs this cell with his own clock.
 			continue
 		var nibble: int = _mark_nibble(cell)
 		if _native_strike(cell, nibble):
@@ -952,15 +1133,19 @@ func _spawn_cave_frame(record: Dictionary) -> void:
 func _draw_marks() -> void:
 	var corridor: Dictionary = {}
 	var cave: Dictionary = {}
+	var blocked: Dictionary = {}
 	for cell: Vector2i in marked_corridor_cells:
 		corridor[cell] = true
 	for cell: Vector2i in marked_cave_cells:
 		cave[cell] = true
 	if stroke.active:
-		for cell: Vector2i in stroke.samples():
-			if can_dig(cell):
-				corridor[cell] = true
+		var result: Dictionary = _selection_result(stroke.samples(), stroke.endpoint - stroke.anchor)
+		for cell: Vector2i in result["marked"]:
+			corridor[cell] = true
+		for cell: Vector2i in result["blocked"]:
+			blocked[cell] = true
 	_draw_contour(corridor, mark_mesh, false)
+	_draw_contour(blocked, blocked_mesh, false)
 	_draw_contour(cave, cave_mesh, false)
 
 func _draw_contour(samples: Dictionary, visual: MeshInstance3D, outline: bool) -> void:
@@ -990,13 +1175,18 @@ func _update_hover(screen: Vector2) -> void:
 
 func _update_hover_at(raw: Vector2) -> void:
 	hover_mesh.mesh = null
+	hover_blocked_mesh.mesh = null
 	var samples: Dictionary = {}
+	var blocked: Dictionary = {}
 	var tint := Color(0.42, 0.56, 0.32)
 	if tool.contains("Туннель"):
 		var preview_stroke: RefCounted = STROKE.new()
 		preview_stroke.begin(raw, Rect2i(0, 0, 511, 639))
 		for cell: Vector2i in preview_stroke.samples():
-			samples[cell] = true
+			if can_dig(cell):
+				samples[cell] = true
+			else:
+				blocked[cell] = true
 	elif tool.contains("Пещера"):
 		tint = Color(0.30, 0.32, 0.56)
 		for sample: Vector3i in _cave_cells(int(tool.right(1)), Vector2i(int(raw.x), int(raw.y))):
@@ -1008,6 +1198,7 @@ func _update_hover_at(raw: Vector2) -> void:
 			samples[cell] = true
 	(hover_mesh.material_override as StandardMaterial3D).albedo_color = tint
 	_draw_contour(samples, hover_mesh, true)
+	_draw_contour(blocked, hover_blocked_mesh, true)
 
 func _draw_cut() -> void:
 	var tools: Dictionary = {}

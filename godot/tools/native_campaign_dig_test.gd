@@ -6,17 +6,20 @@ extends SceneTree
 const DIG = preload("res://scripts/native_campaign_dig_test.gd")
 const CAVE_SKIN = preload("res://scripts/native_cave_skin.gd")
 const RULES = preload("res://scripts/native_dig_rules.gd")
+const CONTOUR = preload("res://scripts/native_corridor_contour.gd")
 const NORMALS_PATH := "res://models/native_model_material.json"
 
 
 class FakeProfile:
 	extends RefCounted
-	## The profile of the terrain of the test map. The material of the cell
-	## (12, 12) is granite, every other cell is earth.
+	## The profile of the terrain of the test map. The granite is the square
+	## of the cells (12..14, 11..13), every other cell is earth.
 	var data: Dictionary = {"normals": []}
 
 	func cell_material(cell: Vector2i) -> int:
-		return 0 if cell == Vector2i(12, 12) else 2
+		if cell.x >= 12 and cell.x <= 14 and cell.y >= 11 and cell.y <= 13:
+			return 0
+		return 2
 	func ground_file(_cell: Vector2i, _variant: int) -> String:
 		return "Gnd_A01.tga"
 	func detail_texture(_cell: Vector2i, _part: int) -> String:
@@ -60,6 +63,7 @@ func _run() -> void:
 
 	_check_toolbar(dig)
 	_check_granite(dig)
+	_check_granite_is_red_and_stops_the_marking(dig)
 	_check_erase_corridor(dig)
 	_check_dig_flow(dig)
 	_check_template_support_survives_tunnel(dig)
@@ -79,7 +83,8 @@ func _run() -> void:
 	_check_object_without_ground_is_hidden(dig)
 	_check_attachment_is_removed(dig)
 
-	print("CAMPAIGN_DIG_TEST_OK icons=1 granite_protected=1 erase_corridor=1 erase_cave=1 " \
+	print("CAMPAIGN_DIG_TEST_OK icons=1 granite_protected=1 granite_is_red=1 marking_stops_at_granite=1 " \
+		+ "erase_corridor=1 erase_cave=1 " \
 		+ "native_strike=1 open_cell_not_marked_again=1 corridor_supports_are_sparse=1 " \
 		+ "corridor_support_blocked_by_open_upper_space=1 joined_corridor_has_no_duplicate_supports=1 " \
 		+ "cave_requires_connection=1 cave_skin_size_matches_brush=1 cave_frame_appears_after_completion=1 " \
@@ -102,6 +107,66 @@ func _check_toolbar(dig: RefCounted) -> void:
 func _check_granite(dig: RefCounted) -> void:
 	assert(dig.can_dig(Vector2i(10, 10)))
 	assert(not dig.can_dig(Vector2i(12, 12)))
+
+
+## The rock of the selection is red while the button of the mouse is held,
+## and the marking of the tunnel stops at the rock.
+func _check_granite_is_red_and_stops_the_marking(dig: RefCounted) -> void:
+	# The stroke of the test runs along the row 13, from the column 9 to the
+	# column 17: the granite of the test map lies in the columns 12..14 of
+	# that row, and the parity of the original allows every cell of the row.
+	dig.stroke.begin(Vector2(9.5, 13.5), Rect2i(0, 0, 511, 639))
+	dig.stroke.update(Vector2(17.5, 13.5))
+	var samples: Array[Vector2i] = dig.stroke.samples()
+	assert(samples.size() > 0)
+	assert(samples.has(Vector2i(12, 13)))
+	assert(samples.has(Vector2i(15, 13)))
+	# The rock of the selection is red while the button is held.
+	var blocked: Dictionary = dig.blocked_cells(samples)
+	assert(blocked.has(Vector2i(12, 13)))
+	assert(blocked.has(Vector2i(13, 13)))
+	assert(blocked.has(Vector2i(14, 13)))
+	assert(not blocked.has(Vector2i(9, 13)))
+	dig._draw_marks()
+	assert(dig.blocked_mesh.mesh != null)
+	var colour: Color = (dig.blocked_mesh.material_override as StandardMaterial3D).albedo_color
+	assert(colour.r > 0.5 and colour.g < 0.3 and colour.b < 0.3)
+	# The red band lies exactly over the granite of the stroke.
+	var triangles: PackedVector2Array = CONTOUR.build_triangles(blocked, false)
+	assert(not triangles.is_empty())
+	var minimum: Vector2 = Vector2(INF, INF)
+	var maximum: Vector2 = Vector2(-INF, -INF)
+	for point: Vector2 in triangles:
+		minimum = Vector2(minf(minimum.x, point.x), minf(minimum.y, point.y))
+		maximum = Vector2(maxf(maximum.x, point.x), maxf(maximum.y, point.y))
+	var box: AABB = dig.blocked_mesh.mesh.get_aabb()
+	assert(is_equal_approx(box.position.x, minimum.x))
+	assert(is_equal_approx(box.position.y, -maximum.y))
+	assert(is_equal_approx(box.size.x, maximum.x - minimum.x))
+	assert(is_equal_approx(box.size.y, maximum.y - minimum.y))
+	# The green band stops before the granite: it does not cover the rock.
+	# The contour of the original ends the band with the narrow strips
+	# (0.30..0.49), so the band of the cells 9..11 ends inside the cell 11.
+	var green: AABB = dig.mark_mesh.mesh.get_aabb()
+	assert(green.position.x + green.size.x > 11.0)
+	assert(green.position.x + green.size.x < 12.0)
+	# The preview shows the band that the release marks: green up to the
+	# granite, red on the granite, nothing behind it.
+	var preview: Dictionary = dig._selection_result(samples, Vector2.RIGHT)
+	assert(preview["blocked"].has(Vector2i(12, 13)))
+	assert(preview["blocked"].has(Vector2i(14, 13)))
+	assert(not preview["marked"].has(Vector2i(12, 13)))
+	assert(not preview["marked"].has(Vector2i(15, 13)))
+	assert(preview["marked"].has(Vector2i(9, 13)))
+	# The marking stops at the granite: the cells behind it are not marked.
+	dig._mark_corridor(samples, Vector2.RIGHT)
+	assert(dig.marked_corridor_cells.has(Vector2i(9, 13)))
+	assert(dig.marked_corridor_cells.has(Vector2i(11, 14)))
+	assert(not dig.marked_corridor_cells.has(Vector2i(12, 13)))
+	assert(not dig.marked_corridor_cells.has(Vector2i(15, 13)))
+	assert(not dig.marked_corridor_cells.has(Vector2i(17, 13)))
+	dig.stroke.cancel()
+	_clear_marks(dig)
 
 
 ## The erasure of a tunnel takes the mark away.
@@ -403,6 +468,17 @@ func _open_row(dig: RefCounted, x0: int, x1: int, y: int) -> void:
 		var cell := Vector2i(x, y)
 		dig.block_overrides[cell] = 80
 		dig.excavated_cells[cell] = true
+
+
+## The marks of the test are taken away, so that the next check starts clean.
+func _clear_marks(dig: RefCounted) -> void:
+	for cell: Vector2i in dig.marked_corridor_cells.keys():
+		dig._clear_mark(cell)
+	var remaining: Array[Vector2i] = []
+	for cell: Vector2i in dig.queue:
+		if dig._is_marked(cell):
+			remaining.append(cell)
+	dig.queue = remaining
 
 
 func _clear_supports(dig: RefCounted) -> void:
