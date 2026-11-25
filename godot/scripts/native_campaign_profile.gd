@@ -51,8 +51,8 @@ func set_lit_excavation(value: bool) -> void:
 var terrain_lights: Array = []
 var _active_templates: Dictionary = {}
 var lights_data: Dictionary = {}
-## The material of every cell of the map of the original, from the saved game
-## of the owner (scripts/native_campaign_ground.gd:load_material_map).
+## The base material of every cell, reconstructed by the original border and
+## funnel commands before any cave template is stamped onto the map.
 var ground_materials: PackedByteArray = PackedByteArray()
 var _active_cells: Dictionary = {}
 var _filter_cells: bool = false
@@ -93,7 +93,10 @@ func load_chapter(path: String) -> bool:
 		push_error("World model lighting and terrain render gains differ")
 		return false
 	_load_lights()
-	ground_materials = GROUND.load_material_map()
+	# The saved run already contains its old template stamps and excavated air.
+	# Build the untouched map from the native border/funnel commands before
+	# placing this chapter's templates, so no old cave footprint shows through.
+	ground_materials = GROUND.generator_material_map()
 	return true
 
 
@@ -221,11 +224,10 @@ func map_size() -> Vector2i:
 ## The ground material of a cell, or null when the chapter has no cell there.
 ##
 ## The cells of the chapter carry their own material in the export. The free
-## cells of the map are not in the export: their material is the material of
-## the map of the original, which the saved game of the owner keeps for every
-## cell (scripts/native_campaign_ground.gd:load_material_map). The generator
-## of the original is the fallback, for the cells that the saved game does not
-## cover (scripts/native_campaign_map_material.gd).
+## cells of the map are not in the export. Their material comes from the
+## original map generator (native_campaign_map_material.gd). The archived save
+## is a comparison source, not the live base map: it already contains old
+## cave stamps and excavated air from another playthrough.
 func cell_material(cell: Vector2i) -> Variant:
 	var value: Variant = null
 	if not _filter_cells or _active_cells.has(cell):
@@ -285,15 +287,13 @@ func field_ground_file(cell: Vector2i, _variant: int, family: String = "") -> St
 ## of the chapter as a grid of rectangles.
 ##
 ## The rule is the rule of the battle scene (native_scene_profile.gd:ground_file).
-func ground_file(cell: Vector2i, variant: int, forced_material: int = -1) -> String:
+func ground_file(cell: Vector2i, variant: int) -> String:
 	var signature: String = ""
 	for offset: Vector2i in [Vector2i.ZERO, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.ONE]:
 		var value: Variant = cell_material(cell + offset)
 		var material: int = 0 if value == null else int(value)
 		if material == 3:
 			material = 0
-		if forced_material >= 0:
-			material = forced_material
 		signature += str(material)
 	var patterns: Dictionary = terrain_render.get("patterns", {}) as Dictionary
 	var pattern: Variant = patterns.get(signature, null)
@@ -472,8 +472,12 @@ func terrain_channels(cell: Vector2i, local_point: Vector3, source_normal: Array
 ## the surface of the map is lit like every other cell of the chapter.
 func free_ground_channels(cell: Vector2i, local_point: Vector2, level: float) -> Dictionary:
 	var point: Vector3 = Vector3(cell.x + local_point.x, cell.y + local_point.y, (level + 14.0) * 0.5)
+	# The native free-ground run takes the map brightness set by SetBrightness.
+	# Cave sources illuminate the placed cave geometry, not the untouched map
+	# plane. Sampling a cave source at the first cell of a run spread its light
+	# across the whole rectangular filler area around the cave.
 	var channels: Dictionary = ILLUMINATION.channels(point, Vector3(0.0, 0.0, 1.0),
-		terrain_base_byte(cell, local_point), _lights_near(point), terrain_render["constants"])
+		terrain_base_byte(cell, local_point), [], terrain_render["constants"])
 	return _with_daylight(channels, Vector2i(-1, -1), 1.0)
 
 

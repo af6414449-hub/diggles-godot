@@ -56,10 +56,17 @@ uniform bool uv_local = false;
 uniform sampler2D variation_map : filter_nearest, repeat_disable;
 uniform vec2 variation_map_size = vec2(512.0, 640.0);
 uniform bool use_variation = false;
+// Only the free map surface uses this live mask. The original template
+// meshes keep their own geometry; a dug cell exposes a separate lower floor.
+uniform bool use_excavation_mask = false;
+uniform sampler2D excavation_mask : filter_nearest, repeat_disable;
+varying vec2 map_cell_position;
 varying vec3 secondary_color;
 
 void vertex() {
 	secondary_color = CUSTOM0.rgb;
+	vec3 map_position = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	map_cell_position = vec2(map_position.x, -map_position.y);
 }
 
 vec3 stage(int op, vec3 first, vec3 second, vec3 previous) {
@@ -81,6 +88,13 @@ vec3 stage(int op, vec3 first, vec3 second, vec3 previous) {
 }
 
 void fragment() {
+	if (use_excavation_mask) {
+		ivec2 cell = ivec2(floor(map_cell_position));
+		if (cell.x >= 0 && cell.x < 512 && cell.y >= 0 && cell.y < 640
+				&& texelFetch(excavation_mask, cell, 0).r > 0.5) {
+			discard;
+		}
+	}
 	vec3 ground = texture(ground_texture, UV).rgb;
 	if (use_variation) {
 		// The ground of the map is textured with the continuous field, so the

@@ -2,6 +2,7 @@ extends SceneTree
 ## The opening map must contain only Campaign.tcl:first_level and its start.
 const PROFILE = preload("res://scripts/native_campaign_profile.gd")
 const GROUND = preload("res://scripts/native_campaign_ground.gd")
+const CAMPAIGN = preload("res://scripts/native_campaign_first_level.gd")
 const CHAPTER_PATH: String = "res://models/native_campaign_chapter.json"
 
 var checks: int = 0
@@ -38,8 +39,20 @@ func _run() -> void:
 		initial_positions[Vector2i(int(entry["x"]), int(entry["y"]))] = true
 	_check(templates.size() == 14 and caves == 2, "start template, two caves and their connections")
 	_check(initial_cells.size() == 3447, "only the original first_level cells are active")
+	var scene: Node3D = CAMPAIGN.new()
+	scene.set("chapter", chapter)
+	scene.set("start_cells", initial_cells)
+	scene.call("_identify_cave_padding")
+	var padding: Dictionary = scene.get("cave_padding")
+	_check(padding.size() == 702 and padding.has(Vector2i(236, 45)),
+		"flat block 0 cells of procedural caves return to base ground")
+	_check(not padding.has(Vector2i(267, 0)),
+		"the fixed clearing keeps its original surface")
+	scene.free()
 	profile.set_active_templates(templates)
 	profile.set_active_cells(initial_cells)
+	_check(int(profile.cell_material(Vector2i(234, 68))) == 0,
+		"the flat cave filler keeps the native granite barrier")
 	var light_data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(
 		"res://models/native_campaign_lights.json"))
 	var active_lights: int = 0

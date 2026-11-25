@@ -21,6 +21,7 @@ const MODEL_MATERIAL: Script = preload("res://scripts/native_model_material.gd")
 const WALLS: Script = preload("res://scripts/native_campaign_walls.gd")
 const GROUND: Script = preload("res://scripts/native_campaign_ground.gd")
 const CAMERA: Script = preload("res://scripts/native_campaign_camera.gd")
+const DIG_TEST: Script = preload("res://scripts/native_campaign_dig_test.gd")
 const WORLD_MODEL_LIGHT: Script = preload("res://scripts/native_world_model_light.gd")
 const BACKDROP: Script = preload("res://scripts/native_campaign_backdrop.gd")
 const CHAPTER_PATH: String = "res://models/native_campaign_chapter.json"
@@ -76,6 +77,9 @@ var chapter: Dictionary = {}
 ## map. Story templates are kept in the export for later generation, but must
 ## not be drawn before the story asks for the corresponding map area.
 var start_cells: Array = []
+## Flat filler cells of procedural templates outside the fixed start clearing.
+## Their block 0 is the untouched map surface, not a separate cave surface.
+var cave_padding: Dictionary = {}
 var initial_templates: Dictionary = {}
 var scene_root: Node3D = null
 var camera: Camera3D = null
@@ -87,6 +91,7 @@ var clearing_edge: Variant = null
 var source_light_count: int = 0
 var headlight: DirectionalLight3D = null
 var status: Label = null
+var dig_test: RefCounted = null
 var model_texture_cache: Dictionary = {}
 
 var focus: Vector3 = Vector3.ZERO
@@ -168,7 +173,6 @@ const GROUND_DETAIL: String = "50PGray.tga"
 ## A/B capture.
 var _hide_ramps: bool = true
 ## The plan of the rock of the saved game: where the map has ground at all.
-var _ground_rock_mask: PackedByteArray = PackedByteArray()
 ## The free ground of the map is drawn.
 ##
 ## The original draws the ground of the whole map: every cell of the map that
@@ -191,10 +195,12 @@ var _draw_rock_body: bool = true
 ## The backdrop of the chapter is not drawn: the frame keeps the void of the
 ## port, for an A/B capture of the backdrop.
 var _no_backdrop: bool = false
+var _show_debug_ui: bool = false
 
 
 func _ready() -> void:
 	var args: PackedStringArray = OS.get_cmdline_user_args()
+	_show_debug_ui = args.has("--debug-ui")
 	var capture_index: int = args.find("--capture-path")
 	if capture_index >= 0 and capture_index + 1 < args.size():
 		_capture_path = args[capture_index + 1]
@@ -246,11 +252,13 @@ func _ready() -> void:
 	for entry: Dictionary in chapter["cells"]:
 		if not bool(entry.get("story", false)):
 			start_cells.append(entry)
+	_identify_cave_padding()
 	profile.call("set_active_templates", initial_templates)
+	# The flat filler still belongs to the template's material map. In the
+	# original PMP, 306 of these cells are granite: excluding them from the
+	# material profile erases the barrier surrounding the scripted caves.
 	profile.call("set_active_cells", start_cells)
-	# The plan of the rock of the saved game: the ground of the map is there
-	# where the saved game says so.
-	_ground_rock_mask = GROUND.load_rock_mask()
+	# The native base map is built before this chapter's templates are placed.
 	scene_root = Node3D.new()
 	scene_root.name = "CampaignRenderSpace"
 	scene_root.scale.z = RENDER_DEPTH_SCALE
@@ -265,6 +273,93 @@ func _ready() -> void:
 	started = Time.get_ticks_msec()
 	_build_camera_and_light()
 	_build_caption()
+	var dig_caption := Label.new()
+	dig_caption.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
+	dig_caption.offset_left = 164.0
+	dig_caption.offset_top = -72.0
+	dig_caption.offset_right = 640.0
+	dig_caption.offset_bottom = -48.0
+	dig_caption.add_theme_color_override("font_color", Color.WHITE)
+	dig_caption.add_theme_color_override("font_shadow_color", Color.BLACK)
+	dig_caption.add_theme_constant_override("shadow_offset_x", 1)
+	dig_caption.add_theme_constant_override("shadow_offset_y", 1)
+	get_node("HUDLayer").add_child(dig_caption)
+	dig_test = DIG_TEST.new()
+	dig_test.setup(scene_root, camera, profile, start_cells, cave_padding,
+		get_node("HUDLayer"), dig_caption)
+	if args.has("--demo-dig") or args.has("--demo-mark") or args.has("--demo-join") \
+			or args.has("--demo-cave-below") or args.has("--demo-upper"):
+		var demo_stroke: RefCounted = preload("res://scripts/native_corridor_stroke.gd").new()
+		if args.has("--demo-cave-below"):
+			demo_stroke.begin(Vector2(253, 49), Rect2i(0, 0, 511, 639))
+			demo_stroke.update(Vector2(274, 49))
+		elif args.has("--demo-join"):
+			# A new tunnel that starts inside the open shaft of the original
+			# chapter: the cells x=245 and x=246 are open on the rows 45 and 46,
+			# so the new passage branches off an existing tunnel.
+			demo_stroke.begin(Vector2(243, 45), Rect2i(0, 0, 511, 639))
+			demo_stroke.update(Vector2(266, 45))
+		else:
+			demo_stroke.begin(Vector2(274, 50), Rect2i(0, 0, 511, 639))
+			demo_stroke.update(Vector2(282, 50))
+		dig_test._mark_corridor(demo_stroke.finish())
+		if args.has("--demo-dig") or args.has("--demo-join") or args.has("--demo-cave-below") \
+				or args.has("--demo-upper"):
+			dig_test.start_digging()
+			for demo_step: int in range(240):
+				if dig_test.queue.is_empty():
+					break
+				dig_test.advance(0.25)
+		var support_report: Array = []
+		for cell: Vector2i in dig_test.decorated:
+			var support: Node3D = dig_test.decorated[cell]
+			support_report.append("%s pos=%s meshes=%d" % [str(cell), str(support.position),
+				support.get_child_count()])
+		print("CAMPAIGN_DIG_SUPPORTS supports=%d excavated=%d detail=%s" % [
+			dig_test.decorated.size(), dig_test.excavated_cells.size(),
+			", ".join(PackedStringArray(support_report))])
+	if args.has("--demo-upper"):
+		# A second tunnel above the first one. The frames of wood of the lower
+		# tunnel must not turn into a second row next to the ones above.
+		var upper_stroke: RefCounted = preload("res://scripts/native_corridor_stroke.gd").new()
+		upper_stroke.begin(Vector2(270, 47), Rect2i(0, 0, 511, 639))
+		upper_stroke.update(Vector2(286, 47))
+		dig_test._mark_corridor(upper_stroke.finish())
+		dig_test.start_digging()
+		for upper_step: int in range(240):
+			if dig_test.queue.is_empty():
+				break
+			dig_test.advance(0.25)
+		var upper_report: Array = []
+		for cell: Vector2i in dig_test.decorated:
+			upper_report.append(str(cell))
+		print("CAMPAIGN_UPPER_SUPPORTS supports=%d excavated=%d cells=%s" % [
+			dig_test.decorated.size(), dig_test.excavated_cells.size(),
+			", ".join(PackedStringArray(upper_report))])
+	if args.has("--demo-cave-above"):
+		# A cave above the tunnel of the demo. The frame of wood of the tunnel
+		# stands under an open space after that, so it must be taken away.
+		dig_test._mark_cave(1, Vector2i(275, 49))
+		print("CAMPAIGN_CAVE_ABOVE_MARKS count=%d reason=%s" % [dig_test.marked_count(), dig_caption.text])
+		if dig_test.marked_count() > 0:
+			dig_test.start_digging()
+			for cave_step: int in range(360):
+				if dig_test.queue.is_empty():
+					break
+				dig_test.advance(0.25)
+		print("CAMPAIGN_CAVE_ABOVE_SUPPORTS supports=%d caves=%d frames=%d" % [
+			dig_test.decorated.size(), dig_test.finished_caves.size(), dig_test.cave_frames.size()])
+	if args.has("--demo-cave-below"):
+		dig_test._mark_cave(1, Vector2i(268, 55))
+		print("CAMPAIGN_CAVE_BELOW_MARKS count=%d reason=%s" % [dig_test.marked_count(), dig_caption.text])
+		if dig_test.marked_count() > 0:
+			dig_test.start_digging()
+			for cave_step: int in range(360):
+				if dig_test.queue.is_empty():
+					break
+				dig_test.advance(0.25)
+		print("CAMPAIGN_CAVE_BELOW_FRAMES caves=%d frames=%d" % [
+			dig_test.finished_caves.size(), dig_test.cave_frames.size()])
 	print("CAMPAIGN_BUILD_STAGE camera ms=%d" % (Time.get_ticks_msec() - started))
 	var summary: Dictionary = chapter.get("summary", {})
 	print("CAMPAIGN_FIRST_LEVEL_READY seed=%d cells=%d templates=%d placements=%d story=%d objects=%d dwarfs=%d lights=%d deleted_wuker=%d overworld=%d surfaces=%d walls=%d ground=%d rock=%d backdrop_omitted=%d triangles=%d" % [
@@ -276,6 +371,33 @@ func _ready() -> void:
 		str(chapter.get("source", {}).get("procedure", "")), int(chapter.get("seed", -1)),
 		int(chapter.get("map_size", {}).get("width", 0)), int(chapter.get("map_size", {}).get("height", 0)),
 		str(chapter.get("initial_view", {}))])
+
+
+## Block 0 is a flat surface at the map's ground level. The procedural cave
+## templates carry it around their excavations as filler. Its MATERIAL still
+## belongs to the template (including the granite barrier), but drawing its
+## own separate mesh makes a rectangular footprint visible below and to the
+## right of the opening. The free ground draws that material on the same plane.
+## The fixed start clearing keeps its own block 0 surfaces and detail layer.
+func _identify_cave_padding() -> void:
+	cave_padding.clear()
+	var start_bounds := Rect2i()
+	for template: Dictionary in chapter.get("templates", []):
+		if str(template.get("template", "")) != "urw_unq_start":
+			continue
+		var placements: Array = template.get("placements", [])
+		if placements.is_empty():
+			continue
+		var placement: Dictionary = placements[0]
+		start_bounds = Rect2i(int(placement["x"]), int(placement["y"]),
+			int(template["width"]), int(template["height"]))
+		break
+	for entry: Dictionary in start_cells:
+		if int(entry["block"]) != 0:
+			continue
+		var cell := Vector2i(int(entry["x"]), int(entry["y"]))
+		if not start_bounds.has_point(cell):
+			cave_padding[cell] = true
 
 
 func _build_geometry() -> void:
@@ -296,8 +418,10 @@ func _build_geometry() -> void:
 		# CampaignInit.tcl:685-692), so its cells are covered by the ground of
 		# the map here like any other free cell: the free ground has no hole
 		# over the zone, and the faces of the island end against it.
-		var block_parts: Array = meshes[str(int(entry["block"]))]
 		var cell_origin: Vector2i = Vector2i(int(entry["x"]), int(entry["y"]))
+		if cave_padding.has(cell_origin):
+			continue
+		var block_parts: Array = meshes[str(int(entry["block"]))]
 		# A cell that touches the void around the island carries the floor of
 		# the base map of the original. The battle scene omits the same face
 		# (scripts/multiplayer_test.gd:1671-1707): the floor of the void is
@@ -586,8 +710,6 @@ func _build_ground() -> void:
 	var level: float = GROUND.MAP_GROUND_LEVEL
 	var chapter_cells: Dictionary = {}
 	var cell_level: Dictionary = {}
-	# The plan of the rock of the saved game: where the map has ground at all.
-	var rock_mask: PackedByteArray = GROUND.load_rock_mask()
 	for entry: Dictionary in start_cells:
 		var cell := Vector2i(int(entry["x"]), int(entry["y"]))
 		cell_level[cell] = _cell_surface_level(entry)
@@ -597,16 +719,15 @@ func _build_ground() -> void:
 	# this the free ground has a hole over the zone of the story and the
 	# backdrop of the scene shows through it.
 	for entry: Dictionary in start_cells:
-		chapter_cells[Vector2i(int(entry["x"]), int(entry["y"]))] = true
+		var cell := Vector2i(int(entry["x"]), int(entry["y"]))
+		if not cave_padding.has(cell):
+			chapter_cells[cell] = true
 	var tools: Dictionary = {}
 	var materials: Dictionary = {}
-	_ground_rock_mask = rock_mask
 	# The ground of the map of the original is flat: the engine draws it with
 	# "map create" and only changes the MATERIAL of a band of cells at the
-	# edge of the map ("sm_draw_stone -border/-funnel"). The material of every
-	# cell is in the saved game of the owner, so the ground of the map is
-	# diggable earth with the stone band of the original at the edge, and not
-	# a plate of stone over everything.
+	# edge of the map ("sm_draw_stone -border/-funnel"). The material comes
+	# from those commands before any cave template is stamped onto the map.
 	#
 	# The engine draws the ground as one four-sided polygon per run of free
 	# cells (FUN_004cca20:41-109) over the whole map: the free cells of the
@@ -621,7 +742,7 @@ func _build_ground() -> void:
 	for row in range(size.y):
 		var run_start: int = -1
 		for column in range(size.x + 1):
-			var is_free: bool = column < size.x and _plane_covers(column, row, chapter_cells, cell_level, level, rock_mask)
+			var is_free: bool = column < size.x and _plane_covers(column, row, chapter_cells, cell_level, level)
 			if is_free and run_start < 0:
 				run_start = column
 				continue
@@ -647,16 +768,10 @@ func _build_ground() -> void:
 			var segment_start: int = first_column
 			while segment_start <= run_end:
 				var segment_end: int = mini(segment_start + GROUND.LIGHT_SEGMENT_CELLS - 1, run_end)
-				if _ground_is_barrier(Vector2i(segment_start, row)):
-					# The barrier is one and the same granite tile on every
-					# cell, so a piece of it may be as long as the run: the
-					# texture repeats inside the piece by its own UV.
-					segment_end = mini(segment_start + GROUND.LIGHT_SEGMENT_CELLS - 1, run_end)
 				# The family of the ground follows the material of the cell, and
-				# the material of every free cell is in the saved game of the
-				# owner: the band of granite of the edge of the map (the command
-				# sm_draw_stone -border of the original) runs where the saved
-				# game says so, and the rest of the map is earth. A piece of the
+				# the material of every free cell comes from the native map
+				# generator: the granite band follows sm_draw_stone -border and
+				# -funnel, and the rest of the map is earth. A piece of the
 				# ground therefore never crosses the border of two families.
 				segment_end = _ground_family_end(segment_start, segment_end, row)
 				_append_ground_segment(tools, materials, row, segment_start, segment_end, level, collision_faces, run_color)
@@ -664,7 +779,7 @@ func _build_ground() -> void:
 	_commit_ground_surfaces(tools, materials, "CampaignGround_")
 	_add_ground_collision(collision_faces)
 	if _draw_rock_body:
-		_build_rock_body(chapter_cells, cell_level, rock_mask, level)
+		_build_rock_body(chapter_cells, level)
 
 
 ## The family of the ground of a free cell.
@@ -676,13 +791,6 @@ func _build_ground() -> void:
 ## original (scripts/native_campaign_map_material.gd), and the rest of the map
 ## is the earth of the generator of the original.
 func _ground_family(cell: Vector2i) -> String:
-	if _near_barrier(cell):
-		return "A"
-	# The barrier of the owner: the same grey stone as the rock of the chapter
-	# and the walls of the caves. The plan of the rock of the saved game says
-	# where the map has ground at all; the rest of the map is the barrier.
-	if not GROUND.mask_has_rock(_ground_rock_mask, cell.x, cell.y):
-		return "A"
 	var value: Variant = profile.call("cell_material", cell)
 	var material: int = 0 if value == null else int(value)
 	if material == 3:
@@ -692,34 +800,6 @@ func _ground_family(cell: Vector2i) -> String:
 	if material == 2:
 		return "C"
 	return "A"
-
-
-## Whether a cell of the map belongs to the barrier.
-##
-## The plan of the rock of the saved game says where the map has ground at all;
-## the rest of the map is the barrier of the owner: the same grey stone as the
-## rock of the chapter, which surrounds the caves.
-func _ground_is_barrier(cell: Vector2i) -> bool:
-	if cell.x < 0 or cell.y < 0 or cell.x >= GROUND.MAP_WIDTH or cell.y >= GROUND.MAP_HEIGHT:
-		return false
-	return not GROUND.mask_has_rock(_ground_rock_mask, cell.x, cell.y)
-
-
-## A one-cell stone collar joins the saved game's irregular granite belt to
-## its neighbours without alternating mixed soil/stone tiles at every pixel.
-func _near_barrier(cell: Vector2i) -> bool:
-	for offset_y in range(-1, 2):
-		for offset_x in range(-1, 2):
-			if _ground_is_barrier(cell + Vector2i(offset_x, offset_y)):
-				return true
-	return false
-
-
-## Whether a cell of the map carries no ground at all.
-func _ground_has_no_ground(cell: Vector2i) -> bool:
-	if cell.x < 0 or cell.y < 0 or cell.x >= GROUND.MAP_WIDTH or cell.y >= GROUND.MAP_HEIGHT:
-		return true
-	return not GROUND.mask_has_rock(_ground_rock_mask, cell.x, cell.y)
 
 
 ## The last column of a piece of the free ground that keeps one family.
@@ -811,8 +891,7 @@ func _append_ground_segment(tools: Dictionary, materials: Dictionary, row: int,
 		# frame of the owner shows the rock at the edge of an opened tunnel as
 		# a continuous surface.
 		var variant_index: int = GROUND.base_variant(cell)
-		var ground_file: String = profile.call("ground_file", cell, variant_index,
-			0 if _near_barrier(cell) else -1)
+		var ground_file: String = profile.call("ground_file", cell, variant_index)
 		var key: String = ground_file
 		if not tools.has(key):
 			tools[key] = [[], [], [], [], []]
@@ -864,17 +943,8 @@ func _cell_surface_level(entry: Dictionary) -> float:
 ## excavation (the ray of the camera under 16.6 degrees), and the original
 ## shows the excavation through that window.
 ##
-## The ground also ends where the map has no ground at all: the plan of the
-## rock of the saved game (the mask of the ground, the funnel of the original)
-## says where the ground of the map is, and the edge of that area is the soft
-## edge of the original, not a wall around the map.
 func _plane_covers(column: int, row: int, chapter_cells: Dictionary, cell_level: Dictionary,
-		level: float, rock_mask: PackedByteArray) -> bool:
-	# The plan of the rock of the saved game says where the map has ground at
-	# all, and the rest of the map is the barrier of the owner: the same grey
-	# stone as the rock of the chapter, which surrounds the caves. The ground
-	# of the map therefore covers it as well, and the family of the ground
-	# there is the stone.
+		level: float) -> bool:
 	if column < 0 or row < 0 or column >= GROUND.MAP_WIDTH or row >= GROUND.MAP_HEIGHT:
 		return false
 	if chapter_cells.has(Vector2i(column, row)):
@@ -942,8 +1012,7 @@ func _commit_ground_surfaces(tools: Dictionary, materials: Dictionary, prefix: S
 ## not only a surface. The export does not keep the body of the free cells, so
 ## it is drawn here at the edge of the terrain: the rock ends and the
 ## background of the map is behind it.
-func _build_rock_body(chapter_cells: Dictionary, cell_level: Dictionary,
-		rock_mask: PackedByteArray, level: float) -> void:
+func _build_rock_body(chapter_cells: Dictionary, level: float) -> void:
 	var tools: Dictionary = {}
 	var materials: Dictionary = {}
 	var map_size: Dictionary = chapter.get("map_size", {})
@@ -1408,7 +1477,17 @@ func _chapter_depth_span() -> float:
 ## One finger or the left mouse button turns the view, two fingers or the
 ## right mouse button move it, the wheel and the pinch zoom. The arrow keys
 ## move the map, Q and E turn it.
+func _input(event: InputEvent) -> void:
+	# HUD labels may consume motion before _unhandled_input. The native brush
+	# outline still tracks the pointer over the map.
+	if dig_test != null and event is InputEventMouseMotion:
+		dig_test._update_hover(event.position)
+
+
 func _unhandled_input(event: InputEvent) -> void:
+	if dig_test != null and dig_test.handle_input(event):
+		get_viewport().set_input_as_handled()
+		return
 	if controller == null:
 		return
 	if event is InputEventScreenTouch:
@@ -1514,6 +1593,8 @@ func _update_touch_reference() -> void:
 
 
 func _process(delta: float) -> void:
+	if dig_test != null:
+		dig_test.advance(delta)
 	_update_keyboard_pan(delta)
 	if _capture_frames < 0:
 		return
@@ -1575,6 +1656,7 @@ func _build_caption() -> void:
 		object_count, dwarf_count, initial_templates.size(),
 		int(state.get("combination_index", -1)), int(state.get("connection_index", -1)),
 		int(state.get("present_side", -1))]
+	status.visible = _show_debug_ui
 	status.add_theme_color_override("font_color", Color.WHITE)
 	status.add_theme_color_override("font_shadow_color", Color.BLACK)
 	status.add_theme_constant_override("shadow_offset_x", 1)

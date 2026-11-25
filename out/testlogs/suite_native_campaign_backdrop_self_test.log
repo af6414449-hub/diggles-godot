@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CAMPAIGN_PIT_LAYER name=FarMountains y=-0.356..0.524 z=-111.50
+CAMPAIGN_PIT_LAYER name=LowerMountains y=-0.181..0.514 z=-73.50
+CAMPAIGN_PIT_LAYER name=Forest y=-0.251..0.499 z=-51.50
+CAMPAIGN_PIT_LAYER name=Hills y=0.063..0.493 z=-39.50
+NATIVE_CAMPAIGN_BACKDROP_SELF_TEST assertions=36 failures=0

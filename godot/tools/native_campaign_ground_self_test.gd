@@ -3,6 +3,8 @@ extends SceneTree
 ## Checks the base ground of the campaign map: the free intervals of the map
 ## rows and the level of the untouched rock.
 const Ground = preload("res://scripts/native_campaign_ground.gd")
+const Campaign = preload("res://scripts/native_campaign_first_level.gd")
+const Profile = preload("res://scripts/native_campaign_profile.gd")
 
 var _checks: int = 0
 var _failures: Array[String] = []
@@ -63,13 +65,9 @@ func _run() -> void:
 	_check(absf(Ground.ground_level(mixed, meshes) - 7.0) < 0.0001, "a low chapter keeps its own level")
 
 	# --- the material of the free ground -------------------------------------
-	# The material of a free cell of the map is the material of the map of the
-	# original: the saved game of the owner keeps a byte per cell of the map,
-	# whose low two bits are the code of the material (0 stone, 1 sand, 2
-	# earth, 3 untouched rock). The engine resets the material of a band of
-	# cells at the edge of the map to stone ("sm_draw_stone -border/-funnel"),
-	# so the ground of the map is diggable earth with a stone band at the edge.
-	# The generator of the original is the fallback, when the map has no data.
+	# The saved game is a source reference, with one byte per cell whose low
+	# two bits code the material. It also contains the old run's cave stamps
+	# and excavated air, so the live base map uses the native generator below.
 	var materials: PackedByteArray = Ground.load_material_map()
 	_check(materials.size() == 512 * 640, "the material map covers the whole map")
 	_check(Ground.free_material(materials, 50, 50) == 0, "the stone band of the map is stone")
@@ -87,6 +85,25 @@ func _run() -> void:
 				earth += 1
 	_check(stone == 14256, "the stone band of the original covers 14256 cells of the map")
 	_check(earth == 45694, "the diggable earth of the original covers 45694 cells of the map")
+	# The archived save keeps a different run's template stamps. It remains a
+	# source check, while the live free ground is rebuilt before templates.
+	_check(Ground.free_material(materials, 275, 19) == 2,
+		"the archived earth pocket is preserved in the source map")
+	_check(Ground.free_material(materials, 234, 68) == 0,
+		"the archived cave stamp is present only in the source map")
+	var profile: NativeCampaignProfile = Profile.new()
+	_check(profile.load_chapter("res://models/native_campaign_chapter.json"),
+		"the chapter profile loads the native base map")
+	profile.set_active_cells([])
+	var campaign: Node3D = Campaign.new()
+	campaign.set("profile", profile)
+	_check(int(profile.cell_material(Vector2i(234, 68))) == 2,
+		"the old cave stamp becomes base earth in the live map")
+	_check(campaign.call("_ground_family", Vector2i(234, 68)) == "C",
+		"the old cave stamp no longer paints a granite rectangle")
+	_check(campaign.call("_ground_family", Vector2i(44, 0)) == "A",
+		"the generated stone border keeps its native texture family")
+	campaign.free()
 	# The generator of the original (scripts/native_campaign_map_material.gd) is
 	# the rule that produced that material: the belt of stone at the edge of
 	# the map and the walls of the funnel, the earth everywhere else. The

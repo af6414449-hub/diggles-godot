@@ -8,15 +8,12 @@ const MAP_MATERIAL = preload("res://scripts/native_campaign_map_material.gd")
 ## chapter. The export keeps only the cells of the placed templates, so the
 ## base layer is rebuilt here.
 ##
-## ADAPTER: the free cells are not in the export.
-##   - Their level is the surface level of the rock, the level of the untouched
-##     blocks of the chapter.
-##   - Their material follows the material of the chapter itself: the exported
-##     cells of the chapter are 74 percent stone, 13 percent sand and 3 percent
-##     earth (the rest is the state of a hole), so the free ground is the rock
-##     of the map with pockets of soil. The material of a cell picks the family
-##     of its ground tile: stone is the family A, sand the family B and earth
-##     the family C.
+## The free cells are not in the chapter export. Their material is rebuilt by
+## native_campaign_map_material.gd using the original border and funnel
+## commands. The saved map is kept as a reference, but its old cave stamps and
+## excavated air cannot serve as the live base map. Material 0 is stone
+## (family A), 1 is sand
+## (family B), and 2 is earth (family C).
 ##   - The texture of a cell is one of the fifteen native tiles of its family
 ##     (Gnd_A01..Gnd_A15 and so on), the way the original draws the ground of a
 ##     cell: one quad with the local UV of the cell (0..1). The port drew the
