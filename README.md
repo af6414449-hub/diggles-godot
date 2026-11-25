@@ -85,7 +85,7 @@ out/            run artefacts: screenshots, test logs, ready-made patches
 | Path | What it is | Size |
 |---|---|---|
 | `godot/scripts/` | 82 GDScript modules; the `native_*` prefix marks a port of the original | 0.9 MB |
-| `godot/tools/` | 67 self-tests (`*_self_test.gd`) and 9 probes (`*_probe.gd`) | 0.5 MB |
+| `godot/tools/` | 68 self-tests (`*_self_test.gd` and `*_test.gd`) and 9 probes (`*_probe.gd`) | 0.5 MB |
 | `godot/scenes/` | 9 scenes, main one is `campaign_first_level.tscn` | — |
 | `godot/shaders/` | 6 shaders, including `native_campaign_terrain.gdshader` | — |
 | `godot/models/` | 48 JSON files holding data extracted from the original (maps, models, lighting) | 81 MB |

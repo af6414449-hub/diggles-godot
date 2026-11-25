@@ -2,7 +2,8 @@
 """Run every self-test suite of the project headlessly.
 
 Used for the regression check of the hamster integration: the suite list is
-taken from tools/*self_test*.gd of the project under test.
+taken from tools/*self_test*.gd of the project under test. A self-test whose
+name ends in _test.gd (the campaign excavation block) is a suite as well.
 """
 from __future__ import annotations
 
@@ -15,6 +16,7 @@ from pathlib import Path
 GODOT = Path(r"C:\Users\frant\OneDrive\Рабочий стол\godot\Godot_v4.7.2-stable_win64_console.exe")
 MARKER = re.compile(r"OK assertions=(\d+)")
 CHECKS_MARKER = re.compile(r"checks=(\d+)\s+failures=(\d+)")
+SUCCESS_CHECKS_MARKER = re.compile(r"SELF_TEST_OK checks=(\d+)")
 
 
 def kill_suite_processes(suite: str) -> None:
@@ -47,7 +49,13 @@ def main() -> int:
     project = Path(args.project)
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
-    suites = sorted(p.stem for p in (project / "tools").glob("*self_test*.gd"))
+    # The suites are the self-tests of tools/. A self-test that carries the
+    # name of the module it checks (native_campaign_dig_test) is a suite too,
+    # otherwise it would never run in a full pass.
+    suites = sorted(
+        {p.stem for p in (project / "tools").glob("*self_test*.gd")}
+        | {p.stem for p in (project / "tools").glob("*_test.gd")}
+    )
     if args.only:
         wanted = {name.strip() for name in args.only.split(",") if name.strip()}
         suites = [name for name in suites if name in wanted]
@@ -75,6 +83,7 @@ def main() -> int:
         err.write_text(err_text, encoding="utf-8", newline="\n")
         match = MARKER.search(out_text)
         checks = CHECKS_MARKER.search(out_text)
+        success_checks = SUCCESS_CHECKS_MARKER.search(out_text)
         stderr_noise = err_text.strip()
         green = False
         count = 0
@@ -84,6 +93,14 @@ def main() -> int:
         elif checks and checks.group(2) == "0" and started.returncode == 0 and "FAIL" not in out_text:
             green = True
             count = int(checks.group(1))
+        elif success_checks and started.returncode == 0 and "FAIL" not in out_text:
+            green = True
+            count = int(success_checks.group(1))
+        elif suite == "native_campaign_dig_test" and "CAMPAIGN_DIG_TEST_OK" in out_text \
+                and started.returncode == 0 and "FAIL" not in out_text:
+            # This older suite uses assertions and a completion marker but
+            # does not maintain an assertion counter.
+            green = True
         if green:
             total += count
             print(f"OK   {suite:<46} {count:>5} assertions  exit={started.returncode}")
