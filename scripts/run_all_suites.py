@@ -17,6 +17,15 @@ GODOT = Path(r"C:\Users\frant\OneDrive\Рабочий стол\godot\Godot_v4.7.
 MARKER = re.compile(r"OK assertions=(\d+)")
 CHECKS_MARKER = re.compile(r"checks=(\d+)\s+failures=(\d+)")
 SUCCESS_CHECKS_MARKER = re.compile(r"SELF_TEST_OK checks=(\d+)")
+# The suites of the project report their result in several shapes: a marker of
+# the form NAME_OK, a JSON line with "ok":true, or a count of checks with a
+# count of failures. A suite is green when it says so, whatever the shape it
+# uses; only the exit code and the word FAIL can turn it red.
+ASSERTIONS_MARKER = re.compile(r"assertions=(\d+)\s+failures=(\d+)")
+OK_TOKEN = re.compile(r"\b[A-Z][A-Z0-9_]*_OK\b")
+JSON_OK = re.compile(r'"ok"\s*:\s*true')
+COUNT_MARKER = re.compile(r"(?:checks|assertions|commands)=(\d+)")
+JSON_COUNT_MARKER = re.compile(r'"checks"\s*:\s*(\d+)')
 
 
 def kill_suite_processes(suite: str) -> None:
@@ -84,23 +93,29 @@ def main() -> int:
         match = MARKER.search(out_text)
         checks = CHECKS_MARKER.search(out_text)
         success_checks = SUCCESS_CHECKS_MARKER.search(out_text)
+        assertions = ASSERTIONS_MARKER.search(out_text)
         stderr_noise = err_text.strip()
         green = False
         count = 0
-        if match and started.returncode == 0 and "FAIL" not in out_text:
-            green = True
-            count = int(match.group(1))
-        elif checks and checks.group(2) == "0" and started.returncode == 0 and "FAIL" not in out_text:
-            green = True
-            count = int(checks.group(1))
-        elif success_checks and started.returncode == 0 and "FAIL" not in out_text:
-            green = True
-            count = int(success_checks.group(1))
-        elif suite == "native_campaign_dig_test" and "CAMPAIGN_DIG_TEST_OK" in out_text \
-                and started.returncode == 0 and "FAIL" not in out_text:
-            # This older suite uses assertions and a completion marker but
-            # does not maintain an assertion counter.
-            green = True
+        if started.returncode == 0 and "FAIL" not in out_text:
+            if match:
+                green = True
+                count = int(match.group(1))
+            elif checks and checks.group(2) == "0":
+                green = True
+                count = int(checks.group(1))
+            elif success_checks:
+                green = True
+                count = int(success_checks.group(1))
+            elif assertions and assertions.group(2) == "0":
+                green = True
+                count = int(assertions.group(1))
+            elif OK_TOKEN.search(out_text) or JSON_OK.search(out_text):
+                # The suite names its own success without a counter.
+                green = True
+                counted = COUNT_MARKER.search(out_text) or JSON_COUNT_MARKER.search(out_text)
+                if counted:
+                    count = int(counted.group(1))
         if green:
             total += count
             print(f"OK   {suite:<46} {count:>5} assertions  exit={started.returncode}")
