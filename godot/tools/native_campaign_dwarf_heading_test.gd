@@ -16,6 +16,7 @@ extends SceneTree
 
 const DWARF: Script = preload("res://scripts/native_campaign_dwarf.gd")
 const DIG: Script = preload("res://scripts/native_campaign_dig_test.gd")
+const SURFACE_WALK: Script = preload("res://scripts/surface_walk_action.gd")
 
 ## The start cell of the test and the cells of the measured routes.
 const START_CELL: Vector2i = Vector2i(10, 10)
@@ -164,8 +165,74 @@ func _run() -> void:
 		print("HEADING_RULE route=roundtrip heading=%.3f stored=%.3f drift=%.3f" % [
 			angle, stored, absf(wrapf(stored - angle, -PI, PI))])
 
+	print("HEADING_MEASURE part=route_depth")
+	for entry: Array in [["route_x", SURFACE_GOAL], ["route_shaft", SURFACE_SHAFT]]:
+		_measure_route_positions(surface_dwarfs, dwarf, String(entry[0]), entry[1])
+
+	print("HEADING_MEASURE part=deep_route")
+	# The shaft of the chapter: the ground line of the map steps down there,
+	# so the depth of the route changes. The cells are dug first, the same
+	# way the walkmap test digs them.
+	dwarf.position = Vector3(231.5378, -30.44, 12.78)
+	dwarf.transform.basis = Basis.IDENTITY
+	for row: int in range(31, 37):
+		var cell := Vector2i(233, row)
+		dig.call("_mark_corridor", [cell] as Array[Vector2i])
+		if not dig.is_marked(cell):
+			continue
+		surface_dwarfs.call("_assign_dig", dwarf, cell)
+		var frames: int = 0
+		while surface_dwarfs.dwarf_dig_jobs.has(dwarf) and frames < 900:
+			surface_dwarfs.advance(STEP)
+			frames += 1
+	_measure_route_positions(surface_dwarfs, dwarf, "route_shaft_dug",
+		Vector2i(233 * 8 + 4, 34 * 8 + 4))
+
 	print("CAMPAIGN_DWARF_HEADING_TEST_OK")
 	quit(0)
+
+
+## The depth of the ground along a real route of the chapter: how much of the
+## movement of the dwarf is the thickness of the ground and how much is the
+## line of the ground.
+func _measure_route_positions(surface_dwarfs: RefCounted, dwarf: Node3D, label: String,
+		target: Vector2i) -> void:
+	var start: Variant = surface_dwarfs.call("_nearest_surface_sample",
+		Vector2(dwarf.position.x, -dwarf.position.y), 0.3)
+	if not start is Vector2i:
+		print("HEADING_ROUTE route=%s skipped=1" % label)
+		return
+	var walkmap: RefCounted = surface_dwarfs.walkmap
+	walkmap.set_route_window(start, target)
+	var route: Dictionary = SURFACE_WALK.plan(start, target, walkmap,
+		Callable(walkmap, "surface_height"), true, true)
+	if route.get("status") != "ok":
+		print("HEADING_ROUTE route=%s status=%s" % [label, str(route.get("status"))])
+		return
+	var positions: Array = route["positions"]
+	var worst: float = 0.0
+	var sum: float = 0.0
+	var count: int = 0
+	var depth_low: float = INF
+	var depth_high: float = -INF
+	for index: int in range(1, positions.size()):
+		var step: Vector3 = positions[index] - positions[index - 1]
+		depth_low = minf(depth_low, positions[index].z)
+		depth_high = maxf(depth_high, positions[index].z)
+		if step.length_squared() <= 0.0:
+			continue
+		# The rendered movement of the chapter: the root packs the depth by 0.5.
+		var rendered := Vector3(step.x, step.y, step.z * RENDER_DEPTH_SCALE)
+		# The rule of the chapter: the angle from the board plane only.
+		var heading: float = float(surface_dwarfs.call("_heading_of_direction",
+			Vector2(step.x, step.y)))
+		var front := Vector3(sin(heading), 0.0, cos(heading))
+		var angle: float = rad_to_deg(acos(clampf(rendered.normalized().dot(front), -1.0, 1.0)))
+		sum += angle
+		count += 1
+		worst = maxf(worst, angle)
+	print("HEADING_ROUTE route=%s steps=%d depth=%.1f..%.1f mean_angle=%.1f worst_angle=%.1f" % [
+		label, count, depth_low, depth_high, (sum / float(count)) if count > 0 else 0.0, worst])
 
 
 ## The rule of the facing itself: the chapter projects the movement into the
