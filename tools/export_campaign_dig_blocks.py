@@ -33,6 +33,9 @@ def main() -> None:
         records[str(block)] = {
             "next": struct.unpack_from("<4i", data, offset + 64),
             "heights": list(data[offset + 80:offset + 84]),
+            # SOURCE: native_terrain_state.gd reads these 64 bytes as the
+            # original 8x8 surface depth samples preceding the next refs.
+            "surface_samples": list(data[offset:offset + 64]),
         }
         parts = db.get_block(block)
         for part in parts:

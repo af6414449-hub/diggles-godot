@@ -1,0 +1,29 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.13596 Core Profile Forward-Compatible Context 20.10.44 27.20.11044.7 - Compatibility - Using Device: ATI Technologies Inc. - AMD Radeon(TM) Vega 8 Graphics
+
+CAMPAIGN_BUILD_STAGE geometry ms=14120
+CAMPAIGN_BUILD_STAGE objects ms=6475
+CAMPAIGN_DWARFS_READY dwarves=5
+CAMPAIGN_BUILD_STAGE camera ms=22515
+CAMPAIGN_FIRST_LEVEL_READY seed=0 cells=3447 templates=14 placements=14 story=25 objects=282 dwarfs=5 lights=31 deleted_wuker=6 overworld=0 surfaces=110 walls=131 ground=324935 rock=324935 backdrop_omitted=2711 triangles=698804
+CAMPAIGN_CHAPTER_SOURCE Campaign.tcl:22-191 first_level seed=0 map=512x640 view={ "x": 246.7, "y": 28.8, "zoom": 1.478, "rx": -0.29, "ry": 0.05 }
+DWARF_SELECTED Zwerg_004
+RUNTIME_PROBE candidates=[(259, 33), (257, 34), (258, 34), (259, 34)]
+DWARF_SURFACE_WALK_START Zwerg_004 target=(257.5, -33.25, 12.0) samples=194 planner=host_bfs_nearest_reachable_dig_stance speed=0.811
+RUNTIME_PROBE assignment_ms=59.85 assigned=true first=(259, 33) second=(258, 34)
+RUNTIME_PROBE slow frame=0 ms=60.12 terrain_revision=0 walking=true job=true
+DWARF_WALK_RESULT Zwerg_004 result=4
+DWARF_DIG_ANIMATION Zwerg_004 clip=kletter_hack_rechts point=(259, 33)
+RUNTIME_PROBE slow frame=2014 ms=834.21 terrain_revision=0 walking=false job=true
+RUNTIME_PROBE capture_error=0 dwarf=(257.5, -33.24977, 12.0)
+DWARF_DIG_CALLBACK Zwerg_004 point=(259, 33) accepted=true
+CAMPAIGN_TORCH_CREATED cell=(259, 33) level=11.0
+DWARF_SURFACE_WALK_START Zwerg_004 target=(257.5, -33.375, 13.0) samples=2 planner=host_bfs_nearest_reachable_dig_stance speed=0.759
+RUNTIME_PROBE slow frame=2063 ms=72.57 terrain_revision=1 walking=true job=true
+DWARF_WALK_RESULT Zwerg_004 result=4
+DWARF_DIG_ANIMATION Zwerg_004 clip=kletter_hack_unten point=(258, 34)
+RUNTIME_PROBE slow frame=2143 ms=779.64 terrain_revision=1 walking=false job=true
+DWARF_DIG_CALLBACK Zwerg_004 point=(258, 34) accepted=true
+CAMPAIGN_TORCH_CREATED cell=(258, 34) level=11.0
+RUNTIME_PROBE slow frame=2192 ms=1135.97 terrain_revision=2 walking=false job=false
+RUNTIME_PROBE result slowest_ms=1135.97 slow_frames=5 first_marked=false second_marked=false

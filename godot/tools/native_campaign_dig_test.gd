@@ -70,6 +70,7 @@ func _run() -> void:
 	_check_support_below_open_shaft_disappears(dig)
 	_check_open_cell_not_marked_again(dig)
 	_check_hover(dig)
+	_check_drag_release_clears_red(dig)
 	_check_right_click_clears_tool(dig)
 	_check_corridor_supports_are_sparse(dig)
 	_check_corridor_support_blocked_by_open_upper_space(dig)
@@ -82,6 +83,7 @@ func _run() -> void:
 	_check_falling_object_reaches_solid_floor(dig)
 	_check_object_without_ground_is_hidden(dig)
 	_check_attachment_is_removed(dig)
+	_check_cut_updates_only_dirty_chunk(dig)
 
 	print("CAMPAIGN_DIG_TEST_OK icons=1 granite_protected=1 granite_is_red=1 marking_stops_at_granite=1 " \
 		+ "erase_corridor=1 erase_cave=1 " \
@@ -166,6 +168,8 @@ func _check_granite_is_red_and_stops_the_marking(dig: RefCounted) -> void:
 	assert(not dig.marked_corridor_cells.has(Vector2i(15, 13)))
 	assert(not dig.marked_corridor_cells.has(Vector2i(17, 13)))
 	dig.stroke.cancel()
+	dig._draw_marks()
+	assert(dig.blocked_mesh.mesh == null)
 	_clear_marks(dig)
 
 
@@ -182,6 +186,10 @@ func _check_erase_corridor(dig: RefCounted) -> void:
 ## The native transition of the blocks opens the cell and the mark is done.
 func _check_dig_flow(dig: RefCounted) -> void:
 	dig._mark_corridor([Vector2i(10, 10)] as Array[Vector2i])
+	assert(dig.marked_count() == 1)
+	assert(not dig.digging)
+	dig.advance(0.25)
+	assert(not dig.excavated_cells.has(Vector2i(10, 10)))
 	dig.start_digging()
 	for step: int in range(40):
 		if dig.queue.is_empty():
@@ -225,6 +233,10 @@ func _check_support_below_open_shaft_disappears(dig: RefCounted) -> void:
 ## An open cell is not marked a second time.
 func _check_open_cell_not_marked_again(dig: RefCounted) -> void:
 	assert(dig._is_open(Vector2i(10, 10)))
+	assert(not dig.blocked_cells([Vector2i(10, 10)] as Array[Vector2i]).has(Vector2i(10, 10)))
+	var selection: Dictionary = dig._selection_result([Vector2i(10, 10)] as Array[Vector2i])
+	assert(selection["blocked"].is_empty())
+	assert(selection["marked"].is_empty())
 	dig._mark_corridor([Vector2i(10, 10)] as Array[Vector2i])
 	assert(dig.marked_count() == 0)
 	assert(dig.queue.is_empty())
@@ -239,6 +251,23 @@ func _check_hover(dig: RefCounted) -> void:
 	dig._update_hover_at(Vector2(28, 20))
 	assert(dig.hover_mesh.mesh != null)
 	assert(dig.hover_mesh.mesh.get_aabb().position != first_hover.position)
+	assert(dig.hover_blocked_mesh.mesh == null)
+
+
+func _check_drag_release_clears_red(dig: RefCounted) -> void:
+	dig.stroke.begin(Vector2(12.5, 13.5), Rect2i(0, 0, 511, 639))
+	dig.stroke.update(Vector2(14.5, 13.5))
+	dig.dragging = true
+	dig._draw_marks()
+	assert(dig.blocked_mesh.mesh != null)
+	var release := InputEventMouseButton.new()
+	release.button_index = MOUSE_BUTTON_LEFT
+	release.pressed = false
+	release.position = Vector2(100, 100)
+	assert(dig.handle_input(release))
+	assert(not dig.dragging)
+	assert(not dig.stroke.active)
+	assert(dig.blocked_mesh.mesh == null)
 
 
 ## The right mouse button clears the tool and the button of the toolbar.
@@ -427,10 +456,15 @@ func _check_falling_object_reaches_solid_floor(dig: RefCounted) -> void:
 		dig._step_falling(0.1)
 	assert(is_equal_approx(stone.position.z, target))
 	assert(dig.falling_objects.is_empty())
-	# The object is not handled a second time.
+	# A later excavation can lower the same support again.
+	dig.block_overrides[Vector2i(20, 20)] = 59
 	dig.newly_open.clear()
 	dig.newly_open[Vector2i(20, 20)] = true
 	dig._settle_objects()
+	assert(dig.falling_objects.has(stone))
+	assert(float(dig.falling_objects[stone]) < target)
+	for step: int in range(80):
+		dig._step_falling(0.1)
 	assert(dig.falling_objects.is_empty())
 
 
@@ -460,6 +494,22 @@ func _check_attachment_is_removed(dig: RefCounted) -> void:
 	dig.newly_open[Vector2i(22, 22)] = true
 	dig._settle_objects()
 	assert(not moss.visible)
+
+
+func _check_cut_updates_only_dirty_chunk(dig: RefCounted) -> void:
+	var earlier: MeshInstance3D = dig.cut_chunk_nodes.get(Vector2i(0, 0))
+	assert(earlier != null and earlier.mesh != null)
+	var old_mesh: Mesh = earlier.mesh
+	var distant := Vector2i(40, 10)
+	dig.call("_mark_corridor", [distant] as Array[Vector2i])
+	assert(dig.is_marked(distant))
+	for strike: int in range(20):
+		if not dig.is_marked(distant):
+			break
+		assert(dig.apply_dwarf_strike(distant))
+	assert(not dig.is_marked(distant))
+	assert(dig.cut_chunk_nodes.has(Vector2i(2, 0)))
+	assert(earlier.mesh == old_mesh)
 
 
 ## A row of cells that the excavation opened.

@@ -1,0 +1,35 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.13596 Core Profile Forward-Compatible Context 20.10.44 27.20.11044.7 - Compatibility - Using Device: ATI Technologies Inc. - AMD Radeon(TM) Vega 8 Graphics
+
+CAMPAIGN_BUILD_STAGE geometry ms=14898
+CAMPAIGN_BUILD_STAGE objects ms=6774
+CAMPAIGN_DWARFS_READY dwarves=5
+CAMPAIGN_BUILD_STAGE camera ms=25294
+CAMPAIGN_FIRST_LEVEL_READY seed=0 cells=3447 templates=14 placements=14 story=25 objects=282 dwarfs=5 lights=31 deleted_wuker=6 overworld=0 surfaces=110 walls=131 ground=324935 rock=324935 backdrop_omitted=2711 triangles=698804
+CAMPAIGN_CHAPTER_SOURCE Campaign.tcl:22-191 first_level seed=0 map=512x640 view={ "x": 246.7, "y": 28.8, "zoom": 1.478, "rx": -0.29, "ry": 0.05 }
+DWARF_SELECTED Zwerg_004
+RUNTIME_PROBE candidates=[(259, 33), (257, 34), (258, 34), (259, 34)]
+DWARF_SURFACE_WALK_START Zwerg_004 target=(257.5, -33.25, 12.0) samples=194 planner=host_bfs_nearest_reachable_dig_stance speed=0.811
+RUNTIME_PROBE assignment_ms=58.69 assigned=true first=(259, 33) second=(258, 34)
+DWARF_PROFILE frame clip=gehen_loop frame=0 outline_ms=7.14 attachments_ms=60.84
+RUNTIME_PROBE slow frame=0 ms=71.83 terrain_revision=0 walking=true job=true
+DWARF_WALK_RESULT Zwerg_004 result=4
+DWARF_PROFILE begin clip=kletter_hack_rechts load_ms=957.92 total_ms=964.80
+DWARF_DIG_ANIMATION Zwerg_004 clip=kletter_hack_rechts point=(259, 33)
+RUNTIME_PROBE slow frame=2014 ms=974.67 terrain_revision=0 walking=false job=true
+DIG_PROFILE cell=(259, 33) texture_ms=0.13 cut_ms=14.90 settle_ms=1.90 supports_ms=0.11 marks_ms=0.44
+DWARF_DIG_CALLBACK Zwerg_004 point=(259, 33) accepted=true
+CAMPAIGN_TORCH_CREATED cell=(259, 33) level=11.0
+DWARF_PROFILE strike cell=(259, 33) terrain_ms=21.37 total_ms=67.21
+DWARF_SURFACE_WALK_START Zwerg_004 target=(257.5, -33.375, 13.0) samples=2 planner=host_bfs_nearest_reachable_dig_stance speed=0.759
+RUNTIME_PROBE slow frame=2063 ms=99.95 terrain_revision=1 walking=true job=true
+DWARF_WALK_RESULT Zwerg_004 result=4
+DWARF_PROFILE begin clip=kletter_hack_unten load_ms=971.01 total_ms=978.71
+DWARF_DIG_ANIMATION Zwerg_004 clip=kletter_hack_unten point=(258, 34)
+RUNTIME_PROBE slow frame=2143 ms=989.68 terrain_revision=1 walking=false job=true
+DIG_PROFILE cell=(258, 34) texture_ms=0.09 cut_ms=19.73 settle_ms=1.89 supports_ms=0.07 marks_ms=0.11
+DWARF_DIG_CALLBACK Zwerg_004 point=(258, 34) accepted=true
+CAMPAIGN_TORCH_CREATED cell=(258, 34) level=11.0
+DWARF_PROFILE strike cell=(258, 34) terrain_ms=25.23 total_ms=41.81
+RUNTIME_PROBE slow frame=2192 ms=1242.75 terrain_revision=2 walking=false job=false
+RUNTIME_PROBE result slowest_ms=1242.75 slow_frames=5 first_marked=false second_marked=false

@@ -22,6 +22,7 @@ const WALLS: Script = preload("res://scripts/native_campaign_walls.gd")
 const GROUND: Script = preload("res://scripts/native_campaign_ground.gd")
 const CAMERA: Script = preload("res://scripts/native_campaign_camera.gd")
 const DIG_TEST: Script = preload("res://scripts/native_campaign_dig_test.gd")
+const DWARF: Script = preload("res://scripts/native_campaign_dwarf.gd")
 const WORLD_MODEL_LIGHT: Script = preload("res://scripts/native_world_model_light.gd")
 const BACKDROP: Script = preload("res://scripts/native_campaign_backdrop.gd")
 const CHAPTER_PATH: String = "res://models/native_campaign_chapter.json"
@@ -92,6 +93,17 @@ var source_light_count: int = 0
 var headlight: DirectionalLight3D = null
 var status: Label = null
 var dig_test: RefCounted = null
+## The dwarves of the chapter: the selection, the orders, the locomotion, the
+## digging and the torches of the excavation.
+var dwarfs: RefCounted = null
+## The roots of the dwarves of the placements, in the order of the chapter.
+var dwarf_roots: Array[Node3D] = []
+## The first dwarf of the chapter: the frames of the clips of the dwarves are
+## lit like the models of the chapter, and the anchor of that light is the
+## placement of this dwarf.
+var dwarf_frame_anchor: Node3D = null
+var dwarf_frame_rotation: Basis = Basis.IDENTITY
+var dwarf_frame_in_daylight: bool = false
 var model_texture_cache: Dictionary = {}
 
 var focus: Vector3 = Vector3.ZERO
@@ -107,7 +119,6 @@ var _touch_points: Dictionary = {}
 var _touch_span: float = 0.0
 var _touch_centroid: Vector2 = Vector2.ZERO
 var _mouse_dragging: bool = false
-var _mouse_panning: bool = false
 
 var triangle_count: int = 0
 var surface_count: int = 0
@@ -287,6 +298,25 @@ func _ready() -> void:
 	dig_test = DIG_TEST.new()
 	dig_test.setup(scene_root, camera, profile, start_cells, cave_padding,
 		get_node("HUDLayer"), dig_caption)
+	# The dwarves of the chapter: the module of the dwarves drives the clips of
+	# the model of the original and the rules of the board of the chapter.
+	var dwarf_caption := Label.new()
+	dwarf_caption.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
+	dwarf_caption.offset_left = 164.0
+	dwarf_caption.offset_top = -24.0
+	dwarf_caption.offset_right = 900.0
+	dwarf_caption.offset_bottom = 0.0
+	dwarf_caption.add_theme_color_override("font_color", Color.WHITE)
+	dwarf_caption.add_theme_color_override("font_shadow_color", Color.BLACK)
+	dwarf_caption.add_theme_constant_override("shadow_offset_x", 1)
+	dwarf_caption.add_theme_constant_override("shadow_offset_y", 1)
+	get_node("HUDLayer").add_child(dwarf_caption)
+	dwarfs = DWARF.new()
+	dwarfs.setup(scene_root, camera, dig_test, profile, dwarf_caption, start_cells)
+	dwarfs.set_mesh_lighter(_light_dwarf_frame)
+	for dwarf_root: Node3D in dwarf_roots:
+		dwarfs.register_dwarf(dwarf_root)
+	print("CAMPAIGN_DWARFS_READY dwarves=%d" % dwarf_roots.size())
 	if args.has("--demo-dig") or args.has("--demo-mark") or args.has("--demo-join") \
 			or args.has("--demo-cave-below") or args.has("--demo-cave-above") \
 			or args.has("--demo-upper"):
@@ -1213,6 +1243,11 @@ func _build_objects() -> void:
 		object_count += 1
 		if placement_class == "Zwerg":
 			dwarf_count += 1
+			dwarf_roots.append(instance_root)
+			if dwarf_frame_anchor == null:
+				dwarf_frame_anchor = instance_root
+				dwarf_frame_rotation = mapped_rotation
+				dwarf_frame_in_daylight = in_daylight
 
 
 ## The native light of a model of the chapter.
@@ -1283,6 +1318,15 @@ func _lit_model_mesh(mesh: ArrayMesh, instance_root: Node3D, rotation_basis: Bas
 		Mesh.ARRAY_CUSTOM_RGBA_FLOAT << Mesh.ARRAY_FORMAT_CUSTOM0_SHIFT)
 	lit.surface_set_material(0, _native_model_material(material))
 	return lit
+
+
+## The light of the chapter on a frame of a clip of a dwarf: the same path as
+## the light of the models of the chapter, so a dwarf does not change its tone
+## when it starts to walk.
+func _light_dwarf_frame(mesh: ArrayMesh) -> ArrayMesh:
+	if dwarf_frame_anchor == null:
+		return mesh
+	return _lit_model_mesh(mesh, dwarf_frame_anchor, dwarf_frame_rotation, dwarf_frame_in_daylight)
 
 
 ## The material of the world model path for a model of the chapter.
@@ -1484,10 +1528,17 @@ func _chapter_depth_span() -> float:
 
 ## The camera controls of the chapter.
 ##
-## One finger or the left mouse button turns the view, two fingers or the
-## right mouse button move it, the wheel and the pinch zoom. The arrow keys
-## move the map, Q and E turn it.
+## One finger turns the view, two fingers or the right mouse button move it.
+## The wheel and pinch zoom; arrow keys move the map, Q and E turn it.
 func _input(event: InputEvent) -> void:
+	# Capture the release before HUD controls can consume it. A brush drag
+	# belongs to the tool until the button is up, even across the toolbar.
+	if dig_test != null and dig_test.dragging and event is InputEventMouseButton:
+		var button := event as InputEventMouseButton
+		if button.button_index == MOUSE_BUTTON_LEFT and not button.pressed:
+			dig_test.handle_input(event)
+			get_viewport().set_input_as_handled()
+			return
 	# HUD labels may consume motion before _unhandled_input. The native brush
 	# outline still tracks the pointer over the map.
 	if dig_test != null and event is InputEventMouseMotion:
@@ -1495,6 +1546,17 @@ func _input(event: InputEvent) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	# ADAPTER: a brush that owns the press also owns the release, even when a
+	# dwarf is selected. Otherwise the red drag preview remains active.
+	if dig_test != null and dig_test.dragging and dig_test.handle_input(event):
+		get_viewport().set_input_as_handled()
+		return
+	# The dwarves come first: a click on a dwarf selects it, and a click on the
+	# board gives the order of the selected dwarf. The tool of the excavation
+	# keeps the click that is not a dwarf and that is not a marked cell.
+	if dwarfs != null and dwarfs.handle_input(event):
+		get_viewport().set_input_as_handled()
+		return
 	if dig_test != null and dig_test.handle_input(event):
 		get_viewport().set_input_as_handled()
 		return
@@ -1529,19 +1591,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			controller.call("zoom", CAMERA.zoom_factor(1.0))
 		elif button.button_index == MOUSE_BUTTON_WHEEL_DOWN and button.pressed:
 			controller.call("zoom", CAMERA.zoom_factor(-1.0))
-		elif button.button_index == MOUSE_BUTTON_LEFT or button.button_index == MOUSE_BUTTON_RIGHT:
+		elif button.button_index == MOUSE_BUTTON_RIGHT:
 			_mouse_dragging = button.pressed
-			_mouse_panning = button.button_index == MOUSE_BUTTON_RIGHT
 		_update_camera()
 		return
 	if event is InputEventMouseMotion:
 		var motion := event as InputEventMouseMotion
 		if not _mouse_dragging:
 			return
-		if _mouse_panning:
-			controller.call("pan", motion.relative)
-		else:
-			controller.call("rotate", motion.relative)
+		controller.call("pan", motion.relative)
 		_update_camera()
 		return
 	if event is InputEventKey and event.is_pressed() and not event.is_echo():
@@ -1605,6 +1663,8 @@ func _update_touch_reference() -> void:
 func _process(delta: float) -> void:
 	if dig_test != null:
 		dig_test.advance(delta)
+	if dwarfs != null:
+		dwarfs.advance(delta)
 	_update_keyboard_pan(delta)
 	if _capture_frames < 0:
 		return

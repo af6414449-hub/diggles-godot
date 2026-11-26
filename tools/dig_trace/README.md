@@ -11,7 +11,7 @@
 
 - `data/dig_trace.tcl` logs the global Tcl context and script calls to `dig_mark`/`cave_skin`.
 - `dwarf_helpers.tcl` is inserted into the Zwerg class script. It logs class loading, calls to `dig_next`, entry into `dig_execute`, and each `dig_apply` result with a 3×3 grid of raw `get_hmap` values, original `get_material`, gnome position and nearby object references/classes/positions before and after the strike.
-- After a successful strike it also schedules six `object_snapshot` events on the dwarf task queue. These snapshots are aimed at delayed support creation and include the nearby object list and raw heights.
+- After a successful strike it also schedules six `object_snapshot` events on the dwarf task queue. These snapshots capture delayed changes in object position or query visibility; they do not by themselves prove object creation. Each includes the nearby object list and raw heights.
 - The JSONL file is `C:\Program Files (x86)\Steam\steamapps\common\Diggles The Myth of Fenris\diggles_dig_trace.jsonl`. The class stream closes the file after each event. It stops after 5,000 class events per process; the global stream stops after 10,000.
 - `install.ps1` creates timestamped backups in `tools/dig_trace/backups/` before any game-script change. The existing fog/camera modifications and `Diggles.exe` are preserved. Run from the project root:
 

@@ -85,7 +85,7 @@ out/            run artefacts: screenshots, test logs, ready-made patches
 | Path | What it is | Size |
 |---|---|---|
 | `godot/scripts/` | 82 GDScript modules; the `native_*` prefix marks a port of the original | 0.9 MB |
-| `godot/tools/` | 68 self-tests (`*_self_test.gd` and `*_test.gd`) and 9 probes (`*_probe.gd`) | 0.5 MB |
+| `godot/tools/` | 69 self-tests (`*_self_test.gd` and `*_test.gd`) and 9 probes (`*_probe.gd`) | 0.5 MB |
 | `godot/scenes/` | 9 scenes, main one is `campaign_first_level.tscn` | — |
 | `godot/shaders/` | 6 shaders, including `native_campaign_terrain.gdshader` | — |
 | `godot/models/` | 48 JSON files holding data extracted from the original (maps, models, lighting) | 81 MB |
@@ -140,6 +140,7 @@ Targeted tools: `scripts/run_hamster_suites.py`, `scripts/judge_suites.py`,
 | Camera and chapter map | `native_campaign_camera.gd`, `native_campaign_level.gd` | `native_campaign_camera_self_test` |
 | Level generator | `native_level_generator.gd` | `native_level_generator_self_test` |
 | Dwarf agent | `native_dwarf_sparetime.gd`, `native_dwarf_work_states.gd`, `native_dwarf_place_registry.gd` | `native_dwarf_sparetime_self_test` |
+| Dwarves of the chapter | `native_campaign_dwarf.gd`, `native_campaign_dig_test.gd` | `native_campaign_dwarf_test` |
 | Hamsters and beasts | `native_hamster_actor.gd`, `native_hamster_ai.gd`, `native_wild_hamster.gd` | `native_hamster_actor_self_test` |
 | Raupe (worm) and farm | `native_raupe_actor.gd`, `native_farm_raupe.gd` | `native_raupe_actor_self_test` |
 | Light and torches | `native_torch_runtime.gd`, `native_torch_placement.gd`, `native_world_model_light.gd` | `native_torch_runtime_self_test` |

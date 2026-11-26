@@ -48,7 +48,8 @@ static func project_floor_runs(route_positions: Array[Vector3], route_modes: Arr
 	return true
 
 
-static func plan(start: Vector2i, goal: Vector2i, walkmap: RefCounted, heights: Callable, allow_climb: bool) -> Dictionary:
+static func plan(start: Vector2i, goal: Vector2i, walkmap: RefCounted, heights: Callable,
+		allow_climb: bool, prefer_direct: bool = false) -> Dictionary:
 	var start_flags: Variant = walkmap.sample(start)
 	var goal_flags: Variant = walkmap.sample(goal)
 	if start_flags == null or goal_flags == null:
@@ -61,14 +62,68 @@ static func plan(start: Vector2i, goal: Vector2i, walkmap: RefCounted, heights: 
 		return {"status": "climbing_disabled"}
 	var route: Array[Vector2i] = []
 	var planner: String = "host_cardinal_bfs_over_source_samples"
+	# ADAPTER: a short direct route avoids the representative-cell detour,
+	# which can walk backward through the same shaft before proceeding.
+	if prefer_direct and absi(start.x - goal.x) + absi(start.y - goal.y) <= 64:
+		var low: Vector2i = Vector2i(mini(start.x, goal.x), mini(start.y, goal.y)) - Vector2i(16, 16)
+		var high: Vector2i = Vector2i(maxi(start.x, goal.x), maxi(start.y, goal.y)) + Vector2i(16, 16)
+		route = _sample_route(start, goal, walkmap, allow_climb,
+			Rect2i(low, high - low + Vector2i.ONE).intersection(walkmap.sample_bounds))
 	if walkmap.has_method("cell_representative"):
-		route = _representative_route(start,goal,walkmap,allow_climb)
-		if not route.is_empty():
-			planner = "host_bfs_via_source_cell_representatives"
+		if route.is_empty():
+			route = _representative_route(start,goal,walkmap,allow_climb)
+			if not route.is_empty():
+				planner = "host_bfs_via_source_cell_representatives"
 	if route.is_empty():
 		route = _sample_route(start,goal,walkmap,allow_climb,walkmap.sample_bounds)
 	if route.is_empty():
 		return {"status":"no_supported_route"}
+	return _route_result(route, walkmap, heights, planner)
+
+
+## One BFS reaches the nearest usable work stance; the chapter no longer
+## rebuilds a full route for every individual sample around a dig cell.
+static func plan_to_any(start: Vector2i, targets: Dictionary, walkmap: RefCounted,
+		heights: Callable, permitted: Rect2i) -> Dictionary:
+	if targets.is_empty():
+		return {"status": "no_supported_route"}
+	var first: Variant = walkmap.sample(start)
+	if first == null or (int(first) & 5) != 1:
+		return {"status": "no_navigation"}
+	var queue: Array[Vector2i] = [start]
+	var parents: Dictionary = {start: start}
+	var cursor: int = 0
+	var goal: Variant = start if targets.has(start) else null
+	while cursor < queue.size() and goal == null:
+		var point: Vector2i = queue[cursor]
+		cursor += 1
+		for offset: Vector2i in [Vector2i.RIGHT, Vector2i.UP, Vector2i.LEFT, Vector2i.DOWN]:
+			var next: Vector2i = point + offset
+			if parents.has(next) or not permitted.has_point(next):
+				continue
+			var flags: Variant = walkmap.sample(next)
+			if flags == null or (int(flags) & 5) != 1:
+				continue
+			parents[next] = point
+			if targets.has(next):
+				goal = next
+				break
+			queue.append(next)
+	if goal == null:
+		return {"status": "no_supported_route"}
+	var chosen: Vector2i = goal
+	var route: Array[Vector2i] = [chosen]
+	while route[-1] != start:
+		route.append(parents[route[-1]])
+	route.reverse()
+	var result: Dictionary = _route_result(route, walkmap, heights,
+		"host_bfs_nearest_reachable_dig_stance")
+	result["stance_sample"] = goal
+	return result
+
+
+static func _route_result(route: Array[Vector2i], walkmap: RefCounted,
+		heights: Callable, planner: String) -> Dictionary:
 	var positions: Array[Vector3] = []
 	var route_modes: Array[int] = []
 	for index: int in range(route.size()):

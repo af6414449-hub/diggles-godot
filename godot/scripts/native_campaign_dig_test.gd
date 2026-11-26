@@ -77,8 +77,16 @@ var digging: bool = false
 var native_blocks: Dictionary = {}
 var native_meshes: Dictionary = {}
 var source_blocks: Dictionary = {}
+var terrain_revision: int = 0
 var block_overrides: Dictionary = {}
 var newly_open: Dictionary = {}
+var settling_cells: Dictionary = {}
+## ADAPTER: excavation meshes are rebuilt by 16x16-cell chunks. Rebuilding
+## every previously dug triangle after each pickaxe strike stalls long runs.
+var cut_chunk_cells: Dictionary = {}
+var cut_chunk_nodes: Dictionary = {}
+var cut_dirty_chunks: Dictionary = {}
+var cut_materials: Dictionary = {}
 
 ## The marking of a tunnel: Vector2i -> true.
 var marked_corridor_cells: Dictionary = {}
@@ -321,6 +329,8 @@ func cell_level(cell: Vector2i) -> float:
 func apply_dwarf_strike(cell: Vector2i) -> bool:
 	if not _is_marked(cell):
 		return false
+	newly_open.clear()
+	settling_cells.clear()
 	var nibble: int = _mark_nibble(cell)
 	queue.erase(cell)
 	dwarf_cells[cell] = true
@@ -331,12 +341,34 @@ func apply_dwarf_strike(cell: Vector2i) -> bool:
 		_clear_mark(cell)
 		dwarf_cells.erase(cell)
 	if applied:
+		var stage_tick: int = Time.get_ticks_usec()
 		texture.update(image)
+		var texture_ms: float = float(Time.get_ticks_usec() - stage_tick) / 1000.0
+		stage_tick = Time.get_ticks_usec()
 		_draw_cut()
+		var cut_ms: float = float(Time.get_ticks_usec() - stage_tick) / 1000.0
+		stage_tick = Time.get_ticks_usec()
 		_settle_objects()
+		var settle_ms: float = float(Time.get_ticks_usec() - stage_tick) / 1000.0
+		stage_tick = Time.get_ticks_usec()
 		_revalidate_supports()
+		_decorate_new_passages()
+		var supports_ms: float = float(Time.get_ticks_usec() - stage_tick) / 1000.0
+		stage_tick = Time.get_ticks_usec()
 		_draw_marks()
+		if OS.get_cmdline_user_args().has("--profile-dwarf"):
+			print("DIG_PROFILE cell=%s texture_ms=%.2f cut_ms=%.2f settle_ms=%.2f supports_ms=%.2f marks_ms=%.2f" % [
+				cell, texture_ms, cut_ms, settle_ms, supports_ms,
+				float(Time.get_ticks_usec() - stage_tick) / 1000.0])
 	return applied
+
+
+## A cancelled manual job gives an unfinished mark back to the button-driven
+## excavation queue. The dwarf must not own the cell after he stops working.
+func release_dwarf_claim(cell: Vector2i) -> void:
+	dwarf_cells.erase(cell)
+	if _is_marked(cell) and not queue.has(cell):
+		queue.append(cell)
 
 
 ## The rock of the map: the cell that cannot be tunnelled through.
@@ -415,10 +447,19 @@ func _native_strike(point: Vector2i, mark: int) -> bool:
 	for change: Dictionary in replacements:
 		var cell: Vector2i = change["cell"]
 		block_overrides[cell] = int(change["block"])
+		settling_cells[cell] = true
+		var chunk := Vector2i(cell.x >> 4, cell.y >> 4)
+		if not cut_chunk_cells.has(chunk):
+			cut_chunk_cells[chunk] = {}
+		var members: Dictionary = cut_chunk_cells[chunk]
+		members[cell] = true
+		cut_dirty_chunks[chunk] = true
 		if not bool(change["was_open"]) and _is_open(cell):
 			newly_open[cell] = true
 			excavated_cells[cell] = true
 		image.set_pixel(cell.x, cell.y, Color.WHITE)
+	if not replacements.is_empty():
+		terrain_revision += 1
 	return not replacements.is_empty()
 
 
@@ -445,7 +486,7 @@ func handle_input(event: InputEvent) -> bool:
 		_choose(false, tool)
 		return true
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if toolbar.get_global_rect().has_point(event.position):
+		if not dragging and toolbar.get_global_rect().has_point(event.position):
 			return false
 		var point: Variant = _point(event.position)
 		if event.pressed:
@@ -468,7 +509,9 @@ func handle_input(event: InputEvent) -> bool:
 				elif tool.contains("Стёрка"):
 					_erase(point)
 			dragging = false
+			stroke.cancel()
 			eraser.cancel()
+			_draw_marks()
 		return true
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT \
 			and event.pressed and not toolbar.get_global_rect().has_point(event.position):
@@ -532,9 +575,10 @@ func _selection_result(samples: Array[Vector2i], direction: Vector2 = Vector2.ZE
 	var stopped: bool = false
 	for cell: Vector2i in _stroke_order(samples, direction):
 		if not can_dig(cell):
-			# The rock and the cells that are already open are red.
-			blocked[cell] = true
-			if STOP_AT_GRANITE and _is_rock(cell):
+			# ADAPTER: red is reserved for solid granite; excavated air is empty.
+			if _is_rock(cell) and not _is_open(cell):
+				blocked[cell] = true
+			if STOP_AT_GRANITE and _is_rock(cell) and not _is_open(cell):
 				# The rock stops the marking: the cells behind it stay empty.
 				stopped = true
 			continue
@@ -544,13 +588,11 @@ func _selection_result(samples: Array[Vector2i], direction: Vector2 = Vector2.ZE
 	return {"marked": marked, "blocked": blocked}
 
 
-## The cells of a selection that cannot be dug: the rock and the cells that
-## are already open. The original draws them in red while the button of the
-## mouse is held.
+## Solid granite in the held selection. Already excavated cells stay empty.
 func blocked_cells(samples: Array[Vector2i]) -> Dictionary:
 	var blocked: Dictionary = {}
 	for cell: Vector2i in samples:
-		if not can_dig(cell):
+		if _is_rock(cell) and not _is_open(cell):
 			blocked[cell] = true
 	return blocked
 
@@ -797,6 +839,7 @@ func advance(delta: float) -> void:
 	step_clock = 0.0
 	var changed: bool = false
 	newly_open.clear()
+	settling_cells.clear()
 	for strike: int in range(4):
 		if queue.is_empty():
 			digging = false
@@ -832,18 +875,21 @@ func advance(delta: float) -> void:
 ## disappears with the cell it stands in. A free object falls to the ground
 ## of its own cell.
 func _settle_objects() -> void:
-	if newly_open.is_empty():
+	if newly_open.is_empty() and settling_cells.is_empty():
 		return
+	var affected: Dictionary = newly_open.duplicate()
+	for cell: Vector2i in settling_cells:
+		affected[cell] = true
 	for child: Node in root.get_children():
 		if not child is Node3D or not child.has_meta("native_class") \
 				or child.has_meta("generated_decor"):
 			continue
 		var object: Node3D = child as Node3D
-		if processed_objects.has(object):
-			continue
 		var cell: Vector2i = _object_cell(object)
-		if not _object_is_affected(cell):
+		if not _object_is_affected(cell, affected):
 			continue
+		# ADAPTER: a later strike can remove the next supporting layer. Keep
+		# checking the live height instead of settling a placement only once.
 		processed_objects[object] = true
 		# SOURCE: urw_gng_*.tcl places native wooden supports at chapter setup;
 		# the live trace sees them rise into a dug tunnel. Opening that tunnel
@@ -869,6 +915,7 @@ func _settle_objects() -> void:
 			continue
 		if target < object.position.z:
 			falling_objects[object] = target
+	settling_cells.clear()
 
 
 func _is_attachment(native_class: String) -> bool:
@@ -884,13 +931,13 @@ func _object_cell(object: Node3D) -> Vector2i:
 	return Vector2i(floori(object.position.x), floori(-object.position.y))
 
 
-func _object_is_affected(cell: Vector2i) -> bool:
-	if newly_open.has(cell):
+func _object_is_affected(cell: Vector2i, affected: Dictionary) -> bool:
+	if affected.has(cell):
 		return true
 	# Placement origins are model corners; a one-cell footprint is therefore
 	# allowed to straddle the newly opened cell on either side.
 	for offset: Vector2i in [Vector2i.LEFT, Vector2i.RIGHT, Vector2i.UP, Vector2i.DOWN]:
-		if newly_open.has(cell + offset):
+		if affected.has(cell + offset):
 			return true
 	return false
 
@@ -1166,6 +1213,7 @@ func _update_hover(screen: Vector2) -> void:
 	if hover_mesh == null:
 		return
 	hover_mesh.mesh = null
+	hover_blocked_mesh.mesh = null
 	if tool.is_empty() or toolbar.get_global_rect().has_point(screen):
 		return
 	var raw: Variant = _point(screen)
@@ -1177,7 +1225,6 @@ func _update_hover_at(raw: Vector2) -> void:
 	hover_mesh.mesh = null
 	hover_blocked_mesh.mesh = null
 	var samples: Dictionary = {}
-	var blocked: Dictionary = {}
 	var tint := Color(0.42, 0.56, 0.32)
 	if tool.contains("Туннель"):
 		var preview_stroke: RefCounted = STROKE.new()
@@ -1185,8 +1232,6 @@ func _update_hover_at(raw: Vector2) -> void:
 		for cell: Vector2i in preview_stroke.samples():
 			if can_dig(cell):
 				samples[cell] = true
-			else:
-				blocked[cell] = true
 	elif tool.contains("Пещера"):
 		tint = Color(0.30, 0.32, 0.56)
 		for sample: Vector3i in _cave_cells(int(tool.right(1)), Vector2i(int(raw.x), int(raw.y))):
@@ -1198,48 +1243,55 @@ func _update_hover_at(raw: Vector2) -> void:
 			samples[cell] = true
 	(hover_mesh.material_override as StandardMaterial3D).albedo_color = tint
 	_draw_contour(samples, hover_mesh, true)
-	_draw_contour(blocked, hover_blocked_mesh, true)
 
 func _draw_cut() -> void:
-	var tools: Dictionary = {}
-	var materials: Dictionary = {}
 	var normals: Array = profile.data["normals"]
-	for cell: Vector2i in block_overrides:
-		var block: int = int(block_overrides[cell])
-		if not native_meshes.has(str(block)):
-			continue
-		var variant: int = GROUND.base_variant(cell)
-		var ground_file: String = profile.ground_file(cell, variant)
-		for part: Dictionary in native_meshes[str(block)]:
-			var key: String = "%d:%s" % [int(part["part"]), ground_file]
-			if not tools.has(key):
-				var builder := SurfaceTool.new()
-				builder.begin(Mesh.PRIMITIVE_TRIANGLES)
-				builder.set_custom_format(0, SurfaceTool.CUSTOM_RGBA_FLOAT)
-				tools[key] = builder
-				materials[key] = profile.terrain_material(variant, true, false,
-					ground_file, false, "res://textures/ground/", true)
-			var builder: SurfaceTool = tools[key]
-			var values: Array = part["vertices"]
-			var indices: Array = part["indices"]
-			var attributes: Array = part["attributes"]
-			var detail: String = profile.detail_texture(cell, int(part["part"]))
-			for index: int in indices:
-				var offset: int = index * 5
-				var source_normal: Array = normals[int(attributes[index])]
-				var local := Vector3(float(values[offset]), float(values[offset + 1]),
-					float(values[offset + 2]))
-				builder.set_normal(Vector3(float(source_normal[0]), -float(source_normal[1]),
-					float(source_normal[2]) * 0.5).normalized())
-				builder.set_uv(Vector2(float(values[offset + 3]), float(values[offset + 4])))
-				builder.set_uv2(profile.detail_slot(detail))
-				var channels: Dictionary = profile.terrain_channels(cell, local, source_normal, 1.0)
-				builder.set_color(channels["diffuse"])
-				builder.set_custom(0, channels["secondary"])
-				builder.add_vertex(Vector3(cell.x + local.x, -(cell.y + local.y),
-					2.0 * local.z - 14.0))
-	var mesh := ArrayMesh.new()
-	for key: String in tools:
-		(tools[key] as SurfaceTool).commit(mesh)
-		mesh.surface_set_material(mesh.get_surface_count() - 1, materials[key])
-	cut_mesh.mesh = mesh
+	for chunk: Vector2i in cut_dirty_chunks:
+		var tools: Dictionary = {}
+		for cell: Vector2i in cut_chunk_cells[chunk]:
+			var block: int = int(block_overrides[cell])
+			if not native_meshes.has(str(block)):
+				continue
+			var variant: int = GROUND.base_variant(cell)
+			var ground_file: String = profile.ground_file(cell, variant)
+			for part: Dictionary in native_meshes[str(block)]:
+				var key: String = "%d:%s" % [int(part["part"]), ground_file]
+				if not tools.has(key):
+					var tool := SurfaceTool.new()
+					tool.begin(Mesh.PRIMITIVE_TRIANGLES)
+					tool.set_custom_format(0, SurfaceTool.CUSTOM_RGBA_FLOAT)
+					tools[key] = tool
+					if not cut_materials.has(key):
+						cut_materials[key] = profile.terrain_material(variant, true, false,
+							ground_file, false, "res://textures/ground/", true)
+				var builder: SurfaceTool = tools[key]
+				var values: Array = part["vertices"]
+				var indices: Array = part["indices"]
+				var attributes: Array = part["attributes"]
+				var detail: String = profile.detail_texture(cell, int(part["part"]))
+				for index: int in indices:
+					var offset: int = index * 5
+					var source_normal: Array = normals[int(attributes[index])]
+					var local := Vector3(float(values[offset]), float(values[offset + 1]),
+						float(values[offset + 2]))
+					builder.set_normal(Vector3(float(source_normal[0]), -float(source_normal[1]),
+						float(source_normal[2]) * 0.5).normalized())
+					builder.set_uv(Vector2(float(values[offset + 3]), float(values[offset + 4])))
+					builder.set_uv2(profile.detail_slot(detail))
+					var channels: Dictionary = profile.terrain_channels(cell, local, source_normal, 1.0)
+					builder.set_color(channels["diffuse"])
+					builder.set_custom(0, channels["secondary"])
+					builder.add_vertex(Vector3(cell.x + local.x, -(cell.y + local.y),
+						2.0 * local.z - 14.0))
+		var mesh := ArrayMesh.new()
+		for key: String in tools:
+			(tools[key] as SurfaceTool).commit(mesh)
+			mesh.surface_set_material(mesh.get_surface_count() - 1, cut_materials[key])
+		var chunk_node: MeshInstance3D = cut_chunk_nodes.get(chunk)
+		if chunk_node == null:
+			chunk_node = MeshInstance3D.new()
+			chunk_node.name = "CampaignExcavation_%d_%d" % [chunk.x, chunk.y]
+			cut_mesh.add_child(chunk_node)
+			cut_chunk_nodes[chunk] = chunk_node
+		chunk_node.mesh = mesh
+	cut_dirty_chunks.clear()
